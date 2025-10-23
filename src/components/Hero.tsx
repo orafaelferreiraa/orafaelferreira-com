@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://www.linkedin.com/in/rafaelmartinferreira/", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/orafaelferreiraa/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/rafaelmartinferreira", label: "GitHub" },
     { icon: Youtube, href: "https://www.youtube.com/@rafaelmartinferreira", label: "YouTube" },
     { icon: Music, href: "https://open.spotify.com/show/lowopscast", label: "LowOpsCast" },
