@@ -27,6 +27,7 @@ const Navigation = () => {
     { label: "Blog", path: "/blog" },
     { label: "Palestras", path: "/palestras" },
     { label: "Experiências", path: "/experiencias" },
+    { label: "Recomendações", path: "/recomendacoes" },
   ];
 
   return (
