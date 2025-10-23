@@ -378,151 +378,52 @@ const Talks = () => {
     },
   ];
 
-  const renderTalkCard = (talk: Talk, index: number) => (
+ const renderTalkCard = (talk: Talk, index: number) => {
+  // Função auxiliar para extrair o ID do YouTube de vários formatos de link
+  const getYouTubeId = (url: string): string | null => {
+    try {
+      const parsed = new URL(url);
+      if (parsed.hostname.includes("youtube.com")) {
+        return parsed.searchParams.get("v");
+      }
+      if (parsed.hostname.includes("youtu.be")) {
+        return parsed.pathname.replace("/", "");
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
+
+  const imageSrc =
+    talk.image ||
+    (talk.videoUrl
+      ? (() => {
+          const id = getYouTubeId(talk.videoUrl);
+          return id ? `https://img.youtube.com/vi/${id}/0.jpg` : null;
+        })()
+      : null);
+
+  return (
     <Card
       key={`${talk.title}-${talk.date}`}
       className="group p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up"
       style={{ animationDelay: `${index * 50}ms` }}
     >
-      {talk.image && (
+      {imageSrc && (
         <div className="mb-4 rounded-lg overflow-hidden">
-          <img 
-            src={talk.image} 
+          <img
+            src={imageSrc}
             alt={talk.title}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         </div>
       )}
-      
-      <div className="space-y-3">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Calendar className="h-4 w-4" />
-          {new Date(talk.date).toLocaleDateString("pt-BR", { 
-            day: '2-digit', 
-            month: '2-digit', 
-            year: 'numeric' 
-          })}
-          <MapPin className="h-4 w-4 ml-2" />
-          {talk.location}
-        </div>
-
-        <h3 className="text-lg font-heading font-semibold group-hover:text-primary transition-colors line-clamp-2">
-          {talk.title}
-        </h3>
-
-        <p className="text-sm text-muted-foreground font-medium">{talk.event}</p>
-
-        <div className="flex flex-wrap gap-2 pt-2">
-          {talk.siteUrl && (
-            <Button variant="outline" size="sm" asChild>
-              <a href={talk.siteUrl} target="_blank" rel="noopener noreferrer">
-                <Globe className="h-3 w-3" />
-              </a>
-            </Button>
-          )}
-          {talk.slidesUrl && (
-            <Button variant="outline" size="sm" asChild>
-              <a href={talk.slidesUrl} target="_blank" rel="noopener noreferrer">
-                <FileText className="h-3 w-3" />
-              </a>
-            </Button>
-          )}
-          {talk.videoUrl && (
-            <Button variant="outline" size="sm" asChild>
-              <a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">
-                <Youtube className="h-3 w-3" />
-              </a>
-            </Button>
-          )}
-          {talk.linkedinUrl && (
-            <Button variant="outline" size="sm" asChild>
-              <a href={talk.linkedinUrl} target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-3 w-3" />
-              </a>
-            </Button>
-          )}
-          {talk.blogUrl && (
-            <Button variant="outline" size="sm" asChild>
-              <a href={talk.blogUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            </Button>
-          )}
-        </div>
-      </div>
+      ...
     </Card>
   );
-
-  return (
-    <section id="talks" className="py-20 lg:py-32">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">
-            Palestras & <span className="text-primary">Talks</span>
-          </h1>
-          <div className="max-w-3xl mx-auto space-y-4 text-muted-foreground">
-            <p className="text-lg">
-              Seja bem-vindo à minha página dedicada a palestras sobre tecnologias! Aqui, compartilho insights, 
-              experiências e conhecimentos sobre os mais diversos temas do universo da tecnologia.
-            </p>
-            <p>
-              Meu objetivo é criar uma ponte de conhecimento entre profissionais da área, estudantes e entusiastas, 
-              proporcionando uma visão única sobre tendências, desafios superados e lições aprendidas ao longo da minha jornada profissional.
-            </p>
-          </div>
-        </div>
-
-        {/* Próximos Eventos */}
-        {upcomingTalks.length > 0 && (
-          <div className="mb-20">
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold">
-                Próximos <span className="text-primary">Eventos</span>
-              </h2>
-              <Separator className="flex-1" />
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {upcomingTalks.map((talk, index) => renderTalkCard(talk, index))}
-            </div>
-          </div>
-        )}
-
-        {/* Palestras Presenciais */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold">
-              Palestras <span className="text-primary">Presenciais</span>
-            </h2>
-            <Separator className="flex-1" />
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {inPersonTalks.map((talk, index) => renderTalkCard(talk, index))}
-          </div>
-        </div>
-
-        {/* Palestras Online */}
-        <div>
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold">
-              Palestras <span className="text-primary">Online</span>
-            </h2>
-            <Separator className="flex-1" />
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {onlineTalks.map((talk, index) => renderTalkCard(talk, index))}
-          </div>
-        </div>
-
-        <div className="mt-16 text-center max-w-2xl mx-auto">
-          <p className="text-muted-foreground">
-            Fique à vontade para explorar as palestras disponíveis. Sinta-se encorajado a compartilhar suas ideias, 
-            comentários e sugestões. Juntos, podemos criar uma comunidade de aprendizado dinâmica e colaborativa!
-          </p>
-        </div>
-      </div>
-    </section>
-  );
 };
+
 
 export default Talks;
