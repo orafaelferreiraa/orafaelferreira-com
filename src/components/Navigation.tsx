@@ -38,7 +38,7 @@ const Navigation = () => {
             to="/"
             className="hover:opacity-80 transition-opacity"
           >
-            <img src={logo} alt="Rafael Martin" className="h-8 w-auto" />
+            <img src={logo} alt="Rafael Martin" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
