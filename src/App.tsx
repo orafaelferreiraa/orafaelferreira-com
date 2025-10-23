@@ -12,7 +12,7 @@ import Certificacoes from "./pages/Certificacoes";
 import Certificados from "./pages/Certificados";
 import Blog from "./pages/Blog";
 import Palestras from "./pages/Palestras";
-
+import Experiencias from "./pages/Experiencias";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,7 +33,7 @@ const App = () => (
             <Route path="/certificados" element={<Certificados />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/palestras" element={<Palestras />} />
-            
+            <Route path="/experiencias" element={<Experiencias />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
