@@ -378,52 +378,167 @@ const Talks = () => {
     },
   ];
 
- const renderTalkCard = (talk: Talk, index: number) => {
-  // Função auxiliar para extrair o ID do YouTube de vários formatos de link
-  const getYouTubeId = (url: string): string | null => {
-    try {
-      const parsed = new URL(url);
-      if (parsed.hostname.includes("youtube.com")) {
-        return parsed.searchParams.get("v");
+  const renderTalkCard = (talk: Talk, index: number) => {
+    const getYouTubeId = (url: string): string | null => {
+      try {
+        const parsed = new URL(url);
+        if (parsed.hostname.includes("youtube.com")) {
+          return parsed.searchParams.get("v");
+        }
+        if (parsed.hostname.includes("youtu.be")) {
+          return parsed.pathname.replace("/", "");
+        }
+        return null;
+      } catch {
+        return null;
       }
-      if (parsed.hostname.includes("youtu.be")) {
-        return parsed.pathname.replace("/", "");
-      }
-      return null;
-    } catch {
-      return null;
-    }
+    };
+
+    const imageSrc =
+      talk.image ||
+      (talk.videoUrl
+        ? (() => {
+            const id = getYouTubeId(talk.videoUrl);
+            return id ? `https://img.youtube.com/vi/${id}/0.jpg` : null;
+          })()
+        : null);
+
+    return (
+      <Card
+        key={`${talk.title}-${talk.date}`}
+        className="group p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up"
+        style={{ animationDelay: `${index * 50}ms` }}
+      >
+        {imageSrc && (
+          <div className="mb-4 rounded-lg overflow-hidden">
+            <img
+              src={imageSrc}
+              alt={talk.title}
+              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+        )}
+        
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+            {talk.title}
+          </h3>
+          
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Presentation className="w-4 h-4" />
+            <span className="text-sm">{talk.event}</span>
+          </div>
+          
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Calendar className="w-4 h-4" />
+            <span className="text-sm">{new Date(talk.date).toLocaleDateString('pt-BR')}</span>
+          </div>
+          
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <MapPin className="w-4 h-4" />
+            <span className="text-sm">{talk.location}</span>
+          </div>
+          
+          <Separator className="my-4" />
+          
+          <div className="flex flex-wrap gap-2">
+            {talk.siteUrl && (
+              <Button variant="outline" size="sm" asChild>
+                <a href={talk.siteUrl} target="_blank" rel="noopener noreferrer">
+                  <Globe className="w-4 h-4 mr-2" />
+                  Site do Evento
+                </a>
+              </Button>
+            )}
+            
+            {talk.slidesUrl && (
+              <Button variant="outline" size="sm" asChild>
+                <a href={talk.slidesUrl} target="_blank" rel="noopener noreferrer">
+                  <FileText className="w-4 h-4 mr-2" />
+                  Slides
+                </a>
+              </Button>
+            )}
+            
+            {talk.videoUrl && (
+              <Button variant="outline" size="sm" asChild>
+                <a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">
+                  <Youtube className="w-4 h-4 mr-2" />
+                  Vídeo
+                </a>
+              </Button>
+            )}
+            
+            {talk.linkedinUrl && (
+              <Button variant="outline" size="sm" asChild>
+                <a href={talk.linkedinUrl} target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-4 h-4 mr-2" />
+                  LinkedIn
+                </a>
+              </Button>
+            )}
+            
+            {talk.blogUrl && (
+              <Button variant="outline" size="sm" asChild>
+                <a href={talk.blogUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Blog Post
+                </a>
+              </Button>
+            )}
+          </div>
+        </div>
+      </Card>
+    );
   };
 
-  const imageSrc =
-    talk.image ||
-    (talk.videoUrl
-      ? (() => {
-          const id = getYouTubeId(talk.videoUrl);
-          return id ? `https://img.youtube.com/vi/${id}/0.jpg` : null;
-        })()
-      : null);
-
   return (
-    <Card
-      key={`${talk.title}-${talk.date}`}
-      className="group p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up"
-      style={{ animationDelay: `${index * 50}ms` }}
-    >
-      {imageSrc && (
-        <div className="mb-4 rounded-lg overflow-hidden">
-          <img
-            src={imageSrc}
-            alt={talk.title}
-            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
+    <div className="min-h-screen bg-background py-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            Palestras
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Compartilho insights, experiências e conhecimentos sobre os mais diversos temas do universo da tecnologia.
+          </p>
         </div>
-      )}
-      ...
-    </Card>
+
+        {upcomingTalks.length > 0 && (
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
+              <Calendar className="w-8 h-8 text-primary" />
+              Próximos Eventos
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {upcomingTalks.map((talk, index) => renderTalkCard(talk, index))}
+            </div>
+          </section>
+        )}
+
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
+            <MapPin className="w-8 h-8 text-primary" />
+            Palestras Presenciais
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {inPersonTalks.map((talk, index) => renderTalkCard(talk, index))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
+            <Globe className="w-8 h-8 text-primary" />
+            Palestras Online
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {onlineTalks.map((talk, index) => renderTalkCard(talk, index))}
+          </div>
+        </section>
+      </div>
+    </div>
   );
 };
-
 
 export default Talks;
