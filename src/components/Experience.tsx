@@ -113,9 +113,8 @@ const Experience = () => {
           <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl">
             Nesta página quero compartilhar um pouco da minha jornada profissional e das experiências que moldaram meu caminho até aqui. 
             Desde os primeiros passos como um Assistente Técnico até a função atual de Cloud Solution Architect Senior, cada etapa desempenhou 
-            um papel fundamental na minha trajetória. Este post será uma oportunidade para refletir sobre os desafios superados, as habilidades 
-            adquiridas e as lições aprendidas ao longo do caminho. Espero que minha história possa inspirar e motivar outros profissionais em 
-            suas próprias jornadas. Vamos lá!
+            um papel fundamental na minha trajetória. Espero que minha história possa inspirar e motivar outros profissionais em 
+            suas próprias jornadas.
           </p>
         </div>
 
@@ -150,14 +149,6 @@ const Experience = () => {
           ))}
         </div>
 
-        <Separator className="my-12" />
-
-        <div className="text-center animate-fade-in">
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Espero que minha jornada inspire e motive outros profissionais. Se tiverem perguntas ou quiserem compartilhar suas próprias 
-            experiências, sintam-se à vontade para deixar um comentário. Vamos continuar crescendo e aprendendo juntos!
-          </p>
-        </div>
       </div>
     </section>
   );
