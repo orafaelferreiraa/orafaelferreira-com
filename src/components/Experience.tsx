@@ -19,19 +19,19 @@ const experiences: ExperienceItem[] = [
   {
     title: "Senior Azure DevOps Solution Engineer",
     company: "Softensity Inc",
-    period: "Dec 2024 - Jul 2025",
+    period: "Dec 2024 - Jul 2025 (7 meses)",
     description: "Atuo em um time global de engenharia de plataforma com foco em Platform as a Product, em um dos maiores ambientes Microsoft em escala mundial. Estou alocado em um cliente multinacional do setor de auditoria (Big Four), trabalhando em um ecossistema Enterprise-scale de alta complexidade. Responsável por impulsionar a evolução, sustentação e governança de uma plataforma robusta e altamente padronizada, baseada em soluções PaaS e Serverless na Azure Cloud, que atende equipes técnicas distribuídas globalmente. Assegurando excelência operacional contínua, conformidade contínua e aderência às melhores práticas em Cloud Governance e Cloud Security. Minhas principais atividades incluem o desenvolvimento e gestão de infraestrutura utilizando Infrastructure as Code (IaC) com Bicep, garantindo escalabilidade, imutabilidade e padronização. Criação, otimização e manutenção de pipelines CI/CD com GitHub Actions, facilitando entregas ágeis, seguras e automatizadas desde o desenvolvimento até a produção. Definição e implementação de guardrails e políticas corporativas utilizando Azure Policy, RBAC e Blueprints, garantindo governança automatizada, conformidade contínua e redução de riscos. Automação de tarefas operacionais e administrativas com scripts PowerShell e Azure CLI, promovendo eficiência operacional e redução de erros humanos. Administração de complexa infraestrutura de rede corporativa, incluindo VNets, NSGs, VPN, Application Gateways, Azure Front Door, Private DNS e Private Endpoints. E Cloud Cost Optimization (FinOps), focadas na otimização contínua dos recursos e redução de custos operacionais."
   },
   {
     title: "Senior Azure DevOps Engineer",
     company: "CI&T",
-    period: "Abr 2024 - Dec 2024",
+    period: "Abr 2024 - Dec 2024 (8 meses)",
     description: "Atuei em um ambiente enterprise para um cliente global líder em food service, presente em mais de 90 países, por meio de uma empresa de consultoria, sendo responsável por construir e automatizar infraestruturas escaláveis e de alta disponibilidade na nuvem Azure, apoiando a migração de serviços do ambiente on-premise, que posteriormente serão modernizados para microserviços em contêineres. Em um ambiente com mais de 1.200 VMs e mais de 50 clusters distribuídos em mais de 100 assinaturas, é Azure Landing Zones e rede Hub-Spoke para garantir alta disponibilidade tanto na nuvem, ambiente híbrido (on-premise) com Azure Arc. Para o deployment e atualização das infraestruturas, é utilizado Terraform como IaC (Infrastructure as Code), assegurando a consistência e confiabilidade das configurações. Pipelines de CI/CD com GitHub Actions para automatizar deployments, garantindo a eficiência e qualidade das releases, tarefas pós-deployment com Jenkins. Gerenciamento de configuração de máquinas Linux com Puppet. No contexto do AKS (Azure Kubernetes Service), GitOps com FluxCD para o deploy de componentes nos clusters, Helm Charts para facilitar e padronizar o deployment de aplicações. Monitoramento e a observabilidade do ambiente utilizando Grafana, Prometheus e Splunk. Atualizo módulos e códigos dos componentes nos repositórios GitHub e Bitbucket para manter a integridade e precisão das informações. Conduzo Provas de Conceito (PoCs) para avaliar novas tecnologias e soluções, propondo melhorias contínuas e adotando as melhores ferramentas do mercado, incluindo práticas de FinOps, para otimizar custos e eficiência no ambiente em nuvem."
   },
   {
     title: "Engenheiro de Plataforma Azure Senior",
     company: "CI&T",
-    period: "Set 2023 - Mar 2024",
+    period: "Set 2023 - Mar 2024 (6 meses)",
     description: "Diante do desafio de reestruturar o ambiente Cloud Azure em escala enterprise para uma das maiores empresas globais de telecomunicações, visando escalabilidade, eficiência operacional e a segurança. Realizei análises detalhadas, para padronização de arquiteturas de referência, e atuei como consultor estratégico na elaboração da documentação para migrações de aplicativos para a nuvem, fundamentada em designs de arquiteturas landing zones e redes hub-spoke, com auxilio dos frameworks como Cloud Adoption Framework (CAF) e Well-Architected foi possível habilitar arquiteturas robustas. Elaborei documentações técnicas, orientei sobre a escolha de recursos e decisões estratégias de backlog. Implementação de práticas de FinOps para equilibrar desempenho x custos. Contribuí na criação de uma plataforma para padronizar e otimizar a experiência do desenvolvedor (DevEx), integrando ferramentas como Backstage para construir catálogos de produtos, provisionamento de recursos com Terraform em pipelines CI/CD do Azure DevOps, garantindo um processo de entrega contínua e automatizada Minhas ações resultaram em melhorias significativas de escalabilidade, segurança e governança, impulsionando o crescimento e a inovação, e reforçando a resiliência dos sistemas. Além disso, fortaleci a cultura DevOps e a adoção de metodologias ágeis, melhorando a adaptabilidade e a velocidade de entrega das equipes em frente as mudanças de mercado."
   },
   {
@@ -97,7 +97,7 @@ const experiences: ExperienceItem[] = [
   {
     title: "Assistente Técnico",
     company: "MF Informática",
-    period: "Fev 2013 - Ago 2014",
+    period: "Fev 2013 - Ago 2014 (1 ano e 6 meses)",
     description: "Responsável pela manutenção completa de hardware em desktops e notebooks na empresa. Instalação e configuração de sistemas operacionais em diversas máquinas, garantindo a atualização e funcionalidade do software. Conduzi operações de backup e restauração de dados, além da instalação de programas específicos, atendendo as necessidades dos clientes. Forneci suporte técnico avançado e solucionei problemas, assegurando o desempenho de equipamentos e sistemas. Minha experiencia técnica e abordagem proativa resultaram na otimização do funcionamento dos equipamentos e elevação a satisfação dos usuários finais."
   }
 ];
