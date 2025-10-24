@@ -443,9 +443,7 @@ const Mentorship = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Falar no LinkedIn
                 </a>
-              </Button>
             </div>
           </div>
         </div>
