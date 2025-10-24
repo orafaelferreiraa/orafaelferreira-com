@@ -26,18 +26,62 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                Sou especialista em Cloud, DevOps e Engenharia de Plataforma, com foco profundo em{" "}
-                <span className="text-foreground font-semibold">Azure</span>,{" "}
-                <span className="text-foreground font-semibold">FinOps</span> e{" "}
-                <span className="text-foreground font-semibold">Infrastructure as Code</span> (Terraform e Bicep).
+                Com <span className="text-foreground font-semibold">mais de uma década de experiência em tecnologia</span>,{" "}
+                <span className="text-foreground font-semibold">19 certificações técnicas</span> e formação em{" "}
+                <span className="text-foreground font-semibold">Ciência da Computação</span>, atuo como Engenheiro DevOps 
+                especializado em arquiteturas em nuvem Azure. Atualmente sou{" "}
+                <span className="text-foreground font-semibold">Microsoft MVP</span> (Microsoft Most Valuable Professional) &{" "}
+                <span className="text-foreground font-semibold">MCT</span> (Microsoft Certified Trainer),{" "}
+                <span className="text-foreground font-semibold">DevOps Institute Ambassador</span>,{" "}
+                <span className="text-foreground font-semibold">Alura Star</span> e{" "}
+                <span className="text-foreground font-semibold">Green Software Champion</span>.
               </p>
               <p>
-                Minha missão é transformar ambientes complexos em plataformas resilientes, seguras e otimizadas,
-                sempre com foco em automação, observabilidade e boas práticas de engenharia.
+                Minha trajetória inclui experiência em empresas multinacionais, consultorias e ambientes corporativos internacionais. 
+                Nos últimos três anos, foquei intensamente em tecnologias de nuvem e DevOps, especializando-me em{" "}
+                <span className="text-foreground font-semibold">Microsoft Azure</span>,{" "}
+                <span className="text-foreground font-semibold">Azure DevOps</span>,{" "}
+                <span className="text-foreground font-semibold">Terraform</span> e{" "}
+                <span className="text-foreground font-semibold">Kubernetes</span>. 
+                Essa jornada me apresentou novas oportunidades e desafios fundamentais para meu crescimento profissional.
               </p>
               <p>
-                Além da atuação técnica, sou palestrante ativo na comunidade, mentor de profissionais em transição
-                de carreira e criador de conteúdo técnico para compartilhar conhecimento e experiências reais do dia a dia.
+                Minha caixa de ferramentas abrange plataformas de nuvem como <span className="text-foreground font-semibold">AWS</span>,{" "}
+                <span className="text-foreground font-semibold">Azure</span> e{" "}
+                <span className="text-foreground font-semibold">OCI</span>. Para automação de pipelines CI/CD, utilizo{" "}
+                <span className="text-foreground font-semibold">Azure DevOps</span>,{" "}
+                <span className="text-foreground font-semibold">GitLab</span>,{" "}
+                <span className="text-foreground font-semibold">Jenkins</span> e{" "}
+                <span className="text-foreground font-semibold">GitHub Actions</span>. 
+                Na infraestrutura como código, trabalho com <span className="text-foreground font-semibold">Terraform</span>,{" "}
+                <span className="text-foreground font-semibold">Bicep</span> e{" "}
+                <span className="text-foreground font-semibold">Ansible</span>. 
+                Para orquestração de microserviços, <span className="text-foreground font-semibold">Docker</span> e{" "}
+                <span className="text-foreground font-semibold">Kubernetes</span> são minhas escolhas principais. 
+                Utilizo <span className="text-foreground font-semibold">GitOps</span> com{" "}
+                <span className="text-foreground font-semibold">ArgoCD</span>, e tenho experiência sólida em sistemas{" "}
+                <span className="text-foreground font-semibold">Windows</span> e{" "}
+                <span className="text-foreground font-semibold">Linux</span>, 
+                além de habilidades em <span className="text-foreground font-semibold">Python</span> e{" "}
+                <span className="text-foreground font-semibold">PowerShell</span>.
+              </p>
+              <p>
+                Possuo expertise em monitoramento e observabilidade utilizando{" "}
+                <span className="text-foreground font-semibold">Prometheus</span>,{" "}
+                <span className="text-foreground font-semibold">Grafana</span>,{" "}
+                <span className="text-foreground font-semibold">Zabbix</span> e{" "}
+                <span className="text-foreground font-semibold">Datadog</span>. 
+                Meu compromisso é entregar soluções eficazes, modernas e alinhadas às melhores práticas do setor, 
+                contribuindo para um mundo mais conectado e inovador.
+              </p>
+              <p>
+                Além da atuação técnica, sou palestrante ativo e faço parte da organização da{" "}
+                <span className="text-foreground font-semibold">comunidade Azure Floripa</span>, 
+                onde ajudamos a disseminar e aprofundar o entendimento sobre soluções cloud. 
+                Também sou mentor de profissionais em transição de carreira e criador de conteúdo técnico no{" "}
+                <span className="text-foreground font-semibold">YouTube</span> e{" "}
+                <span className="text-foreground font-semibold">Spotify</span>, 
+                compartilhando conhecimento e experiências reais do dia a dia.
               </p>
               <p className="text-primary font-semibold italic text-xl mt-8">"Tecnologia é ponte, não barreira, e eu construo pontes todos os dias."</p>
             </div>
