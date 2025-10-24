@@ -155,6 +155,14 @@ const Mentorship = () => {
                 recrutadores e profissionais de alta relevância desejem trabalhar com você.
               </p>
             </Card>
+            <div className="flex justify-center mt-8">
+              <Button size="lg" asChild className="text-lg px-8 py-6">
+                <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
+                  Faça sua inscrição agora
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
