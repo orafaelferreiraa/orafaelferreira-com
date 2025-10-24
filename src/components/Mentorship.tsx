@@ -448,15 +448,12 @@ const Mentorship = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="text-lg px-8 py-6">
                 <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
-                  Faça sua inscrição agora
+                  Estou pronto!
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6">
-                <a href="https://www.linkedin.com/in/rafaelmartinferreira/" target="_blank" rel="noopener noreferrer">
-                  Fale comigo no LinkedIn
-                </a>
-              </Button>
+  
+   
             </div>
           </div>
         </div>
