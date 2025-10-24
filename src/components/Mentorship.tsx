@@ -158,7 +158,7 @@ const Mentorship = () => {
             <div className="flex justify-center mt-8">
               <Button size="lg" asChild className="text-lg px-8 py-6">
                 <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
-                  Faça sua inscrição agora
+                  Quero me destacar em Cloud e DevOps
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
