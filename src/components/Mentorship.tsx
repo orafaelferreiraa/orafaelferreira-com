@@ -162,6 +162,19 @@ const Mentorship = () => {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
+            <div className="flex justify-center mb-8">
+              <Button size="lg" asChild className="text-lg px-8 py-6">
+                <a 
+                  href="https://forms.office.com/r/SMNmt7bXwQ" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Faça sua inscrição agora
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
+            
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-center mb-12">
               Por que me escolher como <span className="text-primary">mentor?</span>
             </h2>
