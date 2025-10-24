@@ -143,7 +143,7 @@ const Certifications = () => {
             Certificações são marcos importantes na minha jornada profissional. Elas representam o compromisso com a excelência 
             e a busca constante por conhecimento. Aqui estão algumas das certificações que conquistei ao longo dos anos, 
             cada uma delas refletindo o desejo de me aprimorar e oferecer o melhor em cada projeto. 
-            Vamos explorar juntos essa jornada de aprendizado e crescimento.
+            
           </p>
         </div>
 
