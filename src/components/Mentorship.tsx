@@ -292,6 +292,14 @@ const Mentorship = () => {
                 </p>
                 <p className="text-sm font-bold mt-2">Sem comprovação, será aplicado o valor cheio.</p>
               </div>
+              <div className="flex justify-center mt-6">
+                <Button size="lg" asChild className="text-lg px-8 py-6">
+                  <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
+                    Faça sua inscrição agora
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
             </Card>
           </div>
         </div>
