@@ -1,16 +1,10 @@
 import { Linkedin, Github, Youtube, Music } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
-  const scrollToAbout = () => {
-    const element = document.getElementById("about");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/orafaelferreiraa/", label: "LinkedIn", color: "text-blue-500" },
     { icon: Github, href: "https://github.com/orafaelferreiraa", label: "GitHub", color: "text-foreground" },
@@ -61,9 +55,11 @@ const Hero = () => {
             </div>
             
             <div>
-              <Button onClick={scrollToAbout} size="lg">
-                Saiba mais
-              </Button>
+              <Link to="/sobre">
+                <Button size="lg">
+                  Saiba mais
+                </Button>
+              </Link>
             </div>
           </div>
 
