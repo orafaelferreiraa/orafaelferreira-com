@@ -1,5 +1,34 @@
-import { Cloud, Code, TrendingUp, Lightbulb } from "lucide-react";
+import { Cloud, Code, TrendingUp, Lightbulb, Award, Users, Briefcase, Monitor } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 const About = () => {
+  const highlights = [
+    {
+      icon: Award,
+      title: "Experiência & Credenciais",
+      description: "Mais de 10 anos em tecnologia, 19 certificações técnicas, formado em Ciência da Computação",
+      details: "Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star, Green Software Champion"
+    },
+    {
+      icon: Briefcase,
+      title: "Especialização Técnica",
+      description: "Engenheiro DevOps especializado em arquiteturas Azure e transformação digital",
+      details: "Experiência em multinacionais, consultorias e ambientes corporativos internacionais"
+    },
+    {
+      icon: Monitor,
+      title: "Stack de Ferramentas",
+      description: "Azure, AWS, OCI | Terraform, Bicep, Ansible | Kubernetes, Docker | GitOps",
+      details: "CI/CD com Azure DevOps, GitLab, Jenkins, GitHub Actions | Observabilidade com Prometheus, Grafana, Datadog"
+    },
+    {
+      icon: Users,
+      title: "Comunidade & Conteúdo",
+      description: "Palestrante ativo, mentor e criador de conteúdo técnico",
+      details: "Organização da Azure Floripa | Podcast e conteúdo no YouTube e Spotify"
+    }
+  ];
+
   const skills = [{
     icon: Cloud,
     title: "Azure & Cloud",
@@ -20,75 +49,43 @@ const About = () => {
   return <section id="about" className="py-20 lg:py-32 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">
               Sobre <span className="text-primary">mim</span>
             </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Com <span className="text-foreground font-semibold">mais de uma década de experiência em tecnologia</span>,{" "}
-                <span className="text-foreground font-semibold">19 certificações técnicas</span> e formação em{" "}
-                <span className="text-foreground font-semibold">Ciência da Computação</span>, atuo como Engenheiro DevOps 
-                especializado em arquiteturas em nuvem Azure. Atualmente sou{" "}
-                <span className="text-foreground font-semibold">Microsoft MVP</span> (Microsoft Most Valuable Professional) &{" "}
-                <span className="text-foreground font-semibold">MCT</span> (Microsoft Certified Trainer),{" "}
-                <span className="text-foreground font-semibold">DevOps Institute Ambassador</span>,{" "}
-                <span className="text-foreground font-semibold">Alura Star</span> e{" "}
-                <span className="text-foreground font-semibold">Green Software Champion</span>.
-              </p>
-              <p>
-                Minha trajetória inclui experiência em empresas multinacionais, consultorias e ambientes corporativos internacionais. 
-                Nos últimos três anos, foquei intensamente em tecnologias de nuvem e DevOps, especializando-me em{" "}
-                <span className="text-foreground font-semibold">Microsoft Azure</span>,{" "}
-                <span className="text-foreground font-semibold">Azure DevOps</span>,{" "}
-                <span className="text-foreground font-semibold">Terraform</span> e{" "}
-                <span className="text-foreground font-semibold">Kubernetes</span>. 
-                Essa jornada me apresentou novas oportunidades e desafios fundamentais para meu crescimento profissional.
-              </p>
-              <p>
-                Minha caixa de ferramentas abrange plataformas de nuvem como <span className="text-foreground font-semibold">AWS</span>,{" "}
-                <span className="text-foreground font-semibold">Azure</span> e{" "}
-                <span className="text-foreground font-semibold">OCI</span>. Para automação de pipelines CI/CD, utilizo{" "}
-                <span className="text-foreground font-semibold">Azure DevOps</span>,{" "}
-                <span className="text-foreground font-semibold">GitLab</span>,{" "}
-                <span className="text-foreground font-semibold">Jenkins</span> e{" "}
-                <span className="text-foreground font-semibold">GitHub Actions</span>. 
-                Na infraestrutura como código, trabalho com <span className="text-foreground font-semibold">Terraform</span>,{" "}
-                <span className="text-foreground font-semibold">Bicep</span> e{" "}
-                <span className="text-foreground font-semibold">Ansible</span>. 
-                Para orquestração de microserviços, <span className="text-foreground font-semibold">Docker</span> e{" "}
-                <span className="text-foreground font-semibold">Kubernetes</span> são minhas escolhas principais. 
-                Utilizo <span className="text-foreground font-semibold">GitOps</span> com{" "}
-                <span className="text-foreground font-semibold">ArgoCD</span>, e tenho experiência sólida em sistemas{" "}
-                <span className="text-foreground font-semibold">Windows</span> e{" "}
-                <span className="text-foreground font-semibold">Linux</span>, 
-                além de habilidades em <span className="text-foreground font-semibold">Python</span> e{" "}
-                <span className="text-foreground font-semibold">PowerShell</span>.
-              </p>
-              <p>
-                Possuo expertise em monitoramento e observabilidade utilizando{" "}
-                <span className="text-foreground font-semibold">Prometheus</span>,{" "}
-                <span className="text-foreground font-semibold">Grafana</span>,{" "}
-                <span className="text-foreground font-semibold">Zabbix</span> e{" "}
-                <span className="text-foreground font-semibold">Datadog</span>. 
-                Meu compromisso é entregar soluções eficazes, modernas e alinhadas às melhores práticas do setor, 
-                contribuindo para um mundo mais conectado e inovador.
-              </p>
-              <p>
-                Além da atuação técnica, sou palestrante ativo e faço parte da organização da{" "}
-                <span className="text-foreground font-semibold">comunidade Azure Floripa</span>, 
-                onde ajudamos a disseminar e aprofundar o entendimento sobre soluções cloud. 
-                Também sou mentor de profissionais em transição de carreira e criador de conteúdo técnico no{" "}
-                <span className="text-foreground font-semibold">YouTube</span> e{" "}
-                <span className="text-foreground font-semibold">Spotify</span>, 
-                compartilhando conhecimento e experiências reais do dia a dia.
-              </p>
-              <p className="text-primary font-semibold italic text-xl mt-8">"Tecnologia é ponte, não barreira, e eu construo pontes todos os dias."</p>
-            </div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+              Engenheiro DevOps especializado em Cloud e Platform Engineering, 
+              com foco em transformação digital através de soluções inovadoras.
+            </p>
+            <p className="text-primary font-semibold italic text-lg">"Tecnologia é ponte, não barreira, e eu construo pontes todos os dias."</p>
           </div>
 
+          {/* Highlights Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            {highlights.map((highlight, index) => (
+              <Card key={highlight.title} className="group hover:border-primary/50 transition-all duration-300 animate-fade-in-up" style={{
+                animationDelay: `${index * 100}ms`
+              }}>
+                <CardContent className="p-6">
+                  <highlight.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-xl font-heading font-semibold mb-2">{highlight.title}</h3>
+                  <p className="text-muted-foreground mb-3">{highlight.description}</p>
+                  <Separator className="my-3" />
+                  <p className="text-sm text-muted-foreground/80">{highlight.details}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <Separator className="my-12" />
+
           {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold">
+              Áreas de <span className="text-primary">Especialização</span>
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {skills.map((skill, index) => <div key={skill.title} className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-in-up" style={{
             animationDelay: `${index * 100}ms`
           }}>
