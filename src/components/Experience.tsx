@@ -111,7 +111,7 @@ const Experience = () => {
             Minha Jornada Profissional
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl">
-            Nesta página quero compartilhar um pouco da minha jornada profissional e das experiências que moldaram meu caminho até aqui. 
+            Compartilhando um pouco da minha jornada profissional e das experiências que moldaram meu caminho até aqui. 
             Desde os primeiros passos como um Assistente Técnico até a função atual de Cloud Solution Architect Senior, cada etapa desempenhou 
             um papel fundamental na minha trajetória. Espero que minha história possa inspirar e motivar outros profissionais em 
             suas próprias jornadas.
