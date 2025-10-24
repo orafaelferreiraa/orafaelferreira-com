@@ -24,9 +24,9 @@ const Navigation = () => {
     { label: "Premiações", path: "/premiacoes" },
     { label: "Certificações", path: "/certificacoes" },
     { label: "Certificados", path: "/certificados" },
-    { label: "Blog", path: "/blog" },
     { label: "Palestras", path: "/palestras" },
     { label: "Experiências", path: "/experiencias" },
+    { label: "Blog", path: "/blog" },
     { label: "Recomendações", path: "/recomendacoes" },
   ];
 
