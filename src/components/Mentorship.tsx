@@ -437,13 +437,15 @@ const Mentorship = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6">
-                <a 
-                  href="https://www.linkedin.com/in/rafaelmartinferreira/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                </a>
+            <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6">
+              <a 
+                href="https://www.linkedin.com/in/rafaelmartinferreira/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Fale comigo no LinkedIn
+              </a>
+            </Button>
             </div>
           </div>
         </div>
