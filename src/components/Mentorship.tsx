@@ -166,7 +166,9 @@ const Mentorship = () => {
               Por que me escolher como <span className="text-primary">mentor?</span>
             </h2>
             
-            <div className="mb-12 rounded-lg overflow-hidden"> 
+            <div className="mb-12 rounded-lg overflow-hidden">
+              <img 
+                src="https://github.com/user-attachments/assets/31de9589-10e7-47a6-8012-83a00888a5cf"
                 alt="Rafael Martin - Microsoft MVP e Cloud Solution Architect"
                 className="w-full h-auto"
               />
