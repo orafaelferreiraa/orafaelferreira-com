@@ -1,5 +1,6 @@
 import { ArrowDown, Linkedin, Github, Youtube, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
@@ -11,10 +12,10 @@ const Hero = () => {
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://www.linkedin.com/in/orafaelferreiraa/", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com/orafaelferreiraa", label: "GitHub" },
-    { icon: Youtube, href: "https://www.youtube.com/@LowOps-Channel", label: "YouTube" },
-    { icon: Music, href: "https://open.spotify.com/show/0U4kcZT2Cwn4CqQGg4Ywcj?si=77fbd9161ea246e6&nd=1&dlsi=6f57fcd882ad4cf8", label: "LowOpsCast" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/orafaelferreiraa/", label: "LinkedIn", color: "text-blue-500" },
+    { icon: Github, href: "https://github.com/orafaelferreiraa", label: "GitHub", color: "text-foreground" },
+    { icon: Youtube, href: "https://www.youtube.com/@LowOps-Channel", label: "YouTube", color: "text-red-500" },
+    { icon: Music, href: "https://open.spotify.com/show/0U4kcZT2Cwn4CqQGg4Ywcj?si=77fbd9161ea246e6&nd=1&dlsi=6f57fcd882ad4cf8", label: "LowOpsCast", color: "text-green-500" },
   ];
 
   return (
@@ -40,19 +41,22 @@ const Hero = () => {
             </p>
             
             {/* Social Links */}
-            <div className="flex gap-4 justify-center lg:justify-start">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl">
               {socialLinks.map((social) => (
-                <Button
+                <a
                   key={social.label}
-                  variant="outline"
-                  size="icon"
-                  asChild
-                  className="hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
                 >
-                  <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
-                    <social.icon className="h-5 w-5" />
-                  </a>
-                </Button>
+                  <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 hover:border-primary">
+                    <CardContent className="flex flex-col items-center justify-center p-6 gap-3">
+                      <social.icon className={`h-8 w-8 ${social.color} transition-transform group-hover:scale-110`} />
+                      <span className="text-sm font-medium text-center">{social.label}</span>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
             
