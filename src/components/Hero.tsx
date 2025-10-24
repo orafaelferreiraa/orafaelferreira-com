@@ -1,4 +1,4 @@
-import { ArrowDown, Linkedin, Github, Youtube, Music } from "lucide-react";
+import { Linkedin, Github, Youtube, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
@@ -61,9 +61,8 @@ const Hero = () => {
             </div>
             
             <div>
-              <Button onClick={scrollToAbout} size="lg" className="group">
+              <Button onClick={scrollToAbout} size="lg">
                 Saiba mais
-                <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
               </Button>
             </div>
           </div>
@@ -82,10 +81,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-6 w-6 text-primary" />
-      </div>
     </section>
   );
 };
