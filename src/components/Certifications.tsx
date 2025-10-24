@@ -192,17 +192,6 @@ const Certifications = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center animate-fade-in">
-          <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 inline-block">
-            <CardContent className="p-6">
-              <p className="text-muted-foreground">
-                Espero que tenham gostado deste post sobre minhas certificações e que ele tenha inspirado vocês a buscar suas 
-                próprias certificações para crescimento profissional. Se tiverem perguntas ou quiserem compartilhar suas próprias 
-                experiências, vamos continuar aprendendo e crescendo juntos!
-              </p>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
