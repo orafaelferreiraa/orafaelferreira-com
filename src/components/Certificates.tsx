@@ -548,20 +548,6 @@ const Certificates = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Certificados de Treinamentos, Cursos e Eventos
           </h1>
-          <div className="max-w-4xl mx-auto space-y-4 text-muted-foreground text-left md:text-center">
-            <p>
-              Em minha jornada profissional, ao longo dos anos, tive a incrível oportunidade de participar de diversos cursos, 
-              treinamentos, eventos e palestras que moldaram o profissional que sou hoje. Cada certificado conquistado e cada 
-              momento de aprendizado foram de imensa importância, não apenas para o meu crescimento na área, mas também para 
-              a construção da minha identidade profissional.
-            </p>
-            <p>
-              Cada curso frequentado foi um mergulho em novos conhecimentos, uma chance de aprimorar minhas habilidades e de 
-              estar atualizado com as mais recentes tendências da minha área de atuação. As certificações, por sua vez, 
-              representam a validação desses conhecimentos adquiridos, sendo um marco importante em minha carreira.
-            </p>
-            <p>Ao compartilhar essa coleção de certificados, cursos, eventos e palestras, meu objetivo é demonstrar o comprometimento contínuo com o aprendizado e o desenvolvimento. Cada experiência representou um degrau em minha jornada, e todas juntas formam o alicerce sólido sobre o qual construí minha carreira.</p>
-          </div>
         </div>
 
         <div className="mb-12">
