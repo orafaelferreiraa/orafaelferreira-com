@@ -116,6 +116,7 @@ const Mentorship = () => {
     { name: "Mentoria Cloud Azure e DevOps Individual", price: "R$ 1.000" },
     { name: "Revisão de Perfil no LinkedIn", price: "R$ 200" },
     { name: "Template", price: "R$ 50" },
+    { name: "Combo Completo (todos os 3 serviços)", price: "R$ 1.250 → R$ 890" },
   ];
 
   const discountsByProfile = [
@@ -167,13 +168,7 @@ const Mentorship = () => {
               Por que me escolher como <span className="text-primary">mentor?</span>
             </h2>
 
-            <div className="mb-12 rounded-lg overflow-hidden">
-              <img
-                src="https://github.com/user-attachments/assets/31de9589-10e7-47a6-8012-83a00888a5cf"
-                alt="Rafael Martin - Microsoft MVP e Cloud Solution Architect"
-                className="w-full h-auto"
-              />
-            </div>
+            <div className="mb-12 rounded-lg overflow-hidden"></div>
 
             <p className="text-lg text-muted-foreground text-center mb-12 leading-relaxed">
               Reúno experiências sólidas que me posicionam como referência no setor de Cloud e DevOps. Alguns destaques
