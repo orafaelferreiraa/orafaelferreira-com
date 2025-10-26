@@ -13,11 +13,70 @@ export const articles: Article[] = [
   {
     slug: "azure-backup-virtual-machines",
     title: "Azure Backup should be enabled for Virtual Machines",
-    excerpt: "Visão Geral sobre Azure Backup e como implementar políticas de backup para máquinas virtuais no Azure.",
-    content: "# Azure Backup should be enabled for Virtual Machines\n\n## Visão Geral\n\nO Azure Backup é um serviço essencial para proteger suas máquinas virtuais contra perda de dados, desastres e ataques de ransomware. Neste artigo, vamos explorar como implementar políticas de backup eficientes para VMs no Azure.\n\n## Por que usar Azure Backup?\n\n1. **Proteção de Dados**: Garante que seus dados estejam seguros e recuperáveis\n2. **Compliance**: Atende requisitos regulatórios de retenção de dados\n3. **Economia**: Otimiza custos com armazenamento de backup\n4. **Automação**: Políticas automáticas de backup e retenção\n\n## Implementação\n\nPara habilitar o Azure Backup em suas VMs, siga estas etapas:\n\n1. Crie um Recovery Services Vault\n2. Configure as políticas de backup\n3. Selecione as VMs para backup\n4. Monitore e gerencie os backups\n\n## Melhores Práticas\n\n- Implemente backup incremental para otimizar custos\n- Configure alertas para falhas de backup\n- Teste regularmente a restauração de dados\n- Mantenha backups em diferentes regiões geográficas",
+    excerpt: "Vamos explorar por que a policy Azure Backup should be enabled for Virtual Machines é essencial em ambientes corporativos, seus riscos, compliance e como aplicá-la na prática.",
+    content: `![](https://miro.medium.com/v2/resize:fit:700/0*8NRG_bHC56X8iP_I.png)
+
+## Visão Geral
+
+Vamos explorar por que a policy **"Azure Backup should be enabled for Virtual Machines"** é essencial em ambientes corporativos. Como continuação dos fundamentos de Azure Policy, vamos detalhar os riscos de não ter backup automático em VMs, o funcionamento técnico dessa policy, sua relação com boas práticas e compliance (Azure Security Benchmark, ISO 27001, LGPD, GDPR, CMMC) e como aplicá-la na prática para melhorar a continuidade de negócios.
+
+## Riscos de não habilitar backup em máquinas virtuais
+
+Não realizar backups automáticos de máquinas virtuais pode ocasionar riscos significativos. Em caso de falhas, erro humano ou ataque cibernético, uma VM sem backup pode resultar em **perda irreversível de dados**, comprometendo a integridade e disponibilidade das informações e interrompendo operações críticas do negócio.
+
+**Alguns riscos reais de não ter backup habilitado em VMs incluem:**
+
+- **Perda de Dados e Impacto Financeiro:** Dados armazenados apenas no disco da VM ficam suscetíveis a falhas. Um colapso de disco ou exclusão acidental pode significar perda permanente de informações valiosas, gerando prejuízos financeiros e operacionais.
+- **Continuidade do Negócio Comprometida:** Sem backups, a recuperação de uma VM crítica pode ser inviável, resultando em **downtime prolongado** e possíveis violações de SLAs.
+- **Ataques de Ransomware:** VMs sem backup tornam a empresa mais vulnerável. Com backups, é possível restaurar o sistema ao estado pré-ataque. O Azure Backup oferece recursos de segurança como Soft Delete e MFA.
+- **Compliance e Reputação:** A ausência de backup pode gerar não-conformidade com normas de proteção de dados. Um incidente pode resultar em multas regulatórias e danificar a reputação da empresa.
+
+## Como funciona a Azure Policy "Azure Backup should be enabled for Virtual Machines"
+
+Essa Azure Policy é uma definição built-in da Microsoft criada para garantir que as VMs tenham backup habilitado. Trata-se de uma policy do tipo **AuditIfNotExists** (modo **Indexed**), ou seja, **não** impede a criação da VM, mas **audita** o ambiente e **marca como não conformes** as VMs que não possuam item de backup registrado em um **Recovery Services Vault**.
+
+![](https://miro.medium.com/v2/resize:fit:700/0*z3NWp1islBRt6zDL.png)
+
+## Detalhes técnicos principais
+
+- **Modo e Efeito:** Funciona em modo Indexed e o efeito padrão é AuditIfNotExists. Para cada recurso do tipo Microsoft.Compute/virtualMachines, a policy verifica a existência de um recurso de backup.
+- **Condição:** Aplica-se a todas as VMs, exceto VMs geradas por serviços gerenciados como Azure Databricks e Azure OpenShift.
+- **Checagem de Compliance:** Caso a VM não esteja em um cofre de backup, a policy gera a não-conformidade.
+- **Aplicação em Escala:** Ao atribuí-la no nível de Subscription ou Resource Group, a policy auditará continuamente VMs novas e existentes.
+
+## Alinhamento com melhores práticas e benchmarks de segurança
+
+Habilitar backups automáticos em VMs é tanto uma recomendação de boas práticas quanto um requisito em diversos frameworks de segurança e conformidade:
+
+- **Azure Security Benchmark (v3)** - BR-1 Backup and Recovery
+- **ISO/IEC 27001:2013** - A.12.3.1 Backup de informações
+- **LGPD** - Art. 46 Segurança da Informação
+- **GDPR** - Art. 32(1)© Segurança do Processamento
+- **CMMC** - RE.2.137 & RE.3.139 Recovery
+
+![](https://miro.medium.com/v2/resize:fit:700/0*tesAni3WiD1rkghX.png)
+
+## Continuidade de negócios e recuperação de desastres
+
+Em termos de **Disaster Recovery (DR)** e **Business Continuity (BC)**, ter backups habilitados para VMs é essencial. Essa policy automatiza a garantia de que as VMs tenham backup, alinhando-se a **RTO** (Recovery Time Objective) e **RPO** (Recovery Point Objective) definidos pela empresa.
+
+- **RPO:** Quantidade aceitável de perda de dados em termos de tempo.
+- **RTO:** Tempo necessário para restaurar um sistema após falha.
+- **Recuperação Granular:** Possível restaurar a VM inteira ou apenas arquivos específicos.
+- **Cross-Region Restore:** Suporta restauração cruzada entre regiões.
+
+![](https://miro.medium.com/v2/resize:fit:700/0*3feuWhno8Kfg1wqg.png)
+
+## Aplicação prática e remediação
+
+Identificar VMs sem backup é só o primeiro passo. O próximo é **habilitar o Azure Backup** via Portal, Terraform ou Azure Policy automatizada.
+
+![](https://miro.medium.com/v2/resize:fit:700/0*Q1dB1g1h1Td25iq8.png)
+
+Com backup habilitado, a VM passa a estar em conformidade com a policy e protegida contra perda de dados.`,
     date: "2025-06-30",
     category: "Azure",
-    readTime: "8 min",
+    readTime: "13 min",
     mediumUrl: "https://orafaelferreiraa.medium.com/azure-backup-should-be-enabled-for-virtual-machines-3ced54449178"
   },
   {
