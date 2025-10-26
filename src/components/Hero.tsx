@@ -1,6 +1,4 @@
 import { Linkedin, Github, Youtube, Music } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
 
@@ -52,14 +50,6 @@ const Hero = () => {
                   </Card>
                 </a>
               ))}
-            </div>
-            
-            <div>
-              <Link to="/sobre">
-                <Button size="lg">
-                  Saiba mais
-                </Button>
-              </Link>
             </div>
           </div>
 

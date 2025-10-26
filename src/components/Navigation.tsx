@@ -19,7 +19,6 @@ const Navigation = () => {
 
   const navItems = [
     { label: "Início", path: "/" },
-    { label: "Sobre", path: "/sobre" },
     { label: "Mentoria", path: "/mentoria" },
     { label: "Premiações", path: "/premiacoes" },
     { label: "Certificações", path: "/certificacoes" },
