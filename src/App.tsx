@@ -11,6 +11,7 @@ import Premiacoes from "./pages/Premiacoes";
 import Certificacoes from "./pages/Certificacoes";
 import Certificados from "./pages/Certificados";
 import Blog from "./pages/Blog";
+import ArtigoDetalhes from "./pages/ArtigoDetalhes";
 import Palestras from "./pages/Palestras";
 import Experiencias from "./pages/Experiencias";
 import Recomendacoes from "./pages/Recomendacoes";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/certificacoes" element={<Certificacoes />} />
             <Route path="/certificados" element={<Certificados />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/artigos/:slug" element={<ArtigoDetalhes />} />
             <Route path="/palestras" element={<Palestras />} />
             <Route path="/experiencias" element={<Experiencias />} />
             <Route path="/recomendacoes" element={<Recomendacoes />} />
