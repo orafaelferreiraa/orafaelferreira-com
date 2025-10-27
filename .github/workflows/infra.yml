@@ -5,10 +5,12 @@ on:
     branches: [ main ]
     paths:
       - 'infra/**'
+      - '.github/workflows/infra.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'infra/**'
+      - '.github/workflows/infra.yml'
 
 permissions:
   id-token: write   # for OIDC auth to Azure
