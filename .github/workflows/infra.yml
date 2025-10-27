@@ -1,0 +1,104 @@
+name: infra
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'infra/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'infra/**'
+
+permissions:
+  id-token: write   # for OIDC auth to Azure
+  contents: write   # allow pushing terraform-docs updates
+
+jobs:
+  terraform:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Terraform Init
+        run: terraform -chdir=infra init
+
+      - name: Terraform Format
+        run: terraform -chdir=infra fmt -recursive
+
+      - name: Terraform Validate
+        run: terraform -chdir=infra validate
+
+      - name: Generate terraform docs (PR)
+        if: github.event_name == 'pull_request'
+        uses: terraform-docs/gh-actions@v1.3.0
+        with:
+          working-dir: infra
+          output-file: README.md
+          output-method: inject
+          git-push: false
+
+      - name: Terraform Plan (PRs)
+        if: github.event_name == 'pull_request'
+        run: terraform -chdir=infra plan -input=false
+
+      - name: Terraform Apply (main)
+        if: github.event_name == 'push'
+        run: terraform -chdir=infra apply -auto-approve -input=false
+
+      - name: Generate terraform docs and push (main)
+        if: github.event_name == 'push'
+        uses: terraform-docs/gh-actions@v1.3.0
+        with:
+          working-dir: infra
+          output-file: README.md
+          output-method: inject
+          git-push: true
+          git-commit-message: 'chore(infra): update terraform docs'
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Terraform Infra Summary";
+            echo "";
+            echo "- Event: ${{ github.event_name }}";
+            echo "- Ref: ${{ github.ref }}";
+            echo "- Actor: ${{ github.actor }}";
+            echo "- Backend: \`stostateorafael/statetf/infra.terraform.tfstate\` (RG: rg-site)";
+            if [ "${{ github.event_name }}" = "push" ]; then
+              echo "";
+              echo "### Terraform Outputs";
+              echo '```';
+              terraform -chdir=infra output || true;
+              echo '```';
+            else
+              echo "";
+              echo "### Plan";
+              echo "Plano executado nos passos anteriores. Consulte os logs do job para detalhes.";
+            fi;
+            echo "";
+            echo "### Docs";
+            echo "- terraform-docs injetado no infra/README.md (push em main).";
+          } >> "$GITHUB_STEP_SUMMARY"

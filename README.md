@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# rafael-builds-bridges
 
-## Project info
+Portfólio/SPA em Vite + React + TypeScript, hospedado na Azure Static Web Apps com CI/CD via GitHub Actions e infraestrutura em Terraform.
 
-**URL**: https://lovable.dev/projects/0c23e12a-20c9-459e-a90c-3e0f6022bb8c
+## stack
 
-## How can I edit this code?
+- Vite, React, TypeScript, TailwindCSS, shadcn/ui
+- Azure Static Web Apps (SWA) para hosting
+- Terraform (infra/) com state remoto em Azure Storage
+- GitHub Actions: deploy do app e provisionamento da infra
 
-There are several ways of editing your application.
+## desenvolvimento local
 
-**Use Lovable**
+Requisitos: Node.js 20+
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0c23e12a-20c9-459e-a90c-3e0f6022bb8c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build de produção:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## deploy do app (SWA)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+O deploy é automático no push para `main` quando arquivos do app mudam (`src/`, `public/`, `index.html`, configs). Workflow: `.github/workflows/deploy-app.yml`.
 
-## What technologies are used for this project?
+Pré-requisito: criar o recurso SWA (via Terraform) e adicionar o secret no repositório:
+- `AZURE_STATIC_WEB_APPS_API_TOKEN` (token de deployment do SWA)
 
-This project is built with:
+## infraestrutura (Terraform)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Código em `infra/` provisiona:
+- Resource Group
+- Static Web App (SWA)
 
-## How can I deploy this project?
+State remoto em Azure Storage (backend `azurerm`). Configure no `terraform init` com:
 
-Simply open [Lovable](https://lovable.dev/projects/0c23e12a-20c9-459e-a90c-3e0f6022bb8c) and click on Share -> Publish.
+```bash
+terraform init \
+	-backend-config="resource_group_name=<rg-do-state>" \
+	-backend-config="storage_account_name=<statename>" \
+	-backend-config="container_name=tfstate" \
+	-backend-config="key=infra.terraform.tfstate"
+```
 
-## Can I connect a custom domain to my Lovable project?
+Execução local:
 
-Yes, you can!
+```bash
+terraform plan -chdir=infra -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
+terraform apply -chdir=infra -auto-approve -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Pipeline de infra: `.github/workflows/infra.yml`
+- Roda apenas quando `infra/**` muda (push/PR)
+- Autenticação Azure por OIDC (adicione os secrets: `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`)
+- Executa `init/fmt/validate/plan/apply`
+- Gera e injeta documentação com `terraform-docs` automaticamente no `infra/README.md` (commita no push)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## domínios e HTTPS
+
+Configure domínio custom e TLS diretamente no recurso do SWA após o provisionamento.
+
+## notas
+
+- Arquivos de Docker foram descontinuados (não necessários para SWA).
+- A pasta `infra/` só dispara pipeline quando for alterada; o app só quando os arquivos do site mudarem.

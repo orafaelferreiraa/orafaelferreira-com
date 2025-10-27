@@ -1,0 +1,81 @@
+name: deploy-app
+
+on:
+  # Dispara em pushes no main quando arquivos do app mudarem
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'bun.lockb'
+      - 'tsconfig*.json'
+      - 'vite.config.ts'
+      - 'tailwind.config.ts'
+      - 'postcss.config.js'
+      - 'eslint.config.js'
+      - 'tsconfig.node.json'
+      - '.github/workflows/deploy-app.yml'
+    paths-ignore:
+      - 'infra/**'
+      - '.github/workflows/infra.yml'
+  
+  # Dispara em PRs
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - 'infra/**'
+      - '.github/workflows/infra.yml'
+  
+  # Dispara automaticamente quando o workflow 'infra' completa com sucesso
+  workflow_run:
+    workflows: ["infra"]
+    types:
+      - completed
+    branches: [ main ]
+
+jobs:
+  build_and_deploy:
+    # Só roda se:
+    # - for push/PR normal do app OU
+    # - workflow_run do infra completou com sucesso
+    if: |
+      (github.event_name == 'push' || github.event_name == 'pull_request') ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps (npm ci if lockfile exists)
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+      - name: Build app
+        run: npm run build
+
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: 'upload'
+          app_location: 'dist'
+          skip_app_build: true
+
+  close_pr_preview:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close PR Preview
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: 'close'
