@@ -44,7 +44,10 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Terraform Init
-        run: terraform -chdir=infra init
+        run: |
+          terraform -chdir=infra init \
+            -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
+            -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
 
       - name: Terraform Format
         run: terraform -chdir=infra fmt -recursive

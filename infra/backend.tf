@@ -8,5 +8,6 @@ terraform {
     
     # Usar Managed Identity para autenticação
     use_msi              = true
+    # Subscription e Tenant precisam ser passados via variáveis de ambiente ou backend-config
   }
 }
