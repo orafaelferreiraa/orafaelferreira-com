@@ -6,7 +6,7 @@ terraform {
     container_name       = "statetf"
     key                  = "infra.terraform.tfstate"
     
-    # Usar Azure AD auth (OIDC do GitHub via azure)
-    use_azuread_auth     = true
+    # Usar Managed Identity para autenticação
+    use_msi              = true
   }
 }
