@@ -29,7 +29,7 @@ const Mentorship = () => {
     },
     {
       icon: Award,
-      text: "Formação em Ciência da Computação e +18 certificações técnicas relevantes",
+      text: "Formação em Ciência da Computação e +19 certificações técnicas relevantes",
       link: "https://orafaelferreira.com/certificacoes/",
     },
     {
