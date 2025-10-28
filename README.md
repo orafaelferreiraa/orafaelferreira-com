@@ -51,8 +51,10 @@ terraform init \
 Execução local:
 
 ```bash
-terraform plan -chdir=infra -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
-terraform apply -chdir=infra -auto-approve -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
+cd infra
+terraform plan -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
+terraform apply -auto-approve -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
+cd -
 ```
 
 Pipeline de infra: `.github/workflows/infra.yml`

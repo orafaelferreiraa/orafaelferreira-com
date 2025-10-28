@@ -24,6 +24,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: infra
 
     steps:
       - name: Checkout
@@ -45,15 +46,15 @@ jobs:
 
       - name: Terraform Init
         run: |
-          terraform -chdir=infra init \
+          terraform init \
             -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
             -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
 
       - name: Terraform Format
-        run: terraform -chdir=infra fmt -recursive
+        run: terraform fmt -recursive
 
       - name: Terraform Validate
-        run: terraform -chdir=infra validate
+        run: terraform validate
 
       - name: Generate terraform docs (PR)
         if: github.event_name == 'pull_request'
@@ -66,11 +67,11 @@ jobs:
 
       - name: Terraform Plan (PRs)
         if: github.event_name == 'pull_request'
-        run: terraform -chdir=infra plan -input=false
+        run: terraform plan -input=false
 
       - name: Terraform Apply (main)
         if: github.event_name == 'push'
-        run: terraform -chdir=infra apply -auto-approve -input=false
+        run: terraform apply -auto-approve -input=false
 
       - name: Generate terraform docs and push (main)
         if: github.event_name == 'push'
@@ -96,7 +97,7 @@ jobs:
               echo "";
               echo "### Terraform Outputs";
               echo '```';
-              terraform -chdir=infra output || true;
+              terraform output || true;
               echo '```';
             else
               echo "";

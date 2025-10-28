@@ -14,13 +14,13 @@ O state do Terraform é armazenado em uma Storage Account (container de blobs). 
 
 Recomendado no Storage Account:
 - Habilitar versioning de blobs e soft delete para proteção do state.
-- Usar RBAC com Azure Login (OIDC/CLI), sem chaves de conta (backend usa `use_azuread_auth = true`).
+ - Usar RBAC com Azure Identity, sem chaves de conta (backend usa `use_msi = true` quando executado em ambiente Azure). Em runners hospedados do GitHub, utilize identidade federada (OIDC) em vez de MSI.
 
 Execução local (requer Azure CLI login):
 
 ```bash
 az login
-terraform -chdir=infra init
+terraform init
 ```
 
 ## Variables
