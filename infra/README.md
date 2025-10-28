@@ -77,6 +77,7 @@ Além disso, a pipeline:
 - Gera a documentação com `terraform-docs`.
 - Commita e faz push das mudanças do README de docs somente em pushes (não em PRs).
 
+
 ## App CI/CD (deploy-app.yml)
 
 - Triggers on site changes (src/, public/, configs) and ignores `infra/`.
