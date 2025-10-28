@@ -27,6 +27,12 @@ const Talks = () => {
       siteUrl: "https://mvpconf.com.br/",
     },
     {
+      title: "Trabalhando para o Exterior: Realidade, Desafios e Oportunidades",
+      event: "1ª Semana Acadêmica de ADS - IFSC",
+      date: "2025-11-06",
+      location: "IFSC",
+    },
+    {
       title: "Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source",
       event: "DevOpsDays Porto Alegre 2025",
       date: "2025-11-29",
