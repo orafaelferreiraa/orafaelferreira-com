@@ -1,0 +1,78 @@
+import { Article } from './types';
+
+export const article: Article = {
+  slug: "talk-tdc",
+  title: "Plataformização de Arquitetura de Dados com Backstage.io e IAC - TDC Florianópolis - Trilha Arquitetura de Dados 2024",
+  excerpt: "No TDC Florianópolis 2024, tive a honra de palestrar na Trilha de Arquitetura de Dados, ao lado de meu amigo Cláudio Filipe Lima Rapôso.",
+  content: `
+#### Introdução
+No TDC Florianópolis 2024, tive a honra de palestrar na [Trilha de Arquitetura de Dados](https://thedevconf.com/tdc/2024/florianopolis/trilha-arquitetura-de-dados), ao lado de meu amigo [Cláudio Filipe Lima Rapôso](https://www.linkedin.com/in/cfraposo/). Nossa palestra focou na Plataformização de Arquitetura de Dados utilizando Backstage.io e IaC (Infrastructure as Code), trazendo a importância de uma gestão eficiente e automatizada na infraestrutura.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/00.jpg)
+
+#### Data e Local
+- **Data:** Sexta-feira, 14 de Junho de 2024
+- **Local:** CentroSul, Av. Governador Gustavo Richard, 850 / Centro Florianópolis - SC
+
+#### O Evento
+O [TDC](https://thedevconf.com/tdc/2024/index.html) é um evento de destaque no cenário tecnológico brasileiro, oferecendo um local para profissionais de TI compartilharem conhecimentos, experiências e inovações.
+
+#### O Tema da Palestra
+Nossa apresentação abordou a plataformização da arquitetura de dados com Backstage.io e Terraform, ferramentas essenciais para a centralização e automação dos serviços relacionados aos dados.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/01.jpg)
+
+#### Análise da Palestra
+A palestra explorou a visão e os desafios da criação de uma plataforma unificada para gerenciar infraestruturas de cloud, destacando a complexidade crescente dessas arquiteturas e a necessidade de consistência e eficiência entre múltiplas equipes. Demonstramos como o uso de Infraestrutura como Código (IaC) com ferramentas como Terraform e Backstage.io pode facilitar essa unificação e governança centralizada.
+
+Os principais pontos abordados foram:
+- **Visão e Desafios**: Planejamento eficiente para integração na nuvem.
+- **Ferramentas Mágicas**: Integração do Backstage.io com Terraform para suporte multi-cloud, automação e eficiência.
+- **Escolha do Ferramental**: Plataforma open-source que facilita a criação de templates dinâmicos para desenvolvimento, infraestruturas e DevOps.
+- **Benefícios**: Aumento na produtividade, redução de erros humanos, aceleração no time-to-market e satisfação do cliente.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/03.JPG)
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/04.JPG)
+
+- <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Plataformização de Arquitetura de Dados com Backstage.io e IAC](https://stoblobcertificados011.blob.core.windows.net/palestras/TDC.pdf)
+
+#### Momentos Destacados
+Durante a palestra, demonstramos casos práticos de como essas ferramentas podem simplificar e otimizar o fluxo de trabalho em projetos de dados. Compartilhamos insights sobre a integração de Backstage.io com Terraform para criar uma infraestrutura robusta e escalável, que pode ser gerida de forma eficiente.  E para quem se perguntou da qualidade das fotos, sim, é isso, tivemos um fotógrafo profissional ([Erivaldo Lopes](https://www.linkedin.com/in/erivaldolopes/))!
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/05.JPG)
+
+#### Reflexões e Aprendizados
+Palestrar no TDC Floripa foi uma experiência enriquecedora. Além de compartilhar conhecimento, tive a oportunidade de aprender com outros profissionais e expandir minha rede de contatos. A interação com o público foi dinâmica, com perguntas que geraram discussões profundas sobre os desafios e oportunidades na arquitetura de dados. 
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/06.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/07.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/08.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/09.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/10.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/11.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/12.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/13.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/14.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/15.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/16.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/17.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/18.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/19.JPG)
+
+#### Certificado
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/20.png)
+
+#### Conclusão
+Eventos como o TDC são cruciais para o avanço da tecnologia no Brasil, oferecendo uma plataforma para troca de conhecimentos e experiências. A trilha de Arquitetura de Dados, em particular, destacou-se por sua relevância e pelos insights valiosos compartilhados pelos palestrantes.
+
+Que venham os próximos desafios e oportunidades!
+
+---
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+  date: "2024-06-25",
+  category: "Registro Eventos Presenciais",
+  readTime: "3 min de leitura",
+  mediumUrl: ""
+};

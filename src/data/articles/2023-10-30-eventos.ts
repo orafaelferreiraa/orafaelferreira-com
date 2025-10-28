@@ -1,0 +1,94 @@
+import { Article } from './types';
+
+export const article: Article = {
+  slug: "eventos",
+  title: "Lista dos eventos de Tecnologia Presenciais que eu já fui",
+  excerpt: "Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências que tive participando de eventos de tecnologia presenciais. Esses eventos foram oportunidades únicas para aprender, fazer networking e me manter atualizado sobre as últimas tendências tecnológicas.",
+  content: `
+Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências que tive participando de eventos de tecnologia presenciais. Esses eventos foram oportunidades únicas para aprender, fazer networking e me manter atualizado sobre as últimas tendências tecnológicas. Vamos lá!
+
+## Agenda 2025
+
+| Mês | Evento |
+|-----|--------|
+| Out | [**8ª Edição Cultura DevOps - White Stone Dev Pedra Branca**](https://whitestonedev.com.br/#/eventos/8edicao) |
+| Out | [**Esquenta MVP CONF - Curitiba**](https://www.hubingressos.com.br/evento/mvpconfcuritiba) |
+| Set | [**TDC São Paulo (Trilha ARQUITETURA CLOUD) 2025**](https://thedevconf.com/tdc/2025/sao-paulo/trilha-arquitetura-cloud) |
+| Set | [**Encontro das comunidades AWS User Group Floripa + DevOps Floripa 2025**](https://www.meetup.com/aws-user-group-floripa/events/310698392/?eventOrigin=group_events_list) |
+| Set | [**devopsdays Curitiba 2025**](https://devopsdays.org/events/2025-curitiba/welcome/) |
+| Ago | [**Hacking na Web Day Florianópolis 2025**](https://www.sympla.com.br/evento/hnwd-florianopolis-2025/2960275?referrer=orafaelferreira.com) |
+| Jun | [**8° Meetup Cloud Native Santa Catarina**](https://community.cncf.io/events/details/cncf-cloud-native-santa-catarina-presents-8deg-meetup-cloud-native-santa-catarina/) |
+| Jun | [**Bio Hack em Floripa: ProgramEarth & GitHub**](https://www.meetup.com/gittogether-brasil/events/308158374/?slug=gittogether-brasil&eventId=308158374) |
+| Jun | [**Encontro da comunidade AWS User Group Florianópolis - Edição de Junho**](https://www.meetup.com/aws-user-group-floripa/events/308134123/?eventOrigin=group_upcoming_events) |
+| Mai | [**Global Azure 2025 – Edição Azure Floripa**](https://www.meetup.com/pt-BR/azure-floripa/events/306207034/) |
+| Abr | [**WhiteStone_dev - 7ª Edição Cripto - Especial Fênix**](https://www.sympla.com.br/evento/whitestone-dev-7-edicao-cripto-especial-fenix-a-retomada-da-comunidade-tech/2851067) |
+| Abr | [**Esquenta MVP Conf Blumenau**](https://www.hubingressos.com.br/evento/mvpconfb) |
+| Abr | [**SQL Saturday 2025 by Comunidado**](https://comunidado.com.br/) |
+
+
+## 2024
+
+| Mês | Evento |
+|-----|--------|
+| Nov | [**Code Island Cloud 2024**](https://cloud.codeisland.com.br/) |
+| Nov | [**DevOpsDays Florianópolis**](https://devopsdays.org/events/2024-florianopolis/welcome/) |
+| Nov | [**Tech Connection Floripa**](https://talkfloripa.com.br/) |
+| Out | [**Tftec ao Vivo 2024**](https://www.tftec.com.br/tftecaovivo-2024/) |
+| Out | [**Cloud Native SP #27 – Sustainability Day AWS**](https://community.cncf.io/events/details/cncf-cloud-native-sao-paulo-presents-27-cloud-native-sao-paulo-sustainability-day-na-aws/) |
+| Set | [**Codecon Summit 2024**](https://codecon.dev/summit/programacao) |
+| Jun | [**TDC 2024 – Trilha DevOps & SRE**](https://thedevconf.com/tdc/2024/florianopolis/trilha-devops-e-sre) |
+| Jun | [**TDC 2024 – Trilha Cloud**](https://thedevconf.com/tdc/2024/florianopolis/trilha-cloud) |
+| Jun | [**6º KuberTENes Birthday Bash SC**](https://community.cncf.io/events/details/cncf-cloud-native-santa-catarina-presents-6o-kubertenes-birthday-bash-santa-catarina/) |
+| Jun | [**Tech Connection Balneário Camboriú**](https://talkfloripa.com.br/grade) |
+| Mai | [**5º Cloud Native SC – Edição Floripa**](https://community.cncf.io/events/details/cncf-cloud-native-santa-catarina-presents-5o-cloud-native-santa-catarina-edicao-especial-floripa/) |
+| Mai | [**Immersion Day AWS + NTT DATA**](https://www.sympla.com.br/evento/immersion-day-aws-e-ntt-data/2398471) |
+| Mar | [**1º Meetup 2024 – Infosec Floripa**](https://www.eventbrite.com/e/1o-meetup-2024-infosec-floripa-tickets-860860014477) |
+| Mar | [**Meetup Codecon #02**](https://eventos.codecon.dev/meetup-codecon-fln-02/) |
+| Fev | [**KCD Brasil 2024**](https://community.cncf.io/events/details/cncf-kcd-brasil-presents-kcd-brasil-sao-paulo-2024/) |
+| Fev | [**2º Cloud Native Floripa Meetup**](https://community.cncf.io/events/details/cncf-cloud-native-floripa-presents-2o-cloud-native-floripa-meetup/) |
+| Fev | [**Meetup Codecon #01**](https://eventos.codecon.dev/meetup-codecon-floripa-01/) |
+
+
+## 2023
+
+| Mês | Evento |
+|-----|--------|
+| Dez | [**LINUXtips Meetup – Oracle**](https://www.youtube.com/live/RaMHnD3Ico4?app=desktop&si=s05HvlLHANQYv6bV) |
+| Dez | [**Cloud Futures by Magalu Cloud**](https://cloudfutures.tech/) |
+| Nov | [**14º Meetup DevOps Floripa**](https://www.meetup.com/devops-florianopolis/events/297529400/) |
+| Nov | [**Code Island Summit 2023**](https://summit.codeisland.com.br/) |
+| Nov | [**3º Meetup API Floripa**](https://www.sympla.com.br/evento/3-meetup-comunidade-api-floripa/2220166) |
+| Nov | [**DevOpsDays Florianópolis 2023**](https://devopsdays.org/events/2023-florianopolis/program) |
+| Nov | [**Proud Tech by Softplan**](https://www.proudtech.com.br/) |
+| Out | [**Codecon &lt;Feature&gt;**](https://www.codecon.dev/feature) |
+| Out | [**1º Cloud Native Floripa**](https://community.cncf.io/events/details/cncf-cloud-native-floripa-presents-1o-cloud-native-floripa/) |
+| Set | [**Tech Connection Florianópolis – TalkFloripa**](https://talkfloripa.com.br/tech-connection-fln) |
+| Ago | [**Platform Engineer Immersive Experience – LINUXtips**](https://www.linuxtips.io/platform-engineer-immersive-experience) |
+| Ago | [**AWS Summit São Paulo**](https://aws.amazon.com/pt/events/summits/sao-paulo/) |
+| Jun | [**TDC 2023 – Trilha Cloud**](https://thedevconf.com/tdc/2023/innovation/trilha-cloud) |
+| Jun | [**TDC 2023 – Trilha DevOps & SRE**](https://thedevconf.com/tdc/2023/innovation/trilha-cloud) |
+
+
+## Eventos anteriores
+
+| Data | Evento |
+|------|--------|
+| 2019/04 | [**FLISoL Bauru**](https://flisol.info/FLISOL2019/Brasil/Bauru) |
+| 2018/05 | [**VIII Jornada de Informática – USC**](https://unisagrado.edu.br/8jor-info) |
+| 2018/02 | [**Hackathon DevTalks**](https://fibbauru.br/site/conteudo/462-hackathon-evento-inedito-em-bauru-comeca-hoje-.html) |
+| 2017/10 | [**Circuito Finchers – Liderança & Gestão**](https://stoblobcertificados011.blob.core.windows.net/certificados/2017-10-Palestra.sobre.Liderança.Gestão.de.Pessoas-Finch.pdf) |
+
+
+---
+
+Esses eventos foram fundamentais para meu desenvolvimento profissional, permitindo-me aprender novas habilidades, fazer networking com profissionais da área e me manter atualizado sobre as últimas tendências tecnológicas. Espero que essa lista inspire outros a participar de eventos de tecnologia e aproveitar as oportunidades que eles oferecem.
+
+Se você tem alguma dúvida ou quer compartilhar suas próprias experiências em eventos de tecnologia, deixe um comentário abaixo. Vamos continuar aprendendo e crescendo juntos!
+
+**#Eventos #Tecnologia #DesenvolvimentoProfissional #Networking**
+`,
+  date: "2023-10-30",
+  category: "Registro Eventos Presenciais",
+  readTime: "3 min de leitura",
+  mediumUrl: ""
+};

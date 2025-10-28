@@ -1,0 +1,49 @@
+import { Article } from './types';
+
+export const article: Article = {
+  slug: "code-island24",
+  title: "Pipelines com Azure DevOps: Automatizando o (im)possível - Code Island Cloud 2024",
+  excerpt: "No último sábado, 23 de novembro de 2024, tive o prazer de participar como palestrante da segunda edição do Code Island Cloud, realizado na Unisul – Centro Florianópolis.",
+  content: `
+No último sábado, 23 de novembro de 2024, tive o prazer de participar como palestrante da segunda edição do **Code Island Cloud**, realizado na Unisul – Centro Florianópolis. O evento foi 100% presencial e trouxe à comunidade as últimas novidades em **Cloud**, abrangendo temas de **Dev, Data e DevOps**. Além disso, foi uma grande oportunidade para **networking** com profissionais apaixonados por tecnologia!
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/0.jpg)
+
+O evento contou com uma programação irada, com grandes nomes do cenário tech e proporcionando momentos de aprendizado e troca de experiências. Com minha palestra, **"Pipelines com Azure DevOps: Automatizando o (Im)possível"**, compartilhei insights e práticas para otimizar a automação de fluxos de trabalho em projetos modernos relacionados a Infraestrutura.
+
+## Sobre Minha Palestra
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/1.jpeg)
+
+Na minha apresentação, mostrei como utilizar o Azure DevOps para criar pipelines robustas e automatizar processos de deploy de infra. Alguns dos tópicos que discuti incluem:
+
+- **Estruturando Pipelines**: Teorioa de pipelines CI/CD.
+- **Automação Inteligente**: Boas práticas de integração de testes, builds e deploys automatizados.
+- **Casos Reais**: Exemplos práticos de projetos onde a automação simplificou processos complexos.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/2.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/3.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/4.jpeg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/5.jpeg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/6.jpeg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/7.jpg)
+
+## O Evento Como Um Todo
+
+Além da minha palestra, rolou talks sobre **Blockchain**, **Resiliência na AWS**, **Segurança em Nuvem**, **Inteligência Artificial Generativa**, e muito mais.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/8.jpeg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/9.jpeg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/10.jpg)
+
+Destaque também para o networking proporcionado pelo evento. Foi uma grande oportunidade para trocar ideias com os amigos de comunidade e profissionais de tecnoligia, compartilhar experiências valiosas sobre o dia a dia na área.
+
+---
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+`,
+  date: "2024-11-24",
+  category: "Registro Eventos Presenciais",
+  readTime: "2 min de leitura",
+  mediumUrl: ""
+};

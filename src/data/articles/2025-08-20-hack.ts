@@ -1,0 +1,76 @@
+import { Article } from './types';
+
+export const article: Article = {
+  slug: "hack",
+  title: "Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer - Hacking na Web Day Florianópolis 2025",
+  excerpt: "No último dia 16 de agosto de 2025, rolou em Florianópolis o HNWD (Hacking na Web Day), um dos eventos mais autênticos e relevantes da cena de hacking e segurança cibernética no Brasil.",
+  content: `
+# Cloud Moderna ANTI Ataque: minha experiência no HNWD Floripa 2025
+
+No último dia **16 de agosto de 2025**, rolou em Florianópolis o [**HNWD (Hacking na Web Day)**](https://www.sympla.com.br/evento/hnwd-florianopolis-2025/2960275?referrer=orafaelferreira.com&referrer=orafaelferreira.com), um dos eventos mais autênticos e relevantes da cena de hacking e segurança cibernética no Brasil. Essa edição aconteceu no Castelmar Hotel, reunindo especialistas, entusiastas e comunidades apaixonadas por segurança da informação.  
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/1.jpeg)
+
+O HNWD nasceu como um encontro feito *da comunidade para a comunidade*, e já virou referência nacional. Em 2025, a tour passou por **seis cidades brasileiras**, trazendo conteúdo de altíssimo nível, com palestras práticas, CTFs presenciais, além de muito networking e trocas intensas de experiência.  
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/00.JPG)
+
+## Minha palestra: blindagem DevOps em ambientes cloud
+
+Tive a honra de palestrar no **Auditório 2**, ao meio-dia, com o tema:  
+**"Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer"**.  
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/001.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/2.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/3.JPG)
+
+# Resumo da Talk
+
+Na palestra **Cloud Moderna ANTI Ataque: Blindagem DevOps Essencial**, apresentei duas frentes principais de segurança:
+
+## Parte 1 — Defesa em Camadas  
+
+Mostrei como proteger ambientes cloud com uma **arquitetura em múltiplas camadas**, utilizando os principais recursos nativos das clouds:  
+
+- **Identidade & Acesso**: IAM, RBAC, Zero Trust, MFA.  
+- **Perímetro**: WAF, CDN, VPN, Bastion, proteção DDoS.  
+- **Rede & Segmentação**: VNet/SG/NACL, isolamento de workloads.  
+- **Compute & Containers**: Defender, Inspector, OS Config, AKS/EKS/GKE.  
+- **Aplicações**: API Management, App Services, Gateways, Key Vault/Secrets.  
+- **Dados**: Criptografia, KMS, controle de chaves.  
+- **Monitoramento & Resposta**: SIEM (Sentinel, Security Hub, Chronicle), logs centralizados, automação de incidentes.  
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/4.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/5.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/6.jpg)
+
+## Parte 2 — Os 4Cs da Cloud Native Security  
+
+Conectando com o modelo da CNCF, mostrei como aplicar defesa de forma **Cloud Native**:  
+
+- **Cloud** → Governança, Policy, Defender for Cloud, Config, SCC.  
+- **Cluster** → Segurança em Kubernetes (RBAC, hardening, runtime visibility).  
+- **Container** → Scan de imagens, assinatura, execução não-root, OPA/Kyverno.  
+- **Código** → Shift Left, SAST/DAST, SCA, secret scanning, IaC seguro.  
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/7.JPG)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/8.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/9.JPG)
+
+O evento foi cheio de aprendizado. Tivemos palestras sobre **IA adversarial, XSS avançado, Kubernetes hacking, deepfakes, AWS hardening** e muito mais. Além disso, o espaço de comunidades e patrocinadores trouxe aquela vibe que só a cena de segurança brasileira tem: **colaboração acima da competição**.  
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/10.JPG)
+
+Quero agradecer a todos que participaram da minha palestra e trocaram ideias comigo durante o evento. Foi uma experiência incrível poder compartilhar práticas de blindagem em nuvem com tanta gente interessada em levar segurança a sério no dia a dia.  
+
+E claro: parabéns à organização do HNWD e a todos os apoiadores que tornam esse evento possível. É nítido que o hacking no Brasil está cada vez mais **forte, maduro e conectado**.  
+
+Nos vemos na próxima!  
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/11.png)
+
+- <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer](https://stoblobcertificados011.blob.core.windows.net/palestras/CloudModernaANTIAtaque.pdf)
+`,
+  date: "2025-08-20",
+  category: "Registro Eventos Presenciais",
+  readTime: "3 min de leitura",
+  mediumUrl: ""
+};

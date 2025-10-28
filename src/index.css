@@ -102,3 +102,22 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Estilos para artigos com código */
+@layer utilities {
+  .article-content pre {
+    @apply !bg-slate-900 !text-slate-100;
+  }
+  
+  .article-content code {
+    @apply !bg-slate-800 !text-slate-100;
+  }
+  
+  .article-content h4 {
+    @apply scroll-mt-20;
+  }
+  
+  .article-content img {
+    @apply mx-auto;
+  }
+}

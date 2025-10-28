@@ -1,0 +1,146 @@
+import { Article } from './types';
+
+export const article: Article = {
+  slug: "az-700",
+  title: "Projetar e Implementar Soluções de Rede no Azure - AZ-700",
+  excerpt: "Se você está querendo se aventurar no mundo das redes em nuvem, a certificação AZ-700 é o passaporte para provar que domina como projetar e implementar soluções de rede dentro do Microsoft Azure.",
+  content: `
+## Introdução
+
+Se você está querendo se aventurar no mundo das redes em nuvem, a **certificação AZ-700** é o passaporte para provar que domina como projetar e implementar soluções de rede dentro do Microsoft Azure.
+
+Depois de concluir o curso [*AZ-700 - Projetar e Implementar Soluções de Rede do Azure* do Higor Barbosa](https://www.udemy.com/course/az-700-vnet/), compilei aqui os principais aprendizados e boas práticas que realmente fazem diferença, tanto para quem administra ambientes corporativos quanto para quem busca aprofundar o domínio técnico em Azure Networking.
+
+
+## 1. Planejamento de Endereçamento IP
+
+Tudo começa com as redes.  
+Planeje suas **VNets e subnets** com cuidado: o Azure reserva sempre cinco endereços por subnet (do primeiro ao quarto e o último).  
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/01.png)
+
+
+## 2. Resolução de Nomes (DNS Público e Privado)
+
+- **Azure DNS:** gerencia domínios públicos com redundância global e desempenho via anycast.  
+- **Azure Private DNS:** resolve nomes internamente entre VNets privadas, integrando automaticamente registros das VMs.  
+- **Private DNS Resolver:** resolve consultas entre ambientes *on-premises* e Azure sem precisar expor tráfego para a internet.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/02.png)
+
+
+## 3. Conectividade e Roteamento de VNets
+
+1. **VNet Peering** – comunicação direta, rápida e segura.  
+2. **VPN Gateway** – conecta VNets entre regiões ou com ambiente local.  
+3. **UDR (User Defined Routes)** – define rotas personalizadas entre sub-redes.
+
+**Topologia Hub-and-Spoke**  
+Organize o ambiente para que o *hub* concentre segurança e conectividade. As *spokes* hospedam workloads isolados, conectados via peering ou WAN Virtual.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/03.png)
+
+## 4. NAT Gateway
+
+Quando suas VMs precisam de saída de internet com IP fixo, use o **Azure NAT Gateway**.  
+Ele evita exaustão de portas SNAT e garante previsibilidade em cenários de egress controlado.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/04.png)
+
+## 5. Monitoramento e Diagnóstico
+
+**Network Watcher** oferece:
+- *Connection Monitor*  
+- *IP Flow Verify*  
+- *Packet Capture*  
+- *NSG Flow Logs*
+
+Combine com **Azure Monitor** e **Log Analytics** para construir uma visão completa da rede, detectar gargalos e ativar alertas automáticos.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/05.png)
+
+## 6. VPN Site-to-Site e Ponto-a-Site
+
+**Site-to-Site (S2S):**
+- Conecta datacenters e VNets.  
+- Use gateways **route-based** e é possível, configuração ativa-ativa com BGP.  
+
+**Ponto-a-Site (P2S):**
+- Conexões individuais de dispositivos.  
+- Suporte a SSTP, IKEv2 e OpenVPN.  
+- Pode autenticar via certificados, RADIUS ou Entra ID (AAD).
+
+Essas opções permitem criar conectividade híbrida estável e segura entre diferentes ambientes.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/06.png)
+
+## 7. ExpressRoute e WAN Virtual
+
+Quando o assunto é conectividade privada e de alta performance:
+- **ExpressRoute** conecta seu ambiente local diretamente ao backbone do Azure.
+- **Azure Virtual WAN** centraliza e automatiza o roteamento global, integrando S2S, P2S, ER e VNets.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/07.png)
+
+## 8. Balanceadores de Carga e Entrega de Aplicações
+
+Camada 4 → **Azure Load Balancer**  
+Camada 7 → **Application Gateway (AppGW)**  
+Gerenciamento Global → **Traffic Manager** e **Azure Front Door**
+
+Cada serviço tem seu lugar:
+- **LB**: ideal para backend interno.  
+- **AppGW**: faz roteamento baseado em URL e HTTPS com WAF embutido.  
+- **Front Door**: CDN global + balanceamento inteligente entre regiões.  
+- **Traffic Manager**: DNS-based routing (latência, prioridade, geográfico).
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/08.png)
+
+## 9. Acesso Privado a Serviços PaaS
+
+Duas opções dominam:
+1. **Service Endpoints:** protegem o acesso a serviços PaaS via backbone, mas mantêm o recurso com IP público.  
+2. **Private Endpoints:** criam uma interface privada na sua VNet, isolando o tráfego totalmente.
+
+Hoje, o padrão corporativo é sempre **Private Endpoint**, mais seguro, mais fácil de auditar e compatível com políticas de compliance.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/09.png)
+
+## 10. Segurança de Rede no Azure
+
+Os blocos de segurança que mais fazem diferença no dia a dia:
+
+| Serviço | Função |
+|----------|--------|
+| **NSG (Network Security Group)** | Controle de tráfego em sub-redes e NICs |
+| **ASG (Application Security Group)** | Agrupamento lógico de VMs por aplicação |
+| **Azure Firewall** | Inspeção e regras centralizadas |
+| **Firewall Manager** | Políticas e governança em larga escala |
+| **WAF (Web Application Firewall)** | Proteção camada 7 contra ataques Web |
+| **DDoS Protection** | Mitigação automática de ataques volumétricos |
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/10.png)
+
+## 11. Conclusão
+
+Entender **endereçamento, conectividade, segurança e entrega de aplicações** te coloca em outro nível, não só tecnicamente, mas na forma de pensar na infraestrutura com sua resiliência e escalabilidade de rede.
+
+---
+
+### Referências oficiais
+
+- [Microsoft Learn — AZ-700: Design and Implement Azure Network Solutions](https://learn.microsoft.com/certifications/exams/az-700/)
+- [Microsoft Docs — Virtual Network Overview](https://learn.microsoft.com/azure/virtual-network/virtual-networks-overview)
+- [Azure Architecture Center — Hub-and-Spoke Network Topology](https://learn.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke)
+
+*Baseado no curso de Higor Barbosa na Udemy (2025).*
+
+
+- [2025-06 - AZ-700 - Projetar e Implementar Soluções de Rede do Azure](https://www.udemy.com/certificate/UC-49bfc006-aeb5-476d-8083-229aac73cd8f/)
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/certificado.png)`,
+  date: "2025-10-06",
+  category: "Artigos",
+  readTime: "4 min de leitura",
+  mediumUrl: ""
+};

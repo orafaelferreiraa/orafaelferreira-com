@@ -1,0 +1,62 @@
+import { Article } from './types';
+
+export const article: Article = {
+  slug: "sqlsat25",
+  title: "Pipelines com Azure DevOps: Automatizando o Provisionamento Seguro da sua infraestrutura na nuvem - SQL Saturday 2025 by Comunidado",
+  excerpt: "No último sábado, 5 de abril de 2025, tive o imenso prazer de participar como palestrante no SQL Saturday Joinville 2025, realizado na UNIVILLE – Campus Universitário, localizado em Joinville, SC.",
+  content: `
+No último sábado, 5 de abril de 2025, tive o imenso prazer de participar como palestrante no [**SQL Saturday Joinville 2025**](https://sqlsaturday.com/2025-04-05-sqlsaturday1104/), realizado na UNIVILLE – Campus Universitário, localizado em Joinville, SC. Este evento presencial, que reuniu cerca de 500 participantes, foi uma excelente oportunidade para mergulhar fundo em temas como tecnologia, dados, inteligência artificial e inovação.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/01.jpg)
+
+O SQL Saturday é conhecido mundialmente por ser um evento referência para a comunidade de dados, e esta edição em Joinville não deixou nada a desejar. Contou com uma programação rica, oferecendo palestras simultâneas com conteúdos altamente relevantes e ministradas por grandes nomes do mercado brasileiro de tecnologia.
+
+## Sobre Minha Palestra
+
+Na minha palestra intitulada **"Pipelines com Azure DevOps: Automatizando o Provisionamento Seguro da sua Infraestrutura na Nuvem"**, abordei pontos essenciais para implementar pipelines eficientes utilizando Azure DevOps, garantindo agilidade, segurança e qualidade na entrega da infraestrutura.
+
+Conversamos bastante sobre como DevOps deixou de ser uma simples tendência e se tornou uma cultura fundamental nas empresas modernas. Também mostrei na prática o funcionamento das pipelines de Integração Contínua e Entrega Contínua (CI/CD) e como essa automação facilita significativamente o processo de deploy em ambientes cloud, utilizando ferramentas como Terraform para provisionamento de infraestrutura.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/2.heic)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/3.heic)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/4.heic)
+
+Alguns tópicos detalhados que abordei durante a palestra foram:
+
+- **Fundamentos e Cultura DevOps**: Expliquei como o DevOps está transformando as empresas, melhorando significativamente a comunicação, colaboração e produtividade dos times de desenvolvimento e operações.
+
+- **Azure DevOps Overview**: Discuti brevemente sobre a história e as funcionalidades principais do Azure DevOps, destacando as diferenças e vantagens entre Azure DevOps Services (SaaS) e Azure DevOps Server (IaaS).
+
+- **Estruturando Pipelines CI/CD**: Apresentei passo a passo a criação e execução de pipelines usando Azure DevOps, mostrando como é possível automatizar testes, builds e deploys, garantindo entregas rápidas e seguras.
+
+- **Casos Práticos**: Compartilhei exemplos reais e cenários práticos em que utilizei o Azure DevOps com Terraform e Bicep, evidenciando a importância da automação para lidar com infraestruturas complexas.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/5.heic)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/6.heic)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/7.jpg)
+
+## Networking e Troca de Experiências
+
+Um grande diferencial de eventos é o networking, e SQL Saturday Joinville não foi diferente.
+
+Quero deixar aqui um agradecimento especial ao Comunidado e a toda equipe organizadora que tornou esse evento possível, proporcionando uma experiência incrível para todos os envolvidos.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/8.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/9.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/10.heic)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/11.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/12.heic)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/13.heic)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/14.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/15.jpg)
+
+Até o próximo evento!
+
+---
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+`,
+  date: "2025-04-06",
+  category: "Registro Eventos Presenciais",
+  readTime: "2 min de leitura",
+  mediumUrl: ""
+};

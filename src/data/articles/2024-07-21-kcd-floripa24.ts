@@ -1,0 +1,41 @@
+import { Article } from './types';
+
+export const article: Article = {
+  slug: "kcd-floripa24",
+  title: "KCD Floripa Brazil 2024",
+  excerpt: "Os Kubernetes Community Days (KCDs) são eventos organizados pela comunidade que reúnem entusiastas e profissionais interessados no universo nativo da nuvem e de código aberto.",
+  content: `## Introdução
+
+Os **Kubernetes Community Days (KCDs)** são eventos organizados pela comunidade que reúnem entusiastas e profissionais interessados no universo nativo da nuvem e de código aberto. Promovendo educação, colaboração e networking, os KCDs são oficialmente apoiados pela **Cloud Native Computing Foundation (CNCF)** e realizados localmente para fortalecer as comunidades regionais.  
+
+Em 2024, Florianópolis foi palco do **KCD Floripa**! Foi uma oportunidade única de aprender, se conectar com especialistas e explorar as tendências mais recentes do mundo Cloud Native.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/0.png)
+
+🌐 **Site oficial:** [KCD Floripa 2024](https://community.cncf.io/events/details/cncf-kcd-brasil-presents-kcd-floripa-brasil-2024/)  
+👉 **Acesse nossos links:** [Linktree do evento](https://linktr.ee/cloudnativesc)
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/1.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/2.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/3.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/4.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/5.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/6.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/7.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/8.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/9.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/10.jpg)
+
+[![Organizer: 2024 KCD Floripa](https://images.credly.com/size/680x680/images/baf493ca-d548-435b-9811-5c3385a674be/image.png)](https://www.credly.com/badges/7091a4a1-5ab1-4a3d-a91a-8eb6407e72d5/public_url "Organizer: 2024 KCD Floripa")
+
+---
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
+
+`,
+  date: "2024-07-21",
+  category: "Organização de Eventos",
+  readTime: "1 min de leitura",
+  mediumUrl: ""
+};
