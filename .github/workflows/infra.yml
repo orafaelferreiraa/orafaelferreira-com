@@ -15,10 +15,15 @@ on:
 permissions:
   contents: write   # allow pushing terraform-docs updates
 
+concurrency:
+  group: infra-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   terraform:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
@@ -45,7 +50,12 @@ jobs:
         timeout-minutes: 3
         run: terraform init
 
-      - name: Terraform Format
+      - name: Terraform Format (PR check)
+        if: github.event_name == 'pull_request'
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Format (push)
+        if: github.event_name == 'push'
         run: terraform fmt -recursive
 
       - name: Terraform Validate
@@ -62,7 +72,16 @@ jobs:
 
       - name: Terraform Plan (PRs)
         if: github.event_name == 'pull_request'
-        run: terraform plan -input=false
+        run: terraform plan -input=false -out=tfplan
+
+      - name: Upload plan artifact (PRs)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-plan
+          path: infra/tfplan
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Terraform Apply (main)
         if: github.event_name == 'push'

@@ -81,21 +81,7 @@ const ArtigoDetalhes = () => {
                 })}
               </div>
 
-              <p className="text-lg text-muted-foreground mb-8">
-                {article.excerpt}
-              </p>
-
-              <a 
-                href={article.mediumUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <Button variant="outline" size="sm">
-                  Ver artigo original no Medium
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
+              {/* Excerpt é usado apenas em metadados SEO e cards; removido da visualização para evitar duplicação de conteúdo */}
             </div>
 
             <div 

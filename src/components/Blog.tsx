@@ -61,10 +61,10 @@ const Blog = () => {
 
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" className="group" asChild>
-            <a href="https://orafaelferreiraa.medium.com/" target="_blank" rel="noopener noreferrer">
+            <Link to="/blog">
               Ver todos os artigos
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </Button>
         </div>
       </div>
