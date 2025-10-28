@@ -47,7 +47,7 @@ const About = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">
               Sobre <span className="text-primary">mim</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">Platform Engineering especializado em Cloud Azure e DevOps, com foco em transformação digital através de soluções inovadoras.</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">Platform Engineer especializado em Cloud Azure e DevOps, com foco em transformação digital através de soluções inovadoras.</p>
             <p className="text-primary font-semibold italic text-lg">"Tecnologia é ponte, não barreira, e eu construo pontes todos os dias."</p>
           </div>
 
