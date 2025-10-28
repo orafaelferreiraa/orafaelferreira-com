@@ -2,33 +2,27 @@ import { Cloud, Code, TrendingUp, Lightbulb, Award, Users, Briefcase, Monitor } 
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 const About = () => {
-  const highlights = [
-    {
-      icon: Award,
-      title: "Experiência & Credenciais",
-      description: "Mais de 10 anos em tecnologia, 19 certificações técnicas, formado em Ciência da Computação",
-      details: "Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star, Green Software Champion"
-    },
-    {
-      icon: Briefcase,
-      title: "Especialização Técnica",
-      description: "Engenheiro DevOps especializado em arquiteturas Azure e transformação digital",
-      details: "Experiência em multinacionais, consultorias e ambientes corporativos internacionais"
-    },
-    {
-      icon: Monitor,
-      title: "Stack de Ferramentas",
-      description: "Azure, AWS, OCI | Terraform, Bicep, Ansible | Kubernetes, Docker | GitOps",
-      details: "CI/CD com Azure DevOps, GitLab, Jenkins, GitHub Actions | Observabilidade com Prometheus, Grafana, Datadog"
-    },
-    {
-      icon: Users,
-      title: "Comunidade & Conteúdo",
-      description: "Palestrante ativo, mentor e criador de conteúdo técnico",
-      details: "Organização da Comunidades tecnicas de Floripa | Podcast e conteúdo no YouTube e Spotify"
-    }
-  ];
-
+  const highlights = [{
+    icon: Award,
+    title: "Experiência & Credenciais",
+    description: "Mais de 10 anos em tecnologia, 19 certificações técnicas, formado em Ciência da Computação",
+    details: "Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star, Green Software Champion"
+  }, {
+    icon: Briefcase,
+    title: "Especialização Técnica",
+    description: "Engenheiro DevOps especializado em arquiteturas Azure e transformação digital",
+    details: "Experiência em multinacionais, consultorias e ambientes corporativos internacionais"
+  }, {
+    icon: Monitor,
+    title: "Stack de Ferramentas",
+    description: "Azure, AWS, OCI | Terraform, Bicep, Ansible | Kubernetes, Docker | GitOps",
+    details: "CI/CD com Azure DevOps, GitLab, Jenkins, GitHub Actions | Observabilidade com Prometheus, Grafana, Datadog"
+  }, {
+    icon: Users,
+    title: "Comunidade & Conteúdo",
+    description: "Palestrante ativo, mentor e criador de conteúdo técnico",
+    details: "Organização da Comunidades tecnicas de Floripa | Podcast e conteúdo no YouTube e Spotify"
+  }];
   const skills = [{
     icon: Cloud,
     title: "Azure & Cloud",
@@ -53,19 +47,15 @@ const About = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">
               Sobre <span className="text-primary">mim</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-              Engenheiro DevOps especializado em Cloud e Platform Engineering, 
-              com foco em transformação digital através de soluções inovadoras.
-            </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">Platform Engineering especializado em Cloud Azure e DevOps, com foco em transformação digital através de soluções inovadoras.</p>
             <p className="text-primary font-semibold italic text-lg">"Tecnologia é ponte, não barreira, e eu construo pontes todos os dias."</p>
           </div>
 
           {/* Highlights Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            {highlights.map((highlight, index) => (
-              <Card key={highlight.title} className="group hover:border-primary/50 transition-all duration-300 animate-fade-in-up" style={{
-                animationDelay: `${index * 100}ms`
-              }}>
+            {highlights.map((highlight, index) => <Card key={highlight.title} className="group hover:border-primary/50 transition-all duration-300 animate-fade-in-up" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <CardContent className="p-6">
                   <highlight.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="text-xl font-heading font-semibold mb-2">{highlight.title}</h3>
@@ -73,8 +63,7 @@ const About = () => {
                   <Separator className="my-3" />
                   <p className="text-sm text-muted-foreground/80">{highlight.details}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
 
           <Separator className="my-12" />
