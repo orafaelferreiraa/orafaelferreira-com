@@ -25,7 +25,7 @@ const About = () => {
       icon: Users,
       title: "Comunidade & Conteúdo",
       description: "Palestrante ativo, mentor e criador de conteúdo técnico",
-      details: "Organização da Azure Floripa | Podcast e conteúdo no YouTube e Spotify"
+      details: "Organização da Comunidades tecnicas de Floripa | Podcast e conteúdo no YouTube e Spotify"
     }
   ];
 
