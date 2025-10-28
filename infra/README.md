@@ -77,6 +77,25 @@ Além disso, a pipeline:
 - Gera a documentação com `terraform-docs`.
 - Commita e faz push das mudanças do README de docs somente em pushes (não em PRs).
 
+### Vinculando o GitHub ao SWA
+
+Após o `terraform apply`, você precisa conectar o repositório GitHub ao Static Web App:
+
+1. **Obter o deployment token (API key)**:
+   ```bash
+   cd infra
+   terraform output -raw static_site_api_key
+   ```
+
+2. **Adicionar secret no GitHub**:
+   - Vá em Settings → Secrets and variables → Actions
+   - Crie o secret `AZURE_STATIC_WEB_APPS_API_TOKEN` com o valor do output acima
+
+3. **Deploy automático**:
+   - O workflow `.github/workflows/deploy-app.yml` já está configurado
+   - Quando você fizer push de mudanças no app, ele automaticamente faz build e deploy para o SWA
+   - PRs criam ambientes de preview automaticamente
+
 
 ## App CI/CD (deploy-app.yml)
 

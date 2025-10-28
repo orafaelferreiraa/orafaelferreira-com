@@ -7,7 +7,7 @@ data "azurerm_resource_group" "rg" {
 resource "azurerm_static_site" "this" {
   name                = "swa-site"
   resource_group_name = data.azurerm_resource_group.rg.name
-  location            = data.azurerm_resource_group.rg.location
+  location            = "eastus2"
 
   sku_tier = "Free"
   sku_size = "Free"  

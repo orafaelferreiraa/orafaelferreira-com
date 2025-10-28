@@ -41,49 +41,9 @@ jobs:
         with:
           terraform_version: 1.10.3
 
-      - name: Verify Azure credentials
-        run: |
-          echo "Testing Azure authentication..."
-          if [ -z "$ARM_CLIENT_ID" ] || [ -z "$ARM_CLIENT_SECRET" ]; then
-            echo "ERROR: ARM credentials not set"
-            exit 1
-          fi
-          echo "✓ ARM environment variables are set"
-
-      - name: Azure Auth Debug
-        run: |
-          echo "Testing MSAL token retrieval..."
-          az login --service-principal \
-            -u $ARM_CLIENT_ID \
-            -p $ARM_CLIENT_SECRET \
-            --tenant $ARM_TENANT_ID
-          
-          az account set --subscription $ARM_SUBSCRIPTION_ID
-          
-          az account get-access-token --resource https://storage.azure.com/
-          echo "✓ Token retrieved successfully"
-
       - name: Terraform Init
-        timeout-minutes: 1
-        env:
-          TF_LOG: DEBUG
-        run: |
-          echo "Starting terraform init with backend config:"
-          echo "  Storage Account: stostateorafael"
-          echo "  Container: statetf"
-          echo "  Key: infra.terraform.tfstate"
-          echo "  Auth: Azure AD (use_azuread_auth=true)"
-          echo ""
-          terraform init -no-color 2>&1 | tee init.log
-          
-          # Check if init succeeded
-          if [ $? -ne 0 ]; then
-            echo ""
-            echo "❌ Terraform init failed. Last 50 lines of output:"
-            tail -50 init.log
-            exit 1
-          fi
-          echo "✓ Terraform init succeeded"
+        timeout-minutes: 3
+        run: terraform init
 
       - name: Terraform Format
         run: terraform fmt -recursive
