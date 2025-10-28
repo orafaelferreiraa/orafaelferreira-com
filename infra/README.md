@@ -62,6 +62,39 @@ Este repositório usa `terraform-docs` via GitHub Actions para gerar/atualizar a
 ### Referência do módulo
 
 <!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.10.3 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 4.50.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.50.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_static_web_app.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app) | resource |
+| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/resource_group) | data source |
+
+## Inputs
+
+No inputs.
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_static_site_default_hostname"></a> [static\_site\_default\_hostname](#output\_static\_site\_default\_hostname) | Default hostname of the Static Web App |
 <!-- END_TF_DOCS -->
 
 ## GitHub Actions (infra.yml)
