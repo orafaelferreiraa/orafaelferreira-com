@@ -14,13 +14,21 @@ O state do Terraform é armazenado em uma Storage Account (container de blobs). 
 
 Recomendado no Storage Account:
 - Habilitar versioning de blobs e soft delete para proteção do state.
- - Usar RBAC com Azure Identity, sem chaves de conta (backend usa `use_msi = true` quando executado em ambiente Azure). Em runners hospedados do GitHub, utilize identidade federada (OIDC) em vez de MSI.
+- Usar RBAC com Azure AD (sem chaves de conta). Backend configurado com `use_azuread_auth = true`.
+- Conceder ao Service Principal o papel "Storage Blob Data Contributor" neste Storage Account (ou no container `statetf`).
 
-Execução local (requer Azure CLI login):
+Execução local (Service Principal):
 
 ```bash
-az login
+export ARM_CLIENT_ID=<appId-do-SP>
+export ARM_CLIENT_SECRET=<clientSecret-do-SP>
+export ARM_TENANT_ID=<tenantId>
+export ARM_SUBSCRIPTION_ID=<subscriptionId>
+cd infra
 terraform init
+terraform plan -var "resource_group_name=rg-site" -var "static_site_name=<nome-unico>"
+terraform apply -auto-approve -var "resource_group_name=rg-site" -var "static_site_name=<nome-unico>"
+cd -
 ```
 
 ## Variables
@@ -59,11 +67,12 @@ Este repositório usa `terraform-docs` via GitHub Actions para gerar/atualizar a
 ## GitHub Actions (infra.yml)
 
 - Triggers only when files under `infra/` change (push/PR to `main`).
-- Uses OIDC to login to Azure. You must create the federated credentials and set repository secrets:
-  - `AZURE_CLIENT_ID`
-  - `AZURE_TENANT_ID`
-  - `AZURE_SUBSCRIPTION_ID`
-  
+- Usa Service Principal para login no Azure e para o Terraform provider. Crie um App Registration e salve estes secrets no repositório:
+  - `AZURE_CLIENT_ID` (Application ID)
+  - `AZURE_TENANT_ID` (Tenant ID)
+  - `AZURE_SUBSCRIPTION_ID` (Subscription ID)
+  - `AZURE_CLIENT_SECRET` (Client Secret do SP)
+
 Além disso, a pipeline:
 - Gera a documentação com `terraform-docs`.
 - Commita e faz push das mudanças do README de docs somente em pushes (não em PRs).

@@ -48,9 +48,13 @@ terraform init \
 	-backend-config="key=infra.terraform.tfstate"
 ```
 
-Execução local:
+Execução local (Service Principal):
 
 ```bash
+export ARM_CLIENT_ID=<appId-do-SP>
+export ARM_CLIENT_SECRET=<clientSecret-do-SP>
+export ARM_TENANT_ID=<tenantId>
+export ARM_SUBSCRIPTION_ID=<subscriptionId>
 cd infra
 terraform plan -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
 terraform apply -auto-approve -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
@@ -59,7 +63,11 @@ cd -
 
 Pipeline de infra: `.github/workflows/infra.yml`
 - Roda apenas quando `infra/**` muda (push/PR)
-- Autenticação Azure por OIDC (adicione os secrets: `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`)
+- Autenticação Azure por Service Principal. Adicione os secrets:
+	- `AZURE_CLIENT_ID`
+	- `AZURE_TENANT_ID`
+	- `AZURE_SUBSCRIPTION_ID`
+	- `AZURE_CLIENT_SECRET`
 - Executa `init/fmt/validate/plan/apply`
 - Gera e injeta documentação com `terraform-docs` automaticamente no `infra/README.md` (commita no push)
 

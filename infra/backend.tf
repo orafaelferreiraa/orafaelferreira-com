@@ -6,8 +6,8 @@ terraform {
     container_name       = "statetf"
     key                  = "infra.terraform.tfstate"
     
-    # Usar Managed Identity para autenticação
-    use_msi              = true
-    # Subscription e Tenant precisam ser passados via variáveis de ambiente ou backend-config
+    # Usar Azure AD (RBAC) no plano de dados do Storage com Service Principal
+    # Requer papel "Storage Blob Data Contributor" para o SP neste Storage Account
+    use_azuread_auth     = true
   }
 }
