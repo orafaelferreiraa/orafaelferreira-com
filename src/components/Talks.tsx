@@ -41,15 +41,18 @@ const Talks = () => {
       location: "Porto Alegre, RS",
       siteUrl: "https://devopsdays.org/events/2025-porto-alegre/welcome/",
     },
+  ];
+
+  const inPersonTalks: Talk[] = [
     {
       title: "Trabalhando para o Exterior",
       event: "Global Azure Floripa 2025",
       date: "2025-08-16",
       location: "Florianópolis, SC",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/00.png",
+      siteUrl: "https://www.meetup.com/azure-user-groups/events/306207034/?eventOrigin=group_past_events",
+      blogUrl: "https://orafaelferreira.com/posts/carreira-internacional/",
     },
-  ];
-
-  const inPersonTalks: Talk[] = [
     {
       title: "Antes de Estudar Ferramentas, bora entender Sobre a cultura DevOps",
       event: "8ª Edição Cultura DevOps - White Stone Dev Pedra Branca",
