@@ -10,5 +10,5 @@ resource "azurerm_static_web_app" "this" {
   location            = "eastus2"
 
   sku_tier = "Free"
-  sku_size = "Free"  
+  sku_size = "Free"
 }

@@ -7,3 +7,9 @@ output "static_site_default_hostname" {
   value       = azurerm_static_web_app.this.default_host_name
   description = "Default hostname of the Static Web App"
 }
+
+output "static_site_api_key" {
+  value       = azurerm_static_web_app.this.api_key
+  description = "API key for deploying to the Static Web App"
+  sensitive   = true
+}
