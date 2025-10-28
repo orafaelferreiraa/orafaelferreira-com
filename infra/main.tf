@@ -4,10 +4,10 @@ data "azurerm_resource_group" "rg" {
 }
 
 # Azure Static Web App (SWA)
-resource "azurerm_static_site" "this" {
+resource "azurerm_static_web_app" "this" {
   name                = "swa-site"
   resource_group_name = data.azurerm_resource_group.rg.name
-  location            = "eastus2"
+  location            = data.azurerm_resource_group.rg.location
 
   sku_tier = "Free"
   sku_size = "Free"  
