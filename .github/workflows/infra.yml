@@ -52,7 +52,25 @@ jobs:
 
       - name: Terraform Init
         timeout-minutes: 1
-        run: terraform init
+        env:
+          TF_LOG: DEBUG
+        run: |
+          echo "Starting terraform init with backend config:"
+          echo "  Storage Account: stostateorafael"
+          echo "  Container: statetf"
+          echo "  Key: infra.terraform.tfstate"
+          echo "  Auth: Azure AD (use_azuread_auth=true)"
+          echo ""
+          terraform init -no-color 2>&1 | tee init.log
+          
+          # Check if init succeeded
+          if [ $? -ne 0 ]; then
+            echo ""
+            echo "❌ Terraform init failed. Last 50 lines of output:"
+            tail -50 init.log
+            exit 1
+          fi
+          echo "✓ Terraform init succeeded"
 
       - name: Terraform Format
         run: terraform fmt -recursive
