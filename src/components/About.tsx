@@ -16,7 +16,7 @@ const About = () => {
     icon: Monitor,
     title: "Stack de Ferramentas",
     description: "Azure, Terraform, Bicep, | Kubernetes, Docker",
-    details: "CI/CD com Azure DevOps, GitLab, Jenkins, GitHub Actions | Observabilidade com Prometheus, Grafana, Datadog"
+    details: "CI/CD com GitHub Actions Azure DevOps | GitOps | Observabilidade com Prometheus, Grafana"
   }, {
     icon: Users,
     title: "Comunidade & Conteúdo",
