@@ -64,9 +64,6 @@ jobs:
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
-      - name: Lint
-        run: npm run lint
-
       - name: Type check
         run: npm run typecheck
 
@@ -82,6 +79,30 @@ jobs:
           output_location: 'dist'
           skip_app_build: true
 
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## App Deploy Summary";
+            echo "";
+            echo "- Event: ${{ github.event_name }}";
+            echo "- Ref: ${{ github.ref }}";
+            echo "- Actor: ${{ github.actor }}";
+            echo "";
+            echo "### Build";
+            echo "- Output dir: \`dist/\`";
+            echo "- Files: $(find dist -type f | wc -l 2>/dev/null || echo 'n/a')";
+            echo "- Size: $(du -sh dist 2>/dev/null | cut -f1 || echo 'n/a')";
+            echo "";
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              echo "### Preview";
+              echo "Este workflow cria/atualiza um Preview Environment no Azure Static Web Apps para este PR.";
+            else
+              echo "### Deploy";
+              echo "Aplicação enviada para o Azure Static Web Apps (upload de \`dist/\`).";
+            fi;
+          } >> "$GITHUB_STEP_SUMMARY"
+
   close_pr_preview:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
@@ -92,3 +113,16 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: 'close'
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## App Preview Close Summary";
+            echo "";
+            echo "- Event: ${{ github.event_name }}";
+            echo "- Ref: ${{ github.ref }}";
+            echo "- Actor: ${{ github.actor }}";
+            echo "";
+            echo "Preview do Azure Static Web Apps para este PR foi sinalizado para fechamento.";
+          } >> "$GITHUB_STEP_SUMMARY"

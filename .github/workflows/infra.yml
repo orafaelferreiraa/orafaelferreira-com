@@ -46,6 +46,26 @@ jobs:
         with:
           terraform_version: 1.10.3
 
+      # Run docs generation early to avoid committing .terraform provider binaries
+      - name: Generate terraform docs (PR)
+        if: github.event_name == 'pull_request'
+        uses: terraform-docs/gh-actions@v1.3.0
+        with:
+          working-dir: infra
+          output-file: README.md
+          output-method: inject
+          git-push: false
+
+      - name: Generate terraform docs and push (main)
+        if: github.event_name == 'push'
+        uses: terraform-docs/gh-actions@v1.3.0
+        with:
+          working-dir: infra
+          output-file: README.md
+          output-method: inject
+          git-push: true
+          git-commit-message: 'chore(infra): update terraform docs'
+
       - name: Terraform Init
         timeout-minutes: 3
         run: terraform init
@@ -60,15 +80,6 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
-
-      - name: Generate terraform docs (PR)
-        if: github.event_name == 'pull_request'
-        uses: terraform-docs/gh-actions@v1.3.0
-        with:
-          working-dir: infra
-          output-file: README.md
-          output-method: inject
-          git-push: false
 
       - name: Terraform Plan (PRs)
         if: github.event_name == 'pull_request'
@@ -87,15 +98,7 @@ jobs:
         if: github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
 
-      - name: Generate terraform docs and push (main)
-        if: github.event_name == 'push'
-        uses: terraform-docs/gh-actions@v1.3.0
-        with:
-          working-dir: infra
-          output-file: README.md
-          output-method: inject
-          git-push: true
-          git-commit-message: 'chore(infra): update terraform docs'
+      # docs already generated above to avoid committing provider binaries
 
       - name: Job summary
         if: always()
