@@ -1,25 +1,27 @@
 import { Calendar, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { articles } from "@/data/articles";
 
 const Blog = () => {
+  const [activeTab, setActiveTab] = useState("artigos");
 
-  return (
-    <section id="blog" className="py-20 lg:py-32 bg-card/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4">
-            <span className="text-primary">Artigos</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Conteúdo técnico sobre Cloud, DevOps e Platform Engineering
-          </p>
-        </div>
+  const postCategories = [
+    "Participações em Comunidade",
+    "Registro Eventos Presenciais",
+    "Organização de Eventos",
+    "Organizador Grupo de Comunidade"
+  ];
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {articles.map((article, index) => (
+  const artigosFiltered = articles.filter(article => !postCategories.includes(article.category));
+  const postsFiltered = articles.filter(article => postCategories.includes(article.category));
+
+  const renderArticleGrid = (articlesList: typeof articles) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      {articlesList.map((article, index) => (
             <Link key={article.slug} to={`/artigos/${article.slug}`}>
               <Card
                 className="group overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up h-full"
@@ -57,16 +59,35 @@ const Blog = () => {
               </Card>
             </Link>
           ))}
+    </div>
+  );
+
+  return (
+    <section id="blog" className="py-20 lg:py-32 bg-card/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4">
+            <span className="text-primary">Artigos/Posts</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Conteúdo técnico e experiências em comunidade
+          </p>
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="group" asChild>
-            <Link to="/blog">
-              Ver todos os artigos
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
-        </div>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
+            <TabsTrigger value="artigos">Artigos</TabsTrigger>
+            <TabsTrigger value="posts">Posts</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="artigos" className="mt-0">
+            {renderArticleGrid(artigosFiltered)}
+          </TabsContent>
+
+          <TabsContent value="posts" className="mt-0">
+            {renderArticleGrid(postsFiltered)}
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );
