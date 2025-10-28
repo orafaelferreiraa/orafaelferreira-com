@@ -41,6 +41,12 @@ const Talks = () => {
       location: "Porto Alegre, RS",
       siteUrl: "https://devopsdays.org/events/2025-porto-alegre/welcome/",
     },
+    {
+      title: "Trabalhando para o Exterior",
+      event: "Global Azure Floripa 2025",
+      date: "2025-08-16",
+      location: "Florianópolis, SC",
+    },
   ];
 
   const inPersonTalks: Talk[] = [
