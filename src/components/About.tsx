@@ -25,7 +25,7 @@ const About = () => {
   }];
   const skills = [{
     icon: Cloud,
-    title: "Azure & Cloud",
+    title: "Cloud Azure",
     description: "Especialista em arquiteturas cloud resilientes e escaláveis"
   }, {
     icon: Code,
