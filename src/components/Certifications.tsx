@@ -118,6 +118,12 @@ const certifications: Certification[] = [
     link: "https://www.credly.com/badges/cc2090a8-2445-4cee-ba0a-ef398c636f33/public_url"
   },
   {
+    name: "Oracle Cloud Infrastructure 2022 Certified Foundations Associate",
+    provider: "Oracle",
+    image: "https://brm-workforce.oracle.com/pdf/certview/images/OCIF2022CA.png",
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=365D1B70B834CA0B784AFB708251CE1BCEFF94359157DBAD207ECBA047C5D46E"
+  },
+  {
     name: "FOCP: FinOps Certified Practitioner",
     provider: "FinOps Foundation",
     image: "https://images.credly.com/size/112x112/images/08a5010a-0c0a-448c-981e-c116fedd380c/image.png",
