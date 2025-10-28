@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center">
           <p className="text-sm text-muted-foreground text-center">
-            © {currentYear} Rafael Martin Alves Ferreira. Todos os direitos reservados.
+            © {currentYear} Rafael Ferreira. Todos os direitos reservados.
           </p>
         </div>
       </div>
