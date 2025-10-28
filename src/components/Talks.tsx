@@ -31,7 +31,7 @@ const Talks = () => {
       event: "1ª Semana Acadêmica de ADS - IFSC",
       date: "2025-11-06",
       location: "IFSC",
-      image: "https://framerusercontent.com/images/dKcnGEWD5E9T4EAL4vX0vMYeHNM.png?width=522&height=526",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/SA-ADS/1.jpg",
       siteUrl: "https://saads.framer.website/",
     },
     {
