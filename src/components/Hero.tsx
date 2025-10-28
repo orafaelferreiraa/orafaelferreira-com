@@ -1,4 +1,4 @@
-import { Linkedin, Github, Youtube, Music } from "lucide-react";
+import { Linkedin, Github, Youtube, Music, Instagram, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
 const Hero = () => {
@@ -22,7 +22,17 @@ const Hero = () => {
     href: "https://open.spotify.com/show/0U4kcZT2Cwn4CqQGg4Ywcj?si=77fbd9161ea246e6&nd=1&dlsi=6f57fcd882ad4cf8",
     label: "LowOpsCast",
     color: "text-green-500"
+  }, {
+    icon: Instagram,
+    href: "https://www.instagram.com/rafaelmaferreira1/",
+    label: "Instagram",
+    color: "text-pink-500"
   }];
+
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+  };
   return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card opacity-50" />
       
@@ -45,7 +55,7 @@ const Hero = () => {
             </p>
             
             {/* Social Links */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-3xl">
               {socialLinks.map(social => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="group">
                   <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-2 hover:border-primary">
                     <CardContent className="flex flex-col items-center justify-center p-6 gap-3">
@@ -54,6 +64,18 @@ const Hero = () => {
                     </CardContent>
                   </Card>
                 </a>)}
+            </div>
+
+            {/* Scroll Down Button */}
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={scrollToAbout}
+                className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Rolar para baixo"
+              >
+                <span className="text-sm font-medium">Saiba mais</span>
+                <ChevronDown className="h-6 w-6 animate-bounce" />
+              </button>
             </div>
           </div>
 
