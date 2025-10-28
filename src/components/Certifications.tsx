@@ -7,7 +7,6 @@ interface Certification {
   image: string;
   link: string;
   provider: string;
-  imageSize?: "default" | "large";
 }
 
 const certifications: Certification[] = [
@@ -122,8 +121,7 @@ const certifications: Certification[] = [
     name: "Oracle Cloud Infrastructure 2022 Certified Foundations Associate",
     provider: "Oracle",
     image: "https://brm-workforce.oracle.com/pdf/certview/images/OCIF2022CA.png",
-    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=365D1B70B834CA0B784AFB708251CE1BCEFF94359157DBAD207ECBA047C5D46E",
-    imageSize: "large"
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=365D1B70B834CA0B784AFB708251CE1BCEFF94359157DBAD207ECBA047C5D46E"
   },
   {
     name: "FOCP: FinOps Certified Practitioner",
@@ -164,7 +162,7 @@ const Certifications = () => {
             >
               <CardHeader className="pb-4">
                 <div className="flex justify-center mb-4">
-                  <div className={`relative flex items-center justify-center ${cert.imageSize === "large" ? "w-32 h-32" : "w-24 h-24"}`}>
+                  <div className="relative w-24 h-24 flex items-center justify-center">
                     <img
                       src={cert.image}
                       alt={cert.name}
