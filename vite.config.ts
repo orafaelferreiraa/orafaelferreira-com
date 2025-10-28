@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use relative base in build to ensure assets load correctly on subpaths/CDNs
-  base: mode === 'development' ? '/' : './',
+  // Use absolute base so assets resolve regardless of nested routes (SWA serves from root)
+  base: '/',
   server: {
     host: "::",
     port: 8080,
@@ -19,19 +19,6 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     chunkSizeWarningLimit: 1200,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-router')) return 'react-vendor';
-            if (id.includes('@radix-ui') || id.includes('lucide-react')) return 'ui-vendor';
-            return 'vendor';
-          }
-          if (id.includes(path.resolve(__dirname, 'src', 'data', 'articles'))) {
-            return 'articles';
-          }
-        },
-      },
-    },
+    // Use Vite's default chunking strategy for maximum compatibility on SWA
   },
 }));
