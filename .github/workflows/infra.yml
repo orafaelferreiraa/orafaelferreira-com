@@ -40,7 +40,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.10.3
-          
+
       - name: Verify Azure credentials
         run: |
           echo "Testing Azure authentication..."
@@ -51,8 +51,8 @@ jobs:
           echo "✓ ARM environment variables are set"
 
       - name: Terraform Init
-        timeout-minutes: 3
-        run: terraform init -reconfigure
+        timeout-minutes: 1
+        run: terraform init
 
       - name: Terraform Format
         run: terraform fmt -recursive
