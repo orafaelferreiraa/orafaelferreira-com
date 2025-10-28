@@ -31,6 +31,8 @@ const Talks = () => {
       event: "1ª Semana Acadêmica de ADS - IFSC",
       date: "2025-11-06",
       location: "IFSC",
+      image: "https://framerusercontent.com/images/dKcnGEWD5E9T4EAL4vX0vMYeHNM.png?width=522&height=526",
+      siteUrl: "https://saads.framer.website/",
     },
     {
       title: "Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source",
