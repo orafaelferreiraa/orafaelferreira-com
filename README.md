@@ -1,6 +1,6 @@
-# rafael-builds-bridges
+# orafaelferreira-com (SPA)
 
-Portfólio/SPA em Vite + React + TypeScript, hospedado na Azure Static Web Apps com CI/CD via GitHub Actions e infraestrutura em Terraform.
+Site pessoal/Blog em Vite + React + TypeScript, hospedado na Azure Static Web Apps (SWA) com CI/CD via GitHub Actions e infraestrutura em Terraform.
 
 ## stack
 
@@ -27,7 +27,11 @@ npm run preview
 
 ## deploy do app (SWA)
 
-O deploy é automático no push para `main` quando arquivos do app mudam (`src/`, `public/`, `index.html`, configs). Workflow: `.github/workflows/deploy-app.yml`.
+O deploy é automático no push para `main` quando arquivos do app mudam (`src/`, `public/`, `index.html`, configs) e também ao concluir o workflow de infra. Workflow: `.github/workflows/deploy-app.yml`.
+
+Build no CI: `npm ci` + `npm run typecheck` + `npm run build`.
+
+Upload para o SWA: o workflow usa `Azure/static-web-apps-deploy@v1` com `action: upload`, `skip_app_build: true` e `app_location: dist` (somente a pasta `dist` é enviada).
 
 Pré-requisito: criar o recurso SWA (via Terraform) e adicionar o secret no repositório:
 - `AZURE_STATIC_WEB_APPS_API_TOKEN` (token de deployment do SWA)
@@ -62,14 +66,15 @@ cd -
 ```
 
 Pipeline de infra: `.github/workflows/infra.yml`
-- Roda apenas quando `infra/**` muda (push/PR)
+- Disparo em `infra/**` (push/PR) e permite conciliação com a pipeline do app.
 - Autenticação Azure por Service Principal. Adicione os secrets:
 	- `AZURE_CLIENT_ID`
 	- `AZURE_TENANT_ID`
 	- `AZURE_SUBSCRIPTION_ID`
 	- `AZURE_CLIENT_SECRET`
-- Executa `init/fmt/validate/plan/apply`
-- Gera e injeta documentação com `terraform-docs` automaticamente no `infra/README.md` (commita no push)
+- Passos: `init` → `fmt` (PR em modo `-check`) → `validate` → `plan` (PR com upload de artifact) → `apply` (push em `main`).
+- Documentação com `terraform-docs` é gerada antes do `init` e, em `push` para `main`, o README é atualizado com commit automático.
+- Resumo do job: a pipeline escreve um resumo no GitHub Summary com informações de evento, branch, outputs (em push) e status da doc.
 
 ## domínios e HTTPS
 
@@ -77,5 +82,6 @@ Configure domínio custom e TLS diretamente no recurso do SWA após o provisiona
 
 ## notas
 
-- Arquivos de Docker foram descontinuados (não necessários para SWA).
-- A pasta `infra/` só dispara pipeline quando for alterada; o app só quando os arquivos do site mudarem.
+- Lint no CI foi desabilitado para evitar ruído causado por conteúdo em markdown inline nos arquivos de artigos. O typecheck (TS) permanece ativo.
+- O repositório contém dois projetos de site (pasta `orafaelferreira.com/` é o antigo Jekyll); a SPA atual está em `orafaelferreira-com/`.
+- A pasta `infra/` possui `.gitignore` próprio para evitar que `.terraform/`, `*.tfstate` e `*.tfplan` entrem em commits. O lockfile `.terraform.lock.hcl` é versionado.
