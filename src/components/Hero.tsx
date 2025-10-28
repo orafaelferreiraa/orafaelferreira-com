@@ -28,10 +28,11 @@ const Hero = () => {
     label: "Instagram",
     color: "text-pink-500"
   }];
-
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
-    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+    aboutSection?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
   return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card opacity-50" />
@@ -41,7 +42,7 @@ const Hero = () => {
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left space-y-6 animate-fade-in">
             <div className="inline-block">
-              <span className="text-sm font-mono text-primary mb-2 block">Cloud & DevOps Especialista</span>
+              <span className="text-sm font-mono text-primary mb-2 block">Cloud Azure & DevOps Specialist</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight">
@@ -50,9 +51,7 @@ const Hero = () => {
               <span className="text-primary">Alves Ferreira</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl">
-              Transformando ambientes em nuvem em plataformas resilientes e seguras.
-            </p>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl">Transformando as complexidades de ambientes de nuvem em ambientes seguros e escaláveis.</p>
             
             {/* Social Links */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-3xl">
@@ -68,11 +67,7 @@ const Hero = () => {
 
             {/* Scroll Down Button */}
             <div className="flex justify-center mt-8">
-              <button
-                onClick={scrollToAbout}
-                className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Rolar para baixo"
-              >
+              <button onClick={scrollToAbout} className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors" aria-label="Rolar para baixo">
                 <span className="text-sm font-medium">Saiba mais</span>
                 <ChevronDown className="h-6 w-6 animate-bounce" />
               </button>
