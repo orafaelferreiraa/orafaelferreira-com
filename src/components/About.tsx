@@ -10,7 +10,7 @@ const About = () => {
   }, {
     icon: Briefcase,
     title: "Especialização Técnica",
-    description: "Engenheiro DevOps especializado em arquiteturas Azure e transformação digital",
+    description: "Platform Engineer especializado em arquiteturas Azure e transformação digital",
     details: "Experiência em multinacionais, consultorias e ambientes corporativos internacionais"
   }, {
     icon: Monitor,
