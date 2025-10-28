@@ -1,132 +1,115 @@
-import {
-  UserCheck,
-  Target,
-  Rocket,
-  ArrowRight,
-  Award,
-  Globe,
-  TrendingUp,
-  CheckCircle2,
-  Clock,
-  FileCheck,
-  Briefcase,
-} from "lucide-react";
+import { UserCheck, Target, Rocket, ArrowRight, Award, Globe, TrendingUp, CheckCircle2, Clock, FileCheck, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Separator } from "@/components/ui/separator";
-
 const Mentorship = () => {
-  const mentorHighlights = [
-    {
-      icon: Briefcase,
-      text: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
-      link: "https://orafaelferreira.com/experiencias/",
-    },
-    {
-      icon: Globe,
-      text: "Atuação Global como Senior Azure DevOps Solution Engineer em empresa americana",
-    },
-    {
-      icon: Award,
-      text: "Formação em Ciência da Computação e +19 certificações técnicas relevantes",
-      link: "https://orafaelferreira.com/certificacoes/",
-    },
-    {
-      icon: Award,
-      text: "Microsoft MVP e Microsoft Certified Trainer (MCT)",
-      link: "https://mvp.microsoft.com/pt-BR/mvp/profile/627d5ac9-f704-4768-81a7-5c580283881d",
-    },
-    {
-      icon: Globe,
-      text: "DevOps Institute Ambassador - reconhecido internacionalmente",
-      link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf",
-    },
-    {
-      icon: Award,
-      text: "Alura Star - embaixador oficial do programa",
-      link: "https://www.alura.com.br/stars",
-    },
-    {
-      icon: Globe,
-      text: "Green Software Champion pela Green Software Foundation",
-      link: "https://champions.greensoftware.foundation/champions/rafael-ferreira/",
-    },
-    {
-      icon: TrendingUp,
-      text: "Palestrante ativo e organizador dos grupos Azure Floripa, DevOpsDays Floripa e CNCF SC",
-      link: "https://orafaelferreira.com/palestras/",
-    },
-  ];
-
-  const mentorshipBenefits = [
-    {
-      icon: Target,
-      title: "Orientação 100% Personalizada",
-      description: "Sessões adaptadas às suas necessidades e objetivos. Para iniciantes ou profissionais sênior.",
-    },
-    {
-      icon: FileCheck,
-      title: "Plano Personalizado",
-      description: "Roteiro prático com próximos passos concretos. Saiba exatamente em que focar nas próximas semanas.",
-    },
-    {
-      icon: Rocket,
-      title: "Dicas Valiosas",
-      description: "Recomendações de cursos, comunidades, ferramentas e formas de ganhar experiência prática.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Visão Estratégica",
-      description: "Entenda tendências e demandas atuais em Cloud Computing e DevOps.",
-    },
-    {
-      icon: CheckCircle2,
-      title: "Confiança para Evoluir",
-      description: "Valide suas ideias e ganhe segurança para executar o plano e buscar oportunidades.",
-    },
-    {
-      icon: UserCheck,
-      title: "Grupo Exclusivo de Vagas",
-      description:
-        "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador.",
-    },
-  ];
-
-  const howItWorks = [
-    {
-      icon: FileCheck,
-      title: "Pré-call Personalizado",
-      description: "Preencha um formulário descrevendo seu momento profissional, experiências e metas em Cloud/DevOps.",
-    },
-    {
-      icon: Clock,
-      title: "Call Estratégica (1h a 1h30)",
-      description: "Sessão prática e direta ao ponto, esclarecendo dúvidas e criando um roteiro realista e eficiente.",
-    },
-    {
-      icon: CheckCircle2,
-      title: "Plano de Ação Personalizado",
-      description:
-        "Saia com passos claros: estudos, certificações, dicas de experiência prática e posicionamento no mercado.",
-    },
-  ];
-
-  const services = [
-    { name: "Mentoria Cloud Azure e DevOps Individual", price: "R$ 1.000" },
-    { name: "Revisão de Perfil no LinkedIn", price: "R$ 200" },
-    { name: "Template", price: "R$ 50" },
-  ];
-
-  const discountsByProfile = [
-    { profile: "Open to Work (40% off)", mentorship: "R$ 600", linkedin: "R$ 120", template: "R$ 30", total: "R$ 750" },
-    { profile: "Júnior (30% off)", mentorship: "R$ 700", linkedin: "R$ 140", template: "R$ 35", total: "R$ 875" },
-    { profile: "Pleno (20% off)", mentorship: "R$ 800", linkedin: "R$ 160", template: "R$ 40", total: "R$ 1.000" },
-    { profile: "Sênior (10% off)", mentorship: "R$ 900", linkedin: "R$ 180", template: "R$ 45", total: "R$ 1.125" },
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const mentorHighlights = [{
+    icon: Briefcase,
+    text: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
+    link: "https://orafaelferreira.com/experiencias/"
+  }, {
+    icon: Globe,
+    text: "Atuação Global como Senior Azure DevOps Solution Engineer em empresa americana"
+  }, {
+    icon: Award,
+    text: "Formação em Ciência da Computação e +19 certificações técnicas relevantes",
+    link: "https://orafaelferreira.com/certificacoes/"
+  }, {
+    icon: Award,
+    text: "Microsoft MVP e Microsoft Certified Trainer (MCT)",
+    link: "https://mvp.microsoft.com/pt-BR/mvp/profile/627d5ac9-f704-4768-81a7-5c580283881d"
+  }, {
+    icon: Globe,
+    text: "DevOps Institute Ambassador - reconhecido internacionalmente",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf"
+  }, {
+    icon: Award,
+    text: "Alura Star - embaixador oficial do programa",
+    link: "https://www.alura.com.br/stars"
+  }, {
+    icon: Globe,
+    text: "Green Software Champion pela Green Software Foundation",
+    link: "https://champions.greensoftware.foundation/champions/rafael-ferreira/"
+  }, {
+    icon: TrendingUp,
+    text: "Palestrante ativo e organizador dos grupos Azure Floripa, DevOpsDays Floripa e CNCF SC",
+    link: "https://orafaelferreira.com/palestras/"
+  }];
+  const mentorshipBenefits = [{
+    icon: Target,
+    title: "Orientação 100% Personalizada",
+    description: "Sessões adaptadas às suas necessidades e objetivos. Para iniciantes ou profissionais sênior."
+  }, {
+    icon: FileCheck,
+    title: "Plano Personalizado",
+    description: "Roteiro prático com próximos passos concretos. Saiba exatamente em que focar nas próximas semanas."
+  }, {
+    icon: Rocket,
+    title: "Dicas Valiosas",
+    description: "Recomendações de cursos, comunidades, ferramentas e formas de ganhar experiência prática."
+  }, {
+    icon: TrendingUp,
+    title: "Visão Estratégica",
+    description: "Entenda tendências e demandas atuais em Cloud Computing e DevOps."
+  }, {
+    icon: CheckCircle2,
+    title: "Confiança para Evoluir",
+    description: "Valide suas ideias e ganhe segurança para executar o plano e buscar oportunidades."
+  }, {
+    icon: UserCheck,
+    title: "Grupo Exclusivo de Vagas",
+    description: "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador."
+  }];
+  const howItWorks = [{
+    icon: FileCheck,
+    title: "Pré-call Personalizado",
+    description: "Preencha um formulário descrevendo seu momento profissional, experiências e metas em Cloud/DevOps."
+  }, {
+    icon: Clock,
+    title: "Call Estratégica (1h a 1h30)",
+    description: "Sessão prática e direta ao ponto, esclarecendo dúvidas e criando um roteiro realista e eficiente."
+  }, {
+    icon: CheckCircle2,
+    title: "Plano de Ação Personalizado",
+    description: "Saia com passos claros: estudos, certificações, dicas de experiência prática e posicionamento no mercado."
+  }];
+  const services = [{
+    name: "Mentoria Cloud Azure e DevOps Individual",
+    price: "R$ 1.000"
+  }, {
+    name: "Revisão de Perfil no LinkedIn",
+    price: "R$ 200"
+  }, {
+    name: "Template",
+    price: "R$ 50"
+  }];
+  const discountsByProfile = [{
+    profile: "Open to Work (40% off)",
+    mentorship: "R$ 600",
+    linkedin: "R$ 120",
+    template: "R$ 30",
+    total: "R$ 750"
+  }, {
+    profile: "Júnior (30% off)",
+    mentorship: "R$ 700",
+    linkedin: "R$ 140",
+    template: "R$ 35",
+    total: "R$ 875"
+  }, {
+    profile: "Pleno (20% off)",
+    mentorship: "R$ 800",
+    linkedin: "R$ 160",
+    template: "R$ 40",
+    total: "R$ 1.000"
+  }, {
+    profile: "Sênior (10% off)",
+    mentorship: "R$ 900",
+    linkedin: "R$ 180",
+    template: "R$ 45",
+    total: "R$ 1.125"
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-b from-card/50 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,35 +160,21 @@ const Mentorship = () => {
 
             <div className="mb-12 rounded-lg overflow-hidden"></div>
 
-            <p className="text-lg text-muted-foreground text-center mb-12 leading-relaxed">
-              Reúno experiências sólidas que me posicionam como referência no setor de Cloud e DevOps. Alguns destaques
-              da minha trajetória profissional incluem:
-            </p>
+            <p className="text-lg text-muted-foreground text-center mb-12 leading-relaxed">Reúno experiências sólidas que me posicionam como referência no setor de Cloud Azure e DevOps. Alguns destaques da minha trajetória profissional incluem:</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {mentorHighlights.map((highlight, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
+              {mentorHighlights.map((highlight, index) => <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 p-3 rounded-full bg-primary/10">
                       <highlight.icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      {highlight.link ? (
-                        <a
-                          href={highlight.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground hover:text-primary transition-colors"
-                        >
+                      {highlight.link ? <a href={highlight.link} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
                           <p className="text-sm leading-relaxed">{highlight.text}</p>
-                        </a>
-                      ) : (
-                        <p className="text-sm leading-relaxed">{highlight.text}</p>
-                      )}
+                        </a> : <p className="text-sm leading-relaxed">{highlight.text}</p>}
                     </div>
                   </div>
-                </Card>
-              ))}
+                </Card>)}
             </div>
 
             <Card className="p-6 mt-8 bg-secondary/30">
@@ -242,12 +211,10 @@ const Mentorship = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {services.map((service, index) => (
-                    <TableRow key={index}>
+                  {services.map((service, index) => <TableRow key={index}>
                       <TableCell className="font-medium">{service.name}</TableCell>
                       <TableCell className="text-right">{service.price}</TableCell>
-                    </TableRow>
-                  ))}
+                    </TableRow>)}
                 </TableBody>
               </Table>
             </Card>
@@ -266,15 +233,13 @@ const Mentorship = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {discountsByProfile.map((row, index) => (
-                    <TableRow key={index}>
+                  {discountsByProfile.map((row, index) => <TableRow key={index}>
                       <TableCell className="font-medium">{row.profile}</TableCell>
                       <TableCell className="text-right">{row.mentorship}</TableCell>
                       <TableCell className="text-right">{row.linkedin}</TableCell>
                       <TableCell className="text-right">{row.template}</TableCell>
                       <TableCell className="text-right font-bold">{row.total}</TableCell>
-                    </TableRow>
-                  ))}
+                    </TableRow>)}
                 </TableBody>
               </Table>
             </Card>
@@ -371,8 +336,7 @@ const Mentorship = () => {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mentorshipBenefits.map((benefit, index) => (
-                <Card key={index} className="p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+              {mentorshipBenefits.map((benefit, index) => <Card key={index} className="p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
                   <CardHeader className="p-0 mb-4">
                     <div className="inline-flex p-3 rounded-full bg-primary/10 mb-3 w-fit">
                       <benefit.icon className="h-6 w-6 text-primary" />
@@ -382,8 +346,7 @@ const Mentorship = () => {
                   <CardContent className="p-0">
                     <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -398,8 +361,7 @@ const Mentorship = () => {
             </h2>
 
             <div className="space-y-6">
-              {howItWorks.map((step, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
+              {howItWorks.map((step, index) => <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl">
@@ -412,18 +374,15 @@ const Mentorship = () => {
                         <h3 className="text-xl font-heading font-bold">{step.title}</h3>
                       </div>
                       <p className="text-muted-foreground leading-relaxed">{step.description}</p>
-                      {index === 0 && (
-                        <Button asChild className="mt-4" size="sm">
+                      {index === 0 && <Button asChild className="mt-4" size="sm">
                           <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
                             Fazer inscrição
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </a>
-                        </Button>
-                      )}
+                        </Button>}
                     </div>
                   </div>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -458,8 +417,6 @@ const Mentorship = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Mentorship;
