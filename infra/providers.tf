@@ -11,4 +11,6 @@ terraform {
 
 provider "azurerm" {
   features {}
+    use_msi = false
+  use_oidc = false
 }

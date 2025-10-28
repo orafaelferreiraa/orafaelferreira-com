@@ -49,6 +49,12 @@ jobs:
             exit 1
           fi
           echo "✓ ARM environment variables are set"
+          - name: Azure Auth Debug
+  run: |
+    echo "Testing MSAL token retrieval..."
+    az account get-access-token --resource https://storage.azure.com/
+    echo "✓ Token retrieved successfully"
+
 
       - name: Terraform Init
         timeout-minutes: 1
