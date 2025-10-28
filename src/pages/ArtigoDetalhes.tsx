@@ -30,7 +30,7 @@ const ArtigoDetalhes = () => {
             <Link to="/blog">
               <Button variant="outline">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Voltar para Artigos
+                Voltar para Artigos/Posts
               </Button>
             </Link>
           </div>
@@ -56,7 +56,7 @@ const ArtigoDetalhes = () => {
             <Link to="/blog" className="inline-block mb-8">
               <Button variant="ghost" size="sm">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Voltar para Artigos
+                Voltar para Artigos/Posts
               </Button>
             </Link>
 
@@ -93,7 +93,7 @@ const ArtigoDetalhes = () => {
               <Link to="/blog">
                 <Button variant="outline">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Ver todos os artigos
+                  Ver todos os artigos/posts
                 </Button>
               </Link>
             </div>
