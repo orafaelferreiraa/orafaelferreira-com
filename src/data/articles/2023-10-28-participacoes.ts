@@ -42,7 +42,7 @@ Espero que tenham gostado deste post e que ele tenha inspirado vocês de alguma 
 **#Participações #Lives #DesenvolvimentoProfissional #DevOps #Certificações #Tecnologia**
 `,
   date: "2023-10-28",
-  category: "Participações em Comunidades",
+  category: "Posts",
   readTime: "2 min de leitura",
   mediumUrl: ""
 };

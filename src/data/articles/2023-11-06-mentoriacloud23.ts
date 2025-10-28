@@ -36,7 +36,7 @@ Se você estiver interessado em saber mais sobre este projeto ou gostaria de se 
 [![Listão dos Aprovados Mentoria 3.0](https://img.youtube.com/vi/aCDflhewrhI/0.jpg)](https://www.youtube.com/watch?v=aCDflhewrhI&t=568s)
 `,
   date: "2023-11-06",
-  category: "Participações em Comunidades",
+  category: "Posts",
   readTime: "2 min de leitura",
   mediumUrl: ""
 };

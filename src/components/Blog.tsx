@@ -10,7 +10,7 @@ const Blog = () => {
   const [activeTab, setActiveTab] = useState("artigos");
 
   const postCategories = [
-    "Participações em Comunidade",
+    "Posts",
     "Registro Eventos Presenciais",
     "Organização de Eventos",
     "Organizador Grupo de Comunidade"
