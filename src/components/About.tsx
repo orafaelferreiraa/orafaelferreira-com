@@ -38,7 +38,7 @@ const About = () => {
   }, {
     icon: Lightbulb,
     title: "Platform Engineering",
-    description: "internas com observabilidade"
+    description: "Construção de plataformas internas com observabilidade"
   }];
   return <section id="about" className="py-20 lg:py-32 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
