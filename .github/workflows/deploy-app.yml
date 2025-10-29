@@ -79,7 +79,7 @@ jobs:
 
       # Stage 3: end-to-end smoke (Playwright)
       - name: Install Playwright browsers
-        uses: microsoft/playwright-github-action@v1
+        run: npx playwright install --with-deps
 
       - name: E2E smoke tests
         run: npm run test:e2e:ci
