@@ -108,14 +108,14 @@ jobs:
 
       # Stage: Static Analysis - tfsec (non-blocking to start)
       - name: tfsec IaC security scan
-        uses: aquasecurity/tfsec-action@v1
+        uses: aquasecurity/tfsec-action@v1.0.3
         with:
           working_directory: infra
           soft_fail: true
 
-      # # Stage: Policy as Code - Checkov (non-blocking to start)
+      # Stage: Policy as Code - Checkov (non-blocking to start)
       - name: Checkov policy scan
-        uses: bridgecrewio/checkov-action@master
+        uses: bridgecrewio/checkov-action@v12
         with:
           directory: infra
           quiet: true
