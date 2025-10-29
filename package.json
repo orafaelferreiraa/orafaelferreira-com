@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:ci": "vitest --run --reporter=dot",
-    "test:components:ci": "vitest --run src/components/**/*.test.{ts,tsx}",
+  "test:components:ci": "vitest --run --include \"src/components/**/*.test.tsx\" --include \"src/components/**/*.test.ts\"",
     "migrate:posts": "node scripts/migrate-jekyll-posts.mjs"
   },
   "dependencies": {
