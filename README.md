@@ -112,9 +112,7 @@ No inputs.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_static_site_default_hostname"></a> [static\_site\_default\_hostname](#output\_static\_site\_default\_hostname) | Default hostname of the Static Web App |
+No outputs.
 <!-- END_TF_DOCS -->
 
 ## domínios e HTTPS
