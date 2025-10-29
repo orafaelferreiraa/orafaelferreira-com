@@ -22,7 +22,7 @@ const Premiacoes = () => {
           content="Quatro programas, um propósito: enaltecer quem compartilha conhecimento e fortalece a comunidade tech. Conheça as premiações de Rafael Ferreira."
         />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://orafaelferreira.com/premiacoes" />
+        <link rel="canonical" href="https://www.orafaelferreira.com/premiacoes" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Navigation />

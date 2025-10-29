@@ -11,7 +11,7 @@ const Experiencias = () => {
         <meta name="description" content="Conheça minha jornada profissional desde Assistente Técnico até Cloud Solution Architect Senior. Desafios superados, habilidades adquiridas e lições aprendidas." />
         <meta property="og:title" content="Experiências Profissionais - Rafael Martin" />
         <meta property="og:description" content="Jornada profissional em Cloud, DevOps e Engenharia de Plataforma." />
-        <link rel="canonical" href="https://orafaelferreira.com/experiencias" />
+        <link rel="canonical" href="https://www.orafaelferreira.com/experiencias" />
       </Helmet>
       <div className="min-h-screen">
         <Navigation />

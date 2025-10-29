@@ -7,14 +7,14 @@ const Mentorship = () => {
   const mentorHighlights = [{
     icon: Briefcase,
     text: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
-    link: "https://orafaelferreira.com/experiencias/"
+    link: "https://www.orafaelferreira.com/experiencias/"
   }, {
     icon: Globe,
     text: "Atuação Global como Senior Azure DevOps Solution Engineer em empresa americana"
   }, {
     icon: Award,
     text: "Formação em Ciência da Computação e +19 certificações técnicas relevantes",
-    link: "https://orafaelferreira.com/certificacoes/"
+    link: "https://www.orafaelferreira.com/certificacoes/"
   }, {
     icon: Award,
     text: "Microsoft MVP e Microsoft Certified Trainer (MCT)",
@@ -34,7 +34,7 @@ const Mentorship = () => {
   }, {
     icon: TrendingUp,
     text: "Palestrante ativo e organizador dos grupos Azure Floripa, DevOpsDays Floripa e CNCF SC",
-    link: "https://orafaelferreira.com/palestras/"
+    link: "https://www.orafaelferreira.com/palestras/"
   }];
   const mentorshipBenefits = [{
     icon: Target,

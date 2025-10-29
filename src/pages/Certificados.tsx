@@ -22,7 +22,7 @@ const Certificados = () => {
           content="Coleção completa de certificados de treinamentos, cursos e eventos que moldaram a jornada profissional de Rafael Ferreira em tecnologia."
         />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://orafaelferreira.com/certificados" />
+        <link rel="canonical" href="https://www.orafaelferreira.com/certificados" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Navigation />

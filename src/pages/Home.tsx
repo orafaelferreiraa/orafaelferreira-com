@@ -13,7 +13,7 @@ const Home = () => {
         <meta property="og:title" content="Rafael Martin - Cloud & DevOps Engineer" />
         <meta property="og:description" content="Especialista em Azure, DevOps, FinOps e Engenharia de Plataforma. Transformando ambientes em nuvem em plataformas resilientes e seguras." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://orafaelferreira.com/" />
+        <link rel="canonical" href="https://www.orafaelferreira.com/" />
       </Helmet>
       <div className="min-h-screen">
         <Navigation />

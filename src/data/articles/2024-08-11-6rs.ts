@@ -51,7 +51,7 @@ A abordagem **Replace** consiste em substituir uma aplicação existente por uma
 
 A inovação na nuvem é um diferencial competitivo, vai além da migração ou modernização, desbloqueando novas capacidades técnicas e expandindo as possibilidades de negócios. No **Cloud Adoption Framework**, o foco é entender profundamente as necessidades dos clientes e criar inovações que transformem a forma como eles interagem com os produtos da empresa.
 
-Para saber mais sobre o CAF, [confira esse artigo](https://orafaelferreira.com/posts/foundation-cloud/) no meu blog.
+Para saber mais sobre o CAF, [confira esse artigo](https://www.orafaelferreira.com/posts/foundation-cloud/) no meu blog.
 
 **Implementação de Inovação com MVPs**
 

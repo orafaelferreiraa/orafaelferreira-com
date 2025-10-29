@@ -11,7 +11,7 @@ const Recomendacoes = () => {
         <meta name="description" content="Plataformas de cursos online, canais do YouTube e podcasts recomendados para aprendizado em Cloud, DevOps e tecnologia." />
         <meta property="og:title" content="Recomendações - Rafael Martin" />
         <meta property="og:description" content="Recursos recomendados para desenvolvimento profissional em tecnologia." />
-        <link rel="canonical" href="https://orafaelferreira.com/recomendacoes" />
+        <link rel="canonical" href="https://www.orafaelferreira.com/recomendacoes" />
       </Helmet>
       <div className="min-h-screen">
         <Navigation />

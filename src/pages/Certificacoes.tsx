@@ -22,7 +22,7 @@ const Certificacoes = () => {
           content="Certificações profissionais em Cloud, DevOps e tecnologias Microsoft, AWS e Oracle conquistadas ao longo da jornada de Rafael Ferreira."
         />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://orafaelferreira.com/certificacoes" />
+        <link rel="canonical" href="https://www.orafaelferreira.com/certificacoes" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Navigation />

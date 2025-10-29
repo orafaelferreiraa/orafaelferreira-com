@@ -47,7 +47,7 @@ const ArtigoDetalhes = () => {
         <meta name="description" content={article.excerpt} />
         <meta property="og:title" content={`${article.title} - Rafael Martin`} />
         <meta property="og:description" content={article.excerpt} />
-        <link rel="canonical" href={`https://orafaelferreira.com/artigos/${article.slug}`} />
+        <link rel="canonical" href={`https://www.orafaelferreira.com/artigos/${article.slug}`} />
       </Helmet>
       <div className="min-h-screen">
         <Navigation />
