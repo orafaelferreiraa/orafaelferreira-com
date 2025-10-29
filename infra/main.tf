@@ -10,6 +10,10 @@ resource "azurerm_static_web_app" "this" {
 
   sku_tier = "Free"
   sku_size = "Free"
+
+  repository_url     = "https://github.com/orafaelferreiraa/orafaelferreira-com"
+  repository_branch  = "main"
+
 }
 
 # validation_type
