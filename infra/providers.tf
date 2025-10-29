@@ -1,5 +1,5 @@
 terraform {
-  required_version = "1.10.3"
+  required_version = " 1.14.0"
 
   required_providers {
     azurerm = {
@@ -11,6 +11,4 @@ terraform {
 
 provider "azurerm" {
   features {}
-    use_msi = false
-  use_oidc = false
 }

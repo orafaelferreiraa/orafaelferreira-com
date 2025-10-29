@@ -78,7 +78,14 @@ Pipeline de infra: `.github/workflows/infra.yml`
 
 ## domínios e HTTPS
 
-Configure domínio custom e TLS diretamente no recurso do SWA após o provisionamento.
+O domínio customizado `orafaelferreira.com` e `www.orafaelferreira.com` são configurados via Terraform no SWA.
+
+**Setup**: Consulte o guia completo em [`infra/CUSTOM_DOMAIN.md`](./infra/CUSTOM_DOMAIN.md) para:
+- Obter tokens de validação DNS
+- Configurar registros DNS (CNAME/TXT) no seu registrador
+- Validar e provisionar certificado SSL/TLS automático (Let's Encrypt)
+
+**TLS**: Certificados são provisionados e renovados automaticamente pelo Azure após validação DNS.
 
 ## notas
 
