@@ -106,7 +106,7 @@ jobs:
           tflint --init
           tflint -f compact
 
-      Stage: Static Analysis - tfsec (non-blocking to start)
+      # Stage: Static Analysis - tfsec (non-blocking to start)
       - name: tfsec IaC security scan
         uses: aquasecurity/tfsec-action@v1
         with:
@@ -114,12 +114,12 @@ jobs:
           soft_fail: true
 
       # # Stage: Policy as Code - Checkov (non-blocking to start)
-      # - name: Checkov policy scan
-      #   uses: bridgecrewio/checkov-action@master
-      #   with:
-      #     directory: infra
-      #     quiet: true
-      #     soft_fail: true
+      - name: Checkov policy scan
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: infra
+          quiet: true
+          soft_fail: true
 
       - name: Terraform Plan (PRs)
         if: github.event_name == 'pull_request'

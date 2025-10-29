@@ -53,7 +53,7 @@ const Talks = () => {
       siteUrl: "https://whitestonedev.com.br/#/eventos/8edicao",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_whitestonedev-meetup-cultura-devops-activity-7376941063523106818-xC-n",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/dod-wsd.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/wsd-devops/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/wsd-devops/",
     },
     {
       title: "DevOps além da hype: Pessoas, cultura e prática",
@@ -64,7 +64,7 @@ const Talks = () => {
       siteUrl: "https://www.hubingressos.com.br/evento/mvpconfcuritiba",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_mvpconf2025-esquentamvpconf-curitiba-activity-7371148321295503360-lnq1",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/mvpcrtb25.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/mvp-crtb/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/mvp-crtb/",
     },
     {
       title: "GreenOps na Cloud: Arquitetando um Futuro Sustentável",
@@ -75,7 +75,7 @@ const Talks = () => {
       siteUrl: "https://thedevconf.com/tdc/2025/sao-paulo/trilha-arquitetura-cloud",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_greenops-devops-cloudcomputing-activity-7363895133244637186-TJTO",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/tdc-greenops-25.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/tdc-greenops/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/tdc-greenops/",
     },
     {
       title: "Explorando a cultura DevOps: Por que tanto se fala de cultura por trás da entrega contínua?",
@@ -86,7 +86,7 @@ const Talks = () => {
       siteUrl: "https://www.meetup.com/aws-user-group-floripa/events/310698392/",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_no-pr%C3%B3ximo-0309-vou-estar-no-audit%C3%B3rio-da-activity-7368611769486864386-6CjO",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/dod-meetup25.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/dod-meetupaws/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/dod-meetupaws/",
     },
     {
       title: "DevOps Além da Hype: Pessoas, Cultura e Prática",
@@ -97,7 +97,7 @@ const Talks = () => {
       siteUrl: "https://devopsdays.org/events/2025-curitiba/welcome/",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devopsdayscuritiba-devops-teamtopologies-activity-7363170324114300930-K1WS",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/DevOps-CRTB.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/dod-crtb25/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/dod-crtb25/",
     },
     {
       title: "Trabalhando para o Exterior",
@@ -107,7 +107,7 @@ const Talks = () => {
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/00.png",
       siteUrl: "https://www.meetup.com/azure-user-groups/events/306207034/?eventOrigin=group_past_events",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/CloudModernaANTIAtaque.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/carreira-internacional/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/carreira-internacional/",
     },
     {
       title: "Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer",
@@ -129,7 +129,7 @@ const Talks = () => {
       siteUrl: "https://www.hubingressos.com.br/evento/mvpconfb",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_esquentamvp-azure-cloudcomputing-activity-7320416693091024898-RaLI",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/mvp-conf.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/mvp-conf-blu/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/mvp-conf-blu/",
     },
     {
       title: "Pipelines com Azure DevOps: Automatizando o Provisionamento Seguro da sua infraestrutura na nuvem",
@@ -140,7 +140,7 @@ const Talks = () => {
       siteUrl: "https://sqlsaturday.com/2025-04-05-sqlsaturday1104/",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_azuredevops-sqlsaturday-techbr-activity-7313160824561270785-EQtM",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/SQLSaturday.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/sqlsat25/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/sqlsat25/",
     },
     {
       title: "Pipelines com Azure DevOps: Automatizando o (im)possível",
@@ -151,7 +151,7 @@ const Talks = () => {
       siteUrl: "https://cloud.codeisland.com.br/",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_ol%C3%A1-pessoal-estarei-palestrando-na-code-activity-7262434108855767041-Ky8U",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/code.island.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/code.island24/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/code.island24/",
     },
     {
       title: "Estratégias de Cloud Foundation em Larga Escala: Garantindo que Você Não Retorne para On-Premise",
@@ -162,7 +162,7 @@ const Talks = () => {
       siteUrl: "https://talkfloripa.com.br/",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_techconnection2024-palestra-cloudcomputing-activity-7259897365203959809-ZGW4",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/TC-Floripa.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/tc-floripa24/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/tc-floripa24/",
     },
     {
       title: "Architecting a Secure Landing Zone for AI Workloads in the Cloud",
@@ -172,7 +172,7 @@ const Talks = () => {
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp.talks/1.png",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_mvp-talks-cit-conex%C3%A3o-conhecimento-e-inova%C3%A7%C3%A3o-activity-7259535011341631489-j6IA",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/CIT.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/mvp.day/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/mvp.day/",
     },
     {
       title: "Deploy de um Futuro com Sustentabilidade: GreenOps na Cloud",
@@ -184,7 +184,7 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_27-cloud-native-s%C3%A3o-paulo-sustainability-activity-7258090638800289792-r0r4",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/cncn-sp.pdf",
       videoUrl: "https://www.youtube.com/live/mIgEJseOt0U",
-      blogUrl: "https://orafaelferreira.com/artigos/sustentability.day/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/sustentability.day/",
     },
     {
       title: "Curso DP-900 Fundamentos de Dados do Azure",
@@ -194,7 +194,7 @@ const Talks = () => {
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/1.jpeg",
       siteUrl: "https://www.eventbrite.com.br/e/curso-dp-900-em-sao-josesc-tickets-947904667377",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_curso-dp-900-em-s%C3%A3o-jos%C3%A9sc-activity-7221484277182402560-mdRO",
-      blogUrl: "https://orafaelferreira.com/artigos/curso-dp-900/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/curso-dp-900/",
     },
     {
       title: "Plataformização de Arquitetura de Dados com Backstage.io e IAC",
@@ -205,7 +205,7 @@ const Talks = () => {
       siteUrl: "https://thedevconf.com/tdc/2024/florianopolis/trilha-arquitetura-de-dados",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_tdc-tdcfloripa-tdc2024-activity-7214614002457276416-r9qB",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/TDC.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/talk-tdc/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/talk-tdc/",
     },
     {
       title: "Plataformização da Cloud Foundation com Backstage: Desvendando os Segredos da Eficiência na Nuvem",
@@ -217,7 +217,7 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_kubernetes-cloudnative-devops-activity-7209180344233668608-4Xrc",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/KuberTENes.pdf",
       videoUrl: "https://www.youtube.com/watch?v=iACjUNbhnaM",
-      blogUrl: "https://orafaelferreira.com/artigos/KuberTENes/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/KuberTENes/",
     },
     {
       title: "Curso AZ-900 - Fundamentos da Azure",
@@ -227,7 +227,7 @@ const Talks = () => {
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/0.jpeg",
       siteUrl: "https://www.eventbrite.com.br/e/az-900-tickets-885187528727",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_ai900-fundamentos-az900-activity-7205901535577300992-nB1S",
-      blogUrl: "https://orafaelferreira.com/artigos/curso-az-900/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/curso-az-900/",
     },
     {
       title: "GreenOps na Cloud: Construindo o Futuro com Sustentabilidade",
@@ -238,7 +238,7 @@ const Talks = () => {
       siteUrl: "https://talkfloripa.com.br/grade",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_no-%C3%BAltimo-s%C3%A1bado-participei-do-evento-tech-activity-7203412108322025472-Di9q",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/tech-connection-balneario-camboriu.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/tc.bc24/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/tc.bc24/",
     },
     {
       title: "Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentável",
@@ -249,7 +249,7 @@ const Talks = () => {
       siteUrl: "https://community.cncf.io/events/details/cncf-kcd-brasil-presents-kcd-brasil-sao-paulo-2024/",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_tbt-kdc-tecnologia-activity-7168974563542839297-qpOK",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/KCD.2024.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/kcdsp24/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/kcdsp24/",
     },
     {
       title: "Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentável",
@@ -260,7 +260,7 @@ const Talks = () => {
       siteUrl: "https://community.cncf.io/events/details/cncf-cloud-native-floripa-presents-2o-cloud-native-floripa-meetup/",
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_um-pouco-do-meetup-de-ontem-da-cloud-native-activity-7166602764209397760-58XY",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Cloud-Native-Floripa2Edição.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/2meetcncf/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/2meetcncf/",
     },
   ];
 
@@ -367,7 +367,7 @@ const Talks = () => {
       location: "Online",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Global.Azure.pdf",
       videoUrl: "https://www.youtube.com/watch?v=etnQCHbIg2I",
-      blogUrl: "https://orafaelferreira.com/posts/global-azure/",
+      blogUrl: "https://www.orafaelferreira.com/posts/global-azure/",
     },
     {
       title: "Azure Cloud Foundation",
@@ -386,7 +386,7 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_devops-monitoramento-observabilidade-activity-7134873516364943362-sFy2",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Observability-alem-do-alcance.pdf",
       videoUrl: "https://www.youtube.com/watch?v=-rYhXprMJO4",
-      blogUrl: "https://orafaelferreira.com/posts/mentoria/",
+      blogUrl: "https://www.orafaelferreira.com/posts/mentoria/",
     },
     {
       title: "DEVOPS - EP 10 - CI/CD com Azure DevOps ou GitHub Actions",
@@ -395,7 +395,7 @@ const Talks = () => {
       location: "Online",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/pipelines-com-azureDevOps.pdf",
       videoUrl: "https://www.youtube.com/watch?v=hxiluSC8E_U",
-      blogUrl: "https://orafaelferreira.com/posts/mentoria/",
+      blogUrl: "https://www.orafaelferreira.com/posts/mentoria/",
     },
   ];
 
