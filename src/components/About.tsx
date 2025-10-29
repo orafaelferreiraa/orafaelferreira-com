@@ -21,7 +21,7 @@ const About = () => {
     icon: Users,
     title: "Comunidade & Conteúdo",
     description: "Palestrante ativo, mentor e criador de conteúdo técnico",
-    details: "Organização da Comunidades tecnicas em Florianópolis | Podcast e conteúdo no YouTube e Spotify"
+    details: "Organização da Comunidades Técnicas em Florianópolis | Podcast e conteúdo no YouTube e Spotify"
   }];
   const skills = [{
     icon: Cloud,
