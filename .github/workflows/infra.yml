@@ -106,12 +106,12 @@ jobs:
           tflint --init
           tflint -f compact
 
-      # Stage: Static Analysis - tfsec (non-blocking to start)
-      # - name: tfsec IaC security scan
-      #   uses: aquasecurity/tfsec-action@v1
-      #   with:
-      #     working_directory: infra
-      #     soft_fail: true
+      Stage: Static Analysis - tfsec (non-blocking to start)
+      - name: tfsec IaC security scan
+        uses: aquasecurity/tfsec-action@v1
+        with:
+          working_directory: infra
+          soft_fail: true
 
       # # Stage: Policy as Code - Checkov (non-blocking to start)
       # - name: Checkov policy scan

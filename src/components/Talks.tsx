@@ -118,7 +118,7 @@ const Talks = () => {
       siteUrl: "https://www.sympla.com.br/evento/hnwd-florianopolis-2025/2960275",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_hnwd-hnwd25-hnwdsc-activity-7358096889168154624-AeFY",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/CloudModernaANTIAtaque.pdf",
-      blogUrl: "https://orafaelferreira.com/artigos/hack/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/hack",
     },
     {
       title: "Os 6Rs que Você Precisa Conhecer para Migrar para a Cloud; O sétimo R é de Rivotril?!",
