@@ -21,4 +21,9 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1200,
     // Use Vite's default chunking strategy for maximum compatibility on SWA
   },
+  // Minimal test setup to start the test pyramid with fast unit tests first
+  test: {
+    environment: 'node',
+    include: ['src/**/*.test.{ts,tsx}'],
+  },
 }));
