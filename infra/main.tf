@@ -12,6 +12,7 @@ resource "azurerm_static_web_app" "this" {
   sku_size = "Free"
 }
 
+# validation_type
 resource "azurerm_static_web_app_custom_domain" "apex" {
   static_web_app_id = azurerm_static_web_app.this.id
   domain_name       = "orafaelferreira.com"
