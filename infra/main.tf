@@ -15,13 +15,6 @@ resource "azurerm_static_web_app" "this" {
 # validation_type
 resource "azurerm_static_web_app_custom_domain" "txt-value" {
   static_web_app_id = azurerm_static_web_app.this.id
-  domain_name       = "orafaelferreira.com"
-  validation_type   = "dns-txt-token"
-}
-
-# Custom Domain
-resource "azurerm_static_web_app_custom_domain" "www" {
-  static_web_app_id = azurerm_static_web_app.this.id
   domain_name       = "www.orafaelferreira.com"
-  validation_type   = "cname-delegation"
+  validation_type   = "dns-txt-token"
 }
