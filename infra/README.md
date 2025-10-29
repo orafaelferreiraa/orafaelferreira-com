@@ -96,7 +96,6 @@ No inputs.
 | Name | Description |
 |------|-------------|
 | <a name="output_static_site_default_hostname"></a> [static\_site\_default\_hostname](#output\_static\_site\_default\_hostname) | Default hostname of the Static Web App |
-| <a name="output_validation_token"></a> [validation\_token](#output\_validation\_token) | Validation token for the custom domain DNS TXT record |
 <!-- END_TF_DOCS -->
 
 ## GitHub Actions (infra.yml)
