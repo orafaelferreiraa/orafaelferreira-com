@@ -85,3 +85,4 @@ Configure domínio custom e TLS diretamente no recurso do SWA após o provisiona
 - Lint no CI foi desabilitado para evitar ruído causado por conteúdo em markdown inline nos arquivos de artigos. O typecheck (TS) permanece ativo.
 - O repositório contém dois projetos de site (pasta `orafaelferreira.com/` é o antigo Jekyll); a SPA atual está em `orafaelferreira-com/`.
 - A pasta `infra/` possui `.gitignore` próprio para evitar que `.terraform/`, `*.tfstate` e `*.tfplan` entrem em commits. O lockfile `.terraform.lock.hcl` é versionado.
+- A pipeline de deploy usa `npm install` ao invés de `npm ci` para maior flexibilidade quando há atualizações de dependências, evitando erros de sync entre `package.json` e `package-lock.json`.
