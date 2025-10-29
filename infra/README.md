@@ -84,8 +84,6 @@ No modules.
 | Name | Type |
 |------|------|
 | [azurerm_static_web_app.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app) | resource |
-| [azurerm_static_web_app_custom_domain.apex](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app_custom_domain) | resource |
-| [azurerm_static_web_app_custom_domain.www](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app_custom_domain) | resource |
 | [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/resource_group) | data source |
 
 ## Inputs
@@ -96,7 +94,6 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_custom_domains"></a> [custom\_domains](#output\_custom\_domains) | Custom domains configured for the Static Web App |
 | <a name="output_static_site_default_hostname"></a> [static\_site\_default\_hostname](#output\_static\_site\_default\_hostname) | Default hostname of the Static Web App |
 <!-- END_TF_DOCS -->
 
