@@ -70,20 +70,19 @@ jobs:
       # Stage 2: component tests (React Testing Library)
       - name: Component tests
         run: npm run test:components:ci
-        # To enable later: add RTL + jsdom + a few component specs, then uncomment
-
-      # Stage 3: end-to-end smoke (Playwright)
-      # - name: E2E smoke tests
-      #   uses: microsoft/playwright-github-action@v1
-      # - name: Run E2E
-      #   run: npm run test:e2e:ci
-      #   # To enable later: add Playwright + basic homepage smoke test, then uncomment
 
       - name: Type check
         run: npm run typecheck
 
       - name: Build app
         run: npm run build
+
+      # Stage 3: end-to-end smoke (Playwright)
+      - name: Install Playwright browsers
+        uses: microsoft/playwright-github-action@v1
+
+      - name: E2E smoke tests
+        run: npm run test:e2e:ci
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
