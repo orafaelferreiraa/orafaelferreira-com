@@ -76,6 +76,13 @@ Pipeline de infra: `.github/workflows/infra.yml`
 - Documentação com `terraform-docs` é gerada antes do `init` e, em `push` para `main`, o README é atualizado com commit automático.
 - Resumo do job: a pipeline escreve um resumo no GitHub Summary com informações de evento, branch, outputs (em push) e status da doc.
 
+### Referência do módulo (auto)
+
+O bloco abaixo é gerado automaticamente pelo `terraform-docs` a partir do conteúdo de `infra/`. Ele é atualizado em pushes para `main`.
+
+<!-- BEGIN_TF_DOCS -->
+<!-- END_TF_DOCS -->
+
 ## domínios e HTTPS
 
 O domínio customizado `orafaelferreira.com` e `www.orafaelferreira.com` são configurados via Terraform no SWA.

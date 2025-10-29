@@ -52,7 +52,7 @@ jobs:
         uses: terraform-docs/gh-actions@v1.3.0
         with:
           working-dir: infra
-          output-file: README.md
+          output-file: ../README.md
           output-method: inject
           git-push: false
 
@@ -61,10 +61,10 @@ jobs:
         uses: terraform-docs/gh-actions@v1.3.0
         with:
           working-dir: infra
-          output-file: README.md
+          output-file: ../README.md
           output-method: inject
           git-push: true
-          git-commit-message: 'chore(infra): update terraform docs'
+          git-commit-message: 'chore(docs): update Terraform module docs in root README'
 
       - name: Terraform Init
         timeout-minutes: 3
@@ -80,6 +80,32 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
+
+      # Stage: Lint Terraform (blocking)
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: latest
+
+      - name: Run TFLint
+        run: |
+          tflint --init
+          tflint -f compact
+
+      # Stage: Static Analysis - tfsec (non-blocking to start)
+      # - name: tfsec IaC security scan
+      #   uses: aquasecurity/tfsec-action@v1
+      #   with:
+      #     working_directory: infra
+      #     soft_fail: true
+
+      # # Stage: Policy as Code - Checkov (non-blocking to start)
+      # - name: Checkov policy scan
+      #   uses: bridgecrewio/checkov-action@master
+      #   with:
+      #     directory: infra
+      #     quiet: true
+      #     soft_fail: true
 
       - name: Terraform Plan (PRs)
         if: github.event_name == 'pull_request'
@@ -123,5 +149,5 @@ jobs:
             fi;
             echo "";
             echo "### Docs";
-            echo "- terraform-docs injetado no infra/README.md (push em main).";
+            echo "- terraform-docs injetado no README.md da raiz do repo (push em main).";
           } >> "$GITHUB_STEP_SUMMARY"
