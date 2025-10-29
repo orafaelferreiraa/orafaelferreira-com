@@ -136,7 +136,14 @@ jobs:
 
       - name: Terraform Apply (main)
         if: github.event_name == 'push'
-        run: terraform apply -auto-approve -input=false
+        env:
+          SWA_REPOSITORY_TOKEN: ${{ secrets.GH_PAT_SWA }}
+        run: |
+          # Pass repository linkage only on push (secrets are available)
+          terraform apply -auto-approve -input=false \
+            -var "repository_url=https://github.com/${{ github.repository }}" \
+            -var "repository_branch=${{ github.ref_name }}" \
+            -var "repository_token=${SWA_REPOSITORY_TOKEN}"
 
       # docs already generated above to avoid committing provider binaries
 

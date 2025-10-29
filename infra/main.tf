@@ -11,8 +11,9 @@ resource "azurerm_static_web_app" "this" {
   sku_tier = "Free"
   sku_size = "Free"
 
-  repository_url     = "https://github.com/orafaelferreiraa/orafaelferreira-com"
-  repository_branch  = "main"
+  repository_url     = var.repository_url
+  repository_branch  = var.repository_branch
+  repository_token    = var.repository_token
 
 }
 
