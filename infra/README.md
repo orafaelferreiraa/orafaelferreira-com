@@ -66,7 +66,7 @@ Este repositório usa `terraform-docs` via GitHub Actions para gerar/atualizar a
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) |  1.14.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) |  1.13.4 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 4.50.0 |
 
 ## Providers
