@@ -19,9 +19,9 @@ resource "azurerm_static_web_app_custom_domain" "txt-value" {
   validation_type   = "dns-txt-token"
 }
 
-# # Custom Domain - WWW subdomain
-# resource "azurerm_static_web_app_custom_domain" "www" {
-#   static_web_app_id = azurerm_static_web_app.this.id
-#   domain_name       = "www.orafaelferreira.com"
-#   validation_type   = "cname-delegation"
-# }
+# Custom Domain
+resource "azurerm_static_web_app_custom_domain" "www" {
+  static_web_app_id = azurerm_static_web_app.this.id
+  domain_name       = "www.orafaelferreira.com"
+  validation_type   = "cname-delegation"
+}
