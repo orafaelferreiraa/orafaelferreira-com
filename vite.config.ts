@@ -21,9 +21,10 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1200,
     // Use Vite's default chunking strategy for maximum compatibility on SWA
   },
-  // Minimal test setup to start the test pyramid with fast unit tests first
+  // Test config: jsdom for component tests; works for unit tests too
   test: {
-    environment: 'node',
+    environment: 'jsdom',
+    setupFiles: ['./src/setupTests.ts'],
     include: ['src/**/*.test.{ts,tsx}'],
   },
 }));

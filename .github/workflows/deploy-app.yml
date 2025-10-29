@@ -68,9 +68,9 @@ jobs:
         run: npm run test:ci
 
       # Stage 2: component tests (React Testing Library)
-      # - name: Component tests
-      #   run: npm run test:components:ci
-      #   # To enable later: add RTL + jsdom + a few component specs, then uncomment
+      - name: Component tests
+        run: npm run test:components:ci
+        # To enable later: add RTL + jsdom + a few component specs, then uncomment
 
       # Stage 3: end-to-end smoke (Playwright)
       # - name: E2E smoke tests

@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:ci": "vitest --run --reporter=dot",
+    "test:components:ci": "vitest --run src/components/**/*.test.{ts,tsx}",
     "migrate:posts": "node scripts/migrate-jekyll-posts.mjs"
   },
   "dependencies": {
@@ -84,6 +85,9 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
     "vite": "^5.4.19",
-    "vitest": "^2.1.5"
+    "vitest": "^2.1.5",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "jsdom": "^24.1.3"
   }
 }
