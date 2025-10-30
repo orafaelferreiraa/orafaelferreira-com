@@ -17,7 +17,9 @@ i18n
       escapeValue: false
     },
     detection: {
-      order: ['localStorage', 'navigator'],
+      // Allow URL override (?lang=en), then persist in localStorage, then fall back to browser language
+      order: ['querystring', 'localStorage', 'navigator'],
+      lookupQuerystring: 'lang',
       caches: ['localStorage']
     }
   });

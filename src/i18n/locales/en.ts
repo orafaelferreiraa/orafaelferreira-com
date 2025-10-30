@@ -96,6 +96,11 @@ export default {
       social: "Social Media"
     },
     pages: {
+      home: {
+        title: "Rafael Martin - Cloud & DevOps Engineer",
+        description: "DevOps Engineer specialized in Cloud and Platform Engineering. Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star. Over 10 years in technology and 19 technical certifications in Azure, DevOps, FinOps and Platform Engineering.",
+        ogDescription: "Specialist in Azure, DevOps, FinOps and Platform Engineering. Turning cloud environments into resilient and secure platforms."
+      },
       awards: {
         title: "Awards | Rafael Ferreira - MVP Azure, Alura Star, DevOps Ambassador",
         description: "Awards and recognitions received by Rafael Ferreira: Microsoft MVP Azure 2025, Alura Star 2025, DevOps Institute Ambassador 2025, and Green Software Champion 2025. Professional dedicated to sharing knowledge with the tech community."
