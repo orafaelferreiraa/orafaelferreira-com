@@ -74,7 +74,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in bg-background/98 backdrop-blur-md">
+          <div className="md:hidden py-4 border-t border-border animate-fade-in bg-background backdrop-blur-md relative z-10">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link
