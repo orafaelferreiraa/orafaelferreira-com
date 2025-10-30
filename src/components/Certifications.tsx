@@ -21,14 +21,14 @@ const certifications: Certification[] = [
     code: "AZ-400",
     provider: "Microsoft",
     image: "https://images.credly.com/size/118x118/images/c3ab66f8-5d59-4afa-a6c2-0ba30a1989ca/CERT-Expert-DevOps-Engineer-600x600.png",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/EA24867B521F82D8?sharingId=AF242064A982B1A4"
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/orafaelferreira/EA24867B521F82D8?sharingId=MVP_392766"
   },
   {
     name: "Microsoft Certified: Azure Solutions Architect Expert",
     code: "AZ-305",
     provider: "Microsoft",
     image: "https://images.credly.com/size/118x118/images/987adb7e-49be-4e24-b67e-55986bd3fe66/azure-solutions-architect-expert-600x600.png",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/ECCBB4FB7DF76876?sharingId=AF242064A982B1A4"
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/orafaelferreira/ECCBB4FB7DF76876?sharingId=MVP_392766"
   },
   {
     name: "MCSA: Windows Server 2016",
@@ -47,35 +47,35 @@ const certifications: Certification[] = [
     code: "AZ-500",
     provider: "Microsoft",
     image: "https://images.credly.com/size/112x112/images/1ad16b6f-2c71-4a2e-ae74-ec69c4766039/azure-security-engineer-associate600x600.png",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/F760B4A83F6D292C?sharingId=AF242064A982B1A4"
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/orafaelferreira/F760B4A83F6D292C?sharingId=MVP_392766"
   },
   {
     name: "Microsoft Certified: Azure Network Engineer Associate",
     code: "AZ-700",
     provider: "Microsoft",
     image: "https://images.credly.com/size/112x112/images/c3a2e51d-7984-48cc-a4cb-88d4e8487037/azure-network-engineer-associate-600x600.png",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/BE1DAD21D266E213?sharingId=AF242064A982B1A4"
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/orafaelferreira/BE1DAD21D266E213?sharingId=MVP_392766"
   },
   {
     name: "Microsoft Certified: Azure Administrator Associate",
     code: "AZ-104",
     provider: "Microsoft",
     image: "https://images.credly.com/size/112x112/images/336eebfc-0ac3-4553-9a67-b402f491f185/azure-administrator-associate-600x600.png",
-    link: "https://www.credly.com/badges/b1855e31-b3f7-4b11-a8a0-bce0b1e5744a/public_url"
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/orafaelferreira/13E2C5603C9C68C?sharingId=MVP_392766"
   },
   {
     name: "Microsoft Certified: Identity and Access Administrator Associate",
     code: "SC-300",
     provider: "Microsoft",
     image: "https://images.credly.com/size/112x112/images/91295436-0704-4b98-8e1a-ef5f937bda21/identity-and-access-administrator-associate-600x600.png",
-    link: "https://www.credly.com/badges/5d8c1270-be3f-4fd2-a7df-d7cd6f030b05/public_url"
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/orafaelferreira/D1E6BECF41B59C4?sharingId=MVP_392766"
   },
   {
     name: "Microsoft 365 Certified: Endpoint Administrator Associate",
     code: "MD-102",
     provider: "Microsoft",
     image: "https://images.credly.com/size/112x112/images/dbc3530b-af8c-4fa1-8d9c-cdfbd9edf462/microsoft365-modern-desktop-administrator-associate-600x600.png",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/73B0C88124A23C32?sharingId=AF242064A982B1A4"
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/orafaelferreira/73B0C88124A23C32?sharingId=MVP_392766"
   },
   {
     name: "GitHub Foundations",
