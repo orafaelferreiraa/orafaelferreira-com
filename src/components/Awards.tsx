@@ -1,5 +1,6 @@
 import { Trophy, Award, Users, Leaf } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const awards = [
   {
@@ -70,15 +71,17 @@ const awards = [
 ];
 
 const Awards = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="awards" className="py-20 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Premiações
+            {t("awards.title")}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto italic border-l-4 border-primary pl-4">
-            Quatro programas, um propósito: <strong>enaltecer quem compartilha conhecimento e fortalece a comunidade tech</strong>.
+            {t("awards.subtitle")}
           </p>
         </div>
 
@@ -102,9 +105,9 @@ const Awards = () => {
                         <span>{award.title}</span>
                       </CardTitle>
                       <CardDescription className="text-base">
-                        <strong>Categoria:</strong> {award.category}
+                        <strong>{t("awards.category")}:</strong> {award.category}
                         <br />
-                        <strong>Ano de ingresso:</strong> {award.year}
+                        <strong>{t("awards.yearJoined")}:</strong> {award.year}
                       </CardDescription>
                     </div>
                   </div>
@@ -115,7 +118,7 @@ const Awards = () => {
                   {award.benefits && award.benefits.length > 0 && (
                     <div className="mb-4">
                       <h4 className="font-semibold mb-2 text-sm uppercase tracking-wider">
-                        {award.id === 1 ? "O que o MVP oferece:" : "Por que fui escolhido:"}
+                        {award.id === 1 ? t("awards.mvpOffers") : t("awards.whyChosen")}
                       </h4>
                       <ul className="space-y-2">
                         {award.benefits.map((benefit, idx) => (
@@ -135,7 +138,7 @@ const Awards = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-primary hover:underline font-medium text-sm mt-2"
                     >
-                      Ver perfil público →
+                      {t("awards.viewProfile")} →
                     </a>
                   )}
                 </CardContent>
@@ -146,11 +149,11 @@ const Awards = () => {
 
         <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 animate-fade-in">
           <CardHeader>
-            <CardTitle className="text-2xl">Impacto para a Comunidade</CardTitle>
+            <CardTitle className="text-2xl">{t("awards.communityImpact")}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground mb-4">
-              Com <strong>Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion</strong>, posso:
+              {t("awards.communityDescription")}
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
@@ -178,7 +181,7 @@ const Awards = () => {
                 rel="noopener noreferrer"
                 className="text-primary hover:underline font-semibold"
               >
-                me chama no LinkedIn
+                {t("awards.linkedin")}
               </a>
               ! 🚀
             </p>

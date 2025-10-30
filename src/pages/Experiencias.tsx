@@ -2,15 +2,18 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
+import { useTranslation } from "react-i18next";
 
 const Experiencias = () => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Helmet>
-        <title>Experiências - Rafael Martin</title>
-        <meta name="description" content="Conheça minha jornada profissional desde Assistente Técnico até Cloud Solution Architect Senior. Desafios superados, habilidades adquiridas e lições aprendidas." />
-        <meta property="og:title" content="Experiências Profissionais - Rafael Martin" />
-        <meta property="og:description" content="Jornada profissional em Cloud, DevOps e Engenharia de Plataforma." />
+        <title>{t("pages.experience.title")}</title>
+        <meta name="description" content={t("pages.experience.description")} />
+        <meta property="og:title" content={t("pages.experience.title")} />
+        <meta property="og:description" content={t("pages.experience.description")} />
         <link rel="canonical" href="https://www.orafaelferreira.com/experiencias" />
       </Helmet>
       <div className="min-h-screen">

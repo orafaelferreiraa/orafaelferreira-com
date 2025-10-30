@@ -2,15 +2,18 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import BlogComponent from "@/components/Blog";
 import Footer from "@/components/Footer";
+import { useTranslation } from "react-i18next";
 
 const Blog = () => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Helmet>
-        <title>Artigos/Posts - Rafael Martin</title>
-        <meta name="description" content="Artigos técnicos e posts sobre Azure, DevOps, Observabilidade, FinOps, Comunidade e Eventos. Compartilhando conhecimento e experiências da área." />
-        <meta property="og:title" content="Artigos/Posts - Rafael Martin" />
-        <meta property="og:description" content="Artigos técnicos e posts sobre Azure, DevOps, Observabilidade, FinOps, Comunidade e Eventos." />
+        <title>{t("pages.blog.title")}</title>
+        <meta name="description" content={t("pages.blog.description")} />
+        <meta property="og:title" content={t("pages.blog.title")} />
+        <meta property="og:description" content={t("pages.blog.description")} />
         <link rel="canonical" href="https://www.orafaelferreira.com/blog" />
       </Helmet>
       <div className="min-h-screen">

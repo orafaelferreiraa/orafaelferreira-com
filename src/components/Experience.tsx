@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Briefcase, Calendar } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "react-i18next";
 
 interface ExperienceItem {
   title: string;
@@ -103,18 +104,17 @@ const experiences: ExperienceItem[] = [
 ];
 
 const Experience = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Minha Jornada Profissional
+            {t("experience.title")}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl">
-            Compartilhando um pouco da minha jornada profissional e das experiências que moldaram meu caminho até aqui. 
-            Desde os primeiros passos como um Assistente Técnico até a função atual de Cloud Solution Architect Senior, cada etapa desempenhou 
-            um papel fundamental na minha trajetória. Espero que minha história possa inspirar e motivar outros profissionais em 
-            suas próprias jornadas.
+            {t("experience.description")}
           </p>
         </div>
 

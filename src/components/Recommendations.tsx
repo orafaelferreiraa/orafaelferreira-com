@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Youtube, Music } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "react-i18next";
 
 interface RecommendationItem {
   name: string;
@@ -45,16 +46,17 @@ const spotifyPodcasts: RecommendationItem[] = [
 ];
 
 const Recommendations = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Recomendações
+            {t("recommendations.title")}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl">
-            Nesta página, compartilho com vocês algumas das plataformas de cursos online, canais do YouTube e podcasts que têm 
-            contribuído significativamente para o meu aprendizado e desenvolvimento pessoal e profissional.
+            {t("recommendations.description")}
           </p>
         </div>
 
@@ -66,7 +68,7 @@ const Recommendations = () => {
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-2">
                 <ExternalLink className="h-6 w-6 text-primary" />
-                Plataformas de Treinamentos Online
+                {t("recommendations.trainingPlatforms")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -96,7 +98,7 @@ const Recommendations = () => {
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-2">
                 <Youtube className="h-6 w-6 text-primary" />
-                Canais do YouTube
+                {t("recommendations.youtubeChannels")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -126,7 +128,7 @@ const Recommendations = () => {
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-2">
                 <Music className="h-6 w-6 text-primary" />
-                Podcasts no Spotify
+                {t("recommendations.spotifyPodcasts")}
               </CardTitle>
             </CardHeader>
             <CardContent>

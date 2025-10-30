@@ -2,15 +2,18 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Talks from "@/components/Talks";
 import Footer from "@/components/Footer";
+import { useTranslation } from "react-i18next";
 
 const Palestras = () => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Helmet>
-        <title>Palestras - Rafael Martin</title>
-        <meta name="description" content="Palestras e apresentações sobre Cloud, DevOps e Engenharia de Plataforma em eventos e comunidades técnicas." />
-        <meta property="og:title" content="Palestras - Rafael Martin" />
-        <meta property="og:description" content="Palestras sobre Cloud, DevOps e Engenharia de Plataforma." />
+        <title>{t("pages.talks.title")}</title>
+        <meta name="description" content={t("pages.talks.description")} />
+        <meta property="og:title" content={t("pages.talks.title")} />
+        <meta property="og:description" content={t("pages.talks.description")} />
         <link rel="canonical" href="https://www.orafaelferreira.com/palestras" />
       </Helmet>
       <div className="min-h-screen">

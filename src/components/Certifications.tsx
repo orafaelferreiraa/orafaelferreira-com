@@ -1,5 +1,6 @@
 import { Shield, Award, GraduationCap, Cloud, Server, Database, Terminal, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 interface Certification {
   name: string;
@@ -138,18 +139,17 @@ const certifications: Certification[] = [
 ];
 
 const Certifications = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="certifications" className="py-20 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Minhas Certificações
+            {t("certifications.title")}
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Certificações são marcos importantes na minha jornada profissional. Elas representam o compromisso com a excelência 
-            e a busca constante por conhecimento. Aqui estão algumas das certificações que conquistei ao longo dos anos, 
-            cada uma delas refletindo o desejo de me aprimorar e oferecer o melhor em cada projeto. 
-            
+            {t("certifications.description")}
           </p>
         </div>
 
@@ -190,7 +190,7 @@ const Certifications = () => {
                     className="text-primary hover:underline text-xs font-medium flex items-center gap-1"
                   >
                     <CheckCircle className="h-3 w-3" />
-                    Verificar
+                    {t("certifications.verify")}
                   </a>
                 </div>
               </CardContent>

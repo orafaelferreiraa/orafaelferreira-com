@@ -2,15 +2,18 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Mentorship from "@/components/Mentorship";
 import Footer from "@/components/Footer";
+import { useTranslation } from "react-i18next";
 
 const Mentoria = () => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Helmet>
-        <title>Mentoria - Rafael Martin</title>
-        <meta name="description" content="Mentoria Individual em Cloud e DevOps. Sessões personalizadas para profissionais que buscam evolução técnica e posicionamento no mercado." />
-        <meta property="og:title" content="Mentoria - Rafael Martin" />
-        <meta property="og:description" content="Mentoria Individual em Cloud e DevOps. Sessões personalizadas para evolução técnica." />
+        <title>{t("pages.mentorship.title")}</title>
+        <meta name="description" content={t("pages.mentorship.description")} />
+        <meta property="og:title" content={t("pages.mentorship.title")} />
+        <meta property="og:description" content={t("pages.mentorship.description")} />
         <link rel="canonical" href="https://www.orafaelferreira.com/mentoria" />
       </Helmet>
       <div className="min-h-screen">
