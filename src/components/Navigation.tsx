@@ -74,7 +74,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden py-4 border-t border-border animate-fade-in bg-background/98 backdrop-blur-md">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link
@@ -84,7 +84,7 @@ const Navigation = () => {
                   className={`text-sm font-medium transition-colors text-left ${
                     location.pathname === item.path
                       ? "text-primary"
-                      : "text-muted-foreground hover:text-primary"
+                      : "text-foreground hover:text-primary"
                   }`}
                 >
                   {item.label}
