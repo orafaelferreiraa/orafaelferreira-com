@@ -6,8 +6,10 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { articles } from "@/data/articles";
 import { extractFirstImage } from "@/lib/extractImage";
+import { useTranslation } from "react-i18next";
 
 const Blog = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("artigos");
 
   const postCategories = [
@@ -65,7 +67,7 @@ const Blog = () => {
                     size="sm" 
                     className="group/btn"
                   >
-                    Ler mais
+                    {t("blog.readMore")}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </div>
@@ -82,17 +84,17 @@ const Blog = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4">
-            <span className="text-primary">Artigos/Posts</span>
+            <span className="text-primary">{t("blog.title")}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Conteúdo técnico e experiências em comunidade
+            {t("blog.description")}
           </p>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-            <TabsTrigger value="artigos">Artigos</TabsTrigger>
-            <TabsTrigger value="posts">Posts</TabsTrigger>
+            <TabsTrigger value="artigos">{t("blog.articles")}</TabsTrigger>
+            <TabsTrigger value="posts">{t("blog.posts")}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="artigos" className="mt-0">

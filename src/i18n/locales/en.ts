@@ -84,10 +84,12 @@ export default {
     },
     blog: {
       title: "Articles/Posts",
-      description: "Technical articles and posts about Azure, DevOps, Observability, FinOps, Community, and Events.",
+      description: "Technical content and community experiences",
       readMore: "Read more",
       allCategories: "All Categories",
-      search: "Search articles..."
+      search: "Search articles...",
+      articles: "Articles",
+      posts: "Posts"
     },
     footer: {
       rights: "All rights reserved.",
@@ -98,17 +100,68 @@ export default {
         title: "Awards | Rafael Ferreira - MVP Azure, Alura Star, DevOps Ambassador",
         description: "Awards and recognitions received by Rafael Ferreira: Microsoft MVP Azure 2025, Alura Star 2025, DevOps Institute Ambassador 2025, and Green Software Champion 2025. Professional dedicated to sharing knowledge with the tech community."
       },
-      mentorship: {
-        title: "Mentorship - Rafael Martin",
-        description: "Individual Mentorship in Cloud and DevOps. Personalized sessions for professionals seeking technical evolution and market positioning."
+    mentorship: {
+      title: "Cloud Azure and DevOps Mentorship",
+      whyChoose: "Why choose me as your mentor?",
+      values: "Pricing",
+      pricing: "According to your career level. Check the prices for each service and adjusted prices by profile:",
+      service: "Service",
+      price: "Price",
+      discountsByProfile: "Discounts by Profile",
+      profile: "Profile",
+      total: "Total",
+      hero: {
+        subtitle1: "Do you work in IT (whether beginner or experienced) and want to grow in Cloud Azure and DevOps, but find it difficult to find a clear path?",
+        subtitle2: "Whether you're a beginner looking to start or a professional with some experience and not sure which path to follow? I understand exactly how frustrating it is to study, make an effort and not have clear results. A focused and personalized 1:1 mentorship might be what was missing.",
+        subtitle3: "The market is hot, but only those with strategic clarity manage to stand out, gain recognition and better salaries. My mentorship exists precisely to solve this. I will help you draw up a concrete plan for evolution in Cloud and DevOps.",
+        highlight: "This mentorship is for you who are tired of looking for jobs. Let the jobs and recruiters look for you. Become a reference in your area, be recognized in the market and make recruiters and highly relevant professionals want to work with you.",
+        cta: "I want to stand out in Cloud and DevOps"
       },
+      intro: "I bring together solid experiences that position me as a reference in the Cloud Azure and DevOps sector. Some highlights of my professional trajectory include:",
+      expertise: {
+        technical: "Technical Mastery:",
+        technicalDesc: "Deep knowledge of Microsoft Azure, Azure DevOps, IaC, GitHub Actions, among other cutting-edge tools widely used in the sector.",
+        methodologies: "Modern Methodologies:",
+        methodologiesDesc: "Application of the main practices from the DevOps and Cloud world, including FinOps, CI/CD pipelines, GitOps, Containers/Kubernetes, systems observability and infrastructure automation with PowerShell and Python."
+      },
+      payment: {
+        title: "💳 Payment Method",
+        method: "Payment is made exclusively via PIX. It is not possible to split the service amount.",
+        proof: "Proof required",
+        proofDesc: "To guarantee your discount, I need proof showing your current status — it can be a work card, job screenshot, job offer or other document that helps validate.",
+        noProof: "Without proof, the full price will be applied.",
+        ctaSignup: "Sign up now"
+      },
+      whySection: {
+        title: "🚀 Why my mentorship is exactly what you",
+        titleHighlight: "need now?",
+        paragraph1: "In the world of technology, new tools, certifications and methodologies emerge all the time. It's hard to know where to invest your time and effort. My individual Cloud Azure and DevOps mentorship offers tailored guidance: instead of generic tips, you receive advice aligned exactly with your goals and challenges.",
+        quote: "A Harvard Business Review study revealed that professionals with mentorship receive promotions five times more frequently than those without mentors, advancing in their careers on average 18 months faster.",
+        paragraph2: "You can try to advance alone with online courses, college or graduate studies. Sure, eventually, you'll get there, but what price are you willing to pay for your time? You can walk anywhere or you can choose to go by car, bus or plane to get there faster.",
+        paragraph3: "Individual Cloud Azure and DevOps mentorship is exactly that \"airplane\": an accelerated, direct and personalized approach that will quickly take you to the result you so desire, with less effort, fewer mistakes and concrete results.",
+        paragraph4: "Think with me: what is a thousand reais invested in your career if you can double or multiply your salary? What would that mean to you and your family? Remember: I've already walked this path, multiplied my salary by 20 times in less than 4 years. And you, how long are you willing to wait to achieve these results?",
+        warning: "But attention:",
+        warningText: "I won't do what's up to you to do. Success is certain if you follow what is outlined, but it depends directly on your commitment and effort. There will be no refund, as I cannot guarantee that you will do your part. I've already done mine, and I'm here to help you transform your life and your family's, just as I transformed mine."
+      },
+      benefitsTitle: "🎯 In my individual Cloud Azure and DevOps mentorship you will have:",
+      howItWorks: "How my individual Cloud Azure and DevOps mentorship works:",
+      signUp: "Sign up",
+      finalCTA: {
+        title: "Ready to change your financial and professional reality?",
+        paragraph1: "Don't leave your professional evolution on \"autopilot\", with companies and bosses telling you what to do. Take responsibility and control of your career. Count on me to have a valuable change towards your goals in the cloud.",
+        paragraph2: "Don't miss this opportunity to evolve in a guided and strategic way. Cloud and DevOps are the future of Technology, also become the top professional that the market is looking for! 🚀",
+        cta: "I'm ready!"
+      }
+    },
       talks: {
         title: "Talks - Rafael Martin",
         description: "Talks and presentations about Cloud, DevOps, and Platform Engineering at events and technical communities."
       },
       certificates: {
-        title: "Certificates - Rafael Martin",
-        description: "Certificates from courses, events, and talks I've participated in over the years."
+        title: "Certificates | Rafael Ferreira - Courses, Training and Events",
+        description: "Certificates from courses, training, events and talks by Rafael Ferreira. Continuous learning in Cloud Computing, DevOps, Azure, Kubernetes, Terraform, Docker and modern technologies.",
+        keywords: "course certificates, tech training, tech events, talks, TDC, DevOpsDays, LINUXtips, Udemy, Microsoft Learn, Azure training, DevOps training, Kubernetes, Docker, Terraform",
+        ogDescription: "Complete collection of certificates from training, courses and events that shaped Rafael Ferreira's professional journey in technology."
       },
       certifications: {
         title: "Certifications - Rafael Martin",

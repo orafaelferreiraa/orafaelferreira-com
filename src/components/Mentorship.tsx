@@ -3,7 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "react-i18next";
+
 const Mentorship = () => {
+  const { t } = useTranslation();
   const mentorHighlights = [{
     icon: Briefcase,
     text: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
@@ -115,33 +118,26 @@ const Mentorship = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
-              Mentoria em <span className="text-primary">Cloud Azure e DevOps</span>
+              {t("mentorship.title").split(" Cloud Azure e DevOps")[0]} <span className="text-primary">Cloud Azure e DevOps</span>
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8">
-              Você trabalha com TI (seja iniciante ou experiente) e quer crescer na área de Cloud Azure e DevOps, mas
-              sente dificuldade em encontrar um caminho claro?
+              {t("mentorship.hero.subtitle1")}
             </p>
             <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8">
-              Seja você um iniciante buscando começar ou um profissional com alguma experiência e não tem certeza de
-              qual caminho seguir? Eu entendo exatamente como é frustrante estudar, se esforçar e não ter resultados
-              claros. Uma mentoria 1:1 focada e personalizada pode ser o que faltava.
+              {t("mentorship.hero.subtitle2")}
             </p>
             <p className="text-base lg:text-lg font-medium leading-relaxed mb-8">
-              O mercado está aquecido, mas somente aqueles com clareza estratégica conseguem se destacar, ter
-              reconhecimento e salários melhores. Minha mentoria existe justamente para resolver isso. Irei te ajudar a
-              traçar um plano concreto de evolução na área de Cloud e DevOps.
+              {t("mentorship.hero.subtitle3")}
             </p>
             <Card className="p-6 bg-primary/5 border-primary/20">
               <p className="text-base lg:text-lg font-semibold">
-                Essa mentoria é pra você que está cansado de procurar vagas. Deixe que as vagas e os recrutadores
-                procurem por você. Torne-se uma referência na sua área, seja reconhecido no mercado e faça com que
-                recrutadores e profissionais de alta relevância desejem trabalhar com você.
+                {t("mentorship.hero.highlight")}
               </p>
             </Card>
             <div className="flex justify-center mt-8">
               <Button size="lg" asChild className="text-lg px-8 py-6">
                 <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
-                  Quero me destacar em Cloud e DevOps
+                  {t("mentorship.hero.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -155,12 +151,12 @@ const Mentorship = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-center mb-12">
-              Por que me escolher como <span className="text-primary">mentor?</span>
+              {t("mentorship.whyChoose").split(" como mentor?")[0]} <span className="text-primary">{t("mentorship.whyChoose").split("mentor?")[1] || "mentor?"}</span>
             </h2>
 
             <div className="mb-12 rounded-lg overflow-hidden"></div>
 
-            <p className="text-lg text-muted-foreground text-center mb-12 leading-relaxed">Reúno experiências sólidas que me posicionam como referência no setor de Cloud Azure e DevOps. Alguns destaques da minha trajetória profissional incluem:</p>
+            <p className="text-lg text-muted-foreground text-center mb-12 leading-relaxed">{t("mentorship.intro")}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {mentorHighlights.map((highlight, index) => <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
@@ -177,16 +173,13 @@ const Mentorship = () => {
                 </Card>)}
             </div>
 
-            <Card className="p-6 mt-8 bg-secondary/30">
+            <Card className="mt-8 p-6 bg-secondary/30">
               <p className="text-sm leading-relaxed">
-                <strong>Domínio Tecnológico:</strong> Profundo conhecimento em Microsoft Azure, Azure DevOps, IAC,
-                GitHub Actions, entre outras ferramentas de ponta amplamente usadas no setor.
+                <strong>{t("mentorship.expertise.technical")}</strong> {t("mentorship.expertise.technicalDesc")}
               </p>
               <Separator className="my-4" />
               <p className="text-sm leading-relaxed">
-                <strong>Metodologias Modernas:</strong> Aplicação das principais práticas do mundo DevOps e Cloud,
-                incluindo FinOps, pipelines de CI/CD, GitOps, Containers/Kubernetes, observabilidade de sistemas e
-                automação de infraestrutura com PowerShell e Python.
+                <strong>{t("mentorship.expertise.methodologies")}</strong> {t("mentorship.expertise.methodologiesDesc")}
               </p>
             </Card>
           </div>
@@ -197,17 +190,17 @@ const Mentorship = () => {
       <section className="py-16 lg:py-24 bg-card/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-4">Valores</h2>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-4">{t("mentorship.values")}</h2>
             <p className="text-lg text-muted-foreground text-center mb-12">
-              Conforme o seu nível de carreira. Confira os valores de cada serviço e os preços ajustados por perfil:
+              {t("mentorship.pricing")}
             </p>
 
             <Card className="mb-8 overflow-hidden">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="font-bold">Serviço</TableHead>
-                    <TableHead className="font-bold text-right">Preço</TableHead>
+                    <TableHead className="font-bold">{t("mentorship.service")}</TableHead>
+                    <TableHead className="font-bold text-right">{t("mentorship.price")}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -219,17 +212,17 @@ const Mentorship = () => {
               </Table>
             </Card>
 
-            <h3 className="text-2xl font-heading font-bold text-center mb-8">Descontos por Perfil</h3>
+            <h3 className="text-2xl font-heading font-bold text-center mb-8">{t("mentorship.discountsByProfile")}</h3>
 
             <Card className="overflow-hidden">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="font-bold">Perfil</TableHead>
-                    <TableHead className="font-bold text-right">Mentoria</TableHead>
+                    <TableHead className="font-bold">{t("mentorship.profile")}</TableHead>
+                    <TableHead className="font-bold text-right">{t("mentorship.service").split(" Cloud")[0]}</TableHead>
                     <TableHead className="font-bold text-right">LinkedIn</TableHead>
                     <TableHead className="font-bold text-right">Currículo</TableHead>
-                    <TableHead className="font-bold text-right">Total</TableHead>
+                    <TableHead className="font-bold text-right">{t("mentorship.total")}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -245,22 +238,21 @@ const Mentorship = () => {
             </Card>
 
             <Card className="mt-8 p-6 bg-primary/5 border-primary/20">
-              <h4 className="font-heading font-bold text-lg mb-4">💳 Forma de Pagamento</h4>
+              <h4 className="font-heading font-bold text-lg mb-4">{t("mentorship.payment.title")}</h4>
               <p className="text-sm mb-4 leading-relaxed">
-                O pagamento é realizado exclusivamente via PIX. Não é possível parcelar o valor dos serviços.
+                {t("mentorship.payment.method")}
               </p>
               <div className="p-4 bg-background rounded-lg">
-                <p className="text-sm font-semibold mb-2">Comprovação obrigatória</p>
+                <p className="text-sm font-semibold mb-2">{t("mentorship.payment.proof")}</p>
                 <p className="text-sm leading-relaxed">
-                  Para garantir seu desconto, preciso de um comprovante que mostre seu status atual — pode ser uma
-                  carteira de trabalho, print de vaga, oferta de emprego ou outro documento que ajude a validar.
+                  {t("mentorship.payment.proofDesc")}
                 </p>
-                <p className="text-sm font-bold mt-2">Sem comprovação, será aplicado o valor cheio.</p>
+                <p className="text-sm font-bold mt-2">{t("mentorship.payment.noProof")}</p>
               </div>
               <div className="flex justify-center mt-6">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
                   <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
-                    Faça sua inscrição agora
+                    {t("mentorship.payment.ctaSignup")}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -275,51 +267,36 @@ const Mentorship = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
-              🚀 Por que minha mentoria é exatamente o que você <span className="text-primary">precisa agora?</span>
+              {t("mentorship.whySection.title")} <span className="text-primary">{t("mentorship.whySection.titleHighlight")}</span>
             </h2>
 
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                No mundo da tecnologia, surgem novas ferramentas, certificações e metodologias a todo momento. Fica
-                difícil saber onde investir seu tempo e esforço. A minha mentoria Cloud Azure e DevOps individual
-                oferece orientação sob medida: em vez de dicas genéricas, você recebe conselhos alinhados exatamente com
-                seus objetivos e desafios.
+                {t("mentorship.whySection.paragraph1")}
               </p>
 
               <Card className="p-6 bg-secondary/30 border-primary/20">
                 <p className="font-semibold text-foreground">
-                  Um estudo da Harvard Business Review revelou que profissionais com mentoria recebem promoções cinco
-                  vezes mais frequentemente que aqueles sem mentores, avançando na carreira em média 18 meses mais
-                  rápido.
+                  {t("mentorship.whySection.quote")}
                 </p>
               </Card>
 
               <p>
-                Você pode tentar avançar sozinho com cursos online, faculdades ou pós-graduações. Claro, eventualmente,
-                você chegará lá, mas qual é o preço que você está disposto a pagar pelo seu tempo? Você pode ir a pé
-                para qualquer lugar ou pode escolher ir de carro, ônibus ou avião para chegar mais rápido.
+                {t("mentorship.whySection.paragraph2")}
               </p>
 
               <p className="font-semibold text-foreground">
-                A mentoria Cloud Azure e DevOps individual é exatamente esse "avião": uma abordagem acelerada, direta e
-                personalizada que te levará rapidamente ao resultado que você tanto deseja, com menos esforço, menos
-                erros e resultados concretos.
+                {t("mentorship.whySection.paragraph3")}
               </p>
 
               <p>
-                Pense comigo: o que são mil reais investidos em sua carreira se você conseguir dobrar ou multiplicar seu
-                salário? O que isso representaria para você e para sua família? Lembre-se: eu já trilhei esse caminho,
-                multipliquei meu salário em 20 vezes em menos de 4 anos. E você, está disposto a esperar quanto tempo
-                para alcançar esses resultados?
+                {t("mentorship.whySection.paragraph4")}
               </p>
 
               <Card className="p-6 bg-destructive/10 border-destructive/30">
-                <h4 className="font-heading font-bold text-lg mb-3 text-foreground">Mas atenção:</h4>
+                <h4 className="font-heading font-bold text-lg mb-3 text-foreground">{t("mentorship.whySection.warning")}</h4>
                 <p className="text-sm">
-                  Eu não farei o que cabe a você fazer. O sucesso é certo se você seguir o que for traçado, mas depende
-                  diretamente do seu comprometimento e esforço. Não haverá devolução, pois não posso garantir que você
-                  fará sua parte. Eu já fiz a minha, e estou aqui para ajudar você a transformar a sua vida e a da sua
-                  família, exatamente como transformei a minha.
+                  {t("mentorship.whySection.warningText")}
                 </p>
               </Card>
             </div>
@@ -332,7 +309,7 @@ const Mentorship = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
-              🎯 Na minha mentoria Cloud Azure e DevOps individual você terá:
+              {t("mentorship.benefitsTitle")}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -357,7 +334,7 @@ const Mentorship = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
-              Como funciona minha mentoria Cloud Azure e DevOps individual:
+              {t("mentorship.howItWorks")}
             </h2>
 
             <div className="space-y-6">
@@ -376,7 +353,7 @@ const Mentorship = () => {
                       <p className="text-muted-foreground leading-relaxed">{step.description}</p>
                       {index === 0 && <Button asChild className="mt-4" size="sm">
                           <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
-                            Fazer inscrição
+                            {t("mentorship.signUp")}
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </a>
                         </Button>}
@@ -393,21 +370,18 @@ const Mentorship = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Pronto para mudar sua realidade financeira e profissional?
+              {t("mentorship.finalCTA.title")}
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Não deixe sua evolução profissional no "piloto automático", com empresas e chefes te dizendo o que fazer.
-              Assuma a responsabilidade e controle da sua carreira. Conte comigo para ter uma mudança valiosa rumo aos
-              seus objetivos na nuvem.
+              {t("mentorship.finalCTA.paragraph1")}
             </p>
             <p className="text-lg font-semibold mb-8">
-              Não perca essa oportunidade de evoluir de forma orientada e estratégica. Cloud e DevOps são o futuro da
-              Tecnologia, torne-se também o profissional de ponta que o mercado procura! 🚀
+              {t("mentorship.finalCTA.paragraph2")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="text-lg px-8 py-6">
                 <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
-                  Estou pronto!
+                  {t("mentorship.finalCTA.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>

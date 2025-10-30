@@ -46,7 +46,49 @@ export default {
       price: "Preço",
       discountsByProfile: "Descontos por Perfil",
       profile: "Perfil",
-      total: "Total"
+      total: "Total",
+      hero: {
+        subtitle1: "Você trabalha com TI (seja iniciante ou experiente) e quer crescer na área de Cloud Azure e DevOps, mas sente dificuldade em encontrar um caminho claro?",
+        subtitle2: "Seja você um iniciante buscando começar ou um profissional com alguma experiência e não tem certeza de qual caminho seguir? Eu entendo exatamente como é frustrante estudar, se esforçar e não ter resultados claros. Uma mentoria 1:1 focada e personalizada pode ser o que faltava.",
+        subtitle3: "O mercado está aquecido, mas somente aqueles com clareza estratégica conseguem se destacar, ter reconhecimento e salários melhores. Minha mentoria existe justamente para resolver isso. Irei te ajudar a traçar um plano concreto de evolução na área de Cloud e DevOps.",
+        highlight: "Essa mentoria é pra você que está cansado de procurar vagas. Deixe que as vagas e os recrutadores procurem por você. Torne-se uma referência na sua área, seja reconhecido no mercado e faça com que recrutadores e profissionais de alta relevância desejem trabalhar com você.",
+        cta: "Quero me destacar em Cloud e DevOps"
+      },
+      intro: "Reúno experiências sólidas que me posicionam como referência no setor de Cloud Azure e DevOps. Alguns destaques da minha trajetória profissional incluem:",
+      expertise: {
+        technical: "Domínio Tecnológico:",
+        technicalDesc: "Profundo conhecimento em Microsoft Azure, Azure DevOps, IAC, GitHub Actions, entre outras ferramentas de ponta amplamente usadas no setor.",
+        methodologies: "Metodologias Modernas:",
+        methodologiesDesc: "Aplicação das principais práticas do mundo DevOps e Cloud, incluindo FinOps, pipelines de CI/CD, GitOps, Containers/Kubernetes, observabilidade de sistemas e automação de infraestrutura com PowerShell e Python."
+      },
+      payment: {
+        title: "💳 Forma de Pagamento",
+        method: "O pagamento é realizado exclusivamente via PIX. Não é possível parcelar o valor dos serviços.",
+        proof: "Comprovação obrigatória",
+        proofDesc: "Para garantir seu desconto, preciso de um comprovante que mostre seu status atual — pode ser uma carteira de trabalho, print de vaga, oferta de emprego ou outro documento que ajude a validar.",
+        noProof: "Sem comprovação, será aplicado o valor cheio.",
+        ctaSignup: "Faça sua inscrição agora"
+      },
+      whySection: {
+        title: "🚀 Por que minha mentoria é exatamente o que você",
+        titleHighlight: "precisa agora?",
+        paragraph1: "No mundo da tecnologia, surgem novas ferramentas, certificações e metodologias a todo momento. Fica difícil saber onde investir seu tempo e esforço. A minha mentoria Cloud Azure e DevOps individual oferece orientação sob medida: em vez de dicas genéricas, você recebe conselhos alinhados exatamente com seus objetivos e desafios.",
+        quote: "Um estudo da Harvard Business Review revelou que profissionais com mentoria recebem promoções cinco vezes mais frequentemente que aqueles sem mentores, avançando na carreira em média 18 meses mais rápido.",
+        paragraph2: "Você pode tentar avançar sozinho com cursos online, faculdades ou pós-graduações. Claro, eventualmente, você chegará lá, mas qual é o preço que você está disposto a pagar pelo seu tempo? Você pode ir a pé para qualquer lugar ou pode escolher ir de carro, ônibus ou avião para chegar mais rápido.",
+        paragraph3: "A mentoria Cloud Azure e DevOps individual é exatamente esse \"avião\": uma abordagem acelerada, direta e personalizada que te levará rapidamente ao resultado que você tanto deseja, com menos esforço, menos erros e resultados concretos.",
+        paragraph4: "Pense comigo: o que são mil reais investidos em sua carreira se você conseguir dobrar ou multiplicar seu salário? O que isso representaria para você e para sua família? Lembre-se: eu já trilhei esse caminho, multipliquei meu salário em 20 vezes em menos de 4 anos. E você, está disposto a esperar quanto tempo para alcançar esses resultados?",
+        warning: "Mas atenção:",
+        warningText: "Eu não farei o que cabe a você fazer. O sucesso é certo se você seguir o que for traçado, mas depende diretamente do seu comprometimento e esforço. Não haverá devolução, pois não posso garantir que você fará sua parte. Eu já fiz a minha, e estou aqui para ajudar você a transformar a sua vida e a da sua família, exatamente como transformei a minha."
+      },
+      benefitsTitle: "🎯 Na minha mentoria Cloud Azure e DevOps individual você terá:",
+      howItWorks: "Como funciona minha mentoria Cloud Azure e DevOps individual:",
+      signUp: "Fazer inscrição",
+      finalCTA: {
+        title: "Pronto para mudar sua realidade financeira e profissional?",
+        paragraph1: "Não deixe sua evolução profissional no \"piloto automático\", com empresas e chefes te dizendo o que fazer. Assuma a responsabilidade e controle da sua carreira. Conte comigo para ter uma mudança valiosa rumo aos seus objetivos na nuvem.",
+        paragraph2: "Não perca essa oportunidade de evoluir de forma orientada e estratégica. Cloud e DevOps são o futuro da Tecnologia, torne-se também o profissional de ponta que o mercado procura! 🚀",
+        cta: "Estou pronto!"
+      }
     },
     talks: {
       title: "Palestras",
@@ -84,10 +126,12 @@ export default {
     },
     blog: {
       title: "Artigos/Posts",
-      description: "Artigos técnicos e posts sobre Azure, DevOps, Observabilidade, FinOps, Comunidade e Eventos.",
-      readMore: "Leia mais",
+      description: "Conteúdo técnico e experiências em comunidade",
+      readMore: "Ler mais",
       allCategories: "Todas as Categorias",
-      search: "Buscar artigos..."
+      search: "Buscar artigos...",
+      articles: "Artigos",
+      posts: "Posts"
     },
     footer: {
       rights: "Todos os direitos reservados.",
@@ -107,8 +151,10 @@ export default {
         description: "Palestras e apresentações sobre Cloud, DevOps e Engenharia de Plataforma em eventos e comunidades técnicas."
       },
       certificates: {
-        title: "Certificados - Rafael Martin",
-        description: "Certificados de cursos, eventos e palestras que participei ao longo dos anos."
+        title: "Certificados | Rafael Ferreira - Cursos, Treinamentos e Eventos",
+        description: "Certificados de cursos, treinamentos, eventos e palestras de Rafael Ferreira. Aprendizado contínuo em Cloud Computing, DevOps, Azure, Kubernetes, Terraform, Docker e tecnologias modernas.",
+        keywords: "certificados de cursos, treinamentos tech, eventos tech, palestras, TDC, DevOpsDays, LINUXtips, Udemy, Microsoft Learn, Azure training, DevOps training, Kubernetes, Docker, Terraform",
+        ogDescription: "Coleção completa de certificados de treinamentos, cursos e eventos que moldaram a jornada profissional de Rafael Ferreira em tecnologia."
       },
       certifications: {
         title: "Certificações - Rafael Martin",
