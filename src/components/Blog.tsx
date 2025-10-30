@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { articles } from "@/data/articles";
+import { extractFirstImage } from "@/lib/extractImage";
 
 const Blog = () => {
   const [activeTab, setActiveTab] = useState("artigos");
@@ -21,44 +22,58 @@ const Blog = () => {
 
   const renderArticleGrid = (articlesList: typeof articles) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-      {articlesList.map((article, index) => (
-            <Link key={article.slug} to={`/artigos/${article.slug}`}>
-              <Card
-                className="group overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up h-full"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-              <div className="p-6 space-y-4">
-                  <div className="flex items-center gap-3 text-sm">
-                    <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
-                      {article.category}
-                    </span>
-                    <span className="text-muted-foreground">{article.readTime}</span>
-                  </div>
-
-                  <h3 className="text-xl font-heading font-semibold group-hover:text-primary transition-colors line-clamp-2">
-                    {article.title}
-                  </h3>
-
-                  <p className="text-muted-foreground line-clamp-3">{article.excerpt}</p>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      {new Date(article.date).toLocaleDateString("pt-BR")}
-                    </div>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      className="group/btn"
-                    >
-                      Ler mais
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
+      {articlesList.map((article, index) => {
+        const coverImage = extractFirstImage(article.content);
+        
+        return (
+          <Link key={article.slug} to={`/artigos/${article.slug}`}>
+            <Card
+              className="group overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up h-full flex flex-col"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {coverImage && (
+                <div className="relative w-full h-48 overflow-hidden bg-muted">
+                  <img 
+                    src={coverImage} 
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
                 </div>
-              </Card>
-            </Link>
-          ))}
+              )}
+              <div className="p-6 space-y-4 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                    {article.category}
+                  </span>
+                  <span className="text-muted-foreground">{article.readTime}</span>
+                </div>
+
+                <h3 className="text-xl font-heading font-semibold group-hover:text-primary transition-colors line-clamp-2">
+                  {article.title}
+                </h3>
+
+                <p className="text-muted-foreground line-clamp-3 flex-1">{article.excerpt}</p>
+
+                <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4" />
+                    {new Date(article.date).toLocaleDateString("pt-BR")}
+                  </div>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="group/btn"
+                  >
+                    Ler mais
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </Link>
+        );
+      })}
     </div>
   );
 
