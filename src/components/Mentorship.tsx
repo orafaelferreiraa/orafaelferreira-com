@@ -219,7 +219,7 @@ const Mentorship = () => {
                 <TableHeader>
                   <TableRow>
                     <TableHead className="font-bold">{t("mentorship.profile")}</TableHead>
-                    <TableHead className="font-bold text-right">{t("mentorship.service").split(" Cloud")[0]}</TableHead>
+                    <TableHead className="font-bold text-right">{t("mentorship.table.mentorshipHeader")}</TableHead>
                     <TableHead className="font-bold text-right">{t("mentorship.table.linkedinHeader")}</TableHead>
                     <TableHead className="font-bold text-right">{t("mentorship.table.resumeHeader")}</TableHead>
                     <TableHead className="font-bold text-right">{t("mentorship.total")}</TableHead>

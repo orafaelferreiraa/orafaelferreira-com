@@ -9,6 +9,8 @@ export default {
       certificates: "Certificados",
       experiences: "Experiências",
       blog: "Artigos/Posts",
+      recommendations: "Recomendações",
+      recommendation: "Recomendações",
       heroTitle: {
         prefix: "Mentoria em",
         highlight: "Cloud Azure e DevOps"
@@ -96,7 +98,13 @@ export default {
     },
     mentorship: {
       title: "Mentoria em Cloud Azure e DevOps",
+      heroTitle: {
+        prefix: "Mentoria em",
+        highlight: "Cloud Azure e DevOps"
+      },
       whyChoose: "Por que me escolher como mentor?",
+      whyChoosePrefix: "Por que me escolher como",
+      whyChooseHighlight: "mentor?",
       values: "Valores",
       pricing: "Conforme o seu nível de carreira. Confira os valores de cada serviço e os preços ajustados por perfil:",
       service: "Serviço",
@@ -104,6 +112,11 @@ export default {
       discountsByProfile: "Descontos por Perfil",
       profile: "Perfil",
       total: "Total",
+      table: {
+        mentorshipHeader: "Mentoria",
+        linkedinHeader: "LinkedIn",
+        resumeHeader: "Currículo"
+      },
       highlights: {
         experience: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
         global: "Atuação Global como Senior Azure DevOps Solution Engineer em empresa americana",
@@ -135,10 +148,6 @@ export default {
           title: "Confiança para Evoluir",
           description: "Valide suas ideias e ganhe segurança para executar o plano e buscar oportunidades."
         },
-      table: {
-        linkedinHeader: "LinkedIn",
-        resumeHeader: "Currículo"
-      },
         jobGroup: {
           title: "Grupo Exclusivo de Vagas",
           description: "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador."

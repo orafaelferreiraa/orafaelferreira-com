@@ -15,14 +15,23 @@ export function markdownToHtml(markdown: string): string {
     return `<div class="relative my-6 group"><div class="bg-slate-800 px-4 py-2 text-xs text-slate-300 rounded-t-lg font-mono">${language}</div><pre class="bg-slate-900 dark:bg-slate-950 p-4 rounded-b-lg overflow-x-auto"><code class="text-sm text-slate-100 font-mono block whitespace-pre">${escaped}</code></pre><button onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)" class="absolute top-10 right-2 px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">Copiar</button></div>`;
   });
 
-  // 2. Imagens
-  html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="w-full rounded-lg my-6 shadow-md" loading="lazy" />');
+  // 2. Casos especiais: Imagem dentro de link [![alt](img)](href "title")
+  // Converte em <a><img/></a> preservando título opcional do link
+  html = html.replace(/\[!\[(.*?)\]\((\S+?)(?:\s+(".*?"|'.*?'|\(.*?\)))?\)\]\((https?:\/\/\S+?)(?:\s+(".*?"|'.*?'|\(.*?\)))?\)/g,
+    '<a href="$4" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium"><img src="$2" alt="$1" class="w-full rounded-lg my-6 shadow-md" loading="lazy" /></a>'
+  );
 
-  // 3. Links (externos e internos)
-  html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">$1</a>');
+  // 3. Imagens (suporta título opcional em imagens)
+  // Padrão: ![alt](url "title") ou ![alt](url 'title') ou ![alt](url (title))
+  html = html.replace(/!\[(.*?)\]\((\S+?)(?:\s+(".*?"|'.*?'|\(.*?\)))?\)/g, '<img src="$2" alt="$1" class="w-full rounded-lg my-6 shadow-md" loading="lazy" />');
+
+  // 4. Links (externos e internos) com suporte a título opcional
+  // Externos: [text](https://url "title") aceita título com aspas simples/duplas ou parênteses
+  html = html.replace(/\[([^\]]+)\]\((https?:\/\/\S+?)(?:\s+(".*?"|'.*?'|\(.*?\)))?\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">$1</a>');
+  // Internos: [text](/rota) (sem título opcional por simplicidade)
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary hover:underline font-medium">$1</a>');
 
-  // 4. Tabelas
+  // 5. Tabelas
   html = html.replace(/\n(\|.+\|)\n(\|[\s:|-]+\|)\n((?:\|.+\|\n?)+)/g, (_, header, sep, rows) => {
     const headers = header.split('|').filter((h: string) => h.trim()).map((h: string) => h.trim());
     const rowsArray = rows.trim().split('\n').map((row: string) => 
@@ -46,21 +55,21 @@ export function markdownToHtml(markdown: string): string {
     return table;
   });
 
-  // 5. Títulos (ordem importante: #### antes de ### antes de ##)
+  // 6. Títulos (ordem importante: #### antes de ### antes de ##)
   html = html.replace(/^#### (.*$)/gim, '<h4 class="text-lg font-bold mt-5 mb-2 text-primary">$1</h4>');
   html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-6 mb-3">$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-8 mb-4">$1</h2>');
   html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mt-10 mb-5">$1</h1>');
 
-  // 6. Negrito e itálico
+  // 7. Negrito e itálico
   html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
-  // 7. Código inline (depois dos blocos)
+  // 8. Código inline (depois dos blocos)
   html = html.replace(/`([^`]+)`/g, '<code class="px-2 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-sm font-mono">$1</code>');
 
-  // 8. Listas
+  // 9. Listas
   const lines = html.split('\n');
   const processed: string[] = [];
   let inList = false;
@@ -89,7 +98,7 @@ export function markdownToHtml(markdown: string): string {
 
   html = processed.join('\n');
 
-  // 9. Parágrafos (processar por último)
+  // 10. Parágrafos (processar por último)
   html = html.split('\n').map(line => {
     const trimmed = line.trim();
     if (trimmed === '') return '';

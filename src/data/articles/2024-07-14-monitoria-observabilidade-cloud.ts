@@ -1,9 +1,9 @@
 import { Article } from './types';
 
 export const article: Article = {
-  slug: "monitoria-observabilidade-cloud",
+  slug: "observabilidade-foundation-cloud",
   title: "Construindo uma Fundação Sólida para a Nuvem: Monitoria e Observabilidade para Performance e Eficiência em Ambientes Cloud Native",
-  excerpt: "Explorando como monitoria e observabilidade detalhadas fornecem insights valiosos para otimizar o desempenho e a sustentabilidade em ambientes Cloud Native.",
+  excerpt: "No contexto atual de tecnologias Cloud Native e microsserviços, exige uma abordagem robusta necessária de monitoria e observabilidade como componentes fundamentais para a garantia de eficiência operacional e performance.",
   content: `# Introdução
 
 No contexto atual de tecnologias Cloud Native e microsserviços, exige uma abordagem robusta necessária de monitoria e observabilidade como componentes fundamentais para a garantia de eficiência operacional e performance. Este artigo, explora como a observabilidade detalhada pode fornecer insights valiosos para otimizar o desempenho e a sustentabilidade em ambientes Cloud Native.
@@ -160,8 +160,8 @@ Destaco a importância de adotar práticas de monitoria e observabilidade desde 
 Este artigo destina-se a servir como uma referência abrangente e ponto de partida para aqueles que estão começando sua jornada em ambientes Cloud Native, focando na importância crítica da monitoria e observabilidade para garantir sistemas eficientes, confiáveis e sustentáveis.
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
-  date: "2024-07-14",
-  category: "Cloud Adoption Framework",
-  readTime: "28 min de leitura",
-  mediumUrl: "https://orafaelferreiraa.medium.com/construindo-uma-funda%C3%A7%C3%A3o-s%C3%B3lida-para-a-nuvem-monitoria-e-observabilidade-para-performance-e-2e39c332b35b"
+  date: "2024-01-17",
+  category: "Artigos",
+  readTime: "9 min de leitura",
+  mediumUrl: ""
 };

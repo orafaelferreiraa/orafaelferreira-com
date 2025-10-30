@@ -15,7 +15,7 @@ import { article as foundationLz } from './2024-01-02-foundation-lz';
 import { article as devopsFoundationCloud } from './2024-01-08-devops-foundation-cloud';
 import { article as azureBackupVirtualMachines } from './2024-01-15-azure-backup-virtual-machines';
 import { article as finopsFoundationCloud } from './2024-01-15-finops-foundation-cloud';
-import { article as observabilidadeFoundationCloud } from './2024-01-17-observabilidade-foundation-cloud';
+import { article as observabilidadeFoundationCloud } from './2024-07-14-monitoria-observabilidade-cloud';
 import { article as _2meetcncf } from './2024-02-22-2meetcncf';
 import { article as kcdsp24 } from './2024-02-25-kcdsp24';
 import { article as globalAzure24 } from './2024-05-18-global-azure24';
