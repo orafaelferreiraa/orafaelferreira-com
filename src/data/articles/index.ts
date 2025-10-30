@@ -5,7 +5,7 @@ import { article as artigoAksAcr } from './2023-02-05-artigo-aks-acr';
 import { article as artigoAksVolume } from './2023-02-05-artigo-aks-volume';
 import { article as artigoPipelinesCiCd } from './2023-02-05-artigo-pipelines-ci-cd';
 import { article as artigoPrometheus } from './2023-08-14-artigo-prometheus';
-import { article as explorandoIaGenerativa } from './2023-10-27-explorando-ia-generativa';
+import { article as explorandoIaGenerativa } from './2023-10-27-explorando-ia-generativa.ts';
 import { article as participacoes } from './2023-10-28-participacoes';
 import { article as eventos } from './2023-10-30-eventos';
 import { article as mentoriacloud23 } from './2023-11-06-mentoriacloud23';
@@ -14,29 +14,25 @@ import { article as wellArchitectFoundationCloud } from './2023-12-11-well-archi
 import { article as foundationLz } from './2024-01-02-foundation-lz';
 import { article as devopsFoundationCloud } from './2024-01-08-devops-foundation-cloud';
 import { article as azureBackupVirtualMachines } from './2024-01-15-azure-backup-virtual-machines';
-import { article as finopsFoundationCloud } from './2024-01-15-finops-foundation-cloud';
-import { article as observabilidadeFoundationCloud } from './2024-07-14-monitoria-observabilidade-cloud';
+import { article as finopsFoundationCloud } from './2024-07-14-fundacao-solida-finops.ts';
+import { article as observabilidadeFoundationCloud } from './2024-07-14-monitoria-observabilidade-cloud.ts';
 import { article as _2meetcncf } from './2024-02-22-2meetcncf';
 import { article as kcdsp24 } from './2024-02-25-kcdsp24';
 import { article as globalAzure24 } from './2024-05-18-global-azure24';
 import { article as azureStaticWebApps } from './2024-05-24-azure-static-web-apps';
 import { article as tcBc24 } from './2024-06-02-tc-bc24';
-import { article as criacaoVm } from './2024-06-05-criacao-vm';
 import { article as configRepository } from './2024-06-06-config-repository';
 import { article as cursoAz900 } from './2024-06-10-curso-az-900';
 import { article as kubertenes } from './2024-06-17-kubertenes';
 import { article as podcast } from './2024-06-23-podcast';
 import { article as talkTdc } from './2024-06-25-talk-tdc';
 import { article as antesCloudNativeFundacaoSolida } from './2024-07-14-antes-cloud-native-fundacao-solida';
-import { article as fundacaoSolidaFinops } from './2024-07-14-fundacao-solida-finops';
-import { article as monitoriaObservabilidadeCloud } from './2024-07-14-monitoria-observabilidade-cloud';
 import { article as azureWorkbooks } from './2024-07-16-azure-workbooks';
 import { article as azureFloripa } from './2024-07-21-azure-floripa';
 import { article as cncfsc } from './2024-07-21-cncfsc';
 import { article as comuDodFloripa } from './2024-07-21-comu-dod-floripa';
 import { article as eventododFloripa } from './2024-07-21-eventodod-floripa';
 import { article as kcdFloripa24 } from './2024-07-21-kcd-floripa24';
-import { article as iaGen } from './2024-07-25-ia-gen';
 import { article as guiaCriacaoVmsAzure } from './2024-07-26-guia-criacao-vms-azure';
 import { article as _6rs } from './2024-08-11-6rs';
 import { article as cursoDp900 } from './2024-09-02-curso-dp-900';
@@ -86,22 +82,18 @@ export const allArticles: Article[] = [
   globalAzure24,
   azureStaticWebApps,
   tcBc24,
-  criacaoVm,
   configRepository,
   cursoAz900,
   kubertenes,
   podcast,
   talkTdc,
   antesCloudNativeFundacaoSolida,
-  fundacaoSolidaFinops,
-  monitoriaObservabilidadeCloud,
   azureWorkbooks,
   azureFloripa,
   cncfsc,
   comuDodFloripa,
   eventododFloripa,
   kcdFloripa24,
-  iaGen,
   guiaCriacaoVmsAzure,
   _6rs,
   cursoDp900,

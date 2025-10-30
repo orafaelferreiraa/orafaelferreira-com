@@ -1,9 +1,9 @@
 import { Article } from './types';
 
 export const article: Article = {
-  slug: "explorando-ia-generativa",
+  slug: "ia-gen",
   title: "Explorando a Inteligência Artificial Generativa",
-  excerpt: "Desde o lançamento do ChatGPT pela OpenAI, a IA generativa ganhou destaque global. Descubra o que é, suas aplicações e as implicações éticas e econômicas dessa tecnologia emergente.",
+  excerpt: "A inteligência artificial (IA) tem transformado diversos setores e aspectos da vida cotidiana, e a chegada da IA generativa marca uma nova era de inovação e possibilidades.",
   content: `
 ## Introdução
 
@@ -12,7 +12,6 @@ A inteligência artificial (IA) tem transformado diversos setores e aspectos da 
 ## O Que é IA Generativa?
 
 IA generativa refere-se a sistemas de inteligência artificial capazes de criar conteúdo de alta qualidade, como texto, imagens e áudio. Esses sistemas utilizam modelos avançados, conhecidos como grandes modelos de linguagem (LLMs), para prever e gerar conteúdo com base em grandes volumes de dados. O ChatGPT, por exemplo, pode gerar respostas detalhadas e contextualizadas para perguntas, criar textos criativos e até mesmo produzir recomendações personalizadas.
-
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/1.png)
 
 ## Aplicações e Impacto Econômico
@@ -73,7 +72,6 @@ Uma abordagem eficaz para implementar a IA generativa é identificar tarefas esp
 ## Exemplos de Análise de Tarefas em Diferentes Funções
 
 Ao analisar diferentes funções de trabalho, pode-se descobrir que as melhores oportunidades para a IA generativa não são necessariamente as mais óbvias. Programadores, por exemplo, fazem mais do que apenas escrever código; eles também documentam e revisam códigos. Cada tarefa tem diferente grau de potencial para automação ou aprimoramento com IA, e uma análise sistemática pode ajudar a identificar onde a IA pode ser mais útil.
-
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/2.png)
 
 ## Novos Fluxos de Trabalho e Oportunidades de Crescimento
@@ -83,7 +81,6 @@ A implementação da IA generativa não só pode economizar custos, mas também 
 ## Preocupações com a IA e Implicações Éticas
 
 Com o uso crescente da IA, surgem preocupações sobre seu impacto na sociedade. Isso inclui o potencial de amplificação dos piores impulsos humanos, como preconceitos e desinformação, bem como a ameaça de perda de empregos devido à automação. A questão ética é central, destacando a necessidade de desenvolver e usar IA de maneira justa, transparente, segura e ética. Técnicas como o aprendizado por reforço com feedback humano (RLHF) estão sendo usadas para tornar os LLMs menos tendenciosos e mais alinhados com valores humanos.
-
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/3.png)
 
 ## Inteligência Artificial Geral (AGI) e o Futuro da IA
@@ -93,9 +90,11 @@ A IA Geral (AGI) é um conceito de inteligência artificial capaz de realizar qu
 ## Conclusão
 
 A IA generativa oferece vastas oportunidades para melhorar a eficiência e criar novos valores nos negócios. No entanto, é crucial abordar suas implicações éticas e sociais para garantir que a tecnologia seja usada de maneira responsável e benéfica. Empresas e profissionais devem se preparar para integrar a IA generativa em seus processos, aproveitando seu potencial para inovação e crescimento, ao mesmo tempo em que garantem o desenvolvimento responsável e ético da IA.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
 `,
-  date: "2023-10-27",
-  category: "Inteligência Artificial",
-  readTime: "7 min",
-  mediumUrl: "https://orafaelferreiraa.medium.com/explorando-a-intelig%C3%AAncia-artificial-generativa-154bd7aa96cf"
+  date: "2024-07-25",
+  category: "Artigos",
+  readTime: "9 min de leitura",
+  mediumUrl: ""
 };

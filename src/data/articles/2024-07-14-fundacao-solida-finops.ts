@@ -1,12 +1,13 @@
 import { Article } from './types';
 
 export const article: Article = {
-  slug: "fundacao-solida-finops",
+  slug: "finops-foundation-cloud",
   title: "Construindo uma Fundação Sólida para a Nuvem com FinOps: Maximizando os Custos em Ambientes Cloud Native",
-  excerpt: "Uma estrutura operacional e prática cultural que maximiza o valor comercial da nuvem através da colaboração entre equipes de engenharia, finanças e negócios, criando responsabilidade financeira compartilhada.",
-  content: `## O que é FinOps?
+  excerpt: "FinOps é uma estrutura operacional e prática cultural que maximiza o valor comercial da nuvem. Ela envolve a colaboração entre equipes de engenharia, finanças e negócios permitindo a tomada de decisões baseadas em dados afim de criar responsabilidade financeira.",
+  content: `
+## O que é FinOps?
 
-FinOps é uma estrutura operacional e prática cultural que maximiza o valor comercial da nuvem. Ela envolve a colaboração entre equipes de engenharia, finanças e negócios permitindo a tomada de decisões baseadas em dados afim de criar responsabilidade financeira. FinOps é a união de "Finanças" e "DevOps", enfatizando a comunicação e colaboração entre as equipes.
+FinOps é uma estrutura operacional e prática cultural que maximiza o valor comercial da nuvem. Ela envolve a colaboração entre equipes de engenharia, finanças e negócios permitindo a tomada de decisões baseadas em dados afim de criar responsabilidade financeira. FinOps é a união de “Finanças” e “DevOps”, enfatizando a comunicação e colaboração entre as equipes.
 
 Conselho Consultivo Técnico da Fundação FinOps define FinOps como uma mudança cultural, onde a responsabilidade pelo uso da nuvem é compartilhada por todos, apoiada por um grupo central de práticas recomendadas. Essa abordagem multifuncional permite uma entrega mais rápida de produtos com maior controle financeiro e previsibilidade.
 
@@ -14,7 +15,7 @@ Conselho Consultivo Técnico da Fundação FinOps define FinOps como uma mudanç
 
 ### Estrutura FinOps
 
-A estrutura FinOps é sobre trazer responsabilidade para gastos na nuvem. Independentemente de ser chamada de "Gestão Financeira em Nuvem", "Engenharia Financeira em Nuvem", ou outros nomes, a essência do FinOps é a responsabilidade financeira no modelo de gastos variáveis da nuvem. Isso envolve equipes distribuídas de engenharia e negócios trazendo compromissos e equilibrando entre velocidade, custo e qualidade nas decisões de arquitetura de nuvem e investimento.
+A estrutura FinOps é sobre trazer responsabilidade para gastos na nuvem. Independentemente de ser chamada de “Gestão Financeira em Nuvem”, “Engenharia Financeira em Nuvem”, ou outros nomes, a essência do FinOps é a responsabilidade financeira no modelo de gastos variáveis da nuvem. Isso envolve equipes distribuídas de engenharia e negócios trazendo compromissos e equilibrando entre velocidade, custo e qualidade nas decisões de arquitetura de nuvem e investimento.
 
 Não trata-se apenas sobre economizar dinheiro, mas sobre como obter o máximo de valor da nuvem para impulsionar um crescimento de forma eficiente. Isso inclui a capacitação de equipes de engenharia para fornecer melhores recursos e aplicações mais rapidamente, e facilita uma conversa multifuncional sobre onde e quando investir.
 
@@ -197,9 +198,10 @@ Inicie sua avaliação com a [Revisão do FinOps](https://learn.microsoft.com/pt
 
 Para mais informações sobre [O que é FinOps?](https://www.finops.org/) segue documentação que foi base desse artigo.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
-  date: "2024-07-14",
-  category: "Cloud Adoption Framework",
-  readTime: "32 min de leitura",
-  mediumUrl: "https://orafaelferreiraa.medium.com/construindo-uma-funda%C3%A7%C3%A3o-s%C3%B3lida-para-a-nuvem-com-finops-maximizando-os-custos-em-ambientes-cloud-0b47af9ce8a0"
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+`,
+  date: "2024-01-15",
+  category: "Artigos",
+  readTime: "10 min de leitura",
+  mediumUrl: ""
 };
