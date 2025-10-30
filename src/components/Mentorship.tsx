@@ -9,104 +9,104 @@ const Mentorship = () => {
   const { t } = useTranslation();
   const mentorHighlights = [{
     icon: Briefcase,
-    text: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
+    text: t("mentorship.highlights.experience"),
     link: "https://www.orafaelferreira.com/experiencias/"
   }, {
     icon: Globe,
-    text: "Atuação Global como Senior Azure DevOps Solution Engineer em empresa americana"
+    text: t("mentorship.highlights.global")
   }, {
     icon: Award,
-    text: "Formação em Ciência da Computação e +19 certificações técnicas relevantes",
+    text: t("mentorship.highlights.education"),
     link: "https://www.orafaelferreira.com/certificacoes/"
   }, {
     icon: Award,
-    text: "Microsoft MVP e Microsoft Certified Trainer (MCT)",
+    text: t("mentorship.highlights.mvp"),
     link: "https://mvp.microsoft.com/pt-BR/mvp/profile/627d5ac9-f704-4768-81a7-5c580283881d"
   }, {
     icon: Globe,
-    text: "DevOps Institute Ambassador - reconhecido internacionalmente",
+    text: t("mentorship.highlights.ambassador"),
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf"
   }, {
     icon: Award,
-    text: "Alura Star - embaixador oficial do programa",
+    text: t("mentorship.highlights.aluraStar"),
     link: "https://www.alura.com.br/stars"
   }, {
     icon: Globe,
-    text: "Green Software Champion pela Green Software Foundation",
+    text: t("mentorship.highlights.greenChampion"),
     link: "https://champions.greensoftware.foundation/champions/rafael-ferreira/"
   }, {
     icon: TrendingUp,
-    text: "Palestrante ativo e organizador dos grupos Azure Floripa, DevOpsDays Floripa e CNCF SC",
+    text: t("mentorship.highlights.speaker"),
     link: "https://www.orafaelferreira.com/palestras/"
   }];
   const mentorshipBenefits = [{
     icon: Target,
-    title: "Orientação 100% Personalizada",
-    description: "Sessões adaptadas às suas necessidades e objetivos. Para iniciantes ou profissionais sênior."
+    title: t("mentorship.benefits.personalized.title"),
+    description: t("mentorship.benefits.personalized.description")
   }, {
     icon: FileCheck,
-    title: "Plano Personalizado",
-    description: "Roteiro prático com próximos passos concretos. Saiba exatamente em que focar nas próximas semanas."
+    title: t("mentorship.benefits.plan.title"),
+    description: t("mentorship.benefits.plan.description")
   }, {
     icon: Rocket,
-    title: "Dicas Valiosas",
-    description: "Recomendações de cursos, comunidades, ferramentas e formas de ganhar experiência prática."
+    title: t("mentorship.benefits.tips.title"),
+    description: t("mentorship.benefits.tips.description")
   }, {
     icon: TrendingUp,
-    title: "Visão Estratégica",
-    description: "Entenda tendências e demandas atuais em Cloud Computing e DevOps."
+    title: t("mentorship.benefits.strategic.title"),
+    description: t("mentorship.benefits.strategic.description")
   }, {
     icon: CheckCircle2,
-    title: "Confiança para Evoluir",
-    description: "Valide suas ideias e ganhe segurança para executar o plano e buscar oportunidades."
+    title: t("mentorship.benefits.confidence.title"),
+    description: t("mentorship.benefits.confidence.description")
   }, {
     icon: UserCheck,
-    title: "Grupo Exclusivo de Vagas",
-    description: "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador."
+    title: t("mentorship.benefits.jobGroup.title"),
+    description: t("mentorship.benefits.jobGroup.description")
   }];
   const howItWorks = [{
     icon: FileCheck,
-    title: "Pré-call Personalizado",
-    description: "Preencha um formulário descrevendo seu momento profissional, experiências e metas em Cloud/DevOps."
+    title: t("mentorship.steps.preCall.title"),
+    description: t("mentorship.steps.preCall.description")
   }, {
     icon: Clock,
-    title: "Call Estratégica (1h a 1h30)",
-    description: "Sessão prática e direta ao ponto, esclarecendo dúvidas e criando um roteiro realista e eficiente."
+    title: t("mentorship.steps.call.title"),
+    description: t("mentorship.steps.call.description")
   }, {
     icon: CheckCircle2,
-    title: "Plano de Ação Personalizado",
-    description: "Saia com passos claros: estudos, certificações, dicas de experiência prática e posicionamento no mercado."
+    title: t("mentorship.steps.actionPlan.title"),
+    description: t("mentorship.steps.actionPlan.description")
   }];
   const services = [{
-    name: "Mentoria Cloud Azure e DevOps Individual",
+    name: t("mentorship.services.mentorship"),
     price: "R$ 1.000"
   }, {
-    name: "Revisão de Perfil no LinkedIn",
+    name: t("mentorship.services.linkedin"),
     price: "R$ 200"
   }, {
-    name: "Template",
+    name: t("mentorship.services.resume"),
     price: "R$ 50"
   }];
   const discountsByProfile = [{
-    profile: "Open to Work (40% off)",
+    profile: t("mentorship.profiles.openToWork"),
     mentorship: "R$ 600",
     linkedin: "R$ 120",
     template: "R$ 30",
     total: "R$ 750"
   }, {
-    profile: "Júnior (30% off)",
+    profile: t("mentorship.profiles.junior"),
     mentorship: "R$ 700",
     linkedin: "R$ 140",
     template: "R$ 35",
     total: "R$ 875"
   }, {
-    profile: "Pleno (20% off)",
+    profile: t("mentorship.profiles.mid"),
     mentorship: "R$ 800",
     linkedin: "R$ 160",
     template: "R$ 40",
     total: "R$ 1.000"
   }, {
-    profile: "Sênior (10% off)",
+    profile: t("mentorship.profiles.senior"),
     mentorship: "R$ 900",
     linkedin: "R$ 180",
     template: "R$ 45",

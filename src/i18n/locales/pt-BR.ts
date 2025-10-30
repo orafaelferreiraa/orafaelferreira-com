@@ -47,6 +47,67 @@ export default {
       discountsByProfile: "Descontos por Perfil",
       profile: "Perfil",
       total: "Total",
+      highlights: {
+        experience: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
+        global: "Atuação Global como Senior Azure DevOps Solution Engineer em empresa americana",
+        education: "Formação em Ciência da Computação e +19 certificações técnicas relevantes",
+        mvp: "Microsoft MVP e Microsoft Certified Trainer (MCT)",
+        ambassador: "DevOps Institute Ambassador - reconhecido internacionalmente",
+        aluraStar: "Alura Star - embaixador oficial do programa",
+        greenChampion: "Green Software Champion pela Green Software Foundation",
+        speaker: "Palestrante ativo e organizador dos grupos Azure Floripa, DevOpsDays Floripa e CNCF SC"
+      },
+      benefits: {
+        personalized: {
+          title: "Orientação 100% Personalizada",
+          description: "Sessões adaptadas às suas necessidades e objetivos. Para iniciantes ou profissionais sênior."
+        },
+        plan: {
+          title: "Plano Personalizado",
+          description: "Roteiro prático com próximos passos concretos. Saiba exatamente em que focar nas próximas semanas."
+        },
+        tips: {
+          title: "Dicas Valiosas",
+          description: "Recomendações de cursos, comunidades, ferramentas e formas de ganhar experiência prática."
+        },
+        strategic: {
+          title: "Visão Estratégica",
+          description: "Entenda tendências e demandas atuais em Cloud Computing e DevOps."
+        },
+        confidence: {
+          title: "Confiança para Evoluir",
+          description: "Valide suas ideias e ganhe segurança para executar o plano e buscar oportunidades."
+        },
+        jobGroup: {
+          title: "Grupo Exclusivo de Vagas",
+          description: "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador."
+        }
+      },
+      steps: {
+        preCall: {
+          title: "Pré-call Personalizado",
+          description: "Preencha um formulário descrevendo seu momento profissional, experiências e metas em Cloud/DevOps."
+        },
+        call: {
+          title: "Call Estratégica (1h a 1h30)",
+          description: "Sessão prática e direta ao ponto, esclarecendo dúvidas e criando um roteiro realista e eficiente."
+        },
+        actionPlan: {
+          title: "Plano de Ação Personalizado",
+          description: "Saia com passos claros: estudos, certificações, dicas de experiência prática e posicionamento no mercado."
+        }
+      },
+      services: {
+        mentorship: "Mentoria Cloud Azure e DevOps Individual",
+        linkedin: "Revisão de Perfil no LinkedIn",
+        resume: "Template"
+      },
+      profiles: {
+        openToWork: "Open to Work (40% off)",
+        junior: "Júnior (30% off)",
+        mid: "Pleno (20% off)",
+        senior: "Sênior (10% off)"
+      },
       hero: {
         subtitle1: "Você trabalha com TI (seja iniciante ou experiente) e quer crescer na área de Cloud Azure e DevOps, mas sente dificuldade em encontrar um caminho claro?",
         subtitle2: "Seja você um iniciante buscando começar ou um profissional com alguma experiência e não tem certeza de qual caminho seguir? Eu entendo exatamente como é frustrante estudar, se esforçar e não ter resultados claros. Uma mentoria 1:1 focada e personalizada pode ser o que faltava.",
