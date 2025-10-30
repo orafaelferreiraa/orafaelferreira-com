@@ -16,7 +16,6 @@ import { article as devopsFoundationCloud } from './2024-01-08-devops-foundation
 import { article as azureBackupVirtualMachines } from './2024-01-15-azure-backup-virtual-machines';
 import { article as finopsFoundationCloud } from './2024-01-15-finops-foundation-cloud';
 import { article as observabilidadeFoundationCloud } from './2024-01-17-observabilidade-foundation-cloud';
-import { article as greenComputingFoundationCloud } from './2024-01-24-green-computing-foundation-cloud';
 import { article as _2meetcncf } from './2024-02-22-2meetcncf';
 import { article as kcdsp24 } from './2024-02-25-kcdsp24';
 import { article as globalAzure24 } from './2024-05-18-global-azure24';
@@ -39,25 +38,20 @@ import { article as eventododFloripa } from './2024-07-21-eventodod-floripa';
 import { article as kcdFloripa24 } from './2024-07-21-kcd-floripa24';
 import { article as iaGen } from './2024-07-25-ia-gen';
 import { article as guiaCriacaoVmsAzure } from './2024-07-26-guia-criacao-vms-azure';
-import { article as azureWorkbooksFinops } from './2024-08-04-azure-workbooks-finops';
 import { article as _6rs } from './2024-08-11-6rs';
-import { article as estrategiasModernizacao6rs } from './2024-08-22-estrategias-modernizacao-6rs';
 import { article as cursoDp900 } from './2024-09-02-curso-dp-900';
 import { article as codecon } from './2024-09-11-codecon';
 import { article as zsh } from './2024-09-12-zsh';
 import { article as tls } from './2024-10-08-tls';
 import { article as agil } from './2024-10-29-agil';
-import { article as automatizandoInfraestruturaMetodologiasAgeis } from './2024-10-29-automatizando-infraestrutura-metodologias-ageis';
 import { article as sustentabilityDay } from './2024-10-31-sustentability-day';
 import { article as mvpDay } from './2024-11-02-mvp-day';
 import { article as tftec2024 } from './2024-11-04-tftec2024';
 import { article as tcFloripa24 } from './2024-11-10-tc-floripa24';
 import { article as codeIsland24 } from './2024-11-24-code-island24';
 import { article as azPolicy } from './2025-01-09-az-policy';
-import { article as azurePolicyVisaoCompleta } from './2025-01-11-azure-policy-visao-completa';
 import { article as translatek8s } from './2025-03-23-translatek8s';
 import { article as sqlsat25 } from './2025-04-06-sqlsat25';
-import { article as azbkpshouldenabledvm } from './2025-04-12-azbkpshouldenabledvm';
 import { article as carreiraInternacional } from './2025-05-18-carreira-internacional';
 import { article as globalAzure25 } from './2025-05-18-global-azure25';
 import { article as globalAzure25pres } from './2025-05-18-global-azure25pres';
@@ -87,7 +81,6 @@ export const allArticles: Article[] = [
   azureBackupVirtualMachines,
   finopsFoundationCloud,
   observabilidadeFoundationCloud,
-  greenComputingFoundationCloud,
   _2meetcncf,
   kcdsp24,
   globalAzure24,
@@ -110,25 +103,20 @@ export const allArticles: Article[] = [
   kcdFloripa24,
   iaGen,
   guiaCriacaoVmsAzure,
-  azureWorkbooksFinops,
   _6rs,
-  estrategiasModernizacao6rs,
   cursoDp900,
   codecon,
   zsh,
   tls,
   agil,
-  automatizandoInfraestruturaMetodologiasAgeis,
   sustentabilityDay,
   mvpDay,
   tftec2024,
   tcFloripa24,
   codeIsland24,
   azPolicy,
-  azurePolicyVisaoCompleta,
   translatek8s,
   sqlsat25,
-  azbkpshouldenabledvm,
   carreiraInternacional,
   globalAzure25,
   globalAzure25pres,
