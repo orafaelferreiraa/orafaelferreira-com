@@ -1,7 +1,9 @@
 import { Linkedin, Github, Youtube, Music, Instagram, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 import heroImage from "@/assets/hero-image.jpg";
 const Hero = () => {
+  const { t } = useTranslation();
   const socialLinks = [{
     icon: Linkedin,
     href: "https://www.linkedin.com/in/orafaelferreiraa/",
@@ -42,7 +44,7 @@ const Hero = () => {
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left space-y-6 animate-fade-in">
             <div className="inline-block">
-              <span className="text-sm font-mono text-primary mb-2 block">Cloud Azure & DevOps Specialist</span>
+              <span className="text-sm font-mono text-primary mb-2 block">{t("hero.title")}</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight">
@@ -51,7 +53,7 @@ const Hero = () => {
               <span className="text-primary">Alves Ferreira</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl">Transformando as complexidades de ambientes de nuvem em ambientes seguros e escaláveis.</p>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl">{t("hero.description")}</p>
             
             {/* Social Links */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-3xl">
@@ -67,8 +69,8 @@ const Hero = () => {
 
             {/* Scroll Down Button */}
             <div className="flex justify-center mt-8">
-              <button onClick={scrollToAbout} className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors" aria-label="Rolar para baixo">
-                <span className="text-sm font-medium">Saiba mais</span>
+              <button onClick={scrollToAbout} className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors" aria-label={t("hero.learnMore")}>
+                <span className="text-sm font-medium">{t("hero.learnMore")}</span>
                 <ChevronDown className="h-6 w-6 animate-bounce" />
               </button>
             </div>

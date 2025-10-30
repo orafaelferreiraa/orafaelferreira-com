@@ -1,7 +1,10 @@
 import { Cloud, Code, TrendingUp, Lightbulb, Award, Users, Briefcase, Monitor } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "react-i18next";
+
 const About = () => {
+  const { t } = useTranslation();
   const highlights = [{
     icon: Award,
     title: "Experiência & Credenciais",
@@ -45,10 +48,10 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">
-              Sobre <span className="text-primary">mim</span>
+              {t("about.title")} <span className="text-primary">{t("about.titleHighlight")}</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">Platform Engineer especializado em Cloud Azure e DevOps, com foco em transformação digital através de soluções inovadoras.</p>
-            <p className="text-primary font-semibold italic text-lg">"Tecnologia é ponte, não barreira, e eu construo pontes todos os dias."</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">{t("about.description")}</p>
+            <p className="text-primary font-semibold italic text-lg">"{t("about.quote")}"</p>
           </div>
 
           {/* Highlights Grid */}
@@ -71,7 +74,7 @@ const About = () => {
           {/* Skills Grid */}
           <div className="text-center mb-8">
             <h3 className="text-2xl sm:text-3xl font-heading font-bold">
-              Áreas de <span className="text-primary">Especialização</span>
+              {t("about.skillsTitle")} <span className="text-primary">{t("about.skillsTitleHighlight")}</span>
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

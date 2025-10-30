@@ -1,13 +1,25 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,15 +30,15 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: "Início", path: "/" },
-    { label: "Mentoria", path: "/mentoria" },
-    { label: "Premiações", path: "/premiacoes" },
-    { label: "Certificações", path: "/certificacoes" },
-    { label: "Palestras", path: "/palestras" },
-    { label: "Certificados", path: "/certificados" },
-    { label: "Experiências", path: "/experiencias" },
-    { label: "Artigos/Posts", path: "/blog" },
-    { label: "Recomendações", path: "/recomendacoes" },
+    { label: t("nav.home"), path: "/" },
+    { label: t("nav.mentorship"), path: "/mentoria" },
+    { label: t("nav.awards"), path: "/premiacoes" },
+    { label: t("nav.certifications"), path: "/certificacoes" },
+    { label: t("nav.talks"), path: "/palestras" },
+    { label: t("nav.certificates"), path: "/certificados" },
+    { label: t("nav.experiences"), path: "/experiencias" },
+    { label: t("nav.blog"), path: "/blog" },
+    { label: t("nav.recommendations"), path: "/recomendacoes" },
   ];
 
   return (
@@ -45,7 +57,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -59,17 +71,50 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Globe className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => changeLanguage('pt-BR')}>
+                  Português (BR)
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('en')}>
+                  English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          <div className="md:hidden flex items-center gap-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Globe className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => changeLanguage('pt-BR')}>
+                  Português (BR)
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('en')}>
+                  English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
