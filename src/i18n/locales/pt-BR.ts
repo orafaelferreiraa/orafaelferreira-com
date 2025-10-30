@@ -9,7 +9,13 @@ export default {
       certificates: "Certificados",
       experiences: "Experiências",
       blog: "Artigos/Posts",
-      recommendations: "Recomendações"
+      heroTitle: {
+        prefix: "Mentoria em",
+        highlight: "Cloud Azure e DevOps"
+      },
+      whyChoose: "Por que me escolher como mentor?",
+      whyChoosePrefix: "Por que me escolher como",
+      whyChooseHighlight: "mentor?",
     },
     hero: {
       title: "Cloud Azure & DevOps Specialist",
@@ -35,7 +41,58 @@ export default {
       viewProfile: "Ver perfil público",
       communityImpact: "Impacto para a Comunidade",
       communityDescription: "Com Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion, posso:",
-      linkedin: "me chama no LinkedIn"
+      communityBullets: [
+        "Levar conteúdo de qualidade a ainda mais pessoas",
+        "Trazer conteúdos sobre Azure, DevOps e sustentabilidade de forma acessível",
+        "Conectar quem está começando com oportunidades reais de carreira",
+        "Apoiar iniciativas de diversidade, inclusão e práticas sustentáveis em tech"
+      ],
+      communityFooterPrefix: "Se quiser saber mais, colaborar ou convidar para palestrar,",
+      communityFooterSuffix: "!",
+      linkedin: "me chama no LinkedIn",
+      items: {
+        mvp: {
+          title: "Microsoft MVP Azure 2025",
+          category: "Azure – Compute Infrastructure",
+          description: "O Microsoft MVP Award reconhece profissionais que compartilham expertise com a comunidade e contribuem para o ecossistema Microsoft.",
+          benefits: [
+            "Acesso antecipado a builds e roadmaps do Azure",
+            "Canal direto com times de produto na Microsoft",
+            "Convite para o MVP Global Summit em Redmond",
+            "Licenças Visual Studio Enterprise & Microsoft 365 para projetos de comunidade"
+          ]
+        },
+        alura: {
+          title: "Alura Star 2025",
+          category: "Educação e Comunidade",
+          description: "Alura Stars é o programa de embaixadores da Alura que destaca creators e líderes comunitários que transformam o futuro pela educação em tecnologia.",
+          benefits: [
+            "Conteúdo constante sobre Azure, DevOps e FinOps nas redes e blog",
+            "Lives técnicas, aproximando iniciantes do mercado",
+            "Organização de Comunidades (Azure Floripa, DevOpsDays Floripa, CNCF SC)"
+          ]
+        },
+        devops: {
+          title: "DevOps Institute Ambassador 2025",
+          category: "DevOps Community",
+          description: "DevOps Institute Ambassador reconhece embaixadores globais por liderar e apoiar a comunidade internacional de DevOps.",
+          benefits: [
+            "Defensor ativo do SKIL Framework (Skills, Knowledge, Ideas & Learning)",
+            "Contribuição com conteúdo, eventos e iniciativas educacionais",
+            "Promoção de conexões valiosas entre profissionais do movimento Humans of DevOps"
+          ]
+        },
+        green: {
+          title: "Green Software Champion 2025",
+          category: "Sustentabilidade",
+          description: "Green Software Champion é uma distinção internacional concedida pela Green Software Foundation a profissionais que lideram iniciativas para descarbonizar o desenvolvimento de software e promover práticas sustentáveis na indústria de tecnologia.",
+          benefits: [
+            "Liderança em iniciativas de descarbonização de software",
+            "Promoção de práticas sustentáveis na indústria tech",
+            "Reconhecimento internacional pela Green Software Foundation"
+          ]
+        }
+      }
     },
     mentorship: {
       title: "Mentoria em Cloud Azure e DevOps",
@@ -78,6 +135,10 @@ export default {
           title: "Confiança para Evoluir",
           description: "Valide suas ideias e ganhe segurança para executar o plano e buscar oportunidades."
         },
+      table: {
+        linkedinHeader: "LinkedIn",
+        resumeHeader: "Currículo"
+      },
         jobGroup: {
           title: "Grupo Exclusivo de Vagas",
           description: "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador."
@@ -153,7 +214,8 @@ export default {
     },
     talks: {
       title: "Palestras",
-      upcoming: "Próximas Palestras",
+      description: "Compartilho insights, experiências e conhecimentos sobre os mais diversos temas do universo da tecnologia.",
+      upcoming: "Próximos Eventos",
       inPerson: "Palestras Presenciais",
       online: "Palestras Online",
       event: "Evento",
@@ -167,7 +229,12 @@ export default {
     },
     certificates: {
       title: "Certificados",
-      description: "Certificados de cursos, eventos e palestras que participei ao longo dos anos."
+      description: "Certificados de cursos, eventos e palestras que participei ao longo dos anos.",
+      heading: "Certificados de Treinamentos, Cursos e Eventos",
+      view: "Ver certificado",
+      count_one: "({{count}} certificado)",
+      count_other: "({{count}} certificados)",
+      closing: "Ao compartilhar essa coleção de certificados, cursos, eventos e palestras, meu objetivo é demonstrar o comprometimento contínuo com o aprendizado e o desenvolvimento. Cada experiência representou um degrau em minha jornada, e todas juntas formam o alicerce sólido sobre o qual construí minha carreira. À medida que continuo avançando, estou ansioso para abraçar novas oportunidades de aprendizado e crescimento. Afinal, a jornada de aprimoramento nunca termina, e estou comprometido em seguir aprendendo, evoluindo e compartilhando o que aprendo com aqueles ao meu redor."
     },
     certifications: {
       title: "Minhas Certificações",
@@ -176,7 +243,8 @@ export default {
     },
     experience: {
       title: "Minha Jornada Profissional",
-      description: "Compartilhando um pouco da minha jornada profissional e das experiências que moldaram meu caminho até aqui. Desde os primeiros passos como um Assistente Técnico até a função atual de Cloud Solution Architect Senior, cada etapa desempenhou um papel fundamental na minha trajetória. Espero que minha história possa inspirar e motivar outros profissionais em suas próprias jornadas."
+      description: "Compartilhando um pouco da minha jornada profissional e das experiências que moldaram meu caminho até aqui. Desde os primeiros passos como um Assistente Técnico até a função atual de Cloud Solution Architect Senior, cada etapa desempenhou um papel fundamental na minha trajetória. Espero que minha história possa inspirar e motivar outros profissionais em suas próprias jornadas.",
+      present: "Atualmente"
     },
     recommendations: {
       title: "Recomendações",

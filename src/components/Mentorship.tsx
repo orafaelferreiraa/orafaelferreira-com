@@ -118,7 +118,7 @@ const Mentorship = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
-              {t("mentorship.title").split(" Cloud Azure e DevOps")[0]} <span className="text-primary">Cloud Azure e DevOps</span>
+              {t("mentorship.heroTitle.prefix")} <span className="text-primary">{t("mentorship.heroTitle.highlight")}</span>
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8">
               {t("mentorship.hero.subtitle1")}
@@ -151,7 +151,7 @@ const Mentorship = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-center mb-12">
-              {t("mentorship.whyChoose").split(" como mentor?")[0]} <span className="text-primary">{t("mentorship.whyChoose").split("mentor?")[1] || "mentor?"}</span>
+              {t("mentorship.whyChoosePrefix")} <span className="text-primary">{t("mentorship.whyChooseHighlight")}</span>
             </h2>
 
             <div className="mb-12 rounded-lg overflow-hidden"></div>
@@ -220,8 +220,8 @@ const Mentorship = () => {
                   <TableRow>
                     <TableHead className="font-bold">{t("mentorship.profile")}</TableHead>
                     <TableHead className="font-bold text-right">{t("mentorship.service").split(" Cloud")[0]}</TableHead>
-                    <TableHead className="font-bold text-right">LinkedIn</TableHead>
-                    <TableHead className="font-bold text-right">Currículo</TableHead>
+                    <TableHead className="font-bold text-right">{t("mentorship.table.linkedinHeader")}</TableHead>
+                    <TableHead className="font-bold text-right">{t("mentorship.table.resumeHeader")}</TableHead>
                     <TableHead className="font-bold text-right">{t("mentorship.total")}</TableHead>
                   </TableRow>
                 </TableHeader>

@@ -9,7 +9,7 @@ import { extractFirstImage } from "@/lib/extractImage";
 import { useTranslation } from "react-i18next";
 
 const Blog = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState("artigos");
 
   const postCategories = [
@@ -60,7 +60,10 @@ const Blog = () => {
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="h-4 w-4" />
-                    {new Date(article.date).toLocaleDateString("pt-BR")}
+                    {new Date(article.date).toLocaleDateString(
+                      i18n.language?.startsWith("pt") ? "pt-BR" : "en-US",
+                      { year: "numeric", month: "2-digit", day: "2-digit" }
+                    )}
                   </div>
                   <Button 
                     variant="ghost" 

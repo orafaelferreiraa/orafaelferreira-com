@@ -35,11 +35,68 @@ export default {
       viewProfile: "View public profile",
       communityImpact: "Community Impact",
       communityDescription: "With Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion, I can:",
-      linkedin: "reach out on LinkedIn"
+      communityBullets: [
+        "Bring high-quality content to even more people",
+        "Deliver accessible content about Azure, DevOps, and sustainability",
+        "Connect beginners with real career opportunities",
+        "Support diversity, inclusion, and sustainable practices in tech"
+      ],
+      communityFooterPrefix: "If you'd like to learn more, collaborate or invite me to speak,",
+      communityFooterSuffix: "!",
+      linkedin: "reach out on LinkedIn",
+      items: {
+        mvp: {
+          title: "Microsoft MVP Azure 2025",
+          category: "Azure – Compute Infrastructure",
+          description: "The Microsoft MVP Award recognizes professionals who share expertise with the community and contribute to the Microsoft ecosystem.",
+          benefits: [
+            "Early access to Azure builds and roadmaps",
+            "Direct channel with Microsoft product teams",
+            "Invitation to the MVP Global Summit in Redmond",
+            "Visual Studio Enterprise & Microsoft 365 licenses for community projects"
+          ]
+        },
+        alura: {
+          title: "Alura Star 2025",
+          category: "Education & Community",
+          description: "Alura Stars is Alura's ambassador program highlighting creators and community leaders who shape the future through tech education.",
+          benefits: [
+            "Consistent content about Azure, DevOps, and FinOps on social networks and blog",
+            "Technical livestreams, bringing beginners closer to the market",
+            "Community organization (Azure Floripa, DevOpsDays Floripa, CNCF SC)"
+          ]
+        },
+        devops: {
+          title: "DevOps Institute Ambassador 2025",
+          category: "DevOps Community",
+          description: "DevOps Institute Ambassador recognizes global ambassadors for leading and supporting the international DevOps community.",
+          benefits: [
+            "Active advocate of the SKIL Framework (Skills, Knowledge, Ideas & Learning)",
+            "Contributions with content, events, and educational initiatives",
+            "Promotion of valuable connections among professionals in the Humans of DevOps movement"
+          ]
+        },
+        green: {
+          title: "Green Software Champion 2025",
+          category: "Sustainability",
+          description: "Green Software Champion is an international distinction awarded by the Green Software Foundation to professionals who lead initiatives to decarbonize software development and promote sustainable practices in the tech industry.",
+          benefits: [
+            "Leadership in software decarbonization initiatives",
+            "Promotion of sustainable practices in the tech industry",
+            "International recognition by the Green Software Foundation"
+          ]
+        }
+      }
     },
     mentorship: {
       title: "Cloud Azure and DevOps Mentorship",
+      heroTitle: {
+        prefix: "Mentorship in",
+        highlight: "Cloud Azure and DevOps"
+      },
       whyChoose: "Why choose me as your mentor?",
+      whyChoosePrefix: "Why choose me as your",
+      whyChooseHighlight: "mentor?",
       values: "Pricing",
       pricing: "According to your career level. Check the prices for each service and adjusted prices by profile:",
       service: "Service",
@@ -50,6 +107,7 @@ export default {
     },
     talks: {
       title: "Talks",
+      description: "I share insights, experiences, and knowledge on a wide range of technology topics.",
       upcoming: "Upcoming Talks",
       inPerson: "In-Person Talks",
       online: "Online Talks",
@@ -64,7 +122,12 @@ export default {
     },
     certificates: {
       title: "Certificates",
-      description: "Certificates from courses, events, and talks I've participated in over the years."
+      description: "Certificates from courses, events, and talks I've participated in over the years.",
+      heading: "Certificates from Trainings, Courses, and Events",
+      view: "View certificate",
+      count_one: "({{count}} certificate)",
+      count_other: "({{count}} certificates)",
+      closing: "By sharing this collection of certificates, courses, events, and talks, my goal is to demonstrate a continuous commitment to learning and development. Each experience has represented a step in my journey, and together they form the solid foundation upon which I have built my career. As I continue to advance, I look forward to embracing new opportunities for learning and growth. After all, the journey of improvement never ends, and I am committed to keep learning, evolving, and sharing what I learn with those around me."
     },
     certifications: {
       title: "My Certifications",
@@ -73,7 +136,8 @@ export default {
     },
     experience: {
       title: "My Professional Journey",
-      description: "Sharing a bit of my professional journey and the experiences that shaped my path. From my first steps as a Technical Assistant to my current role as Senior Cloud Solution Architect, each stage played a fundamental role in my trajectory. I hope my story can inspire and motivate other professionals in their own journeys."
+      description: "Sharing a bit of my professional journey and the experiences that shaped my path. From my first steps as a Technical Assistant to my current role as Senior Cloud Solution Architect, each stage played a fundamental role in my trajectory. I hope my story can inspire and motivate other professionals in their own journeys.",
+      present: "Present"
     },
     recommendations: {
       title: "Recommendations",
@@ -100,6 +164,10 @@ export default {
         title: "Rafael Martin - Cloud & DevOps Engineer",
         description: "DevOps Engineer specialized in Cloud and Platform Engineering. Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star. Over 10 years in technology and 19 technical certifications in Azure, DevOps, FinOps and Platform Engineering.",
         ogDescription: "Specialist in Azure, DevOps, FinOps and Platform Engineering. Turning cloud environments into resilient and secure platforms."
+      },
+      table: {
+        linkedinHeader: "LinkedIn",
+        resumeHeader: "Resume"
       },
       awards: {
         title: "Awards | Rafael Ferreira - MVP Azure, Alura Star, DevOps Ambassador",

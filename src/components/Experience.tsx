@@ -136,7 +136,7 @@ const Experience = () => {
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="h-4 w-4" />
-                    <span className="text-sm font-medium">{exp.period}</span>
+                    <span className="text-sm font-medium">{exp.period.replace(/Present/i, t('experience.present'))}</span>
                   </div>
                 </div>
               </CardHeader>

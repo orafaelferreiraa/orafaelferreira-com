@@ -1,6 +1,7 @@
 import { FileCheck, Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useTranslation } from "react-i18next";
 interface Certificate {
   title: string;
   link: string;
@@ -542,11 +543,12 @@ const certificatesByYear: YearCertificates[] = [{
   }]
 }];
 const Certificates = () => {
+  const { t } = useTranslation();
   return <section id="certificates" className="py-20 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Certificados de Treinamentos, Cursos e Eventos
+            {t('certificates.heading')}
           </h1>
         </div>
 
@@ -560,7 +562,7 @@ const Certificates = () => {
                     <Calendar className="h-5 w-5 text-primary" />
                     <span className="text-2xl font-bold">{yearData.year}</span>
                     <span className="text-sm text-muted-foreground">
-                      ({yearData.certificates.length} certificado{yearData.certificates.length !== 1 ? 's' : ''})
+                      {t('certificates.count', { count: yearData.certificates.length })}
                     </span>
                   </div>
                 </AccordionTrigger>
@@ -574,7 +576,7 @@ const Certificates = () => {
                               <p className="text-sm font-medium leading-snug mb-2">{cert.title}</p>
                               <a href={cert.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:underline">
                                 <ExternalLink className="h-3 w-3" />
-                                Ver certificado
+                                {t('certificates.view')}
                               </a>
                             </div>
                           </div>
@@ -590,12 +592,7 @@ const Certificates = () => {
           <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 max-w-3xl mx-auto">
             <CardContent className="p-8">
               <p className="text-muted-foreground leading-relaxed">
-                Ao compartilhar essa coleção de certificados, cursos, eventos e palestras, meu objetivo é demonstrar o 
-                comprometimento contínuo com o aprendizado e o desenvolvimento. Cada experiência representou um degrau em 
-                minha jornada, e todas juntas formam o alicerce sólido sobre o qual construí minha carreira. À medida que 
-                continuo avançando, estou ansioso para abraçar novas oportunidades de aprendizado e crescimento. Afinal, 
-                a jornada de aprimoramento nunca termina, e estou comprometido em seguir aprendendo, evoluindo e 
-                compartilhando o que aprendo com aqueles ao meu redor.
+                {t('certificates.closing')}
               </p>
             </CardContent>
           </Card>

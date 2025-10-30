@@ -2,6 +2,7 @@ import { Presentation, ExternalLink, Calendar, MapPin, Youtube, Linkedin, FileTe
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "react-i18next";
 
 interface Talk {
   title: string;
@@ -399,6 +400,8 @@ const Talks = () => {
     },
   ];
 
+  const { t, i18n } = useTranslation();
+
   const renderTalkCard = (talk: Talk, index: number) => {
     const getYouTubeId = (url: string): string | null => {
       try {
@@ -453,7 +456,7 @@ const Talks = () => {
           
           <div className="flex items-center gap-2 text-muted-foreground">
             <Calendar className="w-4 h-4" />
-            <span className="text-sm">{new Date(talk.date).toLocaleDateString('pt-BR')}</span>
+            <span className="text-sm">{new Date(talk.date).toLocaleDateString(i18n.language.startsWith('en') ? 'en-US' : 'pt-BR')}</span>
           </div>
           
           <div className="flex items-center gap-2 text-muted-foreground">
@@ -468,7 +471,7 @@ const Talks = () => {
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.siteUrl} target="_blank" rel="noopener noreferrer">
                   <Globe className="w-4 h-4 mr-2" />
-                  Site do Evento
+                  {t('talks.seeEvent')}
                 </a>
               </Button>
             )}
@@ -477,7 +480,7 @@ const Talks = () => {
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.slidesUrl} target="_blank" rel="noopener noreferrer">
                   <FileText className="w-4 h-4 mr-2" />
-                  Slides
+                  {t('talks.downloadSlides')}
                 </a>
               </Button>
             )}
@@ -486,7 +489,7 @@ const Talks = () => {
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">
                   <Youtube className="w-4 h-4 mr-2" />
-                  Vídeo
+                  {t('talks.watchVideo')}
                 </a>
               </Button>
             )}
@@ -495,7 +498,7 @@ const Talks = () => {
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.linkedinUrl} target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
+                  {t('talks.seeLinkedIn')}
                 </a>
               </Button>
             )}
@@ -504,7 +507,7 @@ const Talks = () => {
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.blogUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  Blog Post
+                  {t('talks.readArticle')}
                 </a>
               </Button>
             )}
@@ -519,10 +522,10 @@ const Talks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Palestras
+            {t('talks.title')}
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Compartilho insights, experiências e conhecimentos sobre os mais diversos temas do universo da tecnologia.
+            {t('talks.description')}
           </p>
         </div>
 
@@ -530,7 +533,7 @@ const Talks = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
               <Calendar className="w-8 h-8 text-primary" />
-              Próximos Eventos
+              {t('talks.upcoming')}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {upcomingTalks.map((talk, index) => renderTalkCard(talk, index))}
@@ -541,7 +544,7 @@ const Talks = () => {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
             <MapPin className="w-8 h-8 text-primary" />
-            Palestras Presenciais
+            {t('talks.inPerson')}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {inPersonTalks.map((talk, index) => renderTalkCard(talk, index))}
@@ -551,7 +554,7 @@ const Talks = () => {
         <section>
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
             <Globe className="w-8 h-8 text-primary" />
-            Palestras Online
+            {t('talks.online')}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {onlineTalks.map((talk, index) => renderTalkCard(talk, index))}
