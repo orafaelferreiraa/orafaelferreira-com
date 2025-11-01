@@ -31,7 +31,47 @@ export default {
       description: "Platform Engineer especializado em Cloud Azure e DevOps, com foco em transformação digital através de soluções inovadoras.",
       quote: "Tecnologia é ponte, não barreira, e eu construo pontes todos os dias.",
       skillsTitle: "Áreas de",
-      skillsTitleHighlight: "Especialização"
+      skillsTitleHighlight: "Especialização",
+      highlights: {
+        experience: {
+          title: "Experiência & Credenciais",
+          description: "Mais de 10 anos em tecnologia, 19 certificações técnicas, formado em Ciência da Computação",
+          details: "Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star, Green Software Champion"
+        },
+        specialization: {
+          title: "Especialização Técnica",
+          description: "Platform Engineer especializado em arquiteturas Azure e transformação digital",
+          details: "Experiência em multinacionais, consultorias e ambientes corporativos internacionais"
+        },
+        stack: {
+          title: "Stack de Ferramentas",
+          description: "Azure | Terraform, Bicep | Kubernetes, Docker",
+          details: "CI/CD com GitHub Actions e Azure DevOps | GitOps | Observabilidade com Prometheus e Grafana"
+        },
+        community: {
+          title: "Comunidade & Conteúdo",
+          description: "Palestrante ativo, mentor e criador de conteúdo técnico",
+          details: "Organização de Comunidades Técnicas em Florianópolis | Podcast e conteúdo no YouTube e Spotify"
+        }
+      },
+      skills: {
+        cloudAzure: {
+          title: "Cloud Azure",
+          description: "Especialista em arquiteturas cloud resilientes e escaláveis"
+        },
+        devopsIac: {
+          title: "DevOps & IaC",
+          description: "Automação com Terraform, Bicep e pipelines CI/CD"
+        },
+        finops: {
+          title: "FinOps",
+          description: "Otimização de custos e governança financeira em nuvem"
+        },
+        platformEngineering: {
+          title: "Platform Engineering",
+          description: "Construção de plataformas internas com observabilidade"
+        }
+      }
     },
     awards: {
       title: "Premiações",

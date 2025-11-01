@@ -7,41 +7,41 @@ const About = () => {
   const { t } = useTranslation();
   const highlights = [{
     icon: Award,
-    title: "Experiência & Credenciais",
-    description: "Mais de 10 anos em tecnologia, 19 certificações técnicas, formado em Ciência da Computação",
-    details: "Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star, Green Software Champion"
+    title: t("about.highlights.experience.title"),
+    description: t("about.highlights.experience.description"),
+    details: t("about.highlights.experience.details")
   }, {
     icon: Briefcase,
-    title: "Especialização Técnica",
-    description: "Platform Engineer especializado em arquiteturas Azure e transformação digital",
-    details: "Experiência em multinacionais, consultorias e ambientes corporativos internacionais"
+    title: t("about.highlights.specialization.title"),
+    description: t("about.highlights.specialization.description"),
+    details: t("about.highlights.specialization.details")
   }, {
     icon: Monitor,
-    title: "Stack de Ferramentas",
-    description: "Azure | Terraform, Bicep | Kubernetes, Docker",
-    details: "CI/CD com GitHub Actions e Azure DevOps | GitOps | Observabilidade com Prometheus e Grafana"
+    title: t("about.highlights.stack.title"),
+    description: t("about.highlights.stack.description"),
+    details: t("about.highlights.stack.details")
   }, {
     icon: Users,
-    title: "Comunidade & Conteúdo",
-    description: "Palestrante ativo, mentor e criador de conteúdo técnico",
-    details: "Organização de Comunidades Técnicas em Florianópolis | Podcast e conteúdo no YouTube e Spotify"
+    title: t("about.highlights.community.title"),
+    description: t("about.highlights.community.description"),
+    details: t("about.highlights.community.details")
   }];
   const skills = [{
     icon: Cloud,
-    title: "Cloud Azure",
-    description: "Especialista em arquiteturas cloud resilientes e escaláveis"
+    title: t("about.skills.cloudAzure.title"),
+    description: t("about.skills.cloudAzure.description")
   }, {
     icon: Code,
-    title: "DevOps & IaC",
-    description: "Automação com Terraform, Bicep e pipelines CI/CD"
+    title: t("about.skills.devopsIac.title"),
+    description: t("about.skills.devopsIac.description")
   }, {
     icon: TrendingUp,
-    title: "FinOps",
-    description: "Otimização de custos e governança financeira em nuvem"
+    title: t("about.skills.finops.title"),
+    description: t("about.skills.finops.description")
   }, {
     icon: Lightbulb,
-    title: "Platform Engineering",
-    description: "Construção de plataformas internas com observabilidade"
+    title: t("about.skills.platformEngineering.title"),
+    description: t("about.skills.platformEngineering.description")
   }];
   return <section id="about" className="py-20 lg:py-32 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
