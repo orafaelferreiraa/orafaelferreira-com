@@ -103,16 +103,6 @@ const Talks = () => {
       blogUrl: "https://www.orafaelferreira.com/artigos/dod-crtb25/",
     },
     {
-      title: "Trabalhando para o Exterior",
-      event: "Global Azure Floripa 2025",
-      date: "2025-08-16",
-      location: "Florianópolis, SC",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/00.png",
-      siteUrl: "https://www.meetup.com/azure-user-groups/events/306207034/?eventOrigin=group_past_events",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/CloudModernaANTIAtaque.pdf",
-      blogUrl: "https://www.orafaelferreira.com/artigos/carreira-internacional/",
-    },
-    {
       title: "Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer",
       event: "HNWD Florianópolis 2025",
       date: "2025-08-16",
@@ -122,6 +112,16 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_hnwd-hnwd25-hnwdsc-activity-7358096889168154624-AeFY",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/CloudModernaANTIAtaque.pdf",
       blogUrl: "https://www.orafaelferreira.com/artigos/hack",
+    },
+    {
+      title: "Trabalhando para o Exterior",
+      event: "Global Azure Floripa 2025",
+      date: "2025-05-10",
+      location: "Florianópolis, SC",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/00.png",
+      siteUrl: "https://www.meetup.com/azure-user-groups/events/306207034/?eventOrigin=group_past_events",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/CloudModernaANTIAtaque.pdf",
+      blogUrl: "https://www.orafaelferreira.com/artigos/carreira-internacional/",
     },
     {
       title: "Os 6Rs que Você Precisa Conhecer para Migrar para a Cloud; O sétimo R é de Rivotril?!",
