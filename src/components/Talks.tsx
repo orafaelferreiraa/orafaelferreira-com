@@ -20,14 +20,6 @@ interface Talk {
 const Talks = () => {
   const upcomingTalks: Talk[] = [
     {
-      title: "GreenOps: Da Fundação à Inovação Sustentável na Cloud Azure",
-      event: "MVP Conf SP",
-      date: "2025-10-26",
-      location: "São Paulo, SP",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp25/01.png",
-      siteUrl: "https://mvpconf.com.br/",
-    },
-    {
       title: "Trabalhando para o Exterior: Realidade, Desafios e Oportunidades",
       event: "1ª Semana Acadêmica de ADS - IFSC",
       date: "2025-11-06",
@@ -45,6 +37,16 @@ const Talks = () => {
   ];
 
   const inPersonTalks: Talk[] = [
+    {
+      title: "GreenOps: Da Fundação à Inovação Sustentável na Cloud Azure",
+      event: "MVP Conf SP",
+      date: "2025-10-26",
+      location: "São Paulo, SP",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp25/01.png",
+      siteUrl: "https://mvpconf.com.br/",
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_mvpconf-azure-greenops-activity-7381289949406457858-U1xT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/mvp-conf25.pdf",
+    },
     {
       title: "Antes de Estudar Ferramentas, bora entender Sobre a cultura DevOps",
       event: "8ª Edição Cultura DevOps - White Stone Dev Pedra Branca",
