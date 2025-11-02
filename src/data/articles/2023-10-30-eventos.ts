@@ -11,6 +11,8 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 
 | Mês | Evento |
 |-----|--------|
+| Out | [**Cloud Native Day - São Paulo 2025**](https://community.cncf.io/events/details/cncf-cloud-native-sao-paulo-city-presents-cloud-native-day-sao-paulo-2025-1/) |
+| Out | [**MVP Conf - 2025 Brasil**](https://mvpconf.com.br/) |
 | Out | [**8ª Edição Cultura DevOps - White Stone Dev Pedra Branca**](https://whitestonedev.com.br/#/eventos/8edicao) |
 | Out | [**Esquenta MVP CONF - Curitiba**](https://www.hubingressos.com.br/evento/mvpconfcuritiba) |
 | Set | [**TDC São Paulo (Trilha ARQUITETURA CLOUD) 2025**](https://thedevconf.com/tdc/2025/sao-paulo/trilha-arquitetura-cloud) |

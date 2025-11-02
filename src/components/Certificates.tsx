@@ -13,6 +13,9 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2025",
   certificates: [{
+    title: "Palestrante MVP CONF - Curitiba",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-09-PalestranteMVPCONF-Curitiba.pdf"
+  },{
     title: "AZ-700 - Projetar e Implementar Soluções de Rede do Azure",
     link: "https://www.udemy.com/certificate/UC-49bfc006-aeb5-476d-8083-229aac73cd8f/"
   }, {
