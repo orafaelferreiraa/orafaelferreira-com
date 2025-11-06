@@ -29,7 +29,7 @@ const App = () => (
           <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Carregando…</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/mentoria" element={<Mentoria />} />
+              <Route path="/mentoria-cloud-devops" element={<Mentoria />} />
               <Route path="/premiacoes" element={<Premiacoes />} />
               <Route path="/certificacoes" element={<Certificacoes />} />
               <Route path="/certificados" element={<Certificados />} />

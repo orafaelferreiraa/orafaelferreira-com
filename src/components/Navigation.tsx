@@ -31,7 +31,7 @@ const Navigation = () => {
 
   const navItems = [
     { label: t("nav.home"), path: "/" },
-    { label: t("nav.mentorship"), path: "/mentoria" },
+    { label: t("nav.mentorship"), path: "/mentoria-cloud-devops" },
     { label: t("nav.awards"), path: "/premiacoes" },
     { label: t("nav.certifications"), path: "/certificacoes" },
     { label: t("nav.talks"), path: "/palestras" },

@@ -14,7 +14,7 @@ const Mentoria = () => {
         <meta name="description" content={t("pages.mentorship.description")} />
         <meta property="og:title" content={t("pages.mentorship.title")} />
         <meta property="og:description" content={t("pages.mentorship.description")} />
-        <link rel="canonical" href="https://www.orafaelferreira.com/mentoria" />
+        <link rel="canonical" href="https://www.orafaelferreira.com/mentoria-cloud-devops/" />
       </Helmet>
       <div className="min-h-screen">
         <Navigation />
