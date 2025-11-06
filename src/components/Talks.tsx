@@ -20,14 +20,6 @@ interface Talk {
 const Talks = () => {
   const upcomingTalks: Talk[] = [
     {
-      title: "Trabalhando para o Exterior: Realidade, Desafios e Oportunidades",
-      event: "1ª Semana Acadêmica de ADS - IFSC",
-      date: "2025-11-06",
-      location: "IFSC",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/SA-ADS/1.jpg",
-      siteUrl: "https://saads.framer.website/",
-    },
-    {
       title: "Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source",
       event: "DevOpsDays Porto Alegre 2025",
       date: "2025-11-29",
@@ -37,6 +29,16 @@ const Talks = () => {
   ];
 
   const inPersonTalks: Talk[] = [
+    {
+      title: "Trabalhando para o Exterior: Realidade, Desafios e Oportunidades",
+      event: "1ª Semana Acadêmica de ADS - IFSC",
+      date: "2025-11-06",
+      location: "IFSC",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/SA-ADS/1.jpg",
+      siteUrl: "https://saads.framer.website/",
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_na-1%C2%AA-semana-acad%C3%AAmica-de-ads-do-ifsc-instituto-activity-7389262492855582720-U0Bm?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/CarreiraGlobal%20emDevOps.pdf",
+    },
     {
       title: "GreenOps: Da Fundação à Inovação Sustentável na Cloud Azure",
       event: "MVP Conf SP",
