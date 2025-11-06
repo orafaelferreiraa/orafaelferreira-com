@@ -85,32 +85,32 @@ const Mentorship = () => {
     price: "R$ 189,00"
   }, {
     name: t("mentorship.services.resume"),
-    price: "R$ 50"
+    price: "R$ 49,00"
   }];
   const discountsByProfile = [{
     profile: t("mentorship.profiles.openToWork"),
     mentorship: "R$ 593,40",
     linkedin: "R$ 113,40",
-    template: "R$ 30",
-    total: "R$ 736,80"
+    template: "R$ 29,40",
+    total: "R$ 736,20"
   }, {
     profile: t("mentorship.profiles.junior"),
     mentorship: "R$ 692,30",
     linkedin: "R$ 132,30",
-    template: "R$ 35",
-    total: "R$ 859,60"
+    template: "R$ 34,30",
+    total: "R$ 858,90"
   }, {
     profile: t("mentorship.profiles.mid"),
     mentorship: "R$ 791,20",
     linkedin: "R$ 151,20",
-    template: "R$ 40",
-    total: "R$ 982,40"
+    template: "R$ 39,20",
+    total: "R$ 981,60"
   }, {
     profile: t("mentorship.profiles.senior"),
     mentorship: "R$ 890,10",
     linkedin: "R$ 170,10",
-    template: "R$ 45",
-    total: "R$ 1.105,20"
+    template: "R$ 44,10",
+    total: "R$ 1.104,30"
   }];
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
