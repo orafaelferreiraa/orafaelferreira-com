@@ -79,7 +79,7 @@ const Mentorship = () => {
   }];
   const services = [{
     name: t("mentorship.services.mentorship"),
-    price: "R$ 1.000"
+    price: "R$ 989,00"
   }, {
     name: t("mentorship.services.linkedin"),
     price: "R$ 200"
