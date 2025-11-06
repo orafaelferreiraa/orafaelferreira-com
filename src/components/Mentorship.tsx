@@ -79,13 +79,13 @@ const Mentorship = () => {
   }];
   const services = [{
     name: t("mentorship.services.mentorship"),
-    price: "R$ 989,00"
+    price: "R$ 989"
   }, {
     name: t("mentorship.services.linkedin"),
-    price: "R$ 189,00"
+    price: "R$ 189"
   }, {
     name: t("mentorship.services.resume"),
-    price: "R$ 49,00"
+    price: "R$ 49"
   }];
   const discountsByProfile = [{
     profile: t("mentorship.profiles.openToWork"),
