@@ -210,7 +210,7 @@ export default {
       services: {
         mentorship: "Mentoria Cloud Azure e DevOps Individual",
         linkedin: "Revisão de Perfil no LinkedIn",
-        resume: "Template"
+        resume: "Template Currículo"
       },
       profiles: {
         openToWork: "Open to Work (40% off)",
