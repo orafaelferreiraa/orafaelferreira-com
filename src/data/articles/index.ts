@@ -60,6 +60,7 @@ import { article as tdcGreenops } from './2025-10-04-tdc-greenops';
 import { article as az700 } from './2025-10-06-az-700';
 import { article as mvpCrtb } from './2025-10-12-mvp-crtb';
 import { article as wsdDevops } from './2025-10-19-wsd-devops';
+import { article as mvpconfsp } from '2025-11-10-mvp-conf-sp';
 
 export const allArticles: Article[] = [
   artigoAksAcr,
@@ -120,7 +121,8 @@ export const allArticles: Article[] = [
   tdcGreenops,
   az700,
   mvpCrtb,
-  wsdDevops
+  wsdDevops,
+  mvpconfsp
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getArticleBySlug(slug: string): Article | undefined {
