@@ -13,6 +13,9 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2025",
   certificates: [{
+    title: "Palestrante MVP CONF 2025 Brasil",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-10-PalestranteMVPCONF2025Brasil.pdf"
+  },{
     title: "Palestrante MVP CONF - Curitiba",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-09-PalestranteMVPCONF-Curitiba.pdf"
   },{

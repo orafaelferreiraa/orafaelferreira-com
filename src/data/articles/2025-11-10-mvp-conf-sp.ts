@@ -67,6 +67,8 @@ Um evento **feito por especialistas para a comunidade**, com **propósito social
 > **Sustentabilidade não é tendência, é responsabilidade.**  
 > E quando unimos tecnologia e propósito, o impacto é exponencial.
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp25/Certificate.png)
+
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [GreenOps e Cloud Sustentável no MVP Conf 2025](https://stoblobcertificados011.blob.core.windows.net/palestras/mvp-conf25.pdf)
 `,
   date: "2025-11-10",

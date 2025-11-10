@@ -135,7 +135,6 @@ Entender **endereçamento, conectividade, segurança e entrega de aplicações**
 
 *Baseado no curso de Higor Barbosa na Udemy (2025).*
 
-
 - [2025-06 - AZ-700 - Projetar e Implementar Soluções de Rede do Azure](https://www.udemy.com/certificate/UC-49bfc006-aeb5-476d-8083-229aac73cd8f/)
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/certificado.png)`,
