@@ -26,7 +26,7 @@ const Hero = () => {
     color: "text-green-500"
   }, {
     icon: Instagram,
-    href: "https://www.instagram.com/rafaelmaferreira1/",
+    href: "https://www.instagram.com/orafaelferreira1/",
     label: "Instagram",
     color: "text-pink-500"
   }];
