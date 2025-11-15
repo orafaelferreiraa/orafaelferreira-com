@@ -110,9 +110,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | GitHub repository branch to link SWA (optional for PRs; provided on push) | `string` | n/a | yes |
-| <a name="input_repository_token"></a> [repository\_token](#input\_repository\_token) | GitHub PAT used by Azure to configure CI linkage (provided on push) | `string` | n/a | yes |
-| <a name="input_repository_url"></a> [repository\_url](#input\_repository\_url) | GitHub repository URL to link SWA (optional for PRs; provided on push) | `string` | n/a | yes |
+| <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Branch do repositório para SWA (vazio em PR) | `string` | `""` | no |
+| <a name="input_repository_token"></a> [repository\_token](#input\_repository\_token) | GitHub PAT para linkage CI (omitido em PR) | `string` | `""` | no |
+| <a name="input_repository_url"></a> [repository\_url](#input\_repository\_url) | GitHub repository URL para SWA (vazio em PR) | `string` | `""` | no |
 
 ## Outputs
 
