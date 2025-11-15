@@ -128,7 +128,11 @@ jobs:
               `#### Terraform Initialization ⚙️ \`${init}\``,
               `#### Terraform Validation 🤖 \`${validate}\``,
               `#### Terraform Plan 📖 \`${planOutcome}\``,
-              `<details><summary>Mostrar plano</summary>\n\n\n\`\`\`\n${planText}\n\`\`\`\n</details>`,
+              ``,
+              `\`\`\`terraform`,
+              `${planText}`,
+              `\`\`\``,
+              ``,
               `*Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`
             ];
             const body = lines.join('\n');
