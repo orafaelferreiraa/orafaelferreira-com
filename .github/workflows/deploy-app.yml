@@ -1,7 +1,6 @@
 name: deploy-app
 
 on:
-  # Dispara em pushes no main quando arquivos do app mudarem
   push:
     branches: [ main ]
     paths:
@@ -17,18 +16,16 @@ on:
       - 'postcss.config.js'
       - 'eslint.config.js'
       - 'tsconfig.node.json'
-      - '.github/workflows/deploy-app.yml'
-  
-  # Dispara em PRs
+      - '.github/workflows/deploy-app.yml'  
+
   pull_request:
     branches: [ main ]
     paths-ignore:
       - 'infra/**'
-      - '.github/workflows/infra.yml'
-  
-  # Dispara automaticamente quando o workflow 'infra' completa com sucesso
+      - '.github/workflows/infra.yml'  
+
   workflow_run:
-    workflows: ["infra"]
+    workflows: ["infra-apply"]
     types:
       - completed
     branches: [ main ]
@@ -42,9 +39,6 @@ concurrency:
 
 jobs:
   build_and_deploy:
-    # Só roda se:
-    # - for push/PR normal do app OU
-    # - workflow_run do infra completou com sucesso
     if: |
       (github.event_name == 'push' || github.event_name == 'pull_request') ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
@@ -77,6 +71,17 @@ jobs:
       - name: Build app
         run: npm run build
 
+
+      - name: Detect infra changes
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        id: infra
+        uses: tj-actions/changed-files@v45
+        with:
+          files: |
+            infra/**
+            .github/workflows/infra.yml
+            .github/workflows/infra-plan.yml
+
       # Stage 3: end-to-end smoke (Playwright)
       # - name: Install Playwright browsers
       #   run: npx playwright install --with-deps
@@ -85,12 +90,21 @@ jobs:
       #   run: npm run test:e2e:ci
 
       - name: Deploy to Azure Static Web Apps
+        if: |
+          (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+          ((github.event_name == 'push' || github.event_name == 'pull_request') && steps.infra.outputs.any_changed != 'true')
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: 'upload'
           app_location: 'dist'
           skip_app_build: true
+
+      - name: Skip reason (deploy suprimido por mudanças em infra)
+        if: (github.event_name == 'push' || github.event_name == 'pull_request') && steps.infra.outputs.any_changed == 'true'
+        run: |
+          echo "Alterações em 'infra/**' detectadas neste commit/PR."
+          echo "O deploy do app será executado após a conclusão bem-sucedida do workflow 'infra-apply' (via workflow_run)."
 
       - name: Job summary
         if: always()
