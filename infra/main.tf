@@ -4,9 +4,6 @@ data "azurerm_resource_group" "rg" {
 }
 # Azure Static Web App (SWA)
 resource "azurerm_static_web_app" "this" {
-  tags = {
-    test: "1"
-  }
   name                = "swa-site-orafael"
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = "eastus2"
@@ -14,9 +11,9 @@ resource "azurerm_static_web_app" "this" {
   sku_tier = "Free"
   sku_size = "Free"
 
-  repository_url     = var.repository_url
-  repository_branch  = var.repository_branch
-  repository_token   = var.repository_token
+  repository_url    = var.repository_url
+  repository_branch = var.repository_branch
+  repository_token  = var.repository_token
 
 }
 
