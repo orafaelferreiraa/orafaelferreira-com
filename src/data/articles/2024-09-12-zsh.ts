@@ -18,7 +18,13 @@ Ideal para quem vive no terminal e quer performance, praticidade.
 zsh --version
 \`\`\`
 
-### Passo 2: Mudar o shell padrão para Zsh
+### Passo 2: Instalar o Zsh
+
+\`\`\`bash
+sudo apt install zsh -y
+\`\`\`
+
+### Passo 3: Mudar o shell padrão para Zsh
 
 \`\`\`bash
 chsh -s /bin/zsh
@@ -101,28 +107,34 @@ Reinicie o terminal e verifique se o tema Dracula e os plugins estão funcionand
 
 \`\`\`bash
 mkdir -p ~/.local/bin
-cd ~/.local/bin
-git clone https://github.com/ahmetb/kubectx.git
+git clone https://github.com/ahmetb/kubectx.git ~/.local/bin/kubectx
 
-sudo ln -s ~/.local/bin/kubectx/kubectx /usr/local/bin/kubectx
-sudo ln -s ~/.local/bin/kubectx/kubens /usr/local/bin/kubens
+sudo ln -sf ~/.local/bin/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -sf ~/.local/bin/kubectx/kubens /usr/local/bin/kubens
 \`\`\`
 
 Autocomplete para kubectx e kubens no Zsh
 \`\`\`bash
 mkdir -p ~/.oh-my-zsh/completions
-kubectx completion zsh > ~/.oh-my-zsh/completions/_kubectx
-kubens completion zsh > ~/.oh-my-zsh/completions/_kubens
+
+cp ~/.local/bin/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/_kubectx
+cp ~/.local/bin/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/_kubens
+
 \`\`\`
 
 Edite e adicione no final do arquivo ~/.zshrc:
 \`\`\`bash
-fpath+=~/.oh-my-zsh/completions
+fpath+=("$HOME/.oh-my-zsh/completions")
+
+autoload -Uz compinit
+compinit
 \`\`\`
-Depois recarregue o shell:
+
+Recarregar o Zsh
 \`\`\`bash
-source ~/.zshrc
+exec zsh
 \`\`\`
+
 Criar o alias k para kubectl com autocomplete
 Adicione no ~/.zshrc:
 \`\`\`bash
