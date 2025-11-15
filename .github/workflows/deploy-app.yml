@@ -66,17 +66,6 @@ jobs:
       - name: Build app
         run: npm run build
 
-
-      - name: Detect infra changes
-        if: github.event_name == 'push'
-        id: infra
-        uses: tj-actions/changed-files@v45
-        with:
-          files: |
-            infra/**
-            .github/workflows/infra.yml
-            .github/workflows/infra-plan.yml
-
       # Stage 3: end-to-end smoke (Playwright)
       # - name: Install Playwright browsers
       #   run: npx playwright install --with-deps
@@ -85,21 +74,12 @@ jobs:
       #   run: npm run test:e2e:ci
 
       - name: Deploy to Azure Static Web Apps
-        if: |
-          (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
-          (github.event_name == 'push' && steps.infra.outputs.any_changed != 'true')
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: 'upload'
           app_location: 'dist'
           skip_app_build: true
-
-      - name: Skip reason (deploy suprimido por mudanças em infra)
-        if: github.event_name == 'push' && steps.infra.outputs.any_changed == 'true'
-        run: |
-          echo "Alterações em 'infra/**' detectadas neste commit/PR."
-          echo "O deploy do app será executado após a conclusão bem-sucedida do workflow 'infra-apply' (via workflow_run)."
 
       - name: Job summary
         if: always()
