@@ -1,15 +1,18 @@
 variable "repository_url" {
-    description = "GitHub repository URL to link SWA (optional for PRs; provided on push)"
+    description = "GitHub repository URL para SWA (vazio em PR)"
     type        = string
+    default     = ""
 }
 
 variable "repository_branch" {
-    description = "GitHub repository branch to link SWA (optional for PRs; provided on push)"
+    description = "Branch do repositório para SWA (vazio em PR)"
     type        = string
+    default     = ""
 }
 
 variable "repository_token" {
-    description = "GitHub PAT used by Azure to configure CI linkage (provided on push)"
+    description = "GitHub PAT para linkage CI (omitido em PR)"
     type        = string
     sensitive   = true
+    default     = ""
 }

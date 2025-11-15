@@ -16,7 +16,7 @@ resource "azurerm_static_web_app" "this" {
 
   repository_url     = var.repository_url
   repository_branch  = var.repository_branch
-  repository_token    = var.repository_token
+  repository_token   = var.repository_token
 
 }
 

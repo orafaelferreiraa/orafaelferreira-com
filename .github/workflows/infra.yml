@@ -1,7 +1,12 @@
-name: infra-apply
+name: infra
 
 on:
   push:
+    branches: [ main ]
+    paths:
+      - 'infra/**'
+      - '.github/workflows/infra.yml'
+  pull_request:
     branches: [ main ]
     paths:
       - 'infra/**'
@@ -17,7 +22,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  terraform-apply:
+  terraform:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     if: github.actor != 'github-actions[bot]'
@@ -66,7 +71,12 @@ jobs:
       - name: Terraform Init
         run: terraform init -input=false
 
-      - name: Terraform Fmt (format)
+      - name: Terraform Fmt (PR check)
+        if: github.event_name == 'pull_request'
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Fmt (format push)
+        if: github.event_name == 'push'
         run: terraform fmt -recursive
 
       - name: Terraform Validate
@@ -95,10 +105,51 @@ jobs:
           quiet: true
           soft_fail: false
 
-      - name: Terraform Plan (log apenas)
-        run: terraform plan -input=false
+      - name: Terraform Plan (PR)
+        if: github.event_name == 'pull_request'
+        run: terraform plan -input=false -out=tfplan
 
-      - name: Terraform Apply
+      - name: Upload plan artifact (PR)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-plan
+          path: infra/tfplan
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Show plan (PR comment)
+        if: github.event_name == 'pull_request'
+        id: showplan
+        run: |
+          terraform show -no-color tfplan > plan.txt || true
+          echo "PLAN<<EOF" >> $GITHUB_OUTPUT
+          sed 's/[^[:print:][:space:]]//g' plan.txt >> $GITHUB_OUTPUT || true
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Comment plan on PR
+        if: github.event_name == 'pull_request'
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            ## Terraform Plan
+            ```
+            ${{ steps.showplan.outputs.PLAN }}
+            ```
+          comment_tag: terraform-plan
+
+      - name: Terraform Plan (push log)
+        if: github.event_name == 'push'
+        env:
+          SWA_REPOSITORY_TOKEN: ${{ secrets.GH_PAT_SWA }}
+        run: |
+          terraform plan -input=false \
+            -var "repository_url=https://github.com/${{ github.repository }}" \
+            -var "repository_branch=${{ github.ref_name }}" \
+            -var "repository_token=${SWA_REPOSITORY_TOKEN}"
+
+      - name: Terraform Apply (push)
+        if: github.event_name == 'push'
         env:
           SWA_REPOSITORY_TOKEN: ${{ secrets.GH_PAT_SWA }}
         run: |
@@ -111,13 +162,20 @@ jobs:
         if: always()
         run: |
           {
-            echo "## Terraform APPLY Summary";
+            echo "## Terraform Infra Summary";
+            echo "- Event: ${{ github.event_name }}";
             echo "- Ref: ${{ github.ref }}";
             echo "- Actor: ${{ github.actor }}";
             echo "- Backend: \`stostateorafael/statetf/infra.terraform.tfstate\`";
-            echo "";
-            echo "### Terraform Outputs";
-            echo '```';
-            terraform output || true;
-            echo '```';
+            if [ "${{ github.event_name }}" = "push" ]; then
+              echo "";
+              echo "### Terraform Outputs";
+              echo '```';
+              terraform output || true;
+              echo '```';
+            else
+              echo "";
+              echo "### Plan";
+              echo "Plano armazenado como artifact e comentado no PR.";
+            fi;
           } >> "$GITHUB_STEP_SUMMARY"
