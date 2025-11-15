@@ -16,13 +16,13 @@ Ideal para quem vive no terminal e quer performance, praticidade.
 
 \`\`\`bash
 zsh --version
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 2: Mudar o shell padrão para Zsh
 
 \`\`\`bash
 chsh -s /bin/zsh
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 3: Reiniciar o terminal
 Feche e reabra seu terminal.
@@ -31,32 +31,32 @@ Feche e reabra seu terminal.
 
 \`\`\`bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 5: Clonar o tema Dracula para Zsh
 \`\`\`bash
 git clone https://github.com/dracula/zsh.git
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 6: Criar um link simbólico para o tema
 Após clonar o repositório, crie um link simbólico para o tema na pasta de temas do Oh My Zsh:
 
 \`\`\`bash
 ln -s $PWD/zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 7: Configurar o tema no Zsh
 Edite o arquivo de configuração do Zsh:
 
 \`\`\`bash
 vim ~/.zshrc
-\`\`\`\`\`\`
+\`\`\`
 
 Altere a linha que começa com ZSH_THEME= para:
 
 \`\`\`bash
 ZSH_THEME="dracula"
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 8: Instalar Plugins
 Instale os plugins úteis com os seguintes comandos:
@@ -65,32 +65,32 @@ a) zsh-autosuggestions
 
 \`\`\`bash
 git clone https://github.com/zsh-users/zsh-autosuggestions $\{ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-\`\`\`\`\`\`
+\`\`\`
 
 b) zsh-syntax-highlighting
 \`\`\`bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $\{ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 9: Adicionar os plugins ao Zsh
 Abra o arquivo ~/.zshrc novamente:
 
 \`\`\`bash
 vim ~/.zshrc
-\`\`\`\`\`\`
+\`\`\`
 
 Adicione os plugins que você instalou na linha plugins=(...):
 
 \`\`\`bash
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 10: Aplicar as mudanças
 Após fazer as alterações, salve e feche o editor. Aplique as mudanças com:
 
 \`\`\`bash
 source ~/.zshrc
-\`\`\`\`\`\`
+\`\`\`
 
 ### Passo 11: Verificar se tudo está funcionando
 Reinicie o terminal e verifique se o tema Dracula e os plugins estão funcionando corretamente.
@@ -106,33 +106,33 @@ git clone https://github.com/ahmetb/kubectx.git
 
 sudo ln -s ~/.local/bin/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s ~/.local/bin/kubectx/kubens /usr/local/bin/kubens
-\`\`\`\`\`\`
+\`\`\`
 
 Autocomplete para kubectx e kubens no Zsh
 \`\`\`bash
 mkdir -p ~/.oh-my-zsh/completions
 kubectx completion zsh > ~/.oh-my-zsh/completions/_kubectx
 kubens completion zsh > ~/.oh-my-zsh/completions/_kubens
-\`\`\`\`\`\`
+\`\`\`
 
 Edite e adicione no final do arquivo ~/.zshrc:
 \`\`\`bash
 fpath+=~/.oh-my-zsh/completions
-\`\`\`\`\`\`
+\`\`\`
 Depois recarregue o shell:
 \`\`\`bash
 source ~/.zshrc
-\`\`\`\`\`\`
+\`\`\`
 Criar o alias k para kubectl com autocomplete
 Adicione no ~/.zshrc:
 \`\`\`bash
 alias k="kubectl"
-\`\`\`\`\`\`
+\`\`\`
 
 E recarregue:
 \`\`\`bash
 source ~/.zshrc
-\`\`\`\`\`\`
+\`\`\`
 
 Pronto! Com autocomplete e velocidade. O terminal nunca mais será o mesmo.
 
