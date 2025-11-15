@@ -18,7 +18,7 @@ const trainingPlatforms: RecommendationItem[] = [
 ];
 
 const youtubeChannels: RecommendationItem[] = [
-  { name: "LowOps Channel", url: "https://www.youtube.com/@LowOps-Channel" },
+  { name: "LowOps Channel", url: "https://www.youtube.com/@LowOps" },
   { name: "Fabricio Veronez", url: "https://www.youtube.com/@fabricioveronez" },
   { name: "LINUXtips", url: "https://www.youtube.com/@LinuxTips" },
   { name: "Raphael Andrade", url: "https://www.youtube.com/@RaphaelAndrade" },

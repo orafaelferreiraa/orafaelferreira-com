@@ -1,4 +1,4 @@
-name: infra
+name: infra-apply
 
 on:
   push:
@@ -6,11 +6,8 @@ on:
     paths:
       - 'infra/**'
       - '.github/workflows/infra.yml'
-  pull_request:
-    branches: [ main ]
-    paths:
-      - 'infra/**'
-      - '.github/workflows/infra.yml'
+  workflow_dispatch:
+
 
 permissions:
   contents: write   # allow pushing terraform-docs updates
@@ -20,21 +17,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  terraform:
-    if: github.actor != 'github-actions[bot]'
+  terraform-apply:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    if: github.actor != 'github-actions[bot]'
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
     defaults:
       run:
         shell: bash
         working-directory: infra
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,18 +41,7 @@ jobs:
         with:
           terraform_version: 1.13.4
 
-      # Run docs generation early to avoid committing .terraform provider binaries
-      - name: Generate terraform docs (PR)
-        if: github.event_name == 'pull_request'
-        uses: terraform-docs/gh-actions@v1.3.0
-        with:
-          working-dir: infra
-          output-file: ../README.md
-          output-method: inject
-          git-push: false
-
-      - name: Generate terraform docs (main, no push)
-        if: github.event_name == 'push'
+      - name: Generate terraform docs (inject no README – sem commit)
         uses: terraform-docs/gh-actions@v1.3.0
         with:
           working-dir: infra
@@ -71,7 +55,6 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Stage the root README (output-file is ../README.md from infra)
           git add ../README.md || true
           if ! git diff --cached --quiet; then
             git commit -m 'chore(docs): update Terraform module docs in root README'
@@ -81,21 +64,14 @@ jobs:
           fi
 
       - name: Terraform Init
-        timeout-minutes: 3
-        run: terraform init
+        run: terraform init -input=false
 
-      - name: Terraform Format (PR check)
-        if: github.event_name == 'pull_request'
-        run: terraform fmt -check -recursive
-
-      - name: Terraform Format (push)
-        if: github.event_name == 'push'
+      - name: Terraform Fmt (format)
         run: terraform fmt -recursive
 
       - name: Terraform Validate
         run: terraform validate
 
-  # Stage 1: Lint Terraform
       - name: Setup TFLint
         uses: terraform-linters/setup-tflint@v4
         with:
@@ -106,69 +82,42 @@ jobs:
           tflint --init
           tflint -f compact
 
-      # Stage 2: Static Analysis - tfsec
-      - name: tfsec IaC security scan
+      - name: tfsec scan
         uses: aquasecurity/tfsec-action@v1.0.3
         with:
           working_directory: infra
           soft_fail: false
 
-      # Stage 3: Policy as Code - Checkov
-      - name: Checkov policy scan
+      - name: Checkov scan
         uses: bridgecrewio/checkov-action@v12
         with:
           directory: infra
           quiet: true
           soft_fail: false
 
-      - name: Terraform Plan (PRs)
-        if: github.event_name == 'pull_request'
-        run: terraform plan -input=false -out=tfplan
+      - name: Terraform Plan (log apenas)
+        run: terraform plan -input=false
 
-      - name: Upload plan artifact (PRs)
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: terraform-plan
-          path: infra/tfplan
-          if-no-files-found: error
-          retention-days: 7
-
-      - name: Terraform Apply (main)
-        if: github.event_name == 'push'
+      - name: Terraform Apply
         env:
           SWA_REPOSITORY_TOKEN: ${{ secrets.GH_PAT_SWA }}
         run: |
-          # Pass repository linkage only on push (secrets are available)
           terraform apply -auto-approve -input=false \
             -var "repository_url=https://github.com/${{ github.repository }}" \
             -var "repository_branch=${{ github.ref_name }}" \
             -var "repository_token=${SWA_REPOSITORY_TOKEN}"
 
-      # docs already generated above to avoid committing provider binaries
-
       - name: Job summary
         if: always()
         run: |
           {
-            echo "## Terraform Infra Summary";
-            echo "";
-            echo "- Event: ${{ github.event_name }}";
+            echo "## Terraform APPLY Summary";
             echo "- Ref: ${{ github.ref }}";
             echo "- Actor: ${{ github.actor }}";
-            echo "- Backend: \`stostateorafael/statetf/infra.terraform.tfstate\` (RG: rg-site)";
-            if [ "${{ github.event_name }}" = "push" ]; then
-              echo "";
-              echo "### Terraform Outputs";
-              echo '```';
-              terraform output || true;
-              echo '```';
-            else
-              echo "";
-              echo "### Plan";
-              echo "Plano executado nos passos anteriores. Consulte os logs do job para detalhes.";
-            fi;
+            echo "- Backend: \`stostateorafael/statetf/infra.terraform.tfstate\`";
             echo "";
-            echo "### Docs";
-            echo "- terraform-docs injetado no README.md da raiz do repo (push em main).";
+            echo "### Terraform Outputs";
+            echo '```';
+            terraform output || true;
+            echo '```';
           } >> "$GITHUB_STEP_SUMMARY"

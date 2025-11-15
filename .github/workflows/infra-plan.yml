@@ -1,0 +1,122 @@
+name: infra-plan
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'infra/**'
+      - '.github/workflows/infra-plan.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: infra-plan-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  terraform-plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: github.actor != 'github-actions[bot]'
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: infra
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.13.4
+
+      - name: Generate terraform docs (inject no README – sem commit)
+        uses: terraform-docs/gh-actions@v1.3.0
+        with:
+          working-dir: infra
+          output-file: ../README.md
+          output-method: inject
+          git-push: false
+
+      - name: Terraform Init
+        run: terraform init -input=false
+
+      - name: Terraform Fmt (check)
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: latest
+
+      - name: Run TFLint
+        run: |
+          tflint --init
+          tflint -f compact
+
+      - name: tfsec scan
+        uses: aquasecurity/tfsec-action@v1.0.3
+        with:
+          working_directory: infra
+          soft_fail: false
+
+      - name: Checkov scan
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: infra
+          quiet: true
+          soft_fail: false
+
+      - name: Terraform Plan
+        run: terraform plan -input=false -out=tfplan
+
+      - name: Upload plan artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-plan
+          path: infra/tfplan
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Show plan (for PR comment)
+        id: showplan
+        run: |
+          terraform show -no-color tfplan > plan.txt || true
+          echo "PLAN<<EOF" >> $GITHUB_OUTPUT
+          sed 's/[^[:print:][:space:]]//g' plan.txt >> $GITHUB_OUTPUT || true
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Comment plan on PR
+        if: github.event_name == 'pull_request'
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            ## Terraform Plan
+            ```
+            ${{ steps.showplan.outputs.PLAN }}
+            ```
+          comment_tag: terraform-plan
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Terraform PLAN Summary";
+            echo "- Ref: ${{ github.ref }}";
+            echo "- Actor: ${{ github.actor }}";
+            echo "- Plan gerado e armazenado como artifact 'terraform-plan'.";
+          } >> "$GITHUB_STEP_SUMMARY"

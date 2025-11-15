@@ -16,7 +16,7 @@ const Hero = () => {
     color: "text-foreground"
   }, {
     icon: Youtube,
-    href: "https://www.youtube.com/@LowOps-Channel",
+    href: "https://www.youtube.com/@LowOps",
     label: "YouTube",
     color: "text-red-500"
   }, {
