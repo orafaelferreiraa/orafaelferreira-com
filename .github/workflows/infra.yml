@@ -170,9 +170,18 @@ jobs:
             if [ "${{ github.event_name }}" = "push" ]; then
               echo "";
               echo "### Terraform Outputs";
-              echo '```';
-              terraform output || true;
-              echo '```';
+              # Captura saída sem cores e sem warnings estranhos
+              set +e
+              OUT=$(terraform output -no-color 2>/dev/null)
+              EXIT=$?
+              set -e
+              if [ $EXIT -eq 0 ] && [ -n "$OUT" ]; then
+                echo '```';
+                echo "$OUT";
+                echo '```';
+              else
+                echo "(Sem outputs definidos)";
+              fi
             else
               echo "";
               echo "### Plan";
