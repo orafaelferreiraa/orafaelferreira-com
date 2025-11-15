@@ -112,16 +112,22 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fmt = core.getInput('fmt_outcome') || '${{ steps.fmt.outcome }}';
-            const init = '${{ steps.init.outcome }}';
-            const validate = '${{ steps.validate.outcome }}';
-            const planOutcome = '${{ steps.plan.outcome }}';
-            const planText = process.env.PLAN || '(sem saída)';
-            const body = `#### Terraform Format and Style 🖌 \`${fmt}\`
-            #### Terraform Initialization ⚙️ \`${init}\`
-            #### Terraform Validation 🤖 \`${validate}\`
-            #### Terraform Plan 📖 \`${planOutcome}\`
-<details><summary>Mostrar plano</summary>\n\n\n\`\`\`\n${planText}\n\`\`\`\n</details>\n*Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+            const fmt = "${{ steps.fmt.outcome }}";
+            const init = "${{ steps.init.outcome }}";
+            const validate = "${{ steps.validate.outcome }}";
+            const planOutcome = "${{ steps.plan.outcome }}";
+            const planTextRaw = process.env.PLAN || '(sem saída)';
+            // Sanitize backticks to avoid breaking formatting
+            const planText = planTextRaw.replace(/```/g, '\n```\n');
+            const lines = [
+              `#### Terraform Format and Style 🖌 \`${fmt}\``,
+              `#### Terraform Initialization ⚙️ \`${init}\``,
+              `#### Terraform Validation 🤖 \`${validate}\``,
+              `#### Terraform Plan 📖 \`${planOutcome}\``,
+              `<details><summary>Mostrar plano</summary>\n\n\n\`\`\`\n${planText}\n\`\`\`\n</details>`,
+              `*Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`
+            ];
+            const body = lines.join('\n');
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
