@@ -86,7 +86,11 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -input=false -out=tfplan
+        run: |
+          terraform plan -input=false -out=tfplan \
+            -var "repository_url=https://github.com/${{ github.repository }}" \
+            -var "repository_branch=${{ github.head_ref || github.ref_name }}" \
+            -var "repository_token=placeholder"
 
       - name: Upload plan artifact
         uses: actions/upload-artifact@v4

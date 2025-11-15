@@ -17,12 +17,7 @@ on:
       - 'eslint.config.js'
       - 'tsconfig.node.json'
       - '.github/workflows/deploy-app.yml'  
-
-  pull_request:
-    branches: [ main ]
-    paths-ignore:
-      - 'infra/**'
-      - '.github/workflows/infra.yml'  
+  # Não roda em PRs; somente push e workflow_run após apply
 
   workflow_run:
     workflows: ["infra-apply"]
@@ -40,7 +35,7 @@ concurrency:
 jobs:
   build_and_deploy:
     if: |
-      (github.event_name == 'push' || github.event_name == 'pull_request') ||
+      github.event_name == 'push' ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -73,7 +68,7 @@ jobs:
 
 
       - name: Detect infra changes
-        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        if: github.event_name == 'push'
         id: infra
         uses: tj-actions/changed-files@v45
         with:
@@ -92,7 +87,7 @@ jobs:
       - name: Deploy to Azure Static Web Apps
         if: |
           (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
-          ((github.event_name == 'push' || github.event_name == 'pull_request') && steps.infra.outputs.any_changed != 'true')
+          (github.event_name == 'push' && steps.infra.outputs.any_changed != 'true')
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
@@ -101,7 +96,7 @@ jobs:
           skip_app_build: true
 
       - name: Skip reason (deploy suprimido por mudanças em infra)
-        if: (github.event_name == 'push' || github.event_name == 'pull_request') && steps.infra.outputs.any_changed == 'true'
+        if: github.event_name == 'push' && steps.infra.outputs.any_changed == 'true'
         run: |
           echo "Alterações em 'infra/**' detectadas neste commit/PR."
           echo "O deploy do app será executado após a conclusão bem-sucedida do workflow 'infra-apply' (via workflow_run)."
@@ -121,11 +116,6 @@ jobs:
             echo "- Files: $(find dist -type f | wc -l 2>/dev/null || echo 'n/a')";
             echo "- Size: $(du -sh dist 2>/dev/null | cut -f1 || echo 'n/a')";
             echo "";
-            if [ "${{ github.event_name }}" = "pull_request" ]; then
-              echo "### Preview";
-              echo "Este workflow cria/atualiza um Preview Environment no Azure Static Web Apps para este PR.";
-            else
-              echo "### Deploy";
-              echo "Aplicação enviada para o Azure Static Web Apps (upload de \`dist/\`).";
-            fi;
+            echo "### Deploy";
+            echo "Aplicação enviada para o Azure Static Web Apps (upload de \`dist/\`).";
           } >> "$GITHUB_STEP_SUMMARY"

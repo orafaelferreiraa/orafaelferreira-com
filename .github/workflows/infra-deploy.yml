@@ -95,7 +95,6 @@ jobs:
           quiet: true
           soft_fail: false
 
-      # Sem plan aqui: plano só roda no workflow infra-plan (pull_request)
 
       - name: Terraform Apply
         env:
