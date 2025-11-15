@@ -27,14 +27,15 @@ npm run preview
 
 ## deploy do app (SWA)
 
-O deploy é automático no push para `main` quando arquivos do app mudam (`src/`, `public/`, `index.html`, configs) e também ao concluir o workflow de infra. Workflow: `.github/workflows/deploy-app.yml`.
+O deploy é automático no push para `main` quando arquivos do app mudam (`src/`, `public/`, `index.html`, configs) e também após a conclusão bem-sucedida do workflow `infra-apply` (via `workflow_run`). Workflow: `.github/workflows/deploy-app.yml`.
 
-Build no CI: `npm ci` + `npm run typecheck` + `npm run build`.
+**Pipeline de deploy:**
+- Build: `npm install` + `npm run test:ci` + `npm run test:components:ci` + `npm run typecheck` + `npm run build`
+- Deploy: usa `Azure/static-web-apps-deploy@v1` com `action: upload`, `skip_app_build: true` e `app_location: dist`
+- Não roda em PRs (somente em push e após infra-apply)
 
-Upload para o SWA: o workflow usa `Azure/static-web-apps-deploy@v1` com `action: upload`, `skip_app_build: true` e `app_location: dist` (somente a pasta `dist` é enviada).
-
-Pré-requisito: criar o recurso SWA (via Terraform) e adicionar o secret no repositório:
-- `AZURE_STATIC_WEB_APPS_API_TOKEN` (token de deployment do SWA)
+**Secrets necessários:**
+- `AZURE_STATIC_WEB_APPS_API_TOKEN` (deployment token do SWA)
 
 ## infraestrutura (Terraform)
 
@@ -59,22 +60,36 @@ export ARM_CLIENT_ID=<appId-do-SP>
 export ARM_CLIENT_SECRET=<clientSecret-do-SP>
 export ARM_TENANT_ID=<tenantId>
 export ARM_SUBSCRIPTION_ID=<subscriptionId>
+export SWA_REPOSITORY_TOKEN=<github-PAT>
 cd infra
-terraform plan -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
-terraform apply -auto-approve -var "resource_group_name=<rg>" -var "static_site_name=<nome-único>"
+terraform plan
+terraform apply -auto-approve \
+  -var "repository_url=https://github.com/<owner>/<repo>" \
+  -var "repository_branch=main" \
+  -var "repository_token=${SWA_REPOSITORY_TOKEN}"
 cd -
 ```
 
-Pipeline de infra: `.github/workflows/infra.yml`
-- Disparo em `infra/**` (push/PR) e permite conciliação com a pipeline do app.
-- Autenticação Azure por Service Principal. Adicione os secrets:
-	- `AZURE_CLIENT_ID`
-	- `AZURE_TENANT_ID`
-	- `AZURE_SUBSCRIPTION_ID`
-	- `AZURE_CLIENT_SECRET`
-- Passos: `init` → `fmt` (PR em modo `-check`) → `validate` → `plan` (PR com upload de artifact) → `apply` (push em `main`).
-- Documentação com `terraform-docs` é gerada antes do `init` e, em `push` para `main`, o README é atualizado com commit automático.
-- Resumo do job: a pipeline escreve um resumo no GitHub Summary com informações de evento, branch, outputs (em push) e status da doc.
+### Pipelines de infraestrutura
+
+**PR workflow** (`.github/workflows/infra-plan.yml`):
+**PR workflow** (`.github/workflows/infra-plan.yml`):
+- Disparo: PRs que alteram `infra/**` ou o próprio workflow
+- Passos: `init` → `fmt` → `validate` → `tflint` → `tfsec` → `checkov` → `plan`
+- Plan usa valores placeholder para `repository_*` (não requer secrets de GitHub)
+- Artifact do plan é salvo e comentário detalhado é postado no PR
+- Validações de segurança: tfsec e Checkov (soft_fail: false)
+
+**Push workflow** (`.github/workflows/infra.yml` - nome: `infra-apply`):
+- Disparo: push em `main` que altera `infra/**` ou o próprio workflow
+- Passos: `init` → `fmt` → `validate` → `tflint` → `tfsec` → `checkov` → `apply`
+- Apply usa valores reais via secrets (repository linkage)
+- Documentação com `terraform-docs` é injetada no README e commitada automaticamente
+- Resumo do job com outputs do Terraform
+
+**Secrets necessários:**
+- `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `AZURE_CLIENT_SECRET` (Service Principal)
+- `GH_PAT_SWA` (GitHub PAT para linkage do SWA com o repositório)
 
 ### Referência do módulo (auto)
 
@@ -121,7 +136,7 @@ No outputs.
 
 ## domínios e HTTPS
 
-O domínio customizado `orafaelferreira.com` e `www.orafaelferreira.com` são configurados via Terraform no SWA.
+O domínio customizado `www.orafaelferreira.com` são configurados via Terraform no SWA.
 
 **Setup**: Consulte o guia completo em [`infra/CUSTOM_DOMAIN.md`](./infra/CUSTOM_DOMAIN.md) para:
 - Obter tokens de validação DNS
@@ -132,7 +147,8 @@ O domínio customizado `orafaelferreira.com` e `www.orafaelferreira.com` são co
 
 ## notas
 
+- Testes: CI roda unit tests (`vitest`) e component tests (React Testing Library). E2E com Playwright está configurado mas comentado.
 - Lint no CI foi desabilitado para evitar ruído causado por conteúdo em markdown inline nos arquivos de artigos. O typecheck (TS) permanece ativo.
-- O repositório contém dois projetos de site (pasta `orafaelferreira.com/` é o antigo Jekyll); a SPA atual está em `orafaelferreira-com/`.
 - A pasta `infra/` possui `.gitignore` próprio para evitar que `.terraform/`, `*.tfstate` e `*.tfplan` entrem em commits. O lockfile `.terraform.lock.hcl` é versionado.
-- A pipeline de deploy usa `npm install` ao invés de `npm ci` para maior flexibilidade quando há atualizações de dependências, evitando erros de sync entre `package.json` e `package-lock.json`.
+- A pipeline de deploy usa `npm install` ao invés de `npm ci` para maior flexibilidade quando há atualizações de dependências.
+- Workflows de infra e deploy são independentes mas coordenados: mudanças de infra triggam apply → deploy do app via `workflow_run`.
