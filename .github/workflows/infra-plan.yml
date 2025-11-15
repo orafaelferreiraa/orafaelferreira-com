@@ -50,12 +50,15 @@ jobs:
           git-push: false
 
       - name: Terraform Init
+        id: init
         run: terraform init -input=false
 
-      - name: Terraform Fmt (check)
-        run: terraform fmt -check -recursive
+      - name: Terraform Fmt
+        id: fmt
+        run: terraform fmt -recursive
 
       - name: Terraform Validate
+        id: validate
         run: terraform validate
 
       - name: Setup TFLint
@@ -82,6 +85,7 @@ jobs:
           soft_fail: false
 
       - name: Terraform Plan
+        id: plan
         run: terraform plan -input=false -out=tfplan
 
       - name: Upload plan artifact
@@ -100,16 +104,34 @@ jobs:
           sed 's/[^[:print:][:space:]]//g' plan.txt >> $GITHUB_OUTPUT || true
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: Comment plan on PR
+      - name: Terraform Plan Summary Comment
         if: github.event_name == 'pull_request'
-        uses: thollander/actions-comment-pull-request@v2
+        uses: actions/github-script@v6
+        env:
+          PLAN: ${{ steps.showplan.outputs.PLAN }}
         with:
-          message: |
-            ## Terraform Plan
-            ```
-            ${{ steps.showplan.outputs.PLAN }}
-            ```
-          comment_tag: terraform-plan
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fmt = core.getInput('fmt_outcome') || '${{ steps.fmt.outcome }}';
+            const init = '${{ steps.init.outcome }}';
+            const validate = '${{ steps.validate.outcome }}';
+            const planOutcome = '${{ steps.plan.outcome }}';
+            const planText = process.env.PLAN || '(sem saída)';
+            const body = `#### Terraform Format and Style 🖌 \`${fmt}\`
+            #### Terraform Initialization ⚙️ \`${init}\`
+            #### Terraform Validation 🤖 \`${validate}\`
+            #### Terraform Plan 📖 \`${planOutcome}\`
+<details><summary>Mostrar plano</summary>\n\n\n\`\`\`\n${planText}\n\`\`\`\n</details>\n*Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
+
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
 
       - name: Summary
         if: always()
