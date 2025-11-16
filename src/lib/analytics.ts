@@ -8,7 +8,12 @@ declare global {
 
 export function initGA(measurementId?: string) {
     if (!measurementId || typeof window === "undefined") return;
-    if (window._gaInitialized) return;
+    // If analytics already exists, don't inject second script
+    if ((window as any)._gaInitialized) return;
+    if (typeof window.gtag === 'function') {
+        (window as any)._gaInitialized = true;
+        return;
+    }
     window._gaInitialized = true;
 
     // Load gtag script
@@ -23,8 +28,10 @@ export function initGA(measurementId?: string) {
         window.dataLayer!.push(arguments);
     }
     window.gtag = gtag as any;
+    (window as any)._gaInitialized = true;
     window.gtag("js", new Date());
-    window.gtag("config", measurementId);
+    // Prevent automatic page_view — SPA will call trackPageView on navigation
+    window.gtag("config", measurementId, { send_page_view: false });
 }
 
 export function trackPageView(measurementId: string, path: string) {
