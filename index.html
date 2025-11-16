@@ -29,26 +29,14 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
-  <!-- Google Analytics (optional) -->
-  <!-- This will load only when VITE_GA_MEASUREMENT_ID is set (in CI or .env) -->
-  <script type="module">
-    const gaId = import.meta.env?.VITE_GA_MEASUREMENT_ID;
-    if (gaId && import.meta.env.PROD) {
-      // Immediately inject gtag script at head for earliest collection
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = `https://www.googletagmanager.com/gtag/js?id=G-0RVS46EEQ`;
-      document.head.appendChild(s);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { window.dataLayer.push(arguments); }
-      window.gtag = gtag;
-      window._gaInitialized = true;
-
-      gtag('js', new Date());
-      // Disable automatic page_view on initial load — SPA will send pageviews via history/navigation
-      gtag('config', gaId, { send_page_view: false });
-    }
+  <!-- Google tag (gtag.js) - Hard-coded per request -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RVS46EEQ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    // SPA will control and emit page_view events; disable auto page view to avoid duplicates
+    gtag('config', 'G-0RVS46EEQ5', { send_page_view: false });
   </script>
 </head>
 

@@ -1,6 +1,6 @@
-import { FileCheck, Calendar, ExternalLink } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Calendar, ExternalLink, FileCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 interface Certificate {
   title: string;
@@ -13,12 +13,18 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2025",
   certificates: [{
+    title: "Udemy Labs - Certified Kubernetes Administrator with Practice Tests",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-11-UdemyLabs-CertifiedKubernetesAdministratorwithPracticeTests.pdf"
+  }, {
+    title: "Certified Kubernetes Administrator (CKA) with Practice Tests",
+    link: "https://www.udemy.com/certificate/UC-578f7e1a-bffb-47e8-8070-f1fc7c461990/"
+  }, {
     title: "Palestrante MVP CONF 2025 Brasil",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-10-PalestranteMVPCONF2025Brasil.pdf"
-  },{
+  }, {
     title: "Palestrante MVP CONF - Curitiba",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-09-PalestranteMVPCONF-Curitiba.pdf"
-  },{
+  }, {
     title: "AZ-700 - Projetar e Implementar Soluções de Rede do Azure",
     link: "https://www.udemy.com/certificate/UC-49bfc006-aeb5-476d-8083-229aac73cd8f/"
   }, {
@@ -551,59 +557,59 @@ const certificatesByYear: YearCertificates[] = [{
 const Certificates = () => {
   const { t } = useTranslation();
   return <section id="certificates" className="py-20 px-4 md:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            {t('certificates.heading')}
-          </h1>
-        </div>
+    <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-16 animate-fade-in">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          {t('certificates.heading')}
+        </h1>
+      </div>
 
-        <div className="mb-12">
-          <Accordion type="single" collapsible defaultValue="2025" className="space-y-4">
-            {certificatesByYear.map((yearData, index) => <AccordionItem key={yearData.year} value={yearData.year} className="border rounded-lg bg-card animate-fade-in" style={{
+      <div className="mb-12">
+        <Accordion type="single" collapsible defaultValue="2025" className="space-y-4">
+          {certificatesByYear.map((yearData, index) => <AccordionItem key={yearData.year} value={yearData.year} className="border rounded-lg bg-card animate-fade-in" style={{
             animationDelay: `${index * 0.1}s`
           }}>
-                <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <Calendar className="h-5 w-5 text-primary" />
-                    <span className="text-2xl font-bold">{yearData.year}</span>
-                    <span className="text-sm text-muted-foreground">
-                      {t('certificates.count', { count: yearData.certificates.length })}
-                    </span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
-                    {yearData.certificates.map((cert, certIndex) => <Card key={certIndex} className="group hover:scale-105 transition-all duration-300 hover:shadow-lg border-primary/20 bg-gradient-to-br from-background to-muted/20">
-                        <CardContent className="p-4">
-                          <div className="flex items-start gap-3">
-                            <FileCheck className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                            <div className="flex-1 min-w-0">
-                              <p className="text-sm font-medium leading-snug mb-2">{cert.title}</p>
-                              <a href={cert.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:underline">
-                                <ExternalLink className="h-3 w-3" />
-                                {t('certificates.view')}
-                              </a>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>)}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>)}
-          </Accordion>
-        </div>
-
-        <div className="mt-16 text-center animate-fade-in">
-          <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 max-w-3xl mx-auto">
-            <CardContent className="p-8">
-              <p className="text-muted-foreground leading-relaxed">
-                {t('certificates.closing')}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+            <AccordionTrigger className="px-6 py-4 hover:no-underline">
+              <div className="flex items-center gap-3">
+                <Calendar className="h-5 w-5 text-primary" />
+                <span className="text-2xl font-bold">{yearData.year}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t('certificates.count', { count: yearData.certificates.length })}
+                </span>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className="px-6 pb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
+                {yearData.certificates.map((cert, certIndex) => <Card key={certIndex} className="group hover:scale-105 transition-all duration-300 hover:shadow-lg border-primary/20 bg-gradient-to-br from-background to-muted/20">
+                  <CardContent className="p-4">
+                    <div className="flex items-start gap-3">
+                      <FileCheck className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium leading-snug mb-2">{cert.title}</p>
+                        <a href={cert.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:underline">
+                          <ExternalLink className="h-3 w-3" />
+                          {t('certificates.view')}
+                        </a>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>)}
+              </div>
+            </AccordionContent>
+          </AccordionItem>)}
+        </Accordion>
       </div>
-    </section>;
+
+      <div className="mt-16 text-center animate-fade-in">
+        <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 max-w-3xl mx-auto">
+          <CardContent className="p-8">
+            <p className="text-muted-foreground leading-relaxed">
+              {t('certificates.closing')}
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>;
 };
 export default Certificates;

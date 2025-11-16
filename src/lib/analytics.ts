@@ -34,7 +34,13 @@ export function initGA(measurementId?: string) {
     window.gtag("config", measurementId, { send_page_view: false });
 }
 
-export function trackPageView(measurementId: string, path: string) {
-    if (typeof window === "undefined" || !window.gtag || !measurementId) return;
-    window.gtag("config", measurementId, { page_path: path });
+export function trackPageView(measurementId: string | undefined, path: string) {
+    if (typeof window === "undefined" || !window.gtag) return;
+    // If measurementId provided, update config for GA4 property and set path
+    if (measurementId) {
+        window.gtag("config", measurementId, { page_path: path });
+        return;
+    }
+    // If GA was already included (hard-coded in index.html), send page_view event directly
+    window.gtag("event", "page_view", { page_path: path });
 }
