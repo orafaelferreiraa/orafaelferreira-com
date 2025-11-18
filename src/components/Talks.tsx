@@ -1,7 +1,7 @@
-import { Presentation, ExternalLink, Calendar, MapPin, Youtube, Linkedin, FileText, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Calendar, ExternalLink, FileText, Globe, Linkedin, MapPin, Presentation, Youtube } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 interface Talk {
@@ -48,6 +48,7 @@ const Talks = () => {
       siteUrl: "https://mvpconf.com.br/",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_mvpconf-azure-greenops-activity-7381289949406457858-U1xT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/mvp-conf25.pdf",
+      blogUrl: "https://www.orafaelferreira.com/artigos/mvp-conf-sp",
     },
     {
       title: "Antes de Estudar Ferramentas, bora entender Sobre a cultura DevOps",
@@ -426,9 +427,9 @@ const Talks = () => {
       talk.image ||
       (talk.videoUrl
         ? (() => {
-            const id = getYouTubeId(talk.videoUrl);
-            return id ? `https://img.youtube.com/vi/${id}/0.jpg` : null;
-          })()
+          const id = getYouTubeId(talk.videoUrl);
+          return id ? `https://img.youtube.com/vi/${id}/0.jpg` : null;
+        })()
         : null);
 
     return (
@@ -447,29 +448,29 @@ const Talks = () => {
             />
           </div>
         )}
-        
+
         <div className="space-y-3">
           <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
             {talk.title}
           </h3>
-          
+
           <div className="flex items-center gap-2 text-muted-foreground">
             <Presentation className="w-4 h-4" />
             <span className="text-sm">{talk.event}</span>
           </div>
-          
+
           <div className="flex items-center gap-2 text-muted-foreground">
             <Calendar className="w-4 h-4" />
             <span className="text-sm">{new Date(talk.date).toLocaleDateString(i18n.language.startsWith('en') ? 'en-US' : 'pt-BR')}</span>
           </div>
-          
+
           <div className="flex items-center gap-2 text-muted-foreground">
             <MapPin className="w-4 h-4" />
             <span className="text-sm">{talk.location}</span>
           </div>
-          
+
           <Separator className="my-4" />
-          
+
           <div className="flex flex-wrap gap-2">
             {talk.siteUrl && (
               <Button variant="outline" size="sm" asChild>
@@ -479,7 +480,7 @@ const Talks = () => {
                 </a>
               </Button>
             )}
-            
+
             {talk.slidesUrl && (
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.slidesUrl} target="_blank" rel="noopener noreferrer">
@@ -488,7 +489,7 @@ const Talks = () => {
                 </a>
               </Button>
             )}
-            
+
             {talk.videoUrl && (
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">
@@ -497,7 +498,7 @@ const Talks = () => {
                 </a>
               </Button>
             )}
-            
+
             {talk.linkedinUrl && (
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.linkedinUrl} target="_blank" rel="noopener noreferrer">
@@ -506,7 +507,7 @@ const Talks = () => {
                 </a>
               </Button>
             )}
-            
+
             {talk.blogUrl && (
               <Button variant="outline" size="sm" asChild>
                 <a href={talk.blogUrl} target="_blank" rel="noopener noreferrer">
