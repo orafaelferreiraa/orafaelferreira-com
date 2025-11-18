@@ -14,7 +14,7 @@ const trainingPlatforms: RecommendationItem[] = [
   { name: "Linuxtips", url: "https://www.linuxtips.io/" },
   { name: "Udemy", url: "https://www.udemy.com/" },
   { name: "KodeKloud", url: "https://www.https://kodekloud.com/.com/" },
-  { name: "Alura", url: "https://www.alura.com.br/indica-dev/rafael-low" }
+  { name: "Alura", url: "https://www.alura.com.br/promocao/awin_10EstudeAlurax" }
 ];
 
 const youtubeChannels: RecommendationItem[] = [
