@@ -82,6 +82,9 @@ Fica meu agradecimento ao IFSC, ao pessoal da organização da Semana Acadêmica
 
 A troca foi forte e verdadeira.  
 E que venham mais conversas que vão além do código.
+
+- <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [GreenOps e Cloud Sustentável no MVP Conf 2025](https://stoblobcertificados011.blob.core.windows.net/palestras/CarreiraGlobal%20emDevOps.pdf)
+
 `,
   date: "2025-11-18",
   category: "Registro Eventos Presenciais",
