@@ -38,6 +38,7 @@ const Talks = () => {
       siteUrl: "https://saads.framer.website/",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_na-1%C2%AA-semana-acad%C3%AAmica-de-ads-do-ifsc-instituto-activity-7389262492855582720-U0Bm?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/CarreiraGlobal%20emDevOps.pdf",
+      blogUrl: "https://www.orafaelferreira.com/artigos/trabalhar-para-o-exterior-ifsc-2025",
     },
     {
       title: "GreenOps: Da Fundação à Inovação Sustentável na Cloud Azure",

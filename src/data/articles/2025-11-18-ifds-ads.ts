@@ -7,7 +7,7 @@ export const article: Article = {
   content: `
 # Trabalhar para o Exterior: Realidade, Desafios e Oportunidades
 
-Durante a ([**1ª Semana Acadêmica de ADS do IFSC**](https://saads.framer.website/)), eu e o meu parceiro de caos e carreira **Vinícius Deschamps** tivemos a honra de fechar a noite do dia 06/11 com uma conversa que muita gente sempre quis ouvir, mas poucos realmente contam: **como é trabalhar para o exterior na vida real**.
+Durante a ([**1ª Semana Acadêmica de ADS do IFSC**](https://saads.framer.website/)), eu e o meu parceiro [Vinícius Deschamps](https://www.linkedin.com/in/viniciusdeschamps/) tivemos a honra de fechar a noite do dia 06/11 com uma conversa que muita gente sempre quis ouvir, mas poucos realmente contam: **como é trabalhar para o exterior na vida real**.
 
 Nada de glamour de LinkedIn, nada de “ficar rico em 3 passos”, nada de frase de efeito.  
 Foi papo reto, experiência de campo e aquelas histórias que normalmente ficam só no café da firma.
@@ -81,7 +81,7 @@ Fica meu agradecimento ao IFSC, ao pessoal da organização da Semana Acadêmica
 A troca foi forte e verdadeira.  
 E que venham mais conversas que vão além do código.
 `,
-  date: "2025-11-07",
+  date: "2025-11-18",
   category: "Registro Eventos Presenciais",
   readTime: "3 min de leitura",
   mediumUrl: ""
