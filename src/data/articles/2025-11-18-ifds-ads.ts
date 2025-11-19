@@ -64,15 +64,17 @@ Aqui você pode inserir as fotos do evento:
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/7.jpg)
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/2.jpg)
 
-## Quer seguir esse caminho?
+## 🧾 Links de Indicação Úteis pra Quem Quer Trabalhar pra Fora
 
-Duas recomendações que uso pessoalmente e que ajudam quem está começando:
+Se você está **começando sua jornada internacional**, aqui vão dois serviços que **uso pessoalmente** e recomendo:
 
-### Abrir ou manter seu CNPJ para trabalhar como PJ  
-👉 [Contabilizei](https://www.contabilizei.com.br/programa-de-indicacao/?ref=daf792a9759933c6a3f54a8832357168&nome=RAFAEL&email=rafael_low%40hotmail.com&utm_source=plataforma&utm_source=plataforma&utm_campaign=MGM )
+### 💼 Abrir ou manter seu CNPJ com a **Contabilizei**  
+Simplifique sua vida como PJ, sem dor de cabeça com impostos e obrigações contábeis:  
+👉 [Abra sua conta na Contabilizei com meu link de indicação](https://www.contabilizei.com.br/programa-de-indicacao?ref=daf792a9759933c6a3f54a8832357168&nome=RAFAEL&email=rafael_low@hotmail.com&utm_source=plataforma&utm_campaign=MGM&utm_source=plataforma)
 
-### Receber em dólar com taxas melhores  
-👉 [TechFX](https://app.techfx.com.br/referral/j8k2zj8apkel)
+### 💸 Receber em dólar com ótimas taxas usando a **TechFX**  
+Pra quem recebe moeda de fora (dólar, euro, libra...) direto na conta PJ, TechFX ajuda a economizar nas taxas e ganhar agilidade:  
+👉 [Crie sua conta TechFX com meu link e comece a receber melhor](https://app.techfx.com.br/referral/j8k2zj8apkel)
 
 ## Gratidão pelo convite
 
