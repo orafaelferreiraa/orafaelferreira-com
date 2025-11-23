@@ -17,7 +17,6 @@ on:
       - 'eslint.config.js'
       - 'tsconfig.node.json'
       - '.github/workflows/deploy-app.yml'  
-  # Não roda em PRs; somente push e workflow_run após apply
 
   workflow_run:
     workflows: ["infra-apply"]
@@ -34,7 +33,6 @@ concurrency:
 
 jobs:
   build_and_deploy:
-    # No GA secret injection: the Google tag is now hard-coded in `index.html` per request
     if: |
       github.event_name == 'push' ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
@@ -68,11 +66,29 @@ jobs:
         run: npm run build
 
       # Stage 3: end-to-end smoke (Playwright)
-      # - name: Install Playwright browsers
-      #   run: npx playwright install --with-deps
+      - name: Get Playwright version
+        id: playwright-version
+        run: echo "version=$(npm list @playwright/test --depth=0 --json 2>/dev/null | jq -r '.dependencies["@playwright/test"].version // empty')" >> $GITHUB_OUTPUT
 
-      # - name: E2E smoke tests
-      #   run: npm run test:e2e:ci
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps
+
+      - name: Install Playwright system dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps
+
+      - name: E2E smoke tests
+        run: npm run test:e2e:ci
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
@@ -86,17 +102,26 @@ jobs:
         if: always()
         run: |
           {
-            echo "## App Deploy Summary";
+            echo "## 🚀 App Deploy Summary";
             echo "";
-            echo "- Event: ${{ github.event_name }}";
-            echo "- Ref: ${{ github.ref }}";
-            echo "- Actor: ${{ github.actor }}";
+            echo "| Item | Value |";
+            echo "|------|-------|";
+            echo "| Event | \`${{ github.event_name }}\` |";
+            echo "| Branch | \`${{ github.ref_name }}\` |";
+            echo "| Actor | \`${{ github.actor }}\` |";
+            echo "| Commit | \`$(git rev-parse --short HEAD)\` |";
             echo "";
-            echo "### Build";
-            echo "- Output dir: \`dist/\`";
-            echo "- Files: $(find dist -type f | wc -l 2>/dev/null || echo 'n/a')";
-            echo "- Size: $(du -sh dist 2>/dev/null | cut -f1 || echo 'n/a')";
+            echo "### 📦 Build Info";
             echo "";
-            echo "### Deploy";
-            echo "Aplicação enviada para o Azure Static Web Apps (upload de \`dist/\`).";
+            echo "| Metric | Value |";
+            echo "|--------|-------|";
+            echo "| Output | \`dist/\` |";
+            echo "| Files | $(find dist -type f 2>/dev/null | wc -l || echo 'n/a') |";
+            echo "| Size | $(du -sh dist 2>/dev/null | cut -f1 || echo 'n/a') |";
+            echo "";
+            echo "### ✅ Deploy Status";
+            echo "";
+            echo "Application deployed to **Azure Static Web Apps**";
+            echo "";
+            echo "🌐 [View Application](https://www.orafaelferreira.com)";
           } >> "$GITHUB_STEP_SUMMARY"
