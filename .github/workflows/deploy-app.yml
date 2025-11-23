@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'src/**'
+      - 'e2e/**'
       - 'public/**'
       - 'index.html'
       - 'package.json'
