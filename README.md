@@ -73,19 +73,18 @@ cd -
 ### Pipelines de infraestrutura
 
 **PR workflow** (`.github/workflows/infra-plan.yml`):
-**PR workflow** (`.github/workflows/infra-plan.yml`):
 - Disparo: PRs que alteram `infra/**` ou o próprio workflow
 - Passos: `init` → `fmt` → `validate` → `tflint` → `tfsec` → `checkov` → `plan`
 - Plan usa valores placeholder para `repository_*` (não requer secrets de GitHub)
 - Artifact do plan é salvo e comentário detalhado é postado no PR
 - Validações de segurança: tfsec e Checkov (soft_fail: false)
 
-**Push workflow** (`.github/workflows/infra.yml` - nome: `infra-apply`):
+**Push workflow** (`.github/workflows/infra-deploy.yml` - nome: `infra-apply`):
 - Disparo: push em `main` que altera `infra/**` ou o próprio workflow
 - Passos: `init` → `fmt` → `validate` → `tflint` → `tfsec` → `checkov` → `apply`
 - Apply usa valores reais via secrets (repository linkage)
 - Documentação com `terraform-docs` é injetada no README e commitada automaticamente
-- Resumo do job com outputs do Terraform
+- Resumo do job sem seção de outputs (removida para evitar ruído quando não definidos)
 
 **Secrets necessários:**
 - `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `AZURE_CLIENT_SECRET` (Service Principal)
@@ -131,24 +130,19 @@ No modules.
 
 ## Outputs
 
-No outputs.
+Atualmente não há outputs definidos neste módulo (se necessário futuramente, adicionar blocos `output` em `infra/`).
 <!-- END_TF_DOCS -->
 
 ## domínios e HTTPS
 
 O domínio customizado `www.orafaelferreira.com` são configurados via Terraform no SWA.
 
-**Setup**: Consulte o guia completo em [`infra/CUSTOM_DOMAIN.md`](./infra/CUSTOM_DOMAIN.md) para:
-- Obter tokens de validação DNS
-- Configurar registros DNS (CNAME/TXT) no seu registrador
-- Validar e provisionar certificado SSL/TLS automático (Let's Encrypt)
-
 **TLS**: Certificados são provisionados e renovados automaticamente pelo Azure após validação DNS.
 
 ## notas
 
-- Testes: CI roda unit tests (`vitest`) e component tests (React Testing Library). E2E com Playwright está configurado mas comentado.
+- Testes: CI roda unit tests (`vitest`), component tests (React Testing Library) e E2E (Playwright) para i18n e smoke.
 - Lint no CI foi desabilitado para evitar ruído causado por conteúdo em markdown inline nos arquivos de artigos. O typecheck (TS) permanece ativo.
 - A pasta `infra/` possui `.gitignore` próprio para evitar que `.terraform/`, `*.tfstate` e `*.tfplan` entrem em commits. O lockfile `.terraform.lock.hcl` é versionado.
 - A pipeline de deploy usa `npm install` ao invés de `npm ci` para maior flexibilidade quando há atualizações de dependências.
-- Workflows de infra e deploy são independentes mas coordenados: mudanças de infra triggam apply → deploy do app via `workflow_run`.
+- Workflows de infra e deploy são independentes mas coordenados: mudanças de infra triggam apply → deploy do app via `workflow_run`. Commits automáticos do `terraform-docs` (actor `github-actions[bot]`) não disparam o deploy do app (condição adicionada em `deploy-app.yml`).

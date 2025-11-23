@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'infra/**'
-      - '.github/workflows/infra.yml'
+      - '.github/workflows/infra-deploy.yml'
   workflow_dispatch:
 
 
@@ -135,17 +135,4 @@ jobs:
             echo "| Actor | \`${{ github.actor }}\` |";
             echo "| Backend | \`stostateorafael/statetf/infra.terraform.tfstate\` |";
             echo "| Status | ✅ Applied |";
-            echo "";
-            echo "### Terraform Outputs";
-            set +e
-            OUT=$(terraform output -no-color 2>/dev/null)
-            EXIT=$?
-            set -e
-            if [ $EXIT -eq 0 ] && [ -n "$OUT" ]; then
-              echo '```terraform';
-              echo "$OUT";
-              echo '```';
-            else
-              echo "_(Sem outputs definidos)_";
-            fi
           } >> "$GITHUB_STEP_SUMMARY"
