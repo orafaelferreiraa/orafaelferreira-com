@@ -130,7 +130,7 @@ No modules.
 
 ## Outputs
 
-Atualmente não há outputs definidos neste módulo (se necessário futuramente, adicionar blocos `output` em `infra/`).
+No outputs.
 <!-- END_TF_DOCS -->
 
 ## domínios e HTTPS
