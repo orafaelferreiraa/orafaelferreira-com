@@ -125,30 +125,15 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fmt = "${{ steps.fmt.outcome }}";
-            const init = "${{ steps.init.outcome }}";
-            const validate = "${{ steps.validate.outcome }}";
-            const planOutcome = "${{ steps.plan.outcome }}";
             const planTextRaw = process.env.PLAN || '(sem saída)';
             const planText = planTextRaw.replace(/```/g, '\n```\n');
             
             const body = [
               '## Terraform Plan Results',
               '',
-              `| Check | Status |`,
-              `|-------|--------|`,
-              `| Format | \`${fmt}\` |`,
-              `| Init | \`${init}\` |`,
-              `| Validate | \`${validate}\` |`,
-              `| Plan | \`${planOutcome}\` |`,
-              '',
-              '<details><summary>📋 View Plan Details</summary>',
-              '',
               '```terraform',
               planText,
               '```',
-              '',
-              '</details>',
               '',
               `*Pusher: @${{ github.actor }} | Action: \`${{ github.event_name }}\`*`
             ].join('\n');
