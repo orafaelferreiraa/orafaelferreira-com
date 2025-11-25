@@ -46,7 +46,7 @@ Falamos sobre:
 A ideia não foi mostrar um “mundo perfeito”.  
 A ideia foi preparar a galera para o que é **de fato**.
 
-## Por que esse assunto importa?
+## Por que esse assunto importa??
 
 Porque a comunidade técnica precisa falar sobre carreira e escolhas reais.  
 Trabalhar para o exterior pode abrir portas absurdas, mas também exige maturidade, adaptação e clareza sobre o que você quer da sua vida.
