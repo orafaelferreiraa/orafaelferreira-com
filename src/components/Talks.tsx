@@ -19,17 +19,19 @@ interface Talk {
 
 const Talks = () => {
   const upcomingTalks: Talk[] = [
-    {
+  ];
+
+  const inPersonTalks: Talk[] = [
+      {
       title: "Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source",
       event: "DevOpsDays Porto Alegre 2025",
       date: "2025-11-29",
       location: "Porto Alegre, RS",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/dod-poa25.png",
       siteUrl: "https://devopsdays.org/events/2025-porto-alegre/welcome/",
-    },
-  ];
-
-  const inPersonTalks: Talk[] = [
-    {
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devopsdayspoa-devsecops-cloudnative-activity-7399046861686222848-5Oct?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      
+    },{
       title: "Trabalhando para o Exterior: Realidade, Desafios e Oportunidades",
       event: "1ª Semana Acadêmica de ADS - IFSC",
       date: "2025-11-06",

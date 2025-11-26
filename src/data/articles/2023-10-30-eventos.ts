@@ -11,6 +11,8 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 
 | Mês | Evento |
 |-----|--------|
+| Nov | [**DevOpsDays Porto Alegre**](https://devopsdays.org/events/2025-porto-alegre/welcome/) |
+| Nov | [**DevOpsDays São Paulo**](https://devopsdays.org/events/2025-sao-paulo/welcome/) |
 | Nov | [**1ª Semana Acadêmica de ADS - IFSC**](https://saads.framer.website/) |
 | Out | [**Cloud Native Day - São Paulo 2025**](https://community.cncf.io/events/details/cncf-cloud-native-sao-paulo-city-presents-cloud-native-day-sao-paulo-2025-1/) |
 | Out | [**MVP Conf - 2025 Brasil**](https://mvpconf.com.br/) |
