@@ -8,6 +8,7 @@ export function markdownToHtml(markdown: string): string {
   // 1. Blocos de código (processar PRIMEIRO antes de código inline)
   html = html.replace(/```([\w-]*)\n([\s\S]*?)```/g, (_, lang, code) => {
     const escaped = code.trim()
+      .replace(/\n\n+/g, '\n')  // Remove linhas vazias extras
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');

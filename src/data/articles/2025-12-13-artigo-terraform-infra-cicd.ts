@@ -22,8 +22,6 @@ Vamos passar por tudo o que sustenta o blog hoje:
 
 Ao final, você terá uma visão ponta a ponta do que acontece desde um "git push" até o site atualizado em produção.
 
----
-
 ## Estrutura Terraform
 No começo da migração, minha principal regra foi: nada de improviso em produção. Tudo que existe deve estar descrito em código. A pasta \`infra/\` virou o coração da operação.
 
@@ -141,8 +139,6 @@ resource "azurerm_static_web_app_custom_domain" "txt-value" {
 - O SWA tem linkage com este repositório, então o deploy do blog é natural ao meu fluxo de commits.
 - O domínio **www.orafaelferreira.com** usa validação por DNS TXT; depois da propagação, o Azure cuida dos certificados.
 
----
-
 ## Execução Local: Service Principal
 
 Para validar a migração sem depender dos pipelines, eu testei localmente com um Service Principal (SP) de escopo mínimo. Assim, garanto que o mesmo código funciona fora do CI e que não estou escondendo nenhuma dependência.
@@ -167,8 +163,6 @@ cd -
 \`\`\`
 
 > Em ambientes Windows PowerShell, adapte com \`$Env:VAR=valor\`.
-
----
 
 ## Pipelines CI/CD no GitHub Actions
 Se a infraestrutura é o esqueleto, os pipelines são os músculos. Foi aqui que a migração ganhou vida: cada commit virou uma história com começo, meio e fim — revisão, aplicação e publicação.
@@ -226,8 +220,6 @@ Proteção contra loops:
 - Condição no job: \`(github.event_name == 'push' && github.actor != 'github-actions[bot]')\`…
 - Isso evita que commits automatizados (ex.: terraform-docs) disparem deploys do app desnecessariamente — um ajuste que nasceu de um incidente: o bot fazia commit e o app queria redeploy sem mudanças reais.
 
----
-
 ## Segurança e Qualidade
 
 - **TFLint**: enforce de boas práticas e estilo nos \`.tf\`.
@@ -238,13 +230,9 @@ Proteção contra loops:
 
 > Observação: caso sejam necessários outputs (ex.: hostname, IDs), basta adicionar blocos \`output\` em \`infra/\` e consumir no resumo/pipelines. Por ora, optei por manter o módulo minimalista.
 
----
-
 ## Documentação Automatizada
 
 Durante a migração, quis que a documentação acompanhasse o código sem esforço humano. O \`infra-deploy.yml\` roda **terraform-docs** e injeta a referência do módulo no \`README.md\`. Se não houver mudanças, nenhum commit é feito — é documentação viva, sem burocracia.
-
----
 
 ## Fluxo de Trabalho: do PR ao Deploy
 
@@ -254,16 +242,12 @@ Durante a migração, quis que a documentação acompanhasse o código sem esfor
 
 Tudo isso com proteção contra loops de commits do bot e com caches para acelerar o ciclo.
 
----
-
 ## Próximos Passos (Evoluções)
 
 - Adicionar **outputs** úteis (ex.: \`swa_default_hostname\`) para integrações futuras.
 - Habilitar **ambientes** (ex.: staging) com workspaces Terraform e branches dedicados.
 - Expandir políticas Checkov/tfsec para requisitos internos de conformidade.
 - Adicionar monitoramento (Application Insights) ao front ou backend futuros.
-
----
 
 ## Conclusão
 
