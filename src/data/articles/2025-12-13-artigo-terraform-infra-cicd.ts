@@ -3,11 +3,12 @@ import { Article } from './types';
 
 export const article: Article = {
   slug: "artigo-terraform-infra-cicd",
-  title: "Infraestrutura como Código com Terraform e CI/CD: da Storage do State ao Deploy do Static Web Apps",
+  title: "A Stack por trás do meu Blog: IaC com Terraform, Static Web Apps e Github Actions",
   excerpt: "Como migrei meu blog para uma arquitetura moderna com Terraform e GitHub Actions: state remoto em Azure Storage, Static Web Apps, domínio customizado e um pipeline confiável que leva cada mudança para produção.",
   content: `# Visão Geral
 
-Há poucas semanas eu decidi migrar meu blog para uma base mais moderna, simples de operar e fácil de evoluir. Eu queria abandonar configurações manuais, reduzir risco de mudanças e ter um pipeline claro: escrevo, faço push, reviso e publico. O plano: Terraform para declarar infraestrutura, GitHub Actions para orquestrar, e Azure Static Web Apps para hospedar. Neste artigo, conto essa jornada e abro os bastidores técnicos.
+Algumas semanas atrás eu decidi migrar meu blog para uma versão mais moderna, simples de operar e fácil de evoluir. O plano: 
+Terraform para declarar infraestrutura, GitHub Actions para orquestrar e Azure Static Web Apps para hospedar. Neste artigo, irei contar um pouco dessa jornada:
 
 Vamos passar por tudo o que sustenta o blog hoje:
 
@@ -16,14 +17,15 @@ Vamos passar por tudo o que sustenta o blog hoje:
 - Provisionamento do SWA e domínio customizado
 - Padrões de execução local com Service Principal
 - Pipelines CI/CD no GitHub Actions para "plan" (PRs) e "apply" (push em main)
-- Segurança, lint e scans (TFLint, tfsec, Checkov)
+- Segurança, lint e scans: TFLint, tfsec, Checkov (era preciso tudo isso? claro que não! meu site se tornou meu projeto pessoal de estudos)
 - Automatização de documentação com terraform-docs
 - Integração com o deploy do app (build + upload da pasta \"dist\")
 
 Ao final, você terá uma visão ponta a ponta do que acontece desde um "git push" até o site atualizado em produção.
 
+---
+
 ## Estrutura Terraform
-No começo da migração, minha principal regra foi: nada de improviso em produção. Tudo que existe deve estar descrito em código. A pasta \`infra/\` virou o coração da operação.
 
 Dentro da pasta \`infra/\` temos os principais arquivos que definem a infraestrutura:
 
@@ -36,7 +38,7 @@ Dentro da pasta \`infra/\` temos os principais arquivos que definem a infraestru
 
 O arquivo fixa as versões para garantir reprodutibilidade e compatibilidade:
 
-\`\`\`terraform
+\`\`\`
 terraform {
   required_version = "1.13.4"
 
@@ -53,12 +55,12 @@ provider "azurerm" {
 }
 \`\`\`
 
-- **Terraform**: versão 1.13.4, padronizando ambiente local e CI.
-- **Provider azurerm**: versão 4.50.0, atual e estável para recursos Azure.
+- **Terraform**: versão 1.13.4, versão mais atual de quando fiz o projeto
+- **Provider azurerm**: versão 4.50.0, versão mais atual de quando fiz o projeto
 
 ### backend.tf
 
-Quando migrei, uma das primeiras decisões foi nunca mais manter state local. Eu queria histórico, segurança e colaboração. Por isso o state do Terraform vive no Azure Storage (com Azure AD), evitando segredos em texto plano e facilitando a vida em equipe.
+Quando migrei, uma das primeiras decisões foi nunca manter state local.
 
 \`\`\`terraform
 terraform {
@@ -73,11 +75,10 @@ terraform {
 \`\`\`
 
 - **RG/Storage/Container**: isolam o state em um bucket dedicado.
-- **use_azuread_auth**: autenticação via Entra ID (Azure AD), sem chave de storage em texto plano.
 
 ### variables.tf
 
-Variáveis me ajudaram a controlar comportamentos por ambiente: nos PRs, uso placeholders para não expor nada; no apply em main, os valores reais chegam via secrets. Isso mantém o fluxo seguro sem atritos.
+Variáveis me ajudaram a controlar comportamentos por ambiente: no apply em main, os valores reais chegam via secrets. Isso mantém o fluxo seguro com segurança.
 
 \`\`\`terraform
 variable "repository_url" {
@@ -100,12 +101,11 @@ variable "repository_token" {
 }
 \`\`\`
 
-- Em PRs, usamos placeholders/vazios para não vazar credenciais.
 - Em apply, os valores reais chegam via secrets do GitHub Actions.
 
 ### main.tf
 
-Aqui mora o ponto alto da migração: o Azure Static Web Apps com domínio customizado. Eu queria um hosting estável, com HTTPS automático e integração perfeita com GitHub. O SWA entrega isso sem dor de cabeça.
+Aqui fica a cereja do bolo: o Azure Static Web Apps na camada gratuita com domínio customizado. Eu queria um hosting estável, com HTTPS automático e integração perfeita com GitHub. O SWA entrega isso sem dor de cabeça.
 
 \`\`\`terraform
 # Recurso de RG existente (fora do TF)
@@ -135,15 +135,14 @@ resource "azurerm_static_web_app_custom_domain" "txt-value" {
 }
 \`\`\`
 
-- O RG é um **data source** (mantido fora do Terraform), simplificando adoção.
+- O RG é um **data source** (mantido fora do Terraform), já que é onde fica o storage account para manter o state remoto.
 - O SWA tem linkage com este repositório, então o deploy do blog é natural ao meu fluxo de commits.
 - O domínio **www.orafaelferreira.com** usa validação por DNS TXT; depois da propagação, o Azure cuida dos certificados.
 
-## Execução Local: Service Principal
+## Service Principal
 
-Para validar a migração sem depender dos pipelines, eu testei localmente com um Service Principal (SP) de escopo mínimo. Assim, garanto que o mesmo código funciona fora do CI e que não estou escondendo nenhuma dependência.
-
-Exemplo de export das credenciais (Linux/macOS) e execução:
+Para validação das pipelines podem fazer o deploy na cloud, estou utilizando Service Principal (SP).
+Exemplo de export das credenciais (Linux) e execução:
 
 \`\`\`bash
 export ARM_CLIENT_ID=<appId-do-SP>
@@ -165,7 +164,7 @@ cd -
 > Em ambientes Windows PowerShell, adapte com \`$Env:VAR=valor\`.
 
 ## Pipelines CI/CD no GitHub Actions
-Se a infraestrutura é o esqueleto, os pipelines são os músculos. Foi aqui que a migração ganhou vida: cada commit virou uma história com começo, meio e fim — revisão, aplicação e publicação.
+Se a infraestrutura é o esqueleto, os pipelines que bota pra rodar. Cada commit tem revisão, aplicação e publicação.
 
 A automação está dividida em três workflows principais.
 
@@ -186,10 +185,6 @@ Passos:
 - Upload do artifact \`tfplan\`
 - Comentário no PR com o **plan** já expandido (sem tabela de status). Eu quis reduzir cliques e atrito: abrir o PR e já ver o que muda.
 
-Políticas:
-- \`if: github.actor != 'github-actions[bot]'\` evita loops por commits automatizados.
-- Sem secrets sensíveis; \`repository_token=placeholder\`.
-
 ### 2) \`infra-deploy.yml\` (push em main)
 
 Dispara em push que altera \`infra/**\` ou o próprio workflow, e também pode ser manual via \`workflow_dispatch\`.
@@ -199,10 +194,6 @@ Passos de segurança e qualidade:
 - \`terraform apply -auto-approve\` com \`repository_url\`, \`repository_branch\`, \`repository_token\` vindos de secrets
 - **terraform-docs**: injeta documentação do módulo no \`README.md\` e commita automaticamente (quando houver alteração)
 - **Job Summary**: resumo simples (branch/actor/backend/status), sem seção de outputs para evitar ruído quando não definidos. Na migração eu removi a seção de outputs do summary para evitar alertas desnecessários.
-
-Condições:
-- \`if: github.actor != 'github-actions[bot]'\` no job Terraform
-- Concurrency configurada para evitar corridas
 
 ### 3) \`deploy-app.yml\` (build + upload da SPA)
 
@@ -230,9 +221,13 @@ Proteção contra loops:
 
 > Observação: caso sejam necessários outputs (ex.: hostname, IDs), basta adicionar blocos \`output\` em \`infra/\` e consumir no resumo/pipelines. Por ora, optei por manter o módulo minimalista.
 
+---
+
 ## Documentação Automatizada
 
 Durante a migração, quis que a documentação acompanhasse o código sem esforço humano. O \`infra-deploy.yml\` roda **terraform-docs** e injeta a referência do módulo no \`README.md\`. Se não houver mudanças, nenhum commit é feito — é documentação viva, sem burocracia.
+
+---
 
 ## Fluxo de Trabalho: do PR ao Deploy
 
@@ -242,6 +237,8 @@ Durante a migração, quis que a documentação acompanhasse o código sem esfor
 
 Tudo isso com proteção contra loops de commits do bot e com caches para acelerar o ciclo.
 
+---
+
 ## Próximos Passos (Evoluções)
 
 - Adicionar **outputs** úteis (ex.: \`swa_default_hostname\`) para integrações futuras.
@@ -249,9 +246,13 @@ Tudo isso com proteção contra loops de commits do bot e com caches para aceler
 - Expandir políticas Checkov/tfsec para requisitos internos de conformidade.
 - Adicionar monitoramento (Application Insights) ao front ou backend futuros.
 
+---
+
 ## Conclusão
 
-A combinação de Terraform + GitHub Actions entrega uma infraestrutura previsível, auditável e automatizada. Com state remoto seguro, validações de segurança e documentação contínua, o resultado é um pipeline confiável que leva alterações de infraestrutura e aplicação ao Azure de forma robusta.
+A combinação de Terraform + GitHub Actions entrega uma infraestrutura escalável, auditável e automatizada. 
+Com state remoto seguro, validações de segurança e documentação contínua, o resultado é um pipeline confiável que leva alterações de 
+infraestrutura e aplicação ao Azure de forma robusta.
 
 Este artigo refletiu fielmente o que está implementado neste repositório hoje, servindo como referência tanto para manutenção quanto para expansão futura.`,
   date: "2025-12-13",
