@@ -3,7 +3,7 @@ import { Article } from './types';
 
 export const article: Article = {
   slug: "artigo-terraform-infra-cicd",
-  title: "Infraestrutura como Código com Terraform e CI/CD: da Storage do State ao Deploy do Static Web Apps",
+  title: "A Stack por trás do meu Blog: IaC com Terraform, Static Web Apps e Github Actions",
   excerpt: "Como migrei meu blog para uma arquitetura moderna com Terraform e GitHub Actions: state remoto em Azure Storage, Static Web Apps, domínio customizado e um pipeline confiável que leva cada mudança para produção.",
   content: `# Visão Geral
 
