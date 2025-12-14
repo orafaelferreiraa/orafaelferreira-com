@@ -107,11 +107,15 @@ All colors MUST be HSL.
 @layer utilities {
   .article-content pre {
     @apply !bg-slate-900 !text-slate-100;
+    margin: 0 !important;
+    padding: 1rem !important;
   }
   
   .article-content pre code {
-    line-height: 1.2 !important;
+    line-height: 1.5 !important;
     display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
   .article-content code {
