@@ -7,15 +7,8 @@ export function markdownToHtml(markdown: string): string {
 
   // 1. Blocos de código (processar PRIMEIRO antes de código inline)
   html = html.replace(/```([\w-]*)\n([\s\S]*?)```/g, (_, lang, code) => {
-    // Remove linhas vazias consecutivas (mantém apenas 1 linha vazia máximo)
-    const cleaned = code.trim().split('\n').reduce((acc: string[], line: string, index: number, arr: string[]) => {
-      // Se a linha atual está vazia E a anterior também estava vazia, pula
-      if (line.trim() === '' && index > 0 && arr[index - 1].trim() === '') {
-        return acc;
-      }
-      acc.push(line);
-      return acc;
-    }, []).join('\n');
+    // Remove múltiplas linhas vazias consecutivas, deixando no máximo uma
+    const cleaned = code.trim().replace(/\n\s*\n\s*\n+/g, '\n\n').replace(/\n\s*\n\s*\n+/g, '\n');
     
     const escaped = cleaned
       .replace(/&/g, '&amp;')
