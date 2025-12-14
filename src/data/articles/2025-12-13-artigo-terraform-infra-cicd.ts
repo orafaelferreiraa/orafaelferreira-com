@@ -23,7 +23,6 @@ Vamos passar por tudo o que sustenta o blog hoje:
 
 Ao final, você terá uma visão ponta a ponta do que acontece desde um "git push" até o site atualizado em produção.
 
----
 
 ## Estrutura Terraform
 
@@ -221,13 +220,11 @@ Proteção contra loops:
 
 > Observação: caso sejam necessários outputs (ex.: hostname, IDs), basta adicionar blocos \`output\` em \`infra/\` e consumir no resumo/pipelines. Por ora, optei por manter o módulo minimalista.
 
----
 
 ## Documentação Automatizada
 
 Durante a migração, quis que a documentação acompanhasse o código sem esforço humano. O \`infra-deploy.yml\` roda **terraform-docs** e injeta a referência do módulo no \`README.md\`. Se não houver mudanças, nenhum commit é feito — é documentação viva, sem burocracia.
 
----
 
 ## Fluxo de Trabalho: do PR ao Deploy
 
@@ -237,7 +234,6 @@ Durante a migração, quis que a documentação acompanhasse o código sem esfor
 
 Tudo isso com proteção contra loops de commits do bot e com caches para acelerar o ciclo.
 
----
 
 ## Próximos Passos (Evoluções)
 
@@ -246,7 +242,6 @@ Tudo isso com proteção contra loops de commits do bot e com caches para aceler
 - Expandir políticas Checkov/tfsec para requisitos internos de conformidade.
 - Adicionar monitoramento (Application Insights) ao front ou backend futuros.
 
----
 
 ## Conclusão
 
