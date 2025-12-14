@@ -62,7 +62,7 @@ import { article as mvpCrtb } from './2025-10-12-mvp-crtb';
 import { article as wsdDevops } from './2025-10-19-wsd-devops';
 import { article as mvpConfSp } from './2025-11-10-mvp-conf-sp';
 import { article as ifdsads } from './2025-11-18-ifds-ads.ts';
-import { article as terraformsite } from './2025-12-13-artigo-terraform-infra-cicd.ts'; 
+import { article as terraformsite } from './2025-12-13-terraform-site.ts'; 
 
 export const allArticles: Article[] = [
   artigoAksAcr,

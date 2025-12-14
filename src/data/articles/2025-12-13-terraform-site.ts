@@ -7,8 +7,12 @@ export const article: Article = {
   excerpt: "Como migrei meu blog para uma arquitetura moderna com Terraform e GitHub Actions: state remoto em Azure Storage, Static Web Apps, domínio customizado e um pipeline confiável que leva cada mudança para produção.",
   content: `# Visão Geral
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-13-terraform-site.ts.png)
+
+
 Algumas semanas atrás eu decidi migrar meu blog para uma versão mais moderna, simples de operar e fácil de evoluir. O plano: 
 Terraform para declarar infraestrutura, GitHub Actions para orquestrar e Azure Static Web Apps para hospedar. Neste artigo, irei contar um pouco dessa jornada:
+
 
 Vamos passar por tudo o que sustenta o blog hoje:
 
