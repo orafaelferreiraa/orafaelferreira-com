@@ -4,20 +4,20 @@
 
 export function markdownToHtml(markdown: string): string {
   let html = markdown;
+  const codeBlocks: string[] = [];
 
   // 1. Blocos de código (processar PRIMEIRO antes de código inline)
   html = html.replace(/```([\w-]*)\n([\s\S]*?)```/g, (_, lang, code) => {
-    // Remove TODAS as linhas vazias extras - substitui múltiplas quebras por uma única
-    const cleaned = code
-      .trim()
-      .replace(/\n\n+/g, '\n');  // Substitui 2+ quebras de linha por apenas 1
-    
+    const cleaned = code.trim().replace(/\n\n+/g, '\n');
     const escaped = cleaned
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
     const language = lang || 'code';
-    return `<div class="relative my-6 group"><div class="bg-slate-800 px-4 py-2 text-xs text-slate-300 rounded-t-lg font-mono">${language}</div><pre class="bg-slate-900 dark:bg-slate-950 p-4 rounded-b-lg overflow-x-auto"><code class="text-sm text-slate-100 font-mono block whitespace-pre" style="line-height: 1.5;">${escaped}</code></pre><button onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)" class="absolute top-10 right-2 px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">Copiar</button></div>`;
+    const blockHtml = `<div class="relative my-6 group"><div class="bg-slate-800 px-4 py-2 text-xs text-slate-300 rounded-t-lg font-mono">${language}</div><pre class="bg-slate-900 dark:bg-slate-950 p-4 rounded-b-lg overflow-x-auto"><code class="text-sm text-slate-100 font-mono block whitespace-pre" style="line-height: 1.4;">${escaped}</code></pre><button onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)" class="absolute top-10 right-2 px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">Copiar</button></div>`;
+    const token = `@@CODE_BLOCK_${codeBlocks.length}@@`;
+    codeBlocks.push(blockHtml);
+    return token;
   });
 
   // 2. Casos especiais: Imagem dentro de link [![alt](img)](href "title")
@@ -103,14 +103,25 @@ export function markdownToHtml(markdown: string): string {
 
   html = processed.join('\n');
 
-  // 10. Parágrafos (processar por último)
-  html = html.split('\n').map(line => {
+  // 10. Parágrafos (processar por último) — proteger tokens de code block
+  const linesForParagraph = html.split('\n');
+  const processedParagraphs: string[] = [];
+  linesForParagraph.forEach((line) => {
     const trimmed = line.trim();
-    if (trimmed === '') return '';
-    if (trimmed.startsWith('<')) return line;
-    if (trimmed.match(/^#{1,4} /)) return line;
-    return `<p class="mb-4 leading-relaxed">${line}</p>`;
-  }).join('\n');
+    if (trimmed === '') { processedParagraphs.push(''); return; }
+    // Não envolver tokens nem linhas que já começam com elementos HTML
+    if (trimmed.startsWith('@@CODE_BLOCK_')) { processedParagraphs.push(line); return; }
+    if (trimmed.startsWith('<')) { processedParagraphs.push(line); return; }
+    if (trimmed.match(/^#{1,4} /)) { processedParagraphs.push(line); return; }
+    processedParagraphs.push(`<p class="mb-4 leading-relaxed">${line}</p>`);
+  });
+  html = processedParagraphs.join('\n');
+
+  // Restaurar code blocks
+  codeBlocks.forEach((blockHtml, i) => {
+    const token = `@@CODE_BLOCK_${i}@@`;
+    html = html.replace(token, blockHtml);
+  });
 
   return html;
 }
