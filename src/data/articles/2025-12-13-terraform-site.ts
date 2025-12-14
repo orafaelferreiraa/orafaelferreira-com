@@ -247,8 +247,9 @@ Tudo isso com proteção contra loops de commits do bot e com caches para aceler
 ## Conclusão
 
 A combinação de Terraform + GitHub Actions entrega uma infraestrutura escalável, auditável e automatizada. 
-Com state remoto seguro, validações de segurança e documentação contínua, o resultado é um pipeline confiável que leva alterações de 
-infraestrutura e aplicação ao Azure de forma robusta.
+Com state remoto seguro, validações de segurança e documentação contínua, o resultado é um pipeline confiável que leva alterações de infraestrutura e aplicação ao Azure de forma robusta.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
 
 Este artigo refletiu fielmente o que está implementado neste repositório hoje, servindo como referência tanto para manutenção quanto para expansão futura.`,
   date: "2025-12-13",
