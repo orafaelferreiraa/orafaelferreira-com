@@ -7,18 +7,10 @@ export function markdownToHtml(markdown: string): string {
 
   // 1. Blocos de código (processar PRIMEIRO antes de código inline)
   html = html.replace(/```([\w-]*)\n([\s\S]*?)```/g, (_, lang, code) => {
-    // Remove TODAS as linhas vazias extras - deixa apenas quebras simples
+    // Remove TODAS as linhas vazias extras - substitui múltiplas quebras por uma única
     const cleaned = code
       .trim()
-      .split('\n')
-      .filter((line, index, array) => {
-        // Remove linha se ela E a anterior forem vazias
-        if (index > 0 && line.trim() === '' && array[index - 1].trim() === '') {
-          return false;
-        }
-        return true;
-      })
-      .join('\n');
+      .replace(/\n\n+/g, '\n');  // Substitui 2+ quebras de linha por apenas 1
     
     const escaped = cleaned
       .replace(/&/g, '&amp;')
