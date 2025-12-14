@@ -8,12 +8,11 @@ export function markdownToHtml(markdown: string): string {
   // 1. Blocos de código (processar PRIMEIRO antes de código inline)
   html = html.replace(/```([\w-]*)\n([\s\S]*?)```/g, (_, lang, code) => {
     const escaped = code.trim()
-      .replace(/\n\n+/g, '\n')  // Remove linhas vazias extras
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
     const language = lang || 'code';
-    return `<div class="relative my-6 group"><div class="bg-slate-800 px-4 py-2 text-xs text-slate-300 rounded-t-lg font-mono">${language}</div><pre class="bg-slate-900 dark:bg-slate-950 p-4 rounded-b-lg overflow-x-auto" style="line-height: 1.4; margin: 0;"><code class="text-sm text-slate-100 font-mono whitespace-pre" style="line-height: 1.4; display: inline; margin: 0; padding: 0;">${escaped}</code></pre><button onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)" class="absolute top-10 right-2 px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">Copiar</button></div>`;
+    return `<div class="relative my-6 group"><div class="bg-slate-800 px-4 py-2 text-xs text-slate-300 rounded-t-lg font-mono">${language}</div><pre class="bg-slate-900 dark:bg-slate-950 p-4 rounded-b-lg overflow-x-auto"><code class="text-sm text-slate-100 font-mono block whitespace-pre" style="line-height: 1.3;">${escaped}</code></pre><button onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)" class="absolute top-10 right-2 px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">Copiar</button></div>`;
   });
 
   // 2. Casos especiais: Imagem dentro de link [![alt](img)](href "title")
