@@ -7,15 +7,25 @@ export function markdownToHtml(markdown: string): string {
 
   // 1. Blocos de código (processar PRIMEIRO antes de código inline)
   html = html.replace(/```([\w-]*)\n([\s\S]*?)```/g, (_, lang, code) => {
-    // Remove múltiplas linhas vazias consecutivas, deixando no máximo uma
-    const cleaned = code.trim().replace(/\n\s*\n\s*\n+/g, '\n\n').replace(/\n\s*\n\s*\n+/g, '\n');
+    // Remove TODAS as linhas vazias extras - deixa apenas quebras simples
+    const cleaned = code
+      .trim()
+      .split('\n')
+      .filter((line, index, array) => {
+        // Remove linha se ela E a anterior forem vazias
+        if (index > 0 && line.trim() === '' && array[index - 1].trim() === '') {
+          return false;
+        }
+        return true;
+      })
+      .join('\n');
     
     const escaped = cleaned
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
     const language = lang || 'code';
-    return `<div class="relative my-6 group"><div class="bg-slate-800 px-4 py-2 text-xs text-slate-300 rounded-t-lg font-mono">${language}</div><pre class="bg-slate-900 dark:bg-slate-950 p-4 rounded-b-lg overflow-x-auto"><code class="text-sm text-slate-100 font-mono block whitespace-pre" style="line-height: 1.3;">${escaped}</code></pre><button onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)" class="absolute top-10 right-2 px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">Copiar</button></div>`;
+    return `<div class="relative my-6 group"><div class="bg-slate-800 px-4 py-2 text-xs text-slate-300 rounded-t-lg font-mono">${language}</div><pre class="bg-slate-900 dark:bg-slate-950 p-4 rounded-b-lg overflow-x-auto"><code class="text-sm text-slate-100 font-mono block whitespace-pre" style="line-height: 1.5;">${escaped}</code></pre><button onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)" class="absolute top-10 right-2 px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity">Copiar</button></div>`;
   });
 
   // 2. Casos especiais: Imagem dentro de link [![alt](img)](href "title")

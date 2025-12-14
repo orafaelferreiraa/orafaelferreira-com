@@ -37,10 +37,9 @@ Dentro da pasta \`infra/\` temos os principais arquivos que definem a infraestru
 
 O arquivo fixa as versões para garantir reprodutibilidade e compatibilidade:
 
-\`\`\`
+\`\`\`terraform
 terraform {
   required_version = "1.13.4"
-
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -117,10 +116,8 @@ resource "azurerm_static_web_app" "this" {
   name                = "swa-site-orafael"
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = "eastus2"
-
   sku_tier = "Free"
   sku_size = "Free"
-
   repository_url    = var.repository_url
   repository_branch = var.repository_branch
   repository_token  = var.repository_token
