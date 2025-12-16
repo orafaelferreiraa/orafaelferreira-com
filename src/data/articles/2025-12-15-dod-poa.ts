@@ -13,6 +13,8 @@ No dia **29 de novembro de 2025**, estive presente no [**DevOpsDays Porto Alegre
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/01.jpg)
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/01.png)
+
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/02.jpg)
 
 ## Minha palestra
