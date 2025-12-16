@@ -30,7 +30,7 @@ const Talks = () => {
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/dod-poa25.png",
       siteUrl: "https://devopsdays.org/events/2025-porto-alegre/welcome/",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devopsdayspoa-devsecops-cloudnative-activity-7399046861686222848-5Oct?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/DefesaemCamadasOS.pdf",      
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/DefesaemCamadasOS.pdf",    
     },{
       title: "Trabalhando para o Exterior: Realidade, Desafios e Oportunidades",
       event: "1ª Semana Acadêmica de ADS - IFSC",
