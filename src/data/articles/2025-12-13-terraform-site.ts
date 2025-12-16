@@ -235,14 +235,7 @@ Durante a migração, quis que a documentação acompanhasse o código sem esfor
 
 Tudo isso com proteção contra loops de commits do bot e com caches para acelerar o ciclo.
 
-
-## Próximos Passos (Evoluções)
-
-- Adicionar **outputs** úteis (ex.: \`swa_default_hostname\`) para integrações futuras.
-- Habilitar **ambientes** (ex.: staging) com workspaces Terraform e branches dedicados.
-- Expandir políticas Checkov/tfsec para requisitos internos de conformidade.
-- Adicionar monitoramento (Application Insights) ao front ou backend futuros.
-
+Caso queira dar uma olhada em detalhes: https://github.com/orafaelferreiraa/orafaelferreira-com/tree/main/.github/workflows
 
 ## Conclusão
 
