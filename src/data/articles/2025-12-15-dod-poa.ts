@@ -9,7 +9,7 @@ export const article: Article = {
 
 No dia **29 de novembro de 2025**, estive presente no [**DevOpsDays Porto Alegre**](https://devopsdays.org/events/2025-porto-alegre/welcome/), O DevOpsDays é conhecido mundialmente para quem ama infraestrutura ágil, e a edição de POA manteve a tradição: conteúdo de altíssimo nível.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dodpoa25/01.png)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/dod-poa25.png)
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/01.jpg)
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/02.jpg)
 
