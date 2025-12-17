@@ -21,7 +21,7 @@ No dia **29 de novembro de 2025**, estive presente no [**DevOpsDays Porto Alegre
 
 Fui aceito para apresentar a palestra **"Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source"**.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/09.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/09.png)
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/03.jpg)
 
@@ -33,7 +33,7 @@ Durante a sessão, explorei a estratégia de **Defesa em Profundidade (Defense i
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/04.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/11.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/11.png)
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/13.jpg)
 
@@ -72,7 +72,7 @@ A programação técnica foi excelente, especialmente a parte da tarde! Após mi
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/17.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/final.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/final.png)
 
 > **Segurança TEM que começar na fundação.**
 > Não existe "bala de prata", existe defesa em camadas.
