@@ -11,9 +11,7 @@ No dia **29 de novembro de 2025**, estive presente no [**DevOpsDays Porto Alegre
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/dod-poa25.png)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/01.jpg)
-
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/01.png)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/00.png)
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/02.jpg)
 
@@ -51,15 +49,15 @@ A programação técnica foi excelente, especialmente a parte da tarde! Após mi
 
 - **Daniel Rodrigues** falando sobre *Chaos Mesh: Engenharia do caos para Kubernetes*, explorando como injetar falhas de forma controlada.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/daniel.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/daniel.png)
 
 - **Vinicius Campitelli** sobre *Criando esteiras de CI/CD performáticas e seguras*, um tema vital para a cultura DevOps.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/vinicius.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/vinicius.png)
 
 - **Cristiano Diedrich** abordando o *DevFinOps - Além das tags*, mostrando a evolução da mentalidade de custos e eficiência.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/cristiano.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/cristiano.png)
 
 - O tradicional **Coffee Break**, um momento perfeito para recarregar as energias e fazer um networking de qualidade.
 
