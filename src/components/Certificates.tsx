@@ -13,6 +13,12 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2025",
   certificates: [{
+       title: "Certified Kubernetes Administrator (CKA)",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-12-CKA.pdf"
+  },{
+     title: "Ultimate Certified Kubernetes Administrator (CKA) Mock Exam Series",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-12-UltimateCertifiedKubernetesAdministrator(CKA)MockExamSeries.png"
+  }, {
     title: "Udemy Labs - Certified Kubernetes Administrator with Practice Tests",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-11-UdemyLabs-CertifiedKubernetesAdministratorwithPracticeTests.pdf"
   }, {

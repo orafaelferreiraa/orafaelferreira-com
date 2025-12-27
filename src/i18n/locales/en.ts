@@ -28,7 +28,7 @@ export default {
       highlights: {
         experience: {
           title: "Experience & Credentials",
-          description: "Over 10 years in technology, 19 technical certifications, degree in Computer Science",
+          description: "Over 10 years in technology, 20 technical certifications, degree in Computer Science",
           details: "Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star, Green Software Champion"
         },
         specialization: {
@@ -153,7 +153,7 @@ export default {
       highlights: {
         experience: "Over 10 years of experience in technology projects, including multinationals and enterprise environments",
         global: "Global experience as Senior Azure DevOps Solution Engineer at an American company",
-        education: "Degree in Computer Science and +19 relevant technical certifications",
+        education: "Degree in Computer Science and 20 relevant technical certifications",
         mvp: "Microsoft MVP and Microsoft Certified Trainer (MCT)",
         ambassador: "DevOps Institute Ambassador - internationally recognized",
         aluraStar: "Alura Star - official program ambassador",
@@ -311,7 +311,7 @@ export default {
     pages: {
       home: {
         title: "Rafael Martin - Cloud & DevOps Engineer",
-        description: "DevOps Engineer specialized in Cloud and Platform Engineering. Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star. Over 10 years in technology and 19 technical certifications in Azure, DevOps, FinOps and Platform Engineering.",
+        description: "DevOps Engineer specialized in Cloud and Platform Engineering. Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star. Over 10 years in technology and 20 technical certifications in Azure, DevOps, FinOps and Platform Engineering.",
         ogDescription: "Specialist in Azure, DevOps, FinOps and Platform Engineering. Turning cloud environments into resilient and secure platforms."
       },
       table: {
@@ -335,7 +335,7 @@ export default {
       highlights: {
         experience: "Over 10 years of experience in technology projects, including multinationals and enterprise environments",
         global: "Global experience as Senior Azure DevOps Solution Engineer at an American company",
-        education: "Degree in Computer Science and +19 relevant technical certifications",
+        education: "Degree in Computer Science and 20 relevant technical certifications",
         mvp: "Microsoft MVP and Microsoft Certified Trainer (MCT)",
         ambassador: "DevOps Institute Ambassador - internationally recognized",
         aluraStar: "Alura Star - official program ambassador",

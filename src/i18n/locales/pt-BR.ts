@@ -35,7 +35,7 @@ export default {
       highlights: {
         experience: {
           title: "Experiência & Credenciais",
-          description: "Mais de 10 anos em tecnologia, 19 certificações técnicas, formado em Ciência da Computação",
+          description: "Mais de 10 anos em tecnologia, 20 certificações técnicas, formado em Ciência da Computação",
           details: "Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star, Green Software Champion"
         },
         specialization: {
@@ -160,7 +160,7 @@ export default {
       highlights: {
         experience: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
         global: "Atuação Global como Senior Azure DevOps Solution Engineer em empresa americana",
-        education: "Formação em Ciência da Computação e +19 certificações técnicas relevantes",
+        education: "Formação em Ciência da Computação e 20 certificações técnicas relevantes",
         mvp: "Microsoft MVP e Microsoft Certified Trainer (MCT)",
         ambassador: "DevOps Institute Ambassador - reconhecido internacionalmente",
         aluraStar: "Alura Star - embaixador oficial do programa",
@@ -318,7 +318,7 @@ export default {
     pages: {
       home: {
         title: "Rafael Martin - Cloud & DevOps Engineer",
-        description: "Engenheiro DevOps especializado em Cloud e Platform Engineering. Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star. Mais de 10 anos em tecnologia e 19 certificações técnicas em Azure, DevOps, FinOps e Engenharia de Plataforma.",
+        description: "Engenheiro DevOps especializado em Cloud e Platform Engineering. Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star. Mais de 10 anos em tecnologia e 20 certificações técnicas em Azure, DevOps, FinOps e Engenharia de Plataforma.",
         ogDescription: "Especialista em Azure, DevOps, FinOps e Engenharia de Plataforma. Transformando ambientes em nuvem em plataformas resilientes e seguras."
       },
       awards: {

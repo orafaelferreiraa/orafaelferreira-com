@@ -11,7 +11,12 @@ interface Certification {
 }
 
 const certifications: Certification[] = [
-  {
+    {
+    name: "Certified Kubernetes Administrator (CKA)",
+    provider: "The Linux Foundation",
+    image: "https://images.credly.com/size/340x340/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png",
+    link: "https://www.credly.com/badges/975ca65a-c51f-4c70-93d7-85972773c0fd/public_url"
+  },{
     name: "HashiCorp Certified: Terraform Associate (003)",
     provider: "HashiCorp",
     image: "https://images.credly.com/size/340x340/images/0dc62494-dc94-469a-83af-e35309f27356/blob",
