@@ -65,6 +65,7 @@ import { article as ifdsads } from './2025-11-18-ifds-ads.ts';
 import { article as terraformsite } from './2025-12-13-terraform-site.ts'; 
 import { article as dodpoa25 } from './2025-12-15-dod-poa.ts'; 
 import { article as cka } from './2025-12-27-cka.ts'; 
+import { article as dodfloripa25 } from './2025-12-28-dod-floripa25.ts'; 
 
 export const allArticles: Article[] = [
   artigoAksAcr,
@@ -130,7 +131,8 @@ export const allArticles: Article[] = [
   ifdsads,
   terraformsite,
   dodpoa25,
-  cka
+  cka,
+  dodfloripa25
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getArticleBySlug(slug: string): Article | undefined {

@@ -22,19 +22,16 @@ Juntou curiosidade + vontade de ajudar? Então o grupo é pra você! 🎉
 
 * ▶️ [Youtube - Azure Floripa](https://www.youtube.com/channel/UCXgiLXOwNL33-86Xl_2KMgg)
 
----
 
 ## Eventos Organizados
-
-### 2024
 
 | Data | Evento | Formato |
 |------|--------|---------|
 | 02 set 2024 | [**DP‑900: Fundamentos de Dados do Azure**](https://www.orafaelferreira.com/posts/curso-dp-900/) | Presencial |
 | 10 jun 2024 | [**AZ‑900: Fundamentos do Azure**](https://www.orafaelferreira.com/posts/curso-az-900/) | Presencial |
 | 10 abr 2024 | [**Global Azure 2024 feat. Azure Floripa**](https://www.orafaelferreira.com/posts/global-azure24/) | Online |
-| 10 abr 2024 | [**Global Azure 2025 feat. Azure Floripa**](https://www.orafaelferreira.com/posts/global-azure24/) | Online |
-| 10 abr 2024 | [**Global Azure 2025 – Azure Floripa**](https://www.meetup.com/azure-floripa/events/306207034/?eventOrigin=group_upcoming_events)| Presencial |
+| 10 abr 2025 | [**Global Azure 2025 feat. Azure Floripa**](https://www.orafaelferreira.com/posts/global-azure24/) | Online |
+| 10 abr 2025 | [**Global Azure 2025 – Azure Floripa**](https://www.meetup.com/azure-floripa/events/306207034/?eventOrigin=group_upcoming_events)| Presencial |
 
 ---
 ## Conhecendo as vertentes do Copilot e o que ele pode fazer no Azure com Marcelo Souza
@@ -76,8 +73,6 @@ Juntou curiosidade + vontade de ajudar? Então o grupo é pra você! 🎉
 **Curtiu?**  
 Fica o convite: participe, compartilhe e ajude a comunidade a crescer. 🚀  
 Nos vemos no próximo encontro!
-
----
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/azurefloripa.png)
 `,

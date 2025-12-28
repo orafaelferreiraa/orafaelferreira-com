@@ -23,8 +23,6 @@ Em **16 de novembro de 2024**, Floripa recebeu +150 participantes para um di
 **Obrigado!** A mágica só acontece graças a voluntários, patrocinadores e à comunidade DevOps que compareceu em peso.  
 Nos vemos no **DevOpsDays Floripa 2025**! 🚀
 
----
-
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
 `,
   date: "2024-07-21",

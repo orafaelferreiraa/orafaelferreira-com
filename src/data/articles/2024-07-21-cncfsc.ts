@@ -5,13 +5,14 @@ export const article: Article = {
   title: "Organizador – Cloud Native Santa Catarina",
   excerpt: "O Cloud Native Santa Catarina é o chapter oficial da CNCF para a região de Santa Catarina, focado em disseminar tecnologias cloud native (Kubernetes, Open Telemetry, Prometheus, Envoy, etc.) e apoiar projetos do landscape.",
   content: `
+![Cloud Native Santa Catarina](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/cncfsc_cover.jpg)
+
 ## Sobre o capítulo
 
 O **Cloud Native Santa Catarina** é o *chapter* oficial da CNCF para a região de Santa Catarina, focado em disseminar tecnologias cloud native (Kubernetes, Open Telemetry, Prometheus, Envoy, etc.) e apoiar projetos do landscape.  
 Atuamos em **Florianópolis** – mas já levamos meetups para Blumenau e região.
 
-
-Site oficial do grupo: <https://community.cncf.io/cloud-native-santa-catarina/>
+[Site oficial do grupo:](https://community.cncf.io/cloud-native-santa-catarina/)
 
 ## Por que isso importa? 💙
 
@@ -28,7 +29,7 @@ Se você curte o universo cloud native, cola com a gente!
 * 💼 [LinkedIn](https://www.linkedin.com/company/cncfsc/)
 * ▶️ [YouTube](https://www.youtube.com/@cloudnativesc)
 
----
+![Cloud Native Santa Catarina](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/cncfsc_logo.jpg)
 
 `,
   date: "2024-07-21",
