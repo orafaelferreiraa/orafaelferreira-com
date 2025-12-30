@@ -1,0 +1,605 @@
+{
+  "artigo-aks-acr": {
+    "slug": "artigo-aks-acr",
+    "title": "Kubernetes: Aproveitando o ACR como Repositório de Imagem Docker para Implementação de API",
+    "excerpt": "O Kubernetes é uma das tecnologias mais populares para gerenciamento de contêineres na nuvem. Ele permite a implantação, escalabilidade e gestão de aplicativos em contêineres de forma altamente automatizada e confiável.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-aks-acr1.png",
+    "date": "2023-02-05",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/artigo-aks-acr"
+  },
+  "artigo-aks-volume": {
+    "slug": "artigo-aks-volume",
+    "title": "A importância do Persistent Volume no Kubernetes AKS: garantindo dados seguros e acessíveis",
+    "excerpt": "Olá, a todos! Quando se trata de aplicações em containers, o uso de persistência de dados é fundamental para garantir a continuidade dos serviços. É por isso que o Persistent Volume (PV) e o Persistent Volume Claim (PVC) são recursos importantes do Kubernetes.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-aks-volume1.png",
+    "date": "2023-02-05",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/artigo-aks-volume"
+  },
+  "artigo-pipelines-ci-cd": {
+    "slug": "artigo-pipelines-ci-cd",
+    "title": "Pipelines CI/CD",
+    "excerpt": "As metodologias ágeis têm mudado a forma como as empresas desenvolvem software, e o desenvolvimento contínuo é uma parte importante dessa mudança.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-pipelines.ci.cd1.png",
+    "date": "2023-02-05",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/artigo-pipelines-ci-cd"
+  },
+  "artigo-prometheus": {
+    "slug": "artigo-prometheus",
+    "title": "Alertmanager no Prometheus: Simplificando o Gerenciamento de Alertas",
+    "excerpt": "Em um mundo onde o monitoramento e a observabilidade tornaram-se cruciais para a operação eficiente de infraestruturas de TI, as ferramentas de alerta são mais importantes do que nunca. Uma dessas ferramentas que se destaca é o Alertmanager do Prometheus.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-08-14-artigo-prometheus1.png",
+    "date": "2023-08-14",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/artigo-prometheus"
+  },
+  "ia-gen": {
+    "slug": "ia-gen",
+    "title": "Explorando a Inteligência Artificial Generativa",
+    "excerpt": "A inteligência artificial (IA) tem transformado diversos setores e aspectos da vida cotidiana, e a chegada da IA generativa marca uma nova era de inovação e possibilidades.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/1.png",
+    "date": "2024-07-25",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/ia-gen"
+  },
+  "participacoes": {
+    "slug": "participacoes",
+    "title": "Participações em Lives",
+    "excerpt": "Olá, pessoal!",
+    "image": "https://img.youtube.com/vi/C7tKgg5uD9w/0.jpg",
+    "date": "2023-10-28",
+    "category": "Posts",
+    "url": "https://www.orafaelferreira.com/artigos/participacoes"
+  },
+  "eventos": {
+    "slug": "eventos",
+    "title": "Lista dos eventos de Tecnologia Presenciais que eu já fui",
+    "excerpt": "Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências que tive participando de eventos de tecnologia presenciais. Esses eventos foram oportunidades únicas para aprender, fazer networking e me manter atualizado sobre as últimas tendências tecnológicas.",
+    "image": null,
+    "date": "2023-10-30",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/eventos"
+  },
+  "mentoriacloud23": {
+    "slug": "mentoriacloud23",
+    "title": "Voluntariado no Projeto de Mentoria 3.0 do Canal da Cloud",
+    "excerpt": "Estou empolgado para compartilhar minha experiência como voluntário no Projeto de Mentoria de Carreira do Canal da Cloud durante o período de Agosto de 2023 a Dezembro de 2023.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mentor.jpeg",
+    "date": "2023-11-06",
+    "category": "Posts",
+    "url": "https://www.orafaelferreira.com/artigos/mentoriacloud23"
+  },
+  "foundation-cloud": {
+    "slug": "foundation-cloud",
+    "title": "Construindo uma Fundação Sólida para a Adoção da Nuvem com o Azure Cloud Adoption Framework",
+    "excerpt": "A adoção da nuvem tornou-se crucial nas estratégias de transformação digital das organizações modernas. Com a promessa de escalabilidade, eficiência e inovação, a nuvem é uma força poderosa a ser considerada.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2023-12-04-foundation-cloud1.jpeg",
+    "date": "2023-12-04",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/foundation-cloud"
+  },
+  "well-architect-foundation-cloud": {
+    "slug": "well-architect-foundation-cloud",
+    "title": "Construindo uma Fundação Sólida para a Nuvem: Pilares do Well-Architected Framework e o Azure Cloud Adoption Framework",
+    "excerpt": "Com o avanço da tecnologia e a crescente adoção de soluções em nuvem, tornou-se essencial para as organizações construírem uma infraestrutura de TI robusta e bem planejada.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2023-12-12-well-architect-foundation-cloud4.jpeg",
+    "date": "2023-12-11",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/well-architect-foundation-cloud"
+  },
+  "foundation-lz": {
+    "slug": "foundation-lz",
+    "title": "Construindo uma Fundação Sólida para a Adoção da Nuvem: Integrando Landing Zones com Azure Cloud Foundation",
+    "excerpt": "No mundo acelerado da tecnologia, a adoção da nuvem evoluiu de uma tendência para uma necessidade estratégica. Enquanto empresas buscam agilidade e inovação, emerge a complexidade de construir uma infraestrutura de nuvem robusta e escalável.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz04.png",
+    "date": "2024-01-02",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/foundation-lz"
+  },
+  "devops-foundation-cloud": {
+    "slug": "devops-foundation-cloud",
+    "title": "Construindo uma Fundação Sólida para a Nuvem: A importancia da Cultura DevOps e sua Sinergia com Cloud Native na Fundação Cloud",
+    "excerpt": "Em um mundo impulsionado pela tecnologia, a fundação cloud robusta se torna um pilar essencial. Este artigo explora a cultura DevOps e sua integração com Kubernetes, destacando como essas práticas revolucionam a entrega de software e fortalecem as práticas Cloud Native.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-08-devops-foundation-cloud01.png",
+    "date": "2024-01-08",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/devops-foundation-cloud"
+  },
+  "azure-backup-virtual-machines": {
+    "slug": "azure-backup-virtual-machines",
+    "title": "Azure Backup should be enabled for Virtual Machines",
+    "excerpt": "Exploramos por que a policy 'Azure Backup should be enabled for Virtual Machines' é essencial em ambientes corporativos, detalhando os riscos de não ter backup automático em VMs.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/AzureBackupshouldbeenabledforVirtualMachines/00.png",
+    "date": "2024-01-15",
+    "category": "Azure Policy",
+    "url": "https://www.orafaelferreira.com/artigos/azure-backup-virtual-machines"
+  },
+  "2meetcncf": {
+    "slug": "2meetcncf",
+    "title": "Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentáve - Cloud Native Floripa - 2º Edição",
+    "excerpt": "No dia 21 de fevereiro de 2024, tive o prazer de palestrar no 2º Cloud Native Floripa Meetup, organizado pelo Community Group Cloud Native Santa Catarina. O evento realizado na \\",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/1.jpg",
+    "date": "2024-02-22",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/2meetcncf"
+  },
+  "kcdsp24": {
+    "slug": "kcdsp24",
+    "title": "Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentável - KCD São Paulo - Brasil 2024",
+    "excerpt": "No dia 24 de fevereiro de 2024, tive a oportunidade de palestrar no Kubernetes Community Days (KCD) Brasil, realizado na Natura NASP, em São Paulo.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/kcdsp24/00.jpg",
+    "date": "2024-02-25",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/kcdsp24"
+  },
+  "global-azure24": {
+    "slug": "global-azure24",
+    "title": "Global Azure feat Azure Floripa 2024",
+    "excerpt": "Estamos entusiasmados em compartilhar que o Global Azure 2024 foi um sucesso e o Azure Floripa marcou presença! Este evento global foi uma oportunidade incrível para aprender e compartilhar conhecimentos sobre a plataforma de Cloud Computing da Microsoft, o Azure.",
+    "image": "https://img.youtube.com/vi/ql5zFgKBLzo/0.jpg",
+    "date": "2024-05-18",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/global-azure24"
+  },
+  "azure-static-web-apps": {
+    "slug": "azure-static-web-apps",
+    "title": "Simplificando a Utilização do Static Web Apps no Azure",
+    "excerpt": "Os Azure Static Web Apps são um serviço que cria e implanta automaticamente aplicativos Web full stack no Azure a partir de um repositório de códigos.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/swa/swa000.png",
+    "date": "2024-05-24",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/azure-static-web-apps"
+  },
+  "tc-bc24": {
+    "slug": "tc-bc24",
+    "title": "GreenOps na Cloud: Construindo o Futuro com Sustentabilidade - Tech Connection Balneário Camburiú 2024",
+    "excerpt": "No Tech Connection 2024, realizado em Balneário Camboriú, trouxe uma palestra com tema crucial para o futuro da tecnologia e do planeta: GreenOps na Cloud.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/00.jpg",
+    "date": "2024-06-02",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/tc-bc24"
+  },
+  "criacao-vm": {
+    "slug": "criacao-vm",
+    "title": "Guia de Criação de Maquinas Virtuais no Microsoft Azure",
+    "excerpt": "Este artigo será uma base introdutória essencial para os próximos conteúdos que virão, onde exploraremos mais a fundo a criação e gerenciamento de máquinas virtuais no Microsoft Azure.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example1.png",
+    "date": "2024-06-05",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/criacao-vm"
+  },
+  "config-repository": {
+    "slug": "config-repository",
+    "title": "Configuração de um repositório no Github",
+    "excerpt": "Este artigo serve como uma base introdutória para futuros tutoriais relacionados à configuração de repositórios no GitHub.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example9.png",
+    "date": "2024-06-06",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/config-repository"
+  },
+  "curso-az-900": {
+    "slug": "curso-az-900",
+    "title": "Curso AZ-900 - Fundamentos da Azure 2024",
+    "excerpt": "Agradecimento pelo Sucesso do Evento AZ-900: Fundamentos do Azure 📢",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/0.jpeg",
+    "date": "2024-06-10",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/curso-az-900"
+  },
+  "kubertenes": {
+    "slug": "kubertenes",
+    "title": "Plataformização da Cloud Foundation com Backstage: Desvendando os Segredos da Eficiência na Nuvem com Developer Experience - Esquenta TDC - KuberTENes Birthday Bash Santa Catarina + Azure Floripa + API Floripa",
+    "excerpt": "No dia 11 de junho de 2024, rolou o KuberTENes Birthday Bash Santa Catarina, um evento organizado pela comunidade Cloud Native Santa Catarina.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/01.JPG",
+    "date": "2024-06-17",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/kubertenes"
+  },
+  "podcast": {
+    "slug": "podcast",
+    "title": "Episódio Especial do Podcast LowOpsCast no TDC",
+    "excerpt": "No maior evento de desenvolvimento de software da América Latina, The Developer’s Conference (TDC), tive a oportunidade de gravar um episódio especial do meu podcast LowOpsCast.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Podcast-Ambev-Tech/00.JPG",
+    "date": "2024-06-23",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/podcast"
+  },
+  "talk-tdc": {
+    "slug": "talk-tdc",
+    "title": "Plataformização de Arquitetura de Dados com Backstage.io e IAC - TDC Florianópolis - Trilha Arquitetura de Dados 2024",
+    "excerpt": "No TDC Florianópolis 2024, tive a honra de palestrar na Trilha de Arquitetura de Dados, ao lado de meu amigo Cláudio Filipe Lima Rapôso.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/00.jpg",
+    "date": "2024-06-25",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/talk-tdc"
+  },
+  "antes-cloud-native-fundacao-solida": {
+    "slug": "antes-cloud-native-fundacao-solida",
+    "title": "Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentável",
+    "excerpt": "Descubra como a Green Computing, Cloud Foundation, DevOps, FinOps e Observabilidade não apenas definem o futuro tecnológico, mas impactam diretamente na responsabilidade social e sustentabilidade ambiental.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud01.png",
+    "date": "2024-07-14",
+    "category": "Cloud Adoption Framework",
+    "url": "https://www.orafaelferreira.com/artigos/antes-cloud-native-fundacao-solida"
+  },
+  "finops-foundation-cloud": {
+    "slug": "finops-foundation-cloud",
+    "title": "Construindo uma Fundação Sólida para a Nuvem com FinOps: Maximizando os Custos em Ambientes Cloud Native",
+    "excerpt": "FinOps é uma estrutura operacional e prática cultural que maximiza o valor comercial da nuvem. Ela envolve a colaboração entre equipes de engenharia, finanças e negócios permitindo a tomada de decisões baseadas em dados afim de criar responsabilidade financeira.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-15-finops-foundation-cloud05.png",
+    "date": "2024-01-15",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/finops-foundation-cloud"
+  },
+  "observabilidade-foundation-cloud": {
+    "slug": "observabilidade-foundation-cloud",
+    "title": "Construindo uma Fundação Sólida para a Nuvem: Monitoria e Observabilidade para Performance e Eficiência em Ambientes Cloud Native",
+    "excerpt": "No contexto atual de tecnologias Cloud Native e microsserviços, exige uma abordagem robusta necessária de monitoria e observabilidade como componentes fundamentais para a garantia de eficiência operacional e performance.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-17-observabilidade-foundation-cloud01.png",
+    "date": "2024-01-17",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/observabilidade-foundation-cloud"
+  },
+  "azure-workbooks": {
+    "slug": "azure-workbooks",
+    "title": "Utilizando Azure Workbooks para Otimização de Custos com FinOps",
+    "excerpt": "A gestão eficaz dos custos na nuvem é um algo real e impactante para muitas organizações que adotaram a computação em nuvem.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/azure-workbooks/Arte-Logo.png",
+    "date": "2024-07-16",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/azure-workbooks"
+  },
+  "azure-floripa": {
+    "slug": "azure-floripa",
+    "title": "Organizador – Azure Floripa",
+    "excerpt": "Nossa comunidade tem o objetivo principal de explorar e apresentar as diversas soluções e serviços disponíveis na nuvem da Microsoft.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/azurefloripa.png",
+    "date": "2024-07-21",
+    "category": "Organizador Grupo de Comunidade",
+    "url": "https://www.orafaelferreira.com/artigos/azure-floripa"
+  },
+  "cncfsc": {
+    "slug": "cncfsc",
+    "title": "Organizador – Cloud Native Santa Catarina",
+    "excerpt": "O Cloud Native Santa Catarina é o chapter oficial da CNCF para a região de Santa Catarina, focado em disseminar tecnologias cloud native (Kubernetes, Open Telemetry, Prometheus, Envoy, etc.) e apoiar projetos do landscape.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/cncfsc_cover.jpg",
+    "date": "2024-07-21",
+    "category": "Organizador Grupo de Comunidade",
+    "url": "https://www.orafaelferreira.com/artigos/cncfsc"
+  },
+  "comu-dod-floripa": {
+    "slug": "comu-dod-floripa",
+    "title": "Organizador – DevOpsDays Florianópolis",
+    "excerpt": "Desde 2023 faço parte do team que mantém vivo o DevOpsDays Florianópolis — capítulo catarinense da série global de conferências DevOps.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/logo-dod.png",
+    "date": "2024-07-21",
+    "category": "Organizador Grupo de Comunidade",
+    "url": "https://www.orafaelferreira.com/artigos/comu-dod-floripa"
+  },
+  "eventodod-floripa": {
+    "slug": "eventodod-floripa",
+    "title": "DevOpsDays Florianópolis 2024",
+    "excerpt": "O DevOpsDays é uma conferência global que une desenvolvimento, operações e cultura DevOps. Em 16 de novembro de 2024, Floripa recebeu +150 participantes para um dia inteiro de talks, open‑spaces e networking.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod/0.png",
+    "date": "2024-07-21",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/eventodod-floripa"
+  },
+  "kcd-floripa24": {
+    "slug": "kcd-floripa24",
+    "title": "KCD Floripa Brazil 2024",
+    "excerpt": "Os Kubernetes Community Days (KCDs) são eventos organizados pela comunidade que reúnem entusiastas e profissionais interessados no universo nativo da nuvem e de código aberto.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/0.png",
+    "date": "2024-07-21",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/kcd-floripa24"
+  },
+  "guia-criacao-vms-azure": {
+    "slug": "guia-criacao-vms-azure",
+    "title": "Guia de Criação de Máquinas Virtuais no Microsoft Azure",
+    "excerpt": "Este artigo é uma base introdutória essencial para criar máquinas virtuais no Azure, explorando os passos para criar VMs Linux e Windows, incluindo Resource Groups, Virtual Networks e NSGs.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example1.png",
+    "date": "2024-07-26",
+    "category": "Azure",
+    "url": "https://www.orafaelferreira.com/artigos/guia-criacao-vms-azure"
+  },
+  "6rs": {
+    "slug": "6rs",
+    "title": "Estratégias de Modernização de Aplicações: Aplicando os 6Rs com o Cloud Adoption Framework",
+    "excerpt": "A modernização de aplicações na nuvem é extremamente importante para que as organizações maximizem suas capacidades oferecidas pela computação em nuvem.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/1.png",
+    "date": "2024-08-11",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/6rs"
+  },
+  "curso-dp-900": {
+    "slug": "curso-dp-900",
+    "title": "Curso DP-900 Fundamentos de Dados do Azure 2024",
+    "excerpt": "No último sábado, 31 de agosto de 2024, a comunidade técnica Azure Floripa se reuniu na Igreja Batista de Forquilhinhas para um dia de aprendizado e colaboração com o curso DP-900: Fundamentos de Dados do Azure.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/1.jpeg",
+    "date": "2024-09-02",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/curso-dp-900"
+  },
+  "codecon": {
+    "slug": "codecon",
+    "title": "Minha Experiência na Codecon Summit: Um Evento Para Devs e Por Devs",
+    "excerpt": "No último dia 07/09/2024, tive a oportunidade de participar da Codecon Summit, um dos maiores eventos de tecnologia voltados para desenvolvedores.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/entra.mp4",
+    "date": "2024-09-11",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/codecon"
+  },
+  "zsh": {
+    "slug": "zsh",
+    "title": "Como Configurar um WSL de Respeito",
+    "excerpt": "Neste artigo, você vai aprender a montar um WSL de respeito, ambiente que todo DevOps, SRE ou engenheiro de plataforma deveria ter na manga. Vamos configurar o WSL com Zsh, tema e plugins, instalar ferramentas essenciais como e , e configurar atalhos poderosos como o alias para .",
+    "image": null,
+    "date": "2024-09-12",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/zsh"
+  },
+  "tls": {
+    "slug": "tls",
+    "title": "Prepare-se para a Transição Obrigatória do TLS 1.2 no Azure",
+    "excerpt": "Em outubro de 2024, a Microsoft encerrará o suporte para as versões mais antigas do TLS (Transport Layer Security), especificamente TLS 1.0 e 1.1, em todos os serviços Azure.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png",
+    "date": "2024-10-08",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/tls"
+  },
+  "agil": {
+    "slug": "agil",
+    "title": "Automatizando Infraestrutura Moderna com Metodologias Ágeis",
+    "excerpt": "No mundo altamente competitivo em todas as áreas (iremos focar na tecnologia), a agilidade tornou-se uma característica indispensável, especialmente para profissionais de DevOps (assim como eu).",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/agil/agil1.png",
+    "date": "2024-10-29",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/agil"
+  },
+  "sustentability-day": {
+    "slug": "sustentability-day",
+    "title": "Deploy de um Futuro com Sustentabilidade: GreenOps na Cloud - #27 Cloud Native São Paulo - Sustainability Day na AWS 2024",
+    "excerpt": "No último dia 22 de outubro, o CNCF - Cloud Native São Paulo 🇧🇷, em parceria com a Amazon Web Services (AWS) e a Cloud Native Computing Foundation (CNCF), organizou o aguardado evento \\",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sustentability.day/1.jpg",
+    "date": "2024-10-31",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/sustentability-day"
+  },
+  "mvp-day": {
+    "slug": "mvp-day",
+    "title": "Architecting a Secure Landing Zone for AI Workloads in the Cloud - MVP TALKS CI&T 2024",
+    "excerpt": "No último dia 24 de outubro, organizamos o primeiro CI&T MVP Day — um evento interno, exclusivo para funcionários da CI&T, realizado na nossa sede global tech em Campinas.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp.talks/1.png",
+    "date": "2024-11-02",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/mvp-day"
+  },
+  "tftec2024": {
+    "slug": "tftec2024",
+    "title": "TFTEC Ao Vivo 2024: Conexão, Conhecimento e Imersão em Cloud",
+    "excerpt": "Nos dias 26 e 27 de outubro, São Paulo foi palco do evento TFTEC Ao Vivo, uma imersão totalmente única no universo do Azure.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/01.png",
+    "date": "2024-11-04",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/tftec2024"
+  },
+  "tc-floripa24": {
+    "slug": "tc-floripa24",
+    "title": "Estratégias de Cloud Foundation em Larga Escala: Garantindo que Você Não Retorne para On-Premise - Tech Connection Floripa 2 Edição 2024",
+    "excerpt": "No dia 9 de novembro de 2024, tive o prazer de palestrar na segunda edição do Tech Connection Florianópolis.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/1.jpeg",
+    "date": "2024-11-10",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/tc-floripa24"
+  },
+  "code-island24": {
+    "slug": "code-island24",
+    "title": "Pipelines com Azure DevOps: Automatizando o (im)possível - Code Island Cloud 2024",
+    "excerpt": "No último sábado, 23 de novembro de 2024, tive o prazer de participar como palestrante da segunda edição do Code Island Cloud, realizado na Unisul – Centro Florianópolis.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/0.jpg",
+    "date": "2024-11-24",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/code-island24"
+  },
+  "az-policy": {
+    "slug": "az-policy",
+    "title": "O que é Azure Policy? Uma Visão Completa",
+    "excerpt": "O Azure Policy é um recurso da Microsoft Azure que ajuda organizações a implementar governança e compliance de forma automatizada e em larga escala.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/01.png",
+    "date": "2025-01-09",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/az-policy"
+  },
+  "translatek8s": {
+    "slug": "translatek8s",
+    "title": "Minhas Contribuições para a Tradução do Kubernetes",
+    "excerpt": "Como parte do meu aprendizado e desejo de retribuir à comunidade, decidi participar do projeto de tradução da documentação do Kubernetes para o português brasileiro. Este esforço é importante para tornar a tecnologia mais acessível ao público da língua portuguesa.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png",
+    "date": "2025-03-23",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/translatek8s"
+  },
+  "sqlsat25": {
+    "slug": "sqlsat25",
+    "title": "Pipelines com Azure DevOps: Automatizando o Provisionamento Seguro da sua infraestrutura na nuvem - SQL Saturday 2025 by Comunidado",
+    "excerpt": "No último sábado, 5 de abril de 2025, tive o imenso prazer de participar como palestrante no SQL Saturday Joinville 2025, realizado na UNIVILLE – Campus Universitário, localizado em Joinville, SC.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/01.jpg",
+    "date": "2025-04-06",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/sqlsat25"
+  },
+  "carreira-internacional": {
+    "slug": "carreira-internacional",
+    "title": "Trabalhando para o Exterior – Global Azure Floripa 2025",
+    "excerpt": "Durante o Global Azure 2025 – Edição Azure Floripa, tive o prazer de abrir o evento ao lado do grande amigo e profissional Vinicius Deschamps com uma palestra que foge um pouco do tradicional técnico — mas que é um divisor de águas \\",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/00.png",
+    "date": "2025-05-18",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/carreira-internacional"
+  },
+  "global-azure25": {
+    "slug": "global-azure25",
+    "title": "Global Azure feat Azure Floripa 2025 (Evento Remoto)",
+    "excerpt": "Mais um ano, mais uma edição do Global Azure 2025 – Edição Azure Floripa! E sim, o Azure Floripa colou junto mais uma vez pra fazer história com a comunidade técnica brasileira. Foram 2 dias intensos, com conteúdo de qualidade, e muito aprendizado!",
+    "image": "https://img.youtube.com/vi/fWaowwBWUwU/0.jpg",
+    "date": "2025-05-18",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/global-azure25"
+  },
+  "global-azure25pres": {
+    "slug": "global-azure25pres",
+    "title": "Global Azure 2025 – Azure Floripa (Evento Presencial)",
+    "excerpt": "No dia 10 de maio de 2025, rolou a edição presencial do Global Azure 2025 – Edição Azure Floripa em Florianópolis, e que evento, meus amigos!",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/0.png",
+    "date": "2025-05-18",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/global-azure25pres"
+  },
+  "mvp-conf-blu": {
+    "slug": "mvp-conf-blu",
+    "title": "Os 6Rs que Você Precisa Conhecer para Migrar para a Cloud; O sétimo R é de Rivotril?! - Esquenta MVP Conf Blumenau 2025",
+    "excerpt": "No último dia 26 de abril de 2025, Blumenau foi palco de um grande evento tech do sul do Brasil: o Esquenta MVP Conf, uma amostra da energia e do conteúdo de alto nível que teremos na próxima edição do MVP Conf em São Paulo.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvpconfblu24/01.jpeg",
+    "date": "2025-05-23",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/mvp-conf-blu"
+  },
+  "terraform-associate-artigo": {
+    "slug": "terraform-associate-artigo",
+    "title": "Certificação HashiCorp Terraform Associate 003: Dicas, Experiências e Preparação",
+    "excerpt": "Fala galera! Tudo bom? Recentemente passei no exame HashiCorp Certified: Terraform Associate (003) e quero compartilhar com vocês um pouco sobre como foi a experiência, desde a estrutura da prova até as minhas dicas de estudo.",
+    "image": "https://images.credly.com/size/118x118/images/ed4be915-68f8-428a-b332-40ded9084ee5/blob",
+    "date": "2025-08-03",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/terraform-associate-artigo"
+  },
+  "hack": {
+    "slug": "hack",
+    "title": "Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer - Hacking na Web Day Florianópolis 2025",
+    "excerpt": "No último dia 16 de agosto de 2025, rolou em Florianópolis o HNWD (Hacking na Web Day), um dos eventos mais autênticos e relevantes da cena de hacking e segurança cibernética no Brasil.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/1.jpeg",
+    "date": "2025-08-20",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/hack"
+  },
+  "dod-crtb25": {
+    "slug": "dod-crtb25",
+    "title": "DevOps Além da Hype: Pessoas, Cultura e Prática - DevOpsDays Curitiba 2025",
+    "excerpt": "No dia 30 de agosto de 2025, tive o prazer de participar do DevOpsDays Curitiba, um dos principais eventos da comunidade DevOps no Brasil. O evento aconteceu no Centro Politécnico da UFPR, reunindo profissionais apaixonados por tecnologia, inovação e cultura DevOps.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/DOD-Curitiba/1.png",
+    "date": "2025-09-01",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/dod-crtb25"
+  },
+  "dod-meetupaws": {
+    "slug": "dod-meetupaws",
+    "title": "Explorando a cultura DevOps: Por que tanto se fala de cultura por trás da entrega contínua? - Encontro das comunidades AWS User Group Floripa + DevOps Floripa 2025",
+    "excerpt": "No dia 03 de setembro de 2025, participei como palestrante no Encontro das comunidades AWS User Group Floripa + DevOps Floripa, realizado no Auditório da ACATE - Passeio Primavera (SC-401).",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EncontroDOD/01.jpeg",
+    "date": "2025-09-30",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/dod-meetupaws"
+  },
+  "tdc-greenops": {
+    "slug": "tdc-greenops",
+    "title": "GreenOps na Cloud: Arquitetando um Futuro Sustentável - TDC São Paulo 2025",
+    "excerpt": "No dia 17 de setembro de 2025, participei como palestrante da Trilha de Arquitetura Cloud no TDC São Paulo, um dos maiores eventos de tecnologia do Brasil, realizado no ProMagno, em São Paulo - SP.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/TDCSP25/01.png",
+    "date": "2025-10-04",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/tdc-greenops"
+  },
+  "az-700": {
+    "slug": "az-700",
+    "title": "Projetar e Implementar Soluções de Rede no Azure - AZ-700",
+    "excerpt": "Se você está querendo se aventurar no mundo das redes em nuvem, a certificação AZ-700 é o passaporte para provar que domina como projetar e implementar soluções de rede dentro do Microsoft Azure.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/01.png",
+    "date": "2025-10-06",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/az-700"
+  },
+  "mvp-crtb": {
+    "slug": "mvp-crtb",
+    "title": "DevOps Além da Hype: Pessoas, Cultura e Prática - Esquenta MVPConf 2025 Curitiba",
+    "excerpt": "No dia 27 de setembro de 2025, participei como palestrante no Esquenta do MVPConf 2025, realizado no auditório da UTFPR, em Curitiba – PR. Um evento incrível que serviu como prévia do maior encontro de especialistas Microsoft do Brasil: o MVPConf.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/EsquentaMVPCuritiba.png",
+    "date": "2025-10-12",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/mvp-crtb"
+  },
+  "wsd-devops": {
+    "slug": "wsd-devops",
+    "title": "Antes de Estudar Ferramentas, Entenda a Cultura DevOps - whiteStone_dev 8ª Edição",
+    "excerpt": "No dia 02 de outubro de 2025, participei como palestrante na 8ª edição da whiteStone_dev, realizada no INAITEC – Pedra Branca, em Palhoça (SC).",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/01.png",
+    "date": "2025-10-19",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/wsd-devops"
+  },
+  "mvp-conf-sp": {
+    "slug": "mvp-conf-sp",
+    "title": "GreenOps e Cloud Sustentável no MVP Conf 2025",
+    "excerpt": "Nos dias 24 e 25 de outubro de 2025, participei do MVP Conf Brasil — o maior encontro de especialistas Microsoft do país — levando uma talk sobre sustentabilidade na nuvem e o papel do GreenOps no futuro das arquiteturas cloud.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp25/01.png",
+    "date": "2025-11-10",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/mvp-conf-sp"
+  },
+  "trabalhar-para-o-exterior-ifsc-2025": {
+    "slug": "trabalhar-para-o-exterior-ifsc-2025",
+    "title": "Trabalhar para o Exterior – Realidade, Desafios e Oportunidades no IFSC",
+    "excerpt": "Na 1ª Semana Acadêmica de ADS do IFSC, eu e Vinícius Deschamps compartilhamos a realidade de trabalhar para o exterior — desafios, oportunidades e histórias que não aparecem no LinkedIn.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/1.jpg",
+    "date": "2025-11-18",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/trabalhar-para-o-exterior-ifsc-2025"
+  },
+  "artigo-terraform-infra-cicd": {
+    "slug": "artigo-terraform-infra-cicd",
+    "title": "A Stack por trás do meu Blog: IaC com Terraform, Static Web Apps e Github Actions",
+    "excerpt": "Como migrei meu blog para uma arquitetura moderna com Terraform e GitHub Actions: state remoto em Azure Storage, Static Web Apps, domínio customizado e um pipeline confiável que leva cada mudança para produção.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-13-terraform-site.ts.png",
+    "date": "2025-12-13",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/artigo-terraform-infra-cicd"
+  },
+  "devopsdays-poa-2025": {
+    "slug": "devopsdays-poa-2025",
+    "title": "Segurança em Camadas e Open Source no DevOpsDays POA 2025",
+    "excerpt": "No dia 29 de novembro de 2025, participei do DevOpsDays Porto Alegre — o maior encontro da cultura DevOps do sul do país — levando uma talk sobre Defesa em Profundidade e ferramentas Open Source para proteger ambientes Cloud Native.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/dod-poa25.png",
+    "date": "2025-12-02",
+    "category": "Registro Eventos Presenciais",
+    "url": "https://www.orafaelferreira.com/artigos/devopsdays-poa-2025"
+  },
+  "jornada-certificacao-cka": {
+    "slug": "jornada-certificacao-cka",
+    "title": "Como foi minha jornada para a certificação CKA",
+    "excerpt": "Três meses de estudo focado, labs diários na KodeKloud, simulados e checklists que usei para conquistar a certificação CKA.",
+    "image": "https://images.credly.com/size/340x340/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png",
+    "date": "2025-12-27",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/jornada-certificacao-cka"
+  },
+  "devopsdays-florianopolis-2025": {
+    "slug": "devopsdays-florianopolis-2025",
+    "title": "DevOpsDays Florianópolis 2025",
+    "excerpt": "DevOpsDays Floripa 2025: um dia que já ficou marcado por talks, café quentinho, salgadinhos disputados e muita gente boa conectada pela cultura DevOps.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-floripa25/1.jpg",
+    "date": "2025-12-28",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2025"
+  },
+  "aks-spot-terraform-economia-custos-taints": {
+    "slug": "aks-spot-terraform-economia-custos-taints",
+    "title": "AKS Spot & Terraform: Economia de Custos e o Guia Crítico de Taints",
+    "excerpt": "Aprenda a economizar até 90% no AKS usando Spot Node Pools com Terraform. Um guia completo sobre Taints, Tolerations e as configurações críticas para evitar interrupções inesperadas.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/0.png",
+    "date": "2025-12-30",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/aks-spot-terraform-economia-custos-taints"
+  }
+}
