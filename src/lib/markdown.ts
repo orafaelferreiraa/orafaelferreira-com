@@ -44,13 +44,13 @@ export function markdownToHtml(markdown: string): string {
     );
     
     let table = '<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse border border-slate-300 dark:border-slate-600">';
-    table += '<thead class="bg-slate-100 dark:bg-slate-800"><tr>';
+    table += '<thead class="bg-slate-800 dark:bg-slate-800"><tr>';
     headers.forEach((h: string) => {
       table += `<th class="border border-slate-300 dark:border-slate-600 px-4 py-2 text-left font-semibold">${h}</th>`;
     });
-    table += '</tr></thead><tbody class="bg-white dark:bg-slate-900">';
+    table += '</tr></thead><tbody class="bg-slate-900 dark:bg-slate-900">';
     rowsArray.forEach((row: string[]) => {
-      table += '<tr class="hover:bg-slate-50 dark:hover:bg-slate-800">';
+      table += '<tr class="hover:bg-slate-800 dark:hover:bg-slate-800">';
       row.forEach((cell: string) => {
         table += `<td class="border border-slate-300 dark:border-slate-600 px-4 py-2">${cell}</td>`;
       });

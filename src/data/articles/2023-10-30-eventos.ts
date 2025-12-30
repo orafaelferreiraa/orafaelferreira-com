@@ -11,6 +11,7 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 
 | Mês | Evento |
 |-----|--------|
+| Dez | [**DevOpsDays Florianópolis**](https://devopsdays.org/events/2025-florianopolis/welcome/) |
 | Nov | [**DevOpsDays Porto Alegre**](https://devopsdays.org/events/2025-porto-alegre/welcome/) |
 | Nov | [**DevOpsDays São Paulo**](https://devopsdays.org/events/2025-sao-paulo/welcome/) |
 | Nov | [**1ª Semana Acadêmica de ADS - IFSC**](https://saads.framer.website/) |

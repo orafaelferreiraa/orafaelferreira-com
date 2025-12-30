@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { articles } from "@/data/articles";
 import { markdownToHtml } from "@/lib/markdown";
+import { extractFirstImage } from "@/lib/extractImage";
 import { useMemo } from "react";
 
 const ArtigoDetalhes = () => {
@@ -15,6 +16,13 @@ const ArtigoDetalhes = () => {
   // Converter markdown para HTML apenas uma vez
   const htmlContent = useMemo(() => {
     return article ? markdownToHtml(article.content) : '';
+  }, [article]);
+
+  // Extrair imagem do artigo para Open Graph
+  const articleImage = useMemo(() => {
+    if (!article) return null;
+    // Prioriza badge image, depois extrai do conteúdo
+    return article.badges?.[0]?.image || extractFirstImage(article.content);
   }, [article]);
 
   if (!article) {
@@ -45,8 +53,32 @@ const ArtigoDetalhes = () => {
       <Helmet>
         <title>{article.title} - Rafael Martin</title>
         <meta name="description" content={article.excerpt} />
+        
+        {/* Open Graph tags para compartilhamento em redes sociais */}
         <meta property="og:title" content={`${article.title} - Rafael Martin`} />
         <meta property="og:description" content={article.excerpt} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://www.orafaelferreira.com/artigos/${article.slug}`} />
+        {articleImage && (
+          <>
+            <meta property="og:image" content={articleImage} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            <meta property="og:image:alt" content={article.title} />
+          </>
+        )}
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${article.title} - Rafael Martin`} />
+        <meta name="twitter:description" content={article.excerpt} />
+        {articleImage && <meta name="twitter:image" content={articleImage} />}
+        
+        {/* Article metadata */}
+        <meta property="article:published_time" content={article.date} />
+        <meta property="article:author" content="Rafael Martin" />
+        <meta property="article:section" content={article.category} />
+        
         <link rel="canonical" href={`https://www.orafaelferreira.com/artigos/${article.slug}`} />
       </Helmet>
       <div className="min-h-screen">
