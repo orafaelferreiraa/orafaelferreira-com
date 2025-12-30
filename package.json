@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node generate-articles-meta.js && vite build",
+    "build": "node generate-articles-static.js && vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -16,7 +16,7 @@
     "test:e2e": "playwright test",
     "test:e2e:ci": "playwright test --reporter=line",
     "migrate:posts": "node scripts/migrate-jekyll-posts.mjs",
-    "generate:meta": "node generate-articles-meta.js"
+    "generate:meta": "node generate-articles-static.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

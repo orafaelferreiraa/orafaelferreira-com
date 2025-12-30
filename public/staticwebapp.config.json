@@ -4,15 +4,24 @@
     "exclude": [
       "/assets/*",
       "/images/*",
-      "/api/*"
+      "/api/*",
+      "/artigos/*.html"
     ]
   },
   "globalHeaders": {
     "X-Frame-Options": "DENY",
     "X-Content-Type-Options": "nosniff",
-    "Referrer-Policy": "strict-origin-when-cross-origin"
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Cache-Control": "public, max-age=3600"
   },
   "mimeTypes": {
     ".json": "application/json; charset=utf-8"
-  }
+  },
+  "routes": [
+    {
+      "route": "/artigos/*",
+      "methods": ["GET"],
+      "serve": "/artigos/*.html"
+    }
+  ]
 }
