@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Calendar, ArrowLeft, ExternalLink } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button";
 import { articles } from "@/data/articles";
 import { markdownToHtml } from "@/lib/markdown";
 import { extractFirstImage } from "@/lib/extractImage";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 const ArtigoDetalhes = () => {
   const { slug } = useParams();
+  const location = useLocation();
   const article = articles.find(a => a.slug === slug);
 
   // Converter markdown para HTML apenas uma vez
@@ -21,9 +22,63 @@ const ArtigoDetalhes = () => {
   // Extrair imagem do artigo para Open Graph
   const articleImage = useMemo(() => {
     if (!article) return null;
-    // Prioriza badge image, depois extrai do conteúdo
-    return article.badges?.[0]?.image || extractFirstImage(article.content);
+    // Prioridade: image explícito > badge image > primeira imagem do conteúdo
+    return article.image || article.badges?.[0]?.image || extractFirstImage(article.content);
   }, [article]);
+
+  // Injeta meta tags dinamicamente no documento para web crawlers
+  useEffect(() => {
+    if (!article || !articleImage) return;
+
+    // Remove meta tags antigas
+    document.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]').forEach(el => {
+      if (el.getAttribute('property') !== 'og:image' && el.getAttribute('name') !== 'twitter:image') {
+        el.remove();
+      }
+    });
+
+    const metaTags = [
+      { property: 'og:title', content: `${article.title} - Rafael Martin` },
+      { property: 'og:description', content: article.excerpt },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:url', content: `https://www.orafaelferreira.com/artigos/${article.slug}` },
+      { property: 'og:image', content: articleImage },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:image:alt', content: article.title },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: `${article.title} - Rafael Martin` },
+      { name: 'twitter:description', content: article.excerpt },
+      { name: 'twitter:image', content: articleImage },
+      { property: 'article:published_time', content: article.date },
+      { property: 'article:author', content: 'Rafael Martin' },
+      { property: 'article:section', content: article.category },
+    ];
+
+    metaTags.forEach(({ property, name, content }) => {
+      let meta = document.querySelector(`meta[${property ? 'property' : 'name'}="${property || name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        if (property) {
+          meta.setAttribute('property', property);
+        } else {
+          meta.setAttribute('name', name);
+        }
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    });
+
+    // Atualizar URL canônica
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonical) {
+      canonical = document.createElement('link') as HTMLLinkElement;
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `https://www.orafaelferreira.com/artigos/${article.slug}`;
+
+  }, [article, articleImage, location.pathname]);
 
   if (!article) {
     return (

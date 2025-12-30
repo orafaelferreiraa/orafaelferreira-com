@@ -3,6 +3,7 @@ import { Article } from './types';
 export const article: Article = {
   slug: "aks-spot-terraform-economia-custos-taints",
   title: "AKS Spot & Terraform: Economia de Custos e o Guia Crítico de Taints",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/0.png",
   excerpt: "Aprenda a economizar até 90% no AKS usando Spot Node Pools com Terraform. Um guia completo sobre Taints, Tolerations e as configurações críticas para evitar interrupções inesperadas.",
   content: `
 # AKS Spot & Terraform: Economia de Custos e o Guia Crítico de Taints
