@@ -12,8 +12,6 @@ Fala galera! Tudo bom? Recentemente passei no exame **HashiCorp Certified: Terra
 
 Para quem não conhece, essa certificação Terraform Associate basicamente valida seus conhecimentos fundamentais sobre o Terraform e conceitos de Infraestrutura como Código (IaC).
 
-[![HashiCorp Certified: Terraform Associate (003)](https://images.credly.com/size/118x118/images/ed4be915-68f8-428a-b332-40ded9084ee5/blob)](https://www.credly.com/badges/a2363246-1248-4028-a237-79b965fbcef3/public_url "HashiCorp Certified: Terraform Associate (003)")
-
 ## Sobre o Exame Terraform Associate
 
 O Terraform Associate (versão 003) é uma certificação de nível "fundamental" da HashiCorp voltada para Terraform. É recomendada para engenheiros de infraestrutura/DevOps que atuam em operações, TI ou desenvolvimento e já conhecem os conceitos básicos do Terraform.
