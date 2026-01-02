@@ -4,8 +4,7 @@
     "exclude": [
       "/assets/*",
       "/images/*",
-      "/api/*",
-      "/artigos/*.html"
+      "/api/*"
     ]
   },
   "globalHeaders": {
@@ -16,12 +15,5 @@
   },
   "mimeTypes": {
     ".json": "application/json; charset=utf-8"
-  },
-  "routes": [
-    {
-      "route": "/artigos/*",
-      "methods": ["GET"],
-      "serve": "/artigos/*.html"
-    }
-  ]
+  }
 }

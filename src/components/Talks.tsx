@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Calendar, ExternalLink, FileText, Globe, Linkedin, MapPin, Presentation, Youtube } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 interface Talk {
   title: string;
@@ -410,6 +411,16 @@ const Talks = () => {
   ];
 
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleCardClick = (blogUrl?: string) => {
+    if (blogUrl) {
+      // Extract the article slug from the blogUrl
+      const urlObj = new URL(blogUrl);
+      const slug = urlObj.pathname.replace('/artigos/', '');
+      navigate(`/artigos/${slug}`);
+    }
+  };
 
   const renderTalkCard = (talk: Talk, index: number) => {
     const getYouTubeId = (url: string): string | null => {
@@ -439,8 +450,11 @@ const Talks = () => {
     return (
       <Card
         key={`${talk.title}-${talk.date}`}
-        className="group p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up"
+        className={`group p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up ${
+          talk.blogUrl ? 'cursor-pointer' : ''
+        }`}
         style={{ animationDelay: `${index * 50}ms` }}
+        onClick={() => handleCardClick(talk.blogUrl)}
       >
         {imageSrc && (
           <div className="mb-4 rounded-lg overflow-hidden">
@@ -477,7 +491,7 @@ const Talks = () => {
 
           <div className="flex flex-wrap gap-2">
             {talk.siteUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
                 <a href={talk.siteUrl} target="_blank" rel="noopener noreferrer">
                   <Globe className="w-4 h-4 mr-2" />
                   {t('talks.seeEvent')}
@@ -486,7 +500,7 @@ const Talks = () => {
             )}
 
             {talk.slidesUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
                 <a href={talk.slidesUrl} target="_blank" rel="noopener noreferrer">
                   <FileText className="w-4 h-4 mr-2" />
                   {t('talks.downloadSlides')}
@@ -495,7 +509,7 @@ const Talks = () => {
             )}
 
             {talk.videoUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
                 <a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">
                   <Youtube className="w-4 h-4 mr-2" />
                   {t('talks.watchVideo')}
@@ -504,7 +518,7 @@ const Talks = () => {
             )}
 
             {talk.linkedinUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
                 <a href={talk.linkedinUrl} target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-4 h-4 mr-2" />
                   {t('talks.seeLinkedIn')}
@@ -513,7 +527,7 @@ const Talks = () => {
             )}
 
             {talk.blogUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
                 <a href={talk.blogUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   {t('talks.readArticle')}

@@ -145,6 +145,8 @@ export default {
       whyChoose: "Por que me escolher como mentor?",
       whyChoosePrefix: "Por que me escolher como",
       whyChooseHighlight: "mentor?",
+      values: "Valores da Mentoria",
+      howItWorks: "Como Funciona",
       pricing: "Conforme o seu nível de carreira. Confira os valores de cada serviço e os preços ajustados por perfil:",
       service: "Serviço",
       price: "Preço",
@@ -324,6 +326,7 @@ export default {
       finalCTA: {
         title: "Pronto para assumir o controle da sua carreira?",
         paragraph1: "Cloud e DevOps são o futuro da tecnologia. Torne-se o profissional que o mercado procura.",
+        paragraph2: "Agende agora sua mentoria e dê o próximo passo rumo ao sucesso profissional!",
         cta: "Estou pronto!"
       }
     },
