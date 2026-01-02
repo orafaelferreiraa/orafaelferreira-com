@@ -413,12 +413,20 @@ const Talks = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
-  const handleCardClick = (blogUrl?: string) => {
+  const handleCardClick = (e: React.MouseEvent, blogUrl?: string) => {
+    // Verificar se o clique foi em um botão ou link
+    const target = e.target as HTMLElement;
+    if (target.closest('button') || target.closest('a')) {
+      return; // Não fazer nada se clicar em um botão ou link
+    }
+
     if (blogUrl) {
       // Extract the article slug from the blogUrl
       const urlObj = new URL(blogUrl);
       const slug = urlObj.pathname.replace('/artigos/', '');
       navigate(`/artigos/${slug}`);
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -454,7 +462,7 @@ const Talks = () => {
           talk.blogUrl ? 'cursor-pointer' : ''
         }`}
         style={{ animationDelay: `${index * 50}ms` }}
-        onClick={() => handleCardClick(talk.blogUrl)}
+        onClick={(e) => handleCardClick(e, talk.blogUrl)}
       >
         {imageSrc && (
           <div className="mb-4 rounded-lg overflow-hidden">
@@ -491,7 +499,7 @@ const Talks = () => {
 
           <div className="flex flex-wrap gap-2">
             {talk.siteUrl && (
-              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
+              <Button variant="outline" size="sm" asChild>
                 <a href={talk.siteUrl} target="_blank" rel="noopener noreferrer">
                   <Globe className="w-4 h-4 mr-2" />
                   {t('talks.seeEvent')}
@@ -500,7 +508,7 @@ const Talks = () => {
             )}
 
             {talk.slidesUrl && (
-              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
+              <Button variant="outline" size="sm" asChild>
                 <a href={talk.slidesUrl} target="_blank" rel="noopener noreferrer">
                   <FileText className="w-4 h-4 mr-2" />
                   {t('talks.downloadSlides')}
@@ -509,7 +517,7 @@ const Talks = () => {
             )}
 
             {talk.videoUrl && (
-              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
+              <Button variant="outline" size="sm" asChild>
                 <a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">
                   <Youtube className="w-4 h-4 mr-2" />
                   {t('talks.watchVideo')}
@@ -518,7 +526,7 @@ const Talks = () => {
             )}
 
             {talk.linkedinUrl && (
-              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
+              <Button variant="outline" size="sm" asChild>
                 <a href={talk.linkedinUrl} target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-4 h-4 mr-2" />
                   {t('talks.seeLinkedIn')}
@@ -527,7 +535,7 @@ const Talks = () => {
             )}
 
             {talk.blogUrl && (
-              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
+              <Button variant="outline" size="sm" asChild>
                 <a href={talk.blogUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   {t('talks.readArticle')}

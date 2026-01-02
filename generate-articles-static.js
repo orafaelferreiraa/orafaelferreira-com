@@ -148,11 +148,17 @@ articles.forEach(article => {
   // Inserir meta tags antes de </head>
   html = html.replace('</head>', metaTags + '\n  </head>');
   
-  // Adicionar script para redirecionar para a SPA
+  // Adicionar script para redirecionar para a SPA (apenas para navegadores, não crawlers)
   const redirectScript = `
   <script>
-    // Redirecionar para a SPA React após meta tags serem lidas
-    window.location.hash = '/artigos/${article.slug}';
+    // Detectar se é um crawler (bot)
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isCrawler = /bot|crawler|spider|slurp|facebook|twitter|linkedin|whatsapp/i.test(userAgent);
+    
+    // Se não for crawler, redirecionar para a SPA React
+    if (!isCrawler) {
+      window.location.replace('/artigos/${article.slug}');
+    }
   </script>
   `;
   
