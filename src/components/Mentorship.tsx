@@ -1,4 +1,4 @@
-import { UserCheck, Target, Rocket, ArrowRight, Award, Globe, TrendingUp, CheckCircle2, Clock, FileCheck, Briefcase } from "lucide-react";
+import { UserCheck, Target, Rocket, ArrowRight, Award, Globe, TrendingUp, CheckCircle2, Clock, FileCheck, Briefcase, ClipboardList, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -76,6 +76,23 @@ const Mentorship = () => {
     icon: CheckCircle2,
     title: t("mentorship.steps.actionPlan.title"),
     description: t("mentorship.steps.actionPlan.description")
+  }];
+  const unifiedProcessSteps = [{
+    icon: ClipboardList,
+    title: t("mentorship.unifiedProcess.step1Title"),
+    paragraphs: t("mentorship.unifiedProcess.step1Paragraphs", { returnObjects: true }) as string[]
+  }, {
+    icon: FileCheck,
+    title: t("mentorship.unifiedProcess.step2Title"),
+    paragraphs: t("mentorship.unifiedProcess.step2Paragraphs", { returnObjects: true }) as string[]
+  }, {
+    icon: Video,
+    title: t("mentorship.unifiedProcess.step3Title"),
+    paragraph: t("mentorship.unifiedProcess.step3Paragraph")
+  }, {
+    icon: CheckCircle2,
+    title: t("mentorship.unifiedProcess.step4Title"),
+    paragraph: t("mentorship.unifiedProcess.step4Paragraph")
   }];
   const services = [{
     name: t("mentorship.services.mentorship"),

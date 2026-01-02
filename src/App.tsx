@@ -1,7 +1,4 @@
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Suspense, lazy, useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
@@ -17,8 +14,6 @@ const Palestras = lazy(() => import("./pages/Palestras"));
 const Experiencias = lazy(() => import("./pages/Experiencias"));
 const Recomendacoes = lazy(() => import("./pages/Recomendacoes"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-
-const queryClient = new QueryClient();
 
 function Analytics() {
   const location = useLocation();
@@ -40,30 +35,25 @@ function Analytics() {
 
 const App = () => (
   <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Analytics />
-          <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Carregando…</div>}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/mentoria-cloud-devops" element={<Mentoria />} />
-              <Route path="/premiacoes" element={<Premiacoes />} />
-              <Route path="/certificacoes" element={<Certificacoes />} />
-              <Route path="/certificados" element={<Certificados />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/artigos/:slug" element={<ArtigoDetalhes />} />
-              <Route path="/palestras" element={<Palestras />} />
-              <Route path="/experiencias" element={<Experiencias />} />
-              <Route path="/recomendacoes" element={<Recomendacoes />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <Sonner />
+    <BrowserRouter>
+      <Analytics />
+      <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Carregando…</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mentoria-cloud-devops" element={<Mentoria />} />
+          <Route path="/premiacoes" element={<Premiacoes />} />
+          <Route path="/certificacoes" element={<Certificacoes />} />
+          <Route path="/certificados" element={<Certificados />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/artigos/:slug" element={<ArtigoDetalhes />} />
+          <Route path="/palestras" element={<Palestras />} />
+          <Route path="/experiencias" element={<Experiencias />} />
+          <Route path="/recomendacoes" element={<Recomendacoes />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   </HelmetProvider>
 );
 
