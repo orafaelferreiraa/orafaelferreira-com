@@ -14,6 +14,11 @@ Site pessoal/Blog em Vite + React + TypeScript, hospedado na Azure Static Web Ap
 Requisitos: Node.js 20+
 
 ```bash
+sudo apt update
+sudo apt install npm
+```
+
+```bash
 npm install
 npm run dev
 ```
