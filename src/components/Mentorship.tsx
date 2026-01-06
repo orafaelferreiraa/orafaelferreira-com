@@ -133,11 +133,6 @@ const Mentorship = () => {
             <p className="text-base lg:text-lg font-medium leading-relaxed mb-8">
               {t("mentorship.hero.subtitle3")}
             </p>
-            <Card className="p-6 mb-8 bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-900">
-              <p className="text-sm lg:text-base font-semibold leading-relaxed text-amber-900 dark:text-amber-100">
-                {t("mentorship.hero.processNotice")}
-              </p>
-            </Card>
             <Card className="p-6 bg-primary/5 border-primary/20">
               <p className="text-base lg:text-lg font-semibold">
                 {t("mentorship.hero.highlight")}
@@ -313,100 +308,6 @@ const Mentorship = () => {
                 <h4 className="font-heading font-bold text-lg mb-3 text-foreground">{t("mentorship.whySection.warning")}</h4>
                 <p className="text-sm">
                   {t("mentorship.whySection.warningText")}
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ROI Non-Financial Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-8">
-              {t("mentorship.roiNonFinancial.title")}
-            </h2>
-            
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
-              <p>{t("mentorship.roiNonFinancial.intro")}</p>
-              
-              <p className="font-semibold text-foreground">{t("mentorship.roiNonFinancial.subtitle")}</p>
-              
-              <ul className="space-y-3 pl-6">
-                {(t("mentorship.roiNonFinancial.benefits", { returnObjects: true }) as string[]).map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <p className="font-medium text-foreground">{t("mentorship.roiNonFinancial.conclusion")}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Results After Mentorship Section */}
-      <section className="py-16 lg:py-24 bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-8">
-              {t("mentorship.resultsAfterMentorship.title")}
-            </h2>
-            
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
-              <p>{t("mentorship.resultsAfterMentorship.intro")}</p>
-              
-              <p className="font-semibold text-foreground">{t("mentorship.resultsAfterMentorship.subtitle")}</p>
-              
-              <ul className="space-y-3 pl-6">
-                {(t("mentorship.resultsAfterMentorship.outcomes", { returnObjects: true }) as string[]).map((outcome, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{outcome}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Card className="p-6 bg-primary/5 border-primary/20">
-                <p className="text-foreground">
-                  <span className="font-semibold">{t("mentorship.resultsAfterMentorship.notAbout")}</span>{" "}
-                  {t("mentorship.resultsAfterMentorship.about")}
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Next Step Focused Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-8">
-              {t("mentorship.nextStepFocused.title")}
-            </h2>
-            
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
-              <p>{t("mentorship.nextStepFocused.intro")}</p>
-              
-              <p className="font-semibold text-foreground">{t("mentorship.nextStepFocused.subtitle")}</p>
-              
-              <ul className="space-y-3 pl-6">
-                {(t("mentorship.nextStepFocused.examples", { returnObjects: true }) as string[]).map((example, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{example}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Card className="p-6 bg-primary/5 border-primary/20">
-                <p className="text-foreground">
-                  <span className="font-semibold">{t("mentorship.nextStepFocused.notAbout")}</span>{" "}
-                  {t("mentorship.nextStepFocused.about")}
                 </p>
               </Card>
             </div>
