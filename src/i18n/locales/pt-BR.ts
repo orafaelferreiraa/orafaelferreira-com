@@ -146,7 +146,6 @@ export default {
       whyChoosePrefix: "Por que me escolher como",
       whyChooseHighlight: "mentor?",
       values: "Valores da Mentoria",
-      howItWorks: "Como Funciona",
       pricing: "Conforme o seu nível de carreira. Confira os valores de cada serviço e os preços ajustados por perfil:",
       service: "Serviço",
       price: "Preço",
@@ -194,20 +193,6 @@ export default {
           description: "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador."
         }
       },
-      steps: {
-        preCall: {
-          title: "Diagnóstico Assíncrono (Formulário)",
-          description: "Você preenche um formulário detalhado. Com base nele, faço a análise do seu momento profissional e preparo toda a sessão de mentoria com antecedência."
-        },
-        call: {
-          title: "Sessão de Mentoria 1:1 (1h a 1h30)",
-          description: "Esta sessão já é a mentoria. Um encontro prático e direto ao ponto, onde aprofundamos seu contexto, esclarecemos dúvidas e definimos um roteiro realista e eficiente."
-        },
-        actionPlan: {
-          title: "Plano de Ação Personalizado",
-          description: "Saia com passos claros: estudos, certificações, dicas de experiência prática e posicionamento no mercado."
-        }
-      },
       services: {
         mentorship: "Mentoria Cloud Azure e DevOps Individual",
         linkedin: "Revisão de Perfil no LinkedIn",
@@ -220,9 +205,9 @@ export default {
         senior: "Sênior (10% off)"
       },
       hero: {
-        subtitle1: "Você trabalha com TI (seja iniciante ou experiente) e quer crescer em Cloud Azure e DevOps, mas sente dificuldade em encontrar um caminho claro?",
-        subtitle2: "Seja para quem está começando ou para quem já tem experiência, é frustrante estudar, se esforçar e não ver resultados concretos. Uma mentoria 1:1 focada e personalizada pode ser o que faltava.",
-        subtitle3: "O mercado está aquecido, mas só se destaca quem tem clareza estratégica. Minha mentoria existe para te ajudar a traçar um plano concreto de evolução em Cloud e DevOps.",
+        subtitle1: "Você trabalha com Tecnologia (seja iniciante ou experiente), estuda Cloud e DevOps, faz cursos, talvez até tire certificações… Mas continua sem saber se está no caminho certo?",
+        subtitle2: "É comum se esforçar bastante, consumir muito conteúdo e ainda assim não ver retorno em oportunidades, entrevistas ou evolução de carreira. O problema, na maioria das vezes, não é falta de estudo. É falta de estratégia. E é aí que eu entro.",
+        subtitle3: "Uma mentoria 1:1 focada e personalizada pode ser o que faltava. Com minha experiência prática em Cloud Azure e DevOps, vou ajudar você a traçar um plano claro e eficiente para sua evolução profissional.",
         processNotice: "Não existe call introdutória ou conversa prévia gratuita. O primeiro encontro 1:1 já é a mentoria e o processo começa com formulário + pagamento.",
         highlight: "Essa mentoria é para quem está cansado de procurar vagas. O objetivo é se tornar referência, ganhar visibilidade e fazer com que oportunidades e recrutadores passem a te procurar.",
         cta: "Quero me destacar em Cloud e DevOps"
@@ -257,7 +242,7 @@ export default {
       },
       roiNonFinancial: {
         title: "O retorno vai além do dinheiro",
-        intro: "O retorno da mentoria não está apenas no salário. Ele aparece antes disso — nos desafios diários que você deixa de enfrentar sozinho.",
+        intro: "O maior retorno da mentoria aparece antes do salário: no dia a dia da sua carreira.",
         subtitle: "O que você poderá esperar é:",
         benefits: [
           "menos frustração por estudar sem direção",
@@ -265,7 +250,7 @@ export default {
           "menos cursos comprados que não se conectam entre si",
           "menos ansiedade sobre 'estou no caminho certo ou não?'"
         ],
-        conclusion: "Em troca, você ganha clareza, foco e segurança para tomar decisões melhores — com muito menos desgaste mental.",
+        conclusion: "Em troca, você ganha clareza, foco e segurança para tomar decisões melhores, com muito menos desgaste mental.",
         warning: "Mas atenção:",
         warningText: "Eu não farei o que cabe a você fazer. O sucesso é certo se você seguir o que for traçado, mas depende diretamente do seu comprometimento e esforço. Não haverá devolução, pois não posso garantir que você fará sua parte. Eu já fiz a minha, e estou aqui para ajudar você a transformar a sua vida e a da sua família, exatamente como transformei a minha."
       },
@@ -280,15 +265,14 @@ export default {
           "mais confiança para se posicionar no mercado e conversar com recrutadores"
         ],
         notAbout: "Não é sobre aprender tudo.",
-        about: "É sobre parar de gastar energia no que não traz retorno.",
-        closingPhrase: "A mentoria não encurta apenas o caminho técnico. Ela reduz o custo emocional de errar sozinho."
+        about: "É sobre parar de gastar energia no que não traz retorno."
       },
       nextStepFocused: {
         title: "O próximo passo, do jeito certo",
         intro: "A mentoria é construída em cima do seu momento atual. Durante a sessão, eu te ajudo a definir o próximo passo mais importante agora, com orientações focadas nas dores que você trouxe no diagnóstico.",
         subtitle: "Isso pode incluir:",
         examples: [
-          "cursos e estudos certos para seu estágio",
+          "cursos e estudos certos para seu nível",
           "ajustes técnicos e estratégicos",
           "orientações para fortalecer seu branding pessoal",
           "estratégias para ganhar visibilidade e oportunidades"
@@ -299,8 +283,7 @@ export default {
       benefitsTitle: "🎯 Na minha mentoria Cloud Azure e DevOps individual você terá:",
       provenMethod: {
         title: "Um método prático, testado e replicável",
-        intro: "A mentoria não é improvisada. Ela segue um método que aplico há anos, baseado em decisões estratégicas reais e ambientes reais.",
-        subtitle: "O método se apoia em três pilares:",
+        intro: "A mentoria não é improvisada. Ela segue um método que aplico há anos, baseado em decisões estratégicas reais do dia a dia. O método se apoia em três pilares:",
         pillars: [
           "diagnóstico profundo do momento profissional",
           "direcionamento estratégico alinhado ao mercado",
@@ -315,7 +298,7 @@ export default {
         ],
         step2Title: "Formulário de Diagnóstico",
         step2Paragraphs: [
-          "Levantamento detalhado das suas dores, objetivos e desafios atuais."
+          "Levantamento detalhado das suas dores, objetivos e desafios atuais. Será enviado um novo formulário personalizado para detalhar suas dores que serão trabalhadas na mentoria (call)."
         ],
         step3Title: "Sessão de Mentoria 1:1 (1h a 1h30)",
         step3Paragraph: "A mentoria acontece aqui. Um encontro prático e direto ao ponto.",
@@ -326,7 +309,7 @@ export default {
       finalCTA: {
         title: "Pronto para assumir o controle da sua carreira?",
         paragraph1: "Cloud e DevOps são o futuro da tecnologia. Torne-se o profissional que o mercado procura.",
-        paragraph2: "Agende agora sua mentoria e dê o próximo passo rumo ao sucesso profissional!",
+        paragraph2: "Preencha o formulário agora e dê o próximo passo rumo ao sucesso profissional!",
         cta: "Estou pronto!"
       }
     },
