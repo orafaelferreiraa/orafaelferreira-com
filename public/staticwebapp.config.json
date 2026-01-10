@@ -4,18 +4,16 @@
     "exclude": [
       "/assets/*",
       "/images/*",
-      "/api/*"
+      "/api/*",
+      "/artigos/*.html"
     ]
   },
   "routes": [
     {
       "route": "/artigos/*.html",
-      "serve": "/artigos/*.html",
-      "statusCode": 200,
-      "methods": [
-        "GET"
-      ],
-      "allowedRoles": []
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
     }
   ],
   "globalHeaders": {
