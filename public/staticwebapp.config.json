@@ -7,6 +7,17 @@
       "/api/*"
     ]
   },
+  "routes": [
+    {
+      "route": "/artigos/*.html",
+      "serve": "/artigos/*.html",
+      "statusCode": 200,
+      "methods": [
+        "GET"
+      ],
+      "allowedRoles": []
+    }
+  ],
   "globalHeaders": {
     "X-Frame-Options": "DENY",
     "X-Content-Type-Options": "nosniff",

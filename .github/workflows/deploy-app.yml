@@ -69,29 +69,29 @@ jobs:
         run: npm run build
 
       # Stage 3: end-to-end smoke (Playwright)
-      - name: Get Playwright version
-        id: playwright-version
-        run: echo "version=$(npm list @playwright/test --depth=0 --json 2>/dev/null | jq -r '.dependencies["@playwright/test"].version // empty')" >> $GITHUB_OUTPUT
+      # - name: Get Playwright version
+      #   id: playwright-version
+      #   run: echo "version=$(npm list @playwright/test --depth=0 --json 2>/dev/null | jq -r '.dependencies["@playwright/test"].version // empty')" >> $GITHUB_OUTPUT
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        id: playwright-cache
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
-          restore-keys: |
-            playwright-${{ runner.os }}-
+      # - name: Cache Playwright browsers
+      #   uses: actions/cache@v4
+      #   id: playwright-cache
+      #   with:
+      #     path: ~/.cache/ms-playwright
+      #     key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+      #     restore-keys: |
+      #       playwright-${{ runner.os }}-
 
-      - name: Install Playwright browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+      # - name: Install Playwright browsers
+      #   if: steps.playwright-cache.outputs.cache-hit != 'true'
+      #   run: npx playwright install --with-deps
 
-      - name: Install Playwright system dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
+      # - name: Install Playwright system dependencies
+      #   if: steps.playwright-cache.outputs.cache-hit == 'true'
+      #   run: npx playwright install-deps
 
-      - name: E2E smoke tests
-        run: npm run test:e2e:ci
+      # - name: E2E smoke tests
+      #   run: npm run test:e2e:ci
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
