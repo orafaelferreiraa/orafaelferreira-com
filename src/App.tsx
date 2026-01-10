@@ -33,11 +33,7 @@ function Analytics() {
   return null;
 }
 
-const App = () => {
-  console.log('[DEBUG] App.tsx: Componente App iniciado');
-  console.log('[DEBUG] App.tsx: pathname =', window.location.pathname);
-  
-  return (
+const App = () => (
   <HelmetProvider>
     <Sonner />
     <BrowserRouter>
@@ -60,6 +56,5 @@ const App = () => {
     </BrowserRouter>
   </HelmetProvider>
 );
-};
 
 export default App;

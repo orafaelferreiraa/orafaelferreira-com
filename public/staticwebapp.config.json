@@ -4,18 +4,9 @@
     "exclude": [
       "/assets/*",
       "/images/*",
-      "/api/*",
-      "/artigos/*.html"
+      "/api/*"
     ]
   },
-  "routes": [
-    {
-      "route": "/artigos/*.html",
-      "headers": {
-        "Cache-Control": "public, max-age=86400"
-      }
-    }
-  ],
   "globalHeaders": {
     "X-Frame-Options": "DENY",
     "X-Content-Type-Options": "nosniff",
