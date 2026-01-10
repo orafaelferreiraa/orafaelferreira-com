@@ -12,7 +12,17 @@ import { useMemo } from "react";
 
 const ArtigoDetalhes = () => {
   const { slug } = useParams();
+  
+  console.log('[DEBUG] ArtigoDetalhes: Componente iniciado');
+  console.log('[DEBUG] ArtigoDetalhes: slug =', slug);
+  console.log('[DEBUG] ArtigoDetalhes: Total de artigos disponíveis:', articles.length);
+  
   const article = articles.find(a => a.slug === slug);
+  
+  console.log('[DEBUG] ArtigoDetalhes: Artigo encontrado?', article ? 'SIM' : 'NÃO');
+  if (article) {
+    console.log('[DEBUG] ArtigoDetalhes: Título:', article.title);
+  }
 
   // Converter markdown para HTML apenas uma vez
   const htmlContent = useMemo(() => {
