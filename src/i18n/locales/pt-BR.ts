@@ -146,7 +146,6 @@ export default {
       whyChoosePrefix: "Por que me escolher como",
       whyChooseHighlight: "mentor?",
       values: "Valores da Mentoria",
-      howItWorks: "Como Funciona",
       pricing: "Conforme o seu nível de carreira. Confira os valores de cada serviço e os preços ajustados por perfil:",
       service: "Serviço",
       price: "Preço",
@@ -194,20 +193,6 @@ export default {
           description: "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador."
         }
       },
-      steps: {
-        preCall: {
-          title: "Diagnóstico Assíncrono (Formulário)",
-          description: "Você preenche um formulário detalhado. Com base nele, faço a análise do seu momento profissional e preparo toda a sessão de mentoria com antecedência."
-        },
-        call: {
-          title: "Sessão de Mentoria 1:1 (1h a 1h30)",
-          description: "Esta sessão já é a mentoria. Um encontro prático e direto ao ponto, onde aprofundamos seu contexto, esclarecemos dúvidas e definimos um roteiro realista e eficiente."
-        },
-        actionPlan: {
-          title: "Plano de Ação Personalizado",
-          description: "Saia com passos claros: estudos, certificações, dicas de experiência prática e posicionamento no mercado."
-        }
-      },
       services: {
         mentorship: "Mentoria Cloud Azure e DevOps Individual",
         linkedin: "Revisão de Perfil no LinkedIn",
@@ -220,11 +205,10 @@ export default {
         senior: "Sênior (10% off)"
       },
       hero: {
-        subtitle1: "Você trabalha com TI (seja iniciante ou experiente) e quer crescer em Cloud Azure e DevOps, mas sente dificuldade em encontrar um caminho claro?",
-        subtitle2: "Seja para quem está começando ou para quem já tem experiência, é frustrante estudar, se esforçar e não ver resultados concretos. Uma mentoria 1:1 focada e personalizada pode ser o que faltava.",
-        subtitle3: "O mercado está aquecido, mas só se destaca quem tem clareza estratégica. Minha mentoria existe para te ajudar a traçar um plano concreto de evolução em Cloud e DevOps.",
-        processNotice: "Não existe call introdutória ou conversa prévia gratuita. O primeiro encontro 1:1 já é a mentoria e o processo começa com formulário + pagamento.",
-        highlight: "Essa mentoria é para quem está cansado de procurar vagas. O objetivo é se tornar referência, ganhar visibilidade e fazer com que oportunidades e recrutadores passem a te procurar.",
+        subtitle1: "Você trabalha com Tecnologia (seja iniciante ou experiente), estuda Cloud e DevOps, faz cursos, talvez até tire certificações… Mas continua sem saber se está no caminho certo?",
+        subtitle2: "É comum ficar travado por não saber o que priorizar: qual tecnologia estudar primeiro, o que faz sentido agora e o que pode ficar para depois.",
+        subtitle3: "Essa mentoria 1:1 existe para resolver exatamente isso. Com minha experiência prática em Cloud Azure e DevOps, vou ajudar você a traçar um plano claro e eficiente para sua evolução profissional.",
+        highlight: "A mentoria é para quem está cansado de procurar vagas. O objetivo é se tornar referência, ganhar visibilidade e fazer com que oportunidades e recrutadores passem a te procurar.",
         cta: "Quero me destacar em Cloud e DevOps"
       },
       intro: "Reúno experiências sólidas que me posicionam como referência em Cloud Azure e DevOps:",
@@ -241,7 +225,7 @@ export default {
         proof: "Comprovação obrigatória",
         proofDesc: "Para garantir seu desconto, preciso de um comprovante que mostre seu status atual — pode ser uma carteira de trabalho, print de vaga, oferta de emprego ou outro documento que ajude a validar.",
         noProof: "Sem comprovação, será aplicado o valor cheio.",
-        startCondition: "A mentoria inicia somente após o preenchimento completo do formulário e a confirmação do pagamento. Não realizo chamadas sem essas etapas concluídas.",
+        startCondition: "A mentoria inicia somente após o preenchimento completo do formulário e a confirmação do pagamento. Não existe call introdutória ou conversa prévia gratuita. O primeiro encontro 1:1 já é a mentoria.",
         ctaSignup: "Faça sua inscrição agora"
       },
       whySection: {
@@ -255,52 +239,10 @@ export default {
         warning: "Mas atenção:",
         warningText: "Eu não farei o que cabe a você fazer. O sucesso é certo se você seguir o que for traçado, mas depende diretamente do seu comprometimento e esforço. Não haverá devolução, pois não posso garantir que você fará sua parte. Eu já fiz a minha, e estou aqui para ajudar você a transformar a sua vida e a da sua família, exatamente como transformei a minha."
       },
-      roiNonFinancial: {
-        title: "O retorno vai além do dinheiro",
-        intro: "O retorno da mentoria não está apenas no salário. Ele aparece antes disso — nos desafios diários que você deixa de enfrentar sozinho.",
-        subtitle: "O que você poderá esperar é:",
-        benefits: [
-          "menos frustração por estudar sem direção",
-          "menos tentativa e erro em decisões de carreira",
-          "menos cursos comprados que não se conectam entre si",
-          "menos ansiedade sobre 'estou no caminho certo ou não?'"
-        ],
-        conclusion: "Em troca, você ganha clareza, foco e segurança para tomar decisões melhores — com muito menos desgaste mental.",
-        warning: "Mas atenção:",
-        warningText: "Eu não farei o que cabe a você fazer. O sucesso é certo se você seguir o que for traçado, mas depende diretamente do seu comprometimento e esforço. Não haverá devolução, pois não posso garantir que você fará sua parte. Eu já fiz a minha, e estou aqui para ajudar você a transformar a sua vida e a da sua família, exatamente como transformei a minha."
-      },
-      resultsAfterMentorship: {
-        title: "O que normalmente muda depois da mentoria",
-        intro: "Quem passa pela mentoria não sai com \"mais conteúdo\", sai com clareza.",
-        subtitle: "Na prática, o profissional sai com:",
-        outcomes: [
-          "foco técnico bem definido (o que estudar e o que ignorar)",
-          "um plano realista de evolução, alinhado ao momento de carreira",
-          "decisões mais seguras sobre certificações, especializações e próximos passos",
-          "mais confiança para se posicionar no mercado e conversar com recrutadores"
-        ],
-        notAbout: "Não é sobre aprender tudo.",
-        about: "É sobre parar de gastar energia no que não traz retorno.",
-        closingPhrase: "A mentoria não encurta apenas o caminho técnico. Ela reduz o custo emocional de errar sozinho."
-      },
-      nextStepFocused: {
-        title: "O próximo passo, do jeito certo",
-        intro: "A mentoria é construída em cima do seu momento atual. Durante a sessão, eu te ajudo a definir o próximo passo mais importante agora, com orientações focadas nas dores que você trouxe no diagnóstico.",
-        subtitle: "Isso pode incluir:",
-        examples: [
-          "cursos e estudos certos para seu estágio",
-          "ajustes técnicos e estratégicos",
-          "orientações para fortalecer seu branding pessoal",
-          "estratégias para ganhar visibilidade e oportunidades"
-        ],
-        notAbout: "Não é sobre fazer tudo.",
-        about: "É sobre fazer a coisa certa, na ordem certa."
-      },
       benefitsTitle: "🎯 Na minha mentoria Cloud Azure e DevOps individual você terá:",
       provenMethod: {
         title: "Um método prático, testado e replicável",
-        intro: "A mentoria não é improvisada. Ela segue um método que aplico há anos, baseado em decisões estratégicas reais e ambientes reais.",
-        subtitle: "O método se apoia em três pilares:",
+        intro: "A mentoria não é improvisada. Ela segue um método que aplico há anos, baseado em decisões estratégicas reais do dia a dia. O método se apoia em três pilares:",
         pillars: [
           "diagnóstico profundo do momento profissional",
           "direcionamento estratégico alinhado ao mercado",
@@ -311,22 +253,26 @@ export default {
         title: "Como funciona na prática",
         step1Title: "Formulário de Interesse",
         step1Paragraphs: [
-          "Cadastro inicial com seus dados, serviço escolhido e nível de carreira."
+          "Você preenche um cadastro inicial com seus dados, seleciona o serviço desejado e informa seu nível de carreira.",
+          "Essa etapa serve para organizar o processo e aplicar corretamente os valores por perfil."
         ],
         step2Title: "Formulário de Diagnóstico",
         step2Paragraphs: [
-          "Levantamento detalhado das suas dores, objetivos e desafios atuais."
+          "Após o envio do formulário de interesse, você recebe um segundo formulário mais completo.",
+          "Nele, você detalha suas dores atuais, desafios técnicos, objetivos profissionais e o que busca resolver com a mentoria.",
+          "É com base nesse diagnóstico que eu preparo toda a sessão 1:1."
         ],
         step3Title: "Sessão de Mentoria 1:1 (1h a 1h30)",
-        step3Paragraph: "A mentoria acontece aqui. Um encontro prático e direto ao ponto.",
+        step3Paragraph: "Aqui a mentoria acontece: um encontro prático e direto ao ponto, focado em diagnóstico, direcionamento e decisões estratégicas para o seu momento atual.",
         step4Title: "Plano de Ação Personalizado",
-        step4Paragraph: "Você sai com direcionamento claro para os próximos passos da sua evolução profissional."
+        step4Paragraph: "Ao final da sessão, você recebe um plano de ação claro e executável, com direcionamento sobre estudos, certificações, posicionamento e próximos passos da sua evolução profissional."
       },
       signUp: "Fazer inscrição",
       finalCTA: {
         title: "Pronto para assumir o controle da sua carreira?",
         paragraph1: "Cloud e DevOps são o futuro da tecnologia. Torne-se o profissional que o mercado procura.",
-        paragraph2: "Agende agora sua mentoria e dê o próximo passo rumo ao sucesso profissional!",
+        paragraph2: "Mais clareza de foco técnico resulta, naturalmente, em mais visibilidade e autoridade profissional.",
+        paragraph3: "Preencha o formulário agora e dê o próximo passo rumo ao sucesso profissional!",
         cta: "Estou pronto!"
       }
     },

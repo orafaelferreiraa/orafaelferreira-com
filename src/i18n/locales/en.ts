@@ -186,20 +186,6 @@ export default {
           description: "Access to private group with job openings I receive directly from LinkedIn, with direct recommendation to recruiters."
         }
       },
-      steps: {
-        preCall: {
-          title: "Personalized Pre-call",
-          description: "Fill out a form describing your professional moment, experiences and goals in Cloud/DevOps."
-        },
-        call: {
-          title: "Strategic Call (1h to 1h30)",
-          description: "Practical and straight to the point session, clarifying doubts and creating a realistic and efficient roadmap."
-        },
-        actionPlan: {
-          title: "Personalized Action Plan",
-          description: "Leave with clear steps: studies, certifications, practical experience tips and market positioning."
-        }
-      },
       services: {
         mentorship: "Individual Cloud Azure and DevOps Mentorship",
         linkedin: "LinkedIn Profile Review",
@@ -212,10 +198,10 @@ export default {
         senior: "Senior (10% off)"
       },
       hero: {
-        subtitle1: "Do you work in IT (whether beginner or experienced) and want to grow in Cloud Azure and DevOps, but find it difficult to find a clear path?",
-        subtitle2: "Whether you're a beginner looking to start or a professional with some experience and not sure which path to follow? I understand exactly how frustrating it is to study, make an effort and not have clear results. A focused and personalized 1:1 mentorship might be what was missing.",
-        subtitle3: "The market is hot, but only those with strategic clarity manage to stand out, gain recognition and better salaries. My mentorship exists precisely to solve this. I will help you draw up a concrete plan for evolution in Cloud and DevOps.",
-        highlight: "This mentorship is for you who are tired of looking for jobs. Let the jobs and recruiters look for you. Become a reference in your area, be recognized in the market and make recruiters and highly relevant professionals want to work with you.",
+        subtitle1: "Do you work in tech (beginner or experienced), study Cloud and DevOps, take courses, maybe even earn certifications—and still feel unsure you're on the right path?",
+        subtitle2: "It's common to feel stuck not knowing what to prioritize: which technology to study first, what makes sense now, and what can wait.",
+        subtitle3: "This 1:1 mentorship exists to solve exactly that. With my hands-on experience in Cloud Azure and DevOps, I'll help you define a clear and efficient plan for your professional growth.",
+        highlight: "This mentorship is for those tired of chasing jobs. The goal is to become a reference, gain visibility, and have opportunities and recruiters reach out to you.",
         cta: "I want to stand out in Cloud and DevOps"
       },
       intro: "I bring together solid experiences that position me as a reference in the Cloud Azure and DevOps sector. Some highlights of my professional trajectory include:",
@@ -231,6 +217,7 @@ export default {
         proof: "Proof required",
         proofDesc: "To guarantee your discount, I need proof showing your current status — it can be a work card, job screenshot, job offer or other document that helps validate.",
         noProof: "Without proof, the full price will be applied.",
+        startCondition: "Mentorship starts only after the form is fully completed and payment is confirmed. There is no free intro call. The first 1:1 meeting is already the mentorship.",
         ctaSignup: "Sign up now"
       },
       whySection: {
@@ -245,12 +232,39 @@ export default {
         warningText: "I won't do what's up to you to do. Success is certain if you follow what is outlined, but it depends directly on your commitment and effort. There will be no refund, as I cannot guarantee that you will do your part. I've already done mine, and I'm here to help you transform your life and your family's, just as I transformed mine."
       },
       benefitsTitle: "🎯 In my individual Cloud Azure and DevOps mentorship you will have:",
-      howItWorks: "How my individual Cloud Azure and DevOps mentorship works:",
+      provenMethod: {
+        title: "A practical, tested, and repeatable method",
+        intro: "The mentorship isn't improvised. It follows a method I've applied for years, based on real strategic decisions from day to day. The method stands on three pillars:",
+        pillars: [
+          "deep diagnosis of your professional moment",
+          "strategic guidance aligned with the market",
+          "clear, adjustable, and executable action plan"
+        ]
+      },
+      unifiedProcess: {
+        title: "How it works in practice",
+        step1Title: "Interest Form",
+        step1Paragraphs: [
+          "You fill out an initial form with your details, choose the desired service, and inform your career level.",
+          "This step organizes the process and applies the correct pricing for your profile."
+        ],
+        step2Title: "Diagnostic Form",
+        step2Paragraphs: [
+          "After submitting the interest form, you receive a second, more detailed form.",
+          "There, you describe your current pain points, technical challenges, professional goals, and what you want to solve with the mentorship.",
+          "Based on this diagnosis, I prepare the entire 1:1 session."
+        ],
+        step3Title: "1:1 Mentorship Session (1h to 1h30)",
+        step3Paragraph: "This is where the mentorship happens: a hands-on, to-the-point session focused on diagnosis, guidance, and strategic decisions for your current moment.",
+        step4Title: "Personalized Action Plan",
+        step4Paragraph: "At the end of the session, you receive a clear and executable action plan with guidance on studies, certifications, positioning, and next steps for your professional growth."
+      },
       signUp: "Sign up",
       finalCTA: {
-        title: "Ready to change your financial and professional reality?",
-        paragraph1: "Don't leave your professional evolution on \"autopilot\", with companies and bosses telling you what to do. Take responsibility and control of your career. Count on me to have a valuable change towards your goals in the cloud.",
-        paragraph2: "Don't miss this opportunity to evolve in a guided and strategic way. Cloud and DevOps are the future of Technology, also become the top professional that the market is looking for! 🚀",
+        title: "Ready to take control of your career?",
+        paragraph1: "Cloud and DevOps are the future of technology. Become the professional the market is looking for.",
+        paragraph2: "Greater clarity of technical focus naturally leads to more visibility and professional authority.",
+        paragraph3: "Fill out the form now and take the next step toward professional success!",
         cta: "I'm ready!"
       }
     },

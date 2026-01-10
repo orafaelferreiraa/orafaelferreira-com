@@ -49,6 +49,9 @@ const certificatesByYear: YearCertificates[] = [{
     title: "HashiCorp Certified: Terraform Associate (003)",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-07-HashiCorpCertifiedTerraformAssociate(003).pdf"
   }, {
+    title: "Terrafom Associate - TFTec",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-07-TerrafomAssociate.png"
+  }, {
     title: "2025 Microsoft Most Valuable Professional (MVP)",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-07-MostValuableProfessionalCertificate.pdf.pdf"
   }, {

@@ -64,19 +64,6 @@ const Mentorship = () => {
     title: t("mentorship.benefits.jobGroup.title"),
     description: t("mentorship.benefits.jobGroup.description")
   }];
-  const howItWorks = [{
-    icon: FileCheck,
-    title: t("mentorship.steps.preCall.title"),
-    description: t("mentorship.steps.preCall.description")
-  }, {
-    icon: Clock,
-    title: t("mentorship.steps.call.title"),
-    description: t("mentorship.steps.call.description")
-  }, {
-    icon: CheckCircle2,
-    title: t("mentorship.steps.actionPlan.title"),
-    description: t("mentorship.steps.actionPlan.description")
-  }];
   const unifiedProcessSteps = [{
     icon: ClipboardList,
     title: t("mentorship.unifiedProcess.step1Title"),
@@ -266,6 +253,11 @@ const Mentorship = () => {
                 </p>
                 <p className="text-sm font-bold mt-2">{t("mentorship.payment.noProof")}</p>
               </div>
+              <div className="p-4 mt-4 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900 rounded-lg">
+                <p className="text-sm font-semibold leading-relaxed text-amber-900 dark:text-amber-100">
+                  {t("mentorship.payment.startCondition")}
+                </p>
+              </div>
               <div className="flex justify-center mt-6">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
                   <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
@@ -280,33 +272,35 @@ const Mentorship = () => {
       </section>
 
       {/* Por que minha mentoria Section */}
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-heading font-bold text-center mb-16">
               {t("mentorship.whySection.title")} <span className="text-primary">{t("mentorship.whySection.titleHighlight")}</span>
             </h2>
 
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
-              <p>
+            <div className="space-y-8 text-base lg:text-lg leading-relaxed">
+              <p className="text-foreground">
                 {t("mentorship.whySection.paragraph1")}
               </p>
 
-              <Card className="p-6 bg-secondary/30 border-primary/20">
-                <p className="font-semibold text-foreground">
+              <Card className="p-8 bg-primary/10 border-primary shadow-lg">
+                <p className="font-bold text-foreground text-lg lg:text-xl leading-relaxed">
                   {t("mentorship.whySection.quote")}
                 </p>
               </Card>
 
-              <p>
+              <p className="text-foreground">
                 {t("mentorship.whySection.paragraph2")}
               </p>
 
-              <p className="font-semibold text-foreground">
-                {t("mentorship.whySection.paragraph3")}
-              </p>
+              <Card className="p-6 bg-gradient-to-r from-primary/5 to-primary/10 border-primary/30">
+                <p className="font-bold text-foreground text-lg lg:text-xl">
+                  {t("mentorship.whySection.paragraph3")}
+                </p>
+              </Card>
 
-              <p>
+              <p className="text-foreground font-medium text-lg">
                 {t("mentorship.whySection.paragraph4")}
               </p>
 
@@ -316,6 +310,80 @@ const Mentorship = () => {
                   {t("mentorship.whySection.warningText")}
                 </p>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Proven Method Section */}
+      <section className="py-16 lg:py-24 bg-card/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-8">
+              {t("mentorship.provenMethod.title")}
+            </h2>
+            
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>{t("mentorship.provenMethod.intro")}</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {(t("mentorship.provenMethod.pillars", { returnObjects: true }) as string[]).map((pillar, index) => (
+                  <Card key={index} className="p-6 text-center hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl mx-auto mb-4">
+                      {index + 1}
+                    </div>
+                    <p className="text-sm text-foreground font-medium">{pillar}</p>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Unified Process Section */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
+              {t("mentorship.unifiedProcess.title")}
+            </h2>
+
+            <div className="space-y-6">
+              {unifiedProcessSteps.map((step, index) => (
+                <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl">
+                        {index + 1}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <step.icon className="h-5 w-5 text-primary" />
+                        <h3 className="text-xl font-heading font-bold">{step.title}</h3>
+                      </div>
+                      {'paragraphs' in step ? (
+                        <div className="space-y-2">
+                          {step.paragraphs.map((para, pIndex) => (
+                            <p key={pIndex} className="text-muted-foreground leading-relaxed">{para}</p>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-muted-foreground leading-relaxed">{step.paragraph}</p>
+                      )}
+                      {index === 0 && (
+                        <Button asChild className="mt-4" size="sm">
+                          <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
+                            {t("mentorship.signUp")}
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
@@ -340,42 +408,6 @@ const Mentorship = () => {
                   <CardContent className="p-0">
                     <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
                   </CardContent>
-                </Card>)}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Como funciona Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
-              {t("mentorship.howItWorks")}
-            </h2>
-
-            <div className="space-y-6">
-              {howItWorks.map((step, index) => <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl">
-                        {index + 1}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <step.icon className="h-5 w-5 text-primary" />
-                        <h3 className="text-xl font-heading font-bold">{step.title}</h3>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed">{step.description}</p>
-                      {index === 0 && <Button asChild className="mt-4" size="sm">
-                          <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
-                            {t("mentorship.signUp")}
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </a>
-                        </Button>}
-                    </div>
-                  </div>
                 </Card>)}
             </div>
           </div>
