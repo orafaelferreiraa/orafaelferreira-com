@@ -71,17 +71,6 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
-
-  <script>
-    // Detectar se é um crawler (bot)
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isCrawler = /bot|crawler|spider|slurp|facebook|twitter|linkedin|whatsapp/i.test(userAgent);
-    
-    // Se não for crawler, redirecionar para a SPA React
-    if (!isCrawler) {
-      window.location.replace('/artigos/jornada-certificacao-cka');
-    }
-  </script>
   
   </body>
 
