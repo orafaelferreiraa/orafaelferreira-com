@@ -1,11 +1,18 @@
 #!/usr/bin/env node
 
 /**
- * Gerador de Páginas Estáticas para Artigos
- * Cria arquivos HTML pré-renderizados com meta tags OG para cada artigo
- * Esses arquivos são servidos diretamente para crawlers (LinkedIn, WhatsApp, etc)
+ * Gerador de Páginas Estáticas para Artigos (DESABILITADO)
+ * 
+ * ⚠️ NOTA: Este script foi desabilitado porque:
+ * - Os arquivos HTML gerados causavam loop infinito com redirect
+ * - Vite/React Helmet injeta os meta tags dinâmicamente
+ * - O SWA reescreve corretamente para /index.html para a SPA
+ * - Os crawlers modernos executam JavaScript e conseguem os meta tags
+ * 
+ * Se precisar reabilitar, remova os comentários abaixo e execute novamente
  */
 
+/*
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -170,4 +177,7 @@ articles.forEach(article => {
   console.log(`✅ artigos/${article.slug}.html`);
 });
 
-console.log(`\n✨ ${articles.length} artigos pré-renderizados com meta tags!`);
+console.log(`\n✨ ${articles.length} artigos pré-renderizados com meta tags!`);*/
+
+console.log('⚠️  Script de geração de HTML estático DESABILITADO');
+console.log('Use a SPA React com Helmet para injetar meta tags dinâmicas');
