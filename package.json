@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node generate-articles-static.js && vite build",
+    "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -15,8 +15,7 @@
     "test:components:ci": "vitest --run --config vitest.config.components.ts",
     "test:e2e": "playwright test",
     "test:e2e:ci": "playwright test --reporter=line",
-    "migrate:posts": "node scripts/migrate-jekyll-posts.mjs",
-    "generate:meta": "node generate-articles-static.js"
+    "migrate:posts": "node scripts/migrate-jekyll-posts.mjs"
   },
   "dependencies": {    
     "@radix-ui/react-accordion": "^1.2.2",
