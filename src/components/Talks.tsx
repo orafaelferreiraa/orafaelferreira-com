@@ -22,7 +22,7 @@ const Talks = () => {
   const upcomingTalks: Talk[] = [
           {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
-      event: "92 Python Floripa",
+      event: "92 Python Florianópolis, SC",
       date: "2026-01-31",
       location: "HostGator, Floripa",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/92python-floripa/00.jpg",
