@@ -20,6 +20,14 @@ interface Talk {
 
 const Talks = () => {
   const upcomingTalks: Talk[] = [
+          {
+      title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
+      event: "92 Python Floripa",
+      date: "2026-01-31",
+      location: "HostGator, Floripa",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/92python-floripa/00.jpg",
+      siteUrl: "https://tech.floripa.br/eventos/92o-python-floripa-hostgator/", 
+    }
   ];
 
   const inPersonTalks: Talk[] = [
