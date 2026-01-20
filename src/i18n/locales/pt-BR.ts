@@ -169,12 +169,12 @@ export default {
       },
       benefits: {
         personalized: {
-          title: "Orientação 100% Personalizada",
-          description: "Sessões adaptadas às suas necessidades e objetivos. Para iniciantes ou profissionais sênior."
+          title: "Orientação e Plano 100% Personalizados",
+          description: "Sessões adaptadas às suas necessidades e objetivos, com roteiro prático de próximos passos concretos. Saiba exatamente em que focar nos próximos meses."
         },
-        plan: {
-          title: "Plano Personalizado",
-          description: "Roteiro prático com próximos passos concretos. Saiba exatamente em que focar nos próximos meses."
+        directSupport: {
+          title: "Suporte Direto Comigo",
+          description: "Você terá acesso ao meu contato pessoal para tirar dúvidas de forma assíncrona durante sua jornada."
         },
         tips: {
           title: "Dicas Valiosas",
@@ -221,11 +221,13 @@ export default {
       },
       payment: {
         title: "💳 Forma de pagamento",
-        method: "O pagamento é realizado exclusivamente via PIX.",
+        method: "O pagamento é realizado exclusivamente pela plataforma, com opção de parcelamento da forma que for melhor para você.",
         proof: "Comprovação obrigatória",
         proofDesc: "Para garantir seu desconto, preciso de um comprovante que mostre seu status atual — pode ser uma carteira de trabalho, print de vaga, oferta de emprego ou outro documento que ajude a validar.",
         noProof: "Sem comprovação, será aplicado o valor cheio.",
-        startCondition: "A mentoria inicia somente após o preenchimento completo do formulário e a confirmação do pagamento. Não existe call introdutória ou conversa prévia gratuita. O primeiro encontro 1:1 já é a mentoria.",
+        startCondition: "A mentoria inicia somente após a confirmação do pagamento e o preenchimento completo do formulário. Não existe call introdutória ou conversa prévia gratuita. O primeiro encontro 1:1 já é a mentoria.",
+        discountCoupon: "Para aplicar o cupom de desconto compatível com o seu perfil,",
+        discountCouponLink: "entre em contato comigo no LinkedIn",
         ctaSignup: "Faça sua inscrição agora"
       },
       whySection: {
@@ -244,28 +246,31 @@ export default {
         title: "Um método prático, testado e replicável",
         intro: "A mentoria não é improvisada. Ela segue um método que aplico há anos, baseado em decisões estratégicas reais do dia a dia. O método se apoia em três pilares:",
         pillars: [
-          "diagnóstico profundo do momento profissional",
-          "direcionamento estratégico alinhado ao mercado",
-          "plano de ação claro, ajustável e executável"
+          "Diagnóstico profundo do momento profissional",
+          "Direcionamento estratégico alinhado ao mercado",
+          "Plano de ação claro, ajustável e executável"
         ]
       },
       unifiedProcess: {
         title: "Como funciona na prática",
-        step1Title: "Formulário de Interesse",
+        step1Title: "Pagamento",
         step1Paragraphs: [
-          "Você preenche um cadastro inicial com seus dados, seleciona o serviço desejado e informa seu nível de carreira.",
-          "Essa etapa serve para organizar o processo e aplicar corretamente os valores por perfil."
+          "A primeira etapa é a realização do pagamento.",
+          "Após a confirmação, ficará disponível um formulário de diagnóstico onde você irá preencher com todas as informações necessárias para a mentoria."
         ],
         step2Title: "Formulário de Diagnóstico",
         step2Paragraphs: [
-          "Após o envio do formulário de interesse, você recebe um segundo formulário mais completo.",
-          "Nele, você detalha suas dores atuais, desafios técnicos, objetivos profissionais e o que busca resolver com a mentoria.",
-          "É com base nesse diagnóstico que eu preparo toda a sessão 1:1."
+          "Neste formulário, você detalha suas dores atuais, desafios técnicos, objetivos profissionais e o que busca resolver com a mentoria.",
+          "É com base nesse diagnóstico que eu preparo toda a sessão 1:1.",
+          "Dentro do prazo de até uma semana, irei analisar suas respostas e agendar nossa reunião para lhe conhecer melhor e podermos desenhar o plano juntos."
         ],
         step3Title: "Sessão de Mentoria 1:1 (1h a 1h30)",
-        step3Paragraph: "Aqui a mentoria acontece: um encontro prático e direto ao ponto, focado em diagnóstico, direcionamento e decisões estratégicas para o seu momento atual.",
-        step4Title: "Plano de Ação Personalizado",
-        step4Paragraph: "Ao final da sessão, você recebe um plano de ação claro e executável, com direcionamento sobre estudos, certificações, posicionamento e próximos passos da sua evolução profissional."
+        step3Paragraphs: [
+          "Aqui a mentoria acontece: um encontro prático e direto ao ponto. Durante a reunião, iremos conversar e eu irei seguir baseado nas suas respostas do formulário de diagnóstico, focando em entender seu momento atual, esclarecer dúvidas e tomar decisões estratégicas juntos.",
+          "Uma reunião estratégica intensiva sem recorrências que gera resultados para 1 ano completo. E você não fica sozinho: terá meu contato direto para suporte sempre que precisar."
+        ],
+        step4Title: "Plano de Ação + Acompanhamento",
+        step4Paragraph: "Dentro de até uma semana após a sessão, você receberá um documento completo com seu plano de ação personalizado para pelo menos 1 ano, incluindo: direcionamento sobre estudos, cursos recomendados, trilhas de aprendizado, certificações prioritárias, posicionamento profissional e próximos passos da sua evolução de carreira."
       },
       signUp: "Fazer inscrição",
       finalCTA: {

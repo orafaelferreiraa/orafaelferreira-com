@@ -162,12 +162,12 @@ export default {
       },
       benefits: {
         personalized: {
-          title: "100% Personalized Guidance",
-          description: "Sessions adapted to your needs and goals. For beginners or senior professionals."
+          title: "100% Personalized Guidance and Plan",
+          description: "Sessions tailored to your needs and goals, with a practical roadmap of concrete next steps. Know exactly what to focus on in the coming months."
         },
-        plan: {
-          title: "Personalized Plan",
-          description: "Practical roadmap with concrete next steps. Know exactly what to focus on in the coming weeks."
+        directSupport: {
+          title: "Direct Support With Me",
+          description: "You will have access to my personal contact to ask questions asynchronously during your journey."
         },
         tips: {
           title: "Valuable Tips",
@@ -213,11 +213,13 @@ export default {
       },
       payment: {
         title: "💳 Payment Method",
-        method: "Payment is made exclusively via PIX. It is not possible to split the service amount.",
+        method: "Payment is made exclusively through the platform, with installment options that work best for you.",
         proof: "Proof required",
         proofDesc: "To guarantee your discount, I need proof showing your current status — it can be a work card, job screenshot, job offer or other document that helps validate.",
         noProof: "Without proof, the full price will be applied.",
-        startCondition: "Mentorship starts only after the form is fully completed and payment is confirmed. There is no free intro call. The first 1:1 meeting is already the mentorship.",
+        startCondition: "Mentorship starts only after the payment is confirmed and the form is fully completed. There is no free intro call. The first 1:1 meeting is already the mentorship.",
+        discountCoupon: "To apply a discount coupon compatible with your profile,",
+        discountCouponLink: "contact me on LinkedIn",
         ctaSignup: "Sign up now"
       },
       whySection: {
@@ -243,21 +245,24 @@ export default {
       },
       unifiedProcess: {
         title: "How it works in practice",
-        step1Title: "Interest Form",
+        step1Title: "Payment",
         step1Paragraphs: [
-          "You fill out an initial form with your details, choose the desired service, and inform your career level.",
-          "This step organizes the process and applies the correct pricing for your profile."
+          "The first step is making the payment.",
+          "After confirmation, a diagnostic form will be available for you to fill in with all the necessary information for the mentorship."
         ],
         step2Title: "Diagnostic Form",
         step2Paragraphs: [
-          "After submitting the interest form, you receive a second, more detailed form.",
-          "There, you describe your current pain points, technical challenges, professional goals, and what you want to solve with the mentorship.",
-          "Based on this diagnosis, I prepare the entire 1:1 session."
+          "In this form, you detail your current pain points, technical challenges, professional goals, and what you want to solve with the mentorship.",
+          "Based on this diagnosis, I prepare the entire 1:1 session.",
+          "Within up to one week, I will analyze your answers and schedule our meeting to get to know you better and design the plan together."
         ],
         step3Title: "1:1 Mentorship Session (1h to 1h30)",
-        step3Paragraph: "This is where the mentorship happens: a hands-on, to-the-point session focused on diagnosis, guidance, and strategic decisions for your current moment.",
-        step4Title: "Personalized Action Plan",
-        step4Paragraph: "At the end of the session, you receive a clear and executable action plan with guidance on studies, certifications, positioning, and next steps for your professional growth."
+        step3Paragraphs: [
+          "This is where the mentorship happens: a hands-on, to-the-point session. During the meeting, we will talk and I will follow based on your answers from the diagnostic form, focusing on understanding your current moment, clarifying doubts, and making strategic decisions together.",
+          "An intensive strategic meeting with no recurrence that generates results for a full year. And you won't be alone: you'll have my direct contact for support whenever you need it."
+        ],
+        step4Title: "Action Plan + Follow-up",
+        step4Paragraph: "Within up to one week after the session, you will receive a complete document with your personalized action plan for at least 1 year, including: study guidance, recommended courses, learning paths, priority certifications, professional positioning, and next steps for your career evolution."
       },
       signUp: "Sign up",
       finalCTA: {

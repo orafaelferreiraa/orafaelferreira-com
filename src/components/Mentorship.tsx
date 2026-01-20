@@ -44,9 +44,9 @@ const Mentorship = () => {
     title: t("mentorship.benefits.personalized.title"),
     description: t("mentorship.benefits.personalized.description")
   }, {
-    icon: FileCheck,
-    title: t("mentorship.benefits.plan.title"),
-    description: t("mentorship.benefits.plan.description")
+    icon: UserCheck,
+    title: t("mentorship.benefits.directSupport.title"),
+    description: t("mentorship.benefits.directSupport.description")
   }, {
     icon: Rocket,
     title: t("mentorship.benefits.tips.title"),
@@ -60,7 +60,7 @@ const Mentorship = () => {
     title: t("mentorship.benefits.confidence.title"),
     description: t("mentorship.benefits.confidence.description")
   }, {
-    icon: UserCheck,
+    icon: Briefcase,
     title: t("mentorship.benefits.jobGroup.title"),
     description: t("mentorship.benefits.jobGroup.description")
   }];
@@ -75,7 +75,7 @@ const Mentorship = () => {
   }, {
     icon: Video,
     title: t("mentorship.unifiedProcess.step3Title"),
-    paragraph: t("mentorship.unifiedProcess.step3Paragraph")
+    paragraphs: t("mentorship.unifiedProcess.step3Paragraphs", { returnObjects: true }) as string[]
   }, {
     icon: CheckCircle2,
     title: t("mentorship.unifiedProcess.step4Title"),
@@ -83,7 +83,8 @@ const Mentorship = () => {
   }];
   const services = [{
     name: t("mentorship.services.mentorship"),
-    price: "R$ 989"
+    price: "R$ 989",
+    link: "https://checkout.ticto.app/O0215ACFC"
   }, {
     name: t("mentorship.services.linkedin"),
     price: "R$ 189"
@@ -140,7 +141,7 @@ const Mentorship = () => {
             </Card>
             <div className="flex justify-center mt-8">
               <Button size="lg" asChild className="text-lg px-8 py-6">
-                <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
+                <a href="https://payment.ticto.app/O0215ACFC" target="_blank" rel="noopener noreferrer">
                   {t("mentorship.hero.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
@@ -258,9 +259,22 @@ const Mentorship = () => {
                   {t("mentorship.payment.startCondition")}
                 </p>
               </div>
+              <div className="p-4 mt-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900 rounded-lg">
+                <p className="text-sm leading-relaxed text-blue-900 dark:text-blue-100">
+                  {t("mentorship.payment.discountCoupon")}{" "}
+                  <a 
+                    href="https://www.linkedin.com/in/orafaelferreiraa/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-semibold underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  >
+                    {t("mentorship.payment.discountCouponLink")}
+                  </a>.
+                </p>
+              </div>
               <div className="flex justify-center mt-6">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
-                  <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
+                  <a href="https://checkout.ticto.app/O0215ACFC" target="_blank" rel="noopener noreferrer">
                     {t("mentorship.payment.ctaSignup")}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
@@ -374,7 +388,7 @@ const Mentorship = () => {
                       )}
                       {index === 0 && (
                         <Button asChild className="mt-4" size="sm">
-                          <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
+                          <a href="https://payment.ticto.app/O0215ACFC" target="_blank" rel="noopener noreferrer">
                             {t("mentorship.signUp")}
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </a>
@@ -429,7 +443,7 @@ const Mentorship = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="text-lg px-8 py-6">
-                <a href="https://forms.office.com/r/SMNmt7bXwQ" target="_blank" rel="noopener noreferrer">
+                <a href="https://checkout.ticto.app/O0215ACFC" target="_blank" rel="noopener noreferrer">
                   {t("mentorship.finalCTA.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
