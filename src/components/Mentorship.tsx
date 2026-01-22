@@ -84,7 +84,7 @@ const Mentorship = () => {
   const services = [{
     name: t("mentorship.services.mentorship"),
     price: "R$ 989",
-    link: "https://checkout.ticto.app/O0215ACFC"
+    link: "https://checkout.ticto.app/O13FE48B5"
   }, {
     name: t("mentorship.services.linkedin"),
     price: "R$ 189"
@@ -141,7 +141,7 @@ const Mentorship = () => {
             </Card>
             <div className="flex justify-center mt-8">
               <Button size="lg" asChild className="text-lg px-8 py-6">
-                <a href="https://payment.ticto.app/O0215ACFC" target="_blank" rel="noopener noreferrer">
+                <a href="https://checkout.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                   {t("mentorship.hero.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
@@ -274,7 +274,7 @@ const Mentorship = () => {
               </div>
               <div className="flex justify-center mt-6">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
-                  <a href="https://checkout.ticto.app/O0215ACFC" target="_blank" rel="noopener noreferrer">
+                  <a href="https://checkout.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                     {t("mentorship.payment.ctaSignup")}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
@@ -388,7 +388,7 @@ const Mentorship = () => {
                       )}
                       {index === 0 && (
                         <Button asChild className="mt-4" size="sm">
-                          <a href="https://payment.ticto.app/O0215ACFC" target="_blank" rel="noopener noreferrer">
+                          <a href="https://checkout.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                             {t("mentorship.signUp")}
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </a>
@@ -443,7 +443,7 @@ const Mentorship = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="text-lg px-8 py-6">
-                <a href="https://checkout.ticto.app/O0215ACFC" target="_blank" rel="noopener noreferrer">
+                <a href="https://checkout.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                   {t("mentorship.finalCTA.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
