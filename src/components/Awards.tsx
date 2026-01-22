@@ -40,8 +40,7 @@ const Awards = () => {
             const title = t(`awards.items.${award.id}.title`);
             const category = t(`awards.items.${award.id}.category`);
             const description = t(`awards.items.${award.id}.description`);
-            const benefits = t(`awards.items.${award.id}.benefits`, { returnObjects: true }) as string[];
-            const benefitsHeading = award.id === 'mvp' ? t('awards.mvpOffers') : t('awards.whyChosen');
+            const showCategory = award.id === 'mvp';
             return (
               <Card
                 key={award.id}
@@ -59,8 +58,10 @@ const Awards = () => {
                         <span>{title}</span>
                       </CardTitle>
                       <CardDescription className="text-base">
-                        <strong>{t("awards.category")}:</strong> {category}
-                        <br />
+                        {showCategory && <>
+                          <strong>{t("awards.category")}:</strong> {category}
+                          <br />
+                        </>}
                         <strong>{t("awards.yearJoined")}:</strong> {award.year}
                       </CardDescription>
                     </div>
@@ -68,20 +69,6 @@ const Awards = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{description}</p>
-                  
-                  {benefits && benefits.length > 0 && (
-                    <div className="mb-4">
-                      <h4 className="font-semibold mb-2 text-sm uppercase tracking-wider">{benefitsHeading}</h4>
-                      <ul className="space-y-2">
-                        {benefits.map((benefit, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                            <span className="text-primary mt-1">•</span>
-                            <span>{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
 
                   {award.link && (
                     <a

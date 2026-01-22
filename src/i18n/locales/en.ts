@@ -75,7 +75,7 @@ export default {
       whyChosen: "Why I was chosen:",
       viewProfile: "View public profile",
       communityImpact: "Community Impact",
-      communityDescription: "With Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion, I can:",
+      communityDescription: "As Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion, I can:",
       communityBullets: [
         "Bring high-quality content to even more people",
         "Deliver accessible content about Azure, DevOps, and sustainability",
@@ -87,7 +87,7 @@ export default {
       linkedin: "reach out on LinkedIn",
       items: {
         mvp: {
-          title: "Microsoft MVP Azure 2025",
+          title: "Microsoft MVP Azure",
           category: "Azure – Compute Infrastructure",
           description: "The Microsoft MVP Award recognizes professionals who share expertise with the community and contribute to the Microsoft ecosystem.",
           benefits: [
@@ -98,7 +98,7 @@ export default {
           ]
         },
         alura: {
-          title: "Alura Star 2025",
+          title: "Alura Star",
           category: "Education & Community",
           description: "Alura Stars is Alura's ambassador program highlighting creators and community leaders who shape the future through tech education.",
           benefits: [
@@ -108,7 +108,7 @@ export default {
           ]
         },
         devops: {
-          title: "DevOps Institute Ambassador 2025",
+          title: "DevOps Institute Ambassador",
           category: "DevOps Community",
           description: "DevOps Institute Ambassador recognizes global ambassadors for leading and supporting the international DevOps community.",
           benefits: [
@@ -118,7 +118,7 @@ export default {
           ]
         },
         green: {
-          title: "Green Software Champion 2025",
+          title: "Green Software Champion",
           category: "Sustainability",
           description: "Green Software Champion is an international distinction awarded by the Green Software Foundation to professionals who lead initiatives to decarbonize software development and promote sustainable practices in the tech industry.",
           benefits: [
@@ -139,7 +139,7 @@ export default {
       whyChoosePrefix: "Why choose me as your",
       whyChooseHighlight: "mentor?",
       values: "Pricing",
-      pricing: "According to your career level. Check the prices for each service and adjusted prices by profile:",
+      pricing: "Based on your career level. Discounts apply only to the mentorship; LinkedIn and resume have fixed prices. Check the price for each service:",
       service: "Service",
       price: "Price",
       discountsByProfile: "Discounts by Profile",

@@ -82,7 +82,7 @@ export default {
       whyChosen: "Por que fui escolhido:",
       viewProfile: "Ver perfil público",
       communityImpact: "Impacto para a Comunidade",
-      communityDescription: "Com Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion, posso:",
+      communityDescription: "Como Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion, posso:",
       communityBullets: [
         "Levar conteúdo de qualidade a ainda mais pessoas",
         "Trazer conteúdos sobre Azure, DevOps e sustentabilidade de forma acessível",
@@ -94,7 +94,7 @@ export default {
       linkedin: "me chama no LinkedIn",
       items: {
         mvp: {
-          title: "Microsoft MVP Azure 2025",
+          title: "Microsoft MVP Azure",
           category: "Azure – Compute Infrastructure",
           description: "O Microsoft MVP Award reconhece profissionais que compartilham expertise com a comunidade e contribuem para o ecossistema Microsoft.",
           benefits: [
@@ -105,7 +105,7 @@ export default {
           ]
         },
         alura: {
-          title: "Alura Star 2025",
+          title: "Alura Star",
           category: "Educação e Comunidade",
           description: "Alura Stars é o programa de embaixadores da Alura que destaca creators e líderes comunitários que transformam o futuro pela educação em tecnologia.",
           benefits: [
@@ -115,7 +115,7 @@ export default {
           ]
         },
         devops: {
-          title: "DevOps Institute Ambassador 2025",
+          title: "DevOps Institute Ambassador",
           category: "DevOps Community",
           description: "DevOps Institute Ambassador reconhece embaixadores globais por liderar e apoiar a comunidade internacional de DevOps.",
           benefits: [
@@ -125,7 +125,7 @@ export default {
           ]
         },
         green: {
-          title: "Green Software Champion 2025",
+          title: "Green Software Champion",
           category: "Sustentabilidade",
           description: "Green Software Champion é uma distinção internacional concedida pela Green Software Foundation a profissionais que lideram iniciativas para descarbonizar o desenvolvimento de software e promover práticas sustentáveis na indústria de tecnologia.",
           benefits: [
@@ -146,7 +146,7 @@ export default {
       whyChoosePrefix: "Por que me escolher como",
       whyChooseHighlight: "mentor?",
       values: "Valores da Mentoria",
-      pricing: "Conforme o seu nível de carreira. Confira os valores de cada serviço e os preços ajustados por perfil:",
+      pricing: "Conforme o seu nível de carreira. Descontos se aplicam apenas à mentoria; LinkedIn e currículo têm valores fixos. Confira os valores de cada serviço:",
       service: "Serviço",
       price: "Preço",
       discountsByProfile: "Descontos por Perfil",

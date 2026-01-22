@@ -87,35 +87,35 @@ const Mentorship = () => {
     link: "https://checkout.ticto.app/O13FE48B5"
   }, {
     name: t("mentorship.services.linkedin"),
-    price: "R$ 189"
+    price: "R$ 159"
   }, {
     name: t("mentorship.services.resume"),
-    price: "R$ 49"
+    price: "R$ 39"
   }];
   const discountsByProfile = [{
     profile: t("mentorship.profiles.openToWork"),
     mentorship: "R$ 593,40",
-    linkedin: "R$ 113,40",
-    template: "R$ 29,40",
-    total: "R$ 736,20"
+    linkedin: "R$ 159",
+    template: "R$ 39",
+    total: "R$ 791,40"
   }, {
     profile: t("mentorship.profiles.junior"),
     mentorship: "R$ 692,30",
-    linkedin: "R$ 132,30",
-    template: "R$ 34,30",
-    total: "R$ 858,90"
+    linkedin: "R$ 159",
+    template: "R$ 39",
+    total: "R$ 890,30"
   }, {
     profile: t("mentorship.profiles.mid"),
     mentorship: "R$ 791,20",
-    linkedin: "R$ 151,20",
-    template: "R$ 39,20",
-    total: "R$ 981,60"
+    linkedin: "R$ 159",
+    template: "R$ 39",
+    total: "R$ 989,20"
   }, {
     profile: t("mentorship.profiles.senior"),
     mentorship: "R$ 890,10",
-    linkedin: "R$ 170,10",
-    template: "R$ 44,10",
-    total: "R$ 1.104,30"
+    linkedin: "R$ 159",
+    template: "R$ 39",
+    total: "R$ 1.088,10"
   }];
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
