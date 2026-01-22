@@ -69,6 +69,7 @@ import { article as dodfloripa25 } from './2025-12-28-dod-floripa25.ts';
 import { article as tfaksspot } from './2025-12-30-tf-aks.ts'; 
 
 
+
 export const allArticles: Article[] = [
   artigoAksAcr,
   artigoAksVolume,
@@ -135,7 +136,7 @@ export const allArticles: Article[] = [
   dodpoa25,
   cka,
   dodfloripa25,
-  tfaksspot
+  tfaksspot,
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getArticleBySlug(slug: string): Article | undefined {

@@ -7,140 +7,151 @@ export const article: Article = {
   excerpt: "Uma visão agnóstica de cloud sobre como Platform Engineering e Policy-as-Code reduzem carga cognitiva, aumentam segurança e aceleram entregas.",
   content: `
 
-Governança Invisível: Platform Engineering e Policy-as-Code que aceleram times
+# Introdução
 
-Resumo
-Este artigo consolida e refina os dois rascunhos originais em uma visão única, prática e agnóstica de cloud. Mostro como Platform Engineering e Policy-as-Code (PaC) reduzem carga cognitiva, aumentam segurança e tornam a governança um acelerador — não um bloqueio.
+![Imagem de capa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gov-pac/cover.png)
 
-1) Por que Platform Engineering agora
-• O pêndulo saiu do “Silo de TI” para a autonomia extrema. Sem guardrails, surgem riscos sérios de custo, segurança e compliance.
-• Platform Engineering (https://platformengineering.org/) cria “Golden Paths”: fazer o certo vira o caminho mais fácil, com automação, padronização e segurança embutidas.
-• A plataforma é um produto: o desenvolvedor é o cliente; o objetivo é reduzir fricção de ponta a ponta e elevar o DevEx. Conceitos de Internal Developer Platforms (IDPs): https://internaldeveloperplatform.org/
-• Leitura crítica recomendada: Martin Fowler – Platform Engineering: https://martinfowler.com/articles/platform-teams-stuff-done.html
+O [Platform Engineering](https://platformengineering.org/) surge como resposta à crescente complexidade das aplicações em nuvem. Criamos plataformas internas que automatizam infraestrutura e governança. Nesse modelo, a plataforma é tratada como um produto: o desenvolvedor é o cliente interno e deve encontrar o “caminho dourado” (golden path). Uma boa definição de Platform Engineering resume seu propósito: “melhorar a segurança, conformidade, custos e tempo de entrega de valor dos times de desenvolvimento por meio de experiências de desenvolvedor aprimoradas e self-service num ambiente seguro e governado”. Ao padronizar processos e oferecer automações prontas, as plataformas eliminam etapas repetitivas e reduzem drasticamente a carga cognitiva dos desenvolvedores.
 
-2) O que é Policy-as-Code (PaC)
-• PaC codifica regras de negócio, segurança e compliance como código executável, versionado e testável em Git.
-• Benefícios: feedback imediato (IDE/CI), consistência entre ambientes, rastreabilidade GitOps e escala sem gargalos humanos.
-• PaC é agnóstico: pode validar IaC (Terraform/Pulumi), Kubernetes (Admission Controllers) e APIs (autorização).
-• Leitura recomendada: Policy-as-Code (PlatformEngineering.org): https://platformengineering.org/blog/policy-as-code
+Sem essa governança integrada, ficam evidentes riscos de custos excessivos, falhas de segurança e não-conformidades. Equipes podem criar recursos em regiões caras ou não vigiadas, esquecer tags obrigatórias, expor APIs inadvertidamente etc. O Platform Engineering combate isso criando guardrails automatizados: cada “guardrail” adiciona automaticamente práticas recomendadas, de modo que seguir o caminho certo seja natural e fácil. Isso reforça a segurança e compliance de modo invisível e natural ao desenvolvedor, acelerando entregas em vez de bloqueá-las.
 
-3) CAPOC: Compliance at the Point of Change
-• Separação de responsabilidades:
-  – Shift-left: o time executa scans e testes de políticas localmente e no CI.
-  – Gate: a plataforma admite apenas mudanças conformes (staging/produção) com Admission Controllers.
-• Resultado: menos retrabalho, menor MTTR de segurança, previsibilidade operacional e financeira.
+## O que é Policy-as-Code (PaC)
 
-4) Ecossistema agnóstico de políticas
-• OPA/Rego: poderoso, ideal para multicloud e autorização de APIs (docs: https://www.openpolicyagent.org/docs; cursos: https://academy.styra.com/). CNCF: https://www.cncf.io/
-• Kyverno/YAML: nativo Kubernetes, com mutações (remediação automática) e curva de aprendizado menor (exemplos: https://kyverno.io/policies/).
-• Conftest/OPA: valida terraform plan, kubectl e manifests antes do apply.
-• Nativas de nuvem (Azure Policy, AWS SCP/Config, GCP Org Policies): ótimas como enforcement final sem acoplar lógica de negócio.
+[Policy-as-Code](https://platformengineering.org/blog/policy-as-code) é o paradigma de codificar regras de negócio, segurança e compliance em código executável, versionado e testável em pipelines. Em vez de revisar manuais, é validado automaticamente a mudança. Na prática, regras como “só usar VMs criptografadas” ou “não criar recursos fora de regiões aprovadas” viram definições de política em JSON (ou Rego, YAML etc.), armazenadas em repositório Git. Isso garante feedback rápido e contínuo: violações são detectadas tão cedo quanto possível, evitando que recursos errados cheguem à produção.
 
-5) Fluxo DevEx com governança sem atrito
-• IDE: plugins de IaC apontam violação (tags, regiões, tipos de disco) “o quanto antes”.
-• CI: job “pac-test” barra PRs fora do padrão com mensagens claras e acionáveis.
-• Admission Controllers: impedem deploys incorretos; mutações podem corrigir automaticamente.
-• Runtime: auditoria contínua e drift detection mantêm conformidade e visibilidade.
+Quando implementamos PaC, mudamos do modelo "fazer e auditar depois" para "validar antes de implantar". Como destaca a comunidade de engenharia de plataforma, chamada "CAPOC" (Compliance At Point Of Change) – comprime o ciclo de feedback de dias para segundos. Por exemplo, se um desenvolvedor tentar subir um container vulnerável, um engine de política ([OPA](#opa) ou [Kyverno](#kyverno)) a rejeita imediatamente, retornando erros legíveis. Assim, equipes de segurança mantêm autoridade central, mas sem serem gargalo, cada time segue com autonomia porque políticas automatizadas garantem que só configurações aprovadas irão ver a luz do dia. Além disso, todo evento acaba criando trilhas de auditoria nativas que facilitam evidências de compliance.
 
-6) Exemplos práticos (média complexidade)
-6.1) Rego (OPA) – Regiões permitidas e tagging obrigatória
-package platform.regions
+## Azure Backup should be enabled for Virtual Machines
 
-default allow = false
+Para um guia completo sobre backup de VMs no Azure, confira meu artigo sobre [Azure Backup para Máquinas Virtuais](https://www.orafaelferreira.com/artigos/azure-backup-virtual-machines).
 
-allowed_regions = {"eastus", "brazilsouth", "westeurope"}
+### Visão geral
 
-deny[msg] {
-  input.location
-  not input.location in allowed_regions
-  msg := sprintf("Região %s não permitida por compliance.", [input.location])
+A policy \`"Azure Backup should be enabled for Virtual Machines"\` (ID: \`013e242c-8828-4970-87b3-ab247555486d\`) é essencial em ambientes corporativos. Ela garante que VMs críticas não fiquem sem proteção, reduzindo riscos de perda de dados, downtime e exposição a ataques como ransomware. A policy atua em modo \`AuditIfNotExists\`: não impede a criação da VM, mas marca como non-compliant VMs sem um item de backup associado em um Recovery Services Vault.
+
+### Como funciona (resumo técnico)
+
+A definição verifica, para cada \`Microsoft.Compute/virtualMachines\`, a existência de \`Microsoft.RecoveryServices/vaults/backupProtectedItems\`. Se inexistente, gera não conformidade. Aplicada ao nível de Subscription ou Resource Group, dá visibilidade contínua e escalável das VMs sem backup.
+
+### Aplicação prática e remediação (habilitando backups)
+
+1. **Via Portal**: atribuir a definição ao escopo desejado (Subscription/RG) e, quando necessário, habilitar backup manualmente na VM apontando para um Recovery Services Vault.
+2. **Via [Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/overview) automatizada**: usar \`DeployIfNotExists\` para criar ou associar Recovery Services Vaults e configurar backup automaticamente para VMs não protegidas.
+3. **Via IaC (exemplo prático com Terraform)**:
+
+\`\`\`hcl
+resource "azurerm_recovery_services_vault" "vault" {
+  name                = "vault-backups-exemplo"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  sku                 = "Standard"
 }
 
-deny[msg] {
-  not input.tags.owner
-  msg := "Tag obrigatória 'owner' ausente."
+resource "azurerm_backup_policy_vm" "policy" {
+  name                = "policy-diaria"
+  resource_group_name = azurerm_resource_group.rg.name
+  recovery_vault_name = azurerm_recovery_services_vault.vault.name
+  backup {
+    frequency = "Daily"
+    time      = "23:00"
+  }
+  retention_daily {
+    count = 7
+  }
 }
 
-allow {
-  input.location in allowed_regions
-  input.tags.owner
+resource "azurerm_backup_protected_vm" "backup_associacao" {
+  resource_group_name = azurerm_resource_group.rg.name
+  recovery_vault_name = azurerm_recovery_services_vault.vault.name
+  source_vm_id        = azurerm_linux_virtual_machine.vm.id
+  backup_policy_id    = azurerm_backup_policy_vm.policy.id
 }
+\`\`\`
 
-Uso: conftest test plan.json antes do terraform apply.
+Depois de aplicado, execute:
 
-6.2) Kyverno – Assinatura de imagem e mutação de labels
-apiVersion: kyverno.io/v1
-kind: ClusterPolicy
-metadata:
-  name: enforce-signed-images-and-labels
-spec:
-  validationFailureAction: Enforce
-  rules:
-    - name: require-signed-images
-      match:
-        resources:
-          kinds: [Pod]
-      verifyImages:
-        - imageReferences: ["ghcr.io/empresa/*"]
-          attestations:
-            - type: cosign  
-              keyless: true
-    - name: add-owner-label
-      match:
-        resources:
-          kinds: [Deployment]
-      mutate:
-        patchStrategicMerge:
-          metadata:
-            labels:
-              owner: "platform"
+\`\`\`bash
+az policy state trigger-scan --subscription <subscription-id>
+\`\`\`
 
-7) FinOps por design
-• Tags obrigatórias (owner, costCenter, env) e SKUs/quotas por ambiente evitam custos indevidos (FinOps Foundation: https://www.finops.org/).
-• Janelas de desligamento automático para dev/sandbox e limites por time/produto.
-• Orçamentos e alertas integrados ao pipeline para fail‑fast financeiro.
+### Por que incluir esse case no artigo
 
-8) Portal do Desenvolvedor e DX
-• Erros de política devem ser humanos e prescritivos: explique o que falhou e como corrigir.
-• Integre documentação e “como fazer certo” no Backstage (https://backstage.io/) ou portal similar.
-• Golden Paths: templates e geradores já com tags, redes e SKUs válidos.
+É um exemplo prático de como uma [Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/overview) se integra ao lifecycle da infraestrutura (IaC → CI/CD → avaliação contínua) e como PaC pode remediar automaticamente lacunas críticas de resiliência em larga escala.
 
-9) Estratégia de rollout saudável
-• Audit → Warn → Enforce → Remediate (comunicação ativa entre fases).
-• Comece com quick wins (tags e regiões) e evolua para políticas críticas.
-• Colete dados antes de endurecer: impacto, equipes afetadas, velocidade de correção.
+## Ecossistema de ferramentas de políticas
 
-10) Métricas que importam
-• Time‑to‑Feedback de política (IDE/CI em segundos). DORA Metrics: https://cloud.google.com/devops
-• % de conformidade por ambiente/equipe.
-• Incidentes evitados (deploys negados por violações críticas).
-• Redução de gastos indevidos e riscos de não‑conformidade.
+O universo de PaC é amplo e, em geral, independente da nuvem. Várias ferramentas permitem implementar políticas em diferentes camadas:
 
-Nota organizacional: Team Topologies para estrutura de times e interação plataforma/stream-aligned: https://teamtopologies.com/
+### OPA (Open Policy Agent) {#opa}
 
-11) Anti‑padrões comuns
-• “Bloquear tudo no dia 1”: incentiva bypass e quebra confiança.
-• Mensagens crípticas: “Policy Failed” sem contexto não ajuda ninguém.
-• Acoplamento a uma única nuvem/ferramenta: reduz portabilidade e aumenta retrabalho.
+[Open Policy Agent](https://www.openpolicyagent.org/docs/latest/) é um motor de políticas open-source graduado pela CNCF. Usa a linguagem Rego para definir regras gerais e pode ser integrado em aplicações, gateways de API, pipelines CI/CD e clusters Kubernetes.
 
-12) Plano 30–60–90 dias
-• 30: inventário de políticas, modo Audit, mensagens claras, primeiros Golden Paths.
-• 60: CI com “pac-test”, Admission em staging, dashboards de conformidade.
-• 90: Enforce em produção para políticas críticas, mutações automáticas, metas de SLO.
+### Kyverno {#kyverno}
 
-13) FAQ rápido
-• PaC atrasa entregas? Não. Antecipar feedback reduz retrabalho e acelera merges.
-• Rego é difícil? Comece por Kyverno/YAML e evolua conforme maturidade.
-• Abandono políticas nativas da nuvem? Não. Use-as como enforcement final.
+[Kyverno](https://kyverno.io/) é uma ferramenta declarativa Kubernetes-native de PaC, com YAML e suporte a mutações, validações e geração de recursos.
 
-Conclusão
-Platform Engineering e Policy‑as‑Code tornam governança invisível e produtiva. Quando o caminho certo é o mais fácil, times entregam com mais velocidade, segurança e previsibilidade — sem “time do não”, com mentoria automatizada. Menos carga cognitiva, menos risco, mais foco no que importa: código que gera valor.
+### Conftest
 
-Próximos passos sugeridos
-• Comece em modo Audit com tags obrigatórias e regiões permitidas.
-• Pilote um Golden Path com CI + Admission em staging.
-• Meça time‑to‑feedback e conformidade; endureça onde fizer sentido.
+[Conftest](https://www.conftest.dev/) é baseada em [OPA](#opa) e valida arquivos de infraestrutura como código antes do apply.
 
+### Azure Policy
+
+[Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/overview) é a solução nativa do Azure com painel de compliance, built-ins e integração com pipelines e CI. Escrevi um artigo detalhado sobre [Azure Policy na prática](https://www.orafaelferreira.com/artigos/az-policy).
+
+Hoje minha especialidade é cloud Azure, onde me sinto mais confortável. Recentemente criamos um projeto interno de Policy-as-Code com Terraform: colocamos as policies (arquivos .json) em uma pasta no repositório e o Terraform aplica essas definições automaticamente para toda a organização. Esse fluxo garantiu consistência, versionamento e a possibilidade de aplicar quick-wins de governança em escala sem depender de processos manuais.
+
+## Implementação prática
+
+Todo esse conceito ganha força quando integrado às práticas de desenvolvimento contínuo. A seção abaixo detalha como essas verificações devem estar presentes em todas as etapas.
+
+## Fluxo DevEx com governança integrada
+
+Para não atrapalhar a experiência do desenvolvedor (DevEx), as verificações de política devem ocorrer em todas as etapas do fluxo:
+
+- **IDE/Local**: extensões de editor (VSCode, IntelliJ) alertam sobre violações antes mesmo do commit.
+- **CI/CD (pré-merge)**: job policy-test que executa validadores e barra PRs fora do padrão.
+- **Admission Controllers (Kubernetes)**: Gatekeeper ou [Kyverno](#kyverno) impedem deploys inválidos e aplicam mutações automáticas.
+- **Runtime Cloud**: [Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/overview), AWS Config, entre outros, auditam continuamente recursos provisionados.
+
+## Boas práticas FinOps
+
+De acordo com a [FinOps Foundation](https://www.finops.org/), as boas práticas incluem (confira também meu artigo sobre [fundação sólida em FinOps](https://www.orafaelferreira.com/artigos/finops-foundation-cloud)):
+
+- **Tags obrigatórias**: owner, costCenter, environment.
+- **Controle de SKUs por ambiente**.
+- **Desligamento automático** de ambientes não produtivos.
+- **Orçamentos e alertas** integrados ao ciclo de deploy.
+
+Exemplo: uma [Azure Landing Zone](https://learn.microsoft.com/en-us/cloud-adoption-framework/landing-zones/) já vem com tagging obrigatório e orçamentos como parte da fundação.
+
+## Estratégia de implantação de políticas
+
+A implementação de políticas deve seguir uma progressão cuidadosa:
+
+**Audit → Warn → Deny → Remediate**
+
+- Comece com políticas fáceis de explicar (tags, região).
+- Use mensagens claras no erro.
+- Roadmap 30/60/90 dias para endurecer aos poucos.
+
+## Conclusão
+
+Integrar [Policy-as-Code](https://platformengineering.org/blog/policy-as-code) à [engenharia de plataforma](https://platformengineering.org/) transforma a governança numa aliada, não num gargalo. Quando as políticas são automatizadas e embutidas na plataforma, elas liberam os devs para inovar com segurança.
+
+## Referências
+
+- [Platform Engineering](https://platformengineering.org/)
+- [Policy-as-Code](https://platformengineering.org/blog/policy-as-code)
+- [Martin Fowler – Platform Engineering](https://martinfowler.com/articles/platform-teams-stuff-done.html)
+- [Open Policy Agent](https://www.openpolicyagent.org/docs/latest/)
+- [Kyverno](https://kyverno.io/)
+- [Conftest](https://www.conftest.dev/)
+- [Azure Policy Overview](https://learn.microsoft.com/en-us/azure/governance/policy/overview)
+- [Azure Cloud Adoption Framework - Landing Zones](https://learn.microsoft.com/en-us/cloud-adoption-framework/landing-zones/)
+- [FinOps Foundation](https://www.finops.org/)
+- [Azure Policy na prática](https://www.orafaelferreira.com/artigos/az-policy)
+- [Fundação sólida em FinOps](https://www.orafaelferreira.com/artigos/finops-foundation-cloud)
+- [Azure Backup para Máquinas Virtuais](https://www.orafaelferreira.com/artigos/azure-backup-virtual-machines)
 `,
   date: "2026-01-21",
   category: "Artigos",
