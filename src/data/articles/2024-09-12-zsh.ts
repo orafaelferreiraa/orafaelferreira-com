@@ -154,6 +154,5 @@ Pronto! Com autocomplete e velocidade. O terminal nunca mais será o mesmo.
 `,
   date: "2024-09-12",
   category: "Artigos",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

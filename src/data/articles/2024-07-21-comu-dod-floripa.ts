@@ -25,6 +25,5 @@ Estamos sempre procurando **voluntários, patrocinadores e novos palestrantes**.
 `,
   date: "2024-07-21",
   category: "Organizador Grupo de Comunidade",
-  readTime: "1 min de leitura",
-  mediumUrl: ""
+  readTime: "1 min de leitura"
 };

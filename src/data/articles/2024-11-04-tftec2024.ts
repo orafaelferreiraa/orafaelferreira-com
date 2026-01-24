@@ -155,6 +155,5 @@ Caso queira visitar o repositório oficial do projeto, segue os links:
 `,
   date: "2024-11-04",
   category: "Registro Eventos Presenciais",
-  readTime: "7 min de leitura",
-  mediumUrl: ""
+  readTime: "7 min de leitura"
 };

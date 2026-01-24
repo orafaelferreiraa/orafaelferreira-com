@@ -185,7 +185,7 @@ Passos:
 - Upload do artifact \`tfplan\`
 - Comentário no PR com o **plan** já expandido (sem tabela de status). Eu quis reduzir cliques e atrito: abrir o PR e já ver o que muda.
 
-### 2) \`infra-deploy.yml\` (push em main)
+### 2) \`infra-apply.yml\` (push em main)
 
 Dispara em push que altera \`infra/**\` ou o próprio workflow, e também pode ser manual via \`workflow_dispatch\`.
 
@@ -224,13 +224,13 @@ Proteção contra loops:
 
 ## Documentação Automatizada
 
-Durante a migração, quis que a documentação acompanhasse o código sem esforço humano. O \`infra-deploy.yml\` roda **terraform-docs** e injeta a referência do módulo no \`README.md\`. Se não houver mudanças, nenhum commit é feito — é documentação viva, sem burocracia.
+Durante a migração, quis que a documentação acompanhasse o código sem esforço humano. O \`infra-apply.yml\` roda **terraform-docs** e injeta a referência do módulo no \`README.md\`. Se não houver mudanças, nenhum commit é feito — é documentação viva, sem burocracia.
 
 
 ## Fluxo de Trabalho: do PR ao Deploy
 
 1. **PR em \`infra/**\`** → roda \`infra-plan.yml\`: valida, escaneia segurança e gera o \`plan\`.
-2. **Merge em \`main\`** → roda \`infra-deploy.yml\`: aplica mudanças, atualiza docs.
+2. **Merge em \`main\`** → roda \`infra-apply.yml\`: aplica mudanças, atualiza docs.
 3. **Push do app** (ou workflow_run de infra) → roda \`deploy-app.yml\`: builda e publica a pasta \`dist/\` no SWA. Esse foi o momento mais satisfatório da migração: ver o blog ir ao ar segundos depois do merge.
 
 Tudo isso com proteção contra loops de commits do bot e com caches para acelerar o ciclo.
@@ -245,6 +245,5 @@ Com state remoto seguro, validações de segurança e documentação contínua, 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2025-12-13",
   category: "Artigos",
-  readTime: "13 min de leitura",
-  mediumUrl: "",
+  readTime: "13 min de leitura"
 };

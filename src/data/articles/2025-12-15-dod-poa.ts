@@ -83,6 +83,5 @@ A programação técnica foi excelente, especialmente a parte da tarde! Após mi
 `,
   date: "2025-12-02",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

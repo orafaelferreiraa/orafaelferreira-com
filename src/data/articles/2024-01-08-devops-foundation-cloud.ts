@@ -85,6 +85,5 @@ Para mais informações sobre [O que é DevOps?](https://learn.microsoft.com/pt-
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-01-08",
   category: "Artigos",
-  readTime: "6 min de leitura",
-  mediumUrl: ""
+  readTime: "6 min de leitura"
 };

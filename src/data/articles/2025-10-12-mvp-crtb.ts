@@ -86,6 +86,5 @@ Agradeço à **organização**, aos **palestrantes**, aos **patrocinadores** e a
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [DevOps Além da Hype: Pessoas, Cultura e Prática](https://stoblobcertificados011.blob.core.windows.net/palestras/mvpcrtb25.pdf)`,
   date: "2025-10-12",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

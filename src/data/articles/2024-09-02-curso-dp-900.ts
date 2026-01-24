@@ -65,6 +65,5 @@ Até o próximo evento!
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-09-02",
   category: "Organização de Eventos",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

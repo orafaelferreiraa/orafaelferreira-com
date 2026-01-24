@@ -107,6 +107,5 @@ Se você não teve a oportunidade de comparecer a este evento, não se preocupe,
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-06-17",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

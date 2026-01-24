@@ -55,6 +55,5 @@ Espero que este artigo ajude você a entender melhor a importância de seguir os
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2023-12-11",
   category: "Artigos",
-  readTime: "4 min de leitura",
-  mediumUrl: ""
+  readTime: "4 min de leitura"
 };

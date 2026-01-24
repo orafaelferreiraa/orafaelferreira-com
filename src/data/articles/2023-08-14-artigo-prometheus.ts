@@ -35,6 +35,5 @@ Aqui vai o link da documentação caso você queira ler um pouco mais: <i class=
 E se quiser saber mais sobre o treinamento que estou fazendo, da uma olhada no livro aberto a toda comunidade DescomplicandoPrometheus: <i class="fa-solid fa-link"></i> [DescomplicandoPrometheus](https://github.com/badtuxx/DescomplicandoPrometheus/tree/main)`,
   date: "2023-08-14",
   category: "Artigos",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

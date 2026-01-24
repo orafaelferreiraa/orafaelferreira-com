@@ -52,6 +52,5 @@ Falar sobre migração pode parecer batido, mas muita gente ainda se perde na ho
 `,
   date: "2025-05-23",
   category: "Registro Eventos Presenciais",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

@@ -47,6 +47,5 @@ Se você também é apaixonado por tecnologia, recomendo participar desses event
 `,
   date: "2024-02-22",
   category: "Registro Eventos Presenciais",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

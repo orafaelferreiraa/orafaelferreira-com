@@ -78,6 +78,5 @@ Nos vemos no próximo encontro!
 `,
   date: "2024-07-21",
   category: "Organizador Grupo de Comunidade",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

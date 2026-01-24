@@ -96,6 +96,5 @@ Agradeço à organização, aos palestrantes, e a toda galera que colou na minha
 `,
   date: "2025-09-01",
   category: "Registro Eventos Presenciais",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

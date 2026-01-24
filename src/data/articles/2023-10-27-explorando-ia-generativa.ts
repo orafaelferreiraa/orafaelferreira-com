@@ -95,6 +95,5 @@ A IA generativa oferece vastas oportunidades para melhorar a eficiência e criar
 `,
   date: "2024-07-25",
   category: "Artigos",
-  readTime: "9 min de leitura",
-  mediumUrl: ""
+  readTime: "9 min de leitura"
 };

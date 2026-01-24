@@ -71,6 +71,5 @@ Nos vemos na próxima!
 `,
   date: "2025-08-20",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

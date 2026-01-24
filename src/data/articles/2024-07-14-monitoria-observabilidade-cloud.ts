@@ -162,6 +162,5 @@ Este artigo destina-se a servir como uma referência abrangente e ponto de parti
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-01-17",
   category: "Artigos",
-  readTime: "9 min de leitura",
-  mediumUrl: ""
+  readTime: "9 min de leitura"
 };

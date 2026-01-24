@@ -58,6 +58,5 @@ Senior DevOps Engineer com especialização arquiteturas em nuvem Azure com mais
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-06-10",
   category: "Organização de Eventos",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

@@ -498,6 +498,5 @@ Lembre-se: **backup não substitui outras camadas de segurança** (replicação,
 - [CMMC](https://www.cmmcab.org/)`,
   date: "2024-01-15",
   category: "Azure Policy",
-  readTime: "25 min de leitura",
-  mediumUrl: "https://orafaelferreiraa.medium.com/azure-backup-should-be-enabled-for-virtual-machines-013e242c-8828-4970-87b3-ab247555486d"
+  readTime: "25 min de leitura"
 };

@@ -84,6 +84,5 @@ Participar do **TDC São Paulo** foi uma experiência incrível, energia contagi
 `,
   date: "2025-10-04",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

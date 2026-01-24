@@ -84,7 +84,7 @@ cd -
 - Artifact do plan é salvo e comentário detalhado é postado no PR
 - Validações de segurança: tfsec e Checkov (soft_fail: false)
 
-**Push workflow** (`.github/workflows/infra-deploy.yml` - nome: `infra-apply`):
+**Push workflow** (`.github/workflows/infra-apply.yml` - nome: `infra-apply`):
 - Disparo: push em `main` que altera `infra/**` ou o próprio workflow
 - Passos: `init` → `fmt` → `validate` → `tflint` → `tfsec` → `checkov` → `apply`
 - Apply usa valores reais via secrets (repository linkage)

@@ -76,6 +76,5 @@ Recomendo a certificação para quem já utiliza Terraform. Ela formaliza o conh
 - [HashiCorp Terraform Associate](https://developer.hashicorp.com/terraform/tutorials/certification-003/associate-review-003)`,
   date: "2025-08-03",
   category: "Artigos",
-  readTime: "5 min de leitura",
-  mediumUrl: ""
+  readTime: "5 min de leitura"
 };

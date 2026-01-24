@@ -95,6 +95,5 @@ Se você tem alguma dúvida ou quer compartilhar suas próprias experiências em
 `,
   date: "2023-10-30",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

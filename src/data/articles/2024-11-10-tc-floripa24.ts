@@ -57,6 +57,5 @@ Que essa seja apenas mais uma etapa na nossa jornada de aprendizado e evolução
 `,
   date: "2024-11-10",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

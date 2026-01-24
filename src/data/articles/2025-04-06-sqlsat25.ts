@@ -57,6 +57,5 @@ Até o próximo evento!
 `,
   date: "2025-04-06",
   category: "Registro Eventos Presenciais",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

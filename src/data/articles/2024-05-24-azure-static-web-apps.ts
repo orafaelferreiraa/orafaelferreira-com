@@ -505,6 +505,5 @@ Neste artigo, aprendemos como configurar uma Virtual Machine no Azure (Resource 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-05-24",
   category: "Artigos",
-  readTime: "12 min de leitura",
-  mediumUrl: ""
+  readTime: "12 min de leitura"
 };

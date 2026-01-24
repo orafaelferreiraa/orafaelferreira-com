@@ -167,6 +167,5 @@ Inicie sua avaliação com a [Sustentabilidade - Revisão Bem Arquitetada](https
 [![LFC131: Green Software for Practitioners](https://images.credly.com/images/f28a92f1-2837-4770-add0-70008be15e89/image.png)](https://www.credly.com/badges/11e2e57b-47a9-48ca-af23-41cbb45c01ef/public_url "LFC131: Green Software for Practitioners")`,
   date: "2024-07-14",
   category: "Cloud Adoption Framework",
-  readTime: "38 min de leitura",
-  mediumUrl: "https://orafaelferreiraa.medium.com/antes-do-cloud-native-construindo-uma-funda%C3%A7%C3%A3o-s%C3%B3lida-para-a-nuvem-impactando-um-futuro-b6cbafef029b"
+  readTime: "38 min de leitura"
 };

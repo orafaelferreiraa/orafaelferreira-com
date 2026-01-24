@@ -6,281 +6,151 @@ export const article: Article = {
   excerpt: "Um mergulho profundo nas estratégias e padrões avançados de GitHub Actions: desde arquitetura de workflows até otimização de cache, testes piramidais, segurança e observabilidade. Tudo baseado em casos reais de produção.",
   content: `# Introdução
 
-![]()
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/01.png)
 
-No [artigo anterior](https://www.orafaelferreira.com/artigo-terraform-infra-cicd), mostrei como estruturei a infraestrutura do blog com Terraform e GitHub Actions. Agora vamos um nível além: **como extrair o máximo do GitHub Actions em ambientes de produção**.
+No [artigo anterior](https://www.orafaelferreira.com/artigo-terraform-infra-cicd), mostrei como estruturei a infraestrutura do blog com Terraform e GitHub Actions. Agora vamos seguir em frente e fazer um deep dive no GitHub Actions (Pipelines CI/CD).
 
-Este artigo é resultado de anos implementando pipelines DevOps em projetos reais. Vou compartilhar estratégias, padrões arquiteturais, otimizações de performance e práticas de segurança que apliquei — e as lições que aprendi no caminho.
+Vou compartilhar estratégias de deploy, pull requests, conceitos de engenharia de platforma aplicadas na prática, otimizações de performance e práticas de segurança que apliquei.
 
-## O que vamos cobrir
+## O que vamos ver:
 
-- **Arquitetura de Workflows**: organização, reuso e composição
-- **Estratégias de Branching e CI/CD**: trunk-based, gitflow e seus impactos
-- **Pirâmide de Testes**: da unidade ao E2E, com parallelização
-- **Otimização de Performance**: caching avançado, matrizes e artifacts
-- **Segurança em Pipelines**: OIDC, secrets, SBOM e scanning
-- **Observabilidade**: métricas, alertas e debugging
-- **Padrões de Deploy**: blue-green, canary e progressive rollout
-- **Custos e Governance**: como não quebrar o banco
+- **Arquitetura de Workflows**: Overview das 3 pipelines (infra-plan, infra-deploy, deploy-app)
+- **Estratégias de Branching**: trunk-based development aplicado na prática
+- **Pirâmide de Testes**: unitários, componentes e E2E
+- **Otimização de Performance**: caching de dependências e providers Terraform
+- **Segurança em Pipelines**: tflint, tfsec, Checkov e gestão de secrets Azure
+- **Job Summaries**: informações dos outputs após as execuções
 
-Ao final, você terá um arsenal de técnicas para construir pipelines robustos, rápidos e seguros.
-
----
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/02.png)
 
 ## 1. Arquitetura de Workflows
 
 ### 1.1 Organização e Nomenclatura
 
-Uma das primeiras decisões é **como organizar seus workflows**. Em projetos pequenos, tudo pode ficar em um único arquivo. Em projetos maiores, a separação por responsabilidade é essencial.
+Uma das primeiras decisões que tomei foi: **como organizar as workflows**. Em projetos menores, tudo pode ficar em um único arquivo. Em projetos maiores, com a separação fica mais a manutenção e sua usabilidade.
 
-**Padrão que uso:**
+**Estrutura atual do projeto:**
 
 \`\`\`
 .github/
   workflows/
-    infra-plan.yml        # PR → Terraform plan
-    infra-deploy.yml      # main → Terraform apply
-    deploy-app.yml        # PR/main → build + deploy
-    test-unit.yml         # Testes unitários
-    test-e2e.yml          # Testes E2E
-    security-scan.yml     # Scans de segurança
-    release.yml           # Criação de releases
+    infra-plan.yml        # PR → Terraform plan + validações
+    infra-apply.yml       # main → Terraform apply + docs
+    deploy-app.yml        # main → build + testes + deploy
 \`\`\`
 
-**Nomenclatura clara e consistente:**
-- Prefixos por domínio: \`infra-*\`, \`deploy-*\`, \`test-*\`, \`security-*\`
-- Sufixo indica ação: \`-plan\`, \`-deploy\`, \`-scan\`
+### 1.2 Path Filters: Execute Apenas o Necessário
 
-### 1.2 Reusable Workflows
+Uma otimização simples mas poderosa: **não rode workflows quando não há mudanças relevantes**.
 
-Um dos recursos mais poderosos do GitHub Actions: **workflows reutilizáveis**.
-
-**Exemplo: workflow de build compartilhado**
+**infra-plan.yml** (executa apenas em mudanças na infra):
 
 \`\`\`yaml
-# .github/workflows/reusable-build.yml
-name: Reusable Build
-
 on:
-  workflow_call:
-    inputs:
-      node-version:
-        required: true
-        type: string
-      build-command:
-        required: false
-        type: string
-        default: 'npm run build'
-    outputs:
-      artifact-name:
-        description: "Nome do artifact gerado"
-        value: \${{ jobs.build.outputs.artifact-name }}
-    secrets:
-      npm-token:
-        required: false
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    outputs:
-      artifact-name: \${{ steps.upload.outputs.artifact-name }}
-    steps:
-      - uses: actions/checkout@v4
-      
-      - uses: actions/setup-node@v4
-        with:
-          node-version: \${{ inputs.node-version }}
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-        env:
-          NODE_AUTH_TOKEN: \${{ secrets.npm-token }}
-      
-      - name: Build
-        run: \${{ inputs.build-command }}
-      
-      - name: Upload artifact
-        id: upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-\${{ github.sha }}
-          path: dist/
-          retention-days: 7
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'infra/**'
+      - '.github/workflows/infra-plan.yml'
 \`\`\`
 
-**Consumindo o workflow:**
+**deploy-app.yml** (executa em mudanças no código da aplicação):
 
 \`\`\`yaml
-# .github/workflows/deploy-staging.yml
-name: Deploy to Staging
-
 on:
   push:
-    branches: [develop]
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'e2e/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'bun.lockb'
+      - 'tsconfig*.json'
+      - 'vite.config.ts'
+      - 'tailwind.config.ts'
+      - 'postcss.config.js'
+      - 'eslint.config.js'
+      - '.github/workflows/deploy-app.yml'
+\`\`\`
+
+Se você só mexer no README, nenhum workflow roda.
+
+### 1.3 Workflow Chaining: Infra → App
+
+O **deploy-app.yml** tem um trigger com uma condition: aguarda a workflow **infra-apply** terminar com sucesso:
+
+\`\`\`yaml
+on:
+  workflow_run:
+    workflows: ["infra-apply"]
+    types:
+      - completed
+    branches: [ main ]
 
 jobs:
-  build:
-    uses: ./.github/workflows/reusable-build.yml
-    with:
-      node-version: '20'
-      build-command: 'npm run build:staging'
-    secrets:
-      npm-token: \${{ secrets.NPM_TOKEN }}
-  
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: \${{ needs.build.outputs.artifact-name }}
-      # ... deploy steps
+  build_and_deploy:
+    if: github.event.workflow_run.conclusion == 'success'
 \`\`\`
 
-**Benefícios:**
-- **DRY**: evita duplicação de código
-- **Consistência**: mesma lógica em todos os ambientes
-- **Manutenibilidade**: uma mudança propaga para todos
-
-### 1.3 Composite Actions
-
-Quando a reutilização precisa ser ainda mais granular, **composite actions** são a resposta.
-
-**Exemplo: ação para setup de ambiente Node.js**
-
-\`\`\`yaml
-# .github/actions/setup-node-env/action.yml
-name: 'Setup Node Environment'
-description: 'Configura Node.js com cache e instala dependências'
-
-inputs:
-  node-version:
-    description: 'Versão do Node.js'
-    required: true
-    default: '20'
-  
-runs:
-  using: "composite"
-  steps:
-    - uses: actions/setup-node@v4
-      with:
-        node-version: \${{ inputs.node-version }}
-        cache: 'npm'
-    
-    - name: Cache node_modules
-      uses: actions/cache@v4
-      with:
-        path: node_modules
-        key: npm-\${{ runner.os }}-\${{ hashFiles('**/package-lock.json') }}
-        restore-keys: npm-\${{ runner.os }}-
-    
-    - name: Install dependencies
-      shell: bash
-      run: |
-        if [ ! -d "node_modules" ]; then
-          npm ci
-        fi
-\`\`\`
-
-**Uso:**
-
-\`\`\`yaml
-steps:
-  - uses: actions/checkout@v4
-  - uses: ./.github/actions/setup-node-env
-    with:
-      node-version: '20'
-\`\`\`
-
----
+Se eu alterar algo na infraestrutura (Terraform) e o código do site ao mesmo tempo, a infra deve ser provisionada antes do deploy da app.
 
 ## 2. Estratégias de Branching e CI/CD
 
 A estratégia de branching influencia diretamente **como seus workflows se comportam**.
 
-### 2.1 Trunk-Based Development
+### 2.1 Trunk-Based Development na Prática
 
-**Abordagem que uso no blog:**
+**Abordagem implementada:**
 
 \`\`\`
 main (produção)
   ↑
-feature branches (curta duração)
+feature branches ou commits diretos
 \`\`\`
 
-**Workflows associados:**
-- **PR → main**: executam validações, testes, scans
-- **Push → main**: deploy automático para produção
+**Workflow por evento:**
 
-**Vantagens:**
-- Ciclos de feedback rápidos
-- Menos merge conflicts
-- Integração contínua genuína
-
-**GitHub Actions pattern:**
-
+**Pull Request → main** (infra-plan.yml):
 \`\`\`yaml
 on:
   pull_request:
-    branches: [main]
-  push:
-    branches: [main]
+    branches: [ main ]
+    paths:
+      - 'infra/**'
+      - '.github/workflows/infra-plan.yml'
+  workflow_dispatch:
 
 jobs:
-  validate:
-    if: github.event_name == 'pull_request'
-    # ... validações
-  
-  deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    # ... deploy
+  terraform-plan:
+    # Executa plan, validações, scans
+    # Adiciona comentário do plan no PR
 \`\`\`
 
-### 2.2 GitFlow Adaptado
-
-Para projetos com múltiplos ambientes, GitFlow modificado pode fazer sentido:
-
-\`\`\`
-main (produção)
-  ↑
-release/* (staging)
-  ↑
-develop (desenvolvimento)
-  ↑
-feature/*
-\`\`\`
-
-**Workflows pattern:**
-
+**Push → main** (infra-apply.yml e deploy-app.yml):
 \`\`\`yaml
 on:
   push:
-    branches:
-      - 'develop'
-      - 'release/*'
-      - 'main'
+    branches: [ main ]
+    paths:
+      - 'infra/**'
+      - '.github/workflows/infra-apply.yml'
+  workflow_dispatch:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Determine environment
-        id: env
-        run: |
-          if [[ "\${{ github.ref }}" == "refs/heads/main" ]]; then
-            echo "environment=production" >> $GITHUB_OUTPUT
-          elif [[ "\${{ github.ref }}" =~ ^refs/heads/release/ ]]; then
-            echo "environment=staging" >> $GITHUB_OUTPUT
-          else
-            echo "environment=development" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: Deploy to \${{ steps.env.outputs.environment }}
-        # ... deploy específico por ambiente
+  terraform:         # infra-apply
+  build_and_deploy:  # deploy-app
 \`\`\`
 
-### 2.3 Concurrency Control
+**Proteção adicional**: o bot github-actions é bloqueado para evitar loops infinitos:
+
+\`\`\`yaml
+if: github.actor != 'github-actions[bot]'
+\`\`\`
+
+### 2.2 Concurrency Control
 
 **Problema**: múltiplos pushes podem criar race conditions no deploy.
 
@@ -292,34 +162,34 @@ concurrency:
   cancel-in-progress: true  # Cancela deploys anteriores
 \`\`\`
 
-Para infraestrutura (Terraform), **nunca cancele runs simultâneos**:
+Para infraestrutura (Terraform):
 
 \`\`\`yaml
 concurrency:
   group: infra-\${{ github.head_ref || github.ref }}
-  cancel-in-progress: false  # Evita state corruption
+  cancel-in-progress: true  # Cancela runs anteriores
 \`\`\`
 
----
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/03.png)
 
 ## 3. Pirâmide de Testes
 
-A pirâmide de testes guia **quanto investir em cada tipo de teste**.
-
 \`\`\`
-       /\\
-      /E2E\\      ← Poucos, críticos
+
+
+        /\\
+       /  \\
+      / E2E\\          ← Poucos, críticos
      /------\\
-    /  API   \\    ← Médios, contratos
+    /  API   \\        ← Médios, contratos
    /----------\\
-  / Component  \\  ← Muitos, isolados
+  / Unit Tests \\       ← Base sólida
  /--------------\\
-/   Unit Tests   \\ ← Base sólida
+
+ 
 \`\`\`
 
 ### 3.1 Testes Unitários (Base)
-
-**Objetivo**: velocidade e cobertura máxima.
 
 **No projeto do blog:**
 
@@ -369,7 +239,7 @@ export default defineConfig({
 \`\`\`
 
 **Output no CI:**
-- Cobertura visível no job summary
+- Output no job summary
 - Falha se abaixo dos thresholds
 
 ### 3.2 Testes de Componente
@@ -419,19 +289,15 @@ export default defineConfig({
 });
 \`\`\`
 
-### 3.3 Testes E2E (Topo)
+### 3.3 Testes E2E
 
 **Objetivo**: validar fluxos críticos de ponta a ponta.
-
-**Playwright no projeto:**
 
 \`\`\`yaml
 - name: Get Playwright version
   id: playwright-version
-  run: |
-    echo "version=$(npm list @playwright/test --depth=0 --json | \\
-      jq -r '.dependencies["@playwright/test"].version')" >> $GITHUB_OUTPUT
-
+  run: echo "version=$(npm list @playwright/test --depth=0 --json 2>/dev/null | jq -r '.dependencies["@playwright/test"].version // empty')" >> \$GITHUB_OUTPUT
+  
 - name: Cache Playwright browsers
   uses: actions/cache@v4
   with:
@@ -439,11 +305,11 @@ export default defineConfig({
     key: playwright-\${{ runner.os }}-\${{ steps.playwright-version.outputs.version }}
 
 - name: Install Playwright browsers
-  if: steps.playwright-cache.outputs.cache-hit != 'true'
-  run: npx playwright install --with-deps
+   if: steps.playwright-cache.outputs.cache-hit != 'true'
+   run: npx playwright install --with-deps
 
 - name: E2E smoke tests
-  run: npm run test:e2e:ci
+   run: npm run test:e2e:ci
 \`\`\`
 
 **Testes smoke (cenários críticos):**
@@ -536,9 +402,9 @@ e2e:
 
 **Resultado**: redução de ~75% no tempo de execução.
 
----
-
 ## 4. Otimização de Performance
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/04.png)
 
 ### 4.1 Estratégias de Cache Avançadas
 
@@ -662,176 +528,79 @@ on:
   run: npm test
 \`\`\`
 
----
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/05.png)
 
-## 5. Segurança em Pipelines
+## 5. Segurança nas Pipelines
 
-### 5.1 OIDC: Autenticação sem Secrets
+### 5.1 A Pirâmide de Segurança em IaC
 
-**Problema**: secrets estáticos têm risco de vazamento.
+Assim como aplicações (unit → component → E2E), infraestrutura também precisa de validações em camadas:
 
-**Solução**: OpenID Connect (OIDC) com Azure/AWS/GCP.
+| Camada | Ferramenta | Foco |
+|--------|-----------|------|
+| **Compliance** | Checkov | Policies CIS, PCI-DSS, HIPAA |
+| **Segurança** | tfsec | Vulnerabilidades e misconfigurations |
+| **Estilo** | TFLint | Boas práticas e sintaxe |
 
-**Configuração Azure:**
+**Sincero?** Para um blog talvez não fosse necessário. Mas esse projeto é meu **lab vivo** - é aqui onde testo estratégias e aprendo antes de levar pra produção. Vale a pena pelos ~30s adicionados no deploy.
+
+### 5.2 Implementação
+
+**TFLint:**
+\`\`\`yaml
+- name: Setup TFLint
+  uses: terraform-linters/setup-tflint@v4
+
+- name: Cache TFLint plugins
+  uses: actions/cache@v4
+  with:
+    path: ~/.tflint.d/plugins
+    key: \${{ runner.os }}-tflint-\${{ hashFiles('infra/.tflint.hcl') }}
+
+- name: Run TFLint
+  run: tflint --init && tflint -f compact
+\`\`\`
+
+**tfsec:**
+\`\`\`yaml
+- name: tfsec scan
+  uses: aquasecurity/tfsec-action@v1.0.3
+  with:
+    working_directory: infra
+    soft_fail: false
+\`\`\`
+
+**Checkov:**
+\`\`\`yaml
+- name: Checkov scan
+  uses: bridgecrewio/checkov-action@v12
+  with:
+    directory: infra
+    soft_fail: false
+\`\`\`
+
+### 5.3 Gestão de Secrets
 
 \`\`\`yaml
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Azure Login via OIDC
-        uses: azure/login@v1
-        with:
-          client-id: \${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: \${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: \${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      
-      - name: Deploy to Azure
-        run: |
-          az staticwebapp deploy \\
-            --name swa-site-orafael \\
-            --resource-group rg-site \\
-            --app-location dist/
+  terraform:
+    env:
+      ARM_CLIENT_ID: \${{ secrets.AZURE_CLIENT_ID }}
+      ARM_CLIENT_SECRET: \${{ secrets.AZURE_CLIENT_SECRET }}
+      ARM_TENANT_ID: \${{ secrets.AZURE_TENANT_ID }}
+      ARM_SUBSCRIPTION_ID: \${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+deploy:
+  steps:
+    - name: Deploy to Azure Static Web Apps
+      uses: Azure/static-web-apps-deploy@v1
+      with:
+        azure_static_web_apps_api_token: \${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
 \`\`\`
 
-**Benefícios:**
-- Tokens de curta duração
-- Auditoria via Azure AD
-- Sem rotação manual
+## 6. Job Summaries: Visibilidade Pós-Execução
 
-### 5.2 Gestão de Secrets
-
-**Hierarquia de secrets:**
-
-1. **Repository secrets**: específicos do repo
-2. **Environment secrets**: por ambiente (staging/prod)
-3. **Organization secrets**: compartilhados
-
-**Pattern de uso:**
-
-\`\`\`yaml
-jobs:
-  deploy-staging:
-    environment: staging
-    steps:
-      - name: Deploy
-        env:
-          API_KEY: \${{ secrets.STAGING_API_KEY }}
-\`\`\`
-
-**Proteção de environments:**
-
-- Required reviewers
-- Wait timer
-- Deployment branches
-
-### 5.3 Dependency Scanning
-
-**Dependabot configurado:**
-
-\`\`\`yaml
-# .github/dependabot.yml
-version: 2
-updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    reviewers:
-      - "orafaelferreiraa"
-    labels:
-      - "dependencies"
-      - "automerge"
-  
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-\`\`\`
-
-**Automerge seguro com Dependabot:**
-
-\`\`\`yaml
-# .github/workflows/dependabot-automerge.yml
-name: Dependabot Auto-merge
-
-on: pull_request
-
-permissions:
-  contents: write
-  pull-requests: write
-
-jobs:
-  automerge:
-    runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
-    steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v1
-      
-      - name: Auto-merge minor/patch
-        if: |
-          steps.metadata.outputs.update-type == 'version-update:semver-minor' ||
-          steps.metadata.outputs.update-type == 'version-update:semver-patch'
-        run: gh pr merge --auto --squash "\${{ github.event.pull_request.html_url }}"
-        env:
-          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
-\`\`\`
-
-### 5.4 Container Scanning
-
-**Trivy para images Docker:**
-
-\`\`\`yaml
-- name: Build image
-  run: docker build -t myapp:latest .
-
-- name: Run Trivy scan
-  uses: aquasecurity/trivy-action@master
-  with:
-    image-ref: myapp:latest
-    format: 'sarif'
-    output: 'trivy-results.sarif'
-
-- name: Upload to GitHub Security
-  uses: github/codeql-action/upload-sarif@v2
-  with:
-    sarif_file: 'trivy-results.sarif'
-\`\`\`
-
-### 5.5 SBOM Generation
-
-**Software Bill of Materials para compliance:**
-
-\`\`\`yaml
-- name: Generate SBOM
-  uses: anchore/sbom-action@v0
-  with:
-    path: .
-    format: spdx-json
-    output-file: sbom.spdx.json
-
-- name: Upload SBOM
-  uses: actions/upload-artifact@v4
-  with:
-    name: sbom
-    path: sbom.spdx.json
-\`\`\`
-
----
-
-## 6. Observabilidade e Debugging
-
-### 6.1 Job Summaries Enriquecidos
-
-**Exemplo do projeto:**
+### 6.1 Job Summary no deploy-app.yml
 
 \`\`\`yaml
 - name: Job summary
@@ -863,443 +632,137 @@ jobs:
     } >> "$GITHUB_STEP_SUMMARY"
 \`\`\`
 
-### 6.2 Métricas e Timing
+**Por que \`if: always()\`?**
+- Roda mesmo se steps anteriores falharem
+- Sempre tenho visibilidade do que aconteceu
 
-**Tracking de duração:**
+### 6.2 Job Summary no infra-apply.yml
 
 \`\`\`yaml
-- name: Record start time
-  id: start
-  run: echo "time=$(date +%s)" >> $GITHUB_OUTPUT
-
-- name: Build
-  run: npm run build
-
-- name: Calculate build time
+- name: Job summary
+  if: always()
   run: |
-    START=\${{ steps.start.outputs.time }}
-    END=$(date +%s)
-    DURATION=$((END - START))
-    echo "Build took \${DURATION}s" >> $GITHUB_STEP_SUMMARY
+    {
+      echo "## Terraform Apply Summary";
+      echo "";
+      echo "| Item | Value |";
+      echo "|------|-------|";
+      echo "| Branch | \\\`\${{ github.ref_name }}\\\` |";
+      echo "| Actor | \\\`\${{ github.actor }}\\\` |";
+      echo "| Backend | \\\`stostateorafael/statetf/infra.terraform.tfstate\\\` |";
+      echo "| Status | ✅ Applied |";
+    } >> "$GITHUB_STEP_SUMMARY"
 \`\`\`
 
-### 6.3 Debugging com tmate
+**Benefício**: em vez de vasculhar logs, você vê um resumo direto na UI do Actions.
 
-**Acesso SSH ao runner em caso de falha:**
+## 7. Deploy: Azure Static Web Apps
+
+### 7.1 Deploy Direto para Produção
+
+O deploy-app.yml faz um **deploy simples e direto** para o Azure Static Web Apps:
 
 \`\`\`yaml
-- name: Debug via SSH
-  if: failure()
-  uses: mxschmitt/action-tmate@v3
+- name: Deploy to Azure Static Web Apps
+  uses: Azure/static-web-apps-deploy@v1
   with:
-    limit-access-to-actor: true
-    timeout-minutes: 15
+    azure_static_web_apps_api_token: \${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+    action: 'upload'
+    app_location: 'dist'
+    skip_app_build: true  # Já fizemos build antes
 \`\`\`
 
-**Uso:**
-1. Job falha
-2. tmate inicia sessão SSH
-3. Acesse via terminal para investigar
-4. Continue ou cancele o job
+**Por que skip_app_build: true?**
+- O build já foi executado antes (\`npm run build\`)
+- Testes já rodaram (unitários e componentes)
+- Apenas fazemos upload do \`dist/\` pronto
 
-### 6.4 Notificações Inteligentes
+### 7.2 Fluxo Completo do Deploy
 
-**Slack em caso de falha:**
-
-\`\`\`yaml
-- name: Notify on failure
-  if: failure()
-  uses: slackapi/slack-github-action@v1
-  with:
-    payload: |
-      {
-        "text": "❌ Deploy failed",
-        "blocks": [
-          {
-            "type": "section",
-            "text": {
-              "type": "mrkdwn",
-              "text": "*Deploy failed on \`\${{ github.ref_name }}\`*\\n<\${{ github.server_url }}/\${{ github.repository }}/actions/runs/\${{ github.run_id }}|View logs>"
-            }
-          }
-        ]
-      }
-  env:
-    SLACK_WEBHOOK_URL: \${{ secrets.SLACK_WEBHOOK }}
+\`\`\`
+1. Install deps (npm install)
+   ↓
+2. Unit tests (Vitest)
+   ↓
+3. Component tests (React Testing Library)
+   ↓
+4. Type check (tsc)
+   ↓
+5. Build (Vite)
+   ↓
+6. Deploy to Azure SWA
+   ↓
+7. Job Summary (métricas)
 \`\`\`
 
----
+**Tempo total**: ~3-5 minutos dependendo do cache
 
-## 7. Padrões de Deploy Avançados
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/07.png)
 
-### 7.1 Blue-Green Deployment
+## 8. Custos
 
-**Estratégia**: dois ambientes idênticos, troca de tráfego instantânea.
+### 8.1 Custo Zero para Repositórios Públicos
 
-\`\`\`yaml
-deploy:
-  steps:
-    - name: Deploy to green
-      run: |
-        az webapp deployment slot create \\
-          --name myapp \\
-          --resource-group rg-prod \\
-          --slot green
-        
-        az webapp deployment source config-zip \\
-          --name myapp \\
-          --resource-group rg-prod \\
-          --slot green \\
-          --src dist.zip
-    
-    - name: Smoke test green
-      run: |
-        curl -f https://myapp-green.azurewebsites.net/health
-    
-    - name: Swap slots
-      run: |
-        az webapp deployment slot swap \\
-          --name myapp \\
-          --resource-group rg-prod \\
-          --slot green \\
-          --target-slot production
-\`\`\`
-
-### 7.2 Canary Release
-
-**Estratégia**: deploy gradual com monitoramento.
-
-\`\`\`yaml
-deploy-canary:
-  steps:
-    - name: Deploy 10% traffic
-      run: |
-        kubectl set image deployment/myapp \\
-          app=myapp:\${{ github.sha }}
-        
-        kubectl patch svc myapp -p '{"spec":{"selector":{"version":"canary"}}}'
-        kubectl scale deployment/myapp-canary --replicas=1
-    
-    - name: Monitor for 5min
-      run: |
-        for i in {1..30}; do
-          ERROR_RATE=$(curl -s http://prometheus/api/v1/query?query=error_rate | jq '.data.result[0].value[1]')
-          if (( $(echo "$ERROR_RATE > 0.05" | bc -l) )); then
-            echo "Error rate too high, rolling back"
-            exit 1
-          fi
-          sleep 10
-        done
-    
-    - name: Promote to 100%
-      run: kubectl scale deployment/myapp-canary --replicas=10
-\`\`\`
-
-### 7.3 Progressive Rollout (Static Web Apps)
-
-**Azure SWA com staging environments:**
-
-\`\`\`yaml
-deploy:
-  steps:
-    - name: Deploy to preview
-      uses: Azure/static-web-apps-deploy@v1
-      with:
-        azure_static_web_apps_api_token: \${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-        action: 'upload'
-        app_location: 'dist'
-        deployment_environment: 'preview-\${{ github.event.pull_request.number }}'
-    
-    - name: Comment preview URL
-      uses: actions/github-script@v7
-      with:
-        script: |
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: '🚀 Preview deployed: https://preview-\${{ github.event.pull_request.number }}.azurestaticapps.net'
-          })
-\`\`\`
-
----
-
-## 8. Custos e Governance
-
-### 8.1 Otimização de Custos
-
-**GitHub Actions é pago após o tier gratuito:**
-- Public repos: ilimitado
+**GitHub Actions pricing:**
+- **Public repos**: minutos ilimitados ✅
 - Private repos: 2000 min/mês (free), depois $0.008/min
 
-**Estratégias:**
+Como o blog é **público**, os custos são **zero**. Mas ainda assim está otimizado.
 
-1. **Self-hosted runners** para projetos intensivos
-2. **Reduzir execuções desnecessárias** com path filters
-3. **Cache agressivo** para diminuir tempo de build
-4. **Paralelização inteligente**: mais jobs = mais custo
+### 8.2 Timeouts: Proteção Contra Runs Travados
 
-**Monitoramento:**
-
-\`\`\`bash
-gh api /orgs/{org}/settings/billing/actions
-\`\`\`
-
-### 8.2 Self-Hosted Runners
-
-**Quando usar:**
-- Workloads intensivos (builds grandes, ML)
-- Requisitos de compliance (dados não podem sair do ambiente)
-- Redução de custos em escala
-
-**Setup básico:**
+Todas as pipelines têm **timeout configurado**:
 
 \`\`\`yaml
-jobs:
-  build:
-    runs-on: [self-hosted, linux, x64]
-    steps:
-      # ... seu pipeline
+# infra-plan.yml
+timeout-minutes: 25
+
+# infra-apply.yml
+timeout-minutes: 30
+
+# deploy-app.yml
+timeout-minutes: 20
 \`\`\`
 
-**Provisionamento via Terraform:**
+**Por quê?**
+- Evita workflows travados consumindo hardware
+- Falha rápida em caso de problemas em loop infinito
 
-\`\`\`terraform
-resource "azurerm_container_instances" "runner" {
-  name                = "github-runner"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
-  os_type             = "Linux"
-  
-  container {
-    name   = "runner"
-    image  = "myorg/github-runner:latest"
-    cpu    = "2"
-    memory = "4"
-    
-    environment_variables = {
-      GITHUB_TOKEN     = var.github_token
-      RUNNER_NAME      = "aci-runner-\${random_id.runner.hex}"
-      RUNNER_WORKDIR   = "/work"
-      LABELS           = "azure,linux,container"
-    }
-  }
-}
-\`\`\`
+## 9. Workflow Dispatch: Triggers Manuais
 
-### 8.3 Governance e Compliance
+### 9.1 Trigger Manual nas 3 Pipelines
 
-**Rulesets (beta) para proteger workflows:**
-
-\`\`\`yaml
-# .github/rulesets/production.yml
-name: Production Protection
-enforcement: active
-target: branch
-conditions:
-  ref_name:
-    include: ["refs/heads/main"]
-rules:
-  - type: required_status_checks
-    parameters:
-      required_checks:
-        - context: "build"
-        - context: "test"
-        - context: "security-scan"
-  
-  - type: required_deployments
-    parameters:
-      required_deployment_environments: ["production"]
-\`\`\`
-
-**Audit logs via API:**
-
-\`\`\`bash
-gh api /orgs/{org}/audit-log \\
-  --jq '.[] | select(.action | startswith("workflows")) | {action, actor, repo}'
-\`\`\`
-
----
-
-## 9. Casos de Uso Avançados
-
-### 9.1 Matrix Builds Complexas
-
-**Build multi-plataforma:**
-
-\`\`\`yaml
-build:
-  strategy:
-    matrix:
-      os: [ubuntu-latest, windows-latest, macos-latest]
-      node: [18, 20]
-      exclude:
-        - os: macos-latest
-          node: 18
-  runs-on: \${{ matrix.os }}
-  steps:
-    - uses: actions/setup-node@v4
-      with:
-        node-version: \${{ matrix.node }}
-    - run: npm test
-\`\`\`
-
-### 9.2 Dynamic Matrix Generation
-
-**Gerar matriz baseado em mudanças:**
-
-\`\`\`yaml
-detect-changes:
-  runs-on: ubuntu-latest
-  outputs:
-    matrix: \${{ steps.set-matrix.outputs.matrix }}
-  steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    
-    - name: Detect changed services
-      id: set-matrix
-      run: |
-        CHANGED=$(git diff --name-only HEAD^ HEAD | \\
-          grep '^services/' | \\
-          cut -d/ -f2 | \\
-          sort -u | \\
-          jq -R -s -c 'split("\\n")[:-1]')
-        echo "matrix={\"service\":$CHANGED}" >> $GITHUB_OUTPUT
-
-test:
-  needs: detect-changes
-  strategy:
-    matrix: \${{ fromJson(needs.detect-changes.outputs.matrix) }}
-  runs-on: ubuntu-latest
-  steps:
-    - name: Test \${{ matrix.service }}
-      run: npm test -- services/\${{ matrix.service }}
-\`\`\`
-
-### 9.3 Workflow Dispatch com Inputs
-
-**Trigger manual com parâmetros:**
+Todas as 3 workflows suportam **trigger manual** via \`workflow_dispatch\`, permitindo execução sob demanda sem precisar fazer commits:
 
 \`\`\`yaml
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to deploy'
-        required: true
-        type: choice
-        options:
-          - staging
-          - production
-      version:
-        description: 'Version to deploy'
-        required: true
-        type: string
-      dry-run:
-        description: 'Dry run mode'
-        required: false
-        type: boolean
-        default: false
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy \${{ inputs.version }} to \${{ inputs.environment }}
-        run: |
-          if [ "\${{ inputs.dry-run }}" = "true" ]; then
-            echo "DRY RUN: would deploy \${{ inputs.version }}"
-          else
-            ./deploy.sh \${{ inputs.environment }} \${{ inputs.version }}
-          fi
 \`\`\`
 
----
-
-## 10. Lições Aprendidas
-
-### 10.1 Evite Over-Engineering
-
-**Erro comum**: pipelines excessivamente complexos para projetos simples.
-
-**Exemplo real**: inicialmente eu tinha 7 workflows separados. Consolidei para 3 e a manutenibilidade melhorou 10x.
-
-**Regra de ouro**: comece simples, adicione complexidade quando necessário.
-
-### 10.2 Fail Fast
-
-**Ordene jobs por velocidade:**
-
-\`\`\`yaml
-jobs:
-  lint:        # ~30s
-  unit-test:   # ~2min
-  build:       # ~5min
-  e2e:         # ~10min
-  deploy:      # ~3min
-\`\`\`
-
-Se o lint falha, economizamos 20 minutos.
-
-### 10.3 Documente Decisões
-
-**ADRs (Architecture Decision Records) no repo:**
-
-\`\`\`markdown
-# ADR-001: Trunk-Based Development
-
-## Context
-Precisávamos reduzir merge conflicts e acelerar feedback.
-
-## Decision
-Adotamos trunk-based dev com PRs curtos direto para main.
-
-## Consequences
-- ✅ Ciclos de feedback < 10min
-- ✅ Menos conflitos
-- ⚠️ Requer feature flags para trabalho em andamento
-\`\`\`
-
-### 10.4 Monitore Tendências
-
-**Tracking de métricas ao longo do tempo:**
-- Tempo médio de build
-- Taxa de sucesso de deploys
-- Cobertura de testes
-
-**Ferramenta sugerida**: GitHub Insights + Datadog/Grafana.
-
----
+**Como usar:**
+1. Vá para GitHub Actions
+2. Selecione o workflow desejado
+3. Clique em "Run workflow"
+4. Confirme a execução
 
 ## Conclusão
 
-GitHub Actions é muito mais que "YAML que roda comandos". É uma plataforma completa para orquestrar ciclos DevOps modernos.
+- **Arquitetura**: 3 workflows com responsabilidades segregadas
+- **Path filters**: executa apenas quando necessário
+- **Concurrency control**: evita race conditions
+- **Testes**: pirâmide com unitários + componentes
+- **Cache**: dependências npm, providers Terraform e plugins TFLint
+- **Segurança**: TFLint + tfsec + Checkov validam código Terraform
+- **Documentação**: terraform-docs auto-gera docs no README
+- **Deploy**: direto para Azure SWA após validações
+- **Job summaries**: métricas claras em cada execução
+- **Workflow dispatch**: todas as 3 pipelines podem ser executadas manualmente
 
-**Pontos-chave:**
-- **Arquitetura**: reusable workflows e composite actions evitam duplicação
-- **Testes**: pirâmide equilibrada com paralelização
-- **Performance**: cache agressivo e artifacts estratégicos
-- **Segurança**: OIDC, scanning, SBOM
-- **Observabilidade**: summaries ricos e notificações inteligentes
-- **Deploy**: blue-green, canary e progressive rollout
-- **Custos**: otimização via path filters e self-hosted runners
+Não comecei com tudo isso, fui evoluindo conforme fui aprendendo coisas novas e implementando em um case real. 
+Faça o mesmo, crie algum projeto pequeno pessoal, quebre, teste, aprenda, evolua!
 
-O pipeline que construí para o blog é resultado de iterações, falhas e aprendizados. Não existe "melhor prática universal" — adapte às necessidades do seu projeto.
-
-**Próximos passos sugeridos:**
-1. Revise seus workflows atuais: há duplicação?
-2. Implemente cache em camadas
-3. Adicione job summaries informativos
-4. Configure OIDC se estiver usando Azure/AWS
-5. Experimente reusable workflows
-
-E o mais importante: **meça, otimize, repita**.
-
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/06.png)`,
   date: "2026-01-22",
   category: "Artigos",
   readTime: "15 min de leitura",
-  mediumUrl: "",
 };

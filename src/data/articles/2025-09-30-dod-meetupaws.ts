@@ -84,6 +84,5 @@ O encontro foi uma irado cheio de aprendizado e conexão com as comunidade **AWS
 `,
   date: "2025-09-30",
   category: "Registro Eventos Presenciais",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

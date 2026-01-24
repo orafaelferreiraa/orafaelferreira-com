@@ -134,6 +134,5 @@ Configurar um repositório no GitHub é uma tarefa essencial para desenvolvedore
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-06-06",
   category: "Artigos",
-  readTime: "5 min de leitura",
-  mediumUrl: ""
+  readTime: "5 min de leitura"
 };

@@ -44,6 +44,5 @@ Destaque também para o networking proporcionado pelo evento. Foi uma grande opo
 `,
   date: "2024-11-24",
   category: "Registro Eventos Presenciais",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

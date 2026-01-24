@@ -57,6 +57,5 @@ A integração de metodologias ágeis com ferramentas modernas como Terraform, G
 `,
   date: "2024-10-29",
   category: "Artigos",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

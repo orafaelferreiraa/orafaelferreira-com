@@ -25,6 +25,5 @@ O AKS permite a integração de PV com serviços de armazenamento da Azure, como
 Em resumo, o uso de Persistent Volumes e Manifestos YAML são duas práticas importantes no desenvolvimento de aplicações no Kubernetes AKS, que ajudam a garantir a disponibilidade e persistência de dados, além de permitir a automatização e gestão eficiente da infraestrutura.`,
   date: "2023-02-05",
   category: "Artigos",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

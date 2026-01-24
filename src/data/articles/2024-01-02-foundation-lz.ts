@@ -137,6 +137,5 @@ Para mais informações sobre [O que é uma Landing Zone do Azure?](https://lear
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-01-02",
   category: "Artigos",
-  readTime: "7 min de leitura",
-  mediumUrl: ""
+  readTime: "7 min de leitura"
 };

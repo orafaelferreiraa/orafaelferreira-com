@@ -56,6 +56,5 @@ Nos vemos na próxima edição do **DevOpsDays Floripa**! 🚀
 `,
   date: "2025-12-28",
   category: "Organização de Eventos",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

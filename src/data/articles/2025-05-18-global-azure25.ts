@@ -64,6 +64,5 @@ Saiba mais: [Global Azure](https://globalazure.net/)
 `,
   date: "2025-05-18",
   category: "Organização de Eventos",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

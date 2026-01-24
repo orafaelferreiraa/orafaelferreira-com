@@ -130,6 +130,5 @@ Nos próximos artigos, irei demonstrar de forma prática projetos que implemente
 `,
   date: "2025-01-09",
   category: "Artigos",
-  readTime: "5 min de leitura",
-  mediumUrl: ""
+  readTime: "9 min de leitura"
 };

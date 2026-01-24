@@ -81,6 +81,5 @@ Agradecimento especial à **organização do whiteStone_dev**, aos **palestrante
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Antes de Estudar Ferramentas, Entenda a Cultura DevOps](https://stoblobcertificados011.blob.core.windows.net/palestras/dod-wsd.pdf)`,
   date: "2025-10-19",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

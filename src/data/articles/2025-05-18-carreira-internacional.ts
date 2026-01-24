@@ -65,6 +65,5 @@ Porque a comunidade técnica precisa falar sobre carreira, escolhas conscientes 
 `,
   date: "2025-05-18",
   category: "Registro Eventos Presenciais",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

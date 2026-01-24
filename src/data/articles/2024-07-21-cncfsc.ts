@@ -34,6 +34,5 @@ Se você curte o universo cloud native, cola com a gente!
 `,
   date: "2024-07-21",
   category: "Organizador Grupo de Comunidade",
-  readTime: "1 min de leitura",
-  mediumUrl: ""
+  readTime: "1 min de leitura"
 };

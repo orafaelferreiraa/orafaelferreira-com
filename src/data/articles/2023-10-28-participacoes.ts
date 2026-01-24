@@ -43,6 +43,5 @@ Espero que tenham gostado deste post e que ele tenha inspirado vocês de alguma 
 `,
   date: "2023-10-28",
   category: "Posts",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

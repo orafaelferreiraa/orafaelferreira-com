@@ -203,7 +203,6 @@ A combinação de prática diária, simulados fez toda a diferença. Se você es
   date: "2025-12-27",
   category: "Artigos",
   readTime: "9 min de leitura",
-  mediumUrl: "",
   badges: [
     {
       name: "Certified Kubernetes Administrator (CKA)",

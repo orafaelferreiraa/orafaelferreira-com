@@ -26,6 +26,5 @@ Com a imagem docker armazenada no ACR, podemos prosseguir com a implantação da
 A partir daí, o Kubernetes se encarregará de gerenciar as réplicas`,
   date: "2023-02-05",
   category: "Artigos",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

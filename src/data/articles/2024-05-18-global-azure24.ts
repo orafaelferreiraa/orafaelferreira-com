@@ -103,6 +103,5 @@ Então acesse e se inscreva em nossas redes sociais:
 Saiba mais: [Global Azure](https://globalazure.net/)`,
   date: "2024-05-18",
   category: "Organização de Eventos",
-  readTime: "4 min de leitura",
-  mediumUrl: ""
+  readTime: "4 min de leitura"
 };

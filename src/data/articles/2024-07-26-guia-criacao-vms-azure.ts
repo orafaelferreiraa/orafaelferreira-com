@@ -162,6 +162,5 @@ A flexibilidade e o poder do Azure permitem que você adapte a infraestrutura de
 Se tiver dúvidas ou precisar de mais detalhes, não hesite em entrar em contato. Espero que este guia tenha sido útil para você!`,
   date: "2024-07-26",
   category: "Azure",
-  readTime: "22 min de leitura",
-  mediumUrl: "https://orafaelferreiraa.medium.com/guia-de-cria%C3%A7%C3%A3o-de-maquinas-virtuais-no-microsoft-azure-9c2ecf5c205e"
+  readTime: "22 min de leitura"
 };

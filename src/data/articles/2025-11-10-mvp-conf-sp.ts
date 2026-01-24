@@ -73,6 +73,5 @@ Um evento **feito por especialistas para a comunidade**, com **propósito social
 `,
   date: "2025-11-10",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

@@ -165,6 +165,5 @@ Se tiver dúvidas ou precisar de mais detalhes, não hesite em entrar em contato
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
   date: "2024-06-05",
   category: "Artigos",
-  readTime: "5 min de leitura",
-  mediumUrl: ""
+  readTime: "5 min de leitura"
 };

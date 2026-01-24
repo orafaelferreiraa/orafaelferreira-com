@@ -80,6 +80,5 @@ Não deixe a energia acabar aqui. Cola com a gente nas redes, participe dos meet
 `,
   date: "2025-05-18",
   category: "Organização de Eventos",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

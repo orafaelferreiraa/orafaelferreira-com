@@ -13,7 +13,6 @@ export interface Article {
   date: string;
   category: string;
   readTime: string;
-  mediumUrl: string;
   image?: string;  // URL da imagem da thumbnail para compartilhamento (og:image)
   badges?: Badge[];
 }

@@ -65,6 +65,5 @@ Fique atento para os próximos artigos, onde mergulharemos nas "landing zones" e
 `,
   date: "2023-12-04",
   category: "Artigos",
-  readTime: "5 min de leitura",
-  mediumUrl: ""
+  readTime: "5 min de leitura"
 };

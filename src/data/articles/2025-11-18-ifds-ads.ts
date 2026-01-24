@@ -88,6 +88,5 @@ E que venham mais conversas que vão além do código.
 `,
   date: "2025-11-18",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

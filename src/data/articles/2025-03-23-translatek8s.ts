@@ -62,6 +62,5 @@ Contribuir para a tradução do Kubernetes é uma excelente maneira de aprender 
 `,
   date: "2025-03-23",
   category: "Artigos",
-  readTime: "3 min de leitura",
-  mediumUrl: ""
+  readTime: "3 min de leitura"
 };

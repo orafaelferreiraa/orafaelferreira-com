@@ -52,6 +52,5 @@ O GreenOps na Cloud é mais do que uma tendência; é uma necessidade. Empresas 
 `,
   date: "2024-06-02",
   category: "Registro Eventos Presenciais",
-  readTime: "2 min de leitura",
-  mediumUrl: ""
+  readTime: "2 min de leitura"
 };

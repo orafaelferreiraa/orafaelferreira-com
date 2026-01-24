@@ -151,6 +151,5 @@ O uso de AKS Spot via Terraform é uma estratégia brilhante para reduzir a fatu
 `,
   date: "2025-12-30",
   category: "Artigos",
-  readTime: "8 min de leitura",
-  mediumUrl: ""
+  readTime: "8 min de leitura"
 };

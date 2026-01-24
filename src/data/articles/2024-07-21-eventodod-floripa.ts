@@ -27,6 +27,5 @@ Nos vemos no **DevOpsDays Floripa 2025**! 🚀
 `,
   date: "2024-07-21",
   category: "Organização de Eventos",
-  readTime: "1 min de leitura",
-  mediumUrl: ""
+  readTime: "1 min de leitura"
 };

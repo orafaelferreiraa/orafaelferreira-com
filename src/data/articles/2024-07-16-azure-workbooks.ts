@@ -192,6 +192,5 @@ Azure Workbooks é uma ferramenta poderosa que pode ser utilizada para apoiar pr
 `,
   date: "2024-07-16",
   category: "Artigos",
-  readTime: "8 min de leitura",
-  mediumUrl: ""
+  readTime: "8 min de leitura"
 };
