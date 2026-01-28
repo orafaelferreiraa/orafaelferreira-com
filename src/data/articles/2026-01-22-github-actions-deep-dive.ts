@@ -745,6 +745,8 @@ on:
 3. Clique em "Run workflow"
 4. Confirme a execução
 
+Caso queira dar uma olhada em detalhes: [Workflows](https://github.com/orafaelferreiraa/orafaelferreira-com/tree/main/.github/workflows)
+
 ## Conclusão
 
 - **Arquitetura**: 3 workflows com responsabilidades segregadas
