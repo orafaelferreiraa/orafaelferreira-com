@@ -20,18 +20,19 @@ interface Talk {
 
 const Talks = () => {
   const upcomingTalks: Talk[] = [
-          {
+  ];
+
+  const inPersonTalks: Talk[] = [
+      {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
       event: "92 Python Florianópolis, SC",
       date: "2026-01-31",
       location: "HostGator, Floripa",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/92python-floripa/00.jpg",
       siteUrl: "https://tech.floripa.br/eventos/92o-python-floripa-hostgator/", 
-    }
-  ];
-
-  const inPersonTalks: Talk[] = [
-      {
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_vai-rolar-talk-no-92%C2%BA-python-floripa-l%C3%A1-na-activity-7418978182495809538-z7NM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/98python-floripa.pdf",  
+      },{
       title: "Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source",
       event: "DevOpsDays Porto Alegre 2025",
       date: "2025-11-29",
