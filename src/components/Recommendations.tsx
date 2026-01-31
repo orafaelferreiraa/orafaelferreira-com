@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Youtube, Music } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface RecommendationItem {
   name: string;
@@ -50,6 +51,10 @@ const spotifyPodcasts: RecommendationItem[] = [
 const Recommendations = () => {
   const { t } = useTranslation();
   
+  const { ref: platformsRef, isVisible: platformsVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: youtubeRef, isVisible: youtubeVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: podcastsRef, isVisible: podcastsVisible } = useScrollAnimation({ threshold: 0.1 });
+  
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
@@ -65,7 +70,7 @@ const Recommendations = () => {
         <Separator className="mb-12" />
 
         {/* Plataformas de Treinamentos Online */}
-        <div className="mb-12 animate-fade-in">
+        <div ref={platformsRef} className={`mb-12 scroll-fade-in ${platformsVisible ? 'visible' : ''}`}>
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-2">
@@ -95,7 +100,7 @@ const Recommendations = () => {
         </div>
 
         {/* Canais do YouTube */}
-        <div className="mb-12 animate-fade-in">
+        <div ref={youtubeRef} className={`mb-12 scroll-fade-in ${youtubeVisible ? 'visible' : ''}`}>
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-2">
@@ -125,7 +130,7 @@ const Recommendations = () => {
         </div>
 
         {/* Podcasts no Spotify */}
-        <div className="animate-fade-in">
+        <div ref={podcastsRef} className={`scroll-fade-in ${podcastsVisible ? 'visible' : ''}`}>
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-2">

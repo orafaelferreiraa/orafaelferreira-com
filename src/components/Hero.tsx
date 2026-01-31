@@ -1,9 +1,12 @@
 import { Linkedin, Github, Youtube, Music, Instagram, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import heroImage from "@/assets/hero-image.jpg";
 const Hero = () => {
   const { t } = useTranslation();
+  const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.2 });
+  
   const socialLinks = [{
     icon: Linkedin,
     href: "https://www.linkedin.com/in/orafaelferreiraa/",
@@ -77,7 +80,10 @@ const Hero = () => {
           </div>
 
           {/* Hero Image */}
-          <div className="flex-1 flex justify-center lg:justify-end animate-fade-in-up">
+          <div 
+            ref={imageRef}
+            className={`flex-1 flex justify-center lg:justify-end scroll-scale-in ${imageVisible ? 'visible' : ''}`}
+          >
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl animate-glow" />
               <img src={heroImage} alt="Rafael Ferreira" className="relative rounded-2xl w-full max-w-md lg:max-w-lg shadow-2xl border border-border" />
