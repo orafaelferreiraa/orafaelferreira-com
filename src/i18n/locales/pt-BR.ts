@@ -188,10 +188,10 @@ export default {
           title: "Confiança para Evoluir",
           description: "Valide suas ideias e ganhe segurança para executar o plano e buscar oportunidades."
         },
-        jobGroup: {
-          title: "Grupo Exclusivo de Vagas",
-          description: "Acesso ao grupo particular com vagas que recebo direto pelo LinkedIn, com recomendação direta ao recrutador."
-        }
+    jobGroup: {
+      title: "Indicação Direta para Vagas",
+      description: "Recrutadores me procuram com frequência. Quando uma vaga combina com seu perfil, irei fazer a ponte direta: te indicarei pessoalmente e acelerarei seu progresso profissional."
+    }
       },
       services: {
         mentorship: "Mentoria Cloud Azure e DevOps Individual",
