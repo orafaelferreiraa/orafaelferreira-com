@@ -84,38 +84,40 @@ const Mentorship = () => {
   const services = [{
     name: t("mentorship.services.mentorship"),
     price: "R$ 989",
-    link: "https://checkout.ticto.app/O13FE48B5"
+    link: "https://payment.ticto.app/O13FE48B5"
   }, {
     name: t("mentorship.services.linkedin"),
-    price: "R$ 159"
+    price: "R$ 189",
+    link: "https://payment.ticto.app/OB136C8B8"
   }, {
     name: t("mentorship.services.resume"),
-    price: "R$ 39"
+    price: "R$ 49",
+    link: "https://payment.ticto.app/OE731FEB6"
   }];
   const discountsByProfile = [{
     profile: t("mentorship.profiles.openToWork"),
     mentorship: "R$ 593,40",
-    linkedin: "R$ 159",
-    template: "R$ 39",
-    total: "R$ 791,40"
+    linkedin: "R$ 189",
+    template: "R$ 49",
+    total: "R$ 831,40"
   }, {
     profile: t("mentorship.profiles.junior"),
     mentorship: "R$ 692,30",
-    linkedin: "R$ 159",
-    template: "R$ 39",
-    total: "R$ 890,30"
+    linkedin: "R$ 189",
+    template: "R$ 49",
+    total: "R$ 930,30"
   }, {
     profile: t("mentorship.profiles.mid"),
     mentorship: "R$ 791,20",
-    linkedin: "R$ 159",
-    template: "R$ 39",
-    total: "R$ 989,20"
+    linkedin: "R$ 189",
+    template: "R$ 49",
+    total: "R$ 1.029,20"
   }, {
     profile: t("mentorship.profiles.senior"),
     mentorship: "R$ 890,10",
-    linkedin: "R$ 159",
-    template: "R$ 39",
-    total: "R$ 1.088,10"
+    linkedin: "R$ 189",
+    template: "R$ 49",
+    total: "R$ 1.128,10"
   }];
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -141,7 +143,7 @@ const Mentorship = () => {
             </Card>
             <div className="flex justify-center mt-8">
               <Button size="lg" asChild className="text-lg px-8 py-6">
-                <a href="https://checkout.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
+                <a href="https://payment.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                   {t("mentorship.hero.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
@@ -210,7 +212,13 @@ const Mentorship = () => {
                 </TableHeader>
                 <TableBody>
                   {services.map((service, index) => <TableRow key={index}>
-                      <TableCell className="font-medium">{service.name}</TableCell>
+                      <TableCell className="font-medium">
+                        {service.link ? (
+                          <a href={service.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                            {service.name}
+                          </a>
+                        ) : service.name}
+                      </TableCell>
                       <TableCell className="text-right">{service.price}</TableCell>
                     </TableRow>)}
                 </TableBody>
@@ -274,7 +282,7 @@ const Mentorship = () => {
               </div>
               <div className="flex justify-center mt-6">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
-                  <a href="https://checkout.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
+                  <a href="https://payment.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                     {t("mentorship.payment.ctaSignup")}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
@@ -388,7 +396,7 @@ const Mentorship = () => {
                       )}
                       {index === 0 && (
                         <Button asChild className="mt-4" size="sm">
-                          <a href="https://checkout.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
+                          <a href="https://payment.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                             {t("mentorship.signUp")}
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </a>
@@ -443,7 +451,7 @@ const Mentorship = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="text-lg px-8 py-6">
-                <a href="https://checkout.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
+                <a href="https://payment.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                   {t("mentorship.finalCTA.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
