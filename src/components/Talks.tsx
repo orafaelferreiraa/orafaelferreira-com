@@ -29,7 +29,7 @@ const Talks = () => {
       date: "2026-01-31",
       location: "HostGator, Floripa",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/92python-floripa/00.jpg",
-      siteUrl: "https://tech.floripa.br/eventos/92o-python-floripa-hostgator/", 
+      siteUrl: "https://www.meetup.com/pt-br/floripa-python-meetup/events/312978297/?eventOrigin=group_past_events", 
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_vai-rolar-talk-no-92%C2%BA-python-floripa-l%C3%A1-na-activity-7418978182495809538-z7NM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/98python-floripa.pdf",  
       },{
