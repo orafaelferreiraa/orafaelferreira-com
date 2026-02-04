@@ -7,7 +7,13 @@ export const article: Article = {
   content: `
 Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências que tive participando de eventos de tecnologia presenciais. Esses eventos foram oportunidades únicas para aprender, fazer networking e me manter atualizado sobre as últimas tendências tecnológicas. Vamos lá!
 
-## Agenda 2025
+## Agenda 2026
+
+| Mês | Evento |
+|-----|--------|
+| Jan | [**92º Python Floripa @ HostGator**](https://www.meetup.com/pt-br/floripa-python-meetup/events/312978297/?eventOrigin=group_past_events) |
+
+## 2025
 
 | Mês | Evento |
 |-----|--------|

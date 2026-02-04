@@ -1,6 +1,7 @@
 import { Trophy, Award, Users, Leaf } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 type AwardItem = {
   id: 'mvp' | 'alura' | 'devops' | 'green';
@@ -22,6 +23,9 @@ const Awards = () => {
   const { t } = useTranslation();
   const communityBullets = t('awards.communityBullets', { returnObjects: true }) as string[];
   
+  const { ref: awardsGridRef, isVisible: awardsGridVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: communityRef, isVisible: communityVisible } = useScrollAnimation({ threshold: 0.1 });
+  
   return (
     <section id="awards" className="py-20 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -34,7 +38,7 @@ const Awards = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div ref={awardsGridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {awards.map((award, index) => {
             const Icon = award.icon;
             const title = t(`awards.items.${award.id}.title`);
@@ -44,8 +48,8 @@ const Awards = () => {
             return (
               <Card
                 key={award.id}
-                className={`group hover:scale-105 transition-all duration-300 hover:shadow-xl bg-gradient-to-br ${award.color} backdrop-blur-sm animate-fade-in`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`group hover:scale-105 transition-all duration-300 hover:shadow-xl bg-gradient-to-br ${award.color} backdrop-blur-sm scroll-scale-in ${awardsGridVisible ? 'visible' : ''}`}
+                style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <CardHeader>
                   <div className="flex items-start gap-4 mb-4">
@@ -86,7 +90,10 @@ const Awards = () => {
           })}
         </div>
 
-        <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 animate-fade-in">
+        <Card 
+          ref={communityRef}
+          className={`bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 scroll-fade-in ${communityVisible ? 'visible' : ''}`}
+        >
           <CardHeader>
             <CardTitle className="text-2xl">{t("awards.communityImpact")}</CardTitle>
           </CardHeader>

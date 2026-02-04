@@ -2,9 +2,15 @@ import { Cloud, Code, TrendingUp, Lightbulb, Award, Users, Briefcase, Monitor } 
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const About = () => {
   const { t } = useTranslation();
+  
+  // Criar hooks para diferentes grupos de elementos
+  const { ref: highlightsRef, isVisible: highlightsVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { ref: skillsRef, isVisible: skillsVisible } = useScrollAnimation({ threshold: 0.1 });
+  
   const highlights = [{
     icon: Award,
     title: t("about.highlights.experience.title"),
@@ -55,10 +61,13 @@ const About = () => {
           </div>
 
           {/* Highlights Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            {highlights.map((highlight, index) => <Card key={highlight.title} className="group hover:border-primary/50 transition-all duration-300 animate-fade-in-up" style={{
-            animationDelay: `${index * 100}ms`
-          }}>
+          <div ref={highlightsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            {highlights.map((highlight, index) => <Card 
+              key={highlight.title} 
+              className={`group hover:border-primary/50 transition-all duration-300 scroll-fade-in ${highlightsVisible ? 'visible' : ''}`}
+              style={{
+                transitionDelay: `${index * 100}ms`
+              }}>
                 <CardContent className="p-6">
                   <highlight.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="text-xl font-heading font-semibold mb-2">{highlight.title}</h3>
@@ -77,10 +86,13 @@ const About = () => {
               {t("about.skillsTitle")} <span className="text-primary">{t("about.skillsTitleHighlight")}</span>
             </h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {skills.map((skill, index) => <div key={skill.title} className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-in-up" style={{
-            animationDelay: `${index * 100}ms`
-          }}>
+          <div ref={skillsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {skills.map((skill, index) => <div 
+              key={skill.title} 
+              className={`group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 scroll-fade-in ${skillsVisible ? 'visible' : ''}`}
+              style={{
+                transitionDelay: `${index * 100}ms`
+              }}>
                 <skill.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-xl font-heading font-semibold mb-2">{skill.title}</h3>
                 <p className="text-muted-foreground">{skill.description}</p>

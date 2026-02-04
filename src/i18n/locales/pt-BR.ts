@@ -194,7 +194,7 @@ export default {
     }
       },
       services: {
-        mentorship: "Mentoria Cloud Azure e DevOps Individual",
+        mentorship: "Mentoria Individual Cloud Azure e DevOps",
         linkedin: "Revisão de Perfil no LinkedIn",
         resume: "Template Currículo"
       },
@@ -233,15 +233,15 @@ export default {
       whySection: {
         title: "🚀 Por que minha mentoria é exatamente o que você",
         titleHighlight: "precisa agora?",
-        paragraph1: "No mundo da tecnologia, surgem novas ferramentas, certificações e metodologias a todo momento. Fica difícil saber onde investir seu tempo e esforço. A minha mentoria Cloud Azure e DevOps individual oferece orientação sob medida: em vez de dicas genéricas, você recebe conselhos alinhados exatamente com seus objetivos e desafios.",
+        paragraph1: "No mundo da tecnologia, surgem novas ferramentas, certificações e metodologias a todo momento. Fica difícil saber onde investir seu tempo e esforço. A minha Mentoria Individual Cloud Azure e DevOps oferece orientação sob medida: em vez de dicas genéricas, você recebe conselhos alinhados exatamente com seus objetivos e desafios.",
         quote: "Um estudo da Harvard Business Review revelou que profissionais com mentoria recebem promoções cinco vezes mais frequentemente que aqueles sem mentores, avançando na carreira em média 18 meses mais rápido.",
         paragraph2: "Você pode tentar avançar sozinho com cursos online, faculdades ou pós-graduações. Claro, eventualmente, você chegará lá, mas qual é o preço que você está disposto a pagar pelo seu tempo? Você pode ir a pé para qualquer lugar ou pode escolher ir de carro, ônibus ou avião para chegar mais rápido.",
-        paragraph3: "A mentoria Cloud Azure e DevOps individual é exatamente esse \"avião\": uma abordagem acelerada, direta e personalizada que te levará rapidamente ao resultado que você tanto deseja, com menos esforço, menos erros e resultados concretos.",
+        paragraph3: "A Mentoria Individual Cloud Azure e DevOps é exatamente esse \"avião\": uma abordagem acelerada, direta e personalizada que te levará rapidamente ao resultado que você tanto deseja, com menos esforço, menos erros e resultados concretos.",
         paragraph4: "Pense comigo: o que são mil reais investidos em sua carreira se você conseguir dobrar ou multiplicar seu salário? O que isso representaria para você e para sua família? Lembre-se: eu já trilhei esse caminho, multipliquei meu salário em 20 vezes em menos de 4 anos. E você, está disposto a esperar quanto tempo para alcançar esses resultados?",
         warning: "Mas atenção:",
         warningText: "Eu não farei o que cabe a você fazer. O sucesso é certo se você seguir o que for traçado, mas depende diretamente do seu comprometimento e esforço. Não haverá devolução, pois não posso garantir que você fará sua parte. Eu já fiz a minha, e estou aqui para ajudar você a transformar a sua vida e a da sua família, exatamente como transformei a minha."
       },
-      benefitsTitle: "🎯 Na minha mentoria Cloud Azure e DevOps individual você terá:",
+      benefitsTitle: "🎯 Na minha Mentoria Individual Cloud Azure e DevOps você terá:",
       provenMethod: {
         title: "Um método prático, testado e replicável",
         intro: "A mentoria não é improvisada. Ela segue um método que aplico há anos, baseado em decisões estratégicas reais do dia a dia. O método se apoia em três pilares:",
