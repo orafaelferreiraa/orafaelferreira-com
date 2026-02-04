@@ -19,7 +19,7 @@ concurrency:
 jobs:
   core-validation:
     name: Pipeline Core Validation
-    uses: orafaelferreiraa/pipeline-as-a-service-stack/.github/workflows/pipeline-core.yaml@main
+    uses: orafaelferreiraa/pipeline-as-a-service-stack/workflows/pipeline-core.yaml@main
     with:
       terraform_dir: infra
       terraform_version: '1.13.4'
