@@ -31,7 +31,7 @@ jobs:
       enable_tflint: true
       enable_tfsec: true
       enable_checkov: true
-      generate_tfdocs: true
+      generate_tfdocs: false
       enable_tf_cost: false
       enable_cache: true
       soft_fail: false
