@@ -20,6 +20,11 @@ jobs:
   core-validation:
     name: Pipeline Core Validation
     uses: orafaelferreiraa/pipeline-as-a-service-stack/.github/workflows/pipeline-core.yaml@main
+    secrets: inherit
+    permissions:
+      contents: read
+      pull-requests: write
+      security-events: write
     with:
       terraform_dir: infra
       terraform_version: '1.13.4'
