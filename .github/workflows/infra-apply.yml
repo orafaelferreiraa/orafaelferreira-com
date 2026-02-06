@@ -17,7 +17,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  core-validation:
+    name: Pipeline Core Validationn
+    uses: orafaelferreiraa/pipeline-as-a-service-stack/.github/workflows/pipeline-core.yaml@main
+    secrets: inherit
+    permissions:
+      contents: read
+      pull-requests: write
+      security-events: write
+    with:
+      terraform_dir: infra
+      terraform_version: '1.13.4'
+      enable_tflint: true
+      enable_tfsec: true
+      enable_checkov: true
+      generate_tfdocs: false
+      enable_tf_cost: false
+      soft_fail: false
+
   terraform:
+    name: Terraform Apply
+    needs: core-validation
     runs-on: ubuntu-latest
     timeout-minutes: 30
     if: github.actor != 'github-actions[bot]'
@@ -75,44 +95,6 @@ jobs:
 
       - name: Terraform Init
         run: terraform init -input=false
-
-      - name: Terraform Fmt
-        run: terraform fmt -recursive
-
-      - name: Terraform Validate
-        run: terraform validate
-
-      - name: Setup TFLint
-        uses: terraform-linters/setup-tflint@v4
-        with:
-          tflint_version: latest
-
-      - name: Cache TFLint plugins
-        uses: actions/cache@v4
-        with:
-          path: ~/.tflint.d/plugins
-          key: ${{ runner.os }}-tflint-${{ hashFiles('infra/.tflint.hcl') }}
-          restore-keys: |
-            ${{ runner.os }}-tflint-
-
-      - name: Run TFLint
-        run: |
-          tflint --init
-          tflint -f compact
-
-      - name: tfsec scan
-        uses: aquasecurity/tfsec-action@v1.0.3
-        with:
-          working_directory: infra
-          soft_fail: false
-
-      - name: Checkov scan
-        uses: bridgecrewio/checkov-action@v12
-        with:
-          directory: infra
-          quiet: true
-          soft_fail: false
-
 
       - name: Terraform Apply
         env:
