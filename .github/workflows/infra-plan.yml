@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   core-validation:
-    name: Pipeline Core Validation
+    name: Pipeline Core Validationn
     uses: orafaelferreiraa/pipeline-as-a-service-stack/.github/workflows/pipeline-core.yaml@main
     secrets: inherit
     permissions:
