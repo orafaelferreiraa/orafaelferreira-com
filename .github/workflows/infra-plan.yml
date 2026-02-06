@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   core-validation:
-    name: Pipeline Core Validation
+    name: Pipeline Core Validationn
     uses: orafaelferreiraa/pipeline-as-a-service-stack/workflows/pipeline-core.yaml@main
     with:
       terraform_dir: infra
