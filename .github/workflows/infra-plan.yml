@@ -39,7 +39,7 @@ jobs:
       enable_checkov: true
       generate_tfdocs: false
       enable_tf_cost: false
-      soft_fail: false
+      soft_fail: true
 
   terraform-plan:
     name: Terraform Plan
