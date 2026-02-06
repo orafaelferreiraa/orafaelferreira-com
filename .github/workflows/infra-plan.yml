@@ -39,7 +39,6 @@ jobs:
       enable_checkov: true
       generate_tfdocs: false
       enable_tf_cost: false
-      enable_cache: true
       soft_fail: false
 
   terraform-plan:
