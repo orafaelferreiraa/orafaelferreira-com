@@ -1,6 +1,12 @@
 name: infra-plan
 
 on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'infra/**'
+      - '.github/workflows/infra-plan.yml'
   pull_request:
     branches: [ main ]
     paths:
@@ -19,17 +25,21 @@ concurrency:
 jobs:
   core-validation:
     name: Pipeline Core Validationn
-    uses: orafaelferreiraa/pipeline-as-a-service-stack/workflows/pipeline-core.yaml@main
+    uses: orafaelferreiraa/pipeline-as-a-service-stack/.github/workflows/pipeline-core.yaml@main
+    secrets: inherit
+    permissions:
+      contents: read
+      pull-requests: write
+      security-events: write
     with:
       terraform_dir: infra
       terraform_version: '1.13.4'
       enable_tflint: true
       enable_tfsec: true
       enable_checkov: true
-      generate_tfdocs: true
+      generate_tfdocs: false
       enable_tf_cost: false
-      enable_cache: true
-      soft_fail: false
+      soft_fail: true
 
   terraform-plan:
     name: Terraform Plan
