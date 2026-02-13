@@ -104,7 +104,7 @@ O bloco abaixo é gerado automaticamente pelo `terraform-docs` a partir do conte
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.13.4 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.13.4, < 2.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 4.50.0 |
 
 ## Providers
