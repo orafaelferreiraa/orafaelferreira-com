@@ -1,12 +1,12 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Youtube, Music } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import { Card, CardContent } from "@/components/ui/card";
+import { GraduationCap, Play, Headphones, ArrowUpRight, Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface RecommendationItem {
   name: string;
   url: string;
+  highlight?: boolean;
 }
 
 const trainingPlatforms: RecommendationItem[] = [
@@ -14,12 +14,12 @@ const trainingPlatforms: RecommendationItem[] = [
   { name: "DevOpsPro", url: "https://curso.devopspro.com.br/" },
   { name: "Linuxtips", url: "https://www.linuxtips.io/" },
   { name: "Udemy", url: "https://www.udemy.com/" },
-  { name: "KodeKloud", url: "https://www.https://kodekloud.com/.com/" },
-  { name: "Alura", url: "https://www.alura.com.br/promocao/awin_10EstudeAlurax" }
+  { name: "KodeKloud", url: "https://kodekloud.com/" },
+  { name: "Alura", url: "https://www.alura.com.br/promocao/awin_10EstudeAlurax",}
 ];
 
 const youtubeChannels: RecommendationItem[] = [
-  { name: "LowOps Channel", url: "https://www.youtube.com/@LowOps" },
+  { name: "LowOps Channel", url: "https://www.youtube.com/@LowOps", highlight: true },
   { name: "Fabricio Veronez", url: "https://www.youtube.com/@fabricioveronez" },
   { name: "LINUXtips", url: "https://www.youtube.com/@LinuxTips" },
   { name: "Raphael Andrade", url: "https://www.youtube.com/@RaphaelAndrade" },
@@ -27,16 +27,16 @@ const youtubeChannels: RecommendationItem[] = [
   { name: "Azure Floripa", url: "https://www.youtube.com/@AzureFloripa" },
   { name: "John Savill's Technical Training", url: "https://www.youtube.com/@NTFAQGuy" },
   { name: "DOUGBR - DevOps User Group Brazil", url: "https://www.youtube.com/@dougbrazil" },
-  { name: "IT LifeHacks - Edesan Tomaz ☁️", url: "https://www.youtube.com/@ITLifeHacks" },
-  { name: "Canal Marcus Vinícius", url: "https://www.youtube.com/@canalmarcusvinicius/videos" },
+  { name: "IT LifeHacks - Edesan Tomaz", url: "https://www.youtube.com/@ITLifeHacks" },
+  { name: "Canal Marcus Vinicius", url: "https://www.youtube.com/@canalmarcusvinicius/videos" },
   { name: "TecMundo", url: "https://www.youtube.com/@tecmundo" },
   { name: "Seja Uma Pessoa Melhor", url: "https://www.youtube.com/@sejaumapessoamelhor" },
   { name: "Marcos Strider", url: "https://www.youtube.com/@marcostrider" },
-  { name: "El Professor da Oratória", url: "https://www.youtube.com/@elprofessordaoratoria" }
+  { name: "El Professor da Oratoria", url: "https://www.youtube.com/@elprofessordaoratoria" }
 ];
 
 const spotifyPodcasts: RecommendationItem[] = [
-  { name: "LowOpsCast", url: "https://open.spotify.com/show/0U4kcZT2Cwn4CqQGg4Ywcj?si=1d9848b7fedd4059" },
+  { name: "LowOpsCast", url: "https://open.spotify.com/show/0U4kcZT2Cwn4CqQGg4Ywcj?si=1d9848b7fedd4059", highlight: true },
   { name: "Kubicast", url: "https://open.spotify.com/show/7x2OHOUAaOnTjlSwBHNAjN?si=1c30528ecfd9400f" },
   { name: "IA Sob Controle", url: "https://open.spotify.com/show/5xLCMHJ6eGWzdu8JaIDkuP?si=c83cf258eb0847b8" },
   { name: "Hipster Ponto Tech", url: "https://open.spotify.com/show/2p0Vx75OmfsXktyLBuLuSf?si=fbce32599acd44c3" },
@@ -45,118 +45,127 @@ const spotifyPodcasts: RecommendationItem[] = [
   { name: "English in Brazil", url: "https://open.spotify.com/show/0LZHZHWjUddEvNaY3NM98q?si=34dd2ab094774be2" },
   { name: "Tech Lead Journal", url: "https://open.spotify.com/show/5suS91H6OfqDt14ZsOD4RV?si=8f4e0ac6288349d32" },
   { name: "PrimoCast", url: "https://open.spotify.com/show/2gCj9YG9tjMexhS4pIlRHo?si=4532e82b82bc4744" },
-  { name: "Como Você fez isso?", url: "https://open.spotify.com/show/1QJgd5aW274UcsHAShJwSE?si=00d204329ef74598" }
+  { name: "Como Voce fez isso?", url: "https://open.spotify.com/show/1QJgd5aW274UcsHAShJwSE?si=00d204329ef74598" }
+];
+
+interface CategorySection {
+  id: string;
+  titleKey: string;
+  icon: React.ElementType;
+  gradient: string;
+  items: RecommendationItem[];
+}
+
+const categories: CategorySection[] = [
+  {
+    id: "training",
+    titleKey: "recommendations.trainingPlatforms",
+    icon: GraduationCap,
+    gradient: "from-blue-500 to-cyan-500",
+    items: trainingPlatforms,
+  },
+  {
+    id: "youtube",
+    titleKey: "recommendations.youtubeChannels",
+    icon: Play,
+    gradient: "from-red-500 to-rose-500",
+    items: youtubeChannels,
+  },
+  {
+    id: "podcasts",
+    titleKey: "recommendations.spotifyPodcasts",
+    icon: Headphones,
+    gradient: "from-green-500 to-emerald-500",
+    items: spotifyPodcasts,
+  },
 ];
 
 const Recommendations = () => {
   const { t } = useTranslation();
-  
-  const { ref: platformsRef, isVisible: platformsVisible } = useScrollAnimation({ threshold: 0.1 });
-  const { ref: youtubeRef, isVisible: youtubeVisible } = useScrollAnimation({ threshold: 0.1 });
-  const { ref: podcastsRef, isVisible: podcastsVisible } = useScrollAnimation({ threshold: 0.1 });
-  
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.05 });
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-6xl">
-        <div className="mb-12 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            {t("recommendations.title")}
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl">
-            {t("recommendations.description")}
-          </p>
-        </div>
+    <section className="py-20 lg:py-32 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">
+              {t("recommendations.title")}
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {t("recommendations.description")}
+            </p>
+          </div>
 
-        <Separator className="mb-12" />
-
-        {/* Plataformas de Treinamentos Online */}
-        <div ref={platformsRef} className={`mb-12 scroll-fade-in ${platformsVisible ? 'visible' : ''}`}>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl flex items-center gap-2">
-                <ExternalLink className="h-6 w-6 text-primary" />
-                {t("recommendations.trainingPlatforms")}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {trainingPlatforms.map((platform, index) => (
-                  <a
-                    key={index}
-                    href={platform.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 p-3 rounded-lg border border-border hover:border-primary hover:bg-accent transition-all group"
+          {/* Categories */}
+          <div ref={contentRef} className="space-y-16">
+            {categories.map((category, categoryIndex) => (
+              <div
+                key={category.id}
+                className={`scroll-fade-in ${contentVisible ? "visible" : ""}`}
+                style={{ transitionDelay: `${categoryIndex * 150}ms` }}
+              >
+                {/* Category Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div
+                    className={`p-3 rounded-2xl bg-gradient-to-br ${category.gradient} text-white shadow-lg`}
                   >
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    <span className="text-sm font-medium group-hover:text-primary transition-colors">
-                      {platform.name}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+                    <category.icon className="h-6 w-6" />
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-heading font-bold">
+                    {t(category.titleKey)}
+                  </h2>
+                </div>
 
-        {/* Canais do YouTube */}
-        <div ref={youtubeRef} className={`mb-12 scroll-fade-in ${youtubeVisible ? 'visible' : ''}`}>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl flex items-center gap-2">
-                <Youtube className="h-6 w-6 text-primary" />
-                {t("recommendations.youtubeChannels")}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {youtubeChannels.map((channel, index) => (
-                  <a
-                    key={index}
-                    href={channel.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 p-3 rounded-lg border border-border hover:border-primary hover:bg-accent transition-all group"
-                  >
-                    <Youtube className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    <span className="text-sm font-medium group-hover:text-primary transition-colors">
-                      {channel.name}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+                {/* Items Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {category.items.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                    >
+                      <Card
+                        className={`relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+                          item.highlight
+                            ? "border-primary/50 bg-primary/5"
+                            : "hover:border-primary/50"
+                        }`}
+                      >
+                        {/* Top gradient bar */}
+                        <div
+                          className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${category.gradient} opacity-0 group-hover:opacity-100 transition-opacity`}
+                        />
 
-        {/* Podcasts no Spotify */}
-        <div ref={podcastsRef} className={`scroll-fade-in ${podcastsVisible ? 'visible' : ''}`}>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl flex items-center gap-2">
-                <Music className="h-6 w-6 text-primary" />
-                {t("recommendations.spotifyPodcasts")}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {spotifyPodcasts.map((podcast, index) => (
-                  <a
-                    key={index}
-                    href={podcast.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 p-3 rounded-lg border border-border hover:border-primary hover:bg-accent transition-all group"
-                  >
-                    <Music className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    <span className="text-sm font-medium group-hover:text-primary transition-colors">
-                      {podcast.name}
-                    </span>
-                  </a>
-                ))}
+                        <CardContent className="p-4 flex items-center gap-3">
+                          {/* Color indicator */}
+                          <div
+                            className={`w-2 h-2 rounded-full bg-gradient-to-br ${category.gradient} opacity-60 group-hover:opacity-100 group-hover:scale-150 transition-all`}
+                          />
+
+                          {/* Name */}
+                          <span className="font-medium flex-1 group-hover:text-primary transition-colors truncate">
+                            {item.name}
+                          </span>
+
+                          {/* Highlight star */}
+                          {item.highlight && (
+                            <Star className="h-4 w-4 text-primary fill-primary" />
+                          )}
+
+                          {/* Arrow */}
+                          <ArrowUpRight className="h-4 w-4 text-muted-foreground/50 group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all" />
+                        </CardContent>
+                      </Card>
+                    </a>
+                  ))}
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

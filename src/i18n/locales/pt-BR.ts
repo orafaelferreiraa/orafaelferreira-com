@@ -73,6 +73,32 @@ export default {
         }
       }
     },
+    partners: {
+      title: "Parceiros",
+      subtitle: "Links exclusivos e cupons de desconto para você.",
+      coupon: "Cupom",
+      visitSite: "Acessar",
+      items: {
+        useti: {
+          description: "Loja de roupas pra quem vive tecnologia no dia a dia"
+        },
+        alura: {
+          description: "Cursos de tecnologia pra estudar sem enrolação"
+        },
+        techfx: {
+          description: "Receba pagamentos do exterior sem burocracia"
+        },
+        contabilizei: {
+          description: "Contabilidade online pra quem é dev, PJ ou freelancer"
+        },
+        opusclip: {
+          description: "Recorte e edição de vídeos com ajuda de IA"
+        },
+        nuvme: {
+          description: "Cloud, DevOps, FinOps, Segurança, IA e Observabilidade em um só lugar"
+        }
+      }
+    },
     awards: {
       title: "Premiações",
       subtitle: "Quatro programas, um propósito: enaltecer quem compartilha conhecimento e fortalece a comunidade tech.",

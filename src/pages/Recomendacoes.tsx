@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Recommendations from "@/components/Recommendations";
+import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
 
@@ -19,6 +20,7 @@ const Recomendacoes = () => {
       <div className="min-h-screen">
         <Navigation />
         <Recommendations />
+        <Partners />
         <Footer />
       </div>
     </>

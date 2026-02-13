@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
 
@@ -21,6 +22,7 @@ const Home = () => {
         <Navigation />
         <Hero />
         <About />
+        <Partners />
         <Footer />
       </div>
     </>

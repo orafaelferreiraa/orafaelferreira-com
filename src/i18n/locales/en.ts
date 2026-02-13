@@ -66,6 +66,33 @@ export default {
         }
       }
     },
+    partners: {
+      title: "Partners",
+      subtitle: "Partners with exclusive links and discount coupons for you.",
+      coupon: "Coupon",
+      visitSite: "Visit",
+      disclaimer: "The links above may be affiliate links. By using them, you support my work at no additional cost.",
+      items: {
+        useti: {
+          description: "Clothing store for those who live and breathe technology"
+        },
+        alura: {
+          description: "Tech courses to study without wasting time"
+        },
+        techfx: {
+          description: "Receive international payments hassle-free"
+        },
+        contabilizei: {
+          description: "Online accounting for devs, contractors and freelancers"
+        },
+        opusclip: {
+          description: "Video clipping and editing powered by AI"
+        },
+        nuvme: {
+          description: "Cloud, DevOps, FinOps, Security, AI and Observability in one place"
+        }
+      }
+    },
     awards: {
       title: "Awards",
       subtitle: "Four programs, one purpose: celebrating those who share knowledge and strengthen the tech community.",
