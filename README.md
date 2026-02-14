@@ -152,9 +152,8 @@ O domínio customizado `www.orafaelferreira.com` são configurados via Terraform
 - A pipeline de deploy usa `npm install` ao invés de `npm ci` para maior flexibilidade quando há atualizações de dependências.
 - Workflows de infra e deploy são independentes mas coordenados: mudanças de infra triggam apply → deploy do app via `workflow_run`. Commits automáticos do `terraform-docs` (actor `github-actions[bot]`) não disparam o deploy do app (condição adicionada em `deploy-app.yml`).
 
-## como funciona (diagrama simples)
+## diagrama simples
 
-### como o site vai do código pro ar
 
 ```mermaid
 graph LR
@@ -190,38 +189,7 @@ graph LR
     style User fill:#8b5cf6,color:#fff,stroke:#7c3aed
 ```
 
-### o que tem dentro do site
-
-```mermaid
-graph TD
-    Site["🌐 Site do Rafael\nwww.orafaelferreira.com"]
-
-    Site --> Home["🏠 Página Inicial\nApresentação e parceiros"]
-    Site --> Mentoria["🎓 Mentoria\nAulas de Cloud e DevOps"]
-    Site --> Blog["📝 Blog\nArtigos técnicos"]
-    Site --> Exp["💼 Experiências\nOnde já trabalhou"]
-    Site --> Palestras["🎤 Palestras\nEventos que participou"]
-    Site --> Certs["📜 Certificações\nCursos e provas"]
-    Site --> Premios["🏆 Premiações\nReconhecimentos"]
-    Site --> Recs["⭐ Recomendações\nO que dizem sobre ele"]
-
-    Site -.->|"🇧🇷 Português"| Lang1[" "]
-    Site -.->|"🇺🇸 Inglês"| Lang2[" "]
-
-    style Site fill:#0078D4,color:#fff,stroke:#005a9e
-    style Home fill:#3b82f6,color:#fff,stroke:#2563eb
-    style Mentoria fill:#8b5cf6,color:#fff,stroke:#7c3aed
-    style Blog fill:#10b981,color:#fff,stroke:#059669
-    style Exp fill:#f59e0b,color:#fff,stroke:#d97706
-    style Palestras fill:#ef4444,color:#fff,stroke:#dc2626
-    style Certs fill:#06b6d4,color:#fff,stroke:#0891b2
-    style Premios fill:#f97316,color:#fff,stroke:#ea580c
-    style Recs fill:#ec4899,color:#fff,stroke:#db2777
-    style Lang1 fill:none,stroke:none
-    style Lang2 fill:none,stroke:none
-```
-
-## arquitetura técnica (diagramas detalhados)
+## arquitetura técnica
 
 > Seção para quem curte DevOps, IaC e CI/CD de verdade. Todos os diagramas abaixo refletem a implementação real do projeto.
 
