@@ -152,27 +152,27 @@ O domínio customizado `www.orafaelferreira.com` são configurados via Terraform
 - A pipeline de deploy usa `npm install` ao invés de `npm ci` para maior flexibilidade quando há atualizações de dependências.
 - Workflows de infra e deploy são independentes mas coordenados: mudanças de infra triggam apply → deploy do app via `workflow_run`. Commits automáticos do `terraform-docs` (actor `github-actions[bot]`) não disparam o deploy do app (condição adicionada em `deploy-app.yml`).
 
-## diagrama simples
+## Diagrama Simples
 
 
 ```mermaid
 graph LR
     subgraph "👨‍💻 Rafael escreve o código"
-        Code["📝 Código do site\n(React + TypeScript)"]
+        Code["📝 Código do site (Artigo Novo)"]
     end
 
     subgraph "🔄 GitHub cuida do resto"
-        GH["🐙 GitHub\n(guarda o código)"]
-        CI["🤖 Robô automático\n(testa e empacota)"]
+        GH["🐙 GitHub guarda o código"]
+        CI["🤖 Robô automático testa e empacota)"]
     end
 
     subgraph "☁️ Azure hospeda o site"
-        Azure["☁️ Microsoft Azure\n(servidor na nuvem)"]
+        Azure["☁️ Microsoft Azure (servidor na nuvem)"]
         Domain["🌐 www.orafaelferreira.com"]
     end
 
     subgraph "📱 Visitante acessa"
-        User["🧑 Qualquer pessoa\nno navegador"]
+        User["🧑 Você visitando o site"]
     end
 
     Code -->|"envia"| GH
