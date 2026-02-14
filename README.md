@@ -336,29 +336,19 @@ flowchart TB
         swa_config["⚙️ staticwebapp.config.json<br/><code>SPA fallback → /index.html<br/>X-Frame-Options: DENY<br/>X-Content-Type-Options: nosniff<br/>Cache-Control: 1h</code>"]
     end
 
-    subgraph external["🔗 External Integrations"]
-        direction LR
-        ga["📈 Google Analytics 4<br/><code>gtag.js · SPA pageview tracking</code>"]
-    end
-
     client --> stack
     client --> i18n
     client --> data
     client --> seo
-    analytics_comp -.-> ga
-    routes -.-> ticto
-    routes -.-> partners
 
     style client fill:#0d1117,color:#c9d1d9,stroke:#30363d
     style stack fill:#1a1a2e,color:#e0e0e0,stroke:#30363d
     style i18n fill:#1a1a2e,color:#e0e0e0,stroke:#30363d
     style data fill:#1a1a2e,color:#e0e0e0,stroke:#30363d
     style seo fill:#1a1a2e,color:#e0e0e0,stroke:#30363d
-    style external fill:#1a1a2e,color:#e0e0e0,stroke:#30363d
     style entry fill:#3b82f6,color:#fff
     style app fill:#3b82f6,color:#fff
     style analytics_comp fill:#f59e0b,color:#000
-    style ga fill:#f59e0b,color:#000
     style vite fill:#646cff,color:#fff
     style react fill:#61dafb,color:#000
     style ts fill:#3178c6,color:#fff
