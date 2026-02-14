@@ -189,7 +189,7 @@ graph LR
     style User fill:#8b5cf6,color:#fff,stroke:#7c3aed
 ```
 
-## arquitetura técnica
+## Arquitetura Técnica
 
 > Seção para quem curte DevOps, IaC e CI/CD de verdade. Todos os diagramas abaixo refletem a implementação real do projeto.
 
@@ -339,8 +339,6 @@ flowchart TB
     subgraph external["🔗 External Integrations"]
         direction LR
         ga["📈 Google Analytics 4<br/><code>gtag.js · SPA pageview tracking</code>"]
-        ticto["💳 Ticto Payments<br/><code>mentorship checkout links</code>"]
-        partners["🤝 Affiliate Partners<br/><code>Alura · TechFX<br/>Contabilizei · UseT.I<br/>OpusClip · Nuvme</code>"]
     end
 
     client --> stack
@@ -383,7 +381,7 @@ flowchart TB
             e2e_status["⚠️ Disabled in CI pipeline<br/><code>commented out in deploy-app.yml</code>"]
         end
 
-        subgraph comp_layer["🧩 Component · Vitest + RTL"]
+        subgraph comp_layer["🧩 Component · Vitest RTL"]
             comp_config["⚙️ vitest.config.components.ts<br/><code>include: src/components/**/*.test.*<br/>environment: jsdom<br/>setupFiles: src/setupTests.ts</code>"]
             comp_specs["📝 src/components/ui/button.test.tsx"]
             comp_cmd["▶️ <code>npm run test:components:ci<br/>→ vitest --run --config vitest.config.components.ts</code>"]
@@ -431,8 +429,8 @@ flowchart TB
 
         subgraph resources["☁️ Resources"]
             data_rg["📁 data.azurerm_resource_group.rg<br/><code>name: rg-site</code>"]
-            swa_res["⚡ azurerm_static_web_app.this<br/><code>name: swa-site-orafael<br/>location: eastus2<br/>sku: Free/Free<br/>repository_url: var.repository_url<br/>repository_branch: var.repository_branch<br/>repository_token: var.repository_token</code>"]
-            domain["🌍 azurerm_static_web_app_custom_domain.txt-value<br/><code>domain: www.orafaelferreira.com<br/>validation: dns-txt-token<br/>TLS: auto-provisioned</code>"]
+            swa_res["⚡ azurerm_static_web_app"]
+            domain["🌍 azurerm_static_web_app_custom_domain<br/><code>domain: www.orafaelferreira.com<br/>validation: dns-txt-token<br/>TLS: auto-provisioned</code>"]
         end
 
         data_rg --> swa_res
@@ -464,9 +462,24 @@ flowchart TB
     style tf fill:#7B42BC,color:#fff,stroke:#5a2d91
     style backend fill:#0078D4,color:#fff
     style resources fill:#0078D4,color:#fff
+    style vars fill:#7B42BC,color:#fff
     style auth fill:#333,color:#fff
     style pipeline_svc fill:#0d1117,color:#c9d1d9,stroke:#30363d
     style state fill:#0078D4,color:#fff
+    style data_rg fill:#0078D4,color:#fff
     style swa_res fill:#0078D4,color:#fff
     style domain fill:#10b981,color:#fff
+    style v1 fill:#7B42BC,color:#fff
+    style v2 fill:#7B42BC,color:#fff
+    style v3 fill:#7B42BC,color:#fff
+    style arm_client fill:#333,color:#fff
+    style arm_secret fill:#333,color:#fff
+    style arm_tenant fill:#333,color:#fff
+    style arm_sub fill:#333,color:#fff
+    style gh_pat fill:#333,color:#fff
+    style paas fill:#0d1117,color:#c9d1d9
+    style paas_tflint fill:#0d1117,color:#c9d1d9
+    style paas_tfsec fill:#0d1117,color:#c9d1d9
+    style paas_checkov fill:#0d1117,color:#c9d1d9
+    style paas_docs fill:#0d1117,color:#c9d1d9
 ```
