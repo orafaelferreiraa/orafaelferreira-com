@@ -329,6 +329,9 @@ export default {
       view: "Ver certificado",
       count_one: "({{count}} certificado)",
       count_other: "({{count}} certificados)",
+      totalCerts: "Total de Certificados",
+      searchPlaceholder: "Buscar certificados...",
+      noResults: "Nenhum certificado encontrado para esta busca.",
       closing: "Ao compartilhar essa coleção de certificados, cursos, eventos e palestras, meu objetivo é demonstrar o comprometimento contínuo com o aprendizado e o desenvolvimento. Cada experiência representou um degrau em minha jornada, e todas juntas formam o alicerce sólido sobre o qual construí minha carreira. À medida que continuo avançando, estou ansioso para abraçar novas oportunidades de aprendizado e crescimento. Afinal, a jornada de aprimoramento nunca termina, e estou comprometido em seguir aprendendo, evoluindo e compartilhando o que aprendo com aqueles ao meu redor."
     },
     certifications: {
@@ -339,7 +342,15 @@ export default {
     experience: {
       title: "Minha Jornada Profissional",
       description: "Compartilhando um pouco da minha jornada profissional e das experiências que moldaram meu caminho até aqui. Desde os primeiros passos como um Assistente Técnico até a função atual de Cloud Solution Architect Senior, cada etapa desempenhou um papel fundamental na minha trajetória. Espero que minha história possa inspirar e motivar outros profissionais em suas próprias jornadas.",
-      present: "Atualmente"
+      present: "Atualmente",
+      stackLabel: "Stacks em destaque",
+      yearsLabel: "Anos de Experiência",
+      companiesLabel: "Empresas",
+      rolesLabel: "Cargos",
+      countriesLabel: "Alcance Global",
+      showMore: "Ler mais",
+      showLess: "Ler menos",
+      currentRole: "Atual",
     },
     recommendations: {
       title: "Recomendações",

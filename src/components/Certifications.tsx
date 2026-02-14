@@ -1,6 +1,7 @@
 import { Shield, Award, GraduationCap, Cloud, Server, Database, Terminal, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface Certification {
   name: string;
@@ -147,60 +148,76 @@ const Certifications = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="certifications" className="py-20 px-4 md:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="certifications" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Background effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute top-1/3 -right-40 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-1/4 -left-40 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+      </div>
+
+      <div className="container mx-auto max-w-7xl relative">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
             {t("certifications.title")}
           </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             {t("certifications.description")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {certifications.map((cert, index) => (
-            <Card
-              key={index}
-              className="group hover:scale-105 transition-all duration-300 hover:shadow-xl border-primary/20 bg-gradient-to-br from-background to-muted/20 animate-fade-in"
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              <CardHeader className="pb-4">
-                <div className="flex justify-center mb-4">
-                  <div className="relative w-24 h-24 flex items-center justify-center">
-                    <img
-                      src={cert.image}
-                      alt={cert.name}
-                      className="object-contain w-full h-full group-hover:scale-110 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                  </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {certifications.map((cert, index) => {
+            const CertCard = () => {
+              const { ref, isVisible } = useScrollAnimation({ threshold: 0.08, rootMargin: "-20px" });
+              return (
+                <div
+                  ref={ref}
+                  className={`scroll-fade-in ${isVisible ? "visible" : ""}`}
+                  style={{ transitionDelay: `${index * 40}ms` }}
+                >
+                  <Card className="group h-full overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/25 hover:shadow-[0_8px_32px_hsl(180_100%_50%/0.08)] hover:-translate-y-1">
+                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <CardHeader className="pb-4">
+                      <div className="flex justify-center mb-4">
+                        <div className="relative w-24 h-24 flex items-center justify-center">
+                          <img
+                            src={cert.image}
+                            alt={cert.name}
+                            className="object-contain w-full h-full group-hover:scale-110 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                      <CardTitle className="text-base text-center leading-tight min-h-[3rem] flex items-center justify-center group-hover:text-primary transition-colors duration-300">
+                        {cert.name}
+                      </CardTitle>
+                      {cert.code && (
+                        <CardDescription className="text-center font-mono text-xs">
+                          {cert.code}
+                        </CardDescription>
+                      )}
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-muted-foreground">{cert.provider}</span>
+                        <a
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-xs font-medium flex items-center gap-1"
+                        >
+                          <CheckCircle className="h-3 w-3" />
+                          {t("certifications.verify")}
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
-                <CardTitle className="text-base text-center leading-tight min-h-[3rem] flex items-center justify-center">
-                  {cert.name}
-                </CardTitle>
-                {cert.code && (
-                  <CardDescription className="text-center font-mono text-xs">
-                    {cert.code}
-                  </CardDescription>
-                )}
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground">{cert.provider}</span>
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline text-xs font-medium flex items-center gap-1"
-                  >
-                    <CheckCircle className="h-3 w-3" />
-                    {t("certifications.verify")}
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+              );
+            };
+            return <CertCard key={index} />;
+          })}
         </div>
 
       </div>

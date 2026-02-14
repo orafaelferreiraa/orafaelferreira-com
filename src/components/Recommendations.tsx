@@ -85,15 +85,22 @@ const Recommendations = () => {
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.05 });
 
   return (
-    <section className="py-20 lg:py-32 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Background effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute top-1/3 -right-40 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-1/4 -left-40 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
               {t("recommendations.title")}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               {t("recommendations.description")}
             </p>
           </div>
@@ -129,10 +136,10 @@ const Recommendations = () => {
                       className="group"
                     >
                       <Card
-                        className={`relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+                        className={`relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5 border border-primary/10 bg-card/40 backdrop-blur-sm ${
                           item.highlight
-                            ? "border-primary/50 bg-primary/5"
-                            : "hover:border-primary/50"
+                            ? "border-primary/30 bg-primary/5"
+                            : "hover:border-primary/25"
                         }`}
                       >
                         {/* Top gradient bar */}

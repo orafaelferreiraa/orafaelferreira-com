@@ -1,7 +1,9 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Calendar, ExternalLink, FileCheck } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 interface Certificate {
   title: string;
   link: string;
@@ -563,62 +565,122 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2017-01-Conceitos.basicos.de.Csharp.para.iniciantes-Microsoft.Virtual.Academy.pdf"
   }]
 }];
+/* ───────────── Certificate Card ───────────── */
+const CertificateCard = ({ cert, index }: { cert: Certificate; index: number }) => {
+  const { t } = useTranslation();
+  return (
+    <a
+      href={cert.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block"
+      style={{ animationDelay: `${index * 30}ms` }}
+    >
+      <div className="relative h-full overflow-hidden rounded-xl border border-primary/10 bg-card/60 backdrop-blur-sm p-4 transition-all duration-300 hover:border-primary/25 hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="flex items-start gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
+            <FileCheck className="h-4 w-4" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium leading-snug text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
+              {cert.title}
+            </p>
+            <span className="mt-2 inline-flex items-center gap-1 text-[11px] text-primary/70 group-hover:text-primary transition-colors">
+              <ExternalLink className="h-3 w-3" />
+              {t("certificates.view")}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  );
+};
+
+/* ───────────── Year Section ───────────── */
+const YearSection = ({ yearData, index }: { yearData: YearCertificates; index: number }) => {
+  const { t } = useTranslation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.08, rootMargin: "-30px" });
+
+  return (
+    <div ref={ref} className={`scroll-fade-in ${isVisible ? "visible" : ""}`} style={{ transitionDelay: `${index * 80}ms` }}>
+      <AccordionItem
+        value={yearData.year}
+        className="border border-primary/10 rounded-2xl bg-card/40 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-primary/20"
+      >
+        <AccordionTrigger className="px-6 py-5 hover:no-underline group/trigger">
+          <div className="flex items-center gap-4 w-full">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover/trigger:scale-110">
+              <Calendar className="h-5 w-5" />
+            </div>
+            <div className="flex items-baseline gap-3">
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                {yearData.year}
+              </span>
+              <Badge variant="secondary" className="bg-primary/[0.07] text-primary/80 text-xs font-medium border border-primary/10">
+                {t("certificates.count", { count: yearData.certificates.length })}
+              </Badge>
+            </div>
+          </div>
+        </AccordionTrigger>
+        <AccordionContent className="px-6 pb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+            {yearData.certificates.map((cert, certIndex) => (
+              <CertificateCard key={certIndex} cert={cert} index={certIndex} />
+            ))}
+          </div>
+        </AccordionContent>
+      </AccordionItem>
+    </div>
+  );
+};
+
+/* ───────────── Main Component ───────────── */
 const Certificates = () => {
   const { t } = useTranslation();
-  return <section id="certificates" className="py-20 px-4 md:px-6 lg:px-8">
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-16 animate-fade-in">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-          {t('certificates.heading')}
-        </h1>
+
+
+  return (
+    <section id="certificates" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Background effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute top-1/3 -right-40 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-1/4 -left-40 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
       </div>
 
-      <div className="mb-12">
+      <div className="container mx-auto max-w-6xl relative">
+        {/* ── Header ── */}
+        <div className="mb-12 animate-fade-in text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+            {t("certificates.heading")}
+          </h1>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            {t("certificates.description")}
+          </p>
+        </div>
+
+        <Separator className="mb-10 opacity-50" />
+
+        {/* ── Accordion timeline ── */}
         <Accordion type="single" collapsible defaultValue="2025" className="space-y-4">
-          {certificatesByYear.map((yearData, index) => <AccordionItem key={yearData.year} value={yearData.year} className="border rounded-lg bg-card animate-fade-in" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
-            <AccordionTrigger className="px-6 py-4 hover:no-underline">
-              <div className="flex items-center gap-3">
-                <Calendar className="h-5 w-5 text-primary" />
-                <span className="text-2xl font-bold">{yearData.year}</span>
-                <span className="text-sm text-muted-foreground">
-                  {t('certificates.count', { count: yearData.certificates.length })}
-                </span>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="px-6 pb-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
-                {yearData.certificates.map((cert, certIndex) => <Card key={certIndex} className="group hover:scale-105 transition-all duration-300 hover:shadow-lg border-primary/20 bg-gradient-to-br from-background to-muted/20">
-                  <CardContent className="p-4">
-                    <div className="flex items-start gap-3">
-                      <FileCheck className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium leading-snug mb-2">{cert.title}</p>
-                        <a href={cert.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:underline">
-                          <ExternalLink className="h-3 w-3" />
-                          {t('certificates.view')}
-                        </a>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>)}
-              </div>
-            </AccordionContent>
-          </AccordionItem>)}
+          {certificatesByYear.map((yearData, index) => (
+            <YearSection key={yearData.year} yearData={yearData} index={index} />
+          ))}
         </Accordion>
-      </div>
 
-      <div className="mt-16 text-center animate-fade-in">
-        <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 max-w-3xl mx-auto">
-          <CardContent className="p-8">
+        {/* ── Closing message ── */}
+        <div className="mt-16 text-center animate-fade-in">
+          <div className="relative max-w-3xl mx-auto rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm overflow-hidden p-8">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <p className="text-muted-foreground leading-relaxed">
-              {t('certificates.closing')}
+              {t("certificates.closing")}
             </p>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>;
+    </section>
+  );
 };
+
 export default Certificates;

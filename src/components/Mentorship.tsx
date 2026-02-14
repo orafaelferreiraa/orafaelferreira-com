@@ -119,13 +119,21 @@ const Mentorship = () => {
     template: "R$ 49",
     total: "R$ 1.128,10"
   }];
-  return <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Background effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute top-[20%] -right-40 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute top-[50%] -left-40 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute top-[75%] right-0 h-72 w-72 rounded-full bg-primary/8 blur-3xl" />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-b from-card/50 to-background">
+      <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
-              {t("mentorship.heroTitle.prefix")} <span className="text-primary">{t("mentorship.heroTitle.highlight")}</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+              {t("mentorship.heroTitle.prefix")} {t("mentorship.heroTitle.highlight")}
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8">
               {t("mentorship.hero.subtitle1")}
@@ -136,7 +144,7 @@ const Mentorship = () => {
             <p className="text-base lg:text-lg font-medium leading-relaxed mb-8">
               {t("mentorship.hero.subtitle3")}
             </p>
-            <Card className="p-6 bg-primary/5 border-primary/20">
+            <Card className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm bg-primary/5">
               <p className="text-base lg:text-lg font-semibold">
                 {t("mentorship.hero.highlight")}
               </p>
@@ -154,7 +162,7 @@ const Mentorship = () => {
       </section>
 
       {/* Por que me escolher Section */}
-      <section className="py-16 lg:py-24">
+      <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-center mb-12">
@@ -166,7 +174,7 @@ const Mentorship = () => {
             <p className="text-lg text-muted-foreground text-center mb-12 leading-relaxed">{t("mentorship.intro")}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {mentorHighlights.map((highlight, index) => <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
+              {mentorHighlights.map((highlight, index) => <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 p-3 rounded-full bg-primary/10">
                       <highlight.icon className="h-6 w-6 text-primary" />
@@ -180,7 +188,7 @@ const Mentorship = () => {
                 </Card>)}
             </div>
 
-            <Card className="mt-8 p-6 bg-secondary/30">
+            <Card className="mt-8 p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm">
               <p className="text-sm leading-relaxed">
                 <strong>{t("mentorship.expertise.technical")}</strong> {t("mentorship.expertise.technicalDesc")}
               </p>
@@ -194,7 +202,7 @@ const Mentorship = () => {
       </section>
 
       {/* Valores Section */}
-      <section className="py-16 lg:py-24 bg-card/30">
+      <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-4">{t("mentorship.values")}</h2>
@@ -202,7 +210,7 @@ const Mentorship = () => {
               {t("mentorship.pricing")}
             </p>
 
-            <Card className="mb-8 overflow-hidden">
+            <Card className="mb-8 overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -227,7 +235,7 @@ const Mentorship = () => {
 
             <h3 className="text-2xl font-heading font-bold text-center mb-8">{t("mentorship.discountsByProfile")}</h3>
 
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -250,7 +258,7 @@ const Mentorship = () => {
               </Table>
             </Card>
 
-            <Card className="mt-8 p-6 bg-primary/5 border-primary/20">
+            <Card className="mt-8 p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm bg-primary/5">
               <h4 className="font-heading font-bold text-lg mb-4">{t("mentorship.payment.title")}</h4>
               <p className="text-sm mb-4 leading-relaxed">
                 {t("mentorship.payment.method")}
@@ -294,7 +302,7 @@ const Mentorship = () => {
       </section>
 
       {/* Por que minha mentoria Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-heading font-bold text-center mb-16">
@@ -306,7 +314,7 @@ const Mentorship = () => {
                 {t("mentorship.whySection.paragraph1")}
               </p>
 
-              <Card className="p-8 bg-primary/10 border-primary shadow-lg">
+              <Card className="p-8 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm bg-primary/10 shadow-lg">
                 <p className="font-bold text-foreground text-lg lg:text-xl leading-relaxed">
                   {t("mentorship.whySection.quote")}
                 </p>
@@ -316,7 +324,7 @@ const Mentorship = () => {
                 {t("mentorship.whySection.paragraph2")}
               </p>
 
-              <Card className="p-6 bg-gradient-to-r from-primary/5 to-primary/10 border-primary/30">
+              <Card className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm bg-gradient-to-r from-primary/5 to-primary/10">
                 <p className="font-bold text-foreground text-lg lg:text-xl">
                   {t("mentorship.whySection.paragraph3")}
                 </p>
@@ -326,7 +334,7 @@ const Mentorship = () => {
                 {t("mentorship.whySection.paragraph4")}
               </p>
 
-              <Card className="p-6 bg-destructive/10 border-destructive/30">
+              <Card className="p-6 rounded-2xl border border-destructive/20 bg-card/40 backdrop-blur-sm bg-destructive/10">
                 <h4 className="font-heading font-bold text-lg mb-3 text-foreground">{t("mentorship.whySection.warning")}</h4>
                 <p className="text-sm">
                   {t("mentorship.whySection.warningText")}
@@ -338,7 +346,7 @@ const Mentorship = () => {
       </section>
 
       {/* Proven Method Section */}
-      <section className="py-16 lg:py-24 bg-card/30">
+      <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-8">
@@ -350,7 +358,7 @@ const Mentorship = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {(t("mentorship.provenMethod.pillars", { returnObjects: true }) as string[]).map((pillar, index) => (
-                  <Card key={index} className="p-6 text-center hover:shadow-lg transition-all duration-300">
+                  <Card key={index} className="p-6 text-center rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5 transition-all duration-300">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl mx-auto mb-4">
                       {index + 1}
                     </div>
@@ -364,7 +372,7 @@ const Mentorship = () => {
       </section>
 
       {/* Unified Process Section */}
-      <section className="py-16 lg:py-24">
+      <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
@@ -373,7 +381,7 @@ const Mentorship = () => {
 
             <div className="space-y-6">
               {unifiedProcessSteps.map((step, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
+                <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl">
@@ -412,7 +420,7 @@ const Mentorship = () => {
       </section>
 
       {/* Na minha mentoria você terá Section */}
-      <section className="py-16 lg:py-24 bg-card/30">
+      <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
@@ -420,7 +428,7 @@ const Mentorship = () => {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mentorshipBenefits.map((benefit, index) => <Card key={index} className="p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+              {mentorshipBenefits.map((benefit, index) => <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_8px_32px_hsl(180_100%_50%/0.08)] hover:-translate-y-1 transition-all duration-300">
                   <CardHeader className="p-0 mb-4">
                     <div className="inline-flex p-3 rounded-full bg-primary/10 mb-3 w-fit">
                       <benefit.icon className="h-6 w-6 text-primary" />
@@ -437,7 +445,7 @@ const Mentorship = () => {
       </section>
 
       {/* CTA Final Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/10 to-secondary/20">
+      <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6">

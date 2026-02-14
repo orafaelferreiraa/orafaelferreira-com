@@ -322,6 +322,9 @@ export default {
       view: "View certificate",
       count_one: "({{count}} certificate)",
       count_other: "({{count}} certificates)",
+      totalCerts: "Total Certificates",
+      searchPlaceholder: "Search certificates...",
+      noResults: "No certificates found for this search.",
       closing: "By sharing this collection of certificates, courses, events, and talks, my goal is to demonstrate a continuous commitment to learning and development. Each experience has represented a step in my journey, and together they form the solid foundation upon which I have built my career. As I continue to advance, I look forward to embracing new opportunities for learning and growth. After all, the journey of improvement never ends, and I am committed to keep learning, evolving, and sharing what I learn with those around me."
     },
     certifications: {
@@ -332,7 +335,15 @@ export default {
     experience: {
       title: "My Professional Journey",
       description: "Sharing a bit of my professional journey and the experiences that shaped my path. From my first steps as a Technical Assistant to my current role as Senior Cloud Solution Architect, each stage played a fundamental role in my trajectory. I hope my story can inspire and motivate other professionals in their own journeys.",
-      present: "Present"
+      present: "Present",
+      stackLabel: "Key stacks",
+      yearsLabel: "Years of Experience",
+      companiesLabel: "Companies",
+      rolesLabel: "Roles",
+      countriesLabel: "Global Reach",
+      showMore: "Read more",
+      showLess: "Read less",
+      currentRole: "Current"
     },
     recommendations: {
       title: "Recommendations",

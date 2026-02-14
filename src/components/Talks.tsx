@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Calendar, ExternalLink, FileText, Globe, Linkedin, MapPin, Presentation, Youtube } from "lucide-react";
+import { Calendar, ExternalLink, FileText, Globe, Linkedin, MapPin, Presentation, Radio, Youtube } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface Talk {
   title: string;
@@ -465,143 +465,176 @@ const Talks = () => {
         : null);
 
     return (
-      <Card
+      <div
         key={`${talk.title}-${talk.date}`}
-        className={`group p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up ${
-          talk.blogUrl ? 'cursor-pointer' : ''
+        className={`group relative overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/25 hover:shadow-[0_8px_32px_hsl(180_100%_50%/0.08)] hover:-translate-y-1 ${
+          talk.blogUrl ? "cursor-pointer" : ""
         }`}
-        style={{ animationDelay: `${index * 50}ms` }}
+        style={{ animationDelay: `${index * 40}ms` }}
         onClick={(e) => handleCardClick(e, talk.blogUrl)}
       >
+        {/* Top accent line */}
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
         {imageSrc && (
-          <div className="mb-4 rounded-lg overflow-hidden">
+          <div className="relative overflow-hidden">
             <img
               src={imageSrc}
               alt={talk.title}
-              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-transparent to-transparent" />
           </div>
         )}
 
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+        <div className="p-5 space-y-3">
+          <h3 className="text-lg font-semibold leading-snug text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
             {talk.title}
           </h3>
 
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Presentation className="w-4 h-4" />
-            <span className="text-sm">{talk.event}</span>
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Presentation className="w-3.5 h-3.5 text-primary/60 shrink-0" />
+              <span className="text-sm truncate">{talk.event}</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Calendar className="w-3.5 h-3.5 text-primary/60 shrink-0" />
+              <span className="text-sm">
+                {new Date(talk.date).toLocaleDateString(
+                  i18n.language.startsWith("en") ? "en-US" : "pt-BR",
+                  { year: "numeric", month: "long", day: "numeric" }
+                )}
+              </span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <MapPin className="w-3.5 h-3.5 text-primary/60 shrink-0" />
+              <span className="text-sm">{talk.location}</span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Calendar className="w-4 h-4" />
-            <span className="text-sm">{new Date(talk.date).toLocaleDateString(i18n.language.startsWith('en') ? 'en-US' : 'pt-BR')}</span>
-          </div>
+          <Separator className="opacity-30" />
 
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <MapPin className="w-4 h-4" />
-            <span className="text-sm">{talk.location}</span>
-          </div>
-
-          <Separator className="my-4" />
-
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {talk.siteUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
                 <a href={talk.siteUrl} target="_blank" rel="noopener noreferrer">
-                  <Globe className="w-4 h-4 mr-2" />
-                  {t('talks.seeEvent')}
+                  <Globe className="w-3.5 h-3.5 mr-1.5" />
+                  {t("talks.seeEvent")}
                 </a>
               </Button>
             )}
 
             {talk.slidesUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
                 <a href={talk.slidesUrl} target="_blank" rel="noopener noreferrer">
-                  <FileText className="w-4 h-4 mr-2" />
-                  {t('talks.downloadSlides')}
+                  <FileText className="w-3.5 h-3.5 mr-1.5" />
+                  {t("talks.downloadSlides")}
                 </a>
               </Button>
             )}
 
             {talk.videoUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
                 <a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">
-                  <Youtube className="w-4 h-4 mr-2" />
-                  {t('talks.watchVideo')}
+                  <Youtube className="w-3.5 h-3.5 mr-1.5" />
+                  {t("talks.watchVideo")}
                 </a>
               </Button>
             )}
 
             {talk.linkedinUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
                 <a href={talk.linkedinUrl} target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  {t('talks.seeLinkedIn')}
+                  <Linkedin className="w-3.5 h-3.5 mr-1.5" />
+                  {t("talks.seeLinkedIn")}
                 </a>
               </Button>
             )}
 
             {talk.blogUrl && (
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
                 <a href={talk.blogUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  {t('talks.readArticle')}
+                  <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
+                  {t("talks.readArticle")}
                 </a>
               </Button>
             )}
           </div>
         </div>
-      </Card>
+      </div>
+    );
+  };
+
+  /* ───── Section wrapper with scroll animation ───── */
+  const TalkSection = ({
+    icon: Icon,
+    title,
+    talks,
+    sectionIndex,
+  }: {
+    icon: React.ElementType;
+    title: string;
+    talks: Talk[];
+    sectionIndex: number;
+  }) => {
+    const { ref, isVisible } = useScrollAnimation({ threshold: 0.05, rootMargin: "-30px" });
+
+    return (
+      <section
+        ref={ref}
+        className={`mb-16 scroll-fade-in ${isVisible ? "visible" : ""}`}
+        style={{ transitionDelay: `${sectionIndex * 100}ms` }}
+      >
+        <div className="flex items-center gap-4 mb-8">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <Icon className="h-5 w-5" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+            {title}
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {talks.map((talk, index) => renderTalkCard(talk, index))}
+        </div>
+      </section>
     );
   };
 
   return (
-    <div className="min-h-screen bg-background py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            {t('talks.title')}
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Background effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute top-1/3 -right-40 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-1/4 -left-40 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+      </div>
+
+      <div className="container mx-auto max-w-7xl relative">
+        {/* ── Header ── */}
+        <div className="mb-14 animate-fade-in text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+            {t("talks.title")}
           </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            {t('talks.description')}
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            {t("talks.description")}
           </p>
         </div>
 
+        <Separator className="mb-14 opacity-50" />
+
+        {/* ── Upcoming ── */}
         {upcomingTalks.length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
-              <Calendar className="w-8 h-8 text-primary" />
-              {t('talks.upcoming')}
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {upcomingTalks.map((talk, index) => renderTalkCard(talk, index))}
-            </div>
-          </section>
+          <TalkSection icon={Radio} title={t("talks.upcoming")} talks={upcomingTalks} sectionIndex={0} />
         )}
 
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
-            <MapPin className="w-8 h-8 text-primary" />
-            {t('talks.inPerson')}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {inPersonTalks.map((talk, index) => renderTalkCard(talk, index))}
-          </div>
-        </section>
+        {/* ── In-Person ── */}
+        <TalkSection icon={MapPin} title={t("talks.inPerson")} talks={inPersonTalks} sectionIndex={1} />
 
-        <section>
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
-            <Globe className="w-8 h-8 text-primary" />
-            {t('talks.online')}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {onlineTalks.map((talk, index) => renderTalkCard(talk, index))}
-          </div>
-        </section>
+        {/* ── Online ── */}
+        <TalkSection icon={Globe} title={t("talks.online")} talks={onlineTalks} sectionIndex={2} />
       </div>
-    </div>
+    </section>
   );
 };
 
