@@ -162,6 +162,17 @@ export default {
         prefix: "Mentorship in",
         highlight: "Cloud Azure and DevOps"
       },
+      quickSummary: {
+        title: "Understand the format in 30 seconds",
+        items: {
+          singleSession: "1 single session of 1h to 1h30 (not recurring)",
+          diagnosticForm: "Diagnostic form filled out before the session",
+          actionPlan: "Personalized action plan for 6-12 months after the meeting",
+          asyncSupport: "Ongoing async support via my direct contact",
+          jobReferrals: "Direct referrals to jobs when opportunities arise"
+        },
+        note: "No subscription. No recurrence. It's a strategic meeting + async follow-up."
+      },
       whyChoose: "Why choose me as your mentor?",
       whyChoosePrefix: "Why choose me as your",
       whyChooseHighlight: "mentor?",
@@ -286,10 +297,12 @@ export default {
         step3Title: "1:1 Mentorship Session (1h to 1h30)",
         step3Paragraphs: [
           "This is where the mentorship happens: a hands-on, to-the-point session. During the meeting, we will talk and I will follow based on your answers from the diagnostic form, focusing on understanding your current moment, clarifying doubts, and making strategic decisions together.",
-          "An intensive strategic meeting with no recurrence that generates results for a full year. And you won't be alone: you'll have my direct contact for support whenever you need it."
+          "An intensive strategic meeting with no recurrence that generates results for a full year. And you won't be alone: you'll have my direct contact for support whenever you need it.",
+          "If your moment changes and you need another meeting, we start a new process with a new plan. I believe in direction more than ongoing follow-up; that's my methodology."
         ],
         step4Title: "Action Plan + Follow-up",
-        step4Paragraph: "Within up to one week after the session, you will receive a complete document with your personalized action plan for at least 1 year, including: study guidance, recommended courses, learning paths, priority certifications, professional positioning, and next steps for your career evolution."
+        step4Paragraph: "Within up to one week after the session, you will receive a complete document with your personalized action plan for at least 1 year, including: study guidance, recommended courses, learning paths, priority certifications, professional positioning, and next steps for your career evolution. And you're not alone: you'll have my direct contact for support whenever you need.",
+        note: "No subscription. No recurrence. It's a strategic meeting + async follow-up."
       },
       signUp: "Sign up",
       finalCTA: {

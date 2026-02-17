@@ -1,4 +1,4 @@
-import { UserCheck, Target, Rocket, ArrowRight, Award, Globe, TrendingUp, CheckCircle2, Clock, FileCheck, Briefcase, ClipboardList, Video } from "lucide-react";
+import { UserCheck, Target, Rocket, ArrowRight, Award, Globe, TrendingUp, CheckCircle2, FileCheck, Briefcase, ClipboardList, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -334,6 +334,20 @@ const Mentorship = () => {
                 {t("mentorship.whySection.paragraph4")}
               </p>
 
+              {/* Minha filosofia de mentoria */}
+              <Card className="p-8 rounded-2xl border border-primary/20 bg-card/40 backdrop-blur-sm bg-gradient-to-r from-primary/8 to-primary/5">
+                <h3 className="font-heading font-bold text-2xl mb-4 text-foreground">
+                  {t("mentorship.whySection.mentorshipPhilosophy.title")}
+                </h3>
+                <div className="space-y-3">
+                  {(t("mentorship.whySection.mentorshipPhilosophy.paragraphs", { returnObjects: true }) as string[]).map((paragraph, index) => (
+                    <p key={index} className="text-base leading-relaxed text-foreground">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </Card>
+
               <Card className="p-6 rounded-2xl border border-destructive/20 bg-card/40 backdrop-blur-sm bg-destructive/10">
                 <h4 className="font-heading font-bold text-lg mb-3 text-foreground">{t("mentorship.whySection.warning")}</h4>
                 <p className="text-sm">
@@ -402,18 +416,17 @@ const Mentorship = () => {
                       ) : (
                         <p className="text-muted-foreground leading-relaxed">{step.paragraph}</p>
                       )}
-                      {index === 0 && (
-                        <Button asChild className="mt-4" size="sm">
-                          <a href="https://payment.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
-                            {t("mentorship.signUp")}
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </a>
-                        </Button>
-                      )}
                     </div>
                   </div>
                 </Card>
               ))}
+              
+              {/* Nota destacada após o step 4 */}
+              <div className="mt-6 p-5 rounded-2xl border-2 border-primary/30 bg-gradient-to-r from-primary/10 to-primary/5 text-center">
+                <p className="text-base font-semibold text-foreground">
+                  ⚡ {t("mentorship.unifiedProcess.note")}
+                </p>
+              </div>
             </div>
           </div>
         </div>

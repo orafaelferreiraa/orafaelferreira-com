@@ -168,6 +168,17 @@ export default {
         prefix: "Mentoria em",
         highlight: "Cloud Azure e DevOps"
       },
+      quickSummary: {
+        title: "Entenda o formato em 30 segundos",
+        items: {
+          singleSession: "1 encontro único de 1h a 1h30 (não é recorrente)",
+          diagnosticForm: "Formulário de diagnóstico preenchido antes da sessão",
+          actionPlan: "Plano de ação personalizado para 6-12 meses após o encontro",
+          asyncSupport: "Suporte assíncrono contínuo via meu contato direto",
+          jobReferrals: "Indicação direta para vagas quando surgirem oportunidades"
+        },
+        note: "Não é assinatura. Não tem recorrência. É um encontro estratégico + acompanhamento assíncrono."
+      },
       whyChoose: "Por que me escolher como mentor?",
       whyChoosePrefix: "Por que me escolher como",
       whyChooseHighlight: "mentor?",
@@ -258,12 +269,23 @@ export default {
       },
       whySection: {
         title: "🚀 Por que minha mentoria é exatamente o que você",
-        titleHighlight: "precisa agora?",
+        titleHighlight: "precisa?",
         paragraph1: "No mundo da tecnologia, surgem novas ferramentas, certificações e metodologias a todo momento. Fica difícil saber onde investir seu tempo e esforço. A minha Mentoria Individual Cloud Azure e DevOps oferece orientação sob medida: em vez de dicas genéricas, você recebe conselhos alinhados exatamente com seus objetivos e desafios.",
         quote: "Um estudo da Harvard Business Review revelou que profissionais com mentoria recebem promoções cinco vezes mais frequentemente que aqueles sem mentores, avançando na carreira em média 18 meses mais rápido.",
         paragraph2: "Você pode tentar avançar sozinho com cursos online, faculdades ou pós-graduações. Claro, eventualmente, você chegará lá, mas qual é o preço que você está disposto a pagar pelo seu tempo? Você pode ir a pé para qualquer lugar ou pode escolher ir de carro, ônibus ou avião para chegar mais rápido.",
         paragraph3: "A Mentoria Individual Cloud Azure e DevOps é exatamente esse \"avião\": uma abordagem acelerada, direta e personalizada que te levará rapidamente ao resultado que você tanto deseja, com menos esforço, menos erros e resultados concretos.",
         paragraph4: "Pense comigo: o que são mil reais investidos em sua carreira se você conseguir dobrar ou multiplicar seu salário? O que isso representaria para você e para sua família? Lembre-se: eu já trilhei esse caminho, multipliquei meu salário em 20 vezes em menos de 4 anos. E você, está disposto a esperar quanto tempo para alcançar esses resultados?",
+        mentorshipPhilosophy: {
+          title: "Minha filosofia de mentoria",
+          paragraphs: [
+            "Eu não acredito em dependência. Acredito em autonomia.",
+            "A mentoria não foi criada para você precisar de mim constantemente. Ela foi criada para você ganhar clareza, direção e capacidade de tomar decisões estratégicas sozinho.",
+            "Se em algum momento sua realidade mudar e você quiser um novo direcionamento, iniciamos um novo processo com um novo plano. Cada fase da carreira exige decisões diferentes.",
+            "Meu papel não é te acompanhar para sempre. É te ensinar a enxergar o jogo, entender o mercado e saber qual movimento fazer.",
+            "Quando você aprende a pensar estrategicamente, não precisa de alguém ao seu lado o tempo todo. Você passa a confiar nas próprias decisões.",
+            "Você não estará sozinho nessa jornada: estarei aqui sempre que precisar do meu apoio."
+          ]
+        },
         warning: "Mas atenção:",
         warningText: "Eu não farei o que cabe a você fazer. O sucesso é certo se você seguir o que for traçado, mas depende diretamente do seu comprometimento e esforço. Não haverá devolução, pois não posso garantir que você fará sua parte. Eu já fiz a minha, e estou aqui para ajudar você a transformar a sua vida e a da sua família, exatamente como transformei a minha."
       },
@@ -281,22 +303,22 @@ export default {
         title: "Como funciona na prática",
         step1Title: "Pagamento",
         step1Paragraphs: [
-          "A primeira etapa é a realização do pagamento.",
-          "Após a confirmação, ficará disponível um formulário de diagnóstico onde você irá preencher com todas as informações necessárias para a mentoria."
+          "Você realiza o pagamento para confirmar a mentoria.",
+          "Depois disso, libero um formulário de diagnóstico para você preencher com as suas informações necessárias para a nossa reunião 1:1."
         ],
         step2Title: "Formulário de Diagnóstico",
         step2Paragraphs: [
-          "Neste formulário, você detalha suas dores atuais, desafios técnicos, objetivos profissionais e o que busca resolver com a mentoria.",
-          "É com base nesse diagnóstico que eu preparo toda a sessão 1:1.",
-          "Dentro do prazo de até uma semana, irei analisar suas respostas e agendar nossa reunião para lhe conhecer melhor e podermos desenhar o plano juntos."
+          "No formulário, você descreve seu momento atual, desafios, objetivos e o que quer resolver com a mentoria.",
+          "Em até uma semana, analiso suas respostas e agendamos o encontro para desenhar o plano juntos."
         ],
         step3Title: "Sessão de Mentoria 1:1 (1h a 1h30)",
         step3Paragraphs: [
-          "Aqui a mentoria acontece: um encontro prático e direto ao ponto. Durante a reunião, iremos conversar e eu irei seguir baseado nas suas respostas do formulário de diagnóstico, focando em entender seu momento atual, esclarecer dúvidas e tomar decisões estratégicas juntos.",
-          "Uma reunião estratégica intensiva sem recorrências que gera resultados para 1 ano completo. E você não fica sozinho: terá meu contato direto para suporte sempre que precisar."
-        ],
+          "É um encontro prático e direto ao ponto, guiado pelas suas respostas do diagnóstico.",
+          "A sessão é única (sem recorrência) e gera direcionamento estratégico para até 1 ano."
+          ],
         step4Title: "Plano de Ação + Acompanhamento",
-        step4Paragraph: "Dentro de até uma semana após a sessão, você receberá um documento completo com seu plano de ação personalizado para pelo menos 1 ano, incluindo: direcionamento sobre estudos, cursos recomendados, trilhas de aprendizado, certificações prioritárias, posicionamento profissional e próximos passos da sua evolução de carreira."
+        step4Paragraph: "Em até uma semana após a sessão, você recebe um documento completo com seu plano de ação personalizado para pelo menos 1 ano, incluindo: estudos, cursos recomendados (onde terão vários laboratórios práticos), trilhas de aprendizado, certificações prioritárias, posicionamento profissional e próximos passos. Você não fica sozinho nessa jornada: estarei aqui para te apoiar sempre que precisar.",
+        note: "Não é assinatura. Não tem recorrência. É um encontro estratégico + acompanhamento assíncrono."
       },
       signUp: "Fazer inscrição",
       finalCTA: {

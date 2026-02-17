@@ -13,6 +13,9 @@ Estou empolgado para compartilhar com vocês um novo post onde destaco minhas pa
 
 ## Minhas Participações
 
+### Tech Floripa Cast (PythonFloripa) #010 - Rafael Ferreira
+[![Tech Floripa Cast (PythonFloripa) #010 - Rafael Ferreira](https://img.youtube.com/vi/yt6X_3M1Vi4/0.jpg)](https://www.youtube.com/watch?v=yt6X_3M1Vi4)
+
 ### Segurança em Nuvem Microsoft: Estratégias e Melhores Práticas
 [![Segurança em Nuvem Microsoft: Estratégias e Melhores Práticas](https://img.youtube.com/vi/C7tKgg5uD9w/0.jpg)](https://www.youtube.com/watch?v=C7tKgg5uD9w)
 
