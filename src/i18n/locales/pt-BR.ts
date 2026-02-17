@@ -196,7 +196,7 @@ export default {
       },
       highlights: {
         experience: "Experiência de +10 anos em projetos de tecnologia, incluindo multinacionais e ambientes enterprise",
-        global: "Atuação Global como Senior Azure DevOps Solution Engineer em empresa americana",
+        global: "Atuação Global como Senior Azure Platform Engineer em empresa americana",
         education: "Formação em Ciência da Computação e 20 certificações técnicas relevantes",
         mvp: "Microsoft MVP e Microsoft Certified Trainer (MCT)",
         ambassador: "DevOps Institute Ambassador - reconhecido internacionalmente",
