@@ -28,6 +28,7 @@ const Talks = () => {
       siteUrl: "https://eventos.codecon.dev/eventos/floripa-meetup-codecon-15", 
       //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_vai-rolar-talk-no-92%C2%BA-python-floripa-l%C3%A1-na-activity-7418978182495809538-z7NM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/98python-floripa.pdf",  
+      //blogUrl: "https://www.orafaelferreira.com/artigos/devopsdays-poa-2025",  
       },
   ];
 
@@ -41,6 +42,7 @@ const Talks = () => {
       siteUrl: "https://www.meetup.com/pt-br/floripa-python-meetup/events/312978297/?eventOrigin=group_past_events", 
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_vai-rolar-talk-no-92%C2%BA-python-floripa-l%C3%A1-na-activity-7418978182495809538-z7NM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/98python-floripa.pdf",  
+      blogUrl: "https://www.orafaelferreira.com/artigos/python-floripa-92-hostgator",  
       },{
       title: "Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source",
       event: "DevOpsDays Porto Alegre 2025",
