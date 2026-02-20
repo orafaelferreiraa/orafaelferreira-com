@@ -33,7 +33,7 @@ const Partners = () => {
       icon: Banknote,
       name: "TechFX",
       description: t("partners.items.techfx.description"),
-      link: "https://app.techfx.com.br/referral/j8k2zj8apkel",
+      link: "https://www.techfx.com.br/rafa-ferreira/",
       gradient: "from-green-500 to-emerald-500",
     },
     {

@@ -74,7 +74,7 @@ Simplifique sua vida como PJ, sem dor de cabeça com impostos e obrigações con
 
 ### 💸 Receber em dólar com ótimas taxas usando a **TechFX**  
 Pra quem recebe moeda de fora (dólar, euro, libra...) direto na conta PJ, TechFX ajuda a economizar nas taxas e ganhar agilidade:  
-👉 [Crie sua conta TechFX com meu link e comece a receber melhor](https://app.techfx.com.br/referral/j8k2zj8apkel)
+👉 [Crie sua conta TechFX com meu link e comece a receber melhor](https://www.techfx.com.br/rafa-ferreira/)
 
 ## Gratidão pelo convite
 
