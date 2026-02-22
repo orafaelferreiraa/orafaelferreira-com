@@ -32,7 +32,6 @@ jobs:
       enable_tfsec: true
       enable_checkov: true
       generate_tfdocs: true
-      enable_tf_cost: false
       soft_fail: true
 
   terraform:
