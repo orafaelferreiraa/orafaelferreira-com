@@ -26,8 +26,8 @@ const Talks = () => {
       location: "Impact Hub Bewiki - Florianópolis",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/00.jpeg",
       siteUrl: "https://eventos.codecon.dev/eventos/floripa-meetup-codecon-15", 
-      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_vai-rolar-talk-no-92%C2%BA-python-floripa-l%C3%A1-na-activity-7418978182495809538-z7NM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/98python-floripa.pdf",  
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       //blogUrl: "https://www.orafaelferreira.com/artigos/devopsdays-poa-2025",  
       },
   ];
