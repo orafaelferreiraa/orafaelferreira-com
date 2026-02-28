@@ -19,7 +19,11 @@ interface Talk {
 }
 
 const Talks = () => {
-  const upcomingTalks: Talk[] = [{
+  const upcomingTalks: Talk[] = [
+  ];
+
+  const inPersonTalks: Talk[] = [
+      {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
       event: "Floripa - Meetup Codecon - #15",
       date: "2026-02-25",
@@ -30,9 +34,6 @@ const Talks = () => {
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       //blogUrl: "https://www.orafaelferreira.com/artigos/devopsdays-poa-2025",  
       },
-  ];
-
-  const inPersonTalks: Talk[] = [
       {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
       event: "92 Python Florianópolis, SC",
