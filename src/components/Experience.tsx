@@ -117,7 +117,7 @@ const TimelineCard = ({
 
             {/* Description */}
             <div className="relative">
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                 {expanded || !isLong ? exp.description : descriptionPreview}
               </p>
               {isLong && (
