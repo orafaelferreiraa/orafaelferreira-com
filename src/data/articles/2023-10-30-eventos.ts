@@ -11,6 +11,7 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 
 | Mês | Evento |
 |-----|--------|
+| Fev | [**Codecon Meetup #15**](https://eventos.codecon.dev/eventos/floripa-meetup-codecon-15) |
 | Jan | [**92º Python Floripa @ HostGator**](https://www.meetup.com/pt-br/floripa-python-meetup/events/312978297/?eventOrigin=group_past_events) |
 
 ## 2025
