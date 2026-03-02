@@ -32,7 +32,7 @@ const Talks = () => {
       siteUrl: "https://eventos.codecon.dev/eventos/floripa-meetup-codecon-15", 
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
-      //blogUrl: "https://www.orafaelferreira.com/artigos/devopsdays-poa-2025",  
+      blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
       },
       {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
