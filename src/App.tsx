@@ -15,6 +15,12 @@ const Experiencias = lazy(() => import("./pages/Experiencias"));
 const Recomendacoes = lazy(() => import("./pages/Recomendacoes"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
 function Analytics() {
   const location = useLocation();
   const id = (import.meta as any).env?.VITE_GA_MEASUREMENT_ID as string | undefined;
@@ -37,6 +43,7 @@ const App = () => (
   <HelmetProvider>
     <Sonner />
     <BrowserRouter>
+      <ScrollToTop />
       <Analytics />
       <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Carregando…</div>}>
         <Routes>

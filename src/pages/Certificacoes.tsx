@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Certifications from "@/components/Certifications";
 import Footer from "@/components/Footer";
+import JsonLd, { breadcrumbSchema, collectionPageSchema } from "@/components/SEO/JsonLd";
 
 const Certificacoes = () => {
   return (
@@ -22,8 +23,26 @@ const Certificacoes = () => {
           content="Certificações profissionais em Cloud, DevOps e tecnologias Microsoft, AWS e Oracle conquistadas ao longo da jornada de Rafael Ferreira."
         />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.orafaelferreira.com/certificacoes" />
+        <meta property="og:site_name" content="Rafael Ferreira" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:image" content="https://www.orafaelferreira.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Certificações | Rafael Ferreira" />
+        <meta name="twitter:description" content="Certificações profissionais em Cloud, DevOps e tecnologias Microsoft, AWS e Oracle." />
         <link rel="canonical" href="https://www.orafaelferreira.com/certificacoes" />
       </Helmet>
+      <JsonLd data={[
+        collectionPageSchema({
+          name: "Certificações - Rafael Ferreira",
+          description: "Certificações profissionais em Cloud Computing, DevOps, Microsoft Azure, AWS, HashiCorp Terraform e GitHub.",
+          url: "https://www.orafaelferreira.com/certificacoes",
+        }),
+        breadcrumbSchema([
+          { name: "Home", url: "https://www.orafaelferreira.com/" },
+          { name: "Certificações", url: "https://www.orafaelferreira.com/certificacoes" },
+        ]),
+      ]} />
       <div className="min-h-screen bg-background">
         <Navigation />
         <main>

@@ -4,6 +4,7 @@ import Recommendations from "@/components/Recommendations";
 import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
+import JsonLd, { breadcrumbSchema, collectionPageSchema } from "@/components/SEO/JsonLd";
 
 const Recomendacoes = () => {
   const { t } = useTranslation();
@@ -15,12 +16,33 @@ const Recomendacoes = () => {
         <meta name="description" content={t("pages.recommendations.description")} />
         <meta property="og:title" content={t("pages.recommendations.title")} />
         <meta property="og:description" content={t("pages.recommendations.description")} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.orafaelferreira.com/recomendacoes" />
+        <meta property="og:site_name" content="Rafael Ferreira" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:image" content="https://www.orafaelferreira.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t("pages.recommendations.title")} />
+        <meta name="twitter:description" content={t("pages.recommendations.description")} />
         <link rel="canonical" href="https://www.orafaelferreira.com/recomendacoes" />
       </Helmet>
+      <JsonLd data={[
+        collectionPageSchema({
+          name: "Recomendações - Rafael Ferreira",
+          description: "Recomendações profissionais recebidas por Rafael Ferreira de colegas e parceiros da comunidade tech.",
+          url: "https://www.orafaelferreira.com/recomendacoes",
+        }),
+        breadcrumbSchema([
+          { name: "Home", url: "https://www.orafaelferreira.com/" },
+          { name: "Recomendações", url: "https://www.orafaelferreira.com/recomendacoes" },
+        ]),
+      ]} />
       <div className="min-h-screen">
         <Navigation />
-        <Recommendations />
-        <Partners />
+        <main>
+          <Recommendations />
+          <Partners />
+        </main>
         <Footer />
       </div>
     </>

@@ -86,7 +86,7 @@ const Hero = () => {
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl animate-glow" />
-              <img src={heroImage} alt="Rafael Ferreira" className="relative rounded-2xl w-full max-w-md lg:max-w-lg shadow-2xl border border-border" />
+              <img src={heroImage} alt="Rafael Ferreira - Cloud & DevOps Specialist" width={512} height={512} fetchPriority="high" className="relative rounded-2xl w-full max-w-md lg:max-w-lg shadow-2xl border border-border" />
             </div>
           </div>
         </div>

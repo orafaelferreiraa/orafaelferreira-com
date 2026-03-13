@@ -9,6 +9,7 @@ import { markdownToHtml } from "@/lib/markdown";
 import { extractFirstImage } from "@/lib/extractImage";
 import { useArticleMetaTags } from "@/hooks/use-article-meta-tags";
 import { useMemo } from "react";
+import JsonLd, { articleSchema, breadcrumbSchema } from "@/components/SEO/JsonLd";
 
 const ArtigoDetalhes = () => {
   const { slug } = useParams();
@@ -96,6 +97,21 @@ const ArtigoDetalhes = () => {
         
         <link rel="canonical" href={`https://www.orafaelferreira.com/artigos/${article.slug}`} />
       </Helmet>
+      <JsonLd data={[
+        articleSchema({
+          title: article.title,
+          excerpt: article.excerpt,
+          slug: article.slug,
+          date: article.date,
+          category: article.category,
+          image: articleImage,
+        }),
+        breadcrumbSchema([
+          { name: "Home", url: "https://www.orafaelferreira.com/" },
+          { name: "Blog", url: "https://www.orafaelferreira.com/blog" },
+          { name: article.title, url: `https://www.orafaelferreira.com/artigos/${article.slug}` },
+        ]),
+      ]} />
       <div className="min-h-screen">
         <Navigation />
         <article className="py-20 lg:py-32">
