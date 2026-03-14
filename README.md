@@ -79,14 +79,14 @@ cd -
 
 **PR workflow** (`.github/workflows/infra-plan.yml`):
 - Disparo: PRs que alteram `infra/**` ou o próprio workflow
-- Passos: `init` → `fmt` → `validate` → `tflint` → `tfsec` → `checkov` → `plan`
+- Passos: `init` → `fmt` → `validate` → `tflint` → `trivy` → `checkov` → `plan`
 - Plan usa valores placeholder para `repository_*` (não requer secrets de GitHub)
 - Artifact do plan é salvo e comentário detalhado é postado no PR
-- Validações de segurança: tfsec e Checkov (soft_fail: false)
+- Validações de segurança: Trivy e Checkov (`soft_fail: true` no core validation)
 
 **Push workflow** (`.github/workflows/infra-apply.yml` - nome: `infra-apply`):
 - Disparo: push em `main` que altera `infra/**` ou o próprio workflow
-- Passos: `init` → `fmt` → `validate` → `tflint` → `tfsec` → `checkov` → `apply`
+- Passos: `init` → `fmt` → `validate` → `tflint` → `trivy` → `checkov` → `apply`
 - Apply usa valores reais via secrets (repository linkage)
 - Documentação com `terraform-docs` é injetada no README e commitada automaticamente
 - Resumo do job sem seção de outputs (removida para evitar ruído quando não definidos)
@@ -210,8 +210,8 @@ flowchart TB
         direction TB
         plan_core["🔧 Pipeline Core Validation<br/><i>orafaelferreiraa/pipeline-as-a-service-stack</i>"]
         plan_core --> tflint_p["🔍 tflint"]
-        tflint_p --> tfsec_p["🛡️ tfsec"]
-        tfsec_p --> checkov_p["✅ checkov"]
+        tflint_p --> trivy_p["🛡️ trivy"]
+        trivy_p --> checkov_p["✅ checkov"]
         checkov_p --> tf_plan["📝 terraform plan<br/><code>-out=tfplan</code>"]
         tf_plan --> plan_artifact["📤 Upload Artifact<br/><code>terraform-plan (7d)</code>"]
         tf_plan --> pr_comment["💬 PR Comment<br/><code>actions/github-script@v7</code>"]
@@ -221,8 +221,8 @@ flowchart TB
         direction TB
         apply_core["🔧 Pipeline Core Validation<br/><i>pipeline-as-a-service-stack</i>"]
         apply_core --> tflint_a["🔍 tflint"]
-        tflint_a --> tfsec_a["🛡️ tfsec"]
-        tfsec_a --> checkov_a["✅ checkov"]
+        tflint_a --> trivy_a["🛡️ trivy"]
+        trivy_a --> checkov_a["✅ checkov"]
         checkov_a --> tf_apply["⚡ terraform apply<br/><code>-auto-approve</code>"]
         tf_apply --> tfdocs["📄 terraform-docs<br/><code>inject → README.md</code>"]
         tfdocs --> docs_commit["🤖 git commit + push<br/><code>github-actions[bot]</code>"]
@@ -400,7 +400,7 @@ flowchart TB
 
 ### Terraform Infrastructure — IaC
 
-State remoto em Azure Blob Storage com Azure AD auth. Provider azurerm `4.50.0` pinado. Validação via reusable workflow externo (`pipeline-as-a-service-stack`) com tflint + tfsec + checkov + terraform-docs. Custom domain com validação DNS TXT e TLS automático.
+State remoto em Azure Blob Storage com Azure AD auth. Provider azurerm `4.50.0` pinado. Validação via reusable workflow externo (`pipeline-as-a-service-stack`) com tflint + trivy + checkov + terraform-docs. Custom domain com validação DNS TXT e TLS automático.
 
 ```mermaid
 flowchart TB
@@ -440,10 +440,10 @@ flowchart TB
         direction LR
         paas["🐙 orafaelferreiraa/<br/>pipeline-as-a-service-stack<br/><code>@main</code>"]
         paas_tflint["🔍 tflint ✓"]
-        paas_tfsec["🛡️ tfsec ✓"]
+        paas_trivy["🛡️ trivy ✓"]
         paas_checkov["✅ checkov ✓"]
         paas_docs["📄 terraform-docs ✓<br/><code>inject → README.md</code>"]
-        paas --> paas_tflint & paas_tfsec & paas_checkov & paas_docs
+        paas --> paas_tflint & paas_trivy & paas_checkov & paas_docs
     end
 
     auth --> tf
@@ -469,7 +469,7 @@ flowchart TB
     style gh_pat fill:#333,color:#fff
     style paas fill:#0d1117,color:#c9d1d9
     style paas_tflint fill:#0d1117,color:#c9d1d9
-    style paas_tfsec fill:#0d1117,color:#c9d1d9
+    style paas_trivy fill:#0d1117,color:#c9d1d9
     style paas_checkov fill:#0d1117,color:#c9d1d9
     style paas_docs fill:#0d1117,color:#c9d1d9
 ```

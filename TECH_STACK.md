@@ -143,7 +143,7 @@ Inventário técnico do projeto `orafaelferreira-com`, baseado na análise dos a
 - `orafaelferreiraa/pipeline-as-a-service-stack/.github/workflows/pipeline-core.yaml@main`
 - Ferramentas habilitadas via flags:
   - `tflint`
-  - `tfsec`
+  - `trivy`
   - `checkov`
   - `terraform-docs` (no apply)
 
@@ -194,7 +194,7 @@ Arquivo: `public/staticwebapp.config.json`
   - `Cache-Control: public, max-age=3600`
 
 ### Segurança/qualidade na pipeline
-- Scans de IaC: `tfsec` + `checkov`.
+- Scans de IaC: `trivy` + `checkov`.
 - Lint de Terraform: `tflint`.
 - Type safety no app: `tsc --noEmit`.
 - Concurrency groups para evitar execuções paralelas concorrentes.

@@ -19,7 +19,39 @@ interface Talk {
 }
 
 const Talks = () => {
-  const upcomingTalks: Talk[] = [
+  const upcomingTalks: Talk[] = [{
+      title: "Platform Engineering: Construindo uma Plataforma Serverless Self-Service",
+      event: "Sem Servidor Conf 2026 – Edição Floripa",
+      date: "2026-04-08",
+      location: " Faial Prime Suites - Florianópolis",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/serveless26/00.jpeg",
+      siteUrl: "https://semservidor.com.br/sem-servidor-2026-edicao-floripa/", 
+      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
+      //blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      },
+      {
+      title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
+      event: "SQL Saturday Joinville 2026",
+      date: "2026-04-11",
+      location: "Univille - Joinville ",
+      //image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/00.jpeg",
+      siteUrl: "https://sqlsaturday.com/2026-04-11-sqlsaturday1139/", 
+      // linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
+      // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      },
+      {
+      title: "O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome",
+      event: "Ctrl-Z - Code Island",
+      date: "2026-05-16",
+      location: "UniCesusc - Florianópolis",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/00.jpeg",
+      siteUrl: "https://ctrl-z.codeisland.com.br/", 
+      // linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
+      // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      },
   ];
 
   const inPersonTalks: Talk[] = [
