@@ -96,8 +96,13 @@ jobs:
         run: terraform init -input=false
 
       - name: Terraform Apply
+        env:
+          SWA_REPOSITORY_TOKEN: ${{ secrets.GH_PAT_SWA }}
         run: |
-          terraform apply -auto-approve -input=false
+          terraform apply -auto-approve -input=false \
+            -var "repository_url=https://github.com/${{ github.repository }}" \
+            -var "repository_branch=${{ github.ref_name }}" \
+            -var "repository_token=${SWA_REPOSITORY_TOKEN}"
 
       - name: Job summary
         if: always()

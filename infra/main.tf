@@ -10,6 +10,10 @@ resource "azurerm_static_web_app" "this" {
 
   sku_tier = "Free"
   sku_size = "Free"
+
+  repository_url    = var.repository_url != "" ? var.repository_url : null
+  repository_branch = var.repository_branch != "" ? var.repository_branch : null
+  repository_token  = var.repository_token != "" ? var.repository_token : null
 }
 
 resource "azurerm_static_web_app_custom_domain" "txt-value" {
