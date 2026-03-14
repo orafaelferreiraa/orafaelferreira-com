@@ -27,9 +27,9 @@ jobs:
       security-events: write
     with:
       terraform_dir: infra
-      terraform_version: '1.13.4'
+      terraform_version: '~1.14.0'
       enable_tflint: true
-      enable_tfsec: true
+      enable_trivy: true
       enable_checkov: true
       generate_tfdocs: true
       soft_fail: true
@@ -58,7 +58,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.13.4
+            terraform_version: '~1.14.0'
 
       - name: Cache Terraform providers
         uses: actions/cache@v4
