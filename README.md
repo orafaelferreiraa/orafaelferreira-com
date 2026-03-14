@@ -127,11 +127,7 @@ No modules.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Branch do repositório para SWA (vazio em PR) | `string` | `""` | no |
-| <a name="input_repository_token"></a> [repository\_token](#input\_repository\_token) | GitHub PAT para linkage CI (omitido em PR) | `string` | `""` | no |
-| <a name="input_repository_url"></a> [repository\_url](#input\_repository\_url) | GitHub repository URL para SWA (vazio em PR) | `string` | `""` | no |
+No inputs.
 
 ## Outputs
 
