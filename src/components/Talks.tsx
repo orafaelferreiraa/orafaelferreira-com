@@ -35,7 +35,7 @@ const Talks = () => {
       event: "SQL Saturday Joinville 2026",
       date: "2026-04-11",
       location: "Univille - Joinville ",
-      //image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/00.jpeg",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/00.jpeg",
       siteUrl: "https://sqlsaturday.com/2026-04-11-sqlsaturday1139/", 
       // linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
