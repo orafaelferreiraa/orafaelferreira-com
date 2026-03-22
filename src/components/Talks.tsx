@@ -545,7 +545,7 @@ const Talks = () => {
             <div className="flex items-center gap-2 text-muted-foreground">
               <Calendar className="w-3.5 h-3.5 text-primary/60 shrink-0" />
               <span className="text-sm">
-                {new Date(talk.date).toLocaleDateString(
+                {new Date(talk.date + 'T12:00:00').toLocaleDateString(
                   i18n.language.startsWith("en") ? "en-US" : "pt-BR",
                   { year: "numeric", month: "long", day: "numeric" }
                 )}
