@@ -26,7 +26,7 @@ const Talks = () => {
       location: " Faial Prime Suites - Florianópolis",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/serveless26/00.jpeg",
       siteUrl: "https://semservidor.com.br/sem-servidor-2026-edicao-floripa/", 
-      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_dia-08-de-abril-vou-estar-palestrando-no-activity-7439634283931004930-SxKr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       //blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
       },
