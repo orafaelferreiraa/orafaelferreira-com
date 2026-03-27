@@ -95,14 +95,14 @@ export default {
     },
     awards: {
       title: "Awards",
-      subtitle: "Four programs, one purpose: celebrating those who share knowledge and strengthen the tech community.",
+      subtitle: "Five programs, one purpose: celebrating those who share knowledge and strengthen the tech community.",
       category: "Category",
       yearJoined: "Year joined",
       mvpOffers: "What MVP offers:",
       whyChosen: "Why I was chosen:",
       viewProfile: "View public profile",
       communityImpact: "Community Impact",
-      communityDescription: "As Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion, I can:",
+      communityDescription: "As Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion + Platform Engineering Ambassador, I can:",
       communityBullets: [
         "Bring high-quality content to even more people",
         "Deliver accessible content about Azure, DevOps, and sustainability",
@@ -152,6 +152,16 @@ export default {
             "Leadership in software decarbonization initiatives",
             "Promotion of sustainable practices in the tech industry",
             "International recognition by the Green Software Foundation"
+          ]
+        },
+        platformengineering: {
+          title: "Platform Engineering Ambassador",
+          category: "Platform Engineering Community",
+          description: "Platform Engineering Ambassador program recognizes leaders who advance the platform engineering discipline through content creation, event participation, and community contributions.",
+          benefits: [
+            "Ability to submit content to platform engineering blog and newsletter reaching 150k+ engineers",
+            "VIP support for conference talk submissions to PlatformCon",
+            "Direct engagement with the global platform engineering community and ecosystem"
           ]
         }
       }

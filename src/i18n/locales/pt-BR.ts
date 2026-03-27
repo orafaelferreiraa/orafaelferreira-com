@@ -101,14 +101,14 @@ export default {
     },
     awards: {
       title: "Premiações",
-      subtitle: "Quatro programas, um propósito: enaltecer quem compartilha conhecimento e fortalece a comunidade tech.",
+      subtitle: "Cinco programas, um propósito: enaltecer quem compartilha conhecimento e fortalece a comunidade tech.",
       category: "Categoria",
       yearJoined: "Ano de ingresso",
       mvpOffers: "O que o MVP oferece:",
       whyChosen: "Por que fui escolhido:",
       viewProfile: "Ver perfil público",
       communityImpact: "Impacto para a Comunidade",
-      communityDescription: "Como Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion, posso:",
+      communityDescription: "Como Microsoft MVP + DevOps Institute Ambassador + Alura Star + Green Software Champion + Platform Engineering Ambassador, posso:",
       communityBullets: [
         "Levar conteúdo de qualidade a ainda mais pessoas",
         "Trazer conteúdos sobre Azure, DevOps e sustentabilidade de forma acessível",
@@ -158,6 +158,16 @@ export default {
             "Liderança em iniciativas de descarbonização de software",
             "Promoção de práticas sustentáveis na indústria tech",
             "Reconhecimento internacional pela Green Software Foundation"
+          ]
+        },
+        platformengineering: {
+          title: "Platform Engineering Ambassador",
+          category: "Comunidade Platform Engineering",
+          description: "Programa Platform Engineering Ambassador reconhece líderes que avançam a disciplina de engenharia de plataformas através de criação de conteúdo, participação em eventos e contribuições comunitárias.",
+          benefits: [
+            "Capacidade de submeter conteúdo para blog e newsletter de plataforma que alcançam 150k+ engenheiros",
+            "Suporte VIP para submissões de palestras de conferência no PlatformCon",
+            "Engajamento direto com a comunidade global de engenharia de plataformas e ecossistema"
           ]
         }
       }

@@ -71,6 +71,7 @@ import { article as gh } from './2026-01-22-github-actions-deep-dive.ts';
 import { article as pf92 } from './2026-01-28-pf-92.ts'; 
 import { article as codecon15 } from './2026-02-27-codecon.ts'; 
 import { article as labpe } from './2026-03-08-app-gateway-baseline-private-endpoint'; 
+import { article as pac } from './2026-03-27-pac.ts'; 
 
 
 export const allArticles: Article[] = [
@@ -143,7 +144,8 @@ export const allArticles: Article[] = [
   gh,
   pf92,
   codecon15,
-  labpe
+  labpe,
+  pac
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getArticleBySlug(slug: string): Article | undefined {

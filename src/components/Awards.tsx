@@ -1,10 +1,10 @@
-import { Trophy, Award, Users, Leaf } from "lucide-react";
+import { Trophy, Award, Users, Leaf, Rocket } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 type AwardItem = {
-  id: 'mvp' | 'alura' | 'devops' | 'green';
+  id: 'mvp' | 'alura' | 'devops' | 'green' | 'platformengineering';
   emoji: string;
   icon: any;
   year: string;
@@ -15,8 +15,9 @@ type AwardItem = {
 const awards: AwardItem[] = [
   { id: 'mvp', emoji: '🔵', icon: Trophy, year: '2024', link: 'https://mvp.microsoft.com/pt-BR/mvp/profile/627d5ac9-f704-4768-81a7-5c580283881d', color: 'from-blue-500/20 to-blue-600/20 border-blue-500/30' },
   { id: 'alura', emoji: '🟡', icon: Award, year: '2025', link: 'https://www.alura.com.br/stars', color: 'from-yellow-500/20 to-yellow-600/20 border-yellow-500/30' },
-  { id: 'devops', emoji: '🟣', icon: Users, year: '2025', link: 'https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf', color: 'from-purple-500/20 to-purple-600/20 border-purple-500/30' },
-  { id: 'green', emoji: '🟢', icon: Leaf, year: '2025', link: 'https://champions.greensoftware.foundation/champions/rafael-ferreira/', color: 'from-green-500/20 to-green-600/20 border-green-500/30' }
+  { id: 'devops', emoji: '🟠', icon: Users, year: '2025', link: 'https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf', color: 'from-orange-500/20 to-orange-600/20 border-orange-500/30' },
+  { id: 'green', emoji: '🟢', icon: Leaf, year: '2025', link: 'https://champions.greensoftware.foundation/champions/rafael-ferreira/', color: 'from-green-500/20 to-green-600/20 border-green-500/30' },
+  { id: 'platformengineering', emoji: '🟣', icon: Rocket, year: '2026', link: 'https://www.virtualbadge.io/certificate-validator?credential=c962cab7-2844-4faf-8b08-81590ec29a70', color: 'from-purple-500/20 to-purple-600/20 border-purple-500/30' }
 ];
 
 const Awards = () => {
