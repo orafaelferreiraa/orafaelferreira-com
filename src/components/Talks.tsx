@@ -37,7 +37,7 @@ const Talks = () => {
       location: "Univille - Joinville ",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/00.jpeg",
       siteUrl: "https://sqlsaturday.com/2026-04-11-sqlsaturday1139/", 
-      // linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_tem-muita-gente-falando-de-ia-criando-c%C3%B3digo-activity-7441808604246073344-ukc7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
       },

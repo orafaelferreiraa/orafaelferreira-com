@@ -13,6 +13,9 @@ Estou empolgado para compartilhar com vocês um novo post onde destaco minhas pa
 
 ## Minhas Participações
 
+### IaC com Terraform & OpenTofu
+[![IaC com Terraform & OpenTofu](https://img.youtube.com/vi/eBGb7TukdSs/0.jpg)](https://www.youtube.com/watch?v=eBGb7TukdSs)
+
 ### Tech Floripa Cast (PythonFloripa) #010 - Rafael Ferreira
 [![Tech Floripa Cast (PythonFloripa) #010 - Rafael Ferreira](https://img.youtube.com/vi/yt6X_3M1Vi4/0.jpg)](https://www.youtube.com/watch?v=yt6X_3M1Vi4)
 
