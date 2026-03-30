@@ -1,4 +1,3 @@
-import { Trophy, Award, Users, Leaf, Rocket } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
@@ -6,18 +5,18 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 type AwardItem = {
   id: 'mvp' | 'alura' | 'devops' | 'green' | 'platformengineering';
   emoji: string;
-  icon: any;
+  image: string;
   year: string;
   link?: string;
   color: string;
 };
 
 const awards: AwardItem[] = [
-  { id: 'mvp', emoji: '🔵', icon: Trophy, year: '2024', link: 'https://mvp.microsoft.com/pt-BR/mvp/profile/627d5ac9-f704-4768-81a7-5c580283881d', color: 'from-blue-500/20 to-blue-600/20 border-blue-500/30' },
-  { id: 'alura', emoji: '🟡', icon: Award, year: '2025', link: 'https://www.alura.com.br/stars', color: 'from-yellow-500/20 to-yellow-600/20 border-yellow-500/30' },
-  { id: 'devops', emoji: '🟠', icon: Users, year: '2025', link: 'https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf', color: 'from-orange-500/20 to-orange-600/20 border-orange-500/30' },
-  { id: 'green', emoji: '🟢', icon: Leaf, year: '2025', link: 'https://champions.greensoftware.foundation/champions/rafael-ferreira/', color: 'from-green-500/20 to-green-600/20 border-green-500/30' },
-  { id: 'platformengineering', emoji: '🟣', icon: Rocket, year: '2026', link: 'https://www.virtualbadge.io/certificate-validator?credential=c962cab7-2844-4faf-8b08-81590ec29a70', color: 'from-purple-500/20 to-purple-600/20 border-purple-500/30' }
+  { id: 'mvp', emoji: '🔵', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/MVP.png', year: '2024', link: 'https://mvp.microsoft.com/pt-BR/mvp/profile/627d5ac9-f704-4768-81a7-5c580283881d', color: 'from-blue-500/20 to-blue-600/20 border-blue-500/30' },
+  { id: 'platformengineering', emoji: '🟣', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/platformengineer.png', year: '2026', link: 'https://www.virtualbadge.io/certificate-validator?credential=c962cab7-2844-4faf-8b08-81590ec29a70', color: 'from-purple-500/20 to-purple-600/20 border-purple-500/30' },
+  { id: 'devops', emoji: '🟠', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/DevOpsInstitute.png', year: '2025', link: 'https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf', color: 'from-orange-500/20 to-orange-600/20 border-orange-500/30' },
+  { id: 'alura', emoji: '🟡', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/alurastar.png', year: '2025', link: 'https://www.alura.com.br/stars', color: 'from-yellow-500/20 to-yellow-600/20 border-yellow-500/30' },
+  { id: 'green', emoji: '🟢', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/greensoftwarechampion.png', year: '2025', link: 'https://champions.greensoftware.foundation/champions/rafael-ferreira/', color: 'from-green-500/20 to-green-600/20 border-green-500/30' },
 ];
 
 const Awards = () => {
@@ -48,7 +47,6 @@ const Awards = () => {
 
         <div ref={awardsGridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {awards.map((award, index) => {
-            const Icon = award.icon;
             const title = t(`awards.items.${award.id}.title`);
             const category = t(`awards.items.${award.id}.category`);
             const description = t(`awards.items.${award.id}.description`);
@@ -61,8 +59,8 @@ const Awards = () => {
               >
                 <CardHeader>
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 rounded-lg bg-background/50">
-                      <Icon className="h-8 w-8 text-primary" />
+                    <div className="rounded-lg bg-background/50 h-20 w-20 flex items-center justify-center shrink-0">
+                      <img src={award.image} alt={title} className="h-16 w-16 object-contain scale-125" />
                     </div>
                     <div className="flex-1">
                       <CardTitle className="text-2xl mb-2 flex items-center gap-2">
