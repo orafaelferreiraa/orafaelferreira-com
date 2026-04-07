@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Calendar, ExternalLink, FileText, Globe, Linkedin, MapPin, Presentation, Radio, Youtube } from "lucide-react";
+import { Calendar, ExternalLink, FileText, Github, Globe, Linkedin, MapPin, Presentation, Radio, Youtube } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
@@ -16,6 +16,7 @@ interface Talk {
   slidesUrl?: string;
   videoUrl?: string;
   blogUrl?: string;
+  repositories?: { label: string; url: string }[];
 }
 
 const Talks = () => {
@@ -27,6 +28,20 @@ const Talks = () => {
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/serveless26/00.jpeg",
       siteUrl: "https://semservidor.com.br/sem-servidor-2026-edicao-floripa/", 
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_dia-08-de-abril-vou-estar-palestrando-no-activity-7439634283931004930-SxKr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      repositories: [
+        {
+          label: "Platform Stack",
+          url: "https://github.com/orafaelferreiraa/platform-as-a-service-stack",
+        },
+        {
+          label: "Pipeline Stack",
+          url: "https://github.com/orafaelferreiraa/pipeline-as-a-service-stack",
+        },
+        {
+          label: "TF Modules Stack",
+          url: "https://github.com/orafaelferreiraa/tfmodules-as-a-service-stack",
+        },
+      ],
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       //blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
       },
@@ -40,18 +55,27 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_tem-muita-gente-falando-de-ia-criando-c%C3%B3digo-activity-7441808604246073344-ukc7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
-      },{
+      repositories: [
+      {
+        label: "Repositório do Site",
+        url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
+      },
+      ]},{
       title: "Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU",
       event: "Global Azure User Group Floripa 2026",
       date: "2026-04-18",
       location: "Colegio Alpha - São José",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/1.png",
       siteUrl: "https://www.meetup.com/azureusergroupsbrasil/events/313851322/", 
-      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_dia-08-de-abril-vou-estar-palestrando-no-activity-7439634283931004930-SxKr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_palestra-confirmada-do-azure-user-groups-activity-7446882073878929409-aeCr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       //blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
-      },
+      repositories: [
       {
+        label: "Repositório do Site",
+        url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
+      },
+      ]},{
       title: "O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome",
       event: "Ctrl-Z - Code Island",
       date: "2026-05-16",
@@ -75,6 +99,12 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      repositories: [
+      {
+        label: "Repositório do Site",
+        url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
+      },
+      ]
       },
       {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
@@ -86,6 +116,12 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_vai-rolar-talk-no-92%C2%BA-python-floripa-l%C3%A1-na-activity-7418978182495809538-z7NM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/98python-floripa.pdf",  
       blogUrl: "https://www.orafaelferreira.com/artigos/python-floripa-92-hostgator",  
+      repositories: [
+      {
+        label: "Repositório do Site",
+        url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
+      },
+      ]
       },{
       title: "Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source",
       event: "DevOpsDays Porto Alegre 2025",
@@ -614,6 +650,15 @@ const Talks = () => {
                 </a>
               </Button>
             )}
+
+            {talk.repositories?.map((repository) => (
+              <Button key={repository.url} variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
+                <a href={repository.url} target="_blank" rel="noopener noreferrer">
+                  <Github className="w-3.5 h-3.5 mr-1.5" />
+                  {repository.label}
+                </a>
+              </Button>
+            ))}
           </div>
         </div>
       </div>
