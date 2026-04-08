@@ -42,7 +42,7 @@ const Talks = () => {
           url: "https://github.com/orafaelferreiraa/tfmodules-as-a-service-stack",
         },
       ],
-      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/SemServidorPlatform_Engineering.pdf",  
       //blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
       },
       {
