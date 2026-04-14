@@ -22,21 +22,6 @@ interface Talk {
 const Talks = () => {
   const upcomingTalks: Talk[] = [
       {
-      title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
-      event: "SQL Saturday Joinville 2026",
-      date: "2026-04-11",
-      location: "Univille - Joinville ",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/00.jpeg",
-      siteUrl: "https://sqlsaturday.com/2026-04-11-sqlsaturday1139/", 
-      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_tem-muita-gente-falando-de-ia-criando-c%C3%B3digo-activity-7441808604246073344-ukc7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/sqlSaturday26.pdf",  
-      // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
-      repositories: [
-      {
-        label: "Repositório do Site",
-        url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
-      },
-      ]},{
       title: "Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU",
       event: "Global Azure User Group Floripa 2026",
       date: "2026-04-18",
@@ -64,7 +49,23 @@ const Talks = () => {
       },
   ];
 
-  const inPersonTalks: Talk[] = [
+  const inPersonTalks: Talk[] = [      
+      {
+      title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
+      event: "SQL Saturday Joinville 2026",
+      date: "2026-04-11",
+      location: "Univille - Joinville ",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/00.jpeg",
+      siteUrl: "https://sqlsaturday.com/2026-04-11-sqlsaturday1139/", 
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_tem-muita-gente-falando-de-ia-criando-c%C3%B3digo-activity-7441808604246073344-ukc7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/sqlSaturday26.pdf",  
+      // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      repositories: [
+      {
+        label: "Repositório do Site",
+        url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
+      },
+      ]},
       {
       title: "Platform Engineering: Construindo uma Plataforma Serverless Self-Service",
       event: "Sem Servidor Conf 2026 – Edição Floripa",

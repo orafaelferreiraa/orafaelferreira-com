@@ -11,6 +11,9 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 
 | Mês | Evento |
 |-----|--------|
+| Abr | [**Global Azure User Group Floripa**](https://www.meetup.com/azureusergroupsbrasil/events/313851322/) |
+| Abr | [**SQL Saturday Joinville**](https://sqlsaturday.com/2026-04-11-sqlsaturday1139/) |
+| Abr | [**Sem Servidor Conf – Edição Floripa**](https://semservidor.com.br/sem-servidor-2026-edicao-floripa/) |
 | Fev | [**Codecon Meetup #15**](https://eventos.codecon.dev/eventos/floripa-meetup-codecon-15) |
 | Jan | [**92º Python Floripa @ HostGator**](https://www.meetup.com/pt-br/floripa-python-meetup/events/312978297/?eventOrigin=group_past_events) |
 
