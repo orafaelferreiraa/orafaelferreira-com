@@ -29,7 +29,7 @@ const Talks = () => {
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/1.png",
       siteUrl: "https://www.meetup.com/azureusergroupsbrasil/events/313851322/", 
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_palestra-confirmada-do-azure-user-groups-activity-7446882073878929409-aeCr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/GlobalAzure26.pdf",  
       //blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
       repositories: [
       {
