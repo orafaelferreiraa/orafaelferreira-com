@@ -105,7 +105,7 @@ Integrar Policy-as-Code à engenharia de plataforma transforma a governança num
 - [Azure Backup para Máquinas Virtuais](https://www.orafaelferreira.com/artigos/azure-backup-virtual-machines)
 
 `,
-  date: "2026-01-21",
+  date: "2026-04-15",
   category: "Artigos",
   readTime: "18–22 min de leitura"
 };

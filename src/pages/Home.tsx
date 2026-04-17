@@ -5,7 +5,7 @@ import About from "@/components/About";
 import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
-import JsonLd, { personSchema, websiteSchema, breadcrumbSchema } from "@/components/SEO/JsonLd";
+import JsonLd, { personSchema, websiteSchema, breadcrumbSchema, profilePageSchema, faqSchema } from "@/components/SEO/JsonLd";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -26,7 +26,7 @@ const Home = () => {
         <meta name="twitter:description" content={t("pages.home.ogDescription")} />
         <link rel="canonical" href="https://www.orafaelferreira.com/" />
       </Helmet>
-      <JsonLd data={[personSchema(), websiteSchema(), breadcrumbSchema([{ name: "Home", url: "https://www.orafaelferreira.com/" }])]} />
+      <JsonLd data={[personSchema(), websiteSchema(), profilePageSchema(), breadcrumbSchema([{ name: "Home", url: "https://www.orafaelferreira.com/" }]), faqSchema("pt-BR")]} />
       <div className="min-h-screen">
         <Navigation />
         <main>
