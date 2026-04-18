@@ -137,7 +137,7 @@ const ArtigoDetalhes = () => {
 
               <div className="flex items-center gap-2 text-muted-foreground mb-6">
                 <Calendar className="h-4 w-4" />
-                {new Date(article.date).toLocaleDateString("pt-BR", {
+                {new Date(`${article.date}T12:00:00`).toLocaleDateString("pt-BR", {
                   day: "numeric",
                   month: "long",
                   year: "numeric"

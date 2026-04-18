@@ -89,7 +89,7 @@ const Talks = () => {
         },
       ],
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/SemServidorPlatform_Engineering.pdf",  
-      //blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      blogUrl: "https://www.orafaelferreira.com/artigos/sem-servidor-conf-florianopolis-2026",  
       },
       {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",

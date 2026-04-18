@@ -60,7 +60,7 @@ const Blog = () => {
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="h-4 w-4" />
-                    {new Date(article.date).toLocaleDateString(
+                    {new Date(`${article.date}T12:00:00`).toLocaleDateString(
                       i18n.language?.startsWith("pt") ? "pt-BR" : "en-US",
                       { year: "numeric", month: "2-digit", day: "2-digit" }
                     )}
