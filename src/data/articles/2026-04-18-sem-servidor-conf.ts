@@ -59,7 +59,7 @@ Se você trabalha com cloud e arquitetura moderna, esse tipo de encontro acelera
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/serveless26/07.jpg)
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/serveless26/08.jpg)
 
-[LinkedIn Post](https://www.linkedin.com/posts/orafaelferreiraa_dia-08-de-abril-vou-estar-palestrando-no-activity-7439634283931004930-SxKr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw)
+[LinkedIn Post Divulgação evento](https://www.linkedin.com/posts/orafaelferreiraa_dia-08-de-abril-vou-estar-palestrando-no-activity-7439634283931004930-SxKr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw)
 
 ## Slides
 
