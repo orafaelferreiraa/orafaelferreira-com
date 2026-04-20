@@ -71,9 +71,9 @@ import { article as gh } from './2026-01-22-github-actions-deep-dive.ts';
 import { article as pf92 } from './2026-01-28-pf-92.ts'; 
 import { article as codecon15 } from './2026-02-27-codecon.ts'; 
 import { article as labpe } from './2026-03-08-app-gateway-baseline-private-endpoint'; 
-import { article as sqlSaturdayJoinville2026 } from './2026-04-18-sql-saturday-joinville.ts'; 
 import { article as pac } from './2026-04-15-pac.ts'; 
 import { article as semServidorConf } from './2026-04-18-sem-servidor-conf.ts'; 
+import { article as sqlSaturdayJoinville2026 } from './2026-04-20-sql-saturday-joinville.ts'; 
 
 
 export const allArticles: Article[] = [

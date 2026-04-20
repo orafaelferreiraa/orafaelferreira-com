@@ -105,7 +105,7 @@ Os slides estão disponíveis aqui:
 [](https://github.com/orafaelferreiraa/orafaelferreira-com)
 
 `,
-  date: "2026-04-18",
+  date: "2026-04-20",
   category: "Registro Eventos Presenciais",
   readTime: "6-8 min de leitura",
 };
