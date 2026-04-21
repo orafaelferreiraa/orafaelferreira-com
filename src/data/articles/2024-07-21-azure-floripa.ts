@@ -3,12 +3,22 @@ import { Article } from './types';
 export const article: Article = {
   slug: "azure-floripa",
   title: "Organizador – Azure Floripa",
-  excerpt: "Nossa comunidade tem o objetivo principal de explorar e apresentar as diversas soluções e serviços disponíveis na nuvem da Microsoft.",
+  excerpt: "A comunidade Azure Floripa evoluiu para o Azure User Group Florianópolis, conectado ao movimento nacional do Azure User Groups Brasil, mantendo o foco em compartilhamento prático sobre Microsoft Azure.",
   content: `
 ## Introdução
 
 Nossa comunidade tem o objetivo principal de explorar e apresentar as diversas soluções e serviços disponíveis na nuvem da Microsoft. Nosso objetivo é claro: compartilhar conhecimento através das experiências vividas e contadas por nossos palestrantes, enriquecendo o grupo com insights valiosos e práticos sobre o que há de mais inovador no mundo Azure.
 Além claro, de fortalecer a comunidade Azure em Florianópolis, visando fomentar o aprendizado e networking entre os participantes da comunidade.
+
+## Evolução da comunidade
+
+O **Azure Floripa** cresceu e hoje faz parte de uma iniciativa maior: o **Azure User Group Florianópolis**, conectado ao movimento nacional do **Azure User Groups Brasil**.
+
+Na prática, a comunidade local continua com o mesmo propósito de fortalecer o ecossistema Azure na região, mas agora dentro de uma estrutura mais ampla, integrada a outras branches pelo Brasil.
+
+Para acompanhar essa nova fase da comunidade, veja também o artigo:
+
+* [**Organizador – Azure User Groups Brasil**](/artigos/azure-user-groups-brasil)
 
 Juntou curiosidade + vontade de ajudar? Então o grupo é pra você! 🎉
 

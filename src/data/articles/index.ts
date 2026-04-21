@@ -48,6 +48,7 @@ import { article as codeIsland24 } from './2024-11-24-code-island24';
 import { article as azPolicy } from './2025-01-09-az-policy';
 import { article as translatek8s } from './2025-03-23-translatek8s';
 import { article as sqlsat25 } from './2025-04-06-sqlsat25';
+import { article as azureUserGroupsBrasil } from './2025-06-21-azure-user-groups-brasil.ts'; 
 import { article as carreiraInternacional } from './2025-05-18-carreira-internacional';
 import { article as globalAzure25 } from './2025-05-18-global-azure25';
 import { article as globalAzure25pres } from './2025-05-18-global-azure25pres';
@@ -74,6 +75,7 @@ import { article as labpe } from './2026-03-08-app-gateway-baseline-private-endp
 import { article as pac } from './2026-04-15-pac.ts'; 
 import { article as semServidorConf } from './2026-04-18-sem-servidor-conf.ts'; 
 import { article as sqlSaturdayJoinville2026 } from './2026-04-20-sql-saturday-joinville.ts'; 
+
 
 
 export const allArticles: Article[] = [
@@ -149,7 +151,8 @@ export const allArticles: Article[] = [
   labpe,
   sqlSaturdayJoinville2026,
   pac,
-  semServidorConf
+  semServidorConf,
+  azureUserGroupsBrasil
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getArticleBySlug(slug: string): Article | undefined {
