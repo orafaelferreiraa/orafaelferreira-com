@@ -18,7 +18,7 @@ Na prática, a comunidade local continua com o mesmo propósito de fortalecer o 
 
 Para acompanhar essa nova fase da comunidade, veja também o artigo:
 
-* [**Organizador – Azure User Groups Brasil**](/artigos/azure-user-groups-brasil)
+* [**Organizador – Azure User Groups Brasil**](https://www.orafaelferreira.com/artigos/azure-user-groups-brasil)
 
 Juntou curiosidade + vontade de ajudar? Então o grupo é pra você! 🎉
 

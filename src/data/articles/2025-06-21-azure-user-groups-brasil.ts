@@ -21,7 +21,6 @@ Se você curte comunidade, cloud e colaboração, esse grupo é para você.
 * 🔗 [Linktree oficial](https://linktr.ee/azureusergroupsbrasil)
 * 🗂️ [Branches](https://azureusergroupsbrasil.com.br/branches)
 * 📅 [Eventos](https://azureusergroupsbrasil.com.br/events)
-* 🎨 [Media Kit](https://azureusergroupsbrasil.com.br/media-kit)
 * 🧭 [Nova Branch](https://azureusergroupsbrasil.com.br/nova-branch)
 * 👥 [Grupo WhatsApp](https://chat.whatsapp.com/HSpFnNyo9ZLD4RJrvEcrrl)
 * ▶️ [YouTube](https://www.youtube.com/@azureusergroupsbrasil?sub_confirmation=1)
