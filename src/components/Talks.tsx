@@ -21,7 +21,21 @@ interface Talk {
 
 const Talks = () => {
   const upcomingTalks: Talk[] = [
-      {
+     {
+      title: "O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome",
+      event: "Ctrl-Z - Code Island",
+      date: "2026-05-16",
+      location: "UniCesusc - Florianópolis",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/00.jpeg",
+      siteUrl: "https://ctrl-z.codeisland.com.br/", 
+       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
+      // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      },
+  ];
+
+  const inPersonTalks: Talk[] = [  
+    {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU",
       event: "Global Azure User Group Floripa 2026",
       date: "2026-04-18",
@@ -36,20 +50,7 @@ const Talks = () => {
         label: "Repositório do Site",
         url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
       },
-      ]},{
-      title: "O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome",
-      event: "Ctrl-Z - Code Island",
-      date: "2026-05-16",
-      location: "UniCesusc - Florianópolis",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/00.jpeg",
-      siteUrl: "https://ctrl-z.codeisland.com.br/", 
-      // linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_galera-de-floripa-a-pr%C3%B3xima-edi%C3%A7%C3%A3o-do-activity-7430212196690882560-1knk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
-      // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
-      },
-  ];
-
-  const inPersonTalks: Talk[] = [      
+      ]},     
       {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
       event: "SQL Saturday Joinville 2026",
