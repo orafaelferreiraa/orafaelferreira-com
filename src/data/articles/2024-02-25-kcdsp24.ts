@@ -54,7 +54,7 @@ Se você não participou deste ano, recomendo acompanhar as próximas edições.
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-02-25",
   category: "Registro Eventos Presenciais",

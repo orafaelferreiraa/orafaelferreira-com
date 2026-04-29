@@ -75,6 +75,7 @@ import { article as labpe } from './2026-03-08-app-gateway-baseline-private-endp
 import { article as pac } from './2026-04-15-pac.ts'; 
 import { article as semServidorConf } from './2026-04-18-sem-servidor-conf.ts'; 
 import { article as sqlSaturdayJoinville2026 } from './2026-04-20-sql-saturday-joinville.ts'; 
+import { article as distroless } from './2026-04-28-distroless-strategy.ts'; 
 
 
 
@@ -152,6 +153,7 @@ export const allArticles: Article[] = [
   sqlSaturdayJoinville2026,
   pac,
   semServidorConf,
+  distroless,
   azureUserGroupsBrasil
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

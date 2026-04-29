@@ -53,7 +53,7 @@ Que essa seja apenas mais uma etapa na nossa jornada de aprendizado e evolução
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-11-10",
   category: "Registro Eventos Presenciais",

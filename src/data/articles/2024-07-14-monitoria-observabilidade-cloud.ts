@@ -159,7 +159,7 @@ Destaco a importância de adotar práticas de monitoria e observabilidade desde 
 
 Este artigo destina-se a servir como uma referência abrangente e ponto de partida para aqueles que estão começando sua jornada em ambientes Cloud Native, focando na importância crítica da monitoria e observabilidade para garantir sistemas eficientes, confiáveis e sustentáveis.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+`,
   date: "2024-01-17",
   category: "Artigos",
   readTime: "9 min de leitura"

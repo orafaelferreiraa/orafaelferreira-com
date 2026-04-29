@@ -242,7 +242,7 @@ Caso queira dar uma olhada em detalhes: [Workflows](https://github.com/orafaelfe
 A combinação de Terraform + GitHub Actions entrega uma infraestrutura escalável, auditável e automatizada. 
 Com state remoto seguro, validações de segurança e documentação contínua, o resultado é um pipeline confiável que leva alterações de infraestrutura e aplicação ao Azure de forma robusta.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+`,
   date: "2025-12-13",
   category: "Artigos",
   readTime: "13 min de leitura"

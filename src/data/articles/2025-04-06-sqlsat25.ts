@@ -53,7 +53,7 @@ Quero deixar aqui um agradecimento especial ao Comunidado e a toda equipe organi
 Até o próximo evento!
 
 ---
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2025-04-06",
   category: "Registro Eventos Presenciais",

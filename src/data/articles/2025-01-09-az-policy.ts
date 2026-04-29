@@ -126,7 +126,7 @@ Nos próximos artigos, irei demonstrar de forma prática projetos que implemente
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2025-01-09",
   category: "Artigos",

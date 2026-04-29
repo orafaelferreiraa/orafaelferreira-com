@@ -55,7 +55,7 @@ Se você está em busca de uma oportunidade para se atualizar sobre as últimas 
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+`,
   date: "2024-09-11",
   category: "Registro Eventos Presenciais",
   readTime: "3 min de leitura"

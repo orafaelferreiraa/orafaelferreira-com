@@ -53,7 +53,7 @@ Um exemplo prático da aplicação dessas metodologias pode ser visto em uma equ
 
 A integração de metodologias ágeis com ferramentas modernas como Terraform, GitHub Actions e Azure transforma a maneira como os profissionais de DevOps gerenciam projetos de provisionamento de infraestrutura. A abordagem ágil permite que as equipes naveguem pelas complexidades do provisionamento de infraestrutura com confiança, mantendo a flexibilidade necessária para adaptar-se às mudanças e garantindo a entrega contínua de valor. Em um ambiente de TI em constante evolução, a agilidade, juntamente com a automação e a colaboração, é a chave para o sucesso sustentado.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-10-29",
   category: "Artigos",

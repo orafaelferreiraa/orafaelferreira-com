@@ -102,9 +102,9 @@ Se você não teve a oportunidade de comparecer a este evento, não se preocupe,
 
 [![CNCF SC - 6 Meetup + KuberTENes - 10 anos](https://img.youtube.com/vi/iACjUNbhnaM/0.jpg)](https://www.youtube.com/watch?v=iACjUNbhnaM)
 
----
+<img src="https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png">
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+`,
   date: "2024-06-17",
   category: "Registro Eventos Presenciais",
   readTime: "3 min de leitura"

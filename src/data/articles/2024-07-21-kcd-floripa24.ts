@@ -30,7 +30,7 @@ Em 2024, Florianópolis foi palco do **KCD Floripa**! Foi uma oportunidade únic
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 
 
 `,

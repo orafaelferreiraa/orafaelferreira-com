@@ -131,7 +131,7 @@ Dando um Check no GitHub:
 
 Configurar um repositório no GitHub é uma tarefa essencial para desenvolvedores e profissionais de TI. Este guia introdutório abordou os passos necessários para criar e configurar um repositório, adicionar uma chave SSH para autenticação segura e realizar operações básicas de Git. Esta base servirá como referência para futuros tutoriais mais avançados.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+`,
   date: "2024-06-06",
   category: "Artigos",
   readTime: "5 min de leitura"

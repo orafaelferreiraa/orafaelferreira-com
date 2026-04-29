@@ -82,7 +82,7 @@ A cultura DevOps e o Kubernetes são essenciais para qualquer organização que 
 
 Para mais informações sobre [O que é DevOps?](https://learn.microsoft.com/pt-br/devops/what-is-devops) em uma perspectiva da Microsoft, segue documentação que foi base desse artigo.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+`,
   date: "2024-01-08",
   category: "Artigos",
   readTime: "6 min de leitura"

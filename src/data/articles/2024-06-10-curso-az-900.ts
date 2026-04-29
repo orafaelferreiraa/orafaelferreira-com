@@ -55,7 +55,7 @@ Senior DevOps Engineer com especialização arquiteturas em nuvem Azure com mais
 
 #AZ900 #AzureFundamentals #CloudComputing #MicrosoftAzure #Certificação #ConectaCloud #TI #Agradecimento #Evento #IgrejaBatistaForquilhinhas #MicrosoftMVP #MicrosoftMCT #mvp #mvpbuzz #mvpbr
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+`,
   date: "2024-06-10",
   category: "Organização de Eventos",
   readTime: "2 min de leitura"

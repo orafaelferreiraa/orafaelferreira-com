@@ -11,6 +11,8 @@ import { useArticleMetaTags } from "@/hooks/use-article-meta-tags";
 import { useMemo } from "react";
 import JsonLd, { articleSchema, breadcrumbSchema } from "@/components/SEO/JsonLd";
 
+const ARTICLE_FOOTER_LOGO_URL = "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png";
+
 const ArtigoDetalhes = () => {
   const { slug } = useParams();
   const article = articles.find(a => a.slug === slug);
@@ -151,6 +153,15 @@ const ArtigoDetalhes = () => {
               className="prose prose-lg dark:prose-invert max-w-none article-content"
               dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
+
+            <div className="mt-10 flex justify-center">
+              <img
+                src={ARTICLE_FOOTER_LOGO_URL}
+                alt="Logo do canal"
+                className="max-h-28 md:max-h-32 w-auto"
+                loading="lazy"
+              />
+            </div>
 
             <div className="mt-12 pt-8 border-t border-border">
               <Link to="/blog">

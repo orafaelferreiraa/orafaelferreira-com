@@ -52,7 +52,7 @@ Para mais informações sobre o Well-Architected Framework e o Azure Cloud Adopt
 
 Espero que este artigo ajude você a entender melhor a importância de seguir os pilares do Well-Architected Framework e como o Azure CAF pode apoiar a sua jornada para a nuvem.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)`,
+`,
   date: "2023-12-11",
   category: "Artigos",
   readTime: "4 min de leitura"

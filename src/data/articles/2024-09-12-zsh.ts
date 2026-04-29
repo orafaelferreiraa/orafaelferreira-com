@@ -148,8 +148,8 @@ source ~/.zshrc
 
 Pronto! Com autocomplete e velocidade. O terminal nunca mais será o mesmo.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
 
+<img src="https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png">
 
 `,
   date: "2024-09-12",

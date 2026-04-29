@@ -93,7 +93,7 @@ Se você não teve a oportunidade de comparecer a este evento, não se preocupe,
 
 [![#27 Cloud Native São Paulo - Sustainability Day na AWS](https://img.youtube.com/vi/mIgEJseOt0U/0.jpg)](https://www.youtube.com/watch?v=mIgEJseOt0U&t)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-10-31",
   category: "Registro Eventos Presenciais",

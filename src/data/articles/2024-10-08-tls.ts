@@ -218,8 +218,8 @@ Portanto, não deixe para a última hora. Avalie suas dependências no TLS agora
 Se precisar de suporte técnico, a Microsoft oferece recursos como a comunidade Microsoft Q&A, além de opções de suporte formal para quem possui um plano de suporte ativo.
 
 
+<img src="https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png">
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
 `,
   date: "2024-10-08",
   category: "Artigos",

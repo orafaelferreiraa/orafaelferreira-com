@@ -43,7 +43,7 @@ Se você também é apaixonado por tecnologia, recomendo participar desses event
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-02-22",
   category: "Registro Eventos Presenciais",

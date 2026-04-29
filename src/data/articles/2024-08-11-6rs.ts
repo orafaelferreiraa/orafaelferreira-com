@@ -196,7 +196,7 @@ A modernização de aplicações na nuvem é um processo que exige uma análise 
 Este artigo oferece uma visão clara das opções disponíveis para a modernização de aplicações, auxiliando você a tomar decisões importantes e a planejar uma transição bem-sucedida para a nuvem.
 
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-08-11",
   category: "Artigos",

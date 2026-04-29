@@ -58,7 +58,7 @@ Se você também deseja contribuir para a tradução do Kubernetes, aqui estão 
 
 Contribuir para a tradução do Kubernetes é uma excelente maneira de aprender mais sobre a tecnologia enquanto ajuda a comunidade. Junte-se a nós neste esforço importante!
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2025-03-23",
   category: "Artigos",

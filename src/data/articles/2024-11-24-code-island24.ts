@@ -40,7 +40,7 @@ Destaque também para o networking proporcionado pelo evento. Foi uma grande opo
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-11-24",
   category: "Registro Eventos Presenciais",

@@ -58,7 +58,7 @@ Para todos que compartilham a paixão por tecnologia e inovação, reforçamos n
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-11-02",
   category: "Registro Eventos Presenciais",

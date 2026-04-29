@@ -151,7 +151,7 @@ Caso queira visitar o repositório oficial do projeto, segue os links:
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-11-04",
   category: "Registro Eventos Presenciais",

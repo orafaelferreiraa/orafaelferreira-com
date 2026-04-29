@@ -91,7 +91,7 @@ A IA Geral (AGI) é um conceito de inteligência artificial capaz de realizar qu
 
 A IA generativa oferece vastas oportunidades para melhorar a eficiência e criar novos valores nos negócios. No entanto, é crucial abordar suas implicações éticas e sociais para garantir que a tecnologia seja usada de maneira responsável e benéfica. Empresas e profissionais devem se preparar para integrar a IA generativa em seus processos, aproveitando seu potencial para inovação e crescimento, ao mesmo tempo em que garantem o desenvolvimento responsável e ético da IA.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-07-25",
   category: "Artigos",

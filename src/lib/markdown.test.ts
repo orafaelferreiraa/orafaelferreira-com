@@ -27,4 +27,10 @@ describe('markdownToHtml', () => {
     expect(html).toContain('<li>item 1</li>');
     expect(html).toContain('<li>item 2</li>');
   });
+
+  it('preserves blank lines inside code blocks', () => {
+    const md = '```python\nline1\n\nline2\n```';
+    const html = markdownToHtml(md);
+    expect(html).toContain('line1\n\nline2');
+  });
 });

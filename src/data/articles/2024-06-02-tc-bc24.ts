@@ -48,7 +48,7 @@ O GreenOps na Cloud é mais do que uma tendência; é uma necessidade. Empresas 
 
 ---
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-06-02",
   category: "Registro Eventos Presenciais",

@@ -198,7 +198,7 @@ Inicie sua avaliação com a [Revisão do FinOps](https://learn.microsoft.com/pt
 
 Para mais informações sobre [O que é FinOps?](https://www.finops.org/) segue documentação que foi base desse artigo.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png)
+
 `,
   date: "2024-01-15",
   category: "Artigos",
