@@ -212,7 +212,7 @@ logging.basicConfig(
 )
 \`\`\`
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/4.png)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/4.jpg)
 
 A adoção de distroless non-root removeu shell, package manager e root do runtime. Os principais desafios encontrados foram logs em stdout, validação de variáveis e troubleshooting sem shell, que são contornáveis com práticas simples.
 
