@@ -19,22 +19,6 @@
       <category>Artigos</category>
     </item>
     <item>
-      <title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - SQL Saturday Joinville 2026</title>
-      <link>https://www.orafaelferreira.com/artigos/sql-saturday-joinville-2026</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/sql-saturday-joinville-2026</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
-      <description>No dia 11 de abril de 2026, participei como palestrante do SQL Saturday Joinville na Univille. Foi um evento presencial com trilhas fortes em SQL Server, Azure, IA, Fabric e analytics.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Sem Servidor Conf 2026 (Edição Floripa): Platform Engineering - Construindo uma Plataforma Serverless Self-Service</title>
-      <link>https://www.orafaelferreira.com/artigos/sem-servidor-conf-florianopolis-2026</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/sem-servidor-conf-florianopolis-2026</guid>
-      <pubDate>Sat, 18 Apr 2026 00:00:00 GMT</pubDate>
-      <description>No dia 08 de abril de 2026, participei como palestrante do Sem Servidor Conf, em Florianópolis. Foi uma tarde cheia de conteúdo prático, networking e discussões reais sobre arquitetura serverless.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
       <title>Platform Engineering e Policy-as-Code que aceleram times</title>
       <link>https://www.orafaelferreira.com/artigos/platform-engineering-policy-as-code</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/platform-engineering-policy-as-code</guid>
@@ -49,22 +33,6 @@
       <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
       <description>Guia completo e em ordem real para construir a baseline architecture no Azure: DNS público no Azure DNS, App Gateway WAF, Private Endpoints, Key Vault, SQL, Storage, TLS e testes finais sem retrabalho.</description>
       <category>Artigos</category>
-    </item>
-    <item>
-      <title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - Meetup Codecon #15</title>
-      <link>https://www.orafaelferreira.com/artigos/codecon-15-florianopolis</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/codecon-15-florianopolis</guid>
-      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
-      <description>No dia 25 de fevereiro de 2026 rolou o Codecon #15 em Florianópolis. Uma noite de comunidade forte, papo direto sobre IA no mundo real e um case completo de como um site nasceu de um prompt e foi parar em produção com DevOps de verdade.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - no 92º Python Floripa</title>
-      <link>https://www.orafaelferreira.com/artigos/python-floripa-92-hostgator</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/python-floripa-92-hostgator</guid>
-      <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
-      <description>No fim de janeiro de 2026, a HostGator abriu as portas para receber o 92º Python Floripa. Uma tarde de casa cheia, boas conversas, IA sem romantização, DevOps no mundo real e aquele networking que só comunidade de verdade entrega.</description>
-      <category>Registro Eventos Presenciais</category>
     </item>
     <item>
       <title>A Stack por trás do meu Blog: Pipelines CI/CD, Testes e Estratégias GitHub Actions</title>
@@ -84,14 +52,6 @@
       <enclosure url="https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/0.png" type="image/png" />
     </item>
     <item>
-      <title>DevOpsDays Florianópolis 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2025</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2025</guid>
-      <pubDate>Sun, 28 Dec 2025 00:00:00 GMT</pubDate>
-      <description>DevOpsDays Floripa 2025: um dia que já ficou marcado por talks, café quentinho, salgadinhos disputados e muita gente boa conectada pela cultura DevOps.</description>
-      <category>Organização de Eventos</category>
-    </item>
-    <item>
       <title>Como foi minha jornada para a certificação CKA</title>
       <link>https://www.orafaelferreira.com/artigos/jornada-certificacao-cka</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/jornada-certificacao-cka</guid>
@@ -109,46 +69,6 @@
       <category>Artigos</category>
     </item>
     <item>
-      <title>Segurança em Camadas e Open Source no DevOpsDays POA 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/devopsdays-poa-2025</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/devopsdays-poa-2025</guid>
-      <pubDate>Tue, 02 Dec 2025 00:00:00 GMT</pubDate>
-      <description>No dia 29 de novembro de 2025, participei do DevOpsDays Porto Alegre — o maior encontro da cultura DevOps do sul do país — levando uma talk sobre Defesa em Profundidade e ferramentas Open Source para proteger ambientes Cloud Native.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Trabalhar para o Exterior – Realidade, Desafios e Oportunidades no IFSC</title>
-      <link>https://www.orafaelferreira.com/artigos/trabalhar-para-o-exterior-ifsc-2025</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/trabalhar-para-o-exterior-ifsc-2025</guid>
-      <pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate>
-      <description>Na 1ª Semana Acadêmica de ADS do IFSC, eu e Vinícius Deschamps compartilhamos a realidade de trabalhar para o exterior — desafios, oportunidades e histórias que não aparecem no LinkedIn.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>GreenOps e Cloud Sustentável no MVP Conf 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/mvp-conf-sp</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/mvp-conf-sp</guid>
-      <pubDate>Mon, 10 Nov 2025 00:00:00 GMT</pubDate>
-      <description>Nos dias 24 e 25 de outubro de 2025, participei do MVP Conf Brasil — o maior encontro de especialistas Microsoft do país — levando uma talk sobre sustentabilidade na nuvem e o papel do GreenOps no futuro das arquiteturas cloud.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Antes de Estudar Ferramentas, Entenda a Cultura DevOps - whiteStone_dev 8ª Edição</title>
-      <link>https://www.orafaelferreira.com/artigos/wsd-devops</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/wsd-devops</guid>
-      <pubDate>Sun, 19 Oct 2025 00:00:00 GMT</pubDate>
-      <description>No dia 02 de outubro de 2025, participei como palestrante na 8ª edição da whiteStone_dev, realizada no INAITEC – Pedra Branca, em Palhoça (SC).</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>DevOps Além da Hype: Pessoas, Cultura e Prática - Esquenta MVPConf 2025 Curitiba</title>
-      <link>https://www.orafaelferreira.com/artigos/mvp-crtb</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/mvp-crtb</guid>
-      <pubDate>Sun, 12 Oct 2025 00:00:00 GMT</pubDate>
-      <description>No dia 27 de setembro de 2025, participei como palestrante no Esquenta do MVPConf 2025, realizado no auditório da UTFPR, em Curitiba – PR. Um evento incrível que serviu como prévia do maior encontro de especialistas Microsoft do Brasil: o MVPConf.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
       <title>Projetar e Implementar Soluções de Rede no Azure - AZ-700</title>
       <link>https://www.orafaelferreira.com/artigos/az-700</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/az-700</guid>
@@ -157,93 +77,12 @@
       <category>Artigos</category>
     </item>
     <item>
-      <title>GreenOps na Cloud: Arquitetando um Futuro Sustentável - TDC São Paulo 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/tdc-greenops</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/tdc-greenops</guid>
-      <pubDate>Sat, 04 Oct 2025 00:00:00 GMT</pubDate>
-      <description>No dia 17 de setembro de 2025, participei como palestrante da Trilha de Arquitetura Cloud no TDC São Paulo, um dos maiores eventos de tecnologia do Brasil, realizado no ProMagno, em São Paulo - SP.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Explorando a cultura DevOps: Por que tanto se fala de cultura por trás da entrega contínua? - Encontro das comunidades AWS User Group Floripa + DevOps Floripa 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/dod-meetupaws</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/dod-meetupaws</guid>
-      <pubDate>Tue, 30 Sep 2025 00:00:00 GMT</pubDate>
-      <description>No dia 03 de setembro de 2025, participei como palestrante no Encontro das comunidades AWS User Group Floripa + DevOps Floripa, realizado no Auditório da ACATE - Passeio Primavera (SC-401).</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>DevOps Além da Hype: Pessoas, Cultura e Prática - DevOpsDays Curitiba 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/dod-crtb25</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/dod-crtb25</guid>
-      <pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate>
-      <description>No dia 30 de agosto de 2025, tive o prazer de participar do DevOpsDays Curitiba, um dos principais eventos da comunidade DevOps no Brasil. O evento aconteceu no Centro Politécnico da UFPR, reunindo profissionais apaixonados por tecnologia, inovação e cultura DevOps.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer - Hacking na Web Day Florianópolis 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/hack</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/hack</guid>
-      <pubDate>Wed, 20 Aug 2025 00:00:00 GMT</pubDate>
-      <description>No último dia 16 de agosto de 2025, rolou em Florianópolis o HNWD (Hacking na Web Day), um dos eventos mais autênticos e relevantes da cena de hacking e segurança cibernética no Brasil.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
       <title>Certificação HashiCorp Terraform Associate 003: Dicas, Experiências e Preparação</title>
       <link>https://www.orafaelferreira.com/artigos/terraform-associate-artigo</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/terraform-associate-artigo</guid>
       <pubDate>Sun, 03 Aug 2025 00:00:00 GMT</pubDate>
       <description>Fala galera! Tudo bom? Recentemente passei no exame HashiCorp Certified: Terraform Associate (003) e quero compartilhar com vocês um pouco sobre como foi a experiência, desde a estrutura da prova até as minhas dicas de estudo.</description>
       <category>Artigos</category>
-    </item>
-    <item>
-      <title>Organizador – Azure User Groups Brasil</title>
-      <link>https://www.orafaelferreira.com/artigos/azure-user-groups-brasil</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/azure-user-groups-brasil</guid>
-      <pubDate>Sat, 21 Jun 2025 00:00:00 GMT</pubDate>
-      <description>Atuação nacional no Azure User Groups Brasil e local no Azure User Group Florianópolis, fortalecendo comunidades, eventos e conteúdo sobre Microsoft Azure.</description>
-      <category>Organizador Grupo de Comunidade</category>
-      <enclosure url="https://azureusergroupsbrasil.com.br/common/logo-semfundo.png" type="image/png" />
-    </item>
-    <item>
-      <title>Os 6Rs que Você Precisa Conhecer para Migrar para a Cloud; O sétimo R é de Rivotril?! - Esquenta MVP Conf Blumenau 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/mvp-conf-blu</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/mvp-conf-blu</guid>
-      <pubDate>Fri, 23 May 2025 00:00:00 GMT</pubDate>
-      <description>No último dia 26 de abril de 2025, Blumenau foi palco de um grande evento tech do sul do Brasil: o Esquenta MVP Conf, uma amostra da energia e do conteúdo de alto nível que teremos na próxima edição do MVP Conf em São Paulo.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Trabalhando para o Exterior – Global Azure Floripa 2025</title>
-      <link>https://www.orafaelferreira.com/artigos/carreira-internacional</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/carreira-internacional</guid>
-      <pubDate>Sun, 18 May 2025 00:00:00 GMT</pubDate>
-      <description>Durante o Global Azure 2025 – Edição Azure Floripa, tive o prazer de abrir o evento ao lado do grande amigo e profissional Vinicius Deschamps com uma palestra que foge um pouco do tradicional técnico — mas que é um divisor de águas \</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Global Azure feat Azure Floripa 2025 (Evento Remoto)</title>
-      <link>https://www.orafaelferreira.com/artigos/global-azure25</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/global-azure25</guid>
-      <pubDate>Sun, 18 May 2025 00:00:00 GMT</pubDate>
-      <description>Mais um ano, mais uma edição do Global Azure 2025 – Edição Azure Floripa! E sim, o Azure Floripa colou junto mais uma vez pra fazer história com a comunidade técnica brasileira. Foram 2 dias intensos, com conteúdo de qualidade, e muito aprendizado!</description>
-      <category>Organização de Eventos</category>
-    </item>
-    <item>
-      <title>Global Azure 2025 – Azure Floripa (Evento Presencial)</title>
-      <link>https://www.orafaelferreira.com/artigos/global-azure25pres</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/global-azure25pres</guid>
-      <pubDate>Sun, 18 May 2025 00:00:00 GMT</pubDate>
-      <description>No dia 10 de maio de 2025, rolou a edição presencial do Global Azure 2025 – Edição Azure Floripa em Florianópolis, e que evento, meus amigos!</description>
-      <category>Organização de Eventos</category>
-    </item>
-    <item>
-      <title>Pipelines com Azure DevOps: Automatizando o Provisionamento Seguro da sua infraestrutura na nuvem - SQL Saturday 2025 by Comunidado</title>
-      <link>https://www.orafaelferreira.com/artigos/sqlsat25</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/sqlsat25</guid>
-      <pubDate>Sun, 06 Apr 2025 00:00:00 GMT</pubDate>
-      <description>No último sábado, 5 de abril de 2025, tive o imenso prazer de participar como palestrante no SQL Saturday Joinville 2025, realizado na UNIVILLE – Campus Universitário, localizado em Joinville, SC.</description>
-      <category>Registro Eventos Presenciais</category>
     </item>
     <item>
       <title>Minhas Contribuições para a Tradução do Kubernetes</title>
@@ -260,46 +99,6 @@
       <pubDate>Thu, 09 Jan 2025 00:00:00 GMT</pubDate>
       <description>O Azure Policy é um recurso da Microsoft Azure que ajuda organizações a implementar governança e compliance de forma automatizada e em larga escala.</description>
       <category>Artigos</category>
-    </item>
-    <item>
-      <title>Pipelines com Azure DevOps: Automatizando o (im)possível - Code Island Cloud 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/code-island24</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/code-island24</guid>
-      <pubDate>Sun, 24 Nov 2024 00:00:00 GMT</pubDate>
-      <description>No último sábado, 23 de novembro de 2024, tive o prazer de participar como palestrante da segunda edição do Code Island Cloud, realizado na Unisul – Centro Florianópolis.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Estratégias de Cloud Foundation em Larga Escala: Garantindo que Você Não Retorne para On-Premise - Tech Connection Floripa 2 Edição 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/tc-floripa24</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/tc-floripa24</guid>
-      <pubDate>Sun, 10 Nov 2024 00:00:00 GMT</pubDate>
-      <description>No dia 9 de novembro de 2024, tive o prazer de palestrar na segunda edição do Tech Connection Florianópolis.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>TFTEC Ao Vivo 2024: Conexão, Conhecimento e Imersão em Cloud</title>
-      <link>https://www.orafaelferreira.com/artigos/tftec2024</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/tftec2024</guid>
-      <pubDate>Mon, 04 Nov 2024 00:00:00 GMT</pubDate>
-      <description>Nos dias 26 e 27 de outubro, São Paulo foi palco do evento TFTEC Ao Vivo, uma imersão totalmente única no universo do Azure.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Architecting a Secure Landing Zone for AI Workloads in the Cloud - MVP TALKS CI&amp;T 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/mvp-day</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/mvp-day</guid>
-      <pubDate>Sat, 02 Nov 2024 00:00:00 GMT</pubDate>
-      <description>No último dia 24 de outubro, organizamos o primeiro CI&amp;T MVP Day — um evento interno, exclusivo para funcionários da CI&amp;T, realizado na nossa sede global tech em Campinas.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Deploy de um Futuro com Sustentabilidade: GreenOps na Cloud - #27 Cloud Native São Paulo - Sustainability Day na AWS 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/sustentability-day</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/sustentability-day</guid>
-      <pubDate>Thu, 31 Oct 2024 00:00:00 GMT</pubDate>
-      <description>No último dia 22 de outubro, o CNCF - Cloud Native São Paulo 🇧🇷, em parceria com a Amazon Web Services (AWS) e a Cloud Native Computing Foundation (CNCF), organizou o aguardado evento \</description>
-      <category>Registro Eventos Presenciais</category>
     </item>
     <item>
       <title>Automatizando Infraestrutura Moderna com Metodologias Ágeis</title>
@@ -326,22 +125,6 @@
       <category>Artigos</category>
     </item>
     <item>
-      <title>Minha Experiência na Codecon Summit: Um Evento Para Devs e Por Devs</title>
-      <link>https://www.orafaelferreira.com/artigos/codecon</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/codecon</guid>
-      <pubDate>Wed, 11 Sep 2024 00:00:00 GMT</pubDate>
-      <description>No último dia 07/09/2024, tive a oportunidade de participar da Codecon Summit, um dos maiores eventos de tecnologia voltados para desenvolvedores.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Curso DP-900 Fundamentos de Dados do Azure 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/curso-dp-900</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/curso-dp-900</guid>
-      <pubDate>Mon, 02 Sep 2024 00:00:00 GMT</pubDate>
-      <description>No último sábado, 31 de agosto de 2024, a comunidade técnica Azure Floripa se reuniu na Igreja Batista de Forquilhinhas para um dia de aprendizado e colaboração com o curso DP-900: Fundamentos de Dados do Azure.</description>
-      <category>Organização de Eventos</category>
-    </item>
-    <item>
       <title>Estratégias de Modernização de Aplicações: Aplicando os 6Rs com o Cloud Adoption Framework</title>
       <link>https://www.orafaelferreira.com/artigos/6rs</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/6rs</guid>
@@ -355,7 +138,7 @@
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/guia-criacao-vms-azure</guid>
       <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
       <description>Este artigo é uma base introdutória essencial para criar máquinas virtuais no Azure, explorando os passos para criar VMs Linux e Windows, incluindo Resource Groups, Virtual Networks e NSGs.</description>
-      <category>Azure</category>
+      <category>Artigos</category>
     </item>
     <item>
       <title>Explorando a Inteligência Artificial Generativa</title>
@@ -364,46 +147,6 @@
       <pubDate>Thu, 25 Jul 2024 00:00:00 GMT</pubDate>
       <description>A inteligência artificial (IA) tem transformado diversos setores e aspectos da vida cotidiana, e a chegada da IA generativa marca uma nova era de inovação e possibilidades.</description>
       <category>Artigos</category>
-    </item>
-    <item>
-      <title>Organizador – Azure Floripa</title>
-      <link>https://www.orafaelferreira.com/artigos/azure-floripa</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/azure-floripa</guid>
-      <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
-      <description>A comunidade Azure Floripa evoluiu para o Azure User Group Florianópolis, conectado ao movimento nacional do Azure User Groups Brasil, mantendo o foco em compartilhamento prático sobre Microsoft Azure.</description>
-      <category>Organizador Grupo de Comunidade</category>
-    </item>
-    <item>
-      <title>Organizador – Cloud Native Santa Catarina</title>
-      <link>https://www.orafaelferreira.com/artigos/cncfsc</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/cncfsc</guid>
-      <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
-      <description>Atuo como organizador do Cloud Native Santa Catarina, comunidade oficial da CNCF que promove tecnologias cloud native, open source e troca de experiências práticas em diferentes cidades da região.</description>
-      <category>Organizador Grupo de Comunidade</category>
-    </item>
-    <item>
-      <title>Organizador – DevOpsDays Florianópolis</title>
-      <link>https://www.orafaelferreira.com/artigos/comu-dod-floripa</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/comu-dod-floripa</guid>
-      <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
-      <description>Atuo desde 2023 no time de organização do DevOpsDays Florianópolis, apoiando a continuidade da comunidade local com coordenação de eventos, suporte a speakers e engajamento da audiência.</description>
-      <category>Organizador Grupo de Comunidade</category>
-    </item>
-    <item>
-      <title>DevOpsDays Florianópolis 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/eventodod-floripa</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/eventodod-floripa</guid>
-      <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
-      <description>O DevOpsDays é uma conferência global que une desenvolvimento, operações e cultura DevOps. Em 16 de novembro de 2024, Floripa recebeu +150 participantes para um dia inteiro de talks, open‑spaces e networking.</description>
-      <category>Organização de Eventos</category>
-    </item>
-    <item>
-      <title>KCD Floripa Brazil 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/kcd-floripa24</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/kcd-floripa24</guid>
-      <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
-      <description>Os Kubernetes Community Days (KCDs) são eventos organizados pela comunidade que reúnem entusiastas e profissionais interessados no universo nativo da nuvem e de código aberto.</description>
-      <category>Organização de Eventos</category>
     </item>
     <item>
       <title>Utilizando Azure Workbooks para Otimização de Custos com FinOps</title>
@@ -419,39 +162,7 @@
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/antes-cloud-native-fundacao-solida</guid>
       <pubDate>Sun, 14 Jul 2024 00:00:00 GMT</pubDate>
       <description>Descubra como a Green Computing, Cloud Foundation, DevOps, FinOps e Observabilidade não apenas definem o futuro tecnológico, mas impactam diretamente na responsabilidade social e sustentabilidade ambiental.</description>
-      <category>Cloud Adoption Framework</category>
-    </item>
-    <item>
-      <title>Plataformização de Arquitetura de Dados com Backstage.io e IAC - TDC Florianópolis - Trilha Arquitetura de Dados 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/talk-tdc</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/talk-tdc</guid>
-      <pubDate>Tue, 25 Jun 2024 00:00:00 GMT</pubDate>
-      <description>No TDC Florianópolis 2024, tive a honra de palestrar na Trilha de Arquitetura de Dados, ao lado de meu amigo Cláudio Filipe Lima Rapôso.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Episódio Especial do Podcast LowOpsCast no TDC</title>
-      <link>https://www.orafaelferreira.com/artigos/podcast</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/podcast</guid>
-      <pubDate>Sun, 23 Jun 2024 00:00:00 GMT</pubDate>
-      <description>No maior evento de desenvolvimento de software da América Latina, The Developer’s Conference (TDC), tive a oportunidade de gravar um episódio especial do meu podcast LowOpsCast.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Plataformização da Cloud Foundation com Backstage: Desvendando os Segredos da Eficiência na Nuvem com Developer Experience - Esquenta TDC - KuberTENes Birthday Bash Santa Catarina + Azure Floripa + API Floripa</title>
-      <link>https://www.orafaelferreira.com/artigos/kubertenes</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/kubertenes</guid>
-      <pubDate>Mon, 17 Jun 2024 00:00:00 GMT</pubDate>
-      <description>No dia 11 de junho de 2024, rolou o KuberTENes Birthday Bash Santa Catarina, um evento organizado pela comunidade Cloud Native Santa Catarina.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Curso AZ-900 - Fundamentos da Azure 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/curso-az-900</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/curso-az-900</guid>
-      <pubDate>Mon, 10 Jun 2024 00:00:00 GMT</pubDate>
-      <description>Agradecimento pelo Sucesso do Evento AZ-900: Fundamentos do Azure 📢</description>
-      <category>Organização de Eventos</category>
+      <category>Artigos</category>
     </item>
     <item>
       <title>Configuração de um repositório no Github</title>
@@ -470,44 +181,12 @@
       <category>Artigos</category>
     </item>
     <item>
-      <title>GreenOps na Cloud: Construindo o Futuro com Sustentabilidade - Tech Connection Balneário Camburiú 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/tc-bc24</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/tc-bc24</guid>
-      <pubDate>Sun, 02 Jun 2024 00:00:00 GMT</pubDate>
-      <description>No Tech Connection 2024, realizado em Balneário Camboriú, trouxe uma palestra com tema crucial para o futuro da tecnologia e do planeta: GreenOps na Cloud.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
       <title>Simplificando a Utilização do Static Web Apps no Azure</title>
       <link>https://www.orafaelferreira.com/artigos/azure-static-web-apps</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/azure-static-web-apps</guid>
       <pubDate>Fri, 24 May 2024 00:00:00 GMT</pubDate>
       <description>Os Azure Static Web Apps são um serviço que cria e implanta automaticamente aplicativos Web full stack no Azure a partir de um repositório de códigos.</description>
       <category>Artigos</category>
-    </item>
-    <item>
-      <title>Global Azure feat Azure Floripa 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/global-azure24</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/global-azure24</guid>
-      <pubDate>Sat, 18 May 2024 00:00:00 GMT</pubDate>
-      <description>Estamos entusiasmados em compartilhar que o Global Azure 2024 foi um sucesso e o Azure Floripa marcou presença! Este evento global foi uma oportunidade incrível para aprender e compartilhar conhecimentos sobre a plataforma de Cloud Computing da Microsoft, o Azure.</description>
-      <category>Organização de Eventos</category>
-    </item>
-    <item>
-      <title>Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentável - KCD São Paulo - Brasil 2024</title>
-      <link>https://www.orafaelferreira.com/artigos/kcdsp24</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/kcdsp24</guid>
-      <pubDate>Sun, 25 Feb 2024 00:00:00 GMT</pubDate>
-      <description>No dia 24 de fevereiro de 2024, tive a oportunidade de palestrar no Kubernetes Community Days (KCD) Brasil, realizado na Natura NASP, em São Paulo.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentáve - Cloud Native Floripa - 2º Edição</title>
-      <link>https://www.orafaelferreira.com/artigos/2meetcncf</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/2meetcncf</guid>
-      <pubDate>Thu, 22 Feb 2024 00:00:00 GMT</pubDate>
-      <description>No dia 21 de fevereiro de 2024, tive o prazer de palestrar no 2º Cloud Native Floripa Meetup, organizado pelo Community Group Cloud Native Santa Catarina. O evento realizado na \</description>
-      <category>Registro Eventos Presenciais</category>
     </item>
     <item>
       <title>Construindo uma Fundação Sólida para a Nuvem: Monitoria e Observabilidade para Performance e Eficiência em Ambientes Cloud Native</title>
@@ -523,7 +202,7 @@
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/azure-backup-virtual-machines</guid>
       <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
       <description>Exploramos por que a policy &apos;Azure Backup should be enabled for Virtual Machines&apos; é essencial em ambientes corporativos, detalhando os riscos de não ter backup automático em VMs.</description>
-      <category>Azure Policy</category>
+      <category>Artigos</category>
     </item>
     <item>
       <title>Construindo uma Fundação Sólida para a Nuvem com FinOps: Maximizando os Custos em Ambientes Cloud Native</title>
@@ -564,30 +243,6 @@
       <pubDate>Mon, 04 Dec 2023 00:00:00 GMT</pubDate>
       <description>A adoção da nuvem tornou-se crucial nas estratégias de transformação digital das organizações modernas. Com a promessa de escalabilidade, eficiência e inovação, a nuvem é uma força poderosa a ser considerada.</description>
       <category>Artigos</category>
-    </item>
-    <item>
-      <title>Voluntariado no Projeto de Mentoria 3.0 do Canal da Cloud</title>
-      <link>https://www.orafaelferreira.com/artigos/mentoriacloud23</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/mentoriacloud23</guid>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 GMT</pubDate>
-      <description>Estou empolgado para compartilhar minha experiência como voluntário no Projeto de Mentoria de Carreira do Canal da Cloud durante o período de Agosto de 2023 a Dezembro de 2023.</description>
-      <category>Posts</category>
-    </item>
-    <item>
-      <title>Lista dos eventos de Tecnologia Presenciais que eu já fui</title>
-      <link>https://www.orafaelferreira.com/artigos/eventos</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/eventos</guid>
-      <pubDate>Mon, 30 Oct 2023 00:00:00 GMT</pubDate>
-      <description>Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências que tive participando de eventos de tecnologia presenciais. Esses eventos foram oportunidades únicas para aprender, fazer networking e me manter atualizado sobre as últimas tendências tecnológicas.</description>
-      <category>Registro Eventos Presenciais</category>
-    </item>
-    <item>
-      <title>Participações em Lives</title>
-      <link>https://www.orafaelferreira.com/artigos/participacoes</link>
-      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/participacoes</guid>
-      <pubDate>Sat, 28 Oct 2023 00:00:00 GMT</pubDate>
-      <description>Olá, pessoal!</description>
-      <category>Posts</category>
     </item>
     <item>
       <title>Alertmanager no Prometheus: Simplificando o Gerenciamento de Alertas</title>

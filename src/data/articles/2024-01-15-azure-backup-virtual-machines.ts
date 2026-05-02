@@ -497,6 +497,6 @@ Lembre-se: **backup não substitui outras camadas de segurança** (replicação,
 - [GDPR](https://privacy-regulation.eu/)
 - [CMMC](https://www.cmmcab.org/)`,
   date: "2024-01-15",
-  category: "Azure Policy",
+  category: "Artigos",
   readTime: "25 min de leitura"
 };

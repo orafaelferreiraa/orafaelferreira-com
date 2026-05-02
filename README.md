@@ -34,6 +34,8 @@ npm run preview
 
 O site publica um feed RSS com as novidades do blog em `/rss.xml`.
 
+O feed inclui apenas conteudo de artigos tecnicos e exclui posts de eventos, palestras e organizacao de comunidade.
+
 - URL de assinatura: `https://www.orafaelferreira.com/rss.xml`
 
 ## deploy do app (SWA)

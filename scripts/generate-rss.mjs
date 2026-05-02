@@ -10,6 +10,12 @@ const FEED_PATH = '/rss.xml';
 const FEED_TITLE = 'Rafael Ferreira | Novidades do Blog';
 const FEED_DESCRIPTION = 'Novos artigos e publicacoes sobre Azure, DevOps, FinOps, Terraform, Kubernetes e Platform Engineering.';
 const FEED_LANGUAGE = 'pt-BR';
+const ARTICLE_CATEGORIES = new Set([
+  'Artigos',
+  'Azure',
+  'Azure Policy',
+  'Cloud Adoption Framework',
+]);
 
 function escapeXml(value = '') {
   return String(value)
@@ -71,6 +77,7 @@ async function generateRss() {
 
   const items = articles
     .filter((article) => !Number.isNaN(new Date(article.date).getTime()))
+    .filter((article) => isArticle(article))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const lastBuildDate = items.length > 0 ? toRfc822(items[0].date) : new Date().toUTCString();
@@ -174,6 +181,11 @@ function imageMimeType(url) {
 
 function isAbsoluteHttpUrl(url) {
   return /^https?:\/\//i.test(String(url || '').trim());
+}
+
+function isArticle(article) {
+  const category = String(article?.category || '').trim();
+  return ARTICLE_CATEGORIES.has(category);
 }
 
 generateRss().catch((error) => {
