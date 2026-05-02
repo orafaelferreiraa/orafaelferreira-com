@@ -30,6 +30,12 @@ npm run build
 npm run preview
 ```
 
+## RSS do blog
+
+O site publica um feed RSS com as novidades do blog em `/rss.xml`.
+
+- URL de assinatura: `https://www.orafaelferreira.com/rss.xml`
+
 ## deploy do app (SWA)
 
 O deploy é automático no push para `main` quando arquivos do app mudam (`src/`, `public/`, `index.html`, configs) e também após a conclusão bem-sucedida do workflow `infra-apply` (via `workflow_run`). Workflow: `.github/workflows/deploy-app.yml`.
