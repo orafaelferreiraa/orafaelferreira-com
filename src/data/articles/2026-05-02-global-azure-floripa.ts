@@ -68,9 +68,9 @@ Abordei principalmente:
 
 Se você quiser participar da comunidade:
 
-- [**WhatsApp:**](https://chat.whatsapp.com/HSpFnNyo9ZLD4RJrvEcrrl)
-- [**YouTube:**](https://www.youtube.com/@azureusergroupsbrasil)
-- [**LinkedIn:**](https://www.linkedin.com/company/azureusergroupsbrasil)
+- [**WhatsApp**](https://chat.whatsapp.com/HSpFnNyo9ZLD4RJrvEcrrl)
+- [**YouTube**](https://www.youtube.com/@azureusergroupsbrasil)
+- [**LinkedIn**](https://www.linkedin.com/company/azureusergroupsbrasil)
 
 [LinkedIn Post Divulgação evento](https://www.linkedin.com/posts/orafaelferreiraa_palestra-confirmada-do-azure-user-groups-activity-7446882073878929409-aeCr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw)
 
@@ -78,9 +78,9 @@ Se você quiser participar da comunidade:
 
 Os slides da minha sessão estão disponíveis:
 
-- <i class="fa-regular fa-folder-open"></i> [**Slides da Apresentação:**](https://stoblobcertificados011.blob.core.windows.net/palestras/GlobalAzure26.pdf)
+- <i class="fa-regular fa-folder-open"></i> [**Slides da Apresentação**](https://stoblobcertificados011.blob.core.windows.net/palestras/GlobalAzure26.pdf)
 
-[**Repositório do Site:**](https://github.com/orafaelferreiraa/orafaelferreira-com)
+- <i class="fa-regular fa-folder-open"></i> [**Repositório do Site**](https://github.com/orafaelferreiraa/orafaelferreira-com)
 
 `,
   date: "2026-05-02",
