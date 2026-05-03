@@ -76,6 +76,7 @@ import { article as pac } from './2026-04-15-pac.ts';
 import { article as semServidorConf } from './2026-04-18-sem-servidor-conf.ts'; 
 import { article as sqlSaturdayJoinville2026 } from './2026-04-20-sql-saturday-joinville.ts'; 
 import { article as distroless } from './2026-04-28-distroless-strategy.ts'; 
+import { article as globalAzureUserGroupFloripa2026 } from './2026-05-02-global-azure-floripa.ts'; 
 
 
 
@@ -154,6 +155,7 @@ export const allArticles: Article[] = [
   pac,
   semServidorConf,
   distroless,
+  globalAzureUserGroupFloripa2026,
   azureUserGroupsBrasil
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

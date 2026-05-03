@@ -40,11 +40,11 @@ const Talks = () => {
       event: "Global Azure User Group Floripa 2026",
       date: "2026-04-18",
       location: "Colegio Alpha - São José",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/1.png",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/00.png",
       siteUrl: "https://www.meetup.com/azureusergroupsbrasil/events/313851322/", 
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_palestra-confirmada-do-azure-user-groups-activity-7446882073878929409-aeCr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/GlobalAzure26.pdf",  
-      //blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      blogUrl: "https://www.orafaelferreira.com/artigos/global-azure-floripa-2026",  
       repositories: [
       {
         label: "Repositório do Site",
@@ -60,7 +60,7 @@ const Talks = () => {
       siteUrl: "https://sqlsaturday.com/2026-04-11-sqlsaturday1139/", 
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_tem-muita-gente-falando-de-ia-criando-c%C3%B3digo-activity-7441808604246073344-ukc7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/sqlSaturday26.pdf",  
-      // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      blogUrl: "https://www.orafaelferreira.com/artigos/sql-saturday-joinville-2026",  
       repositories: [
       {
         label: "Repositório do Site",
@@ -74,6 +74,7 @@ const Talks = () => {
       location: "Faial Prime Suites - Florianópolis",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/serveless26/00.jpeg",
       siteUrl: "https://semservidor.com.br/sem-servidor-2026-edicao-floripa/", 
+      blogUrl: "https://www.orafaelferreira.com/artigos/sem-servidor-conf-florianopolis-2026",  
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_dia-08-de-abril-vou-estar-palestrando-no-activity-7439634283931004930-SxKr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       repositories: [
         {
@@ -89,8 +90,7 @@ const Talks = () => {
           url: "https://github.com/orafaelferreiraa/tfmodules-as-a-service-stack",
         },
       ],
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/SemServidorPlatform_Engineering.pdf",  
-      blogUrl: "https://www.orafaelferreira.com/artigos/sem-servidor-conf-florianopolis-2026",  
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/SemServidorPlatform_Engineering.pdf",   
       },
       {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",

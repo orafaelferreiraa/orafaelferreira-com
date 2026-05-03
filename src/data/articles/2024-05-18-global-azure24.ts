@@ -13,7 +13,6 @@ Estamos entusiasmados em compartilhar que o Global Azure 2024 foi um sucesso e o
 
 - **[Rafael Martin Alves Ferreira](https://www.linkedin.com/in/orafaelferreiraa/)**
 - **[Vinicius Deschamps](https://www.linkedin.com/in/viniciusdeschamps/)**
-- **[Cláudio Filipe Lima Rapôso](https://www.linkedin.com/in/cfraposo/)**
 
 ## O que foi o Global Azure?
 
