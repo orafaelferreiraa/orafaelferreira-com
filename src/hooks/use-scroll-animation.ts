@@ -23,10 +23,28 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     const element = ref.current;
     if (!element) return;
 
+    // Avoid leaving content hidden when observer is unavailable.
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
+
+    // Respect reduced-motion preference and keep content immediately visible.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsVisible(true);
+      return;
+    }
+
+    // Safety fallback for mobile/browser edge cases where observer may not fire.
+    const fallbackTimer = window.setTimeout(() => {
+      setIsVisible(true);
+    }, 1200);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          window.clearTimeout(fallbackTimer);
           if (triggerOnce) {
             observer.unobserve(element);
           }
@@ -43,6 +61,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     observer.observe(element);
 
     return () => {
+      window.clearTimeout(fallbackTimer);
       if (element) {
         observer.unobserve(element);
       }
