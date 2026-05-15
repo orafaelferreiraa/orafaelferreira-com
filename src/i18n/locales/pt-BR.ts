@@ -45,8 +45,8 @@ export default {
         },
         stack: {
           title: "Stack de Ferramentas",
-          description: "Azure | Terraform, Bicep | Kubernetes, Docker",
-          details: "CI/CD com GitHub Actions e Azure DevOps | GitOps | Observabilidade com Prometheus e Grafana"
+          description: "As ferramentas que uso no dia a dia para entregar plataformas confiáveis na nuvem.",
+          tools: ["Azure", "Terraform", "Kubernetes", "GitHub Actions"]
         },
         community: {
           title: "Comunidade & Conteúdo",
@@ -61,7 +61,7 @@ export default {
         },
         devopsIac: {
           title: "DevOps & IaC",
-          description: "Automação com Terraform, Bicep e pipelines CI/CD"
+          description: "Automação com Terraform e pipelines CI/CD"
         },
         finops: {
           title: "FinOps",

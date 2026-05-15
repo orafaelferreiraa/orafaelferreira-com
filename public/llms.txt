@@ -5,7 +5,7 @@
 Notas importantes:
 
 - Nome completo: Rafael Martin Alves Ferreira. Também conhecido como: Rafael Ferreira, orafaelferreira
-- Especialidades principais: Microsoft Azure, Platform Engineering, DevOps, FinOps, Terraform, Kubernetes (AKS), CI/CD, Observabilidade
+- Especialidades principais: Microsoft Azure, Platform Engineering, DevOps, FinOps, Terraform, AKS, CI/CD, Observabilidade
 - Idiomas: Português (pt-BR) é o idioma primário; todo o site está disponível em inglês via `?lang=en`
 - O site é um SPA (React + Vite) hospedado no Azure Static Web Apps
 

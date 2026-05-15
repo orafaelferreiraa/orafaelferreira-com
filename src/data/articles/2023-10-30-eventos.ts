@@ -9,13 +9,20 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 
 ## Agenda 2026
 
+<!-- AUTO-EVENTS:START:2026 -->
 | Mês | Evento |
 |-----|--------|
-| Abr | [**Global Azure User Group Floripa**](https://www.meetup.com/azureusergroupsbrasil/events/313851322/) |
-| Abr | [**SQL Saturday Joinville**](https://sqlsaturday.com/2026-04-11-sqlsaturday1139/) |
-| Abr | [**Sem Servidor Conf – Edição Floripa**](https://semservidor.com.br/sem-servidor-2026-edicao-floripa/) |
-| Fev | [**Codecon Meetup #15**](https://eventos.codecon.dev/eventos/floripa-meetup-codecon-15) |
-| Jan | [**92º Python Floripa @ HostGator**](https://www.meetup.com/pt-br/floripa-python-meetup/events/312978297/?eventOrigin=group_past_events) |
+| Abr | [**Global Azure User Group Floripa 2026**](https://www.meetup.com/azureusergroupsbrasil/events/313851322/) |
+| Abr | [**SQL Saturday Joinville 2026**](https://sqlsaturday.com/2026-04-11-sqlsaturday1139/) |
+| Abr | [**Sem Servidor Conf 2026 – Edição Floripa**](https://semservidor.com.br/sem-servidor-2026-edicao-floripa/) |
+| Fev | [**Floripa - Meetup Codecon - #15**](https://eventos.codecon.dev/eventos/floripa-meetup-codecon-15) |
+| Jan | [**92 Python Florianópolis, SC**](https://www.meetup.com/pt-br/floripa-python-meetup/events/312978297/?eventOrigin=group_past_events) |
+<!-- AUTO-EVENTS:END:2026 -->
+
+<!-- MANUAL-EVENTS:START:2026 -->
+| Mês | Evento |
+|-----|--------|
+<!-- MANUAL-EVENTS:END:2026 -->
 
 ## 2025
 

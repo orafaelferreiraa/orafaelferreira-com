@@ -1,0 +1,69 @@
+name: regenerate-event-schedule
+
+# Mantém o cron de sync-talks-on-event-day.yml em sincronia com upcomingTalks.
+# Dispara quando:
+#  1) Você (humano) edita Talks.tsx e dá push  → adiciona/remove crons.
+#  2) O workflow sync-talks-on-event-day conclui → limpa o cron consumido.
+#
+# IMPORTANTE: requer secret WORKFLOW_PAT = Personal Access Token (fine-grained)
+# com permissões 'Contents: Read & Write' e 'Workflows: Read & Write' nesse repo.
+# O GITHUB_TOKEN padrão NÃO consegue alterar arquivos em .github/workflows/.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/components/Talks.tsx'
+      - 'scripts/generate-event-schedule.mjs'
+      - '.github/workflows/regenerate-event-schedule.yml'
+  workflow_run:
+    workflows: ["sync-talks-on-event-day"]
+    types: [completed]
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: regenerate-event-schedule
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    # Em push, ignora pushes do próprio bot que NÃO sejam do sync (evita loops
+    # com outros workflows). O gatilho workflow_run cobre o caso do sync.
+    if: >-
+      github.event_name != 'push' ||
+      github.actor != 'github-actions[bot]'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.WORKFLOW_PAT }}
+          fetch-depth: 0
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate cron schedule
+        env:
+          TZ: America/Sao_Paulo
+        run: node scripts/generate-event-schedule.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Cron atualizado. Commitando..."
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .github/workflows/sync-talks-on-event-day.yml
+            git commit -m "chore(ci): regenera cron de sync-talks-on-event-day"
+            git push
+          else
+            echo "Cron já estava atualizado. Nada a fazer."
+          fi

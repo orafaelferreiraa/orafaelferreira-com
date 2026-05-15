@@ -350,7 +350,7 @@ export const faqSchema = (lang: "pt-BR" | "en" = "pt-BR") => {
           },
           {
             q: "What does Rafael Ferreira specialize in?",
-            a: "Rafael specializes in Microsoft Azure, Platform Engineering, DevOps, FinOps (cloud cost optimization), Infrastructure as Code (Terraform and Bicep), Kubernetes (AKS), CI/CD pipelines with GitHub Actions and Azure DevOps, and Observability with Prometheus and Grafana.",
+            a: "Rafael specializes in Microsoft Azure, Platform Engineering, DevOps, FinOps (cloud cost optimization), Infrastructure as Code (Terraform and Bicep), AKS, CI/CD pipelines with GitHub Actions and Azure DevOps, and Observability with Prometheus and Grafana.",
           },
           {
             q: "Is Rafael Ferreira a Microsoft MVP?",
@@ -376,7 +376,7 @@ export const faqSchema = (lang: "pt-BR" | "en" = "pt-BR") => {
           },
           {
             q: "Em que Rafael Ferreira se especializa?",
-            a: "Rafael se especializa em Microsoft Azure, Platform Engineering, DevOps, FinOps (otimização de custos em nuvem), Infraestrutura como Código (Terraform e Bicep), Kubernetes (AKS), pipelines CI/CD com GitHub Actions e Azure DevOps, e Observabilidade com Prometheus e Grafana.",
+            a: "Rafael se especializa em Microsoft Azure, Platform Engineering, DevOps, FinOps (otimização de custos em nuvem), Infraestrutura como Código (Terraform e Bicep), AKS, pipelines CI/CD com GitHub Actions e Azure DevOps, e Observabilidade com Prometheus e Grafana.",
           },
           {
             q: "Rafael Ferreira é Microsoft MVP?",

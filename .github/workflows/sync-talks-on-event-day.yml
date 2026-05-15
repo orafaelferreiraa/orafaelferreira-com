@@ -1,0 +1,55 @@
+name: sync-talks-on-event-day
+
+# Workflow agendado APENAS nos dias dos próximos eventos (upcomingTalks).
+# As entradas de cron entre os marcadores AUTO-CRON:START/END são geradas
+# automaticamente por scripts/generate-event-schedule.mjs (acionado pelo
+# workflow regenerate-event-schedule.yml sempre que Talks.tsx muda OU
+# quando este workflow conclui movendo um evento).
+
+on:
+  schedule:
+    # AUTO-CRON:START
+    - cron: '5 11 16 5 *'  # 2026-05-16
+    # AUTO-CRON:END
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-talks-on-event-day
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run sync script
+        env:
+          TZ: America/Sao_Paulo
+        run: node scripts/sync-talks-and-events.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Mudanças detectadas. Commitando..."
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(talks): sync automático no dia do evento"
+            git push
+            echo "✅ Push realizado. deploy-app + regenerate-event-schedule serão acionados."
+          else
+            echo "Nenhuma mudança hoje. Nada a fazer."
+          fi

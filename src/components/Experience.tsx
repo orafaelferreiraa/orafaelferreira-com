@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { experiencesEN } from "@/i18n/experiences/en";
 import { experiencesPT } from "@/i18n/experiences/pt-BR";
+import { getTechIcon } from "@/lib/tech-icons";
 
 interface ExperienceItem {
   title: string;
@@ -145,15 +146,23 @@ const TimelineCard = ({
                   {t("experience.stackLabel")}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {exp.stack.map((item) => (
-                    <Badge
-                      key={`${exp.title}-${item}`}
-                      variant="secondary"
-                      className="bg-primary/[0.07] text-primary/80 text-[11px] font-medium border border-primary/10 hover:bg-primary/15 hover:text-primary transition-colors cursor-default"
-                    >
-                      {item}
-                    </Badge>
-                  ))}
+                  {exp.stack.map((item) => {
+                    const { Icon, color } = getTechIcon(item);
+                    return (
+                      <Badge
+                        key={`${exp.title}-${item}`}
+                        variant="secondary"
+                        className="inline-flex items-center gap-1.5 bg-primary/[0.07] text-primary/80 text-sm font-medium border border-primary/10 hover:bg-primary/15 hover:text-primary transition-colors cursor-default px-3 py-1"
+                      >
+                        <Icon
+                          className="h-5 w-5 shrink-0"
+                          style={color ? { color } : undefined}
+                          aria-hidden="true"
+                        />
+                        {item}
+                      </Badge>
+                    );
+                  })}
                 </div>
               </div>
             )}
