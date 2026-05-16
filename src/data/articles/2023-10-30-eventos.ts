@@ -12,6 +12,7 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 <!-- AUTO-EVENTS:START:2026 -->
 | Mês | Evento |
 |-----|--------|
+| Mai | [**Ctrl-Z - Code Island**](https://ctrl-z.codeisland.com.br/) |
 | Abr | [**Global Azure User Group Floripa 2026**](https://www.meetup.com/azureusergroupsbrasil/events/313851322/) |
 | Abr | [**SQL Saturday Joinville 2026**](https://sqlsaturday.com/2026-04-11-sqlsaturday1139/) |
 | Abr | [**Sem Servidor Conf 2026 – Edição Floripa**](https://semservidor.com.br/sem-servidor-2026-edicao-floripa/) |

@@ -20,8 +20,10 @@ interface Talk {
 }
 
 const Talks = () => {
-  const upcomingTalks: Talk[] = [
-     {
+  const upcomingTalks: Talk[] = [];
+
+  const inPersonTalks: Talk[] = [
+    {
       title: "O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome",
       event: "Ctrl-Z - Code Island",
       date: "2026-05-16",
@@ -32,9 +34,6 @@ const Talks = () => {
       // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
       // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
       },
-  ];
-
-  const inPersonTalks: Talk[] = [  
     {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU",
       event: "Global Azure User Group Floripa 2026",
@@ -50,8 +49,8 @@ const Talks = () => {
         label: "Repositório do Site",
         url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
       },
-      ]},     
-      {
+      ]},
+    {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
       event: "SQL Saturday Joinville 2026",
       date: "2026-04-11",
@@ -67,7 +66,7 @@ const Talks = () => {
         url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
       },
       ]},
-      {
+    {
       title: "Platform Engineering: Construindo uma Plataforma Serverless Self-Service",
       event: "Sem Servidor Conf 2026 – Edição Floripa",
       date: "2026-04-08",
@@ -92,7 +91,7 @@ const Talks = () => {
       ],
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/SemServidorPlatform_Engineering.pdf",   
       },
-      {
+    {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
       event: "Floripa - Meetup Codecon - #15",
       date: "2026-02-25",
@@ -109,7 +108,7 @@ const Talks = () => {
       },
       ]
       },
-      {
+    {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
       event: "92 Python Florianópolis, SC",
       date: "2026-01-31",
@@ -125,7 +124,8 @@ const Talks = () => {
         url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
       },
       ]
-      },{
+      },
+    {
       title: "Como aplicar Segurança em Camadas na sua arquitetura Cloud Native com Open Source",
       event: "DevOpsDays Porto Alegre 2025",
       date: "2025-11-29",
@@ -135,7 +135,8 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devopsdayspoa-devsecops-cloudnative-activity-7399046861686222848-5Oct?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/DefesaemCamadasOS.pdf",  
       blogUrl: "https://www.orafaelferreira.com/artigos/devopsdays-poa-2025",  
-    },{
+    },
+    {
       title: "Trabalhando para o Exterior: Realidade, Desafios e Oportunidades",
       event: "1ª Semana Acadêmica de ADS - IFSC",
       date: "2025-11-06",
