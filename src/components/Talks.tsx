@@ -30,8 +30,8 @@ const Talks = () => {
       location: "UniCesusc - Florianópolis",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/00.jpeg",
       siteUrl: "https://ctrl-z.codeisland.com.br/", 
-       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      // slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/codecon15.pdf",  
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
       // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
       },
     {
