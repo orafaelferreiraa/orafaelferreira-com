@@ -80,11 +80,15 @@ function dateToCron(isoDate) {
 }
 
 function buildAutoBlock(dates) {
+  // Importante: a chave `schedule:` vive DENTRO deste bloco. Quando não há
+  // eventos futuros, omitimos `schedule:` por completo — caso contrário o
+  // GitHub Actions rejeita o workflow com "Unexpected value ''" porque
+  // `schedule:` ficaria sem itens de lista.
   if (dates.length === 0) {
-    return `${START_MARK}\n    # (nenhum evento futuro em upcomingTalks)\n    ${END_MARK}`;
+    return `${START_MARK}\n  # (nenhum evento futuro em upcomingTalks — schedule omitido)\n  ${END_MARK}`;
   }
   const lines = dates.map((d) => `    - cron: ${dateToCron(d)}  # ${d}`);
-  return `${START_MARK}\n${lines.join('\n')}\n    ${END_MARK}`;
+  return `${START_MARK}\n  schedule:\n${lines.join('\n')}\n  ${END_MARK}`;
 }
 
 async function main() {

@@ -7,10 +7,9 @@ name: sync-talks-on-event-day
 # quando este workflow conclui movendo um evento).
 
 on:
-  schedule:
-    # AUTO-CRON:START
-    # (nenhum evento futuro em upcomingTalks)
-    # AUTO-CRON:END
+  # AUTO-CRON:START
+  # (nenhum evento futuro em upcomingTalks — schedule omitido)
+  # AUTO-CRON:END
   workflow_dispatch:
 
 permissions:
