@@ -286,6 +286,19 @@ async function syncTalks(today) {
     await writeFile(TALKS_FILE, updated, 'utf-8');
     console.log(`[sync-talks] ✅ Movidas ${expired.length} talk(s):`);
     for (const line of movedSummary) console.log(`  - ${line}`);
+
+    // Emite JSON com as talks movidas para integracoes externas (ex.: webhook
+    // Power Automate disparado pelo workflow). Caminho controlado por env var
+    // para nao gerar arquivos no working tree durante runs locais.
+    const outFile = process.env.SYNC_OUTPUT_FILE;
+    if (outFile) {
+      const moved = expired.map((el) => ({
+        event: getStringField(el.text, 'event') || '',
+        date: getStringField(el.text, 'date') || '',
+      }));
+      await writeFile(outFile, JSON.stringify(moved), 'utf-8');
+      console.log(`[sync-talks] 📤 SYNC_OUTPUT_FILE escrito: ${outFile}`);
+    }
   }
   return updated;
 }
