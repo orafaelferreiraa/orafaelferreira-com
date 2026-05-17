@@ -77,7 +77,7 @@ import { article as semServidorConf } from './2026-04-18-sem-servidor-conf.ts';
 import { article as sqlSaturdayJoinville2026 } from './2026-04-20-sql-saturday-joinville.ts'; 
 import { article as distroless } from './2026-04-28-distroless-strategy.ts'; 
 import { article as globalAzureUserGroupFloripa2026 } from './2026-05-02-global-azure-floripa.ts'; 
-
+import { article as augbga26 } from './2026-05-17-augbga26.ts'; 
 
 
 export const allArticles: Article[] = [
@@ -156,7 +156,8 @@ export const allArticles: Article[] = [
   semServidorConf,
   distroless,
   globalAzureUserGroupFloripa2026,
-  azureUserGroupsBrasil
+  azureUserGroupsBrasil,
+  augbga26
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getArticleBySlug(slug: string): Article | undefined {
