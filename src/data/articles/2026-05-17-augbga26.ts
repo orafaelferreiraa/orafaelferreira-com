@@ -49,7 +49,7 @@ Palestrante: [Leonardo Souza](https://www.linkedin.com/in/leomozzer/)
 - **11:00 - 12:00**
 Carreira internacional: como ganhar XP e se dar bem nas fases do jogo  
 Palestrante: [Lore Locks Coelho](https://www.linkedin.com/in/lorenalocks/?locale=en)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/lorena.png)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/lorena.jpg)
 
 ### Almoço
 
@@ -61,12 +61,12 @@ Almoço
 - **13:30 - 14:30**
 Reactive DDD na prática: Modelagem event-first e integração reativa em alta escala  
 Palestrante: [Antonio Falcao Jr](https://www.linkedin.com/in/antoniofalcaojr/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/antonio.png)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/antonio.jpeg)
 
 - **14:30 - 15:30**
 Segurança sem gambiarra: usando HSM para proteger o que realmente importa  
 Palestrante: [Vinicius Deschamps](https://www.linkedin.com/in/viniciusdeschamps/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/vinicius.png)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/vinicius.jpeg)
 
 - **15:30 - 16:30**
 Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU  
