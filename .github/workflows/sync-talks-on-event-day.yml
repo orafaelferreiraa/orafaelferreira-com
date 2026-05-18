@@ -54,9 +54,10 @@ jobs:
           count=$(jq 'length' "$MOVED_FILE")
           echo "📤 Disparando $count notificação(ões) para Power Automate..."
           for i in $(seq 0 $((count - 1))); do
-            payload=$(jq -c ".[$i] | {event, date}" "$MOVED_FILE")
+            payload=$(jq -c ".[$i] | {event, date, todo: (\"update CV + blog post \" + .event)}" "$MOVED_FILE")
             event_name=$(echo "$payload" | jq -r '.event')
-            echo "  → POST: $event_name"
+            todo_title=$(echo "$payload" | jq -r '.todo')
+            echo "  → POST: $todo_title"
             http_code=$(curl -sS -o /tmp/pa-resp.txt -w '%{http_code}' \
               -X POST "$WEBHOOK_URL" \
               -H 'Content-Type: application/json' \
