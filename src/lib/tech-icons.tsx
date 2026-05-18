@@ -3,6 +3,7 @@ import {
   SiTerraform,
   SiKubernetes,
   SiGithubactions,
+  SiDocker,
   SiArgo,
   SiHelm,
   SiPrometheus,
@@ -100,6 +101,7 @@ const MAP: Record<string, TechIcon> = {
   "helm": { Icon: SiHelm, color: "#0F1689" },
   "puppet": { Icon: SiPuppet, color: "#FFAE1A" },
   "jenkins": { Icon: SiJenkins, color: "#D24939" },
+  "docker": { Icon: SiDocker, color: "#2496ED" },
 
   // ── Observability ──
   "prometheus": { Icon: SiPrometheus, color: "#E6522C" },
@@ -150,6 +152,7 @@ const MAP: Record<string, TechIcon> = {
   "landing zones": { Icon: Layers },
   "hub-spoke": { Icon: Workflow },
   "finops": { Icon: DollarSign, color: "#16A34A" },
+  "devsecops": { Icon: ShieldCheck, color: "#0EA5E9" },
   "itil": { Icon: BookOpen },
 
   // ── Skill aliases (Home · Áreas de Especialização) ──

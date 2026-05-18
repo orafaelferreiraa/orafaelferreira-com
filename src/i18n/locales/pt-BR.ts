@@ -28,48 +28,48 @@ export default {
     about: {
       title: "Sobre",
       titleHighlight: "mim",
-      description: "Platform Engineer especializado em Cloud Azure e DevOps, com foco em transformação digital através de soluções inovadoras.",
+      description: "🌍 Atuo em um time global de Cloud & DevOps com foco em Azure Enterprise-scale, Platform Engineering e evolução de uma plataforma multi-tenant segura, escalável e automatizada.",
       quote: "Tecnologia é ponte, não barreira, e eu construo pontes todos os dias.",
       skillsTitle: "Áreas de",
       skillsTitleHighlight: "Especialização",
       highlights: {
         experience: {
           title: "Experiência & Credenciais",
-          description: "Mais de 10 anos em tecnologia, 20 certificações técnicas, formado em Ciência da Computação",
+          description: "Mais de 10 anos em tecnologia, 20 certificações técnicas e atuação global em engenharia de plataforma",
           details: "Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star, Green Software Champion"
         },
         specialization: {
           title: "Especialização Técnica",
-          description: "Platform Engineer especializado em arquiteturas Azure e transformação digital",
-          details: "Experiência em multinacionais, consultorias e ambientes corporativos internacionais"
+          description: "Azure Enterprise-scale, AKS, Terraform, GitOps, DevSecOps, Observability e FinOps",
+          details: "Plataforma com 15+ clusters AKS, 300+ engenheiros habilitados e cerca de 8.000 workloads em nuvem"
         },
         stack: {
           title: "Stack de Ferramentas",
-          description: "As ferramentas que uso no dia a dia para entregar plataformas confiáveis na nuvem.",
-          tools: ["Azure", "Terraform", "Kubernetes", "GitHub Actions"]
-        },
+          description: "Ferramentas e práticas usadas no dia a dia para entregar plataformas confiáveis e com governança na nuvem.",
+          tools: ["Azure", "Terraform", "AKS", "GitHub Actions", "GitOps", "Argo CD", "Helm", "Prometheus", "Grafana", "Docker", "Python", "DevSecOps", "FinOps"]
+  },
         community: {
           title: "Comunidade & Conteúdo",
           description: "Palestrante ativo, mentor e criador de conteúdo técnico",
-          details: "Organização de Comunidades Técnicas em Florianópolis | Podcast e conteúdo no YouTube e Spotify"
+          details: "Organização de Comunidades Técnicas em Florianópolis • Palestras em eventos nacionais e internacionais • Mentoria de profissionais • Conteúdo no YouTube, Spotify e Blog"
         }
       },
       skills: {
         cloudAzure: {
           title: "Cloud Azure",
-          description: "Especialista em arquiteturas cloud resilientes e escaláveis"
+          description: "Especialista em arquiteturas cloud resilientes e escaláveis. Design enterprise-scale, deployments multi-região, disaster recovery, padrões de alta disponibilidade e topologias de rede seguras"
         },
         devopsIac: {
           title: "DevOps & IaC",
-          description: "Automação com Terraform e pipelines CI/CD"
+          description: "Infrastructure as Code com Terraform, workflows GitOps, automação CI/CD com GitHub Actions, deployments acionados por versionamento e estratégias GitFlow"
         },
         finops: {
           title: "FinOps",
-          description: "Otimização de custos e governança financeira em nuvem"
+          description: "Otimização de custos e governança financeira em nuvem. Otimização de recursos, análise de custos, modelos de chargeback e práticas de gastos sustentáveis"
         },
         platformEngineering: {
           title: "Platform Engineering",
-          description: "Construção de plataformas internas com observabilidade"
+          description: "Construção de plataformas internas com observabilidade, monitoramento, logging, rastreamento distribuído, estratégias de alertas e otimização de experiência do desenvolvedor"
         }
       }
     },

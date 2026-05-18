@@ -13,29 +13,33 @@ const About = () => {
   const { ref: highlightsRef, isVisible: highlightsVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: skillsRef, isVisible: skillsVisible } = useScrollAnimation({ threshold: 0.1 });
   
-  const highlights = [{
-    icon: Award,
-    title: t("about.highlights.experience.title"),
-    description: t("about.highlights.experience.description"),
-    details: t("about.highlights.experience.details")
-  }, {
-    icon: Briefcase,
-    title: t("about.highlights.specialization.title"),
-    description: t("about.highlights.specialization.description"),
-    details: t("about.highlights.specialization.details")
-  }, {
-    icon: Monitor,
-    title: t("about.highlights.stack.title"),
-    description: t("about.highlights.stack.description"),
-    badges: {
+  const highlights = {
+    experience: {
+      icon: Award,
+      title: t("about.highlights.experience.title"),
+      description: t("about.highlights.experience.description"),
+      details: t("about.highlights.experience.details")
+    },
+    specialization: {
+      icon: Briefcase,
+      title: t("about.highlights.specialization.title"),
+      description: t("about.highlights.specialization.description"),
+      details: t("about.highlights.specialization.details")
+    },
+    stack: {
+      icon: Monitor,
+      title: t("about.highlights.stack.title"),
+      description: t("about.highlights.stack.description"),
       tools: t("about.highlights.stack.tools", { returnObjects: true }) as string[]
+    },
+    community: {
+      icon: Users,
+      title: t("about.highlights.community.title"),
+      description: t("about.highlights.community.description"),
+      details: t("about.highlights.community.details")
     }
-  }, {
-    icon: Users,
-    title: t("about.highlights.community.title"),
-    description: t("about.highlights.community.description"),
-    details: t("about.highlights.community.details")
-  }];
+  };
+
   const skills = [{
     techKey: "cloud azure",
     title: t("about.skills.cloudAzure.title"),
@@ -64,44 +68,66 @@ const About = () => {
             <p className="text-primary font-semibold italic text-lg">"{t("about.quote")}"</p>
           </div>
 
-          {/* Highlights Grid */}
-          <div ref={highlightsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            {highlights.map((highlight, index) => <Card 
-              key={highlight.title} 
+          {/* Highlights Grid - 2x2 Layout */}
+          {/* Row 1: Experience + Specialization */}
+          <div ref={highlightsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            {/* Experience Card */}
+            <Card 
               className={`group hover:border-primary/50 transition-all duration-300 scroll-fade-in ${highlightsVisible ? 'visible' : ''}`}
-              style={{
-                transitionDelay: `${index * 100}ms`
-              }}>
-                <CardContent className="p-6">
-                  <highlight.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-xl font-heading font-semibold mb-2">{highlight.title}</h3>
-                  <p className="text-muted-foreground mb-3">{highlight.description}</p>
-                  <Separator className="my-3" />
-                  {highlight.badges && Array.isArray(highlight.badges.tools) ? (
-                    <div className="flex flex-wrap gap-1.5">
-                      {highlight.badges.tools.map((item) => {
-                        const { Icon, color } = getTechIcon(item);
-                        return (
-                          <Badge
-                            key={`stack-tool-${item}`}
-                            variant="secondary"
-                            className="inline-flex items-center gap-1.5 bg-primary/[0.07] text-primary/80 text-sm font-medium border border-primary/10 hover:bg-primary/15 hover:text-primary transition-colors cursor-default px-3 py-1"
-                          >
-                            <Icon
-                              className="h-5 w-5 shrink-0"
-                              style={color ? { color } : undefined}
-                              aria-hidden="true"
-                            />
-                            {item}
-                          </Badge>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <p className="text-sm text-muted-foreground/80">{highlight.details}</p>
-                  )}
-                </CardContent>
-              </Card>)}
+              style={{ transitionDelay: '0ms' }}>
+              <CardContent className="p-6">
+                <highlights.experience.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl font-heading font-semibold mb-2">{highlights.experience.title}</h3>
+                <p className="text-muted-foreground mb-3">{highlights.experience.description}</p>
+                <Separator className="my-3" />
+                <p className="text-sm text-muted-foreground/80">{highlights.experience.details}</p>
+              </CardContent>
+            </Card>
+
+             {/* Community Card */}
+             <Card 
+               className={`group hover:border-primary/50 transition-all duration-300 scroll-fade-in ${highlightsVisible ? 'visible' : ''}`}
+               style={{ transitionDelay: '100ms' }}>
+               <CardContent className="p-6">
+                 <highlights.community.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                 <h3 className="text-xl font-heading font-semibold mb-2">{highlights.community.title}</h3>
+                 <p className="text-muted-foreground mb-3">{highlights.community.description}</p>
+                 <Separator className="my-3" />
+                 <p className="text-sm text-muted-foreground/80">{highlights.community.details}</p>
+               </CardContent>
+             </Card>
+          </div>
+
+          {/* Stack de Ferramentas - Centralizado */}
+          <div className="flex justify-center mb-16">
+            <Card className={`group hover:border-primary/50 transition-all duration-300 scroll-fade-in w-full max-w-2xl ${highlightsVisible ? 'visible' : ''}`}
+              style={{ transitionDelay: '200ms' }}>
+              <CardContent className="p-6 flex flex-col items-center">
+                <highlights.stack.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl font-heading font-semibold mb-2">{highlights.stack.title}</h3>
+                <p className="text-muted-foreground mb-4 text-center">{highlights.stack.description}</p>
+                <Separator className="my-6 w-full" />
+                <div className="flex flex-wrap gap-1.5 justify-center">
+                  {highlights.stack.tools.map((item) => {
+                    const { Icon, color } = getTechIcon(item);
+                    return (
+                      <Badge
+                        key={`stack-tool-${item}`}
+                        variant="secondary"
+                        className="inline-flex items-center gap-1.5 bg-primary/[0.07] text-primary/80 text-sm font-medium border border-primary/10 hover:bg-primary/15 hover:text-primary transition-colors cursor-default px-3 py-1"
+                      >
+                        <Icon
+                          className="h-5 w-5 shrink-0"
+                          style={color ? { color } : undefined}
+                          aria-hidden="true"
+                        />
+                        {item}
+                      </Badge>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           <Separator className="my-12" />
