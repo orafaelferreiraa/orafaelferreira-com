@@ -7,7 +7,7 @@ export const article: Article = {
     "No Code Island Ctrl Z 2026, compartilhei um dos cases mais sinceros da minha carreira: sim, eu derrubei produção, e sim, meu nome estava no log. Veja como lidar com o caos, aprender com o erro e sair mais forte.",
   content: `
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrlz26/banner.png)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/00.jpeg)
 
 No dia **16 de maio de 2026**, rolou o [**Code Island Ctrl Z**](https://codeisland.com.br/ctrlz) na UniCesusc, em Florianópolis/SC – um evento presencial focado em cases reais, erros honestos e aprendizados práticos de quem já "derrubou produção" e sobreviveu para contar a história.
 
@@ -16,6 +16,11 @@ No dia **16 de maio de 2026**, rolou o [**Code Island Ctrl Z**](https://codeisla
 O Ctrl Z nasceu para mostrar que todo mundo erra – até quem está no palco. Foram **14 palestrantes**, 150 vagas, 8 horas de conteúdo e muita troca sobre DEV, DATA, DEVOPS e CLOUD.
 
 **Local:** UniCesusc – SC-401, 9301 – Santo Antonio de Lisboa, Florianópolis/SC
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/001.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/0.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/2.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/3.jpg)
 
 ## Meu case: O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome
 
@@ -27,12 +32,20 @@ O ambiente era crítico, o impacto foi imediato e o culpado tinha nome e sobreno
 - Como comunicar o problema sem perder a confiança do time?
 - O que fazer para o erro não se repetir?
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/1.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/4.jpg)
+
 ## Aprendizados que compartilhei
 
 - Todo mundo vai errar – o que diferencia é como você reage
 - Transparência e comunicação são mais importantes que buscar culpados
 - Ter processo de rollback e monitoramento salva seu emprego
 - Cultura de blameless postmortem: aprender, não punir
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/7.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/8.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/9.jpg)
+
 
 ## Local e estrutura
 
@@ -46,6 +59,9 @@ O UniCesusc fica na SC-401, fácil acesso de carro, Uber, ônibus. Estacionament
 ## Quer participar dos próximos?
 
 Fique ligado nas redes da [Code Island](https://codeisland.com.br) e acompanhe os próximos eventos!
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/10.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/11.jpg)
 
 `,
   date: "2026-05-20",
