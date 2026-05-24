@@ -13,6 +13,12 @@ Estou empolgado para compartilhar com vocês um novo post onde destaco minhas pa
 
 ## Minhas Participações
 
+
+### Green IT - O Futuro da Sustentabilidade na Nuvem
+[**Green IT - O Futuro da Sustentabilidade na Nuvem**](https://jovemnerd.com.br/podcasts/nerd-na-cloud/green-it-o-futuro-da-sustentabilidade-na-nuvem) 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/green.png)
+
+
 ### IaC com Terraform & OpenTofu
 [![IaC com Terraform & OpenTofu](https://img.youtube.com/vi/eBGb7TukdSs/0.jpg)](https://www.youtube.com/watch?v=eBGb7TukdSs)
 
