@@ -30,6 +30,25 @@ npm run build
 npm run preview
 ```
 
+## Geração de sitemap e metadados
+
+O site gera automaticamente `public/sitemap.xml` e `public/articles-meta.json` baseado nos arquivos reais de artigos em `src/data/articles/*.ts`.
+
+**Sitemap:**
+- Inclui 9 páginas estáticas + todos os artigos dinâmicos
+- Atualizado automaticamente durante `npm run build`
+- URL: `https://www.orafaelferreira.com/sitemap.xml`
+
+**Metadados de artigos:**
+- JSON com slug, título, excerpto, imagem, data e URL de cada artigo
+- Usado para renderização de OG tags e metadados SEO
+- URL: `https://www.orafaelferreira.com/articles-meta.json`
+
+Para regenerar manualmente:
+```bash
+npm run sitemap:generate
+```
+
 ## RSS do blog
 
 O site publica um feed RSS com as novidades do blog em `/rss.xml`.
