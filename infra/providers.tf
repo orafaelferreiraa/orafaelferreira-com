@@ -12,3 +12,9 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+provider "azurerm" {
+  alias           = "site"
+  features {}
+  subscription_id = var.site_subscription_id != "" ? var.site_subscription_id : null
+}

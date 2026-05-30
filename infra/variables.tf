@@ -17,3 +17,9 @@ variable "repository_token" {
 	default     = ""
 }
 
+variable "site_subscription_id" {
+	description = "Subscription ID onde estao rg-site e a Static Web App"
+	type        = string
+	default     = ""
+}
+
