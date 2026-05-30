@@ -163,6 +163,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_apex_domain_validation_token"></a> [apex\_domain\_validation\_token](#input\_apex\_domain\_validation\_token) | Token TXT de validacao do dominio apex gerado pelo Static Web App (Custom domains > Add > Generate code) | `string` | n/a | yes |
 | <a name="input_dns_subscription_id"></a> [dns\_subscription\_id](#input\_dns\_subscription\_id) | Subscription ID onde esta a zona DNS orafaelferreira.com | `string` | `""` | no |
 | <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Branch do repositório para linkage opcional do SWA | `string` | `""` | no |
 | <a name="input_repository_token"></a> [repository\_token](#input\_repository\_token) | GitHub PAT para linkage opcional do SWA | `string` | `""` | no |
