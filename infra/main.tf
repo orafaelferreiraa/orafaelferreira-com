@@ -66,7 +66,7 @@ resource "azurerm_dns_txt_record" "apex_validation" {
 resource "azurerm_static_web_app_custom_domain" "www" {
   provider          = azurerm.site
   static_web_app_id = azurerm_static_web_app.this.id
-  domain_name       = "www.orafaelferreira.com"
+  domain_name       = "orafaelferreira.com"
   validation_type   = "cname-delegation"
 
   depends_on = [
