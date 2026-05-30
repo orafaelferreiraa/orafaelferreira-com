@@ -2,6 +2,17 @@
 data "azurerm_resource_group" "rg" {
   name = "rg-site"
 }
+
+# Existing DNS zone (created outside Terraform)
+data "azurerm_resource_group" "dns_rg" {
+  name = "rg-orafaelferreira.com"
+}
+
+data "azurerm_dns_zone" "this" {
+  name                = "orafaelferreira.com"
+  resource_group_name = data.azurerm_resource_group.dns_rg.name
+}
+
 # Azure Static Web App (SWA)
 resource "azurerm_static_web_app" "this" {
   name                = "swa-site-orafael"
@@ -16,8 +27,10 @@ resource "azurerm_static_web_app" "this" {
   repository_token  = var.repository_token != "" ? var.repository_token : null
 }
 
-resource "azurerm_static_web_app_custom_domain" "txt-value" {
-  static_web_app_id = azurerm_static_web_app.this.id
-  domain_name       = "www.orafaelferreira.com"
-  validation_type   = "dns-txt-token"
+resource "azurerm_dns_cname_record" "www" {
+  name                = "www"
+  zone_name           = data.azurerm_dns_zone.this.name
+  resource_group_name = data.azurerm_dns_zone.this.resource_group_name
+  ttl                 = 3600
+  record              = azurerm_static_web_app.this.default_host_name
 }
