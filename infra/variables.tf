@@ -33,5 +33,6 @@ variable "apex_domain_validation_token" {
   description = "Token TXT de validacao do dominio apex gerado pelo Static Web App (Custom domains > Add > Generate code)"
   type        = string
   sensitive   = true
+  default     = ""
 }
 

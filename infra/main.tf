@@ -51,6 +51,7 @@ resource "azurerm_dns_a_record" "apex" {
 }
 
 resource "azurerm_dns_txt_record" "apex_validation" {
+  count               = var.apex_domain_validation_token != "" ? 1 : 0
   provider            = azurerm.dns
   name                = "@"
   zone_name           = data.azurerm_dns_zone.this.name
@@ -74,6 +75,7 @@ resource "azurerm_static_web_app_custom_domain" "www" {
 }
 
 resource "azurerm_static_web_app_custom_domain" "apex" {
+  count             = var.apex_domain_validation_token != "" ? 1 : 0
   provider          = azurerm.site
   static_web_app_id = azurerm_static_web_app.this.id
   domain_name       = "orafaelferreira.com"
@@ -81,6 +83,6 @@ resource "azurerm_static_web_app_custom_domain" "apex" {
 
   depends_on = [
     azurerm_dns_a_record.apex,
-    azurerm_dns_txt_record.apex_validation,
+    azurerm_dns_txt_record.apex_validation[0],
   ]
 }
