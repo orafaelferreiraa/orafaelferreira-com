@@ -64,12 +64,14 @@ resource "azurerm_dns_txt_record" "apex_validation" {
 }
 
 resource "azurerm_static_web_app_custom_domain" "www" {
+  count             = var.apex_domain_validation_token != "" ? 1 : 0
   provider          = azurerm.site
   static_web_app_id = azurerm_static_web_app.this.id
   domain_name       = "orafaelferreira.com"
-  validation_type   = "cname-delegation"
+  validation_type   = "dns-txt-token"
 
   depends_on = [
-    azurerm_dns_cname_record.www,
+    azurerm_dns_a_record.apex,
+    azurerm_dns_txt_record.apex_validation[0],
   ]
 }
