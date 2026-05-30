@@ -1,18 +1,20 @@
 # Existing Resource Group (created outside Terraform)
 data "azurerm_resource_group" "rg" {
-  provider = azurerm.site
   name = "rg-site"
 }
 
 # Existing DNS zone (created outside Terraform)
 data "azurerm_resource_group" "dns_rg" {
-  name = "rg-orafaelferreira.com"
+  provider = azurerm.site
+  name     = "rg-orafaelferreira.com"
 }
 
 data "azurerm_dns_zone" "this" {
+  provider            = azurerm.site
   name                = "orafaelferreira.com"
   resource_group_name = data.azurerm_resource_group.dns_rg.name
 }
+
 
 # Azure Static Web App (SWA)
 resource "azurerm_static_web_app" "this" {
