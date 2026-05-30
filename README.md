@@ -138,7 +138,7 @@ O bloco abaixo é gerado automaticamente pelo `terraform-docs` a partir do conte
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.50.0 |
+| <a name="provider_azurerm.dns"></a> [azurerm.dns](#provider\_azurerm.dns) | 4.50.0 |
 | <a name="provider_azurerm.site"></a> [azurerm.site](#provider\_azurerm.site) | 4.50.0 |
 
 ## Modules
@@ -159,6 +159,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_dns_subscription_id"></a> [dns\_subscription\_id](#input\_dns\_subscription\_id) | Subscription ID onde esta a zona DNS orafaelferreira.com | `string` | `""` | no |
 | <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Branch do repositório para linkage opcional do SWA | `string` | `""` | no |
 | <a name="input_repository_token"></a> [repository\_token](#input\_repository\_token) | GitHub PAT para linkage opcional do SWA | `string` | `""` | no |
 | <a name="input_repository_url"></a> [repository\_url](#input\_repository\_url) | GitHub repository URL para linkage opcional do SWA | `string` | `""` | no |
