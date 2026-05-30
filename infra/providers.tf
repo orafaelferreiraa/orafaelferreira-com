@@ -6,6 +6,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "4.50.0"
     }
+    azapi = {
+      source  = "Azure/azapi"
+      version = "~> 2.0"
+    }
   }
 }
 
@@ -22,5 +26,15 @@ provider "azurerm" {
 provider "azurerm" {
   alias = "dns"
   features {}
+  subscription_id = var.dns_subscription_id != "" ? var.dns_subscription_id : null
+}
+
+provider "azapi" {
+  alias           = "site"
+  subscription_id = var.site_subscription_id != "" ? var.site_subscription_id : null
+}
+
+provider "azapi" {
+  alias           = "dns"
   subscription_id = var.dns_subscription_id != "" ? var.dns_subscription_id : null
 }

@@ -41,28 +41,64 @@ resource "azurerm_dns_a_record" "apex" {
   target_resource_id  = azurerm_static_web_app.this.id
 }
 
+resource "azapi_resource" "apex_custom_domain" {
+  provider  = azapi.site
+  type      = "Microsoft.Web/staticSites/customDomains@2024-04-01"
+  name      = "orafaelferreira.com"
+  parent_id = azurerm_static_web_app.this.id
+
+  body = {
+    properties = {
+      validationMethod = "dns-txt-token"
+    }
+  }
+
+  response_export_values = {
+    validation_token = "properties.validationToken"
+  }
+
+  depends_on = [
+    azurerm_dns_a_record.apex,
+  ]
+}
+
+data "azapi_resource" "apex_txt_current" {
+  provider  = azapi.dns
+  type      = "Microsoft.Network/dnsZones/TXT@2018-05-01"
+  name      = "@"
+  parent_id = data.azurerm_dns_zone.this.id
+
+  response_export_values = {
+    values = "properties.TXTRecords[].value[0]"
+  }
+
+  depends_on = [
+    data.azurerm_dns_zone.this,
+  ]
+}
+
+locals {
+  apex_txt_values = distinct(concat(
+    try(data.azapi_resource.apex_txt_current.output.values, []),
+    [azapi_resource.apex_custom_domain.output.validation_token]
+  ))
+}
+
 resource "azurerm_dns_txt_record" "apex_validation" {
-  count               = var.apex_domain_validation_token != "" ? 1 : 0
   provider            = azurerm.dns
   name                = "@"
   zone_name           = data.azurerm_dns_zone.this.name
   resource_group_name = data.azurerm_dns_zone.this.resource_group_name
   ttl                 = 3600
 
-  record {
-    value = var.apex_domain_validation_token
+  dynamic "record" {
+    for_each = local.apex_txt_values
+    content {
+      value = record.value
+    }
   }
-}
-
-resource "azurerm_static_web_app_custom_domain" "apex" {
-  count             = var.apex_domain_validation_token != "" ? 1 : 0
-  provider          = azurerm.site
-  static_web_app_id = azurerm_static_web_app.this.id
-  domain_name       = "orafaelferreira.com"
-  validation_type   = "dns-txt-token"
 
   depends_on = [
-    azurerm_dns_a_record.apex,
-    azurerm_dns_txt_record.apex_validation[0],
+    azapi_resource.apex_custom_domain,
   ]
 }

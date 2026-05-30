@@ -47,7 +47,6 @@ jobs:
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       TF_VAR_site_subscription_id: ${{ secrets.SITE_SUBSCRIPTION_ID }}
       TF_VAR_dns_subscription_id: ${{ secrets.DNS_SUBSCRIPTION_ID }}
-      TF_VAR_apex_domain_validation_token: ${{ secrets.APEX_DOMAIN_VALIDATION_TOKEN }}
     defaults:
       run:
         shell: bash
