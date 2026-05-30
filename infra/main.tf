@@ -1,16 +1,17 @@
 # Existing Resource Group (created outside Terraform)
 data "azurerm_resource_group" "rg" {
-  name = "rg-site"
+  provider = azurerm.site
+  name     = "rg-site"
 }
 
 # Existing DNS zone (created outside Terraform)
 data "azurerm_resource_group" "dns_rg" {
-  provider = azurerm.site
+  provider = azurerm.dns
   name     = "rg-orafaelferreira.com"
 }
 
 data "azurerm_dns_zone" "this" {
-  provider            = azurerm.site
+  provider            = azurerm.dns
   name                = "orafaelferreira.com"
   resource_group_name = data.azurerm_resource_group.dns_rg.name
 }
@@ -32,6 +33,7 @@ resource "azurerm_static_web_app" "this" {
 }
 
 resource "azurerm_dns_cname_record" "www" {
+  provider            = azurerm.dns
   name                = "www"
   zone_name           = data.azurerm_dns_zone.this.name
   resource_group_name = data.azurerm_dns_zone.this.resource_group_name

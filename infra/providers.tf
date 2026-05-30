@@ -14,7 +14,13 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias           = "site"
+  alias = "site"
   features {}
   subscription_id = var.site_subscription_id != "" ? var.site_subscription_id : null
+}
+
+provider "azurerm" {
+  alias = "dns"
+  features {}
+  subscription_id = var.dns_subscription_id != "" ? var.dns_subscription_id : null
 }
