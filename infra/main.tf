@@ -52,13 +52,13 @@ resource "azurerm_dns_a_record" "apex" {
 
 resource "azurerm_dns_txt_record" "apex_validation" {
   provider            = azurerm.dns
-  name                = "asuid"
+  name                = "@"
   zone_name           = data.azurerm_dns_zone.this.name
   resource_group_name = data.azurerm_dns_zone.this.resource_group_name
   ttl                 = 3600
 
   record {
-    value = azurerm_static_web_app.this.custom_domain_verification_id
+    value = var.apex_domain_validation_token
   }
 }
 
