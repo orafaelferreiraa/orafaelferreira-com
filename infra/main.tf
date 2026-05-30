@@ -32,63 +32,22 @@ resource "azurerm_static_web_app" "this" {
   repository_token  = var.repository_token != "" ? var.repository_token : null
 }
 
-resource "azurerm_dns_a_record" "apex" {
+resource "azurerm_dns_cname_record" "www" {
   provider            = azurerm.dns
-  name                = "@"
+  name                = "www"
   zone_name           = data.azurerm_dns_zone.this.name
   resource_group_name = data.azurerm_dns_zone.this.resource_group_name
   ttl                 = 3600
-  target_resource_id  = azurerm_static_web_app.this.id
+  record              = azurerm_static_web_app.this.default_host_name
 }
 
-resource "azurerm_static_web_app_custom_domain" "apex" {
+resource "azurerm_static_web_app_custom_domain" "www" {
   provider          = azurerm.site
   static_web_app_id = azurerm_static_web_app.this.id
-  domain_name       = "orafaelferreira.com"
-  validation_type   = "dns-txt-token"
+  domain_name       = "www.orafaelferreira.com"
+  validation_type   = "cname-delegation"
 
   depends_on = [
-    azurerm_dns_a_record.apex,
-  ]
-}
-
-data "azapi_resource" "apex_txt_current" {
-  provider  = azapi.dns
-  type      = "Microsoft.Network/dnsZones/TXT@2018-05-01"
-  name      = "@"
-  parent_id = data.azurerm_dns_zone.this.id
-
-  response_export_values = {
-    values = "properties.TXTRecords[].value[0]"
-  }
-
-  depends_on = [
-    data.azurerm_dns_zone.this,
-  ]
-}
-
-locals {
-  apex_txt_values = distinct(concat(
-    try(data.azapi_resource.apex_txt_current.output.values, []),
-    [azurerm_static_web_app_custom_domain.apex.validation_token]
-  ))
-}
-
-resource "azurerm_dns_txt_record" "apex_validation" {
-  provider            = azurerm.dns
-  name                = "@"
-  zone_name           = data.azurerm_dns_zone.this.name
-  resource_group_name = data.azurerm_dns_zone.this.resource_group_name
-  ttl                 = 3600
-
-  dynamic "record" {
-    for_each = local.apex_txt_values
-    content {
-      value = record.value
-    }
-  }
-
-  depends_on = [
-    azurerm_static_web_app_custom_domain.apex,
+    azurerm_dns_cname_record.www,
   ]
 }
