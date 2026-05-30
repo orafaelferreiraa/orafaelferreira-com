@@ -148,8 +148,10 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azurerm_dns_cname_record.www](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/dns_cname_record) | resource |
 | [azurerm_static_web_app.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app) | resource |
-| [azurerm_static_web_app_custom_domain.txt-value](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app_custom_domain) | resource |
+| [azurerm_dns_zone.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/dns_zone) | data source |
+| [azurerm_resource_group.dns_rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/resource_group) | data source |
 | [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/resource_group) | data source |
 
 ## Inputs
