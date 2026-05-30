@@ -140,7 +140,6 @@ O bloco abaixo é gerado automaticamente pelo `terraform-docs` a partir do conte
 | Name | Version |
 |------|---------|
 | <a name="provider_azapi.dns"></a> [azapi.dns](#provider\_azapi.dns) | ~> 2.0 |
-| <a name="provider_azapi.site"></a> [azapi.site](#provider\_azapi.site) | ~> 2.0 |
 | <a name="provider_azurerm.dns"></a> [azurerm.dns](#provider\_azurerm.dns) | 4.50.0 |
 | <a name="provider_azurerm.site"></a> [azurerm.site](#provider\_azurerm.site) | 4.50.0 |
 
@@ -152,10 +151,10 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azapi_resource.apex_custom_domain](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/resource) | resource |
 | [azurerm_dns_a_record.apex](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/dns_a_record) | resource |
 | [azurerm_dns_txt_record.apex_validation](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/dns_txt_record) | resource |
 | [azurerm_static_web_app.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app) | resource |
+| [azurerm_static_web_app_custom_domain.apex](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app_custom_domain) | resource |
 | [azapi_resource.apex_txt_current](https://registry.terraform.io/providers/Azure/azapi/latest/docs/data-sources/resource) | data source |
 | [azurerm_dns_zone.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/dns_zone) | data source |
 | [azurerm_resource_group.dns_rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/resource_group) | data source |
