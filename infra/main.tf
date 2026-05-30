@@ -40,3 +40,14 @@ resource "azurerm_dns_cname_record" "www" {
   ttl                 = 3600
   record              = azurerm_static_web_app.this.default_host_name
 }
+
+resource "azurerm_static_web_app_custom_domain" "www" {
+  provider          = azurerm.site
+  static_web_app_id = azurerm_static_web_app.this.id
+  domain_name       = "www.orafaelferreira.com"
+  validation_type   = "cname-delegation"
+
+  depends_on = [
+    azurerm_dns_cname_record.www,
+  ]
+}
