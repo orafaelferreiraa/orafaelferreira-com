@@ -32,15 +32,6 @@ resource "azurerm_static_web_app" "this" {
   repository_token  = var.repository_token != "" ? var.repository_token : null
 }
 
-resource "azurerm_dns_cname_record" "www" {
-  provider            = azurerm.dns
-  name                = "www"
-  zone_name           = data.azurerm_dns_zone.this.name
-  resource_group_name = data.azurerm_dns_zone.this.resource_group_name
-  ttl                 = 3600
-  record              = azurerm_static_web_app.this.default_host_name
-}
-
 resource "azurerm_dns_a_record" "apex" {
   provider            = azurerm.dns
   name                = "@"
@@ -63,7 +54,7 @@ resource "azurerm_dns_txt_record" "apex_validation" {
   }
 }
 
-resource "azurerm_static_web_app_custom_domain" "www" {
+resource "azurerm_static_web_app_custom_domain" "apex" {
   count             = var.apex_domain_validation_token != "" ? 1 : 0
   provider          = azurerm.site
   static_web_app_id = azurerm_static_web_app.this.id
