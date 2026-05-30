@@ -21,7 +21,7 @@ export const experiencesEN = [
     stack: ["Azure", "Terraform", "GitHub Actions", "Jenkins", "AKS", "FluxCD", "Helm", "Prometheus", "Grafana", "Splunk", "Puppet"]
   },
   {
-    title: "Senior Azure Platform Engineer",
+    title: "Cloud Solution Architect",
     company: "CI&T",
     period: "Sep 2023 - Mar 2024",
     description: "Facing the challenge of restructuring the Azure Cloud environment on an enterprise scale for one of the largest global telecommunications companies, aiming for scalability, operational efficiency, and security. I conducted detailed analyzes for standardization of reference architectures and acted as a strategic consultant in preparing documentation for application migrations to the cloud, based on landing zone architecture designs and hub-spoke networks, with the help of frameworks such as Cloud Adoption Framework (CAF) and Well-Architected, enabling robust architectures. I developed technical documentation, provided guidance on resource selection and backlog strategy decisions. Implementation of FinOps practices to balance performance vs costs. I contributed to the creation of a platform to standardize and optimize the developer experience (DevEx), integrating tools such as Backstage to build product catalogs, provisioning resources with Terraform in Azure DevOps CI/CD pipelines, ensuring a continuous and automated delivery process. My actions resulted in significant improvements in scalability, security, and governance, driving growth and innovation, and reinforcing system resilience. In addition, I strengthened DevOps culture and the adoption of agile methodologies, improving the adaptability and delivery speed of teams in the face of market changes.",

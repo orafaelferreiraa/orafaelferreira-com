@@ -21,35 +21,35 @@ export const experiencesPT = [
     stack: ["Azure", "Terraform", "GitHub Actions", "Jenkins", "AKS", "FluxCD", "Helm", "Prometheus", "Grafana", "Splunk", "Puppet"]
   },
   {
-    title: " Senior Azure Platform Engineer",
+    title: "Cloud Solutions Architect",
     company: "CI&T",
     period: "Set 2023 - Mar 2024 (6 meses)",
     description: "Diante do desafio de reestruturar o ambiente Cloud Azure em escala enterprise para uma das maiores empresas globais de telecomunicações, visando escalabilidade, eficiência operacional e a segurança. Realizei análises detalhadas, para padronização de arquiteturas de referência, e atuei como consultor estratégico na elaboração da documentação para migrações de aplicativos para a nuvem, fundamentada em designs de arquiteturas landing zones e redes hub-spoke, com auxilio dos frameworks como Cloud Adoption Framework (CAF) e Well-Architected foi possível habilitar arquiteturas robustas. Elaborei documentações técnicas, orientei sobre a escolha de recursos e decisões estratégias de backlog. Implementação de práticas de FinOps para equilibrar desempenho x custos. Contribuí na criação de uma plataforma para padronizar e otimizar a experiência do desenvolvedor (DevEx), integrando ferramentas como Backstage para construir catálogos de produtos, provisionamento de recursos com Terraform em pipelines CI/CD do Azure DevOps, garantindo um processo de entrega contínua e automatizada Minhas ações resultaram em melhorias significativas de escalabilidade, segurança e governança, impulsionando o crescimento e a inovação, e reforçando a resiliência dos sistemas. Além disso, fortaleci a cultura DevOps e a adoção de metodologias ágeis, melhorando a adaptabilidade e a velocidade de entrega das equipes em frente as mudanças de mercado.",
     stack: ["Azure", "Terraform", "Azure DevOps", "CAF", "Well-Architected", "Landing Zones", "Hub-Spoke", "FinOps"]
   },
   {
-    title: "Arquiteto de Soluções em Nuvem",
+    title: "Cloud Solution Architect",
     company: "ADTsys Data Cloud",
     period: "Abr 2023 - Set 2023 (6 meses)",
     description: "Participei da equipe responsável pela transformação em nuvem de uma das maiores empresas globais de bebidas, com o desafio de melhorar a experiência dos usuários nos ambientes Azure, maximizando a eficiência operacional. Responsável Planejamento e implementação de soluções alinhadas com os objetivos de negócios, com um foco especial na otimização de custos através de FinOps e na gestão eficiente de recursos. Provisionamento de novos recursos utilizando Terraform e Terragrunt em pipelines CI/CD com Azure DevOps e desenvolvimento de automação de processos com scripts PowerShell e Python. Implementei Azure Workbooks para fornecer insights detalhados sobre FinOps e otimização de custos (recursos órfãos, tamanhos desproporciona6is de recursos), que foram importantes para a tomada de decisões pelos stakeholders sobre a gestão de recursos. As minhas iniciativas colaboraram em uma economia anual significativa de mais de 5 milhões, otimizando os investimentos em nuvem e aprimorando significativamente a gestão de recursos e a colaboração entre as equipes.",
     stack: ["Azure", "Terraform", "Terragrunt", "Azure DevOps", "PowerShell", "Python", "Azure Workbooks", "FinOps"]
   },
   {
-    title: "Consultor de Nuvem",
+    title: "Cloud Consultant",
     company: "Telefónica Tech",
     period: "Out 2022 - Abr 2023 (7 meses)",
     description: "Integrei a equipe de operações de nuvem responsável por um ambiente Azure em escala global, atendendo mais de 100 milhões de usuários ativos. Fui encarregado de planejar soluções de alta disponibilidade e implementar as melhores práticas do setor para assegurar a resiliência, segurança e desempenho dos recursos, com foco em DevOps, incluindo serviços como Azure Kubernetes, VMs, e ferramentas como Jenkins, Nexus, e Sonarqube. Desenvolvi estratégias de segurança realizando análises de vulnerabilidades para proteger o ambiente. Participações situações de crise e elaborações de cenários de nuvem para estruturação, migração e precificação. Monitoramento e observabilidade de aplicativos, microsserviços e servidores utilizando Prometheus, Zabbix, Grafana, e analise de logs com Elasticsearch. Gerenciei Azure Kubernetes Services, VMs, Application Gateways e API Management, entre outros, promovendo práticas de DevOps. Realizei análises de vulnerabilidades, participei de troubleshootings em war rooms, elaborei cenários de nuvem e monitorei serviços usando Prometheus, Zabbix, Grafana. Também coletei e analisei logs via Elasticsearch. Minhas contribuições resultaram em melhorias na segurança, desempenho e resiliência do ambiente de nuvem Azure, promovendo práticas de DevOps eficientes e garantindo a estabilidade para uma base de grande volume de usuários ativos.",
     stack: ["Azure", "AKS", "Jenkins", "Nexus", "SonarQube", "Prometheus", "Grafana", "Zabbix", "Elasticsearch", "API Management", "Application Gateway"]
   },
   {
-    title: "Engenheiro de Nuvem",
+    title: "Cloud Engineer",
     company: "Skaylink",
     period: "Abr 2022 - Out 2022 (7 meses)",
     description: "Participei de um time internacional em uma das maiores empresas globais do setor agrícola, colaborando com profissionais de diversos países na administração, sustentação e aprimoramento da infraestrutura global On-Premise e Cloud Azure. Responsável por solucionar problemas em clusters de alta disponibilidade, envolvendo tecnologias como Windows Server (AD, File Server, DHCP, DNS), SQL Server, virtualização (VMware, Hyper-V) além do monitoramento de servidores com ferramentas avançadas e gestão de Microsoft Azure e Office 365. Executei revisões de segurança e automações de processos com scripts PowerShell e Terraform, adaptando-me a diversas culturas e metodologias de trabalho para garantir a eficiência e eficácia das soluções implementadas. A colaboração internacional enriqueceu a minha experiência no projeto, resultando em uma melhoria na infraestrutura mais resiliente, segura e eficiente, melhorando a gestão do ambiente e operação do ambiente com a interação entre equipes de diferentes culturas.",
     stack: ["Azure", "Windows Server", "Active Directory", "SQL Server", "VMware", "Hyper-V", "PowerShell", "Terraform", "Office 365"]
   },
   {
-    title: "Analista de nuvem - Especialista Azure",
+    title: "Cloud Analyst - Azure Specialist",
     company: "Advanced Informatica Ltda.",
     period: "Jul 2021 - Mar 2022 (9 meses)",
     description: "Fui designado para liderar projetos de migração e replicação de servidores Windows on-premises para a Microsoft Azure Cloud, enfrentando o desafio de modernizar a infraestrutura de clientes de pequeno e médio porte. Responsável por executar migrações complexas usando VPN S2S, replicação DFS entre servidores, migração para SharePoint, e provisionamento de ambientes virtuais abrangentes. Conduzi migrações do File Server para a nuvem, aproveitando o Azure File Sync para otimizar o compartilhamento e a sincronização de arquivos. Provisionamento ambientes virtuais, incluindo VMs, Azure SQL, contas de armazenamento, gateways virtuais, e cofres de backup, e realizei migrações \"Lift and Shift\" com o Azure Site Recovery. Implementação e gerenciamento do Microsoft 365 Admin Portal e o Microsoft Endpoint Manager (Microsoft Intune), reforçando a proteção e gerenciamento de dispositivos na nuvem, além de aprimorar o Azure Active Directory com políticas de acesso condicional com ou sem identidades híbridas. As minhas ações garantiram uma transição segura para a nuvem, estabelecendo uma infraestrutura Azure mais otimizada, segura e eficiente, fortalecendo a capacidade operacional da organização no ambiente cloud.",
