@@ -41,21 +41,11 @@ resource "azurerm_dns_a_record" "apex" {
   target_resource_id  = azurerm_static_web_app.this.id
 }
 
-resource "azapi_resource" "apex_custom_domain" {
-  provider  = azapi.site
-  type      = "Microsoft.Web/staticSites/customDomains@2024-04-01"
-  name      = "orafaelferreira.com"
-  parent_id = azurerm_static_web_app.this.id
-
-  body = {
-    properties = {
-      validationMethod = "dns-txt-token"
-    }
-  }
-
-  response_export_values = {
-    validation_token = "properties.validationToken"
-  }
+resource "azurerm_static_web_app_custom_domain" "apex" {
+  provider          = azurerm.site
+  static_web_app_id = azurerm_static_web_app.this.id
+  domain_name       = "orafaelferreira.com"
+  validation_type   = "dns-txt-token"
 
   depends_on = [
     azurerm_dns_a_record.apex,
@@ -80,7 +70,7 @@ data "azapi_resource" "apex_txt_current" {
 locals {
   apex_txt_values = distinct(concat(
     try(data.azapi_resource.apex_txt_current.output.values, []),
-    [azapi_resource.apex_custom_domain.output.validation_token]
+    [azurerm_static_web_app_custom_domain.apex.validation_token]
   ))
 }
 
@@ -99,6 +89,6 @@ resource "azurerm_dns_txt_record" "apex_validation" {
   }
 
   depends_on = [
-    azapi_resource.apex_custom_domain,
+    azurerm_static_web_app_custom_domain.apex,
   ]
 }
