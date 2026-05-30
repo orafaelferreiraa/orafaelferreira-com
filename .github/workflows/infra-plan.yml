@@ -1,12 +1,6 @@
 name: infra-plan
 
 on:
-  push:
-    branches:
-      - '**'
-    paths:
-      - 'infra/**'
-      - '.github/workflows/infra-plan.yml'
   pull_request:
     branches: [ main ]
     paths:
