@@ -41,6 +41,27 @@ resource "azurerm_dns_cname_record" "www" {
   record              = azurerm_static_web_app.this.default_host_name
 }
 
+resource "azurerm_dns_a_record" "apex" {
+  provider            = azurerm.dns
+  name                = "@"
+  zone_name           = data.azurerm_dns_zone.this.name
+  resource_group_name = data.azurerm_dns_zone.this.resource_group_name
+  ttl                 = 3600
+  target_resource_id  = azurerm_static_web_app.this.id
+}
+
+resource "azurerm_dns_txt_record" "apex_validation" {
+  provider            = azurerm.dns
+  name                = "asuid"
+  zone_name           = data.azurerm_dns_zone.this.name
+  resource_group_name = data.azurerm_dns_zone.this.resource_group_name
+  ttl                 = 3600
+
+  record {
+    value = azurerm_static_web_app.this.custom_domain_verification_id
+  }
+}
+
 resource "azurerm_static_web_app_custom_domain" "www" {
   provider          = azurerm.site
   static_web_app_id = azurerm_static_web_app.this.id
@@ -49,5 +70,17 @@ resource "azurerm_static_web_app_custom_domain" "www" {
 
   depends_on = [
     azurerm_dns_cname_record.www,
+  ]
+}
+
+resource "azurerm_static_web_app_custom_domain" "apex" {
+  provider          = azurerm.site
+  static_web_app_id = azurerm_static_web_app.this.id
+  domain_name       = "orafaelferreira.com"
+  validation_type   = "dns-txt-token"
+
+  depends_on = [
+    azurerm_dns_a_record.apex,
+    azurerm_dns_txt_record.apex_validation,
   ]
 }
