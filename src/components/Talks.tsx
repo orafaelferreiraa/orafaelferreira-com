@@ -481,7 +481,7 @@ const Talks = () => {
       location: "Online",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Global.Azure.pdf",
       videoUrl: "https://www.youtube.com/watch?v=etnQCHbIg2I",
-      blogUrl: "https://www.orafaelferreira.com/posts/global-azure/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/global-azure24",
     },
     {
       title: "Azure Cloud Foundation",
@@ -500,7 +500,7 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/rafaelmaferreira_devops-monitoramento-observabilidade-activity-7134873516364943362-sFy2",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Observability-alem-do-alcance.pdf",
       videoUrl: "https://www.youtube.com/watch?v=-rYhXprMJO4",
-      blogUrl: "https://www.orafaelferreira.com/posts/mentoria/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/mentoriacloud23",
     },
     {
       title: "DEVOPS - EP 10 - CI/CD com Azure DevOps ou GitHub Actions",
@@ -509,7 +509,7 @@ const Talks = () => {
       location: "Online",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/pipelines-com-azureDevOps.pdf",
       videoUrl: "https://www.youtube.com/watch?v=hxiluSC8E_U",
-      blogUrl: "https://www.orafaelferreira.com/posts/mentoria/",
+      blogUrl: "https://www.orafaelferreira.com/artigos/mentoriacloud23",
     },
   ];
 

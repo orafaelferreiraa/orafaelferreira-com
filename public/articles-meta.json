@@ -1,4 +1,13 @@
 {
+  "azure-container-registry-artifact-cache": {
+    "slug": "azure-container-registry-artifact-cache",
+    "title": "Azure Container Registry Artifact Cache: arquitetura, segurança e promoção entre ambientes",
+    "excerpt": "Guia prático para implementar Artifact Cache no Azure Container Registry com foco em performance, segurança, pull-through cache e promoção de imagens entre ambientes.",
+    "image": null,
+    "date": "2026-05-30",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache"
+  },
   "code-island-ctrlz-2026": {
     "slug": "code-island-ctrlz-2026",
     "title": "O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome – Code Island Ctrl Z 2026",

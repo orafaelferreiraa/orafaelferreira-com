@@ -79,7 +79,7 @@ import { article as distroless } from './2026-04-28-distroless-strategy.ts';
 import { article as globalAzureUserGroupFloripa2026 } from './2026-05-02-global-azure-floripa.ts'; 
 import { article as augbga26 } from './2026-05-17-augbga26.ts'; 
 import { article as ctrlz } from './2026-05-20-ctrlz.ts'; 
-import { article as acrCache } from './2026-05-30-acr-cache.ts'; 
+import { article as acrCache } from './2026-05-31-acr-cache.ts'; 
 
 export const allArticles: Article[] = [
   artigoAksAcr,

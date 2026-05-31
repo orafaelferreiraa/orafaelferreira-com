@@ -61,7 +61,7 @@ A tecnologia, com seu crescimento acelerado, trouxe uma nova demanda por infraes
 
 Mesmo que você não tenha participado do meetup, ainda é possível adotar as práticas discutidas e fazer parte dessa revolução na nuvem:
 
-- **Estude mais sobre GreenOps:** Entenda como aplicar práticas sustentáveis nas operações em nuvem e descubra as ferramentas que auxiliam no monitoramento e otimização do consumo energético. Para um entendimento aprofundado, confira o [artigo sobre Green Computing Foundation e sustentabilidade na nuvem](https://www.orafaelferreira.com/posts/green-computing-foundation-cloud/) no blog!
+- **Estude mais sobre GreenOps:** Entenda como aplicar práticas sustentáveis nas operações em nuvem e descubra as ferramentas que auxiliam no monitoramento e otimização do consumo energético. Para um entendimento aprofundado, confira o [artigo sobre Green Computing Foundation e sustentabilidade na nuvem](https://www.orafaelferreira.com/artigos/finops-foundation-cloud) no blog!
 - **Experimente soluções como Backstage, Karpenter e KEDA:** Essas ferramentas já fazem a diferença em muitas empresas e podem ser incorporadas facilmente ao seu ambiente para criar uma infraestrutura mais sustentável.
 - **Conecte-se com a comunidade Cloud Native:** Os organizadores e palestrantes do [CNCF Cloud Native São Paulo 🇧🇷](https://www.linkedin.com/company/cloud-native-sao-paulo/posts/?feedView=all) são grandes influenciadores neste campo. Acompanhe-os e aprenda como eles aplicam conceitos de sustentabilidade em projetos de alta escala.
 - **Participe de futuros meetups:** O movimento está apenas começando! Esses encontros proporcionam aprendizado contínuo e networking com profissionais que estão liderando a transformação sustentável na tecnologia.

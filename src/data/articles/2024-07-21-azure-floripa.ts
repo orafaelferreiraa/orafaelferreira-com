@@ -37,10 +37,10 @@ Juntou curiosidade + vontade de ajudar? Então o grupo é pra você! 🎉
 
 | Data | Evento | Formato |
 |------|--------|---------|
-| 02 set 2024 | [**DP‑900: Fundamentos de Dados do Azure**](https://www.orafaelferreira.com/posts/curso-dp-900/) | Presencial |
-| 10 jun 2024 | [**AZ‑900: Fundamentos do Azure**](https://www.orafaelferreira.com/posts/curso-az-900/) | Presencial |
-| 10 abr 2024 | [**Global Azure 2024 feat. Azure Floripa**](https://www.orafaelferreira.com/posts/global-azure24/) | Online |
-| 10 abr 2025 | [**Global Azure 2025 feat. Azure Floripa**](https://www.orafaelferreira.com/posts/global-azure24/) | Online |
+| 02 set 2024 | [**DP‑900: Fundamentos de Dados do Azure**](https://www.orafaelferreira.com/artigos/curso-dp-900) | Presencial |
+| 10 jun 2024 | [**AZ‑900: Fundamentos do Azure**](https://www.orafaelferreira.com/artigos/curso-az-900) | Presencial |
+| 10 abr 2024 | [**Global Azure 2024 feat. Azure Floripa**](https://www.orafaelferreira.com/artigos/global-azure24) | Online |
+| 10 abr 2025 | [**Global Azure 2025 feat. Azure Floripa**](https://www.orafaelferreira.com/artigos/global-azure25) | Online |
 | 10 abr 2025 | [**Global Azure 2025 – Azure Floripa**](https://www.meetup.com/azure-floripa/events/306207034/?eventOrigin=group_upcoming_events)| Presencial |
 
 ---
