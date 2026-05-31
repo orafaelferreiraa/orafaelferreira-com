@@ -4,7 +4,7 @@
     "title": "Azure Container Registry Artifact Cache: arquitetura, segurança e promoção entre ambientes",
     "excerpt": "Guia prático para implementar Artifact Cache no Azure Container Registry com foco em performance, segurança, pull-through cache e promoção de imagens entre ambientes.",
     "image": null,
-    "date": "2026-05-30",
+    "date": "2026-05-31",
     "category": "Artigos",
     "url": "https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache"
   },

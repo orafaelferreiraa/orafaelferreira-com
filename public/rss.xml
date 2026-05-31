@@ -5,8 +5,8 @@
     <link>https://www.orafaelferreira.com</link>
     <description>Novos artigos e publicacoes sobre Azure, DevOps, FinOps, Terraform, Kubernetes e Platform Engineering.</description>
     <language>pt-BR</language>
-    <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
-    <lastBuildDate>Sat, 30 May 2026 00:00:00 GMT</lastBuildDate>
+    <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+    <lastBuildDate>Sun, 31 May 2026 00:00:00 GMT</lastBuildDate>
     <generator>Custom RSS Generator (Node.js)</generator>
     <ttl>60</ttl>
     <atom:link href="https://www.orafaelferreira.com/rss.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +14,7 @@
       <title>Azure Container Registry Artifact Cache: arquitetura, segurança e promoção entre ambientes</title>
       <link>https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache</guid>
-      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
       <description>Guia prático para implementar Artifact Cache no Azure Container Registry com foco em performance, segurança, pull-through cache e promoção de imagens entre ambientes.</description>
       <category>Artigos</category>
     </item>

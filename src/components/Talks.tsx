@@ -20,7 +20,28 @@ interface Talk {
 }
 
 const Talks = () => {
-  const upcomingTalks: Talk[] = [];
+  const upcomingTalks: Talk[] = [    {
+      title: " ",
+      event: "Microsoft Build //localhost:florianópolis",
+      date: "2026-06-20",
+      location: "Bewiki Floripa Centro",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build%20localhost.flp/00.png",
+      siteUrl: "https://developer.microsoft.com/pt-br/reactor/events/27206/", 
+      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
+      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
+      },    
+      {
+      title: "Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA",
+      event: "TDC 2026 Florianópolis - Trilha Software Security",
+      date: "2026-07-23",
+      location: "CentroSul - Florianópolis",
+      //image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/00.jpeg",
+      siteUrl: "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security", 
+      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
+      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
+      },];
 
   const inPersonTalks: Talk[] = [
     {
@@ -32,7 +53,7 @@ const Talks = () => {
       siteUrl: "https://ctrl-z.codeisland.com.br/", 
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
-      // blogUrl: "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis",  
+      blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
       },
     {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU",
