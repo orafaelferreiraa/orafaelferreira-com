@@ -139,6 +139,7 @@ O bloco abaixo é gerado automaticamente pelo `terraform-docs` a partir do conte
 
 | Name | Version |
 |------|---------|
+| <a name="provider_azapi.dns"></a> [azapi.dns](#provider\_azapi.dns) | ~> 2.0 |
 | <a name="provider_azurerm.dns"></a> [azurerm.dns](#provider\_azurerm.dns) | 4.50.0 |
 | <a name="provider_azurerm.site"></a> [azurerm.site](#provider\_azurerm.site) | 4.50.0 |
 
@@ -150,8 +151,11 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azapi_update_resource.apex_validation_txt](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/update_resource) | resource |
+| [azurerm_dns_a_record.apex](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/dns_a_record) | resource |
 | [azurerm_dns_cname_record.www](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/dns_cname_record) | resource |
 | [azurerm_static_web_app.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app) | resource |
+| [azurerm_static_web_app_custom_domain.apex](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app_custom_domain) | resource |
 | [azurerm_static_web_app_custom_domain.www](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app_custom_domain) | resource |
 | [azurerm_dns_zone.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/dns_zone) | data source |
 | [azurerm_resource_group.dns_rg](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/data-sources/resource_group) | data source |
@@ -161,6 +165,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_apex_base_txt_records"></a> [apex\_base\_txt\_records](#input\_apex\_base\_txt\_records) | Lista base de TXT no apex que devem ser preservados (ex.: SPF). | `list(string)` | <pre>[<br/>  "v=spf1 include:spf.protection.outlook.com -all"<br/>]</pre> | no |
 | <a name="input_dns_subscription_id"></a> [dns\_subscription\_id](#input\_dns\_subscription\_id) | Subscription ID onde esta a zona DNS orafaelferreira.com | `string` | `""` | no |
 | <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Branch do repositório para linkage opcional do SWA | `string` | `""` | no |
 | <a name="input_repository_token"></a> [repository\_token](#input\_repository\_token) | GitHub PAT para linkage opcional do SWA | `string` | `""` | no |
