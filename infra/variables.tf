@@ -29,3 +29,9 @@ variable "dns_subscription_id" {
   default     = ""
 }
 
+variable "apex_base_txt_records" {
+  description = "Lista base de TXT no apex que devem ser preservados (ex.: SPF)."
+  type        = list(string)
+  default     = ["v=spf1 include:spf.protection.outlook.com -all"]
+}
+

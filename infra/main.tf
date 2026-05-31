@@ -51,3 +51,49 @@ resource "azurerm_static_web_app_custom_domain" "www" {
     azurerm_dns_cname_record.www,
   ]
 }
+
+resource "azurerm_dns_a_record" "apex" {
+  provider            = azurerm.dns
+  name                = "@"
+  zone_name           = data.azurerm_dns_zone.this.name
+  resource_group_name = data.azurerm_dns_zone.this.resource_group_name
+  ttl                 = 3600
+  target_resource_id  = azurerm_static_web_app.this.id
+}
+
+resource "azurerm_static_web_app_custom_domain" "apex" {
+  provider          = azurerm.site
+  static_web_app_id = azurerm_static_web_app.this.id
+  domain_name       = "orafaelferreira.com"
+  validation_type   = "dns-txt-token"
+
+  depends_on = [
+    azurerm_dns_a_record.apex,
+  ]
+}
+
+locals {
+  apex_txt_values = distinct(concat(
+    var.apex_base_txt_records,
+    [azurerm_static_web_app_custom_domain.apex.validation_token]
+  ))
+}
+
+resource "azapi_update_resource" "apex_validation_txt" {
+  provider    = azapi.dns
+  type        = "Microsoft.Network/dnsZones/TXT@2018-05-01"
+  resource_id = "${data.azurerm_dns_zone.this.id}/TXT/@"
+
+  body = {
+    properties = {
+      TTL = 3600
+      TXTRecords = [for value in local.apex_txt_values : {
+        value = [value]
+      }]
+    }
+  }
+
+  depends_on = [
+    azurerm_static_web_app_custom_domain.apex,
+  ]
+}
