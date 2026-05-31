@@ -151,7 +151,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azapi_update_resource.apex_validation_txt](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/update_resource) | resource |
+| [azapi_resource.apex_validation_txt](https://registry.terraform.io/providers/Azure/azapi/latest/docs/resources/resource) | resource |
 | [azurerm_dns_a_record.apex](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/dns_a_record) | resource |
 | [azurerm_dns_cname_record.www](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/dns_cname_record) | resource |
 | [azurerm_static_web_app.this](https://registry.terraform.io/providers/hashicorp/azurerm/4.50.0/docs/resources/static_web_app) | resource |
