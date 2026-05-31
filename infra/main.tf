@@ -79,10 +79,11 @@ locals {
   ))
 }
 
-resource "azapi_update_resource" "apex_validation_txt" {
-  provider    = azapi.dns
-  type        = "Microsoft.Network/dnsZones/TXT@2018-05-01"
-  resource_id = "${data.azurerm_dns_zone.this.id}/TXT/@"
+resource "azapi_resource" "apex_validation_txt" {
+  provider  = azapi.dns
+  type      = "Microsoft.Network/dnsZones/TXT@2018-05-01"
+  name      = "@"
+  parent_id = data.azurerm_dns_zone.this.id
 
   body = {
     properties = {
