@@ -15,6 +15,9 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2025",
   certificates: [{
+       title: "Azure Kubernetes Service - Orquestração de Containers no AKS",
+    link: "https://www.udemy.com/certificate/UC-c0cacc26-2c82-4e27-91b8-f6ad173478db"
+  },{
        title: "Certified Kubernetes Administrator (CKA)",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-12-CKA.pdf"
   },{
