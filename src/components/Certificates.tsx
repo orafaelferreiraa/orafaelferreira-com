@@ -15,6 +15,9 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2025",
   certificates: [{
+       title: "Claude 101",
+    link: "https://verify.skilljar.com/c/ist4mhfrcwpf"
+  },{
        title: "Azure Kubernetes Service - Orquestração de Containers no AKS",
     link: "https://www.udemy.com/certificate/UC-c0cacc26-2c82-4e27-91b8-f6ad173478db"
   },{
