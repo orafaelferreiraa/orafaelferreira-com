@@ -672,7 +672,7 @@ const Certificates = () => {
         <Separator className="mb-10 opacity-50" />
 
         {/* ── Accordion timeline ── */}
-        <Accordion type="single" collapsible defaultValue="2025" className="space-y-4">
+        <Accordion type="single" collapsible defaultValue="2026" className="space-y-4">
           {certificatesByYear.map((yearData, index) => (
             <YearSection key={yearData.year} yearData={yearData} index={index} />
           ))}
