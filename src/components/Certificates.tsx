@@ -13,17 +13,20 @@ interface YearCertificates {
   certificates: Certificate[];
 }
 const certificatesByYear: YearCertificates[] = [{
-  year: "2025",
+  year: "2026",
   certificates: [{
        title: "Claude 101",
     link: "https://verify.skilljar.com/c/ist4mhfrcwpf"
   },{
        title: "Azure Kubernetes Service - Orquestração de Containers no AKS",
     link: "https://www.udemy.com/certificate/UC-c0cacc26-2c82-4e27-91b8-f6ad173478db"
-  },{
+  }]
+}, {
+  year: "2025",
+  certificates: [{
        title: "Certified Kubernetes Administrator (CKA)",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-12-CKA.pdf"
-  },{
+  }, {
      title: "Ultimate Certified Kubernetes Administrator (CKA) Mock Exam Series",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-12-UltimateCertifiedKubernetesAdministrator(CKA)MockExamSeries.png"
   }, {
