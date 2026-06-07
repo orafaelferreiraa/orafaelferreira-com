@@ -535,20 +535,6 @@ export const mentorshipServiceSchema = () => ({
     audienceType:
       "Profissionais de tecnologia (iniciantes ou experientes) que estudam Cloud Azure e DevOps e buscam clareza no caminho de carreira.",
   },
-  review: {
-    "@type": "Review",
-    reviewBody:
-      "A mentoria do Rafael foi transformadora. Em poucas semanas já sabia exatamente no que focar, e em meses consegui minha primeira vaga internacional.",
-    author: {
-      "@type": "Person",
-      name: "Aluno de Mentoria",
-    },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: "5",
-      bestRating: "5",
-    },
-  },
 });
 
 export const mentorshipFaqSchema = (lang: "pt-BR" | "en" = "pt-BR") => {

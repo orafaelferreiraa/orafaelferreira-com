@@ -5,11 +5,19 @@
     <link>https://www.orafaelferreira.com</link>
     <description>Novos artigos e publicacoes sobre Azure, DevOps, FinOps, Terraform, Kubernetes e Platform Engineering.</description>
     <language>pt-BR</language>
-    <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
-    <lastBuildDate>Sun, 31 May 2026 00:00:00 GMT</lastBuildDate>
+    <pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate>
+    <lastBuildDate>Sun, 07 Jun 2026 00:00:00 GMT</lastBuildDate>
     <generator>Custom RSS Generator (Node.js)</generator>
     <ttl>60</ttl>
     <atom:link href="https://www.orafaelferreira.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Build 2026: os destaques de Azure que mais me chamaram atenção</title>
+      <link>https://www.orafaelferreira.com/artigos/microsoft-build-2026-destaques-azure</link>
+      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/microsoft-build-2026-destaques-azure</guid>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Um guia direto pelos anúncios do Microsoft Build 2026 que mais importam para quem trabalha com Azure: Cobalt 200, Azure Linux 4.0, Azure Container Linux, HorizonDB e Azure Functions. Escolha o tópico e vá direto ao ponto.</description>
+      <category>Artigos</category>
+    </item>
     <item>
       <title>Azure Container Registry Artifact Cache: arquitetura, segurança e promoção entre ambientes</title>
       <link>https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache</link>

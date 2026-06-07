@@ -80,6 +80,7 @@ import { article as globalAzureUserGroupFloripa2026 } from './2026-05-02-global-
 import { article as augbga26 } from './2026-05-17-augbga26.ts'; 
 import { article as ctrlz } from './2026-05-20-ctrlz.ts'; 
 import { article as acrCache } from './2026-05-31-acr-cache.ts'; 
+import { article as newsBuild2026 } from './2026-06-07-news-build.ts'; 
 
 export const allArticles: Article[] = [
   artigoAksAcr,
@@ -161,6 +162,7 @@ export const allArticles: Article[] = [
   augbga26,
   ctrlz,
   acrCache,
+  newsBuild2026,
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getArticleBySlug(slug: string): Article | undefined {

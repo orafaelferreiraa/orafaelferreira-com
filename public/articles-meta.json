@@ -1,4 +1,13 @@
 {
+  "microsoft-build-2026-destaques-azure": {
+    "slug": "microsoft-build-2026-destaques-azure",
+    "title": "Microsoft Build 2026: os destaques de Azure que mais me chamaram atenção",
+    "excerpt": "Um guia direto pelos anúncios do Microsoft Build 2026 que mais importam para quem trabalha com Azure: Cobalt 200, Azure Linux 4.0, Azure Container Linux, HorizonDB e Azure Functions. Escolha o tópico e vá direto ao ponto.",
+    "image": null,
+    "date": "2026-06-07",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/microsoft-build-2026-destaques-azure"
+  },
   "azure-container-registry-artifact-cache": {
     "slug": "azure-container-registry-artifact-cache",
     "title": "Azure Container Registry Artifact Cache: arquitetura, segurança e promoção entre ambientes",
