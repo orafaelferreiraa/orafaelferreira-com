@@ -15,6 +15,9 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2026",
   certificates: [{
+       title: "Introduction to agent skills",
+    link: "https://verify.skilljar.com/c/qqvgak4hvcby"
+  },{
        title: "Claude Code 101",
     link: "https://verify.skilljar.com/c/xa5jgn9oijgo"
   },{
