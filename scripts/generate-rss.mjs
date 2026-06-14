@@ -46,8 +46,8 @@ async function generateRss() {
   const articlesDir = path.join(projectRoot, 'src', 'data', 'articles');
   const outputPath = path.join(projectRoot, 'public', 'rss.xml');
 
-  const articleFiles = (await readdir(articlesDir))
-    .filter((file) => file.endsWith('.ts') && file !== 'index.ts' && file !== 'types.ts')
+  const articleFiles = (await readdir(articlesDir, { recursive: true }))
+    .filter((file) => file.endsWith('.ts') && !file.endsWith('index.ts') && !file.endsWith('types.ts'))
     .map((file) => path.join(articlesDir, file));
 
   const articles = [];

@@ -3,6 +3,7 @@ import { Suspense, lazy, useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { initGA, trackPageView } from "./lib/analytics";
+import BackToTop from "./components/BackToTop";
 const Home = lazy(() => import("./pages/Home"));
 const Mentoria = lazy(() => import("./pages/Mentoria"));
 const Premiacoes = lazy(() => import("./pages/Premiacoes"));
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+      <BackToTop />
     </BrowserRouter>
   </HelmetProvider>
 );

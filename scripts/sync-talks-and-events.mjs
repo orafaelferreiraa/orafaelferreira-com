@@ -9,7 +9,7 @@
  *       - `inPersonTalks` caso contrario
  *  2. Le todas as talks de inPersonTalks + onlineTalks pertencentes ao ano
  *     corrente e regenera o bloco AUTO da "Agenda <ano>" no artigo
- *     src/data/articles/2023-10-30-eventos.ts, preservando o bloco MANUAL.
+ *     src/data/articles/blog-posts/2023-10-30-eventos.ts, preservando o bloco MANUAL.
  *
  * Caracteristicas:
  *  - Idempotente: se nao houver mudanca de estado, nao escreve diff.
@@ -27,7 +27,7 @@ const __dirname = path.dirname(__filename);
 
 const projectRoot = path.resolve(__dirname, '..');
 const TALKS_FILE = path.join(projectRoot, 'src', 'components', 'Talks.tsx');
-const EVENTS_FILE = path.join(projectRoot, 'src', 'data', 'articles', '2023-10-30-eventos.ts');
+const EVENTS_FILE = path.join(projectRoot, 'src', 'data', 'articles', 'blog-posts', '2023-10-30-eventos.ts');
 
 const MONTHS_PT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 

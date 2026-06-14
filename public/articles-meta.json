@@ -1,4 +1,13 @@
 {
+  "artigo-terraform-infra-evolutiva": {
+    "slug": "artigo-terraform-infra-evolutiva",
+    "title": "Atualização sobre a evolução do site: Temos mais Terraform, DNS-as-Code e multi-subscription",
+    "excerpt": "Como a infraestrutura do meu blog saiu da migração inicial para um desenho mais maduro: subscriptions separadas, DNS como código, azapi, preservação de TXT e um fluxo mais previsível para operar o site.",
+    "image": null,
+    "date": "2026-06-14",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/artigo-terraform-infra-evolutiva"
+  },
   "microsoft-build-2026-destaques-azure": {
     "slug": "microsoft-build-2026-destaques-azure",
     "title": "Microsoft Build 2026: os destaques de Azure que mais me chamaram atenção",
@@ -455,7 +464,7 @@
     "excerpt": "Atuo desde 2023 no time de organização do DevOpsDays Florianópolis, apoiando a continuidade da comunidade local com coordenação de eventos, suporte a speakers e engajamento da audiência.",
     "image": null,
     "date": "2024-07-21",
-    "category": "Organizador Grupo de Comunidade",
+    "category": "Organização de Eventos",
     "url": "https://www.orafaelferreira.com/artigos/comu-dod-floripa"
   },
   "eventodod-floripa": {

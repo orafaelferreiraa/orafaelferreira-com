@@ -15,4 +15,6 @@ export interface Article {
   readTime: string;
   image?: string;  // URL da imagem da thumbnail para compartilhamento (og:image)
   badges?: Badge[];
+  tags?: string[];         // Tópicos forçados (além dos derivados por palavra-chave)
+  excludeTags?: string[];  // Tópicos a remover mesmo que sejam derivados por palavra-chave
 }

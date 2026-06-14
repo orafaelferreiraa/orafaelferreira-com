@@ -398,7 +398,10 @@ export default {
       allCategories: "Todas as Categorias",
       search: "Buscar artigos...",
       articles: "Artigos",
-      posts: "Posts"
+      posts: "Posts",
+      filterByTopic: "Filtrar por tema",
+      allTopics: "Todos",
+      noResults: "Nenhum artigo encontrado para este tema."
     },
     footer: {
       rights: "Todos os direitos reservados.",

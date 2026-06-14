@@ -142,9 +142,9 @@ async function main() {
   console.log('📝 Generating sitemap and articles metadata...\n');
   
   try {
-    // Read all article files
-    const files = fs.readdirSync(articlesDir)
-      .filter(f => f.endsWith('.ts') && !f.startsWith('types') && !f.startsWith('index'))
+    // Read all article files (recursively across category subfolders)
+    const files = fs.readdirSync(articlesDir, { recursive: true })
+      .filter(f => f.endsWith('.ts') && !f.endsWith('types.ts') && !f.endsWith('index.ts'))
       .sort();
     
     console.log(`📄 Found ${files.length} article files\n`);

@@ -52,6 +52,7 @@
   </url>
 
   <!-- Articles -->
+  <url><loc>https://www.orafaelferreira.com/artigos/artigo-terraform-infra-evolutiva</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/microsoft-build-2026-destaques-azure</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/code-island-ctrlz-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>

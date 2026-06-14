@@ -382,7 +382,10 @@ export default {
       allCategories: "All Categories",
       search: "Search articles...",
       articles: "Articles",
-      posts: "Posts"
+      posts: "Posts",
+      filterByTopic: "Filter by topic",
+      allTopics: "All",
+      noResults: "No articles found for this topic."
     },
     footer: {
       rights: "All rights reserved.",
