@@ -15,6 +15,9 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2026",
   certificates: [{
+       title: "AI Fluency: Framework & Foundations",
+    link: "https://verify.skilljar.com/c/i9kz84hxyuft"
+  },{
        title: "AI Capabilities and Limitations",
     link: "https://verify.skilljar.com/c/cjygngqtj9v6"
   },{
