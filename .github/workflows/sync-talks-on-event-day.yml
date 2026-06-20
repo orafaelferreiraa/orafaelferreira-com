@@ -9,7 +9,6 @@ name: sync-talks-on-event-day
 on:
   # AUTO-CRON:START
   schedule:
-    - cron: '5 11 20 6 *'  # 2026-06-20
     - cron: '5 11 23 7 *'  # 2026-07-23
   # AUTO-CRON:END
   workflow_dispatch:
