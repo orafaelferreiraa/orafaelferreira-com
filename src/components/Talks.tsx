@@ -20,18 +20,8 @@ interface Talk {
 }
 
 const Talks = () => {
-  const upcomingTalks: Talk[] = [    {
-      title: "GitHub Copilot in VSCode: Agents That Debug, Profile, and Test",
-      event: "Microsoft Build //localhost:florianópolis",
-      date: "2026-06-20",
-      location: "Bewiki Floripa Centro",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build%20localhost.flp/01.png",
-      siteUrl: "https://developer.microsoft.com/pt-br/reactor/events/27206/", 
-      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/build26.pdf",  
-      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
-      },    
-      {
+  const upcomingTalks: Talk[] = [
+    {
       title: "Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA",
       event: "TDC 2026 Florianópolis - Trilha Software Security",
       date: "2026-07-23",
@@ -41,9 +31,21 @@ const Talks = () => {
       //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
-      },];
+      },
+  ];
 
   const inPersonTalks: Talk[] = [
+    {
+      title: "GitHub Copilot in VSCode: Agents That Debug, Profile, and Test",
+      event: "Microsoft Build //localhost:florianópolis",
+      date: "2026-06-20",
+      location: "Bewiki Floripa Centro",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build%20localhost.flp/01.png",
+      siteUrl: "https://developer.microsoft.com/pt-br/reactor/events/27206/", 
+      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/build26.pdf",  
+      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
+      },
     {
       title: "O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome",
       event: "Ctrl-Z - Code Island",
