@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Artefato efêmero gerado pelo workflow sync-talks-on-event-day (notificação Power Automate)
+moved-talks.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
