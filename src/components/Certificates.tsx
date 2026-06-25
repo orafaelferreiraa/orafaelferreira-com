@@ -15,9 +15,12 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2026",
   certificates: [{
+       title: "Claude Platform 101",
+    link: "https://verify.skilljar.com/c/mdqgnkkghe2r"
+  },{
        title: "AI Fluency for educators",
     link: "https://verify.skilljar.com/c/xxw3gnxsmy6i"
-  }{
+  },{
        title: "AI Fluency for students",
     link: "https://verify.skilljar.com/c/x229iwszrm2x"
   },{
