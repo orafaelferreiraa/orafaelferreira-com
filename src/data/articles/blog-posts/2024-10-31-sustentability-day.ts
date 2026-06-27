@@ -96,6 +96,6 @@ Se você não teve a oportunidade de comparecer a este evento, não se preocupe,
 
 `,
   date: "2024-10-31",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "5 min de leitura"
 };

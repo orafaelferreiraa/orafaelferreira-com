@@ -55,6 +55,14 @@ Para qualquer artigo tecnico ou melhoria com dependencia externa, pesquisar prim
 - `ai/prompts/update-existing-article.prompt.md`
 - `ai/prompts/site-improvement-from-audit.prompt.md`
 - `ai/prompts/terraform-content-factcheck.prompt.md`
+- `ai/skills/article-authoring-site-context.SKILL.md`
+- `ai/skills/blog-post-talks.SKILL.md`
+- `ai/skills/blog-post-event-organization.SKILL.md`
+- `ai/prompts/loop-engineer-session.prompt.md`
 - `ai/skills/mcp-research-orchestrator.SKILL.md`
 - `ai/agents/article-researcher.agent.md`
 - `ai/agents/site-improvement.agent.md`
+- `ai/agents/loop-engineer.agent.md`
+- `ai/agents/planner.agent.md`
+- `ai/agents/frontend.agent.md`
+- `ai/agents/infrastructure.agent.md`

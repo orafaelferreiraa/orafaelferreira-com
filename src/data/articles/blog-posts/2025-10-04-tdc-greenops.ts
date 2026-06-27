@@ -83,6 +83,6 @@ Participar do **TDC São Paulo** foi uma experiência incrível, energia contagi
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [GreenOps na Cloud: Arquitetando um Futuro Sustentável](https://stoblobcertificados011.blob.core.windows.net/palestras/tdc-greenops-25.pdf)
 `,
   date: "2025-10-04",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "3 min de leitura"
 };

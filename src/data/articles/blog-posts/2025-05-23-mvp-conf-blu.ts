@@ -51,7 +51,7 @@ Falar sobre migração pode parecer batido, mas muita gente ainda se perde na ho
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvpconfblu24/10.jpeg)
 `,
   date: "2025-05-23",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "2 min de leitura",
   tags: ["Azure"]
 };

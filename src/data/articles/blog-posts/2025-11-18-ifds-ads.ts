@@ -87,6 +87,6 @@ E que venham mais conversas que vão além do código.
 
 `,
   date: "2025-11-18",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "3 min de leitura"
 };

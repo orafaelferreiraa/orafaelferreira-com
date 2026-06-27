@@ -38,6 +38,9 @@ const certificatesByYear: YearCertificates[] = [{
   },{
        title: "Azure Kubernetes Service - Orquestração de Containers no AKS",
     link: "https://www.udemy.com/certificate/UC-c0cacc26-2c82-4e27-91b8-f6ad173478db"
+  },{
+       title: "Onboarding: criando cursos na Alura",
+    link: "https://cursos.alura.com.br/user/orafaelferreiraa/course/onboarding-novos-instrutores/certificate"
   }]
 }, {
   year: "2025",
@@ -83,6 +86,9 @@ const certificatesByYear: YearCertificates[] = [{
   }, {
     title: "2025 Microsoft Most Valuable Professional (MVP)",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-07-MostValuableProfessionalCertificate.pdf.pdf"
+  }, {
+    title: "Módulo Inteligência Artificial - DevOpsPro",
+    link: "https://certificado.devopspro.com.br/certificado?code=9253b05f-f04d-4435-8621-3237c94d2f3d"
   }, {
     title: "DevOps Institute Ambassadors",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf"

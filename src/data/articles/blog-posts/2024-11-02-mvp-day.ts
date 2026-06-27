@@ -61,7 +61,7 @@ Para todos que compartilham a paixão por tecnologia e inovação, reforçamos n
 
 `,
   date: "2024-11-02",
-  category: "Registro Eventos Presenciais",
+  category: "Organização de Eventos",
   readTime: "3 min de leitura",
   tags: ["IA"]
 };

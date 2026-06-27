@@ -84,7 +84,7 @@ Os slides da minha sessão estão disponíveis:
 
 `,
   date: "2026-05-02",
-  category: "Registro Eventos Presenciais",
+  category: "Organização de Eventos",
   readTime: "5-7 min de leitura",
   tags: ["Organização de Eventos"],
   excludeTags: ["Carreira", "Segurança"],

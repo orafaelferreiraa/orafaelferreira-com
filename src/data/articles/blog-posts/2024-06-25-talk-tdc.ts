@@ -72,7 +72,7 @@ Que venham os próximos desafios e oportunidades!
 
 `,
   date: "2024-06-25",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "3 min de leitura",
   tags: ["Platform Engineering"]
 };

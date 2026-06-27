@@ -169,8 +169,6 @@ const Mentorship = () => {
               {t("mentorship.whyChoosePrefix")} <span className="text-primary">{t("mentorship.whyChooseHighlight")}</span>
             </h2>
 
-            <div className="mb-12 rounded-lg overflow-hidden"></div>
-
             <p className="text-lg text-muted-foreground text-center mb-12 leading-relaxed">{t("mentorship.intro")}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

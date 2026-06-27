@@ -83,6 +83,6 @@ O encontro foi uma irado cheio de aprendizado e conexão com as comunidade **AWS
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Explorando a cultura DevOps: Por que tanto se fala de cultura por trás da entrega contínua?](https://stoblobcertificados011.blob.core.windows.net/palestras/dod-meetup25.pdf)
 `,
   date: "2025-09-30",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "2 min de leitura"
 };

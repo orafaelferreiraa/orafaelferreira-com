@@ -106,6 +106,6 @@ Os slides estão disponíveis aqui:
 
 `,
   date: "2026-04-20",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "6-8 min de leitura",
 };

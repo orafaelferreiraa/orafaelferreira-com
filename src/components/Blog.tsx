@@ -14,20 +14,97 @@ const Blog = () => {
   const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState("artigos");
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [activePostCategory, setActivePostCategory] = useState<string | null>(null);
 
   const postCategories = [
     "Posts",
+    "Palestras",
     "Registro Eventos Presenciais",
     "Organização de Eventos",
     "Organizador Grupo de Comunidade"
   ];
 
-  const artigosFiltered = articles.filter(article => !postCategories.includes(article.category));
-  const postsFiltered = articles.filter(article => postCategories.includes(article.category));
+  const normalizeCategory = (value: string) =>
+    value.normalize("NFC").trim().toLocaleLowerCase();
+
+  const postCategorySet = new Set(postCategories.map(normalizeCategory));
+
+  const isPostCategory = (category: string) =>
+    postCategorySet.has(normalizeCategory(category));
+
+  const sortByDateDesc = (a: (typeof articles)[number], b: (typeof articles)[number]) =>
+    new Date(`${b.date}T12:00:00`).getTime() - new Date(`${a.date}T12:00:00`).getTime();
+
+  const artigosFiltered = articles
+    .filter(article => !isPostCategory(article.category))
+    .sort(sortByDateDesc);
+
+  const postsFiltered = articles
+    .filter(article => isPostCategory(article.category))
+    .sort(sortByDateDesc);
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     setActiveTag(null);
+    setActivePostCategory(null);
+  };
+
+  const postCategoriesAvailable = Array.from(
+    new Set(postsFiltered.map((article) => article.category))
+  );
+
+  const postCategoryOrder = [
+    "Palestras",
+    "Organização de Eventos",
+    "Registro Eventos Presenciais",
+    "Organizador Grupo de Comunidade",
+    "Posts"
+  ];
+
+  const orderedPostCategories = [
+    ...postCategoryOrder.filter((category) => postCategoriesAvailable.includes(category)),
+    ...postCategoriesAvailable.filter((category) => !postCategoryOrder.includes(category)).sort()
+  ];
+
+  const renderPostCategoryFilters = () => {
+    if (orderedPostCategories.length === 0) return null;
+
+    return (
+      <div className="max-w-7xl mx-auto mb-6">
+        <p className="text-sm font-medium text-muted-foreground mb-3 text-center">
+          {t("blog.filterByCategory")}
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <button
+            type="button"
+            onClick={() => setActivePostCategory(null)}
+            className={cn(
+              "px-4 py-1.5 rounded-full text-sm font-medium border transition-colors",
+              activePostCategory === null
+                ? "bg-primary text-primary-foreground border-primary"
+                : "bg-card/40 text-muted-foreground border-primary/10 hover:border-primary/40 hover:text-primary"
+            )}
+          >
+            {t("blog.allCategories")}
+          </button>
+          {orderedPostCategories.map((category) => (
+            <button
+              key={category}
+              type="button"
+              onClick={() => setActivePostCategory((current) => (current === category ? null : category))}
+              className={cn(
+                "px-4 py-1.5 rounded-full text-sm font-medium border transition-colors",
+                activePostCategory === category
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card/40 text-muted-foreground border-primary/10 hover:border-primary/40 hover:text-primary"
+              )}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
   };
 
   const renderFilters = (articlesList: typeof articles) => {
@@ -73,9 +150,15 @@ const Blog = () => {
   };
 
   const renderArticleGrid = (articlesList: typeof articles) => {
-    const visibleArticles = activeTag
-      ? articlesList.filter((article) => getArticleTags(article).includes(activeTag))
-      : articlesList;
+    let visibleArticles = articlesList;
+
+    if (activeTag) {
+      visibleArticles = visibleArticles.filter((article) => getArticleTags(article).includes(activeTag));
+    }
+
+    if (activeTab === "posts" && activePostCategory) {
+      visibleArticles = visibleArticles.filter((article) => article.category === activePostCategory);
+    }
 
     if (visibleArticles.length === 0) {
       return (
@@ -86,7 +169,7 @@ const Blog = () => {
     return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
       {visibleArticles.map((article, index) => {
-        const coverImage = article.badges?.[0]?.image || extractFirstImage(article.content);
+        const coverImage = article.image || article.badges?.[0]?.image || extractFirstImage(article.content);
         const articleTags = getArticleTags(article).slice(0, 3);
 
         return (
@@ -189,6 +272,7 @@ const Blog = () => {
           </TabsContent>
 
           <TabsContent value="posts" className="mt-0">
+            {renderPostCategoryFilters()}
             {renderFilters(postsFiltered)}
             {renderArticleGrid(postsFiltered)}
           </TabsContent>

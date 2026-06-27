@@ -17,6 +17,7 @@ Todos os arquivos seguem as best practices do MCP spec:
 - Padronizar criacao e revisao de artigos em `src/data/articles/*.ts`
 - Garantir pesquisa confiavel antes de escrever (MCP first)
 - Reutilizar contexto tecnico do projeto sem repetir briefing manual
+- Manter agentes, prompts e skills alinhados com o pacote oficial da Microsoft quando houver encaixe real no projeto
 
 ## Fluxo recomendado
 
@@ -44,3 +45,9 @@ Ver detalhes em `ai/mcp/source-of-truth-policy.md`.
 - Estrutura pronta para uso no parser markdown do projeto
 - Metadados coerentes (slug, excerpt, categoria, data, readTime)
 - Valores seguindo Completion Hints da skill de authoring
+
+## Estrutura complementar
+
+- `ai/agents/` — agentes do projeto, incluindo o orquestrador `loop-engineer.agent.md`
+- `ai/prompts/` — prompts de fluxo para pesquisa, auditoria e escrita
+- `.github/skills/` — skills oficiais reaproveitaveis para este repositorio

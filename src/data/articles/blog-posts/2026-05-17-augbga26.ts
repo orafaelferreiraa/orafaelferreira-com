@@ -103,5 +103,5 @@ Obrigado a todos que participaram presencialmente e ajudaram a fortalecer o ecos
   date: "2026-05-17",
   category: "Organização de Eventos",
   readTime: "4 min de leitura",
-  image: "/eventos/2026/global-azure-floripa/banner.jpeg"
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/00.png"
 };

@@ -82,6 +82,6 @@ A programação técnica foi excelente, especialmente a parte da tarde! Após mi
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Defesa em Camadas com Open Source](https://stoblobcertificados011.blob.core.windows.net/palestras/DefesaemCamadasOS.pdf)
 `,
   date: "2025-12-02",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "3 min de leitura"
 };

@@ -64,7 +64,7 @@ Porque a comunidade técnica precisa falar sobre carreira, escolhas conscientes 
 #GlobalAzure #AzureFloripa #TrabalhoInternacional #CarreiraTI #ComunidadeTech #Azure
 `,
   date: "2025-05-18",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "2 min de leitura",
   excludeTags: ["Azure"]
 };

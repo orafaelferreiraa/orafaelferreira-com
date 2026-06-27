@@ -259,6 +259,12 @@ export default {
         cta: "Quero me destacar em Cloud e DevOps"
       },
       intro: "Reúno experiências sólidas que me posicionam como referência em Cloud Azure e DevOps:",
+      courseSpotlight: {
+        badge: "Novo conteúdo",
+        title: "Computação em Nuvem: práticas e governança com Azure",
+        description: "Gravei esse curso na Alura para ir além do clique no portal: fundamentos de cloud, governança, FinOps, IaC, automação e uso de IA para acelerar o provisionamento em Azure.",
+        cta: "Ver curso"
+      },
       expertise: {
         technical: "Domínio Tecnológico:",
         technicalDesc: "Profundo conhecimento em Microsoft Azure, Azure DevOps, IAC, GitHub Actions, entre outras ferramentas de ponta amplamente usadas no setor.",
@@ -396,6 +402,7 @@ export default {
       description: "Conteúdo técnico e experiências em comunidade",
       readMore: "Ler mais",
       allCategories: "Todas as Categorias",
+      filterByCategory: "Filtrar por categoria",
       search: "Buscar artigos...",
       articles: "Artigos",
       posts: "Posts",

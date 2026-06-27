@@ -73,6 +73,6 @@ Os slides estão disponíveis aqui:
 
 `,
   date: "2026-02-27",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "4 min de leitura"
 };

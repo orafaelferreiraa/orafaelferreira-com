@@ -8,7 +8,7 @@ export const article: Article = {
   content: `
 O **Microsoft Build 2026** veio recheado de anúncios, e a maior parte deles gira em torno de uma palavra: **agentes**. A plataforma está sendo recortada para suportar workloads agentic AI que raciocinam, tomam decisões em sequência e rodam continuamente em escala.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build%20localhost.flp/build.png)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/build.png)
 
 ## Visão geral do Build 2026
 

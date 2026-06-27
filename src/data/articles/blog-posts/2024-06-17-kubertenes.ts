@@ -106,7 +106,7 @@ Se você não teve a oportunidade de comparecer a este evento, não se preocupe,
 
 `,
   date: "2024-06-17",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "3 min de leitura",
   tags: ["Platform Engineering"]
 };

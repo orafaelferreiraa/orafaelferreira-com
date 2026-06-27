@@ -72,6 +72,6 @@ Um evento **feito por especialistas para a comunidade**, com **propósito social
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [GreenOps e Cloud Sustentável no MVP Conf 2025](https://stoblobcertificados011.blob.core.windows.net/palestras/mvp-conf25.pdf)
 `,
   date: "2025-11-10",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "3 min de leitura"
 };

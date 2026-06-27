@@ -56,7 +56,7 @@ Que essa seja apenas mais uma etapa na nossa jornada de aprendizado e evolução
 
 `,
   date: "2024-11-10",
-  category: "Registro Eventos Presenciais",
+   category: "Palestras",
   readTime: "2 min de leitura",
   tags: ["Azure"]
 };

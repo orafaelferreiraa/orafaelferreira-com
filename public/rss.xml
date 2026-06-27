@@ -5,11 +5,19 @@
     <link>https://www.orafaelferreira.com</link>
     <description>Novos artigos e publicacoes sobre Azure, DevOps, FinOps, Terraform, Kubernetes e Platform Engineering.</description>
     <language>pt-BR</language>
-    <pubDate>Sun, 14 Jun 2026 00:00:00 GMT</pubDate>
-    <lastBuildDate>Sun, 14 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
+    <lastBuildDate>Sat, 27 Jun 2026 00:00:00 GMT</lastBuildDate>
     <generator>Custom RSS Generator (Node.js)</generator>
     <ttl>60</ttl>
     <atom:link href="https://www.orafaelferreira.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terraform MCP Server com Docker: o que é, para que serve e como começar</title>
+      <link>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</link>
+      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</guid>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Um guia prático sobre MCP, o papel do Terraform no fluxo de infraestrutura e como usar Docker para isolar e reproduzir um servidor MCP.</description>
+      <category>Artigos</category>
+    </item>
     <item>
       <title>Atualização sobre a evolução do site: Temos mais Terraform, DNS-as-Code e multi-subscription</title>
       <link>https://www.orafaelferreira.com/artigos/artigo-terraform-infra-evolutiva</link>

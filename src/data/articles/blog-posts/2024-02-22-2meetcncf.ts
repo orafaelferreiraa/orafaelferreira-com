@@ -46,7 +46,7 @@ Se você também é apaixonado por tecnologia, recomendo participar desses event
 
 `,
   date: "2024-02-22",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "2 min de leitura",
   tags: ["GreenOps"]
 };

@@ -95,6 +95,6 @@ Agradeço à organização, aos palestrantes, e a toda galera que colou na minha
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [DevOps Além da Hype: Pessoas, Cultura e Prática](https://stoblobcertificados011.blob.core.windows.net/palestras/DevOps-CRTB.pdf)
 `,
   date: "2025-09-01",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "2 min de leitura"
 };

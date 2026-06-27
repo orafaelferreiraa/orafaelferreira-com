@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { Linkedin, Github, Youtube, Music, Instagram, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import heroImage from "@/assets/hero-image.jpg";
+
+const HERO_BLUR_PLACEHOLDER = "data:image/webp;base64,UklGRvYDAABXRUJQVlA4WAoAAAAgAAAAIwAALwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggCAIAADALAJ0BKiQAMAA+wVaiTaekoqIqtVqo8BgJbAC7MvCB6dXtxOeI03TebCvit12oUNiwx95znCoBZK9PZuHOrBNpwyFu+8iOiPXFifdDKMSOr2x8MUMxUYf23dPdM2NH4kAAAP6p7N06S8Bj1n19E45aalpBUpGr60/VyVlbf8Ei0Kl6Jj/jUD7v/B1FF+n0xG58MWvF+OOM6E/ZNjtbdjqdpEjIiaGrPOpHP6zHajCAiFtlYmu9JDkop8EtGC2HBqwbZ2fidOxCEqkk9jdGCe1A2n6vzZ3WIdnH8xeqI91Dizo035wRHNmMIUQtiEUYgza97QvyMlqGtZIeA9tunxmwqX2cHMWiwQ4h5Hqo1ECSCHc8YR5hZRmnPegXUL+F8eWNdJgkTi7hqXIwzn/4HYK8MQiewoCaY66XwoOwxbjhZ73y6Cb26tWf40fuEQ0ZdK7XDqDCL7J21GuM7DYfXczIr4L3rpLnUAJ1f0lCdHhNCNVlsfHC3/Bv6ER9WH9BTnnq/aHHuGBxGieMILc+9ODc0yx5v5AOEKDRMfVMZHlBo9Ds7TT1hdIujAuHTneCMnVmeKYJp6yGlDozfXTTdT5i8Jny5agbocobNpkBl4lkqG/8n7STM1NkK3tJssrFlQrtoCaLgcNb2arFUSp4pQcx9Diyp7yuE0nwAq32hl3xRZFO08BgAAA=";
+
 const Hero = () => {
   const { t } = useTranslation();
-  const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.2 });
+  const [isHeroLoaded, setIsHeroLoaded] = useState(false);
   
   const socialLinks = [{
     icon: Linkedin,
@@ -80,13 +83,29 @@ const Hero = () => {
           </div>
 
           {/* Hero Image */}
-          <div 
-            ref={imageRef}
-            className={`flex-1 flex justify-center lg:justify-end scroll-scale-in ${imageVisible ? 'visible' : ''}`}
-          >
+          <div className="flex-1 flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl animate-glow" />
-              <img src={heroImage} alt="Rafael Ferreira - Cloud & DevOps Specialist" width={512} height={512} fetchPriority="high" className="relative rounded-2xl w-full max-w-md lg:max-w-lg shadow-2xl border border-border" />
+              <div
+                className="relative rounded-2xl w-full max-w-md lg:max-w-lg shadow-2xl border border-border overflow-hidden"
+                style={{
+                  backgroundImage: `url(${HERO_BLUR_PLACEHOLDER})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <img
+                  src={heroImage}
+                  alt="Rafael Ferreira - Cloud & DevOps Specialist"
+                  width={512}
+                  height={512}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  onLoad={() => setIsHeroLoaded(true)}
+                  className={`relative w-full h-full object-cover transition-opacity duration-500 ${isHeroLoaded ? 'opacity-100' : 'opacity-0'}`}
+                />
+              </div>
             </div>
           </div>
         </div>

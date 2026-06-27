@@ -1,4 +1,40 @@
 {
+  "terraform-mcp-server-docker": {
+    "slug": "terraform-mcp-server-docker",
+    "title": "Terraform MCP Server com Docker: o que é, para que serve e como começar",
+    "excerpt": "Um guia prático sobre MCP, o papel do Terraform no fluxo de infraestrutura e como usar Docker para isolar e reproduzir um servidor MCP.",
+    "image": null,
+    "date": "2026-06-27",
+    "category": "Artigos",
+    "url": "https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker"
+  },
+  "alura-cloud-computing-fundamentos-iaas-paas-saas": {
+    "slug": "alura-cloud-computing-fundamentos-iaas-paas-saas",
+    "title": "Meu primeiro curso de Computação em Nuvem: práticas e governança com Azure",
+    "excerpt": "Registro do curso que gravei para a Alura, com foco em fundamentos de cloud, governança, segurança, FinOps, IaC, automação e uso de IA com Azure.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/alura/00.jpg",
+    "date": "2026-06-27",
+    "category": "Posts",
+    "url": "https://www.orafaelferreira.com/artigos/alura-cloud-computing-fundamentos-iaas-paas-saas"
+  },
+  "github-copilot-vscode-agents-debug-profile-test": {
+    "slug": "github-copilot-vscode-agents-debug-profile-test",
+    "title": "GitHub Copilot in VSCode: Agents That Debug, Profile, and Test",
+    "excerpt": "No Microsoft Build //localhost: Florianópolis, mostrei como agentes do GitHub Copilot podem acelerar debugging, profiling e testes dentro do Visual Studio Code.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/01.png",
+    "date": "2026-06-20",
+    "category": "Palestras",
+    "url": "https://www.orafaelferreira.com/artigos/github-copilot-vscode-agents-debug-profile-test"
+  },
+  "microsoft-build-localhost-florianopolis": {
+    "slug": "microsoft-build-localhost-florianopolis",
+    "title": "Microsoft Build //localhost: Florianópolis",
+    "excerpt": "Um registro do evento que organizei com o Vinicius Deschamps em Florianópolis, com foco em IA aplicada ao desenvolvimento, cloud e prática real.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/00.png",
+    "date": "2026-06-20",
+    "category": "Organização de Eventos",
+    "url": "https://www.orafaelferreira.com/artigos/microsoft-build-localhost-florianopolis"
+  },
   "artigo-terraform-infra-evolutiva": {
     "slug": "artigo-terraform-infra-evolutiva",
     "title": "Atualização sobre a evolução do site: Temos mais Terraform, DNS-as-Code e multi-subscription",
@@ -32,14 +68,14 @@
     "excerpt": "No Code Island Ctrl Z 2026, compartilhei um dos cases mais sinceros da minha carreira: sim, eu derrubei produção, e sim, meu nome estava no log. Veja como lidar com o caos, aprender com o erro e sair mais forte.",
     "image": null,
     "date": "2026-05-20",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/code-island-ctrlz-2026"
   },
   "global-azure-floripa-2026": {
     "slug": "global-azure-floripa-2026",
     "title": "Global Azure Floripa 2026 (Evento Presencial)",
     "excerpt": "Mais uma edição do Global Azure em Florianópolis, organizada pelo Azure User Groups Brasil com trilhas práticas de cloud, IA e DevOps.",
-    "image": "/eventos/2026/global-azure-floripa/banner.jpeg",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/00.png",
     "date": "2026-05-17",
     "category": "Organização de Eventos",
     "url": "https://www.orafaelferreira.com/artigos/global-azure-floripa-2026"
@@ -50,7 +86,7 @@
     "excerpt": "No dia 18 de abril de 2026, aconteceu o Global Azure User Group Floripa no Colégio Alpha, em São José/SC, com temas sobre Azure, carreira internacional, segurança, arquitetura cloud native e DevOps.",
     "image": null,
     "date": "2026-05-02",
-    "category": "Registro Eventos Presenciais",
+    "category": "Organização de Eventos",
     "url": "https://www.orafaelferreira.com/artigos/global-azure-user-group-floripa-2026"
   },
   "docker-python-distroless-kubernetes": {
@@ -68,7 +104,7 @@
     "excerpt": "No dia 11 de abril de 2026, participei como palestrante do SQL Saturday Joinville na Univille. Foi um evento presencial com trilhas fortes em SQL Server, Azure, IA, Fabric e analytics.",
     "image": null,
     "date": "2026-04-20",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/sql-saturday-joinville-2026"
   },
   "sem-servidor-conf-florianopolis-2026": {
@@ -77,7 +113,7 @@
     "excerpt": "No dia 08 de abril de 2026, participei como palestrante do Sem Servidor Conf, em Florianópolis. Foi uma tarde cheia de conteúdo prático, networking e discussões reais sobre arquitetura serverless.",
     "image": null,
     "date": "2026-04-18",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/sem-servidor-conf-florianopolis-2026"
   },
   "platform-engineering-policy-as-code": {
@@ -104,7 +140,7 @@
     "excerpt": "No dia 25 de fevereiro de 2026 rolou o Codecon #15 em Florianópolis. Uma noite de comunidade forte, papo direto sobre IA no mundo real e um case completo de como um site nasceu de um prompt e foi parar em produção com DevOps de verdade.",
     "image": null,
     "date": "2026-02-27",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/codecon-15-florianopolis"
   },
   "python-floripa-92-hostgator": {
@@ -113,7 +149,7 @@
     "excerpt": "No fim de janeiro de 2026, a HostGator abriu as portas para receber o 92º Python Floripa. Uma tarde de casa cheia, boas conversas, IA sem romantização, DevOps no mundo real e aquele networking que só comunidade de verdade entrega.",
     "image": null,
     "date": "2026-01-28",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/python-floripa-92-hostgator"
   },
   "artigo-github-actions-deep-dive": {
@@ -158,7 +194,7 @@
     "excerpt": "No dia 29 de novembro de 2025, participei do DevOpsDays Porto Alegre — o maior encontro da cultura DevOps do sul do país — levando uma talk sobre Defesa em Profundidade e ferramentas Open Source para proteger ambientes Cloud Native.",
     "image": null,
     "date": "2025-12-15",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/devopsdays-poa-2025"
   },
   "artigo-terraform-infra-cicd": {
@@ -176,7 +212,7 @@
     "excerpt": "Na 1ª Semana Acadêmica de ADS do IFSC, eu e Vinícius Deschamps compartilhamos a realidade de trabalhar para o exterior — desafios, oportunidades e histórias que não aparecem no LinkedIn.",
     "image": null,
     "date": "2025-11-18",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/trabalhar-para-o-exterior-ifsc-2025"
   },
   "mvp-conf-sp": {
@@ -185,7 +221,7 @@
     "excerpt": "Nos dias 24 e 25 de outubro de 2025, participei do MVP Conf Brasil — o maior encontro de especialistas Microsoft do país — levando uma talk sobre sustentabilidade na nuvem e o papel do GreenOps no futuro das arquiteturas cloud.",
     "image": null,
     "date": "2025-11-10",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/mvp-conf-sp"
   },
   "wsd-devops": {
@@ -194,7 +230,7 @@
     "excerpt": "No dia 02 de outubro de 2025, participei como palestrante na 8ª edição da whiteStone_dev, realizada no INAITEC – Pedra Branca, em Palhoça (SC).",
     "image": null,
     "date": "2025-10-19",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/wsd-devops"
   },
   "mvp-crtb": {
@@ -203,7 +239,7 @@
     "excerpt": "No dia 27 de setembro de 2025, participei como palestrante no Esquenta do MVPConf 2025, realizado no auditório da UTFPR, em Curitiba – PR. Um evento incrível que serviu como prévia do maior encontro de especialistas Microsoft do Brasil: o MVPConf.",
     "image": null,
     "date": "2025-10-12",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/mvp-crtb"
   },
   "az-700": {
@@ -221,7 +257,7 @@
     "excerpt": "No dia 17 de setembro de 2025, participei como palestrante da Trilha de Arquitetura Cloud no TDC São Paulo, um dos maiores eventos de tecnologia do Brasil, realizado no ProMagno, em São Paulo - SP.",
     "image": null,
     "date": "2025-10-04",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/tdc-greenops"
   },
   "dod-meetupaws": {
@@ -230,7 +266,7 @@
     "excerpt": "No dia 03 de setembro de 2025, participei como palestrante no Encontro das comunidades AWS User Group Floripa + DevOps Floripa, realizado no Auditório da ACATE - Passeio Primavera (SC-401).",
     "image": null,
     "date": "2025-09-30",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/dod-meetupaws"
   },
   "dod-crtb25": {
@@ -239,7 +275,7 @@
     "excerpt": "No dia 30 de agosto de 2025, tive o prazer de participar do DevOpsDays Curitiba, um dos principais eventos da comunidade DevOps no Brasil. O evento aconteceu no Centro Politécnico da UFPR, reunindo profissionais apaixonados por tecnologia, inovação e cultura DevOps.",
     "image": null,
     "date": "2025-09-01",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/dod-crtb25"
   },
   "hack": {
@@ -248,7 +284,7 @@
     "excerpt": "No último dia 16 de agosto de 2025, rolou em Florianópolis o HNWD (Hacking na Web Day), um dos eventos mais autênticos e relevantes da cena de hacking e segurança cibernética no Brasil.",
     "image": null,
     "date": "2025-08-20",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/hack"
   },
   "terraform-associate-artigo": {
@@ -275,7 +311,7 @@
     "excerpt": "No último dia 26 de abril de 2025, Blumenau foi palco de um grande evento tech do sul do Brasil: o Esquenta MVP Conf, uma amostra da energia e do conteúdo de alto nível que teremos na próxima edição do MVP Conf em São Paulo.",
     "image": null,
     "date": "2025-05-23",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/mvp-conf-blu"
   },
   "carreira-internacional": {
@@ -284,7 +320,7 @@
     "excerpt": "Durante o Global Azure 2025 – Edição Azure Floripa, tive o prazer de abrir o evento ao lado do grande amigo e profissional Vinicius Deschamps com uma palestra que foge um pouco do tradicional técnico — mas que é um divisor de águas \\",
     "image": null,
     "date": "2025-05-18",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/carreira-internacional"
   },
   "global-azure25": {
@@ -311,7 +347,7 @@
     "excerpt": "No último sábado, 5 de abril de 2025, tive o imenso prazer de participar como palestrante no SQL Saturday Joinville 2025, realizado na UNIVILLE – Campus Universitário, localizado em Joinville, SC.",
     "image": null,
     "date": "2025-04-06",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/sqlsat25"
   },
   "translatek8s": {
@@ -338,7 +374,7 @@
     "excerpt": "No último sábado, 23 de novembro de 2024, tive o prazer de participar como palestrante da segunda edição do Code Island Cloud, realizado na Unisul – Centro Florianópolis.",
     "image": null,
     "date": "2024-11-24",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/code-island24"
   },
   "tc-floripa24": {
@@ -347,7 +383,7 @@
     "excerpt": "No dia 9 de novembro de 2024, tive o prazer de palestrar na segunda edição do Tech Connection Florianópolis.",
     "image": null,
     "date": "2024-11-10",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/tc-floripa24"
   },
   "tftec2024": {
@@ -365,7 +401,7 @@
     "excerpt": "No último dia 24 de outubro, organizamos o primeiro CI&T MVP Day — um evento interno, exclusivo para funcionários da CI&T, realizado na nossa sede global tech em Campinas.",
     "image": null,
     "date": "2024-11-02",
-    "category": "Registro Eventos Presenciais",
+    "category": "Organização de Eventos",
     "url": "https://www.orafaelferreira.com/artigos/mvp-day"
   },
   "sustentability-day": {
@@ -374,7 +410,7 @@
     "excerpt": "No último dia 22 de outubro, o CNCF - Cloud Native São Paulo 🇧🇷, em parceria com a Amazon Web Services (AWS) e a Cloud Native Computing Foundation (CNCF), organizou o aguardado evento \\",
     "image": null,
     "date": "2024-10-31",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/sustentability-day"
   },
   "agil": {
@@ -527,7 +563,7 @@
     "excerpt": "No TDC Florianópolis 2024, tive a honra de palestrar na Trilha de Arquitetura de Dados, ao lado de meu amigo Cláudio Filipe Lima Rapôso.",
     "image": null,
     "date": "2024-06-25",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/talk-tdc"
   },
   "podcast": {
@@ -545,7 +581,7 @@
     "excerpt": "No dia 11 de junho de 2024, rolou o KuberTENes Birthday Bash Santa Catarina, um evento organizado pela comunidade Cloud Native Santa Catarina.",
     "image": null,
     "date": "2024-06-17",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/kubertenes"
   },
   "curso-az-900": {
@@ -581,7 +617,7 @@
     "excerpt": "No Tech Connection 2024, realizado em Balneário Camboriú, trouxe uma palestra com tema crucial para o futuro da tecnologia e do planeta: GreenOps na Cloud.",
     "image": null,
     "date": "2024-06-02",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/tc-bc24"
   },
   "azure-static-web-apps": {
@@ -608,7 +644,7 @@
     "excerpt": "No dia 24 de fevereiro de 2024, tive a oportunidade de palestrar no Kubernetes Community Days (KCD) Brasil, realizado na Natura NASP, em São Paulo.",
     "image": null,
     "date": "2024-02-25",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/kcdsp24"
   },
   "2meetcncf": {
@@ -617,7 +653,7 @@
     "excerpt": "No dia 21 de fevereiro de 2024, tive o prazer de palestrar no 2º Cloud Native Floripa Meetup, organizado pelo Community Group Cloud Native Santa Catarina. O evento realizado na \\",
     "image": null,
     "date": "2024-02-22",
-    "category": "Registro Eventos Presenciais",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/2meetcncf"
   },
   "azure-backup-virtual-machines": {

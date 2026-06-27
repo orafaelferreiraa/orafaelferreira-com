@@ -65,6 +65,6 @@ Fique ligado nas redes da [Code Island](https://codeisland.com.br) e acompanhe o
 
 `,
   date: "2026-05-20",
-  category: "Registro Eventos Presenciais",
+  category: "Palestras",
   readTime: "5-7 min de leitura",
 };

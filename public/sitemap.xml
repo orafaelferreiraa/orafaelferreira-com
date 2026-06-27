@@ -52,6 +52,10 @@
   </url>
 
   <!-- Articles -->
+  <url><loc>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.orafaelferreira.com/artigos/alura-cloud-computing-fundamentos-iaas-paas-saas</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.orafaelferreira.com/artigos/github-copilot-vscode-agents-debug-profile-test</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.orafaelferreira.com/artigos/microsoft-build-localhost-florianopolis</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/artigo-terraform-infra-evolutiva</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/microsoft-build-2026-destaques-azure</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>

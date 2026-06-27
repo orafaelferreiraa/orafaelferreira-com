@@ -253,6 +253,12 @@ export default {
         cta: "I want to stand out in Cloud and DevOps"
       },
       intro: "I bring together solid experiences that position me as a reference in the Cloud Azure and DevOps sector. Some highlights of my professional trajectory include:",
+      courseSpotlight: {
+        badge: "New content",
+        title: "Cloud Computing: practices and governance with Azure",
+        description: "I recorded this course for Alura to go beyond portal clicks: cloud fundamentals, governance, FinOps, IaC, automation, and using AI to speed up Azure provisioning.",
+        cta: "View course"
+      },
       expertise: {
         technical: "Technical Mastery:",
         technicalDesc: "Deep knowledge of Microsoft Azure, Azure DevOps, IaC, GitHub Actions, among other cutting-edge tools widely used in the sector.",
@@ -380,6 +386,7 @@ export default {
       description: "Technical content and community experiences",
       readMore: "Read more",
       allCategories: "All Categories",
+      filterByCategory: "Filter by category",
       search: "Search articles...",
       articles: "Articles",
       posts: "Posts",

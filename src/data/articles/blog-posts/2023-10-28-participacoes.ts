@@ -5,8 +5,6 @@ export const article: Article = {
   title: "Participações em Lives",
   excerpt: "Olá, pessoal!",
   content: `
-# Participações em Lives
-
 Olá, pessoal!
 
 Estou empolgado para compartilhar com vocês um novo post onde destaco minhas participações em diversas lives na plataforma YouTube. Espero que este post seja informativo e inspire outros a buscar desenvolvimento profissional contínuo. Vamos lá!
