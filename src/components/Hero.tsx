@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Linkedin, Github, Youtube, Music, Instagram, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
@@ -9,6 +9,13 @@ const HERO_BLUR_PLACEHOLDER = "data:image/webp;base64,UklGRvYDAABXRUJQVlA4WAoAAA
 const Hero = () => {
   const { t } = useTranslation();
   const [isHeroLoaded, setIsHeroLoaded] = useState(false);
+  const heroImgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (heroImgRef.current?.complete) {
+      setIsHeroLoaded(true);
+    }
+  }, []);
   
   const socialLinks = [{
     icon: Linkedin,
@@ -89,12 +96,13 @@ const Hero = () => {
               <div
                 className="relative rounded-2xl w-full max-w-md lg:max-w-lg shadow-2xl border border-border overflow-hidden"
                 style={{
-                  backgroundImage: `url(${HERO_BLUR_PLACEHOLDER})`,
+                  backgroundImage: isHeroLoaded ? 'none' : `url(${HERO_BLUR_PLACEHOLDER})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
               >
                 <img
+                  ref={heroImgRef}
                   src={heroImage}
                   alt="Rafael Ferreira - Cloud & DevOps Specialist"
                   width={512}
@@ -103,7 +111,8 @@ const Hero = () => {
                   decoding="async"
                   fetchPriority="high"
                   onLoad={() => setIsHeroLoaded(true)}
-                  className={`relative w-full h-full object-cover transition-opacity duration-500 ${isHeroLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  onError={() => setIsHeroLoaded(true)}
+                  className={`relative w-full h-full object-cover transition-[filter] duration-500 ${isHeroLoaded ? 'blur-0' : 'blur-sm'}`}
                 />
               </div>
             </div>
