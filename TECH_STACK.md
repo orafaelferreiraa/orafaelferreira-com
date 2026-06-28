@@ -114,7 +114,6 @@ Inventário técnico do projeto `orafaelferreira-com`, baseado na análise dos a
 ### Scripts importantes
 - `dev`, `build`, `preview`, `typecheck`.
 - `test:ci`, `test:components:ci`, `test:e2e`, `test:e2e:ci`.
-- `migrate:posts` para migração de conteúdo (`node scripts/migrate-jekyll-posts.mjs`).
 
 ---
 

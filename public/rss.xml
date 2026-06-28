@@ -11,11 +11,11 @@
     <ttl>60</ttl>
     <atom:link href="https://www.orafaelferreira.com/rss.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Terraform MCP Server com Docker: o que é, para que serve e como começar</title>
+      <title>Terraform MCP Server com Docker na vida real de DevOps e Platform Engineer</title>
       <link>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</guid>
       <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
-      <description>Um guia prático sobre MCP, o papel do Terraform no fluxo de infraestrutura e como usar Docker para isolar e reproduzir um servidor MCP.</description>
+      <description>Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting, governança e produtividade com menos atrito.</description>
       <category>Artigos</category>
     </item>
     <item>
@@ -33,6 +33,7 @@
       <pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate>
       <description>Um guia direto pelos anúncios do Microsoft Build 2026 que mais importam para quem trabalha com Azure: Cobalt 200, Azure Linux 4.0, Azure Container Linux, HorizonDB e Azure Functions. Escolha o tópico e vá direto ao ponto.</description>
       <category>Artigos</category>
+      <enclosure url="https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/build.png" type="image/png" />
     </item>
     <item>
       <title>Azure Container Registry Artifact Cache: arquitetura, segurança e promoção entre ambientes</title>

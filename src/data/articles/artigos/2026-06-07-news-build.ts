@@ -5,6 +5,7 @@ export const article: Article = {
   title: "Microsoft Build 2026: os destaques de Azure que mais me chamaram atenção",
   excerpt:
     "Um guia direto pelos anúncios do Microsoft Build 2026 que mais importam para quem trabalha com Azure: Cobalt 200, Azure Linux 4.0, Azure Container Linux, HorizonDB e Azure Functions. Escolha o tópico e vá direto ao ponto.",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/build.png",
   content: `
 O **Microsoft Build 2026** veio recheado de anúncios, e a maior parte deles gira em torno de uma palavra: **agentes**. A plataforma está sendo recortada para suportar workloads agentic AI que raciocinam, tomam decisões em sequência e rodam continuamente em escala.
 

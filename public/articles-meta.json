@@ -1,8 +1,8 @@
 {
   "terraform-mcp-server-docker": {
     "slug": "terraform-mcp-server-docker",
-    "title": "Terraform MCP Server com Docker: o que é, para que serve e como começar",
-    "excerpt": "Um guia prático sobre MCP, o papel do Terraform no fluxo de infraestrutura e como usar Docker para isolar e reproduzir um servidor MCP.",
+    "title": "Terraform MCP Server com Docker na vida real de DevOps e Platform Engineer",
+    "excerpt": "Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting, governança e produtividade com menos atrito.",
     "image": null,
     "date": "2026-06-27",
     "category": "Artigos",
@@ -48,7 +48,7 @@
     "slug": "microsoft-build-2026-destaques-azure",
     "title": "Microsoft Build 2026: os destaques de Azure que mais me chamaram atenção",
     "excerpt": "Um guia direto pelos anúncios do Microsoft Build 2026 que mais importam para quem trabalha com Azure: Cobalt 200, Azure Linux 4.0, Azure Container Linux, HorizonDB e Azure Functions. Escolha o tópico e vá direto ao ponto.",
-    "image": null,
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/build.png",
     "date": "2026-06-07",
     "category": "Artigos",
     "url": "https://www.orafaelferreira.com/artigos/microsoft-build-2026-destaques-azure"

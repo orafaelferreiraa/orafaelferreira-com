@@ -18,8 +18,7 @@
     "test:ci": "vitest --run --reporter=dot",
     "test:components:ci": "vitest --run --config vitest.config.components.ts",
     "test:e2e": "playwright test",
-    "test:e2e:ci": "playwright test --reporter=line",
-    "migrate:posts": "node scripts/migrate-jekyll-posts.mjs"
+    "test:e2e:ci": "playwright test --reporter=line"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.2",
