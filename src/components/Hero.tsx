@@ -102,23 +102,17 @@ const Hero = () => {
                   backgroundPosition: 'center',
                 }}
               >
-                <picture>
-                  <source srcSet={heroImageOptimized} type="image/webp" />
-                  <img
-                    ref={heroImgRef}
-                    src={heroImage}
-                    alt="Rafael Ferreira - Cloud & DevOps Specialist"
-                    width={512}
-                    height={512}
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority="high"
-                    sizes="(min-width: 1024px) 32rem, (min-width: 640px) 28rem, 90vw"
-                    onLoad={() => setIsHeroLoaded(true)}
-                    onError={() => setIsHeroLoaded(true)}
-                    className={`relative w-full h-full object-cover transition-[filter] duration-500 ${isHeroLoaded ? 'blur-0' : 'blur-sm'}`}
-                  />
-                </picture>
+                <img
+                  src={heroImage}
+                  alt="Rafael Ferreira - Cloud & DevOps Specialist"
+                  width={512}
+                  height={512}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  onLoad={() => setIsHeroLoaded(true)}
+                  className={`relative w-full h-full object-cover transition-opacity duration-500 ${isHeroLoaded ? 'opacity-100' : 'opacity-0'}`}
+                />
               </div>
             </div>
           </div>
