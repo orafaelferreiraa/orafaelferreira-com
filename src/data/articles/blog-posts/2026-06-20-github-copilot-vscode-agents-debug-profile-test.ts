@@ -7,12 +7,15 @@ export const article: Article = {
     "No Microsoft Build //localhost: Florianópolis, mostrei como agentes do GitHub Copilot podem acelerar debugging, profiling e testes dentro do Visual Studio Code.",
   content: `
 
-No [**Microsoft Build //localhost: Florianópolis**](https://developer.microsoft.com/pt-br/reactor/events/27206/), a minha talk conectou uma ideia simples com impacto direto no dia a dia: agentes de IA não servem só para escrever código, eles também podem ajudar a investigar, medir e validar software com mais contexto.
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/01.png)
+
+No dia **20 de junho de 2026**, realizamos o [**Microsoft Build //localhost: Florianópolis**](https://developer.microsoft.com/pt-br/reactor/events/27206/)  em **Florianópolis** e apresentei uma talk que conectou uma ideia simples com impacto direto no dia a dia: agentes de IA não servem só para escrever código, eles também podem ajudar a investigar, medir e validar software com mais contexto.
 
 O evento reuniu pessoas interessadas em IA, cloud, DevOps e desenvolvimento moderno. A proposta da palestra foi mostrar, na prática, como o **GitHub Copilot no VSCode** pode atuar como um parceiro de trabalho quando o fluxo exige análise, repetição e rapidez.
 
 Evento organizado por mim e **[Vinicius Deschamps](https://www.linkedin.com/in/viniciusdeschamps/)**, representando a comunidade [**Azure User Groups Brasil**](https://azureusergroupsbrasil.com.br/), com o objetivo de aproximar a comunidade de cenários reais de uso do **GitHub Copilot** no dia a dia de quem constrói software.
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/00.png)
 
 Agentes bem configurados encurtam esse ciclo sem substituir a habilidade crítica do desenvolvedor. Eles ajudam a chegar mais rápido no ponto certo da investigação.
 
@@ -26,6 +29,8 @@ Em vez de abrir dezenas de arquivos sem direção, a conversa pode começar com 
 
 O resultado é menos tempo procurando e mais tempo corrigindo.
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/02.jpg)
+
 ## Harness com agentes
 
 Um agente pode ajudar a interpretar sinais de uso de CPU, latência, alocação e dependências, principalmente quando o problema está espalhado por mais de uma camada do sistema.
@@ -35,6 +40,8 @@ O ponto não é automatizar o diagnóstico inteiro. O ponto é chegar mais rápi
 - onde a aplicação passa mais tempo?
 - qual etapa está repetindo trabalho desnecessário?
 - qual caminho vale instrumentar primeiro?
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/05.jpg)
 
 ## Testing com agentes
 
@@ -60,6 +67,8 @@ Nesta demonstracao pratica, mostramos como utilizar GitHub Copilot CLI e agentes
 ## GitHub Copilot no Visual Studio: Agents That Debug, Profile and Test  
 🔹 [Rafael Ferreira](https://www.linkedin.com/in/orafaelferreiraa/)
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/03.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/06.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/08.jpg)
 
 Nesta sessão, exploramos como os agentes do GitHub Copilot podem ajudar a investigar problemas, identificar gargalos de performance, analisar infraestrutura como codigo, entender comportamentos complexos de aplicacoes e acelerar troubleshooting em ambientes reais.
 
@@ -89,7 +98,8 @@ Se você quiser acompanhar os próximos encontros e participar da comunidade:
 - [LinkedIn](https://www.linkedin.com/company/azureusergroupsbrasil)
 - [Meetup](https://www.meetup.com/azureusergroupsbrasil)
 
-
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/04.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/10.jpeg)
   `,
   date: "2026-06-20",
   category: "Palestras",
