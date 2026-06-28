@@ -1,8 +1,8 @@
 {
   "terraform-mcp-server-docker": {
     "slug": "terraform-mcp-server-docker",
-    "title": "Terraform MCP Server com Docker na vida real de DevOps e Platform Engineer",
-    "excerpt": "Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting, governança e produtividade com menos atrito.",
+    "title": "MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade",
+    "excerpt": "Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting e produtividade",
     "image": null,
     "date": "2026-06-27",
     "category": "Artigos",
@@ -120,7 +120,7 @@
     "slug": "platform-engineering-policy-as-code",
     "title": "Platform Engineering e Policy-as-Code que aceleram times",
     "excerpt": "Uma visão agnóstica de cloud sobre como Platform Engineering e Policy-as-Code reduzem carga cognitiva, aumentam segurança e aceleram entregas.",
-    "image": "xxx",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/1.png",
     "date": "2026-04-15",
     "category": "Artigos",
     "url": "https://www.orafaelferreira.com/artigos/platform-engineering-policy-as-code"

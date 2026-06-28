@@ -2,48 +2,58 @@ import { Article } from '../types';
 
 export const article: Article = {
   slug: "terraform-mcp-server-docker",
-  title: "Terraform MCP Server com Docker na vida real de DevOps e Platform Engineer",
+  title: "MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade",
   excerpt:
-    "Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting, governança e produtividade com menos atrito.",
+    "Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting e produtividade",
   content: `
 
-Se voce trabalha com infraestrutura todo dia, provavelmente ja viveu isso:
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/01.png) 
+## Resumo rápido
 
-- um dev pede um modulo "rapido" para subir um recurso
-- voce abre o Registry, depois abre docs, depois abre changelog
-- alguem pergunta no chat "qual versao segura desse provider?"
-- no meio disso, surge um run quebrado no workspace de producao
+- MCP cria um padrão para clientes de IA se conectarem a ferramentas e dados externos.
+- Terraform MCP Server é uma forma prática de trazer contexto de providers, módulos, runs e plans para um workflow mais previsível.
 
-No fim, a maior dor nem sempre e o Terraform em si. E o contexto espalhado.
+O [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) cria um formato padrão para um cliente consultar ferramentas e dados sem ficar adivinhando formato ou fazendo scraping de texto.
 
-O [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) entra exatamente nesse ponto. Ele cria um contrato padrao para um cliente consultar ferramentas e dados sem ficar adivinhando formato ou fazendo scraping de texto.
+O protocolo foi inicialmente desenvolvido pela [Anthropic](https://www.anthropic.com/) e hoje evolui como padrão aberto no ecossistema.
 
 E o [Terraform MCP Server](https://developer.hashicorp.com/terraform/mcp-server) coloca isso no mundo Terraform.
 
-## Traduzindo para a vida real
+## MCP é tipo um "USB da internet"
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/02.png) 
+
+Uma analogia que ajuda muito: MCP funciona como um "USB-C" para apps de IA.
+
+No mundo físico, você conecta mouse, teclado, webcam no mesmo padrão. No mundo de IA, você conecta servidores MCP de docs, cloud, banco, ticket, observabilidade e automação no mesmo protocolo.
+
+Isso permite trocar informações sem reescrever tudo e diminui acoplamento entre cliente e integrações.
+
+Exemplos simples:
+
+- um agente conecta no MCP do Terraform para ler módulos e providers
+- o mesmo agente conecta no MCP de observabilidade para investigar incidente
+- depois conecta no MCP de wiki interna para buscar padrões do time
+
+## No dia a dia
 
 Sem MCP, o fluxo costuma ser:
 
-1. pesquisar manualmente provider/modulo
-2. abrir varias abas para comparar versoes
-3. cruzar informacao de workspace, run e plan na mao
-4. responder o time com base em contexto parcial
+1. pesquisar manualmente provider/módulo
+2. abrir várias abas para comparar versões
+3. cruzar informação de workspace, run e plan na mão
+4. responder o time com base em contexto parcial 
 
-Com MCP, um cliente compativel consegue consultar essas informacoes de forma estruturada.
+Com MCP, um cliente compatível consegue consultar essas informações de forma estruturada.
 
-Em vez de prompt generico, voce chama uma tool especifica e recebe dados previsiveis. Isso reduz ruído, acelera decisoes e melhora rastreabilidade.
+Em vez de prompt genérico, você chama uma tool específica e recebe dados previsíveis. Isso reduz erros, acelera decisões e melhora rastreabilidade.
 
-## O que voce ganha como DevOps/Platform Engineer
+No dia a dia, os ganhos mais claros são:
 
-No dia a dia, os ganhos mais claros sao:
+- **discovery mais rápido:** buscar providers e módulos sem navegar em 10 páginas
+- **menos erro de versão:** consultar versões recentes de forma objetiva
 
-- **discovery mais rapido:** buscar providers e modulos sem navegar em 10 paginas
-- **menos erro de versao:** consultar versoes recentes de forma objetiva
-- **triagem melhor:** cruzar detalhes de runs/plans/workspaces com menos tentativa e erro
-- **onboarding mais simples:** o time aprende um fluxo padrao, nao um conjunto de "macetes"
-- **governanca:** operacoes sensiveis podem ficar bloqueadas por padrao e so liberar quando fizer sentido
-
-Exemplos de tools comuns nesse contexto:
+Exemplos de tools disponíveis:
 
 - **search_providers** e **get_provider_details**
 - **search_modules** e **get_module_details**
@@ -51,20 +61,35 @@ Exemplos de tools comuns nesse contexto:
 - **list_workspaces** e **get_workspace_details**
 - **get_plan_json_output** e **get_run_details**
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/04.png) 
+
+## Onde encontrar MCPs oficiais na internet
+
+Se você quer fontes confiáveis para descobrir servidores MCP:
+
+- [Site oficial do MCP](https://modelcontextprotocol.io/) (oficial: conceitos, spec e guias)
+- [Organização oficial no GitHub](https://github.com/modelcontextprotocol) (oficial)
+- [Lista de servidores do ecossistema MCP](https://github.com/modelcontextprotocol/servers) (comunidade/ecossistema)
+- [Registry MCP da comunidade](https://github.com/modelcontextprotocol/registry) (comunidade)
+
+Para ecossistemas grandes, vale acompanhar registries e catálogos de vendors:
+
+- [Docker MCP Registry](https://hub.docker.com/mcp) (oficial Docker)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/mcpdocker.png) 
+- [Microsoft MCP Registry](https://github.com/mcp?utm_source=vscode-website&utm_campaign=mcp-registry-server-launch-2025) (oficial Microsoft)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/MCPRegistry.png) 
 ## Onde o Docker entra de verdade
 
-Nao e sobre "usar container porque sim". E sobre reduzir variacao de ambiente.
-
-Com [Docker](https://docs.docker.com/), voce empacota o servidor MCP de forma reproduzivel para:
+Reduzir variação de ambiente. Com [Docker](https://docs.docker.com/), você empacota o servidor MCP de forma reproduzível para:
 
 - notebook local
 - ambiente de desenvolvimento
 - CI/CD
-- maquina de quem entrou no time ontem
+- máquina de quem entrou no time ontem
 
-Isso corta o classico "na minha maquina funciona" e ajuda a manter o mesmo comportamento entre ambientes.
+Isso corta o clássico "na minha máquina funciona" e ajuda a manter o mesmo comportamento entre ambientes.
 
-## Setup minimo para comecar
+## Setup mínimo para começar
 
 Primeiro, confirme o Terraform no ambiente:
 
@@ -72,7 +97,7 @@ Primeiro, confirme o Terraform no ambiente:
 terraform version
 \`\`\`
 
-Depois, rode o servidor MCP com Docker (ajuste de acordo com a documentacao oficial da imagem):
+Depois, rode o servidor MCP com Docker (exemplo; ajuste conforme a documentação oficial e versão mais recente):
 
 \`\`\`bash
 docker run --rm -it \
@@ -84,79 +109,150 @@ docker run --rm -it \
   hashicorp/terraform-mcp-server:1.0.0
 \`\`\`
 
-Se preferir compose:
+## Primeira chamada real (hands-on)
 
-\`\`\`yaml
-services:
-  terraform-mcp:
-    image: hashicorp/terraform-mcp-server:1.0.0
-    working_dir: /workspace
-    environment:
-      TF_IN_AUTOMATION: "true"
-      TF_LOG: INFO
-    volumes:
-      - ./:/workspace
+Depois de subir o servidor MCP, o fluxo mínimo no cliente costuma ser:
+
+1. listar as tools disponíveis
+2. chamar uma tool de discovery (ex.: \`search_providers\`)
+3. validar estrutura de resposta antes de automatizar
+
+Exemplo de resposta esperada (resumida). Os campos exatos podem variar conforme a tool e o cliente MCP:
+
+\`\`\`json
+{
+  "providers": [
+    {
+      "name": "azurerm",
+      "namespace": "hashicorp",
+      "latest_version": "x.y.z"
+    }
+  ]
+}
 \`\`\`
 
-Referencias oficiais:
+Com isso, você já valida conectividade, autenticação e formato dos dados.
 
-- [Terraform MCP Server (visao geral)](https://developer.hashicorp.com/terraform/mcp-server)
-- [Deploy do Terraform MCP Server](https://developer.hashicorp.com/terraform/mcp-server/deploy)
-- [Referencia do Terraform MCP Server](https://developer.hashicorp.com/terraform/mcp-server/reference)
-- [Docker run](https://docs.docker.com/engine/reference/run/)
+## Como instalar e rodar MCP com Node.js (o mínimo necessário)
 
-## Fluxo pratico que funciona no dia a dia
+Se você quiser criar ou testar um MCP sem Docker, normalmente precisa de:
 
-Um fluxo simples e realista para squads de plataforma:
+- Node.js LTS (18+ ou 20+)
+- npm, pnpm ou yarn
+- um cliente MCP (editor, agente, CLI, ou o Inspector)
+
+Exemplo de bootstrap rapido com Node:
+
+\`\`\`bash
+mkdir meu-mcp-node && cd meu-mcp-node
+npm init -y
+npm install @modelcontextprotocol/xxxx
+\`\`\`
+
+Estrutura mínima comum:
+
+- \`package.json\`
+- \`server.ts\`
+
+Exemplo mínimo de servidor (conceitual):
+
+\`\`\`ts
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+
+const server = new Server(
+  { name: "meu-mcp", version: "0.1.0" },
+  { capabilities: { tools: {} } }
+);
+
+// Registrar tools aqui (status, healthcheck, consultas etc.)
+\`\`\`
+
+Execução típica em desenvolvimento:
+
+\`\`\`bash
+npx tsx server.ts
+\`\`\`
+
+No cliente MCP, configure esse servidor para rodar via stdio.
+
+- criar um servidor MCP em TypeScript/JavaScript
+- expor tools (ex.: consultar status, buscar docs, executar validações)
+- rodar por stdio para o cliente consumir
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/04.png)
+
+Para testar localmente, muita gente usa o [MCP Inspector](https://github.com/modelcontextprotocol/inspector).
+
+Se a equipe usa Docker em tudo, a abordagem mais estável é empacotar também o MCP Node em container para padronizar runtime.
+
+## Troubleshooting rápido
+
+Quando estou com erro, normalmente eu peço ajuda para o agent corrigir mesmo.
+
+Exemplo de configuracao MCP (Terraform MCP Server via Docker/stdio):
+
+\`\`\`json
+"io.github.hashicorp/terraform-mcp-server": {
+  "type": "stdio",
+  "command": "docker",
+  "args": [
+    "run",
+    "-i",
+    "--rm",
+    "-e",
+    "TFE_ADDRESS",
+    "-e",
+    "TFE_TOKEN",
+    "-e",
+    "ENABLE_TF_OPERATIONS",
+    "hashicorp/terraform-mcp-server:0.4.0"
+  ],
+  "env": {
+    "TFE_ADDRESS": "\${input:TFE_ADDRESS}",
+    "TFE_TOKEN": "\${input:TFE_TOKEN}",
+    "ENABLE_TF_OPERATIONS": "\${input:ENABLE_TF_OPERATIONS}"
+  },
+  "gallery": "https://api.mcp.github.com",
+  "version": "0.4.0"
+}
+\`\`\`
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/03.png)
+
+## Fluxo prático
 
 1. subir o servidor MCP em container
-2. conectar o cliente MCP (editor, agente ou automacao)
-3. validar uma consulta de discovery (provider/modulo)
+2. conectar o cliente MCP (editor, agente ou automação)
+3. validar uma consulta de discovery (provider/módulo)
 4. validar uma consulta operacional (workspace/run/plan)
-5. documentar o playbook no repo para o time repetir
 
-Quando isso entra no ritmo semanal, voce ganha previsibilidade.
+## Guardrails que você não deve ignorar
 
-## Guardrails que voce nao deve ignorar
+Se o servidor tiver acesso a ambientes reais, trate como componente crítico:
 
-Se o servidor tiver acesso a ambientes reais, trate como componente critico:
-
-- use credenciais com privilegio minimo
-- evite segredo em variavel solta no container
-- defina limites claros para operacoes permitidas
+- use credenciais com privilégio mínimo
+- evite segredo em variável solta no container
+- defina limites claros para operações permitidas
 - habilite logs suficientes para auditoria e troubleshooting
-- separe bem o que e dev, homolog e prod
+- separe bem o que é dev, homolog e prod
 
-MCP acelera muito, mas sem guardrail ele tambem acelera erro.
+MCP acelera muito, mas sem guardrail ele também acelera o caos!
 
-## Quando vale usar (e quando nao vale)
+Se quiser aprofundar, estes dois cursos da Anthropic são ótimos pontos de partida:
 
-Faz sentido quando:
+- [Introduction to Model Context Protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol)
+- [Model Context Protocol Advanced Topics](https://anthropic.skilljar.com/model-context-protocol-advanced-topics)
 
-- sua equipe consulta muito Registry e estado de workspace
-- voce quer padronizar operacao entre pessoas e ambientes
-- existe demanda real por automacao assistida por IA
-
-Talvez nao faca sentido agora quando:
-
-- o time ainda nao tem maturidade minima em Terraform
-- nao existe processo claro de revisao de mudanca
-- o problema principal hoje e organizacao basica de IaC
-
-Nesse caso, primeiro arrume fundacao (modulos, convencoes, pipelines), depois coloque MCP.
-
-## Fechando
-
-Para DevOps e Platform Engineer, o valor dessa combinacao e pragmatico:
+Resumo:
 
 - **Terraform** continua sendo o motor declarativo
 - **MCP** organiza como ferramentas e agentes consomem contexto
 - **Docker** entrega repetibilidade para rodar isso sem drama
 
-Se a meta e reduzir friccao operacional e ganhar velocidade com controle, Terraform MCP Server com Docker e um passo bastante util.
+Se a meta é reduzir erros operacionais e ganhar velocidade com controle, Terraform MCP Server com Docker é um passo bastante útil.
   `,
   date: "2026-06-27",
   category: "Artigos",
-  readTime: "9 min de leitura",
+  readTime: "12 min de leitura",
   tags: ["Terraform", "Docker", "DevOps", "Platform Engineering", "MCP"]
 };

@@ -3,7 +3,7 @@ import { Article } from '../types';
 export const article: Article = {
   slug: "platform-engineering-policy-as-code",
   title: "Platform Engineering e Policy-as-Code que aceleram times",
-  image: "xxx",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/1.png",
   excerpt: "Uma visão agnóstica de cloud sobre como Platform Engineering e Policy-as-Code reduzem carga cognitiva, aumentam segurança e aceleram entregas.",
   content: `
 

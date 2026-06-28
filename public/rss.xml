@@ -11,11 +11,11 @@
     <ttl>60</ttl>
     <atom:link href="https://www.orafaelferreira.com/rss.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Terraform MCP Server com Docker na vida real de DevOps e Platform Engineer</title>
+      <title>MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade</title>
       <link>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</link>
       <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</guid>
       <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
-      <description>Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting, governança e produtividade com menos atrito.</description>
+      <description>Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting e produtividade</description>
       <category>Artigos</category>
     </item>
     <item>
@@ -58,6 +58,7 @@
       <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
       <description>Uma visão agnóstica de cloud sobre como Platform Engineering e Policy-as-Code reduzem carga cognitiva, aumentam segurança e aceleram entregas.</description>
       <category>Artigos</category>
+      <enclosure url="https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/1.png" type="image/png" />
     </item>
     <item>
       <title>Arquitetura Baseline do Zero: App Service com Application Gateway, Private Link e Azure DNS</title>
