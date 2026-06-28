@@ -9,31 +9,46 @@ export const article: Article = {
 
 O [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) apareceu para padronizar a forma como clientes inteligentes conversam com ferramentas e fontes de contexto. Em vez de cada integração inventar o próprio formato, o MCP cria um contrato comum entre quem pede informação e quem expõe capacidades.
 
-Neste artigo, o foco é o [Terraform MCP Server](https://developer.hashicorp.com/terraform/mcp-server), implementação oficial do protocolo para Terraform, e como o [Docker](https://docs.docker.com/) entra como camada prática de distribuição, isolamento e repetibilidade.
+Neste artigo, vamos focar no [Terraform MCP Server](https://developer.hashicorp.com/terraform/mcp-server) e saber como utilizá-lo no dia a dia, e como o [Docker](https://docs.docker.com/) entra na parada prática de distribuição, isolamento.
 
-## O que é MCP
+## Primeiramente, o que é MCP
 
-De forma simples, MCP é um protocolo para expor contexto e ferramentas de maneira previsível.
+De forma simples, MCP é um protocolo para expor contexto e ferramentas de maneira previsível. Ele faz sentido quando você quer que um cliente, agente ou editor consiga:
 
-Ele faz sentido quando você quer que um cliente, agente ou editor consiga:
-
-- descobrir ferramentas disponíveis
-- consultar estado ou metadados
-- executar ações com limites claros
+- descobrir ferramentas/capacidades disponíveis
+- consultar estado, metadados/informações
+- executar ações com limites
 - manter integração padronizada entre ambientes
 
-Em um fluxo de infraestrutura, isso abre espaço para automação assistida por IA sem amarrar tudo a uma integração proprietária.
+Em um fluxo de infraestrutura, isso abre espaço para automações com IA sem amarrar tudo a uma integração proprietária.
 
-## Onde o Terraform entra
+O [Terraform](https://developer.hashicorp.com/terraform) continua sendo a base de infraestrutura como código, e creio que irá ser por um bom tempo.
 
-O [Terraform](https://developer.hashicorp.com/terraform) continua sendo a base de infraestrutura como código.
+## O que o Terraform MCP Server faz na prática
 
-Ele serve para descrever, planejar e evoluir recursos de forma declarativa, com foco em previsibilidade. No ecossistema MCP, a ideia é expor parte desse contexto para que um cliente consiga consultar informações úteis sobre a infraestrutura e apoiar tarefas como:
+No contexto do MCP, o Terraform MCP Server expõe tools com resposta estruturada para o cliente consultar documentação, estado e metadados do ecossistema Terraform. Em vez de depender de texto livre, o cliente chama operações específicas e recebe dados previsíveis.
 
-- validação de mudanças
-- inspeção de estado
-- apoio ao planejamento
-- revisão de impacto antes de aplicar
+Os principais grupos de tools são:
+
+- **Registry (público):** pesquisa e leitura de providers, módulos e policies do Terraform Registry.
+- **Registry privado:** pesquisa e leitura de módulos e providers privados da organização.
+- **Terraform (HCP Terraform/Terraform Enterprise):** leitura de organizações, projetos, workspaces, runs, planos e logs, além de operações administrativas quando habilitadas.
+
+Exemplos reais de tools úteis:
+
+- **search_providers** e **get_provider_details**
+- **search_modules** e **get_module_details**
+- **get_latest_provider_version** e **get_latest_module_version**
+- **list_workspaces** e **get_workspace_details**
+- **get_plan_json_output** e **get_run_details**
+
+Por que usar no dia a dia:
+
+- padroniza consultas de IaC com menos ambiguidade
+- acelera a descoberta de módulos e providers corretos antes de codar
+- ajuda na revisão de impacto com dados de plan, run e logs
+- reduz trabalho manual em tarefas repetitivas de workspace e variáveis
+- melhora governança, já que operações destrutivas ficam desabilitadas por padrão e exigem habilitação explícita
 
 ## Por que usar Docker
 
@@ -111,11 +126,7 @@ O fluxo típico é:
 
 Esse padrão é útil em editores, agentes locais e automações internas.
 
-## O que observar em produção
-
-O ponto mais importante não é só subir o container. É saber como ele vai lidar com credenciais, estado e rede.
-
-Fique atento a:
+O ponto mais importante não é só subir o container. É saber como ele vai lidar com credenciais, estado e rede. Fique atento a:
 
 - acesso ao backend de state
 - credenciais de cloud ou de provider
