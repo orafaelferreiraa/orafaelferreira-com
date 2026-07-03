@@ -12,6 +12,8 @@ export const article: Article = {
 
 - MCP cria um padrão para clientes de IA se conectarem a ferramentas e dados externos.
 - Terraform MCP Server é uma forma prática de trazer contexto de providers, módulos, runs e plans para um workflow mais previsível.
+- Agentes de codificação trabalham em um loop de execução (análise, ação e observação), e dá para guiar esse loop com engenharia.
+- MCP e skills se completam: o MCP conecta o agente a dados atuais e as skills carregam as boas práticas para orientar cada passo.
 
 O [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) cria um formato padrão para um cliente consultar ferramentas e dados sem ficar adivinhando formato ou fazendo scraping de texto.
 
@@ -34,6 +36,38 @@ Exemplos simples:
 - um agente conecta no MCP do Terraform para ler módulos e providers
 - o mesmo agente conecta no MCP de observabilidade para investigar incidente
 - depois conecta no MCP de wiki interna para buscar padrões do time
+
+## Como o agente de IA realmente trabalha: o loop de execução
+
+Antes de plugar qualquer MCP, vale entender como um agente de codificação (Claude Code, GitHub Copilot, Codex e afins) executa uma tarefa. Ele não resolve tudo de uma vez: trabalha em um **loop de execução**.
+
+O ciclo se repete mais ou menos assim:
+
+- **Análise** — o agente lê a tarefa (ou a especificação) e decide o próximo passo
+- **Ação** — chama uma ferramenta: ler um arquivo, rodar um comando ou consultar um MCP
+- **Observação** — lê o resultado daquela ação
+- **Repetição** — volta para a análise e segue até concluir a tarefa
+
+Quando você fica trocando prompt atrás de prompt no chat, corrigindo na tentativa e erro, o agente decide sozinho cada passo, sem trilho. É o famoso "vibe coding": até funciona, mas rende pouco e erra bastante.
+
+A alternativa é aplicar engenharia a esse ciclo — guiar o loop em vez de só reagir a ele. Para isso existem dois controles complementares: **skills** (direção) e **MCPs** (ferramentas).
+
+## Skills vs MCPs: dois controles que se completam
+
+É fácil confundir os dois, mas cada um resolve um problema diferente:
+
+- **MCP é o encanamento.** Dá ao agente *acesso* a ferramentas e dados externos — aqui, a documentação viva de providers e módulos do Terraform. Responde a "o que o agente consegue alcançar?".
+- **Skill é o livro-texto.** Empacota *conhecimento e boas práticas* que o agente carrega sob demanda: workflows, convenções e guardrails. Responde a "como o agente deve trabalhar?".
+
+A própria [HashiCorp resume bem](https://www.hashicorp.com/en/blog/introducing-hashicorp-agent-skills): o MCP é o "cano" que conecta dados à IA, enquanto as [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) são os "livros-texto" de conhecimento — e o melhor resultado vem de usar os dois juntos.
+
+Na prática, com Terraform:
+
+- **só com MCP:** o agente consulta a versão atual do provider e evita gerar código preso a uma versão antiga do treinamento
+- **só com skill:** o agente segue o style guide, escreve testes e revisa segurança, mas sem dados atualizados
+- **com os dois:** dados atuais e boas práticas dentro do mesmo loop
+
+Skills são um [formato aberto](https://agentskills.io/home) criado pela Anthropic: cada uma é uma pasta com um arquivo \`SKILL.md\` que descreve, em linguagem natural, quando e como o agente deve agir. Diferente de um prompt pontual, a skill é reutilizável e só entra em contexto quando é relevante.
 
 ## No dia a dia
 
@@ -78,6 +112,39 @@ Para ecossistemas grandes, vale acompanhar registries e catálogos de vendors:
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/mcpdocker.png) 
 - [Microsoft MCP Registry](https://github.com/mcp?utm_source=vscode-website&utm_campaign=mcp-registry-server-launch-2025) (oficial Microsoft)
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/MCPRegistry.png) 
+## Skills oficiais de Terraform da HashiCorp
+
+Além do MCP Server, a HashiCorp publicou uma biblioteca aberta de skills: o [HashiCorp Agent Skills](https://www.hashicorp.com/en/blog/introducing-hashicorp-agent-skills), disponível no repositório [hashicorp/agent-skills](https://github.com/hashicorp/agent-skills).
+
+As skills de Terraform ajudam o agente a:
+
+- **gerar código no style guide** oficial da HashiCorp, em vez de convenções aleatórias encontradas na internet
+- **escrever e rodar testes** com o framework nativo de testes do Terraform
+- **orquestrar com Terraform Stacks** cenários multi-ambiente e multi-região
+- **desenvolver e manter providers** seguindo o plugin framework (schema, ciclo de vida e breaking changes)
+- **refatorar módulos**, quebrando configurações monolíticas em módulos reutilizáveis
+
+Instalar é rápido. Para todas as skills, via npx:
+
+\`\`\`bash
+npx skills add hashicorp/agent-skills
+\`\`\`
+
+Ou uma skill específica:
+
+\`\`\`bash
+npx skills add hashicorp/agent-skills/terraform/code-generation/skills/terraform-style-guide
+\`\`\`
+
+No Claude Code, dá para instalar como plugin:
+
+\`\`\`bash
+claude plugin marketplace add hashicorp/agent-skills
+claude plugin install terraform-code-generation@hashicorp
+\`\`\`
+
+O ganho reforça o tema deste artigo: a skill entrega as boas práticas e o MCP entrega os dados atuais. Juntos, reduzem alucinação e mantêm o código dentro do padrão.
+
 ## Onde o Docker entra de verdade
 
 Reduzir variação de ambiente. Com [Docker](https://docs.docker.com/), você empacota o servidor MCP de forma reproduzível para:
@@ -205,7 +272,7 @@ Exemplo de configuracao MCP (Terraform MCP Server via Docker/stdio):
     "TFE_TOKEN",
     "-e",
     "ENABLE_TF_OPERATIONS",
-    "hashicorp/terraform-mcp-server:0.4.0"
+    "hashicorp/terraform-mcp-server:1.0.0"
   ],
   "env": {
     "TFE_ADDRESS": "\${input:TFE_ADDRESS}",
@@ -213,7 +280,7 @@ Exemplo de configuracao MCP (Terraform MCP Server via Docker/stdio):
     "ENABLE_TF_OPERATIONS": "\${input:ENABLE_TF_OPERATIONS}"
   },
   "gallery": "https://api.mcp.github.com",
-  "version": "0.4.0"
+  "version": "1.0.0"
 }
 \`\`\`
 
@@ -246,13 +313,14 @@ Se quiser aprofundar, estes dois cursos da Anthropic são ótimos pontos de part
 Resumo:
 
 - **Terraform** continua sendo o motor declarativo
-- **MCP** organiza como ferramentas e agentes consomem contexto
+- **MCP** organiza como ferramentas e agentes consomem contexto atualizado
+- **Skills** carregam as boas práticas que guiam o agente no loop de execução
 - **Docker** entrega repetibilidade para rodar isso sem drama
 
-Se a meta é reduzir erros operacionais e ganhar velocidade com controle, Terraform MCP Server com Docker é um passo bastante útil.
+Se a meta é reduzir erros operacionais e ganhar velocidade com controle, combinar Terraform MCP Server, skills e Docker é um passo bastante útil.
   `,
   date: "2026-06-27",
   category: "Artigos",
-  readTime: "12 min de leitura",
-  tags: ["Terraform", "Docker", "DevOps", "Platform Engineering", "MCP"]
+  readTime: "15 min de leitura",
+  tags: ["Terraform", "Docker", "DevOps", "Platform Engineering", "MCP", "IA"]
 };
