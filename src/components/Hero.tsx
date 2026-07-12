@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Linkedin, Github, Youtube, Music, Instagram, ChevronDown } from "lucide-react";
+import { Music, ChevronDown } from "lucide-react";
+import { FaLinkedin, FaGithub, FaYoutube, FaInstagram } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 import heroImage from "@/assets/hero-image.jpg";
@@ -19,17 +20,17 @@ const Hero = () => {
   }, []);
   
   const socialLinks = [{
-    icon: Linkedin,
+    icon: FaLinkedin,
     href: "https://www.linkedin.com/in/orafaelferreiraa/",
     label: "LinkedIn",
     color: "text-blue-500"
   }, {
-    icon: Github,
+    icon: FaGithub,
     href: "https://github.com/orafaelferreiraa",
     label: "GitHub",
     color: "text-foreground"
   }, {
-    icon: Youtube,
+    icon: FaYoutube,
     href: "https://www.youtube.com/@LowOps",
     label: "YouTube",
     color: "text-red-500"
@@ -39,7 +40,7 @@ const Hero = () => {
     label: "LowOpsCast",
     color: "text-green-500"
   }, {
-    icon: Instagram,
+    icon: FaInstagram,
     href: "https://www.instagram.com/orafaelferreira1/",
     label: "Instagram",
     color: "text-pink-500"

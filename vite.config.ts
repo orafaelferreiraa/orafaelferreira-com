@@ -20,11 +20,25 @@ export default defineConfig(({ mode }) => ({
   build: {
     chunkSizeWarningLimit: 1200,
     rollupOptions: {
+      // Rolldown's [PLUGIN_TIMINGS] advisory fires whenever the Rust-side build
+      // exceeds ~3s, which happens here because the repo lives on a OneDrive-synced
+      // /mnt/c path where resolve/asset/css/html I/O is slow. The reported numbers
+      // are accumulated across concurrent hooks (overestimated), not a real problem,
+      // so we silence this one diagnostic to keep build output clean.
+      checks: { pluginTimings: false },
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
-          ui: ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tabs'],
+        // Vite 8 (Rolldown) requires manualChunks as a function, not an object.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+          if (/node_modules\/(react|react-dom|react-router|react-router-dom|@remix-run\/router|scheduler)\//.test(id)) {
+            return 'vendor';
+          }
+          if (/node_modules\/(i18next|react-i18next|i18next-browser-languagedetector)\//.test(id)) {
+            return 'i18n';
+          }
+          if (/node_modules\/@radix-ui\//.test(id)) {
+            return 'ui';
+          }
         },
       },
     },

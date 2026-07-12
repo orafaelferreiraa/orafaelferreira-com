@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.ts";
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -106,7 +105,7 @@ All colors MUST be HSL.
 /* Estilos para artigos com código */
 @layer utilities {
   .article-content pre {
-    @apply !bg-slate-900 !text-slate-100;
+    @apply bg-slate-900! text-slate-100!;
     margin: 0 !important;
     padding: 1rem !important;
   }
@@ -119,7 +118,7 @@ All colors MUST be HSL.
   }
   
   .article-content code {
-    @apply !bg-slate-800 !text-slate-100;
+    @apply bg-slate-800! text-slate-100!;
   }
   
   .article-content h4 {

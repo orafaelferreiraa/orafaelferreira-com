@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Calendar, ExternalLink, FileText, Github, Globe, Linkedin, MapPin, Presentation, Radio, Youtube } from "lucide-react";
+import { Calendar, ExternalLink, FileText, Globe, MapPin, Presentation, Radio } from "lucide-react";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
@@ -654,7 +655,7 @@ const Talks = () => {
             {talk.videoUrl && (
               <Button variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
                 <a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">
-                  <Youtube className="w-3.5 h-3.5 mr-1.5" />
+                  <FaYoutube className="w-3.5 h-3.5 mr-1.5" />
                   {t("talks.watchVideo")}
                 </a>
               </Button>
@@ -663,7 +664,7 @@ const Talks = () => {
             {talk.linkedinUrl && (
               <Button variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
                 <a href={talk.linkedinUrl} target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-3.5 h-3.5 mr-1.5" />
+                  <FaLinkedin className="w-3.5 h-3.5 mr-1.5" />
                   {t("talks.seeLinkedIn")}
                 </a>
               </Button>
@@ -681,7 +682,7 @@ const Talks = () => {
             {talk.repositories?.map((repository) => (
               <Button key={repository.url} variant="outline" size="sm" asChild className="h-8 rounded-lg border-primary/15 bg-primary/5 hover:bg-primary/10 hover:border-primary/30 text-xs">
                 <a href={repository.url} target="_blank" rel="noopener noreferrer">
-                  <Github className="w-3.5 h-3.5 mr-1.5" />
+                  <FaGithub className="w-3.5 h-3.5 mr-1.5" />
                   {repository.label}
                 </a>
               </Button>

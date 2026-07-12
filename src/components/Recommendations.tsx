@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Play, Headphones, ArrowUpRight, Star } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -37,7 +38,6 @@ const youtubeChannels: RecommendationItem[] = [
 
 const spotifyPodcasts: RecommendationItem[] = [
   { name: "LowOpsCast", url: "https://open.spotify.com/show/0U4kcZT2Cwn4CqQGg4Ywcj?si=1d9848b7fedd4059", highlight: true },
-  { name: "Kubicast", url: "https://open.spotify.com/show/7x2OHOUAaOnTjlSwBHNAjN?si=1c30528ecfd9400f" },
   { name: "IA Sob Controle", url: "https://open.spotify.com/show/5xLCMHJ6eGWzdu8JaIDkuP?si=c83cf258eb0847b8" },
   { name: "Hipster Ponto Tech", url: "https://open.spotify.com/show/2p0Vx75OmfsXktyLBuLuSf?si=fbce32599acd44c3" },
   { name: "Dev Sem Fronteiras", url: "https://open.spotify.com/show/3WsvUbTh7M1Rsw6lOGwYtk?si=9c76e2b7a02b43e9" },
@@ -46,6 +46,14 @@ const spotifyPodcasts: RecommendationItem[] = [
   { name: "Tech Lead Journal", url: "https://open.spotify.com/show/5suS91H6OfqDt14ZsOD4RV?si=8f4e0ac6288349d32" },
   { name: "PrimoCast", url: "https://open.spotify.com/show/2gCj9YG9tjMexhS4pIlRHo?si=4532e82b82bc4744" },
   { name: "Como Voce fez isso?", url: "https://open.spotify.com/show/1QJgd5aW274UcsHAShJwSE?si=00d204329ef74598" }
+];
+
+const instagramProfiles: RecommendationItem[] = [
+  { name: "KodeKloud", url: "https://www.instagram.com/kodekloud/" },
+  { name: "Fabricio Veronez", url: "https://www.instagram.com/fabricioveronez/" },
+  { name: "TrilhaInfo", url: "https://www.instagram.com/trilhainfo/" },
+  { name: "Full Cycle", url: "https://www.instagram.com/devfullcycle/" },
+  { name: "Pedro Nauck", url: "https://www.instagram.com/pedronauck/" }
 ];
 
 interface CategorySection {
@@ -77,6 +85,13 @@ const categories: CategorySection[] = [
     icon: Headphones,
     gradient: "from-green-500 to-emerald-500",
     items: spotifyPodcasts,
+  },
+  {
+    id: "instagram",
+    titleKey: "recommendations.instagramProfiles",
+    icon: FaInstagram,
+    gradient: "from-purple-500 via-pink-500 to-orange-500",
+    items: instagramProfiles,
   },
 ];
 

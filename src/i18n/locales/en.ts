@@ -376,10 +376,11 @@ export default {
     },
     recommendations: {
       title: "Recommendations",
-      description: "On this page, I share with you some of the online course platforms, YouTube channels, and podcasts that have significantly contributed to my personal and professional learning and development.",
+      description: "On this page, I share with you some of the online course platforms, YouTube channels, podcasts, and Instagram profiles that have significantly contributed to my personal and professional learning and development.",
       trainingPlatforms: "Online Training Platforms",
       youtubeChannels: "YouTube Channels",
-      spotifyPodcasts: "Spotify Podcasts"
+      spotifyPodcasts: "Spotify Podcasts",
+      instagramProfiles: "Instagram Profiles"
     },
     blog: {
       title: "Articles/Posts",

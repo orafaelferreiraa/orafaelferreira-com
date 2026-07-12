@@ -392,10 +392,11 @@ export default {
     },
     recommendations: {
       title: "Recomendações",
-      description: "Nesta página, compartilho com vocês algumas das plataformas de cursos online, canais do YouTube e podcasts que têm contribuído significativamente para o meu aprendizado e desenvolvimento pessoal e profissional.",
+      description: "Nesta página, compartilho com vocês algumas das plataformas de cursos online, canais do YouTube, podcasts e perfis no Instagram que têm contribuído significativamente para o meu aprendizado e desenvolvimento pessoal e profissional.",
       trainingPlatforms: "Plataformas de Treinamentos Online",
       youtubeChannels: "Canais do YouTube",
-      spotifyPodcasts: "Podcasts no Spotify"
+      spotifyPodcasts: "Podcasts no Spotify",
+      instagramProfiles: "Perfis no Instagram"
     },
     blog: {
       title: "Artigos/Posts",
