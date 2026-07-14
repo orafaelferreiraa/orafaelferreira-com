@@ -21,17 +21,7 @@ interface Talk {
 }
 const Talks = () => {
   const upcomingTalks: Talk[] = [
-    {
-      title: "Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU",
-      event: "DevOpsDays Curitiba",
-      date: "2026-08-22",
-      location: "Auditório Eny Caldeira do Campus Rebouças da UFPR",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
-      siteUrl: "https://devopsdays.org/events/2026-curitiba/welcome/", 
-      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
-      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
-      },
+    
     {
       title: "Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA",
       event: "TDC 2026 Florianópolis - Trilha Software Security",
@@ -39,6 +29,17 @@ const Talks = () => {
       location: "CentroSul - Florianópolis",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/00.png",
       siteUrl: "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security", 
+      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
+      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
+      },
+      {
+      title: "Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU",
+      event: "DevOpsDays Curitiba",
+      date: "2026-08-22",
+      location: "Auditório Eny Caldeira do Campus Rebouças da UFPR",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
+      siteUrl: "https://devopsdays.org/events/2026-curitiba/welcome/", 
       //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
