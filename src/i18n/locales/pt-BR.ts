@@ -102,7 +102,7 @@ export default {
     awards: {
       title: "Premiações",
       subtitle: "Cinco programas, um propósito: enaltecer quem compartilha conhecimento e fortalece a comunidade tech.",
-      category: "Categoria",
+      category: "Área de Tecnologia",
       yearJoined: "Ano de ingresso",
       mvpOffers: "O que o MVP oferece:",
       whyChosen: "Por que fui escolhido:",
@@ -121,7 +121,7 @@ export default {
       items: {
         mvp: {
           title: "Microsoft MVP Azure",
-          category: "Azure – Compute Infrastructure",
+          category: "Azure Compute Infrastructure, DevOps",
           description: "O Microsoft MVP Award reconhece profissionais que compartilham expertise com a comunidade e contribuem para o ecossistema Microsoft.",
           benefits: [
             "Acesso antecipado a builds e roadmaps do Azure",

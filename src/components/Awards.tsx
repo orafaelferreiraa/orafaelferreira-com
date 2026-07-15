@@ -67,12 +67,22 @@ const Awards = () => {
                         <span>{award.emoji}</span>
                         <span>{title}</span>
                       </CardTitle>
-                      <CardDescription className="text-base">
-                        {showCategory && <>
-                          <strong>{t("awards.category")}:</strong> {category}
-                          <br />
-                        </>}
-                        <strong>{t("awards.yearJoined")}:</strong> {award.year}
+                      <CardDescription className="text-base space-y-2">
+                        {showCategory && (
+                          <span className="flex flex-wrap gap-1.5 mt-1">
+                            {category.split(', ').map((area) => (
+                              <span
+                                key={area}
+                                className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
+                              >
+                                {area}
+                              </span>
+                            ))}
+                          </span>
+                        )}
+                        <span className="block">
+                          <strong>{t("awards.yearJoined")}:</strong> {award.year}
+                        </span>
                       </CardDescription>
                     </div>
                   </div>
