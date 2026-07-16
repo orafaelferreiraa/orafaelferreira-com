@@ -15,6 +15,9 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2026",
   certificates: [{
+       title: "2026 Microsoft Most Valuable Professional (MVP)",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-07-MVP.pdf"
+  },{
        title: "Introduction to Claude Cowork",
     link: "https://verify.skilljar.com/c/yu72vcp6qbh9"
   },{
