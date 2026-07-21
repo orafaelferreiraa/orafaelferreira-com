@@ -19,49 +19,49 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-07-MVP.pdf"
   },{
        title: "Introduction to Claude Cowork",
-    link: "https://verify.skilljar.com/c/yu72vcp6qbh9"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Introduction.to.Claude.Cowork.pdf"
   },{
        title: "Claude Code in Action",
-    link: "https://verify.skilljar.com/c/iusrbjobvwca"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Claude.Code.in.Action.pdf"
   },{
        title: "Model Context Protocol: Advanced Topics",
-    link: "https://verify.skilljar.com/c/mdqgnkkghe2r"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Model.Context.Protocol.Advanced.Topics.pdf"
   },{
        title: "Claude Platform 101",
-    link: "https://verify.skilljar.com/c/mdqgnkkghe2r"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Claude.Platform.101.pdf"
   },{
        title: "AI Fluency for educators",
-    link: "https://verify.skilljar.com/c/xxw3gnxsmy6i"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-AI.Fluency.for.educators.pdf"
   },{
        title: "AI Fluency for students",
-    link: "https://verify.skilljar.com/c/x229iwszrm2x"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-AI.Fluency.for.students.pdf"
   },{
        title: "AI Fluency: Framework & Foundations",
-    link: "https://verify.skilljar.com/c/i9kz84hxyuft"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-AI.Fluency.Framework.%26.Foundations.pdf"
   },{
        title: "AI Capabilities and Limitations",
-    link: "https://verify.skilljar.com/c/cjygngqtj9v6"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-AI.Capabilities.and.Limitations.pdf"
   },{
        title: "Introduction to subagents",
-    link: "https://verify.skilljar.com/c/ywrj3uu7es85"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Introduction.to.subagents.pdf"
   },{
        title: "Introduction to Model Context Protocol",
-    link: "https://verify.skilljar.com/c/4v598zv52sji"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Introduction.to.Model.Context.Protocol.pdf"
   },{
        title: "Introduction to agent skills",
-    link: "https://verify.skilljar.com/c/qqvgak4hvcby"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Introduction.to.agent.skills.pdf"
   },{
        title: "Claude Code 101",
-    link: "https://verify.skilljar.com/c/xa5jgn9oijgo"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Claude.Code.101.pdf"
   },{
        title: "Claude 101",
-    link: "https://verify.skilljar.com/c/ist4mhfrcwpf"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Claude.101.pdf"
   },{
        title: "Azure Kubernetes Service - Orquestração de Containers no AKS",
-    link: "https://www.udemy.com/certificate/UC-c0cacc26-2c82-4e27-91b8-f6ad173478db"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Azure.Kubernetes.Service.-.Orquestra%C3%A7%C3%A3o.de.Containers.no.AKS.pdf"
   },{
        title: "Onboarding: criando cursos na Alura",
-    link: "https://cursos.alura.com.br/user/orafaelferreiraa/course/onboarding-novos-instrutores/certificate"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-Onboarding.criando.cursos.na.Alura.pdf"
   }]
 }, {
   year: "2025",
@@ -76,7 +76,7 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-11-UdemyLabs-CertifiedKubernetesAdministratorwithPracticeTests.pdf"
   }, {
     title: "Certified Kubernetes Administrator (CKA) with Practice Tests",
-    link: "https://www.udemy.com/certificate/UC-578f7e1a-bffb-47e8-8070-f1fc7c461990/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-Certified.Kubernetes.Administrator.(CKA).with.Practice.Tests.pdf"
   }, {
     title: "Palestrante MVP CONF 2025 Brasil",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-10-PalestranteMVPCONF2025Brasil.pdf"
@@ -85,7 +85,7 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-09-PalestranteMVPCONF-Curitiba.pdf"
   }, {
     title: "AZ-700 - Projetar e Implementar Soluções de Rede do Azure",
-    link: "https://www.udemy.com/certificate/UC-49bfc006-aeb5-476d-8083-229aac73cd8f/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-AZ-700.-.Projetar.e.Implementar.Solu%C3%A7%C3%B5es.de.Rede.do.Azure.pdf"
   }, {
     title: "Palestrante Trilha ARQUITETURA CLOUD - TDC 2025 SÃO PAULO",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-09-PalestranteTrilhaARQUITETURACLOUD-TDC2025S%C3%83OPAULO.pdf"
@@ -106,10 +106,10 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-07-TerrafomAssociate.png"
   }, {
     title: "2025 Microsoft Most Valuable Professional (MVP)",
-    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-07-MostValuableProfessionalCertificate.pdf.pdf"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-07-MostValuableProfessionalCertificate.pdf"
   }, {
     title: "Módulo Inteligência Artificial - DevOpsPro",
-    link: "https://certificado.devopspro.com.br/certificado?code=9253b05f-f04d-4435-8621-3237c94d2f3d"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-M%C3%B3dulo.Intelig%C3%AAncia.Artificial.-.DevOpsPro.pdf"
   }, {
     title: "DevOps Institute Ambassadors",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf"
@@ -136,13 +136,10 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-09-Certification-FLOW-AI-EXPERT.pdf"
   }, {
     title: "GitHub Foundations",
-    link: "https://www.credly.com/badges/da03d2a7-58d7-49cc-af37-37cc055fb1ea/public_url"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-GitHub.Foundations.pdf"
   }, {
     title: "2024 Microsoft Most Valuable Professional (MVP)",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-09-MostValuableProfessionalCertificate.pdf"
-  }, {
-    title: "Participação Codecon-Summit-2024",
-    link: "https://eventos.codecon.dev/documentos/imprimir?i=18876251.82968047.6.8.88762518296804768&cc=F48AA107-91D5-4DFB-8918-4F252C79251D"
   }, {
     title: "Instrutor-DP-900",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-09-Instrutor-dp-900.jpeg"
@@ -169,7 +166,7 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-06-Instrutor-az-900.pdf"
   }, {
     title: "Uncomplicating Soft Skills - LINUXtips",
-    link: "https://www.credential.net/29a3afb4-02bb-4b99-b112-b6c12d60f1b9#gs.86vovj"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-Uncomplicating.Soft.Skills.-.LINUXtips.pdf"
   }, {
     title: "Sustainability Transformation With AWS - AWS",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-03-SustainabilityTransformationwithAWS.pdf"
@@ -178,7 +175,7 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-02-Jornada.ESGCarreira.em.Sustentabilidade.pdf"
   }, {
     title: "Green Software for Practitioners LFC131 - The Linux Foundation",
-    link: "https://www.credly.com/badges/11e2e57b-47a9-48ca-af23-41cbb45c01ef/public_url"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2024-Green.Software.for.Practitioners.LFC131.-.The.Linux.Foundation.pdf"
   }]
 }, {
   year: "2023",
@@ -187,31 +184,31 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-10-codecon.feature.pdf"
   }, {
     title: "Terraform no Azure - Infraestrutura como Código e DevOps - Udemy",
-    link: "https://www.udemy.com/certificate/UC-188b512a-2690-40ee-a2e9-6a4c96f8090e/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Terraform.no.Azure.-.Infraestrutura.como.C%C3%B3digo.e.DevOps.-.Udemy.pdf"
   }, {
     title: "Certificação MS-900 - TFTEC",
-    link: "https://tftec.curseduca.pro/verify/Y2VydGlmaWNhdGVfNzZfMTcx"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Azure.-.Programa.de.Certifica%C3%A7%C3%A3o.AZ-900.-.TFTEC.pdf"
   }, {
     title: "Mentoria de Carreira e Performance - TFTEC",
-    link: "https://tftec.curseduca.pro/verify/Y2VydGlmaWNhdGVfNzZfMTc0/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Mentoria.de.Carreira.e.Performance.-.TFTEC.pdf"
   }, {
     title: "Trilha DevOps e SRE - TDC 2023 BUSINESS",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-09-Trilha.DevOps.SRE-TDC.2023.BUSINESS.pdf"
   }, {
     title: "Platform Engineer Immersive Experience - LINUXtips",
-    link: "https://www.credential.net/b4feadda-bc7a-4951-8790-ee914b96a498"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Platform.Engineer.Immersive.Experience.-.LINUXtips.pdf"
   }, {
     title: "Uncomplicating Prometheus - LINUXtips",
-    link: "https://www.credential.net/fcdb14d5-0f6d-4fa8-9464-28978e5d1e20"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Uncomplicating.Prometheus.-.LINUXtips.pdf"
   }, {
     title: "Uncomplicating AWS - LINUXtips",
-    link: "https://www.credential.net/5ffcf2a6-821b-424b-9516-f16303c950b0"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Uncomplicating.AWS.-.LINUXtips.pdf"
   }, {
     title: "Uncomplicating Gitlab - LINUXtips",
-    link: "https://www.credential.net/72e001a4-0060-4736-82ac-b86bd15494b4#gs.01ypty"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Uncomplicating.Gitlab.-.LINUXtips.pdf"
   }, {
     title: "Imersão DevOps & Cloud - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar/?cert=d575a80961a7cadea14cee922ff0eaca"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Imers%C3%A3o.DevOps.%26.Cloud.-.DevOpsPro.pdf"
   }, {
     title: "Trilha Cloud - TDC 2023 INNOVATION",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-06-Trilha.Cloud-TDC.2023.INNOVATION.pdf"
@@ -220,70 +217,67 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-06-Trilha.DevOps.SRE-TDC.2023.INNOVATION.pdf"
   }, {
     title: "Uncomplicating Vault - LINUXtips",
-    link: "https://www.credential.net/fed05764-0c24-4561-8d83-333b6ce2992c"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Uncomplicating.Vault.-.LINUXtips.pdf"
   }, {
     title: "FinOps Certified Practitioner",
-    link: "https://www.credly.com/badges/d77d284c-7992-4721-bc6f-e21df5183743/public_url"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-FinOps.Certified.Practitioner.pdf"
   }, {
     title: "Uncomplicating Terraform - LINUXtips",
-    link: "https://www.credential.net/8f101780-6520-4a93-8c88-866ff0aa65ed"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Uncomplicating.Terraform.-.LINUXtips.pdf"
   }, {
     title: "Platform Engineer Summit - LINUXtips",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-04-Platform.Engineer.Summit-LINUXtips.pdf"
   }, {
     title: "Oracle Cloud Infrastructure 2022 Certified Foundations Associate",
-    link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=365D1B70B834CA0B784AFB708251CE1BCEFF94359157DBAD207ECBA047C5D46E"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Oracle.Cloud.Infrastructure.2022.Certified.Foundations.Associate.pdf"
   }, {
     title: "Datadog 101 Site Reliability Engineer",
-    link: "https://learn.datadoghq.com/certificates/5vrddgjysf"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Datadog.101.Site.Reliability.Engineer.pdf"
   }, {
     title: "Módulo Terraform - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=9e2af090318c002073bfb337bac1e302"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Terraform.-.DevOpsPro.pdf"
   }, {
     title: "DevOps - Mão na Massa! - Udemy",
-    link: "https://www.udemy.com/certificate/UC-a142e93c-0cb6-438d-832f-436846859d8c/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-DevOps.-.M%C3%A3o.na.Massa!.-.Udemy.pdf"
   }, {
     title: "Descomplicando o Docker - 2021 - LINUXtips",
-    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-03-Descomplicando.Docker-2021-LINUXtips.pdf/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-03-Descomplicando.Docker-2021-LINUXtips.pdf"
   }, {
     title: "Desafio ArgoCD 101 - LINUXtips",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-03-Desafio.ArgoCD101-LINUXtips.pdf"
   }, {
     title: "Módulo Prometheus - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=c1359149f5ad5adcaebddac21b519bf9"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Prometheus.-.DevOpsPro.pdf"
   }, {
     title: "Módulo Jenkins - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=d523ef4c23da0a5e31af38dbc60452ac"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Jenkins.-.DevOpsPro.pdf"
   }, {
     title: "Módulo Kubernetes - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=03a08a1279f0a008612897c52a01358d"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Kubernetes.-.DevOpsPro.pdf"
   }, {
     title: "Módulo Jaeger - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=2342d8fe648b0caf0dd7893808d47b98"
-  }, {
-    title: "Módulo Introdução a DevOps - DevOpsPro",
-    link: "https://www.udemy.com/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Jaeger.-.DevOpsPro.pdf"
   }, {
     title: "Módulo Grafana Loki - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=c1359149f5ad5adcaebddac21b519bf9"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Grafana.Loki.-.DevOpsPro.pdf"
   }, {
     title: "Módulo Git e Github - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=308999419601c5cfe0ca0298879f77e9"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Git.e.Github.-.DevOpsPro.pdf"
   }, {
     title: "Módulo Fundamentos de Linux - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=a4bc2683df1eb93f97bc548323902829"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Fundamentos.de.Linux.-.DevOpsPro.pdf"
   }, {
     title: "Módulo Docker - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=8296eb59078b54c38b84757b6a550e2a"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-M%C3%B3dulo.Docker.-.DevOpsPro.pdf"
   }, {
     title: "Microsoft Certified DevOps Engineer Expert",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/EA24867B521F82D8?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Microsoft.Certified.DevOps.Engineer.Expert.pdf"
   }, {
     title: "Jornada DevOps de Elite - DevOpsPro",
-    link: "https://gerarcertificado.com.br/validar.php?cert=8eddc0f24ba261589d77aaf5b9a7d0ed"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-Jornada.DevOps.de.Elite.-.DevOpsPro.pdf"
   }, {
     title: "AZ-400 - Azure DevOps Engineer Expert- TFTEC",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/EA24867B521F82D8?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2023-AZ-400.-.Azure.DevOps.Engineer.Expert-.TFTEC.pdf"
   }]
 }, {
   year: "2022",
@@ -292,13 +286,13 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-11-Copa.do.Mundo.Azure-TFTEC.pdf"
   }, {
     title: "Docker para Desenvolvedores e Administradores de Redes - Udemy",
-    link: "https://www.udemy.com/certificate/UC-a40bd06b-eff2-44e1-b5d7-20fabbd2bcbd/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Docker.para.Desenvolvedores.e.Administradores.de.Redes.-.Udemy.pdf"
   }, {
     title: "AWS Certified Cloud Practitioner",
-    link: "https://www.credly.com/badges/cc2090a8-2445-4cee-ba0a-ef398c636f33/linked_in_profile"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-AWS.Certified.Cloud.Practitioner.pdf"
   }, {
     title: "Microsoft Certified Azure Security Engineer Associate",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/F760B4A83F6D292C?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Microsoft.Certified.Azure.Security.Engineer.Associate.pdf"
   }, {
     title: "AZ-500 - Azure Security Engineer - TFTEC",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-09-AZ-500-Azure.Security.Engineer-TFTEC.pdf"
@@ -307,82 +301,82 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-07-AZ-700-Azure.Network.Engineer-TFTEC.pdf"
   }, {
     title: "AZ-204 Developing Solutions for Microsoft Azure - Udemy",
-    link: "https://www.udemy.com/certificate/UC-4a7510b6-416a-4401-ad99-c3f558ce6bed/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-AZ-204.Developing.Solutions.for.Microsoft.Azure.-.Udemy.pdf"
   }, {
     title: "Microsoft Certified Azure Solutions Architect Expert",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/ECCBB4FB7DF76876?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Microsoft.Certified.Azure.Solutions.Architect.Expert.pdf"
   }, {
     title: "Desafio Azure 2.0 - TFTEC",
-    link: "https://ead.tftec.com.br/verificar/qGLzG3bYoh/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Desafio.Azure.2.0.-.TFTEC.pdf"
   }, {
     title: "DP 300 Administering Relational Databases Azure DBA - Udemy",
-    link: "https://www.udemy.com/certificate/UC-57a7fb9b-6719-4efa-949a-80c3310cdd78/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-DP.300.Administering.Relational.Databases.Azure.DBA.-.Udemy.pdf"
   }, {
     title: "Microsoft Certified Azure Data Fundamentals",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/AAA6537164EF3CD0?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Microsoft.Certified.Azure.Data.Fundamentals.pdf"
   }, {
     title: "SC300 Course Microsoft Identity and Access Administrator - Udemy",
-    link: "https://www.udemy.com/certificate/UC-53878b1d-c0b7-4884-ac50-2534360f8678/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-SC300.Course.Microsoft.Identity.and.Access.Administrator.-.Udemy.pdf"
   }, {
     title: "Microsoft Certified Identity and Access Administrator Associate",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/D1E6BECF41B59C4?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Microsoft.Certified.Identity.and.Access.Administrator.Associate.pdf"
   }, {
     title: "Azure - Programa de Certificação AZ-304 - TFTEC",
-    link: "https://ead.tftec.com.br/verificar/TiZbkKz8Hn/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Azure.-.Programa.de.Certifica%C3%A7%C3%A3o.AZ-304.-.TFTEC.pdf"
   }, {
     title: "Azure - Programa de Certificação AZ-303 - TFTEC",
-    link: "https://ead.tftec.com.br/verificar/zq8SX2AviR/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Azure.-.Programa.de.Certifica%C3%A7%C3%A3o.AZ-303.-.TFTEC.pdf"
   }, {
     title: "Azure - Programa de Certificação AZ-104 - TFTEC",
-    link: "https://ead.tftec.com.br/verificar/wu3DLnvVbw/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2022-Azure.-.Programa.de.Certifica%C3%A7%C3%A3o.AZ-104.-.TFTEC.pdf"
   }]
 }, {
   year: "2021 e anteriores",
   certificates: [{
     title: "Oracle Cloud Infrastructure Foundations 2021 Certified Associate",
-    link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=20C72DE3B042CFAA43CF954993954CA8843A72C33E3C9F5283BDC4EE0C07055C"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Oracle.Cloud.Infrastructure.Foundations.2021.Certified.Associate.pdf"
   }, {
     title: "Microsoft Certified Trainer",
-    link: "https://www.credly.com/badges/9f76b758-5134-4dbb-b138-35c61e7b4cbe/public_url"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.Certified.Trainer.pdf"
   }, {
     title: "Microsoft Certified Azure Network Engineer Associate",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/BE1DAD21D266E213?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.Certified.Azure.Network.Engineer.Associate.pdf"
   }, {
     title: "Dropsuite - Backup Email, SharePoint, Google Drive, OneDrive - Udemy",
-    link: "https://www.udemy.com/certificate/UC-f1e4cbc4-b985-4519-95bc-cc8be336233a/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Dropsuite.-.Backup.Email%2C.SharePoint%2C.Google.Drive%2C.OneDrive.-.Udemy.pdf"
   }, {
     title: "Azure - Programa de Certificação AZ-900 - TFTEC",
-    link: "https://ead.tftec.com.br/verificar/c1w1AYStJA/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Azure.-.Programa.de.Certifica%C3%A7%C3%A3o.AZ-900.-.TFTEC.pdf"
   }, {
     title: "Microsoft Certified Security, Compliance, and Identity Fundamentals",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/417A92FCA9FEB6DA?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.Certified.Security%2C.Compliance%2C.and.Identity.Fundamentals.pdf"
   }, {
     title: "Microsoft 365 Certified Fundamentals",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/86D3DD0997461F93?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.365.Certified.Fundamentals.pdf"
   }, {
     title: "Administrando o Microsoft Office 365 - Udemy",
-    link: "https://www.udemy.com/certificate/UC-75c4576f-4df3-4973-a6cb-c9efdaaead0a/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Administrando.o.Microsoft.Office.365.-.Udemy.pdf"
   }, {
     title: "Windows Server 2019 do Básico ao Avançado - Udemy",
-    link: "https://www.udemy.com/certificate/UC-35d398d4-e5b5-440e-8f3e-564bbd044ccb/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Windows.Server.2019.do.B%C3%A1sico.ao.Avan%C3%A7ado.-.Udemy.pdf"
   }, {
     title: "MS 900 Microsoft 365 Fundamentals - Uni Academy",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-08-MS.900.Microsoft.365.Fundamentals-UniAcademy.pdf"
   }, {
     title: "Microsoft Certified Azure Administrator Associate",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/13E2C5603C9C68C?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.Certified.Azure.Administrator.Associate.pdf"
   }, {
     title: "Microsoft Azure AZ-104 Azure Administrator + AZ-900 - Udemy",
-    link: "https://www.udemy.com/certificate/UC-a8a0cde3-2715-4627-ad44-1f06524fef90/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.Azure.AZ-104.Azure.Administrator.%2B.AZ-900.-.Udemy.pdf"
   }, {
     title: "Microsoft Certified Solutions Associate Windows Server 2016",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/86D3DD0997461F93?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.Certified.Solutions.Associate.Windows.Server.2016.pdf"
   }, {
     title: "Bootcamp Analista de Cibersecurity - IGTI",
-    link: "https://www.udemy.com/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2020-08-Bootcamp.Analista.Cibersecurity-IGTI.pdf"
   }, {
     title: "Microsoft Certified Azure Fundamentals",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/4C04CB1DEC8717F5?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.Certified.Azure.Fundamentals.pdf"
   }, {
     title: "NSE 2 Network Security Associate Fortinet",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2020-05-NSE.2.Network.Security.Associate.Fortinet.pdf"
@@ -391,97 +385,97 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2020-05-NSE.1.Network.Security.Associate.Fortinet.pdf"
   }, {
     title: "Cisco CCNA - Guia Para Iniciantes - Udemy",
-    link: "https://www.udemy.com/certificate/UC-1d01ec18-2e36-4678-a7e8-1dc1bcd92292/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Cisco.CCNA.-.Guia.Para.Iniciantes.-.Udemy.pdf"
   }, {
     title: "MCSA Windows Server 2016 – Exame 70 742 - Udemy",
-    link: "https://www.udemy.com/certificate/UC-790ec924-55d1-4914-8fdb-cfbaa7c72784/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-MCSA.Windows.Server.2016.%E2%80%93.Exame.70.742.-.Udemy.pdf"
   }, {
     title: "MCSA Windows Server 2016 – Exame 70 741 - Udemy",
-    link: "https://www.udemy.com/certificate/UC-ba4cf474-9ca4-4e26-aa60-81ad19487fbd/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-MCSA.Windows.Server.2016.%E2%80%93.Exame.70.741.-.Udemy.pdf"
   }, {
     title: "MCSA Windows Server 2016 - Exame 70 740 - Udemy",
-    link: "https://www.udemy.com/certificate/UC-c1f3c2c0-1eff-416c-bda5-aa4e90357a24/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-MCSA.Windows.Server.2016.-.Exame.70.740.-.Udemy.pdf"
   }, {
     title: "Rotas Estáticas IPv4 e IPv6 - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/48/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Rotas.Est%C3%A1ticas.IPv4.e.IPv6.-.DlteC.pdf"
   }, {
     title: "RIPv2 - Config e Tshoot - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/49/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-RIPv2.-.Config.e.Tshoot.-.DlteC.pdf"
   }, {
     title: "Protocolo OSPF - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/46/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Protocolo.OSPF.-.DlteC.pdf"
   }, {
     title: "Protocolo EIGRP - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/45/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Protocolo.EIGRP.-.DlteC.pdf"
   }, {
     title: "OSPF - Config e Tshoot - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/51/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-OSPF.-.Config.e.Tshoot.-.DlteC.pdf"
   }, {
     title: "Internet - NAT, Proxy e BGP - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/47/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Internet.-.NAT%2C.Proxy.e.BGP.-.DlteC.pdf"
   }, {
     title: "EIGRP - Config e Tshoot - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/50/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-EIGRP.-.Config.e.Tshoot.-.DlteC.pdf"
   }, {
     title: "Switches Ethernet - Parte II - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/61/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Switches.Ethernet.-.Parte.I.-.DlteC.pdf"
   }, {
     title: "Switches Ethernet - Parte I - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/60/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Switches.Ethernet.-.Parte.I.-.DlteC.pdf"
   }, {
     title: "Roteamento IP e RIP - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/44/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Roteamento.IP.e.RIP.-.DlteC.pdf"
   }, {
     title: "Protocolo Spanning Tree de A a Z - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/62/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Protocolo.Spanning.Tree.de.A.a.Z.-.DlteC.pdf"
   }, {
     title: "Microsoft 365 Certified Endpoint Administrator Associate",
-    link: "https://learn.microsoft.com/api/credentials/share/en-us/rafaferreira11/73B0C88124A23C32?sharingId=AF242064A982B1A4"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Microsoft.365.Certified.Endpoint.Administrator.Associate.pdf"
   }, {
     title: "Windows 10 – Modern Desktop Administrator Associate MD-101 - Udemy",
-    link: "https://www.udemy.com/certificate/UC-F049DD9K/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Windows.10.%E2%80%93.Modern.Desktop.Administrator.Associate.MD-101.-.Udemy.pdf"
   }, {
     title: "Sistemas de Cabeamento Estruturado Avançado - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/69/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Sistemas.de.Cabeamento.Estruturado.Avan%C3%A7ado.-.DlteC.pdf"
   }, {
     title: "Sistemas de Cabeamento Estruturado - SCE - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/66/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Sistemas.de.Cabeamento.Estruturado.-.SCE.-.DlteC.pdf"
   }, {
     title: "Simuladores de Redes - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/23/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Simuladores.de.Redes.-.DlteC.pdf"
   }, {
     title: "Redes Ópticas Passivas Avançado - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/68/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Redes.%C3%93pticas.Passivas.Avan%C3%A7ado.-.DlteC.pdf"
   }, {
     title: "Redes Ópticas Passivas - PON - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/67/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Redes.%C3%93pticas.Passivas.-.PON.-.DlteC.pdf"
   }, {
     title: "Wireless LAN (Redes sem fio) - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/70/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Wireless.LAN.(Redes.sem.fio).-.DlteC.pdf"
   }, {
     title: "Ipv6 - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/5/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Endere%C3%A7amento.IPv6.e.Sub-redes.-.DlteC.pdf"
   }, {
     title: "Inteligência Artificial Sistemas de Recomendação em Python - Udemy",
-    link: "https://www.udemy.com/certificate/UC-DJP8QBRA/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Intelig%C3%AAncia.Artificial.Sistemas.de.Recomenda%C3%A7%C3%A3o.em.Python.-.Udemy.pdf"
   }, {
     title: "Inteligência Artificial para Iniciantes - Udemy",
-    link: "https://www.udemy.com/certificate/UC-7B3FSR2T/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Intelig%C3%AAncia.Artificial.para.Iniciantes.-.Udemy.pdf"
   }, {
     title: "Gerenciamento de Redes - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/71/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Gerenciamento.de.Redes.-.DlteC.pdf"
   }, {
     title: "Endereçamento IPv6 e Sub-redes - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/59/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Endere%C3%A7amento.IPv6.e.Sub-redes.-.DlteC.pdf"
   }, {
     title: "Redes Completo - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/4/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Redes.Completo.-.DlteC.pdf"
   }, {
     title: "ITIL Intermediate Operational Support and Analysis (OSA)",
-    link: "https://tiexames.com.br/novoensino/certificado_pdf.php?COD=LzBsLzQvc3ovajRubGdDaXhmb2VhUT09&COD_CURSO=85"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-ITIL.Intermediate.Operational.Support.and.Analysis.(OSA).pdf"
   }, {
     title: "Itil v3 Foundation 2011 (credenciado) - TI Exames",
-    link: "https://tiexames.com.br/novoensino/certificado_pdf.php?COD=S3lJUXNGemI3WDdwUHlXc0k3cGtTUT09&COD_CURSO=53"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Itil.v3.Foundation.2011.(credenciado).-.TI.Exames.pdf"
   }, {
     title: "ITIL Foundation Certificate in IT Service Management",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2019-07-ITIL.Foundation.Certificate.in.IT.Service.Management.pdf"
@@ -490,37 +484,37 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2019-07-Endpoint.Protection.12.1.5.Technical.Education.Course-Symantec.pdf"
   }, {
     title: "Windows Server 2019 - Módulo Básico - Udemy",
-    link: "https://www.udemy.com/certificate/UC-JXIPT2F1/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Windows.Server.2019.-.M%C3%B3dulo.B%C3%A1sico.-.Udemy.pdf"
   }, {
     title: "Windows 10 Avançado - Udemy",
-    link: "https://www.udemy.com/certificate/UC-EYICAJRI/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Windows.10.Avan%C3%A7ado.-.Udemy.pdf"
   }, {
     title: "Windows 10 – Modern Desktop Administrator Associate MD-100 - Udemy",
-    link: "https://www.udemy.com/certificate/UC-FMI38M23/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Windows.10.%E2%80%93.Modern.Desktop.Administrator.Associate.MD-100.-.Udemy.pdf"
   }, {
     title: "Comunicação via Satélite - Começando (Telecomunicações) - Udemy",
-    link: "https://www.udemy.com/certificate/UC-XWP6001Y/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Comunica%C3%A7%C3%A3o.via.Sat%C3%A9lite.-.Come%C3%A7ando.(Telecomunica%C3%A7%C3%B5es).-.Udemy.pdf"
   }, {
     title: "Série Windows Server Update Services (WSUS) - Udemy",
-    link: "https://www.udemy.com/certificate/UC-LNPZ2JFX/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-S%C3%A9rie.Windows.Server.Update.Services.(WSUS).-.Udemy.pdf"
   }, {
     title: "Instalando e Configurando o Windows 10 - Udemy",
-    link: "https://www.udemy.com/certificate/UC-H03OG7T6/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Instalando.e.Configurando.o.Windows.10.-.Udemy.pdf"
   }, {
     title: "Cálculo de Sub-Redes Ninja - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/41/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-C%C3%A1lculo.de.Sub-Redes.Ninja.-.DlteC.pdf"
   }, {
     title: "Wireshark Para Iniciantes - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/42/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Wireshark.Para.Iniciantes.-.DlteC.pdf"
   }, {
     title: "Endereçamento IPv4 e Classes - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/40/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Endere%C3%A7amento.IPv4.e.Classes.-.DlteC.pdf"
   }, {
     title: "Configs de Rede em LinuxWindows - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/53/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Configs.de.Rede.em.LinuxWindows.-.DlteC.pdf"
   }, {
     title: "Básico de Redes - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/2/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-B%C3%A1sico.de.Redes.-.DlteC.pdf"
   }, {
     title: "Preparatório para Exame 70-697 Configuring Windows Devices - Microsoft Virtual Academy",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2019-01-Preparatório.para.exame.70-697.Configuring.Windows.Devices-Microsoft.Virtual.Academy.pdf"
@@ -541,7 +535,7 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2019-01-Azure.Data.Analytics.para.programadores-Microsoft.Virtual.Academy.pdf"
   }, {
     title: "ITILv3 - DlteC",
-    link: "https://www.dltec.com.br/painel/curso/35/certificado"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-ITILv3.-.DlteC.pdf"
   }, {
     title: "VIII Jornada - Universidade do Sagrado Coração",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2018-05-VIII.JORNADA-Universidade.do.Sagrado.Coracao.pdf"
@@ -565,19 +559,19 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2017-10-Palestra.sobre.Liderança.Gestão.de.Pessoas-Finch.pdf"
   }, {
     title: "Lógica de Programação e Algoritmos em Java - Udemy",
-    link: "https://www.udemy.com/certificate/UC-7VA51MIQ/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-L%C3%B3gica.de.Programa%C3%A7%C3%A3o.e.Algoritmos.em.Java.-.Udemy.pdf"
   }, {
     title: "Introdução Rápida ao Desenvolvimento em HTML5 com JavaScript e CSS3 - Microsoft Virtual Academy",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2017-08-Introdução.rápida.ao.desenvolvimento.em.HTML5.com.JavaScript.CSS3-Microsoft.Virtual.Academy.pdf"
   }, {
     title: "Iniciando com TypeScript - Udemy",
-    link: "https://www.udemy.com/certificate/UC-I4NR2U3X/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Iniciando.com.TypeScript.-.Udemy.pdf"
   }, {
     title: "Aprenda PHP na Prática - Udemy",
-    link: "https://www.udemy.com/certificate/UC-FA1GDKWP/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Aprenda.PHP.na.Pr%C3%A1tica.-.Udemy.pdf"
   }, {
     title: "Curso Completo de Desenvolvimento Web 2018 - Crie 6 Projetos",
-    link: "https://www.udemy.com/certificate/UC-MJFS4HMW/"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2021-Curso.Completo.de.Desenvolvimento.Web.2018.-.Crie.6.Projetos.pdf"
   }, {
     title: "Desenvolvimento de Jogos com Unity para Windows 8 e Windows Phone 8 – Introdução - Microsoft Virtual Academy",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2017-07-Desenvolvimento.de.jogos.com.Unity.para.Windows.8.Windows.Phone.8–Introdução-Microsoft.Virtual.Academy.pdf"
@@ -610,7 +604,7 @@ const certificatesByYear: YearCertificates[] = [{
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2017-05-Iniciando.com.Xamarin.Forms-Microsoft.Virtual.Academy.pdf"
   }, {
     title: "Fundamentos de Rede - Microsoft Virtual Academy",
-    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2017-01-Conceitos.basicos.de.Csharp.para.iniciantes-Microsoft.Virtual.Academy.pdf"
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2017-05-Fundamentos.de.Rede-Microsoft.Virtual.Academy.pdf"
   }, {
     title: "Aprendendo a Programar - Microsoft Virtual Academy",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2017-05-Aprendendo.a.Programar-Microsoft.Virtual.Academy.pdf"
