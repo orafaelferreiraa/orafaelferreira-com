@@ -12,6 +12,7 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 <!-- AUTO-EVENTS:START:2026 -->
 | Mês | Evento |
 |-----|--------|
+| Jul | [**TDC 2026 Florianópolis - Trilha Software Security**](https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security) |
 | Jun | [**Microsoft Build //localhost:florianópolis**](https://developer.microsoft.com/pt-br/reactor/events/27206/) |
 | Mai | [**Ctrl-Z - Code Island**](https://ctrl-z.codeisland.com.br/) |
 | Abr | [**Global Azure User Group Floripa 2026**](https://www.meetup.com/azureusergroupsbrasil/events/313851322/) |
