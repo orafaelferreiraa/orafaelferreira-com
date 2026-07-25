@@ -55,3 +55,6 @@ terraform.rc
 
 # Note: we intentionally do NOT ignore .terraform.lock.hcl
 # It's recommended to commit the lock file for provider checksums.
+
+# Azure MCP Server credentials (service principal secret) - never commit
+.azure-mcp.env

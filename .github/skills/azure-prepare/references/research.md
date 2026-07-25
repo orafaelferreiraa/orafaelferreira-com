@@ -16,37 +16,34 @@ After architecture planning, research each selected component to gather best pra
 
 ## Service-to-Reference Mapping
 
+> This fork keeps local references only for **Static Web Apps** (the service this
+> project actually deploys). Other Azure services listed below have no local
+> `services/<name>/` reference in this fork — research them via `ToolSearch`/
+> `WebFetch` against Microsoft Learn if the app ever needs them instead of
+> assuming a local file exists.
+
 | Azure Service | Reference | Related Skills |
 |---------------|-----------|----------------|
 | **Hosting** | | |
-| Container Apps | [Container Apps](services/container-apps/README.md) | `azure-diagnostics`, `azure-observability`, `azure-nodejs-production` |
-| App Service | [App Service](services/app-service/README.md) | `azure-diagnostics`, `azure-observability`, `azure-nodejs-production` |
-| Azure Functions | [Functions](services/functions/README.md) | — |
 | Static Web Apps | [Static Web Apps](services/static-web-apps/README.md) | — |
-| AKS | [AKS](services/aks/README.md) | `azure-networking` |
+| Container Apps, App Service, Azure Functions, AKS | — (no local reference in this fork) | `azure-diagnostics`, `azure-observability`, `azure-nodejs-production`, `azure-networking` |
 | **Data** | | |
-| Azure SQL | [SQL Database](services/sql-database/README.md) | — |
-| Cosmos DB | [Cosmos DB](services/cosmos-db/README.md) | — |
-| PostgreSQL | — | — |
-| Storage (Blob/Files) | [Storage](services/storage/README.md) | `azure-storage` |
+| Azure SQL, Cosmos DB, PostgreSQL, Storage (Blob/Files) | — (no local reference in this fork) | `azure-storage` |
 | **Messaging** | | |
-| Service Bus | [Service Bus](services/service-bus/README.md) | — |
-| Event Grid | [Event Grid](services/event-grid/README.md) | — |
-| Event Hubs | — | — |
+| Service Bus, Event Grid, Event Hubs | — (no local reference in this fork) | — |
 | **Integration** | | |
 | API Management | [APIM](apim.md) | `azure-aigateway` (invoke for AI Gateway policies) |
-| Logic Apps | [Logic Apps](services/logic-apps/README.md) | — |
+| Logic Apps | — (no local reference in this fork) | — |
 | **Workflow & Orchestration** | | |
-| Durable Functions | [Durable Functions](services/functions/durable.md), [Durable Task Scheduler](services/durable-task-scheduler/README.md) | — |
-| Durable Task Scheduler | [Durable Task Scheduler](services/durable-task-scheduler/README.md) | — |
+| Durable Functions, Durable Task Scheduler | — (no local reference in this fork) | — |
 | **Security & Identity** | | |
-| Key Vault | [Key Vault](services/key-vault/README.md) | `azure-keyvault-expiration-audit` |
+| Key Vault | — (no local reference in this fork) | `azure-keyvault-expiration-audit` |
 | Managed Identity | — | `entra-app-registration` |
 | **Observability** | | |
-| Application Insights | [App Insights](services/app-insights/README.md) | `appinsights-instrumentation` (invoke for instrumentation) |
+| Application Insights | — (no local reference in this fork) | `appinsights-instrumentation` (invoke for instrumentation) |
 | Log Analytics | — | `azure-observability`, `azure-kusto` |
 | **AI Services** | | |
-| Azure OpenAI | [Foundry](services/foundry/README.md) | `microsoft-foundry` (invoke for AI patterns and model guidance) |
+| Azure OpenAI | — (no local reference in this fork) | `microsoft-foundry` (invoke for AI patterns and model guidance) |
 | AI Search | — | `azure-ai` (invoke for search configuration) |
 
 ## Research Instructions
@@ -56,21 +53,16 @@ After architecture planning, research each selected component to gather best pra
 For each selected service, load the README.md first, then load specific files as needed:
 
 ```
-Selected: Container Apps, Cosmos DB, Key Vault
+Selected: Static Web Apps
 
-→ Load: services/container-apps/README.md (overview)
-  → If need Bicep: services/container-apps/bicep.md
-  → If need Terraform: services/container-apps/terraform.md
-  → If need scaling: services/container-apps/scaling.md
-  → If need health probes: services/container-apps/health-probes.md
-
-→ Load: services/cosmos-db/README.md (overview)
-  → If need partitioning: services/cosmos-db/partitioning.md
-  → If need SDK: services/cosmos-db/sdk.md
-
-→ Load: services/key-vault/README.md (overview)
-  → If need SDK: services/key-vault/sdk.md
+→ Load: services/static-web-apps/README.md (overview)
+  → If need Terraform: services/static-web-apps/terraform.md
+  → If need routing: services/static-web-apps/routing.md
+  → If need deployment details: services/static-web-apps/deployment.md
 ```
+
+For any other service, there's no local reference in this fork — research it
+fresh via `ToolSearch`/`WebFetch` against Microsoft Learn.
 
 ### Step 2: Invoke Related Skills (When Deeper Guidance Needed)
 
@@ -79,7 +71,6 @@ Invoke related skills for specialized scenarios:
 | Scenario | Action |
 |----------|--------|
 | **Using GitHub Copilot SDK** | **Invoke `azure-hosted-copilot-sdk`** (scaffold + config, then resume azure-prepare) |
-| Using Azure Functions | Stay in **azure-prepare** — load [selection.md](services/functions/templates/selection.md) → Follow [composition.md](services/functions/templates/recipes/composition.md) algorithm |
 | PostgreSQL with passwordless auth | Handle directly without a separate skill |
 | Need detailed security hardening | Handle directly with service-specific security guidance and platform best practices |
 | Setting up App Insights instrumentation | `appinsights-instrumentation` |
@@ -87,11 +78,6 @@ Invoke related skills for specialized scenarios:
 | Cost-sensitive deployment | `azure-cost` |
 
 **Skill/Reference Invocation Pattern:**
-
-For **Azure Functions**:
-1. Load: [selection.md](services/functions/templates/selection.md) (decision tree)
-2. Follow: [composition.md](services/functions/templates/recipes/composition.md) (algorithm)
-3. Result: Base template + recipe composition (never synthesize IaC)
 
 For **PostgreSQL**:
 1. Handle passwordless auth patterns directly without a separate skill
@@ -102,41 +88,16 @@ Add research findings to `.azure/deployment-plan.md` under a `## Research Summar
 
 ## Common Research Patterns
 
-### Web Application + API + Database (Cosmos DB)
+> The worked patterns below (Container Apps, SQL, Cosmos DB, Functions, AI
+> workloads) were removed from this fork along with their service references
+> — this project only deploys a static frontend to Static Web Apps. If a
+> future project in this repo needs one of those services, research it fresh
+> via `ToolSearch`/`WebFetch` rather than assuming a local pattern exists.
 
-1. Load: [services/container-apps/README.md](services/container-apps/README.md) → [bicep.md](services/container-apps/bicep.md) or [terraform.md](services/container-apps/terraform.md), [scaling.md](services/container-apps/scaling.md)
-2. Load: [services/cosmos-db/README.md](services/cosmos-db/README.md) → [partitioning.md](services/cosmos-db/partitioning.md)
-3. Load: [services/key-vault/README.md](services/key-vault/README.md)
-4. Invoke: `azure-observability` (monitoring setup)
-5. Review service-specific security guidance directly before generation
+### Static Web Apps (this project)
 
-### Container Apps + API + SQL Database
-
-1. Load: [services/container-apps/README.md](services/container-apps/README.md) → [bicep.md](services/container-apps/bicep.md) or [terraform.md](services/container-apps/terraform.md), [scaling.md](services/container-apps/scaling.md)
-2. Load: [services/sql-database/README.md](services/sql-database/README.md) → [bicep.md](services/sql-database/bicep.md), [auth.md](services/sql-database/auth.md)
-3. Load: [services/key-vault/README.md](services/key-vault/README.md)
-4. Review [auth.md](services/sql-database/auth.md) directly for Entra-only auth configuration
-
-### App Service + API + SQL Database
-
-1. Load: [services/app-service/README.md](services/app-service/README.md) → [bicep.md](services/app-service/bicep.md)
-2. Load: [services/sql-database/README.md](services/sql-database/README.md) → [bicep.md](services/sql-database/bicep.md), [auth.md](services/sql-database/auth.md)
-3. Load: [services/key-vault/README.md](services/key-vault/README.md)
-4. Review [auth.md](services/sql-database/auth.md) directly for Entra-only auth configuration
-
-### Serverless Event-Driven
-
-1. Load: [services/functions/README.md](services/functions/README.md) (contains mandatory composition workflow)
-2. Load: [services/event-grid/README.md](services/event-grid/README.md) or [services/service-bus/README.md](services/service-bus/README.md) (if using messaging)
-3. Load: [services/storage/README.md](services/storage/README.md) (if using queues/blobs)
-4. Invoke: `azure-observability` (distributed tracing)
-
-### AI Application
-
-1. Invoke: `microsoft-foundry` (AI patterns and best practices)
-2. Load: [services/container-apps/README.md](services/container-apps/README.md) → [bicep.md](services/container-apps/bicep.md) or [terraform.md](services/container-apps/terraform.md)
-3. Load: [services/cosmos-db/README.md](services/cosmos-db/README.md) → [partitioning.md](services/cosmos-db/partitioning.md) (vector storage)
-4. Review Key Vault and Foundry references directly for API key management
+1. Load: [services/static-web-apps/README.md](services/static-web-apps/README.md) → [terraform.md](services/static-web-apps/terraform.md)
+2. Review [routing.md](services/static-web-apps/routing.md) and [region-availability.md](services/static-web-apps/region-availability.md) as needed
 
 ### GitHub Copilot SDK Application
 

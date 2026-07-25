@@ -51,4 +51,5 @@ Ver detalhes em `ai/mcp/source-of-truth-policy.md`.
 - `ai/agents/` — agentes do projeto, incluindo o orquestrador `loop-engineer.agent.md`
 - `ai/prompts/` — prompts de fluxo para pesquisa, auditoria e escrita
 - `ai/skills/azure-gcp-de-para-article.SKILL.md` — garante secao de-para Azure x GCP em artigos cloud
-- `.github/skills/` — skills oficiais reaproveitaveis para este repositorio
+- `.github/skills/` — skills oficiais reaproveitaveis para este repositorio (formato GitHub Copilot)
+- `.claude/skills/` — as mesmas skills, portadas para o Claude Code

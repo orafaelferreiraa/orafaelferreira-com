@@ -13,7 +13,6 @@ Deploy to Azure using automated pipelines.
 | Example | Description |
 |---------|-------------|
 | [github-azd.yml](examples/github-azd.yml) | AZD deployment workflow |
-| [github-bicep.yml](examples/github-bicep.yml) | Bicep infrastructure deployment |
 
 ## Azure DevOps
 

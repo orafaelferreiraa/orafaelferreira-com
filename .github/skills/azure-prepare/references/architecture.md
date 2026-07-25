@@ -70,10 +70,10 @@ Select hosting stack and map components to Azure services.
 
 | Need       | Primary      | Reference                                       | Alternatives      |
 | ---------- | ------------ | ----------------------------------------------- | ----------------- |
-| Relational | Azure SQL    | [SQL Database](services/sql-database/README.md) | PostgreSQL, MySQL |
-| Document   | Cosmos DB    | [Cosmos DB](services/cosmos-db/README.md)       | MongoDB           |
+| Relational | Azure SQL    | — (no local reference in this fork) | PostgreSQL, MySQL |
+| Document   | Cosmos DB    | — (no local reference in this fork) | MongoDB           |
 | Cache      | Redis Cache  |                                                 |                   |
-| Files      | Blob Storage | [Storage](services/storage/README.md)           | Files Storage     |
+| Files      | Blob Storage | — (no local reference in this fork) | Files Storage     |
 | Search     | AI Search    |                                                 |                   |
 
 ### Integration
@@ -88,7 +88,7 @@ Select hosting stack and map components to Azure services.
 
 | Need                                | Service                                        | Notes                                                                                                                                                       |
 | ----------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Multi-step workflow / orchestration | **Durable Functions + Durable Task Scheduler** | DTS is the **required** managed backend for Durable Functions. Do NOT use Azure Storage or MSSQL backends. See [durable.md](services/functions/durable.md). |
+| Multi-step workflow / orchestration | **Durable Functions + Durable Task Scheduler** | DTS is the **required** managed backend for Durable Functions. Do NOT use Azure Storage or MSSQL backends. No local reference in this fork — research fresh via Microsoft Learn. |
 | Low-code / visual workflow          | Logic Apps                                     | For integration-heavy, low-code scenarios                                                                                                                   |
 
 ### Supporting (Always Include)

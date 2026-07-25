@@ -24,11 +24,26 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      # IMPORTANTE: o push precisa usar WORKFLOW_PAT, nao o GITHUB_TOKEN.
+      # Pushes feitos com GITHUB_TOKEN NAO disparam outros workflows (protecao
+      # anti-recursao do GitHub), o que fazia o commit entrar no main sem que o
+      # deploy-app rodasse -> a palestra nunca aparecia no site.
+      - name: Validate WORKFLOW_PAT
+        env:
+          WORKFLOW_PAT: ${{ secrets.WORKFLOW_PAT }}
+        run: |
+          if [[ -z "${WORKFLOW_PAT}" ]]; then
+            echo "::error::Secret WORKFLOW_PAT ausente. Sem ele o push nao dispara o deploy-app e a palestra nao aparece no site."
+            exit 1
+          fi
+          echo "✅ WORKFLOW_PAT presente."
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.WORKFLOW_PAT }}
           fetch-depth: 0
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

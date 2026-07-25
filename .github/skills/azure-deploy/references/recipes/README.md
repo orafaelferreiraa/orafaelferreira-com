@@ -6,6 +6,5 @@ Deployment recipes for different infrastructure approaches.
 |--------|-------------|
 | [AZD](azd/README.md) | Projects using Azure Developer CLI |
 | [AZCLI](azcli/README.md) | Projects using Azure CLI scripts |
-| [Bicep](bicep/README.md) | Projects using Bicep templates |
 | [Terraform](terraform/README.md) | Projects using Terraform |
 | [CI/CD](cicd/README.md) | Pipeline-based deployments |

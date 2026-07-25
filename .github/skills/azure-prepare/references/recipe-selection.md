@@ -81,5 +81,4 @@ Or for pure Terraform:
 
 - [AZD Recipe](recipes/azd/README.md)
 - [AZCLI Recipe](recipes/azcli/README.md)
-- [Bicep Recipe](recipes/bicep/README.md)
 - [Terraform Recipe](recipes/terraform/README.md)

@@ -37,8 +37,7 @@ Activate this skill when user wants to:
 7. ❌ **Destructive actions require `ask_user`** — [Global Rules](references/global-rules.md)
 8. ⛔ **NEVER delete user project or workspace directories** — When adding features to an existing project, MODIFY existing files. `azd init -t <template>` is for NEW projects only; do NOT run `azd init -t` in an existing workspace. Plain `azd init` (without a template argument) may be used in existing workspaces when appropriate. File deletions within a project (e.g., removing build artifacts or temp files) are permitted when appropriate, but NEVER delete the user's project or workspace directory itself. See [Global Rules](references/global-rules.md).
 9. **Scope: preparation only** — This skill generates infrastructure code and configuration files. Deployment execution (`azd up`, `azd deploy`, `terraform apply`) is handled by the **azure-deploy** skill, which provides built-in error recovery and deployment verification.
-10. ⛔ **SQL Server Bicep: NEVER generate `administratorLogin` or `administratorLoginPassword`** — not in direct properties, not in conditional/ternary branches, not anywhere in the file. Always use Entra-only authentication (`azureADOnlyAuthentication: true`) unconditionally. See [references/services/sql-database/bicep.md](references/services/sql-database/bicep.md).
-11. **Remove stale template IaC after conversion** — If you converted Bicep templates from the selected `azd` template into Terraform templates, remove the Bicep templates that were introduced by that `azd` template and are now fully replaced by Terraform equivalents. Do not remove user-authored Bicep files. Only remove those template-provided Bicep files after the Terraform IaC is complete and Terraform has been selected as the deployment path. Before handing off to azure-validate skill, keep only the IaC templates required by the chosen deployment path.
+10. **Remove stale template IaC after conversion** — If you converted Bicep templates from the selected `azd` template into Terraform templates, remove the Bicep templates that were introduced by that `azd` template and are now fully replaced by Terraform equivalents. Do not remove user-authored Bicep files. Only remove those template-provided Bicep files after the Terraform IaC is complete and Terraform has been selected as the deployment path. Before handing off to azure-validate skill, keep only the IaC templates required by the chosen deployment path.
 
 ---
 
@@ -74,7 +73,6 @@ Activate this skill when user wants to:
 | Azure Functions, function app, serverless function, timer trigger, HTTP trigger, func new | Stay in **azure-prepare** — prefer Azure Functions templates in Step 4 |
 | APIM, API Management, API gateway, deploy APIM | Stay in **azure-prepare** — see [APIM Deployment Guide](references/apim.md) |
 | AI gateway, AI gateway policy, AI gateway backend, AI gateway configuration | **azure-aigateway** |
-| workflow, orchestration, multi-step, pipeline, fan-out/fan-in, saga, long-running process, durable, order processing | Stay in **azure-prepare** — select **durable** recipe in Step 4. **MUST** load [durable.md](references/services/functions/durable.md), [DTS reference](references/services/durable-task-scheduler/README.md), and [DTS Bicep patterns](references/services/durable-task-scheduler/bicep.md). |
 
 ### Check 2: Codebase markers (even if prompt is generic like "deploy to Azure")
 

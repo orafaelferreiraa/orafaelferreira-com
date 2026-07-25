@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/c/Users/rafael/OneDrive - orafaelferreira.com/certificados/revisar/**)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}
