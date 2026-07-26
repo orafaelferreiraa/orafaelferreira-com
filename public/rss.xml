@@ -5,11 +5,20 @@
     <link>https://www.orafaelferreira.com</link>
     <description>Novos artigos e publicacoes sobre Azure, DevOps, FinOps, Terraform, Kubernetes e Platform Engineering.</description>
     <language>pt-BR</language>
-    <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
-    <lastBuildDate>Sat, 27 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+    <lastBuildDate>Sun, 26 Jul 2026 00:00:00 GMT</lastBuildDate>
     <generator>Custom RSS Generator (Node.js)</generator>
     <ttl>60</ttl>
     <atom:link href="https://www.orafaelferreira.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Loop Engineering na prática: como eu opero agentes no dia a dia</title>
+      <link>https://www.orafaelferreira.com/artigos/Loop.Engineering</link>
+      <guid isPermaLink="true">https://www.orafaelferreira.com/artigos/Loop.Engineering</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>O que é Loop Engineering, e como eu monto meu loop de verdade com skills, rules, subagents, hooks e MCP no Docker, incluindo os quatro pontos onde eu discordo da definição canônica.</description>
+      <category>Artigos</category>
+      <enclosure url="https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/Loop.Engineering/capa.png" type="image/png" />
+    </item>
     <item>
       <title>MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade</title>
       <link>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</link>

@@ -1,15 +1,9 @@
 {
   "mcpServers": {
-    "azure-mcp": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "--env-file",
-        "${CLAUDE_PROJECT_DIR:-.}/.azure-mcp.env",
-        "mcr.microsoft.com/azure-sdk/azure-mcp:latest"
-      ]
+    "MCP_DOCKER": {
+      "type": "stdio",
+      "command": "/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe",
+      "args": ["mcp", "gateway", "run", "--profile", "profile"]
     }
   }
 }

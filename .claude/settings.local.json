@@ -3,7 +3,9 @@
     "allow": [
       "Read(//mnt/c/Users/rafael/OneDrive - orafaelferreira.com/certificados/revisar/**)",
       "Bash(node -e ' *)",
-      "mcp__MCP_DOCKER__mcp-find"
+      "mcp__MCP_DOCKER__mcp-find",
+      "Read(//mnt/c/Users/rafae/AppData/Roaming/Code/User/**)",
+      "Read(//home/rafael/.vscode-server/data/Machine/**)"
     ]
   },
   "enableAllProjectMcpServers": true,
