@@ -56,7 +56,12 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_no-dia-23-de-julho-eu-e-a-j%C3%A9ssica-mello-activity-7478409858585747456-WSXT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/tdcfloripa26.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
+      repositories: [
+      {
+        label: "Repositório do Site",
+        url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
       },
+      ]},
     {
       title: "GitHub Copilot in VSCode: Agents That Debug, Profile, and Test",
       event: "Microsoft Build //localhost:florianópolis",
