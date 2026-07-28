@@ -28,7 +28,7 @@ const Talks = () => {
       location: "Auditório Eny Caldeira do Campus Rebouças da UFPR",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
       siteUrl: "https://devopsdays.org/events/2026-curitiba/welcome/", 
-      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devops-devopsdays-curitiba-share-7487831912506634243-X6wN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
       },
