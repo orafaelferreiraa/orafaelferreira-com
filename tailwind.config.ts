@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -107,10 +108,20 @@ export default {
         },
         "glow": {
           "0%, 100%": {
-            boxShadow: "0 0 20px hsl(180 100% 50% / 0.3)",
+            boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
           },
           "50%": {
-            boxShadow: "0 0 30px hsl(180 100% 50% / 0.5)",
+            boxShadow: "0 0 30px hsl(var(--primary) / 0.5)",
+          },
+        },
+        "nudge": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+            opacity: "0.65",
+          },
+          "55%": {
+            transform: "translateY(30%)",
+            opacity: "1",
           },
         },
       },
@@ -120,8 +131,9 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "fade-in-up": "fade-in-up 0.8s ease-out",
         "glow": "glow 2s ease-in-out infinite",
+        "nudge": "nudge 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

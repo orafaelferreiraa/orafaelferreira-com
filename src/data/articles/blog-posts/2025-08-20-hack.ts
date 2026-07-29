@@ -67,7 +67,7 @@ Nos vemos na próxima!
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/11.png)
 
-- <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer](https://stoblobcertificados011.blob.core.windows.net/palestras/CloudModernaANTIAtaque.pdf)
+- <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer](https://stoblobcertificados011.blob.core.windows.net/palestras/CloudModernaANTIAtaque.pdf)
 `,
   date: "2025-08-20",
   category: "Palestras",

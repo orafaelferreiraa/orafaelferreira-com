@@ -23,4 +23,17 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  {
+    // These files intentionally co-export helpers/constants alongside a component
+    // (shadcn/ui primitives with cva variants, schema.org builders, icon maps).
+    // The rule only affects dev-time Fast Refresh, not production output.
+    files: [
+      "src/components/ui/**/*.{ts,tsx}",
+      "src/components/SEO/**/*.{ts,tsx}",
+      "src/lib/**/*.{ts,tsx}",
+    ],
+    rules: {
+      "react-refresh/only-export-components": "off",
+    },
+  },
 );

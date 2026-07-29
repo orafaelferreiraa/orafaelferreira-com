@@ -52,7 +52,7 @@
   </url>
 
   <!-- Articles -->
-  <url><loc>https://www.orafaelferreira.com/artigos/Loop.Engineering</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.orafaelferreira.com/artigos/loop-engineering-na-pratica</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/alura-cloud-computing-fundamentos-iaas-paas-saas</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/github-copilot-vscode-agents-debug-profile-test</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>

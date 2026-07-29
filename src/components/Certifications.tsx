@@ -158,7 +158,7 @@ const Certifications = () => {
 
       <div className="container mx-auto max-w-7xl relative">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-foreground">
             {t("certifications.title")}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
@@ -176,7 +176,7 @@ const Certifications = () => {
                   className={`scroll-fade-in ${isVisible ? "visible" : ""}`}
                   style={{ transitionDelay: `${index * 40}ms` }}
                 >
-                  <Card className="group h-full overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/25 hover:shadow-[0_8px_32px_hsl(180_100%_50%/0.08)] hover:-translate-y-1">
+                  <Card className="group h-full overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/25 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.08)] hover:-translate-y-1">
                     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <CardHeader className="pb-4">
                       <div className="flex justify-center mb-4">

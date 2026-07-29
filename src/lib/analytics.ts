@@ -1,7 +1,7 @@
 declare global {
     interface Window {
-        dataLayer?: any[];
-        gtag?: (...args: any[]) => void;
+        dataLayer?: unknown[];
+        gtag?: (...args: unknown[]) => void;
         _gaInitialized?: boolean;
     }
 }
@@ -9,9 +9,9 @@ declare global {
 export function initGA(measurementId?: string) {
     if (!measurementId || typeof window === "undefined") return;
     // If analytics already exists, don't inject second script
-    if ((window as any)._gaInitialized) return;
+    if (window._gaInitialized) return;
     if (typeof window.gtag === 'function') {
-        (window as any)._gaInitialized = true;
+        window._gaInitialized = true;
         return;
     }
     window._gaInitialized = true;
@@ -24,11 +24,11 @@ export function initGA(measurementId?: string) {
 
     // Initialize gtag
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-        window.dataLayer!.push(arguments);
+    function gtag(...args: unknown[]) {
+        window.dataLayer!.push(args);
     }
-    window.gtag = gtag as any;
-    (window as any)._gaInitialized = true;
+    window.gtag = gtag;
+    window._gaInitialized = true;
     window.gtag("js", new Date());
     // Prevent automatic page_view — SPA will call trackPageView on navigation
     window.gtag("config", measurementId, { send_page_view: false });

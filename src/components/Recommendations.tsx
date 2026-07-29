@@ -112,7 +112,7 @@ const Recommendations = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-foreground">
               {t("recommendations.title")}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
@@ -151,7 +151,7 @@ const Recommendations = () => {
                       className="group"
                     >
                       <Card
-                        className={`relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5 border border-primary/10 bg-card/40 backdrop-blur-sm ${
+                        className={`relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_4px_24px_hsl(var(--primary)/0.08)] hover:-translate-y-0.5 border border-primary/10 bg-card/40 backdrop-blur-sm ${
                           item.highlight
                             ? "border-primary/30 bg-primary/5"
                             : "hover:border-primary/25"

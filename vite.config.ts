@@ -45,6 +45,9 @@ export default defineConfig(({ mode }) => ({
   },
   // Test config: jsdom for component tests; works for unit tests too
   test: {
+    // 'threads' avoids the forks-pool worker-startup timeout on WSL2/OneDrive-mounted
+    // filesystems; fully supported in CI as well.
+    pool: 'threads',
     environment: 'jsdom',
     setupFiles: ['./src/setupTests.ts'],
     include: ['src/**/*.test.{ts,tsx}'],

@@ -1,7 +1,7 @@
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Suspense, lazy, useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router";
 import { initGA, trackPageView } from "./lib/analytics";
 import BackToTop from "./components/BackToTop";
 const Home = lazy(() => import("./pages/Home"));
@@ -24,7 +24,7 @@ function ScrollToTop() {
 
 function Analytics() {
   const location = useLocation();
-  const id = (import.meta as any).env?.VITE_GA_MEASUREMENT_ID as string | undefined;
+  const id = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined;
 
   useEffect(() => {
     initGA(id);

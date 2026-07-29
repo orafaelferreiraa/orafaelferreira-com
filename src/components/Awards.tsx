@@ -13,6 +13,7 @@ type AwardItem = {
 
 const awards: AwardItem[] = [
   { id: 'mvp', emoji: '🔵', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/MVP.png', year: '2024', link: 'https://mvp.microsoft.com/pt-BR/mvp/profile/627d5ac9-f704-4768-81a7-5c580283881d', color: 'from-blue-500/20 to-blue-600/20 border-blue-500/30' },
+  // impeccable-disable-next-line ai-color-palette: cor da propria badge de Platform Engineering, nao decoracao
   { id: 'platformengineering', emoji: '🟣', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/platformengineer.png', year: '2026', link: 'https://www.virtualbadge.io/certificate-validator?credential=c962cab7-2844-4faf-8b08-81590ec29a70', color: 'from-purple-500/20 to-purple-600/20 border-purple-500/30' },
   { id: 'devops', emoji: '🟠', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/DevOpsInstitute.png', year: '2025', link: 'https://stoblobcertificados011.blob.core.windows.net/certificados/2025-05-DevOpsInstituteAmbassadors.pdf', color: 'from-orange-500/20 to-orange-600/20 border-orange-500/30' },
   { id: 'alura', emoji: '🟡', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/alurastar.png', year: '2025', link: 'https://www.alura.com.br/stars', color: 'from-yellow-500/20 to-yellow-600/20 border-yellow-500/30' },
@@ -37,10 +38,10 @@ const Awards = () => {
 
       <div className="container mx-auto max-w-7xl relative">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-foreground">
             {t("awards.title")}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto italic border-l-4 border-primary pl-4">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto italic border-l-2 border-primary/40 pl-5">
             {t("awards.subtitle")}
           </p>
         </div>
@@ -54,7 +55,7 @@ const Awards = () => {
             return (
               <Card
                 key={award.id}
-                className={`group transition-all duration-300 hover:shadow-[0_8px_32px_hsl(180_100%_50%/0.08)] hover:-translate-y-1 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm bg-gradient-to-br ${award.color} scroll-scale-in ${awardsGridVisible ? 'visible' : ''}`}
+                className={`group transition-all duration-300 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.08)] hover:-translate-y-1 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm bg-gradient-to-br ${award.color} scroll-scale-in ${awardsGridVisible ? 'visible' : ''}`}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <CardHeader>

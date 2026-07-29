@@ -17,23 +17,23 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   } = options;
 
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  // Start visible when the observer is unavailable or the user prefers reduced
+  // motion — computed at mount so we never call setState synchronously in the effect.
+  const [isVisible, setIsVisible] = useState<boolean>(() => {
+    if (typeof IntersectionObserver === 'undefined') return true;
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return true;
+    }
+    return false;
+  });
 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
 
-    // Avoid leaving content hidden when observer is unavailable.
-    if (typeof IntersectionObserver === 'undefined') {
-      setIsVisible(true);
-      return;
-    }
-
-    // Respect reduced-motion preference and keep content immediately visible.
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setIsVisible(true);
-      return;
-    }
+    // Observer unavailable or reduced-motion: content is already visible from initial state.
+    if (typeof IntersectionObserver === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     // Safety fallback for mobile/browser edge cases where observer may not fire.
     const fallbackTimer = window.setTimeout(() => {

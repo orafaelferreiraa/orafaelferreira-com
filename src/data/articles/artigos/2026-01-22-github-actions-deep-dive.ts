@@ -296,7 +296,7 @@ export default defineConfig({
 \`\`\`yaml
 - name: Get Playwright version
   id: playwright-version
-  run: echo "version=$(npm list @playwright/test --depth=0 --json 2>/dev/null | jq -r '.dependencies["@playwright/test"].version // empty')" >> \$GITHUB_OUTPUT
+  run: echo "version=$(npm list @playwright/test --depth=0 --json 2>/dev/null | jq -r '.dependencies["@playwright/test"].version // empty')" >> $GITHUB_OUTPUT
   
 - name: Cache Playwright browsers
   uses: actions/cache@v4

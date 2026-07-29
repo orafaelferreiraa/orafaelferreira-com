@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { Calendar, ExternalLink, FileText, Globe, MapPin, Presentation, Radio } from "lucide-react";
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface Talk {
@@ -19,6 +19,43 @@ interface Talk {
   blogUrl?: string;
   repositories?: { label: string; url: string }[];
 }
+/* ───── Section wrapper with scroll animation ───── */
+const TalkSection = ({
+  icon: Icon,
+  title,
+  talks,
+  sectionIndex,
+  renderTalkCard,
+}: {
+  icon: React.ElementType;
+  title: string;
+  talks: Talk[];
+  sectionIndex: number;
+  renderTalkCard: (talk: Talk, index: number) => React.ReactNode;
+}) => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.05, rootMargin: "-30px" });
+
+  return (
+    <section
+      ref={ref}
+      className={`mb-16 scroll-fade-in ${isVisible ? "visible" : ""}`}
+      style={{ transitionDelay: `${sectionIndex * 100}ms` }}
+    >
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <Icon className="h-5 w-5" />
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+          {title}
+        </h2>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {talks.map((talk, index) => renderTalkCard(talk, index))}
+      </div>
+    </section>
+  );
+};
+
 const Talks = () => {
   const upcomingTalks: Talk[] = [
     {
@@ -606,7 +643,7 @@ const Talks = () => {
     return (
       <div
         key={`${talk.title}-${talk.date}`}
-        className={`group relative overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/25 hover:shadow-[0_8px_32px_hsl(180_100%_50%/0.08)] hover:-translate-y-1 ${
+        className={`group relative overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/25 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.08)] hover:-translate-y-1 ${
           talk.blogUrl ? "cursor-pointer" : ""
         }`}
         style={{ animationDelay: `${index * 40}ms` }}
@@ -714,41 +751,6 @@ const Talks = () => {
     );
   };
 
-  /* ───── Section wrapper with scroll animation ───── */
-  const TalkSection = ({
-    icon: Icon,
-    title,
-    talks,
-    sectionIndex,
-  }: {
-    icon: React.ElementType;
-    title: string;
-    talks: Talk[];
-    sectionIndex: number;
-  }) => {
-    const { ref, isVisible } = useScrollAnimation({ threshold: 0.05, rootMargin: "-30px" });
-
-    return (
-      <section
-        ref={ref}
-        className={`mb-16 scroll-fade-in ${isVisible ? "visible" : ""}`}
-        style={{ transitionDelay: `${sectionIndex * 100}ms` }}
-      >
-        <div className="flex items-center gap-4 mb-8">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-            <Icon className="h-5 w-5" />
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
-            {title}
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {talks.map((talk, index) => renderTalkCard(talk, index))}
-        </div>
-      </section>
-    );
-  };
-
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background effects */}
@@ -761,7 +763,7 @@ const Talks = () => {
       <div className="container mx-auto max-w-7xl relative">
         {/* ── Header ── */}
         <div className="mb-14 animate-fade-in text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-foreground">
             {t("talks.title")}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
@@ -773,14 +775,14 @@ const Talks = () => {
 
         {/* ── Upcoming ── */}
         {upcomingTalks.length > 0 && (
-          <TalkSection icon={Radio} title={t("talks.upcoming")} talks={upcomingTalks} sectionIndex={0} />
+          <TalkSection icon={Radio} title={t("talks.upcoming")} talks={upcomingTalks} sectionIndex={0} renderTalkCard={renderTalkCard} />
         )}
 
         {/* ── In-Person ── */}
-        <TalkSection icon={MapPin} title={t("talks.inPerson")} talks={inPersonTalks} sectionIndex={1} />
+        <TalkSection icon={MapPin} title={t("talks.inPerson")} talks={inPersonTalks} sectionIndex={1} renderTalkCard={renderTalkCard} />
 
         {/* ── Online ── */}
-        <TalkSection icon={Globe} title={t("talks.online")} talks={onlineTalks} sectionIndex={2} />
+        <TalkSection icon={Globe} title={t("talks.online")} talks={onlineTalks} sectionIndex={2} renderTalkCard={renderTalkCard} />
       </div>
     </section>
   );

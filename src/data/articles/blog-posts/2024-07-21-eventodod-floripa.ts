@@ -6,7 +6,7 @@ export const article: Article = {
   excerpt: "O DevOpsDays é uma conferência global que une desenvolvimento, operações e cultura DevOps. Em 16 de novembro de 2024, Floripa recebeu +150 participantes para um dia inteiro de talks, open‑spaces e networking.",
   content: `
 O **DevOpsDays** é uma conferência global que une desenvolvimento, operações e cultura DevOps.  
-Em **16 de novembro de 2024**, Floripa recebeu +150 participantes para um dia inteiro de talks, open‑spaces e networking.
+Em **16 de novembro de 2024**, Floripa recebeu +150 participantes para um dia inteiro de talks, open‑spaces e networking.
 
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod/0.png)
  
@@ -21,7 +21,7 @@ Em **16 de novembro de 2024**, Floripa recebeu +150 participantes para um di
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod/4.jpg)
 
 **Obrigado!** A mágica só acontece graças a voluntários, patrocinadores e à comunidade DevOps que compareceu em peso.  
-Nos vemos no **DevOpsDays Floripa 2025**! 🚀
+Nos vemos no **DevOpsDays Floripa 2025**! 🚀
 
 
 `,

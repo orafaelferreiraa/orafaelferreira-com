@@ -41,7 +41,7 @@ Juntou curiosidade + vontade de ajudar? Então o grupo é pra você! 🎉
 | 10 jun 2024 | [**AZ‑900: Fundamentos do Azure**](https://www.orafaelferreira.com/artigos/curso-az-900) | Presencial |
 | 10 abr 2024 | [**Global Azure 2024 feat. Azure Floripa**](https://www.orafaelferreira.com/artigos/global-azure24) | Online |
 | 10 abr 2025 | [**Global Azure 2025 feat. Azure Floripa**](https://www.orafaelferreira.com/artigos/global-azure25) | Online |
-| 10 abr 2025 | [**Global Azure 2025 – Azure Floripa**](https://www.meetup.com/azure-floripa/events/306207034/?eventOrigin=group_upcoming_events)| Presencial |
+| 10 abr 2025 | [**Global Azure 2025 – Azure Floripa**](https://www.meetup.com/azure-floripa/events/306207034/?eventOrigin=group_upcoming_events)| Presencial |
 
 ---
 ## Conhecendo as vertentes do Copilot e o que ele pode fazer no Azure com Marcelo Souza

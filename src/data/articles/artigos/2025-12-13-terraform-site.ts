@@ -23,7 +23,7 @@ Vamos passar por tudo o que sustenta o blog hoje:
 - Pipelines CI/CD no GitHub Actions para "plan" (PRs) e "apply" (push em main)
 - Segurança, lint e scans: TFLint, tfsec, Checkov (era preciso tudo isso? claro que não! meu site se tornou meu projeto pessoal de estudos)
 - Automatização de documentação com terraform-docs
-- Integração com o deploy do app (build + upload da pasta \"dist\")
+- Integração com o deploy do app (build + upload da pasta "dist")
 
 Ao final, você terá uma visão ponta a ponta do que acontece desde um "git push" até o site atualizado em produção.
 

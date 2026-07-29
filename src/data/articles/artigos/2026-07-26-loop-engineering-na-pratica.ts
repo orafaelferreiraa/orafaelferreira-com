@@ -212,11 +212,40 @@ O **MCP** tem o token e escreve o comentário.
 
 Trigger determinístico, procedimento versionado, efetor autenticado. Nenhuma das camadas sabe fazer o trabalho da outra, e é por isso que dá para mexer numa sem quebrar as demais.
 
-### Guard que conhece o modo de permissão
+### Minha trava preferida: nada é destruído sem eu olhar
 
-O hook mais paranoico do meu setup é o que barra operação destrutiva. Ele tem um detalhe de engenharia que eu não vi documentado em lugar nenhum e que só apareceu quando quebrou.
+De tudo que eu construí nesse setup, esse é o hook de que eu mais gosto, e é o que eu recomendaria escrever primeiro se alguém me perguntasse por onde começar. A regra dele é uma frase: **toda operação destrutiva para e pede autorização, sempre, independente do modo em que eu esteja.**
 
-O jeito elegante de um hook barrar algo é devolver um JSON pedindo confirmação:
+Ele roda em \`PreToolUse\`, antes de qualquer coisa acontecer, e a cobertura é deliberadamente ampla. São dez regras rotuladas, testadas em ordem, e o rótulo importa porque é ele que vai para o log:
+
+- **Remoção de arquivo**, \`rm\`, \`rmdir\`, \`unlink\`, \`shred\`, \`del\`, com ou sem \`sudo\`, inclusive quando aparecem depois de um \`;\`, de um \`&&\` ou dentro de um subshell.
+- **Subcomando destrutivo depois de uma CLI conhecida**, a rede mais larga de todas: \`delete\`, \`destroy\`, \`uninstall\`, \`purge\`, \`prune\`, \`remove\`, \`drop\` precedidos de \`az\`, \`kubectl\`, \`helm\`, \`docker\`, \`terraform\`, \`tofu\`, \`gh\`, \`argocd\`, \`flux\`, \`aws\`, \`gcloud\`, \`npm\`, \`apt\` e companhia.
+- **\`terraform destroy\`**, e também o \`apply\` disfarçado com a flag de destruição, que é o jeito silencioso de fazer a mesma coisa.
+- **Git destrutivo**, \`push --force\`, \`reset --hard\`, \`clean -f\`, \`branch -D\`, \`tag -d\`, \`stash drop\` e \`stash clear\`. Perder trabalho local não é menos grave que perder recurso na nuvem, é só mais silencioso.
+- **Docker**, \`system prune\`, \`volume rm\`, \`network rm\`, e o \`compose down -v\` que leva os volumes junto.
+- **Kubernetes**, \`kubectl delete\` e \`kubectl drain\`, \`helm uninstall\`.
+- **\`find\` com \`-delete\` ou \`-exec rm\`**, que é como um comando de busca se transforma em remoção em massa.
+- **SQL**, \`DROP TABLE\`, \`DROP DATABASE\`, \`DELETE FROM\`, \`TRUNCATE\`.
+- **Verbo destrutivo genérico**, a rede de segurança para o que eu não previ: pega uma tool de MCP chamada \`delete_algumacoisa\` ou um campo \`"destroy"\` no payload.
+
+E tem um detalhe de escopo que faz esse último item funcionar. O hook não olha só linha de comando: **quando a ferramenta não é o shell, ele varre o \`tool_input\` inteiro.** Isso é o que faz uma tool de MCP que apaga recurso na nuvem cair na mesma rede que um \`rm -rf\`. Ferramentas que não destroem nada (ler, escrever, buscar arquivo) saem na primeira linha, sem custo.
+
+**Por que "sempre" é a palavra que importa.** O modo que aceita edição automaticamente existe justamente para eu não aprovar cada passo, e é ótimo para isso. Só que ele não distingue "criar arquivo" de "apagar cluster". Esse hook devolve \`permissionDecision: "ask"\`, que **sobrevive ao auto mode**: mesmo com tudo liberado, remoção volta a exigir um sim explícito meu.
+
+Repare no que isso significa: **é o único guardrail meu que não confia em mim.** Os outros protegem contra o agente errar. Esse protege contra eu estar no automático e aprovar sem ler, que é o modo de falha mais provável depois que o loop começa a funcionar bem. É o freio contra a rendição cognitiva, escrito em shell.
+
+Ele também é o único que **ignora o kill-switch global**. Todos os meus outros hooks respeitam uma variável de ambiente que os desliga de uma vez; esse não olha para ela. Guardrail que desliga junto com o resto não é guardrail, é enfeite.
+
+**Está funcionando?** O log diz que sim, e mais do que eu esperava. Em vinte dias, **100 detecções**, cerca de cinco por dia:
+
+| Regra que disparou | Vezes |
+|---|---|
+| Subcomando destrutivo depois de CLI | 54 |
+| Remoção de arquivo | 32 |
+| Git destrutivo | 12 |
+| SQL e verbo genérico | 2 |
+
+**E o detalhe de engenharia que quase me custou caro.** O jeito elegante de um hook barrar algo é devolver um JSON pedindo confirmação:
 
 \`\`\`json
 { "hookSpecificOutput": {
@@ -238,9 +267,9 @@ case "$perm_mode" in
 esac
 \`\`\`
 
-Onde tem prompt, pede. Onde não tem, usa \`exit 2\`, que é o único mecanismo que bloqueia em qualquer modo. E o log de auditoria é escrito **antes** da decisão, se eu aprovar no automático, quero pelo menos ter o registro de que aprovei.
+Onde tem prompt, pede. Onde não tem, usa \`exit 2\`, que é o único mecanismo que bloqueia em qualquer modo, e a mensagem diz para sair do modo bypass e reexecutar se a intenção era real. Isso fecha a única brecha que restava.
 
-Esse hook também é o único que **ignora o kill-switch global** dos outros. Todos os meus hooks respeitam uma variável de ambiente que os desliga; esse não. Guardrail que se desliga junto com o resto não é guardrail, é enfeite.
+E o log de auditoria é escrito **antes** da decisão, nunca depois. Se eu aprovar no automático, quero pelo menos ter o registro de que fui eu que aprovei, com data, sessão, regra e o comando inteiro. Auditoria que só grava o que foi bloqueado conta metade da história.
 
 ### Verificador separado, com dentes
 
@@ -258,9 +287,9 @@ Um detalhe que economiza contexto: meus verificadores têm **formato de saída f
 
 A tese 3 disse que em infra o verificador não é a suíte de testes. Mas isso não significa que não exista suíte. Significa que ela é **um degrau, não o topo**. O caso onde eu montei essa escada por inteiro foi escrevendo um operator Kubernetes em Go, com [Kubebuilder](https://book.kubebuilder.io/), e a ordem importa mais que cada peça.
 
-**Degrau 1 — compilar e passar o vet.** \`go build\` e \`go vet\`. Custa segundos, pega erro de digitação e de tipo. Óbvio, e ainda assim é o degrau que o agente mais tenta pular quando está confiante.
+**Degrau 1, compilar e passar o vet.** \`go build\` e \`go vet\`. Custa segundos, pega erro de digitação e de tipo. Óbvio, e ainda assim é o degrau que o agente mais tenta pular quando está confiante.
 
-**Degrau 2 — testes de unidade.** A lógica de tradução do operator concentra a maior parte deles, tabela-driven, dezenas de casos. É onde uma mudança de comportamento fica cravada em asserção.
+**Degrau 2, testes de unidade.** A lógica de tradução do operator concentra a maior parte deles, tabela-driven, dezenas de casos. É onde uma mudança de comportamento fica cravada em asserção.
 
 E aqui está a regra que eu considero a mais valiosa deste artigo depois do \`exit 2\`, porque é a defesa direta contra reward hacking:
 
@@ -268,45 +297,29 @@ E aqui está a regra que eu considero a mais valiosa deste artigo depois do \`ex
 
 Isso é mutation testing manual, e resolve o problema central do loop autônomo. O agente é ótimo em escrever teste que passa. Pedir "escreva um teste", não. Digite "escreva um teste e me prove que ele pega o bug". É a diferença entre verificar e parecer que verificou.
 
-**Degrau 3 — testes de integração contra uma API real.** O reconciler roda contra \`envtest\`, que sobe um \`kube-apiserver\` e um \`etcd\` de verdade. Detalhe que virou nota na skill porque me custou uma sessão inteira de diagnóstico errado: esses binários **não vêm no repo**, precisam ser baixados uma vez por um passo de setup. Sem ele a suíte falha de um jeito que parece bug do código. Não era gap conhecido, era só um passo faltando, e eu quase "consertei" código que estava certo.
+**Degrau 3, testes de integração contra uma API real.** O reconciler roda contra \`envtest\`, que sobe um \`kube-apiserver\` e um \`etcd\` de verdade. Detalhe que virou nota na skill porque me custou uma sessão inteira de diagnóstico errado: esses binários **não vêm no repo**, precisam ser baixados uma vez por um passo de setup. Sem ele a suíte falha de um jeito que parece bug do código. Não era gap conhecido, era só um passo faltando, e eu quase "consertei" código que estava certo.
 
 Essa é uma falha de loop clássica e vale nomear: **erro de ambiente que se disfarça de erro de código.** O agente lê o stack trace, acredita nele, e começa a consertar a coisa errada com muita confiança. O antídoto é o mesmo do resto: registrar o obstáculo por escrito na primeira vez que ele aparece, para a próxima sessão não repetir o diagnóstico.
 
-**Degrau 4 — cluster local, imitando o ambiente real.** E aqui está o limite duro do degrau anterior: \`envtest\` sobe a API do Kubernetes, mas **não sobe o data plane**. Ele não tem proxy de verdade, não move pacote. Qualquer coisa que dependa de comportamento real de rede — um header sendo reescrito, uma política sendo aplicada no caminho do tráfego — passa no envtest e falha no mundo.
+**Degrau 4, o cluster local que imita o ambiente real.** E aqui está o limite duro do degrau anterior: \`envtest\` sobe a API do Kubernetes, mas **não sobe o data plane**. Ele não tem proxy de verdade, não move pacote. Qualquer coisa que dependa de comportamento real de rede, como um header sendo reescrito ou uma política aplicada no caminho do tráfego, passa no envtest e falha no mundo.
 
 Então existe um degrau a mais: o Kubernetes que vem no Docker Desktop, rodando na minha máquina, configurado com **os mesmos valores de Helm do módulo que provisiona o ambiente real**. Não é um cluster de brinquedo com o default do chart; é o ambiente de produção em miniatura, e é isso que faz o teste valer. Ao lado dele, um backend que só ecoa os headers que recebeu, e um \`curl\`. Aí eu vejo o que realmente chegou.
 
-Esse degrau também é onde mora um dos meus guardrails favoritos, e ele é de permissão, não de código: **os clusters reais são read-only para o agente** — \`get\`, \`list\`, \`watch\`, \`logs\`, \`events\` e nada mais. O cluster local é a única exceção com acesso de escrita. A assimetria é o guardrail. O agente pode quebrar o quanto quiser onde quebrar é grátis, e não alcança onde não é.
+Esse degrau também é onde mora um dos meus guardrails favoritos, e ele é de permissão, não de código: **os clusters reais são read-only para o agente**, só \`get\`, \`list\`, \`watch\`, \`logs\` e \`events\`, mais nada. O cluster local é a única exceção com acesso de escrita. A assimetria é o guardrail. O agente pode quebrar o quanto quiser onde quebrar é grátis, e não alcança onde não é.
 
-E uma armadilha bem específica de quem roda WSL com Docker Desktop, que me custou um bom tempo: rodar o operator com \`go run\` no WSL e tentar alcançá-lo do cluster via \`host.docker.internal\` **não funciona**. WSL e a VM do Kubernetes do Docker Desktop são máquinas virtuais separadas — o DNS resolve, o que faz parecer que está tudo certo, e a conexão TCP simplesmente não completa. Diagnóstico enganoso do início ao fim.
+E uma armadilha bem específica de quem roda WSL com Docker Desktop, que me custou um bom tempo: rodar o operator com \`go run\` no WSL e tentar alcançá-lo do cluster via \`host.docker.internal\` **não funciona**. WSL e a VM do Kubernetes do Docker Desktop são máquinas virtuais separadas. O DNS resolve, o que faz parecer que está tudo certo, e a conexão TCP simplesmente não completa. Diagnóstico enganoso do início ao fim.
 
-A saída é boa demais para não contar: em vez de rodar o processo fora e tentar entrar, **monte o código-fonte dentro de um pod e rode ali**:
+**Não tem build de imagem no ciclo de iteração.** Editar arquivo, reiniciar o pod, ver o efeito, o loop interno fica em segundos em vez de minutos, e a imagem só é construída quando o comportamento já está validado. Que é exatamente o ponto: a imagem é o *resultado* do loop, não uma etapa dele.
 
-\`\`\`yaml
-volumes:
-  - name: src
-    hostPath:
-      path: /run/desktop/mnt/host/c/<caminho-do-modulo-go>
-containers:
-  - image: golang:1.26
-    workingDir: /workspace
-    command: ["/bin/bash", "-c", "go run ./cmd/main.go"]
-    volumeMounts:
-      - name: src
-        mountPath: /workspace
-\`\`\`
+**Degrau 5: A imagem. E só então,** quando os quatro degraus passam, aí sai a imagem, construída pelo serviço de build do registry, nunca na minha máquina.
 
-O ganho não é só resolver a conectividade. **Não tem build de imagem no ciclo de iteração.** Editar arquivo, reiniciar o pod, ver o efeito — o loop interno fica em segundos em vez de minutos, e a imagem só é construída quando o comportamento já está validado. Que é exatamente o ponto: a imagem é o *resultado* do loop, não uma etapa dele.
-
-**Degrau 5 — a imagem, e só então.** Quando os quatro degraus passam, aí sai a imagem — construída pelo serviço de build do registry, nunca na minha máquina. Build local produz artefato que depende do meu ambiente; ninguém consegue reproduzir e o agente não deveria nem tentar.
-
-Tem um sexto verificador nessa história que eu gosto de citar porque é um teste guardando **consistência entre duas fontes de verdade**, não comportamento. O RBAC do operator existe em dois lugares: um arquivo gerado a partir de marcadores no código — que **não pode ser editado à mão**, porque o gerador sobrescreve silenciosamente na próxima execução — e uma cópia de referência no manifesto. Um teste falha o build se os dois divergirem. Sem ele, alguém edita o gerado à mão, o gerador apaga na semana seguinte, e o operator perde permissão em produção sem ninguém ter tocado em permissão.
+Tem um sexto verificador nessa história que eu gosto de citar porque é um teste guardando **consistência entre duas fontes de verdade**, não comportamento. O RBAC do operator existe em dois lugares: um arquivo gerado a partir de marcadores no código, que **não pode ser editado à mão**, porque o gerador sobrescreve silenciosamente na próxima execução, e uma cópia de referência no manifesto. Um teste falha o build se os dois divergirem. Sem ele, alguém edita o gerado à mão, o gerador apaga na semana seguinte, e o operator perde permissão em produção sem ninguém ter tocado em permissão.
 
 ### Quando o CI é o verificador: ler a pipeline de volta
 
 Os cinco degraus acima rodam antes do push. Depois do push existe outro verificador, que é o único que enxerga o ambiente de CI de verdade: a pipeline.
 
-E é aqui que o loop se fecha de um jeito que eu não esperava que funcionasse tão bem. O agente não precisa que eu traduza o erro do CI para ele. Ele lê direto — pelo \`gh\` CLI ou pela tool de MCP do GitHub — pega o log do que falhou, corrige e empurra de novo.
+E é aqui que o loop se fecha de um jeito que eu não esperava que funcionasse tão bem. O agente não precisa que eu traduza o erro do CI para ele. Ele lê direto, pelo \`gh\` CLI ou pela tool de MCP do GitHub, pega o log do que falhou, corrige e empurra de novo.
 
 O detalhe de eficiência que faz diferença é pedir **só o que falhou**:
 
@@ -317,11 +330,11 @@ gh run view <run-id> --log-failed
 
 \`--log-failed\` traz apenas os passos que quebraram. Jogar o log inteiro de um workflow no contexto é desperdício e, pior, enterra o erro real em milhares de linhas de saída de build bem-sucedida. Contexto é orçamento; log de CI é o item mais fácil de estourar.
 
-Isso é *ground truth* do ambiente, no sentido exato que a Anthropic descreve — o agente não está julgando o próprio trabalho, está lendo o veredito de um sistema que ele não controla. Que é a definição de verificador honesto.
+Isso é *ground truth* do ambiente, no sentido exato que a Anthropic descreve, o agente não está julgando o próprio trabalho, está lendo o veredito de um sistema que ele não controla. Que é a definição de verificador honesto.
 
 **E aqui vem a parte honesta:** esse é o pedaço **menos codificado** do meu setup. Os cinco degraus locais estão escritos numa skill; a leitura de CI ainda é convenção que vive na minha cabeça e se repete a cada sessão por hábito, não por procedimento. Não existe hook que dispare no push, não existe regra que force ler \`--log-failed\` em vez do log todo, não existe teto de quantas vezes tentar antes de me chamar. É exatamente o tipo de rotina repetida e não-óbvia que a minha própria rotina de mineração deveria ter capturado, e não capturou ainda.
 
-Deixo isso escrito de propósito. Loop maduro não é o que já está pronto — é o que sabe onde ainda não está.
+Deixo isso escrito de propósito. Loop maduro não é o que já está pronto, é o que sabe onde ainda não está.
 
 ### Skills: a descrição é o que decide
 
@@ -358,6 +371,55 @@ A lição de escopo veio de um erro que dói de lembrar. Minha regra de manifest
 
 Sem ele, cada servidor MCP é um processo com runtime próprio, dependência própria e credencial largada em algum \`.env\`. Com o [MCP Toolkit e o Catalog](https://docs.docker.com/ai/mcp-catalog-and-toolkit/), você habilita servidores pela interface do Docker Desktop e o [MCP Gateway](https://github.com/docker/mcp-gateway) agrega todos eles atrás de **uma única entrada** de configuração. Cada servidor roda em container, com limite de CPU e memória e \`no-new-privileges\`. E, o ponto que mais me importa, **as credenciais ficam no store cifrado do Docker**, não em arquivo no repo.
 
+**O que eu tenho habilitado hoje.** Não adianta falar de sprawl de ferramentas em abstrato, então aqui está o inventário real, contado na saída do gateway enquanto eu escrevia este parágrafo:
+
+| Servidor MCP | Ferramentas | Para que eu uso |
+|---|---|---|
+| \`atlassian\` | 77 | Jira e Confluence, o discovery do card e o comentário de volta no PR |
+| \`azure\` | 65 | consulta de recurso, custo, quota, RBAC, diagnóstico |
+| \`grafana\` | 65 | dashboards, consulta a métricas e logs, alertas |
+| \`github-official\` | 44 | PR, issue, busca de código, leitura de workflow |
+| \`playwright\` | 23 | navegar e validar página de verdade, não só supor |
+| \`kubernetes\` | 23 | inspeção de cluster, sempre read-only fora do local |
+| \`dockerhub\` | 13 | busca de imagem e checagem de tag |
+| \`terraform\` | 9 | versão de provider e schema de recurso, o gate da tese 2 |
+| \`mcp-python-refactoring\` | 9 | análise de código Python das automações |
+| \`context7\` | 2 | documentação de biblioteca atualizada, contra alucinação de API |
+| \`docker-docs\` | 1 | documentação oficial do Docker |
+
+São **331 ferramentas em 11 servidores**, mais as nativas do próprio gateway, o que fecha as ~339 que aparecem no handshake. Um único container por servidor, uma única entrada de configuração no cliente.
+
+Agora olhe essa tabela como orçamento em vez de catálogo. Três servidores concentram **207 das 331 ferramentas**, quase dois terços. Eu não uso 77 operações de Jira: uso quatro ou cinco. Esse é o custo escondido do "habilita que é fácil", e é a causa do problema de timeout logo abaixo, não só um detalhe de contexto.
+
+**Você pode puxar esse setup inteiro com um comando.** Essa é a parte que eu descobri tarde e que mais me deixou com cara de bobo por ter configurado tudo na mão antes: um profile do MCP Toolkit **é publicável como artefato OCI**. Ele vai para um registry como qualquer imagem, e do outro lado alguém puxa e recebe a lista de servidores já montada.
+
+Eu publiquei o meu:
+
+\`\`\`bash
+# publicar o profile local em um registry
+docker mcp profile push profile rafaferreira011/public:latest
+
+# do outro lado, instalar tudo de uma vez
+docker mcp profile pull rafaferreira011/public:latest
+\`\`\`
+
+O [artefato está público no Docker Hub](https://hub.docker.com/r/rafaferreira011/public). Repare que **não é uma imagem executável**: são ~170 kB de JSON com \`artifactType\` \`application/vnd.docker.mcp.profile.v1+json\`, a relação de servidores com as imagens fixadas por digest. Ninguém roda esse artefato, o Toolkit lê e reconstrói a configuração.
+
+Duas coisas que valem dizer, porque são exatamente as perguntas que eu faria:
+
+**Segredo não viaja junto.** O profile guarda o *nome* do segredo e a variável de ambiente que ele preenche, nunca o valor. Os valores continuam no store cifrado da sua máquina. Eu confirmei baixando o meu próprio artefato e varrendo o JSON: zero token, zero chave. É o que torna publicar um profile uma coisa segura de fazer, e é o mesmo princípio da seção inteira, referência em vez de cópia.
+
+**O profile público é um recorte, não o meu espelho.** São 8 servidores, os que funcionam para qualquer pessoa: Azure, GitHub, Terraform, Kubernetes, Playwright, Docker Hub, Docker Docs e Context7. Ficaram de fora justamente os que dependem de endpoint interno, porque nesses o campo de configuração carrega a URL do ambiente, e URL de ambiente interno em registry público é vazamento, não é conveniência. Segredo o Toolkit protege sozinho; **configuração ele não protege, e essa parte é sua.** Olhe o que vai no profile antes de dar push.
+
+E fechando o argumento do orçamento de ferramentas lá de cima, existe a régua fina, que eu deveria ter começado a usar antes:
+
+\`\`\`bash
+docker mcp profile tools <profile-id> --disable atlassian.jira_delete_issue
+docker mcp profile tools <profile-id> --disable-all playwright
+\`\`\`
+
+Dá para habilitar e desabilitar **ferramenta a ferramenta**, não só servidor inteiro. É a resposta certa para "77 operações de Jira das quais eu uso cinco": em vez de desligar o servidor e perder o que presta, corta a cauda e fica com o que você chama de verdade.
+
 A configuração no lado do cliente é uma entrada só:
 
 \`\`\`json
@@ -392,7 +454,7 @@ O modelo esquece entre execuções. Então tem que existir memória fora dele, e
 
 **Entre sessões**, memória persistente guarda o que foi descoberto e custou caro para descobrir, não estrutura de código, que o repo já conta, mas coisa como "esse comportamento estranho tem essa causa raiz", com data. Fato durável, um por arquivo, indexado.
 
-**Dentro da sessão**, um par de hooks com estado: um registra cada arquivo tocado num arquivo temporário por sessão; o outro, no encerramento, filtra os arquivos de infraestrutura, me mostra a lista e lembra de rodar os gates antes do PR, e trunca o registro. Dois scripts triviais que juntos viram um resumo de sessão que eu de fato leio.
+**Dentro da sessão**, um par de hooks com estado: um registra cada arquivo tocado num arquivo temporário por sessão; o outro, no encerramento, filtra os arquivos de infraestrutura, me mostra a lista e lembra de rodar os gates antes do PR, e trunca o registro.
 
 ### O loop que melhora o loop
 
@@ -434,7 +496,13 @@ A verificação que me deixou tranquilo não foi ela ter criado skill, foi rodar
 
 Na mesma sessão veio um segundo pedido meu, que parecia gêmeo do primeiro: uma rotina para **apagar as sessões antigas**, com mais de uma semana. A motivação é menos glamourosa que a da anterior e mais séria. Transcript é texto puro, e **tudo que passa por uma ferramenta é gravado nele**, conteúdo de arquivo, saída de comando, o que eu colei no prompt. Em ambiente de plataforma isso significa detalhe de infraestrutura acumulando em texto claro no meu diretório de usuário, protegido só por permissão de arquivo do sistema. Guardar isso indefinidamente é uma escolha, e eu não tinha feito essa escolha de propósito.
 
-O reflexo era escrever a segunda tarefa agendada. O certo era não escrever nada: **o cliente já varre por idade na inicialização**, e o período é configurável em uma linha. Uma chave de configuração no lugar de script, agendador e mais uma peça para manter. A lição vale além do caso, é a mesma disciplina anti-sprawl que eu aplico a ferramenta MCP, agora aplicada a automação: **antes de somar peça ao loop, confira se a peça já existe.** Todo script agendado é dívida operacional, e quem paga sou eu.
+O reflexo era escrever a segunda tarefa agendada. O certo era não escrever nada: **o cliente já varre por idade na inicialização**, e o período é uma chave no arquivo de configuração do usuário, \`~/.claude/settings.json\`:
+
+\`\`\`json
+{ "cleanupPeriodDays": 7 }
+\`\`\`
+
+O default são 30 dias, o mínimo é 1. Baixar para 7 foi a alteração inteira, uma chave de configuração no lugar de script, agendador e mais uma peça para manter. A lição vale além do caso, é a mesma disciplina anti-sprawl que eu aplico a ferramenta MCP, agora aplicada a automação: **antes de somar peça ao loop, confira se a peça já existe.** Todo script agendado é dívida operacional, e quem paga sou eu.
 
 Ficaram duas ressalvas, e as duas importam mais que a configuração em si.
 
@@ -475,8 +543,9 @@ O que eu levaria daqui, na ordem em que eu faria de novo:
 - **Escreva o freio antes do acelerador.** Teto de iteração, regra de parada, guardrail que dispara antes da geração. Quatro dos cinco itens da anatomia de um loop são freios; essa proporção não é acidente.
 - **Separe quem escreve de quem confere, por ferramenta, não por instrução.** Read-only de verdade é não ter a ferramenta de escrita.
 - **Um hook que sai com código 2 é feedback de loop de verdade.** É a peça mais barata e mais eficaz do meu setup, e não tem nada de IA nela.
+- **Escreva primeiro a trava de remoção, e faça ela desconfiar de você.** Toda operação destrutiva para e pede autorização, inclusive no modo que liberou o resto, inclusive quando o pedido veio de uma ferramenta e não do shell. É o único guardrail que protege contra o operador no automático, e não contra o agente. Falso positivo nessa checagem é preço, não defeito.
 - **Exija que o teste de regressão prove que pega o bug.** Se ele passa igual com e sem a correção, não testa nada. Pedir "escreva um teste" convida ao teatro; pedir "reverta a correção e me mostre o teste falhando" é a defesa mais barata que existe contra reward hacking.
-- **Ordene os gates por custo e nunca deixe pular degrau.** Compilar, unidade, integração com API real, cluster local espelhando o ambiente de verdade — e só então a imagem. A imagem é o resultado do loop, não uma etapa dele.
+- **Ordene os gates por custo e nunca deixe pular degrau.** Compilar, unidade, integração com API real, cluster local espelhando o ambiente de verdade, e só então a imagem. A imagem é o resultado do loop, não uma etapa dele.
 - **Deixe o agente ler o CI sozinho, mas só a parte que falhou.** Ele não precisa que você traduza o erro. Precisa de acesso ao veredito e de disciplina para não arrastar o log inteiro para o contexto.
 - **Default otimista, correção barata.** Onde o loop precisaria perguntar, faça ele escolher o mais provável, declarar em voz alta o que escolheu e continuar. Pergunta bloqueante no começo de toda tarefa transforma o loop em formulário. Só não esqueça de escrever as exceções: se a busca voltar vazia, pede, nunca inventa.
 - **Guarde o estado do ciclo onde qualquer sessão acha.** A chave da tarefa no nome da branch faz o objetivo sobreviver a compactação, a sessão nova e a subagente. Estado externo não precisa de banco; às vezes precisa só de uma convenção de nome respeitada.
@@ -486,12 +555,12 @@ O que eu levaria daqui, na ordem em que eu faria de novo:
 
 E o mais importante: **o outer loop continua sendo seu.** Delegar o ciclo interno é alavancagem; delegar o julgamento é abdicação. A frase com que o Osmani fecha o artigo dele é a melhor síntese que eu achei disso, e serve de régua: *"Build the loop. But build it like someone who intends to stay the engineer, not just the person who presses go."*
 
-Meus próximos passos são dois. Primeiro, atacar o gate que hoje não é automatizável, transformar "o ambiente está saudável" em verificação programática de verdade, em vez de olhada humana. Segundo, cortar ferramenta MCP habilitada até doer, porque contexto é orçamento e eu tenho gastado mal.
+Meus próximos passos são dois. Primeiro, atacar o gate que hoje não é automatizável, transformar "o ambiente está saudável" em verificação programática de verdade, em vez de olhada humana. Segundo, passar a régua fina nas 331 ferramentas com o allowlist por ferramenta, e não por servidor, porque contexto é orçamento e eu tenho gastado mal. O comando existe desde sempre, eu é que não usava.
 
 Se você está montando o seu: comece pelo hook mais bobo que você conseguir escrever, com uma mensagem de erro que diga o que fazer. É meio caminho.
 `,
   date: "2026-07-26",
   category: "Artigos",
-  readTime: "40 min de leitura",
+  readTime: "49 min de leitura",
   tags: ["IA", "Platform Engineering", "DevOps", "Docker"]
 };

@@ -624,7 +624,7 @@ const CertificateCard = ({ cert, index }: { cert: Certificate; index: number }) 
       className="group block"
       style={{ animationDelay: `${index * 30}ms` }}
     >
-      <div className="relative h-full overflow-hidden rounded-xl border border-primary/10 bg-card/60 backdrop-blur-sm p-4 transition-all duration-300 hover:border-primary/25 hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5">
+      <div className="relative h-full overflow-hidden rounded-xl border border-primary/10 bg-card/60 backdrop-blur-sm p-4 transition-all duration-300 hover:border-primary/25 hover:shadow-[0_4px_24px_hsl(var(--primary)/0.08)] hover:-translate-y-0.5">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         <div className="flex items-start gap-3">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
@@ -662,7 +662,7 @@ const YearSection = ({ yearData, index }: { yearData: YearCertificates; index: n
               <Calendar className="h-5 w-5" />
             </div>
             <div className="flex items-baseline gap-3">
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold text-foreground">
                 {yearData.year}
               </span>
               <Badge variant="secondary" className="bg-primary/[0.07] text-primary/80 text-xs font-medium border border-primary/10">
@@ -700,7 +700,7 @@ const Certificates = () => {
       <div className="container mx-auto max-w-6xl relative">
         {/* ── Header ── */}
         <div className="mb-12 animate-fade-in text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-foreground">
             {t("certificates.heading")}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">

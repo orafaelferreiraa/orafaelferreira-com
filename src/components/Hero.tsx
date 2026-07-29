@@ -86,7 +86,7 @@ const Hero = () => {
             <div className="flex justify-center mt-8">
               <button onClick={scrollToAbout} className="group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors" aria-label={t("hero.learnMore")}>
                 <span className="text-sm font-medium">{t("hero.learnMore")}</span>
-                <ChevronDown className="h-6 w-6 animate-bounce" />
+                <ChevronDown className="h-6 w-6 animate-nudge" />
               </button>
             </div>
           </div>

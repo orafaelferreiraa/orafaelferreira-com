@@ -132,7 +132,7 @@ const Mentorship = () => {
       <section className="relative py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground">
               {t("mentorship.heroTitle.prefix")} {t("mentorship.heroTitle.highlight")}
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8">
@@ -172,7 +172,7 @@ const Mentorship = () => {
             <p className="text-lg text-muted-foreground text-center mb-12 leading-relaxed">{t("mentorship.intro")}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {mentorHighlights.map((highlight, index) => <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5 transition-all duration-300">
+              {mentorHighlights.map((highlight, index) => <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(var(--primary)/0.08)] hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 p-3 rounded-full bg-primary/10">
                       <highlight.icon className="h-6 w-6 text-primary" />
@@ -370,7 +370,7 @@ const Mentorship = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {(t("mentorship.provenMethod.pillars", { returnObjects: true }) as string[]).map((pillar, index) => (
-                  <Card key={index} className="p-6 text-center rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5 transition-all duration-300">
+                  <Card key={index} className="p-6 text-center rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(var(--primary)/0.08)] hover:-translate-y-0.5 transition-all duration-300">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl mx-auto mb-4">
                       {index + 1}
                     </div>
@@ -393,7 +393,7 @@ const Mentorship = () => {
 
             <div className="space-y-6">
               {unifiedProcessSteps.map((step, index) => (
-                <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5 transition-all duration-300">
+                <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_4px_24px_hsl(var(--primary)/0.08)] hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl">
@@ -439,7 +439,7 @@ const Mentorship = () => {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mentorshipBenefits.map((benefit, index) => <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_8px_32px_hsl(180_100%_50%/0.08)] hover:-translate-y-1 transition-all duration-300">
+              {mentorshipBenefits.map((benefit, index) => <Card key={index} className="p-6 rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_8px_32px_hsl(var(--primary)/0.08)] hover:-translate-y-1 transition-all duration-300">
                   <CardHeader className="p-0 mb-4">
                     <div className="inline-flex p-3 rounded-full bg-primary/10 mb-3 w-fit">
                       <benefit.icon className="h-6 w-6 text-primary" />

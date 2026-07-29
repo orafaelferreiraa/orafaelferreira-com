@@ -1,5 +1,5 @@
 import { Calendar, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -175,7 +175,7 @@ const Blog = () => {
         return (
           <Link key={article.slug} to={`/artigos/${article.slug}`}>
             <Card
-              className="group overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_8px_32px_hsl(180_100%_50%/0.08)] hover:-translate-y-1 transition-all duration-300 animate-fade-in-up h-full flex flex-col"
+              className="group overflow-hidden rounded-2xl border border-primary/10 bg-card/40 backdrop-blur-sm hover:shadow-[0_8px_32px_hsl(var(--primary)/0.08)] hover:-translate-y-1 transition-all duration-300 animate-fade-in-up h-full flex flex-col"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {coverImage && (
@@ -252,7 +252,7 @@ const Blog = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-foreground">
             {t("blog.title")}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">

@@ -42,7 +42,7 @@ const TimelineCard = ({
         <div
           className={`relative z-10 mt-7 h-4 w-4 rounded-full border-2 shrink-0 transition-all duration-700 ${
             isPresent
-              ? "border-primary bg-primary shadow-[0_0_12px_hsl(180_100%_50%/0.6)] animate-pulse"
+              ? "border-primary bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.6)] animate-pulse"
               : "border-primary/50 bg-background"
           }`}
         >
@@ -65,7 +65,7 @@ const TimelineCard = ({
           <span
             className={`md:hidden inline-flex h-3 w-3 rounded-full border-2 shrink-0 ${
               isPresent
-                ? "border-primary bg-primary shadow-[0_0_8px_hsl(180_100%_50%/0.5)] animate-pulse"
+                ? "border-primary bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.5)] animate-pulse"
                 : "border-primary/50 bg-background"
             }`}
           />
@@ -83,9 +83,9 @@ const TimelineCard = ({
         <div
           className={`group relative overflow-hidden rounded-2xl border transition-all duration-500 ${
             isPresent
-              ? "border-primary/30 bg-gradient-to-br from-primary/[0.06] via-card/80 to-card/60 shadow-[0_0_40px_hsl(180_100%_50%/0.06)]"
+              ? "border-primary/30 bg-gradient-to-br from-primary/[0.06] via-card/80 to-card/60 shadow-[0_0_40px_hsl(var(--primary)/0.06)]"
               : "border-primary/10 bg-card/60"
-          } backdrop-blur-sm hover:border-primary/25 hover:shadow-[0_8px_40px_hsl(180_100%_50%/0.08)] hover:-translate-y-0.5`}
+          } backdrop-blur-sm hover:border-primary/25 hover:shadow-[0_8px_40px_hsl(var(--primary)/0.08)] hover:-translate-y-0.5`}
         >
           {/* Top accent line */}
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
@@ -194,7 +194,7 @@ const Experience = () => {
             <Briefcase className="h-4 w-4 text-primary" />
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-foreground">
             {t("experience.title")}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">

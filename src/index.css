@@ -16,7 +16,7 @@ All colors MUST be HSL.
     --popover: 215 25% 8%;
     --popover-foreground: 220 15% 92%;
 
-    --primary: 180 100% 50%;
+    --primary: 188 62% 46%;
     --primary-foreground: 210 20% 6%;
 
     --secondary: 215 20% 12%;
@@ -25,7 +25,7 @@ All colors MUST be HSL.
     --muted: 215 20% 12%;
     --muted-foreground: 220 10% 60%;
 
-    --accent: 180 100% 50%;
+    --accent: 188 62% 46%;
     --accent-foreground: 210 20% 6%;
 
     --destructive: 0 72% 51%;
@@ -33,23 +33,23 @@ All colors MUST be HSL.
 
     --border: 215 20% 15%;
     --input: 215 20% 15%;
-    --ring: 180 100% 50%;
+    --ring: 188 62% 46%;
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50% / 0.2), hsl(210 100% 50% / 0.1));
+    --gradient-primary: linear-gradient(135deg, hsl(188 62% 46% / 0.2), hsl(200 55% 40% / 0.1));
     --gradient-hero: linear-gradient(180deg, hsl(210 20% 6%), hsl(215 25% 8%));
-    --glow: 0 0 30px hsl(180 100% 50% / 0.3);
+    --glow: 0 0 30px hsl(188 62% 46% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 215 25% 8%;
     --sidebar-foreground: 220 15% 92%;
-    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary: 188 62% 46%;
     --sidebar-primary-foreground: 210 20% 6%;
     --sidebar-accent: 215 20% 12%;
     --sidebar-accent-foreground: 220 15% 92%;
     --sidebar-border: 215 20% 15%;
-    --sidebar-ring: 180 100% 50%;
+    --sidebar-ring: 188 62% 46%;
   }
 
   .dark {
@@ -62,7 +62,7 @@ All colors MUST be HSL.
     --popover: 215 25% 8%;
     --popover-foreground: 220 15% 92%;
 
-    --primary: 180 100% 50%;
+    --primary: 188 62% 46%;
     --primary-foreground: 210 20% 6%;
 
     --secondary: 215 20% 12%;
@@ -71,7 +71,7 @@ All colors MUST be HSL.
     --muted: 215 20% 12%;
     --muted-foreground: 220 10% 60%;
 
-    --accent: 180 100% 50%;
+    --accent: 188 62% 46%;
     --accent-foreground: 210 20% 6%;
 
     --destructive: 0 72% 51%;
@@ -79,16 +79,16 @@ All colors MUST be HSL.
 
     --border: 215 20% 15%;
     --input: 215 20% 15%;
-    --ring: 180 100% 50%;
+    --ring: 188 62% 46%;
 
     --sidebar-background: 215 25% 8%;
     --sidebar-foreground: 220 15% 92%;
-    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary: 188 62% 46%;
     --sidebar-primary-foreground: 210 20% 6%;
     --sidebar-accent: 215 20% 12%;
     --sidebar-accent-foreground: 220 15% 92%;
     --sidebar-border: 215 20% 15%;
-    --sidebar-ring: 180 100% 50%;
+    --sidebar-ring: 188 62% 46%;
   }
 }
 

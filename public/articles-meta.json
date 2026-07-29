@@ -1,12 +1,12 @@
 {
-  "Loop.Engineering": {
-    "slug": "Loop.Engineering",
+  "loop-engineering-na-pratica": {
+    "slug": "loop-engineering-na-pratica",
     "title": "Loop Engineering na prática: como eu opero agentes no dia a dia",
     "excerpt": "O que é Loop Engineering, e como eu monto meu loop de verdade com skills, rules, subagents, hooks e MCP no Docker, incluindo os quatro pontos onde eu discordo da definição canônica.",
     "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/Loop.Engineering/capa.png",
     "date": "2026-07-26",
     "category": "Artigos",
-    "url": "https://www.orafaelferreira.com/artigos/Loop.Engineering"
+    "url": "https://www.orafaelferreira.com/artigos/loop-engineering-na-pratica"
   },
   "terraform-mcp-server-docker": {
     "slug": "terraform-mcp-server-docker",

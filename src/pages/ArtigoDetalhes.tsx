@@ -1,4 +1,4 @@
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router";
 import { Helmet } from "react-helmet-async";
 import { Calendar, ArrowLeft, ExternalLink } from "lucide-react";
 import Navigation from "@/components/Navigation";

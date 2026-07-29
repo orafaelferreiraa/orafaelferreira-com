@@ -18,7 +18,7 @@ const Partners = () => {
       description: t("partners.items.useti.description"),
       coupon: "RAFAFERREIRA",
       link: "https://www.useti.shop/useti",
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "from-teal-500 to-sky-500",
     },
     {
       id: "alura",
@@ -58,7 +58,7 @@ const Partners = () => {
       name: "Nuvme",
       description: t("partners.items.nuvme.description"),
       link: "https://nuvme.com.br/",
-      gradient: "from-indigo-500 to-violet-500",
+      gradient: "from-slate-400 to-slate-600",
     },
   ];
 
