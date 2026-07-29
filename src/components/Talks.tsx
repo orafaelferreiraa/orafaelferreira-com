@@ -65,7 +65,7 @@ const Talks = () => {
       location: "Auditório Eny Caldeira do Campus Rebouças da UFPR",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
       siteUrl: "https://devopsdays.org/events/2026-curitiba/welcome/", 
-      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devops-devopsdays-curitiba-share-7487831912506634243-X6wN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
       },
@@ -93,7 +93,16 @@ const Talks = () => {
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_no-dia-23-de-julho-eu-e-a-j%C3%A9ssica-mello-activity-7478409858585747456-WSXT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/tdcfloripa26.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
+<<<<<<< HEAD
       },
+=======
+      repositories: [
+      {
+        label: "Repositório do Site",
+        url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
+      },
+      ]},
+>>>>>>> 3c876bf2e16449dc12b74cd184d6d057e43d0468
     {
       title: "GitHub Copilot in VSCode: Agents That Debug, Profile, and Test",
       event: "Microsoft Build //localhost:florianópolis",
