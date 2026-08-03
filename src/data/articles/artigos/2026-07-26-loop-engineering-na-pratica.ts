@@ -7,6 +7,8 @@ export const article: Article = {
     "O que é Loop Engineering, e como eu monto meu loop de verdade com skills, rules, subagents, hooks e MCP no Docker, incluindo os quatro pontos onde eu discordo da definição canônica.",
   image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/Loop.Engineering/capa.png",
   content: `
+Usando LLMs e agentes há mais ou menos dois anos, desde a época em que eu ainda estava [explorando o que a IA generativa mudava na prática](/artigos/ia-gen), o **GitHub Copilot** desde então, e o **Claude Code** há uns três meses. O que vem abaixo é um resumo de como isso entrou no meu dia a dia de verdade.
+
 ## Resumo rápido
 
 - **Loop Engineering** é técnica de o sistema que dá o prompt no agente, em vez de você dar o prompt a cada passo. O termo foi sistematizado em junho de 2026.
@@ -76,6 +78,8 @@ Então eu troco por outra coisa: **branch, e o PR como gate.** O isolamento vem 
 O padrão da literatura é gerar e depois verificar. Meu loop inverte parte disso. As **rules** carregam antes de qualquer código existir, e várias delas são proibições: validar versão de provider e schema do recurso via MCP **antes** de escrever a primeira linha; nunca escrever segredo em arquivo; nunca abrir endpoint público em serviço de dados de produção; menor privilégio por padrão.
 
 A ideia é simples e pouco glamourosa: **o verificador mais barato do mundo é a regra que impede o erro de existir.** Um teste que pega credencial hardcoded é bom. Uma regra que faz o agente nunca escrever uma é melhor, porque custa zero iteração.
+
+É o mesmo raciocínio que eu já defendi em [Platform Engineering e Policy-as-Code que aceleram times](/artigos/platform-engineering-policy-as-code), só deslocado uma camada para trás. Lá a política barra o recurso errado na hora de admitir; aqui a regra impede o agente de escrever o recurso errado. Política é guardrail para o que já existe; rule é guardrail para o que ainda vai nascer.
 
 ### 3. Em infra, o verificador não é a suíte de testes
 
@@ -330,9 +334,7 @@ gh run view <run-id> --log-failed
 
 Isso é *ground truth* do ambiente, no sentido exato que a Anthropic descreve, o agente não está julgando o próprio trabalho, está lendo o veredito de um sistema que ele não controla. Que é a definição de verificador honesto.
 
-**E aqui vem a parte honesta:** esse é o pedaço **menos codificado** do meu setup. Os cinco degraus locais estão escritos numa skill; a leitura de CI ainda é convenção que vive na minha cabeça e se repete a cada sessão por hábito, não por procedimento. Não existe hook que dispare no push, não existe regra que force ler \`--log-failed\` em vez do log todo, não existe teto de quantas vezes tentar antes de me chamar. É exatamente o tipo de rotina repetida e não-óbvia que a minha própria rotina de mineração deveria ter capturado, e não capturou ainda.
-
-Deixo isso escrito de propósito. Loop maduro não é o que já está pronto, é o que sabe onde ainda não está.
+**E aqui vem a parte honesta:** esse é o pedaço **menos codificado** do meu setup. Os cinco degraus locais estão escritos numa skill; a leitura de CI ainda é convenção que vive na minha cabeça e se repete a cada sessão por hábito, não por procedimento. Não existe hook que dispare no push, não existe regra que force ler \`--log-failed\` em vez do log todo, não existe teto de quantas vezes tentar antes de me chamar.
 
 ### Skills: a descrição é o que decide
 
@@ -351,7 +353,7 @@ description: "O que faz + QUANDO usar, com as palavras que aparecem no pedido re
 ## Guardrails
 \`\`\`
 
-Duas coisas que a prática ensinou. **Desambiguação explícita vale ouro**: eu tenho duas skills sobre gateways de IA que fazem coisas diferentes, e cada descrição termina dizendo "isto é X, não Y, para Y use a outra". Sem isso, disparava a errada metade das vezes.
+Duas coisas que a prática ensinou. **Desambiguação explícita vale ouro**: eu tenho duas skills sobre Kubernetes  que fazem coisas diferentes, e cada descrição termina dizendo "isto é X, não Y, para Y use a outra". Sem isso, disparava a errada metade das vezes.
 
 **Disclosure progressivo importa** porque o corpo da skill só carrega quando ela é usada. Procedimento no \`SKILL.md\`, material de referência longo em arquivos ao lado, script que ela chama num subdiretório. Referência de 300 linhas custa quase nada até o momento em que é necessária.
 
@@ -366,6 +368,8 @@ A lição de escopo veio de um erro que dói de lembrar. Minha regra de manifest
 ### MCP no Docker: um gateway, muitos servidores
 
 [MCP](https://code.claude.com/docs/en/mcp) é o que faz o loop alcançar sistemas reais. E aqui o Docker resolveu um problema chato de verdade.
+
+Já escrevi um artigo inteiro sobre esse caminho, [MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade](/artigos/terraform-mcp-server-docker), com a montagem passo a passo. Aqui o recorte é outro: o papel que ele cumpre dentro do loop.
 
 Sem ele, cada servidor MCP é um processo com runtime próprio, dependência própria e credencial largada em algum \`.env\`. Com o [MCP Toolkit e o Catalog](https://docs.docker.com/ai/mcp-catalog-and-toolkit/), você habilita servidores pela interface do Docker Desktop e o [MCP Gateway](https://github.com/docker/mcp-gateway) agrega todos eles atrás de **uma única entrada** de configuração. Cada servidor roda em container, com limite de CPU e memória e \`no-new-privileges\`. E, o ponto que mais me importa, **as credenciais ficam no store cifrado do Docker**, não em arquivo no repo.
 
@@ -502,7 +506,7 @@ O default são 30 dias, o mínimo é 1. Baixar para 8 foi uma escolha minha.
 
 **A varredura não cobre tudo.** Ela apaga transcript, transcript de subagente, saída grande derramada em arquivo, snapshot pré-edição, cache de imagem e de colagem. Só que o **histórico de prompts**, o arquivo que guarda tudo que eu já digitei, com data e projeto, fica fora dela e persiste indefinidamente. Quem baixa a retenção por privacidade e para aí resolveu a maior parte do problema achando que resolveu o problema inteiro.
 
-**Retenção e janela de análise se amarram.** Se o transcript expira em sete dias e a rotina de skills olha sete dias para trás, os dois números batem no caso normal, mas uma semana perdida por férias ou máquina desligada fica irrecuperável, porque o insumo foi varrido antes da execução seguinte. Semana que não roda é semana que não existe. Duas configurações feitas em minutos, uma dependência entre elas que não estava escrita em lugar nenhum: é assim que loop vira sistema, e é por isso que a dependência precisa ir para o estado externo, se ela só existe na minha cabeça, ela não existe.
+**Retenção e janela de análise se amarram.** Se o transcript expira em oito dias e a rotina de skills olha oito dias para trás, os dois números batem no caso normal, mas uma semana perdida por férias ou máquina desligada fica irrecuperável, porque o insumo foi varrido antes da execução seguinte. Semana que não roda é semana que não existe. Duas configurações feitas em minutos, uma dependência entre elas que não estava escrita em lugar nenhum: é assim que loop vira sistema, e é por isso que a dependência precisa ir para o estado externo, se ela só existe na minha cabeça, ela não existe.
 
 ### Um inventário inteiro, do zero até virar sistema
 
@@ -541,6 +545,6 @@ E o mais importante: **o outer loop continua sendo seu.** Delegar o ciclo intern
 `,
   date: "2026-07-26",
   category: "Artigos",
-  readTime: "49 min de leitura",
+  readTime: "47 min de leitura",
   tags: ["IA", "Platform Engineering", "DevOps", "Docker"]
 };
