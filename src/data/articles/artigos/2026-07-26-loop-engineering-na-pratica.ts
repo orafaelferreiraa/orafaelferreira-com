@@ -77,8 +77,6 @@ O padrão da literatura é gerar e depois verificar. Meu loop inverte parte diss
 
 A ideia é simples e pouco glamourosa: **o verificador mais barato do mundo é a regra que impede o erro de existir.** Um teste que pega credencial hardcoded é bom. Uma regra que faz o agente nunca escrever uma é melhor, porque custa zero iteração.
 
-Isso muda a natureza do loop. Ele não é só um ciclo de tentativa e correção, tem uma barreira de entrada. E a barreira é declarativa: fica em arquivo versionado, não na minha memória nem no meu humor daquele dia.
-
 ### 3. Em infra, o verificador não é a suíte de testes
 
 Aquela tensão de gerar-versus-verificar é ruim em desenvolvimento de aplicação. Em plataforma é pior, por um motivo bobo: **verificar custa tocar em ambiente.**
@@ -494,17 +492,13 @@ A verificação que me deixou tranquilo não foi ela ter criado skill, foi rodar
 
 ### A automação que eu não escrevi
 
-Na mesma sessão veio um segundo pedido meu, que parecia gêmeo do primeiro: uma rotina para **apagar as sessões antigas**, com mais de uma semana. A motivação é menos glamourosa que a da anterior e mais séria. Transcript é texto puro, e **tudo que passa por uma ferramenta é gravado nele**, conteúdo de arquivo, saída de comando, o que eu colei no prompt. Em ambiente de plataforma isso significa detalhe de infraestrutura acumulando em texto claro no meu diretório de usuário, protegido só por permissão de arquivo do sistema. Guardar isso indefinidamente é uma escolha, e eu não tinha feito essa escolha de propósito.
-
-O reflexo era escrever a segunda tarefa agendada. O certo era não escrever nada: **o cliente já varre por idade na inicialização**, e o período é uma chave no arquivo de configuração do usuário, \`~/.claude/settings.json\`:
+Outra automação que pensei: uma rotina para **apagar as sessões antigas**, com mais de uma semana. A motivação é menos glamourosa que a da anterior e mais séria. Transcript é texto puro, e **tudo que passa por uma ferramenta é gravado nele**, conteúdo de arquivo, saída de comando, o que eu colei no prompt. Em ambiente de plataforma isso significa detalhe de infraestrutura acumulando em texto claro no meu diretório de usuário, protegido só por permissão de arquivo do sistema. E o bom que o próprio claude code ja tem um mecanismo de limpeza: **o client já varre por idade na inicialização**, e o período é uma chave no arquivo de configuração do usuário, \`~/.claude/settings.json\`:
 
 \`\`\`json
-{ "cleanupPeriodDays": 7 }
+{ "cleanupPeriodDays": 8 }
 \`\`\`
 
-O default são 30 dias, o mínimo é 1. Baixar para 7 foi a alteração inteira, uma chave de configuração no lugar de script, agendador e mais uma peça para manter. A lição vale além do caso, é a mesma disciplina anti-sprawl que eu aplico a ferramenta MCP, agora aplicada a automação: **antes de somar peça ao loop, confira se a peça já existe.** Todo script agendado é dívida operacional, e quem paga sou eu.
-
-Ficaram duas ressalvas, e as duas importam mais que a configuração em si.
+O default são 30 dias, o mínimo é 1. Baixar para 8 foi uma escolha minha.
 
 **A varredura não cobre tudo.** Ela apaga transcript, transcript de subagente, saída grande derramada em arquivo, snapshot pré-edição, cache de imagem e de colagem. Só que o **histórico de prompts**, o arquivo que guarda tudo que eu já digitei, com data e projeto, fica fora dela e persiste indefinidamente. Quem baixa a retenção por privacidade e para aí resolveu a maior parte do problema achando que resolveu o problema inteiro.
 
@@ -516,24 +510,13 @@ O exemplo mais completo de tudo isso trabalhando junto não veio da rotina agend
 
 A primeira rodada foi fan-out puro: um agente por área, infraestrutura como código, pipelines, orquestração de containers, linguagens, todos em paralelo, cada um devolvendo o que achou. Saiu organizado, sem furo visível. Foi exatamente essa perfeição que me fez desconfiar: levantamento bom demais de um ambiente que eu sei que é bagunçado é sinal de cobertura rasa, não de sorte. Pedi mais uma passada, recortando por um repositório específico que eu sabia ser denso, e a lista de tecnologias daquele recorte sozinho quase dobrou o total. O primeiro fan-out tinha visitado cada área uma vez e chamado isso de completo.
 
-Fechei a segunda rodada com o mesmo princípio de sempre: quem escreve não confere. Nova leva de agentes, mas com a instrução invertida, não confirme o que já está escrito, **tente refutar**. Cada um recebeu um pedaço do levantamento e a ordem explícita de achar erro, não validar acerto. Valeu a rodada: achou um item que não existia (um agente anterior tinha inventado um detalhe plausível que não batia com o ambiente real), achou outro atribuído ao lugar errado, e um terceiro marcado como "desativado" quando na verdade estava ativo em produção. Nenhum dos três ia aparecer se eu tivesse pedido para o mesmo agente reler o próprio trabalho, ele ia confirmar o que já acreditava. Quando o produto não é código, o verificador muda de forma, mas o princípio é o mesmo: teste automatizado vira "tente refutar".
+Fechei a segunda rodada com o mesmo princípio de sempre: quem escreve não confere. Nova leva de agentes, mas com a instrução invertida, não confirme o que já está escrito, **tente refutar**. Cada um recebeu um pedaço do levantamento e a ordem explícita de achar erro, não validar acerto. Valeu a rodada: achou um item que não existia (um agente anterior tinha inventado um detalhe plausível que não batia com o ambiente real), achou outro atribuído ao lugar errado, e um terceiro marcado como "desativado" quando na verdade estava ativo em produção. Nenhum dos três ia aparecer se eu tivesse pedido para o mesmo agente reler o próprio trabalho, ele ia confirmar o que já acreditava.
 
 Com o levantamento fechado, o passo seguinte foi virar aquilo em conhecimento operacional, não documento pra ler uma vez, skill que o sistema carrega quando alguém pedir ajuda com uma daquelas tecnologias. E aqui entrou a decisão que o resto do artigo já defende, aplicada em escala: **nem tudo virou skill.** Duas coisas viraram **hook**, porque a regra era "isso tem que acontecer sempre, sem depender do modelo lembrar", um aviso de dependência de terceiro que tinha acabado de ser descontinuada e um checador de configuração que falha calado em vez de dar erro. **Nada virou agente novo**, porque agente é persona isolada com escopo de ferramenta próprio, e cada tecnologia daquelas era conhecimento de referência, não um papel a interpretar. Artefato errado custa tanto quanto artefato nenhum, essa parte do julgamento não terceirizo.
 
 Pra não terminar com dezenas de skills competindo pela mesma descrição, agrupei por domínio operacional, um \`SKILL.md\` raiz por área, arquivo de referência por tecnologia dentro dele, carregado só quando aquela tecnologia específica entra na conversa. Antes de escrever a primeira linha, consultei a documentação oficial do próprio formato de skill via MCP: a intuição de "menor é melhor" tem limite, e o padrão oficial recomenda exatamente esse agrupamento com disclosure progressivo, pra não competir por trigger nem custar contexto à toa quando ninguém precisa daquele arquivo.
 
 O último passo foi replicar tudo numa segunda camada de customização, que outra ferramenta usa nesse mesmo ambiente. A motivação não foi capricho de organização: é redundância de verdade. Se o Claude Code sair do ar, tiver uma degradação, ou eu simplesmente precisar trocar de ferramenta num dia ruim, o conhecimento não desaparece junto, ele já existe traduzido, pronto para outro agente carregar. Skill, hook e regra viraram ativo do time, não vendor lock-in de configuração. Eu esperava find-and-replace de caminho. Não foi. A documentação oficial da outra ferramenta, puxada via MCP na hora, corrigiu duas suposições de uma vez: a numeração das regras "inegociáveis" era diferente entre as duas camadas, citar por número mantendo só o nome do arquivo teria virado referência errada, e o formato de skill que eu vinha usando já era, na prática, um padrão aberto que a outra ferramenta também suporta nativamente, pasta de recurso e tudo. MCP não é só pra puxar doc de infraestrutura. É pra puxar doc de qualquer coisa que eu não deveria assumir de memória, incluindo o próprio formato que eu uso pra ensinar o agente.
-
-## O que dá errado
-
-Nada disso foi de primeira. As falhas mais úteis:
-
-- **Sprawl de ferramentas.** Ligar tudo porque dá é o erro mais fácil de cometer. Centenas de ferramentas disponíveis custam contexto em toda requisição e, pior, aumentam o ruído de seleção, o modelo tem mais chance de escolher a ferramenta parecida em vez da certa. Menos ferramenta ligada é mais loop confiável.
-- **Servidor que sobe degradado.** Segredo ausente não derruba o container. Ele inicia com a variável vazia, aparece como saudável, e falha só na hora do uso, às vezes de um jeito que parece erro de permissão. Mentira silenciosa é pior que erro alto. Hoje eu leio o log de inicialização do gateway em vez de confiar no "conectado".
-- **Allow-list que cresce por clique.** A minha acumulou literais de comando de sessões antigas, caminho de arquivo temporário que não existe mais, comando com um parâmetro específico, em vez de curinga pensado. É o sintoma exato de aprovar no automático, e é dívida: uma lista que ninguém entende é uma lista que ninguém revisa.
-- **Cruft no setup.** Arquivo de configuração duplicado que a ferramenta nem lê. README apontando para diretório que esvaziou. Mensagem de hook contradizendo o arquivo raiz. Camada de customização sem controle de versão apodrece rápido, foi por isso que a governança virou skill em vez de virar boa intenção.
-- **Reward hacking e o exit "parece pronto".** Documentados na literatura, e reais. É por isso que o verificador não pode ser o mesmo agente que escreveu, e que "declarei concluído" não é evidência de conclusão.
-- **Dívida de compreensão.** Essa é a mais séria, e o próprio Osmani avisa: *"The faster the loop ships code you did not write, the bigger the gap between what exists and what you actually get."* Loop bom entrega mais rápido do que eu leio. Se eu não segurar essa corda, em algum momento eu viro operador de um sistema que eu não entendo, o que é exatamente o oposto do que eu quis construir.
 
 ## Conclusão
 
@@ -544,20 +527,17 @@ O que eu levaria daqui, na ordem em que eu faria de novo:
 - **Separe quem escreve de quem confere, por ferramenta, não por instrução.** Read-only de verdade é não ter a ferramenta de escrita.
 - **Um hook que sai com código 2 é feedback de loop de verdade.** É a peça mais barata e mais eficaz do meu setup, e não tem nada de IA nela.
 - **Escreva primeiro a trava de remoção, e faça ela desconfiar de você.** Toda operação destrutiva para e pede autorização, inclusive no modo que liberou o resto, inclusive quando o pedido veio de uma ferramenta e não do shell. É o único guardrail que protege contra o operador no automático, e não contra o agente. Falso positivo nessa checagem é preço, não defeito.
-- **Exija que o teste de regressão prove que pega o bug.** Se ele passa igual com e sem a correção, não testa nada. Pedir "escreva um teste" convida ao teatro; pedir "reverta a correção e me mostre o teste falhando" é a defesa mais barata que existe contra reward hacking.
+- **Exija que o teste de regressão prove que pega o bug.** Se ele passa igual com e sem a correção, não testa nada. Não pedir "escreva um teste". Use "reverta a correção e me mostre o teste falhando" é a defesa mais barata que existe contra reward hacking.
 - **Ordene os gates por custo e nunca deixe pular degrau.** Compilar, unidade, integração com API real, cluster local espelhando o ambiente de verdade, e só então a imagem. A imagem é o resultado do loop, não uma etapa dele.
 - **Deixe o agente ler o CI sozinho, mas só a parte que falhou.** Ele não precisa que você traduza o erro. Precisa de acesso ao veredito e de disciplina para não arrastar o log inteiro para o contexto.
 - **Default otimista, correção barata.** Onde o loop precisaria perguntar, faça ele escolher o mais provável, declarar em voz alta o que escolheu e continuar. Pergunta bloqueante no começo de toda tarefa transforma o loop em formulário. Só não esqueça de escrever as exceções: se a busca voltar vazia, pede, nunca inventa.
 - **Guarde o estado do ciclo onde qualquer sessão acha.** A chave da tarefa no nome da branch faz o objetivo sobreviver a compactação, a sessão nova e a subagente. Estado externo não precisa de banco; às vezes precisa só de uma convenção de nome respeitada.
 - **Deixe a descrição fazer o roteamento.** Skill boa com descrição ruim não dispara. Escope regra por convenção de diretório, nunca por extensão nua.
 - **Automation é o que separa configuração de sistema.** Sem rotina agendada, você tem um setup bonito. Com ela, você tem um loop.
-- **Discorde do padrão quando o seu domínio pedir.** Eu tirei worktree porque em infra o isolamento que importa é de estado, não de arquivo. A receita canônica é ponto de partida, não contrato.
+- **Discorde do padrão quando o seu domínio pedir.** Eu tirei worktree porque em infra o isolamento que importa é de estado, não de arquivo.
 
 E o mais importante: **o outer loop continua sendo seu.** Delegar o ciclo interno é alavancagem; delegar o julgamento é abdicação. A frase com que o Osmani fecha o artigo dele é a melhor síntese que eu achei disso, e serve de régua: *"Build the loop. But build it like someone who intends to stay the engineer, not just the person who presses go."*
 
-Meus próximos passos são dois. Primeiro, atacar o gate que hoje não é automatizável, transformar "o ambiente está saudável" em verificação programática de verdade, em vez de olhada humana. Segundo, passar a régua fina nas 331 ferramentas com o allowlist por ferramenta, e não por servidor, porque contexto é orçamento e eu tenho gastado mal. O comando existe desde sempre, eu é que não usava.
-
-Se você está montando o seu: comece pelo hook mais bobo que você conseguir escrever, com uma mensagem de erro que diga o que fazer. É meio caminho.
 `,
   date: "2026-07-26",
   category: "Artigos",
