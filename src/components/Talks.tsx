@@ -65,6 +65,12 @@ const Talks = () => {
       location: "Auditório Eny Caldeira do Campus Rebouças da UFPR",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
       siteUrl: "https://devopsdays.org/events/2026-curitiba/welcome/", 
+      repositories: [
+        {
+          label: "Repositório do Site",
+          url: "https://github.com/orafaelferreiraa/orafaelferreira-com",
+        },
+      ],
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devops-devopsdays-curitiba-share-7487831912506634243-X6wN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
@@ -74,8 +80,22 @@ const Talks = () => {
       event: "MVP Conf Regional Curitiba 2026",
       date: "2026-08-22",
       location: "PUC PR",
-      //image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
+      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/0.png",
       siteUrl: "https://www.mvpconf.com.br/regional/curitiba/agosto-2026", 
+      repositories: [
+        {
+          label: "Platform Stack",
+          url: "https://github.com/orafaelferreiraa/platform-as-a-service-stack",
+        },
+        {
+          label: "Pipeline Stack",
+          url: "https://github.com/orafaelferreiraa/pipeline-as-a-service-stack",
+        },
+        {
+          label: "TF Modules Stack",
+          url: "https://github.com/orafaelferreiraa/tfmodules-as-a-service-stack",
+        },
+      ],
       //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
       //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
