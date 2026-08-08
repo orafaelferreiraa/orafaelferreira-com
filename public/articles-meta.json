@@ -8,6 +8,15 @@
     "category": "Artigos",
     "url": "https://www.orafaelferreira.com/artigos/loop-engineering-na-pratica"
   },
+  "tdc-floripa-2026-devsecops": {
+    "slug": "tdc-floripa-2026-devsecops",
+    "title": "Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA - TDC Florianópolis 2026",
+    "excerpt": "Na Trilha Software Security do TDC Florianópolis 2026, contei como a IA gerou meu portfólio, mas quem garantiu que estivesse seguro em produção fui eu — uma jornada de vibe coding, Lovable, GitHub Copilot, Terraform e responsabilidade.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/00.png",
+    "date": "2026-07-23",
+    "category": "Palestras",
+    "url": "https://www.orafaelferreira.com/artigos/tdc-floripa-2026-devsecops"
+  },
   "terraform-mcp-server-docker": {
     "slug": "terraform-mcp-server-docker",
     "title": "MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade",

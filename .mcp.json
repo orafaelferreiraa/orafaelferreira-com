@@ -2,8 +2,8 @@
   "mcpServers": {
     "MCP_DOCKER": {
       "type": "stdio",
-      "command": "/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe",
-      "args": ["mcp", "gateway", "run", "--profile", "profile"]
+      "command": "docker",
+      "args": ["mcp", "gateway", "run", "--public", "claude"]
     }
   }
 }

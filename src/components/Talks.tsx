@@ -109,10 +109,10 @@ const Talks = () => {
       date: "2026-07-23",
       location: "CentroSul - Florianópolis",
       image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/00.png",
-      siteUrl: "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security", 
+      siteUrl: "https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security",
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_no-dia-23-de-julho-eu-e-a-j%C3%A9ssica-mello-activity-7478409858585747456-WSXT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/tdcfloripa26.pdf",  
-      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/tdcfloripa26.pdf",
+      blogUrl: "https://www.orafaelferreira.com/artigos/tdc-floripa-2026-devsecops",
       repositories: [
         {
           label: "Repositório do Site",
