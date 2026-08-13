@@ -7,25 +7,24 @@ export const article: Article = {
   content: `
 # TDC Florianópolis 2026 — Trilha Software Security
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/00.png)
+
 No dia **23 de julho de 2026**, junto com [**Jéssica Mello**](https://www.linkedin.com/in/jessica-tmello/) (LowOps Consultoria), palestrei na [**Trilha Software Security do TDC Florianópolis**](https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security), um dos maiores eventos de tecnologia do Brasil, realizado no **CentroSul, em Florianópolis - SC**.
 
 A trilha abordou um tema central: **"Construindo software seguro do design à produção em tempos de IA"** — explorando como a IA generativa acelera o desenvolvimento, mas também expande riscos e responsabilidades.
-
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/00.png)
-
-[Leia o post de divulgação no LinkedIn](https://www.linkedin.com/posts/orafaelferreiraa_no-dia-23-de-julho-eu-e-a-j%C3%A9ssica-mello-activity-7478409858585747456-WSXT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw)
 
 ## Agenda
 
 **Sessão:** Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/1.jpg)
+
 **Palestrantes:**
 - Rafael Ferreira (Senior Azure Platform Engineer, Stefanini North America, Microsoft MVP)
 - Jéssica Mello (LowOps Consultoria)
 
-**Horário:** 14:10–14:45
-
-**Resumo:** Um estudo de caso real sobre os limites e riscos do "vibe coding" quando confrontado com exigências reais de produção — e como DevSecOps resolve isso.
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/2.jpg)
+Um estudo de caso sobre os limites e riscos do "vibe coding" quando confrontado com exigências reais de produção — e como DevSecOps resolve isso.
 
 ## Programação da Trilha Software Security
 
@@ -50,6 +49,8 @@ Meu portfólio pessoal (\`orafaelferreira.com\`) estava obsoleto. Precisava mode
 
 Estruturei um prompt detalhado — estilo visual, seções esperadas (blog, palestras, sobre), stack preferido (React), tom de voz — e usei o [**Lovable**](https://lovable.dev/) para gerar **100% via IA generativa** uma primeira versão.
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/6.jpg)
+
 O resultado foi perfeito para um protótipo: um site one-page bonito, responsivo, rodando em produção em horas.
 
 Mas aí vem o problema.
@@ -64,6 +65,8 @@ Quando saí do "protótipo legal" pra "arquitetura profissional", os clássicos 
 - **Falta de padrão:** sem versionamento Git, sem pipeline, sem testes, sem "agora meu site quebrou em produção, e aí?".
 
 Ficou claro: **a IA é excelente em acelerar, mas não entende responsabilidade.**
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/4.jpg)
 
 ### Retomando o Controle
 
@@ -83,6 +86,8 @@ Agora veio a camada que diferencia um hobby de um sistema em produção:
 - [**Azure Static Web App**](https://learn.microsoft.com/en-us/azure/static-web-apps/) (distribuição global, HTTPS nativo, hosting seguro).
 - DNS automatizado (apex + www) com validação de domínio.
 - Tudo versionado, revisível, auditável.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/8.jpg)
 
 **Pipeline de segurança** via [**GitHub Actions**](https://github.com/features/actions):
 - **[tflint](https://github.com/terraform-linters/tflint)** — análise estática do Terraform.
@@ -115,6 +120,8 @@ A estrutura clássica de segurança em cloud funciona em camadas:
 2. **Cluster/Infra:** Azure Static Web App é gerenciada, mas o Terraform valida config & compliance.
 3. **Container:** Trivy verifica imagens; Checkov valida policies.
 4. **Code:** GitHub Copilot ajuda, mas os testes garantem que o código faz o que deve.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/3.jpg)
 
 Nenhuma camada é ignorada. Nenhuma depende só da IA.
 
@@ -155,6 +162,9 @@ Aqui está o que você **não pode ignorar** depois que a IA gera algo funcional
 
 E um thought final, polêmico: **se você não está gostando do seu trabalho, ou não está usando IA do jeito certo, ou está no emprego errado.**
 
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/5.jpg)
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/7.jpg)
+
 ## Slides da Apresentação
 
 <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA](https://stoblobcertificados011.blob.core.windows.net/palestras/tdcfloripa26.pdf)
@@ -163,9 +173,6 @@ E um thought final, polêmico: **se você não está gostando do seu trabalho, o
 
 - [Repositório do Site](https://github.com/orafaelferreiraa/orafaelferreira-com) — código-fonte, Terraform, pipeline completa.
 
----
-
-Participar do **TDC Florianópolis** na trilha de Software Security foi uma oportunidade incrível de conectar a jornada real com profissionais que enfrentam os mesmos desafios: **como usar IA pra ir rápido sem sacrificar segurança, qualidade e responsabilidade.**
 
 Se você está mergulhando em vibe coding, generative AI, ou IA no deploy — as lições dessa jornada valem ouro.
 `,
