@@ -72,7 +72,7 @@ const Talks = () => {
         },
       ],
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devops-devopsdays-curitiba-share-7487831912506634243-X6wN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Site.IA-DOD-CRTB.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
       },
     {
@@ -96,8 +96,8 @@ const Talks = () => {
           url: "https://github.com/orafaelferreiraa/tfmodules-as-a-service-stack",
         },
       ],
-      //linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_codeisland-ctrlz-devops-share-7453042662477062144-nXTz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      //slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/ctrlz.pdf",  
+      linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_platformengineering-devops-cloud-activity-7492542979845341184-i-iY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Platform_Engineering-MVP-CRTB.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
       },
   ];
