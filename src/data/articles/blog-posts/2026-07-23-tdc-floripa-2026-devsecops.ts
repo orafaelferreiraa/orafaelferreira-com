@@ -175,6 +175,8 @@ E um thought final, polêmico: **se você não está gostando do seu trabalho, o
 
 
 Se você está mergulhando em vibe coding, generative AI, ou IA no deploy — as lições dessa jornada valem ouro.
+
+![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/certificado.png)
 `,
   date: "2026-07-23",
   category: "Palestras",

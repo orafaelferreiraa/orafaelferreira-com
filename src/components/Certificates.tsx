@@ -15,6 +15,9 @@ interface YearCertificates {
 const certificatesByYear: YearCertificates[] = [{
   year: "2026",
   certificates: [{
+       title: "Palestrante da Trilha Software Security, do evento TDC 2026 FLORIANÓPOLIS",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-08-PalestranteTDC2026.pdf"
+  },{
        title: "2026 Microsoft Most Valuable Professional (MVP)",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-07-MVP.pdf"
   },{
