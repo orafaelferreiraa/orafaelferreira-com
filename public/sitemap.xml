@@ -52,6 +52,7 @@
   </url>
 
   <!-- Articles -->
+  <url><loc>https://www.orafaelferreira.com/artigos/mencoes-publicacoes-externas</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/loop-engineering-na-pratica</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/tdc-floripa-2026-devsecops</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>

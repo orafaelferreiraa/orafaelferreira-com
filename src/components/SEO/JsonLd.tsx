@@ -118,6 +118,46 @@ export const personSchema = () => ({
       name: "Infrastructure as Code",
       description: "Managing and provisioning infrastructure through code",
     },
+    {
+      "@type": "Thing",
+      name: "Kyverno",
+      description: "Kubernetes-native policy engine for admission control",
+    },
+    {
+      "@type": "Thing",
+      name: "OPA Gatekeeper",
+      description: "Open Policy Agent-based admission controller for Kubernetes",
+    },
+    {
+      "@type": "Thing",
+      name: "cert-manager",
+      description: "Automated X.509 certificate management for Kubernetes",
+    },
+    {
+      "@type": "Thing",
+      name: "KEDA",
+      description: "Kubernetes Event-driven Autoscaling",
+    },
+    {
+      "@type": "Thing",
+      name: "Envoy Gateway",
+      description: "Gateway API implementation powered by Envoy Proxy",
+    },
+    {
+      "@type": "Thing",
+      name: "Trivy",
+      description: "Vulnerability and misconfiguration scanner for containers and IaC",
+    },
+    {
+      "@type": "Thing",
+      name: "OpenTelemetry",
+      description: "Observability framework for distributed tracing and instrumentation",
+    },
+    {
+      "@type": "Thing",
+      name: "Thanos",
+      description: "Highly available Prometheus setup with long-term storage",
+    },
   ],
   hasCredential: [
     {

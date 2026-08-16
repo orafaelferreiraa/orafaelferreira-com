@@ -39,7 +39,7 @@ export default {
         stack: {
           title: "Tools Stack",
           description: "The tools and practices I use daily to deliver reliable and governed cloud platforms.",
-          tools: ["Azure", "Terraform", "AKS", "GitHub Actions", "GitOps", "Argo CD", "Helm", "Prometheus", "Grafana", "Docker", "Python", "DevSecOps", "FinOps"]
+          tools: ["Azure", "Terraform", "AKS", "GitHub Actions", "GitOps", "Argo CD", "Helm", "Prometheus", "Grafana", "Docker", "Python", "DevSecOps", "FinOps", "Kyverno", "OPA Gatekeeper", "KEDA", "Envoy Gateway", "Thanos", "OpenTelemetry", "PerfectScale"]
       },
         community: {
           title: "Community & Content",

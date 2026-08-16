@@ -21,7 +21,8 @@ const Blog = () => {
     "Palestras",
     "Registro Eventos Presenciais",
     "Organização de Eventos",
-    "Organizador Grupo de Comunidade"
+    "Organizador Grupo de Comunidade",
+    "Colaborações Externas"
   ];
 
   const normalizeCategory = (value: string) =>
@@ -58,6 +59,7 @@ const Blog = () => {
     "Organização de Eventos",
     "Registro Eventos Presenciais",
     "Organizador Grupo de Comunidade",
+    "Colaborações Externas",
     "Posts"
   ];
 

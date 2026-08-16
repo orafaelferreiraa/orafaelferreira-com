@@ -44,6 +44,6 @@ Esse trabalho contínuo contribui para o crescimento do ecossistema regional e p
 > *“Compartilhar é multiplicar.”* – cultura DevOps
 `,
   date: "2024-07-21",
-  category: "Organização de Eventos",
+  category: "Organizador Grupo de Comunidade",
   readTime: "1 min de leitura"
 };

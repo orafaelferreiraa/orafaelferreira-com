@@ -4,14 +4,17 @@ Site pessoal/Blog em Vite + React + TypeScript, hospedado na Azure Static Web Ap
 
 ## stack
 
-- Vite, React, TypeScript, TailwindCSS, shadcn/ui
+- Vite 8, React 19, TypeScript ~6.0, Tailwind CSS v4, shadcn/ui (Radix primitives)
+- react-router v8, i18next/react-i18next (pt-BR + en)
 - Azure Static Web Apps (SWA) para hosting
 - Terraform (infra/) com state remoto em Azure Storage
-- GitHub Actions: deploy do app e provisionamento da infra
+- GitHub Actions: deploy do app, provisionamento da infra e automação da agenda de palestras
+
+Inventário técnico completo e versionado: [`TECH_STACK.md`](./TECH_STACK.md).
 
 ## desenvolvimento local
 
-Requisitos: Node.js 20+
+Requisitos: Node.js 22+ (mesma versão usada pelo CI via `actions/setup-node`)
 
 ```bash
 sudo apt update
@@ -29,6 +32,10 @@ Build de produção:
 npm run build
 npm run preview
 ```
+
+**Variáveis de ambiente (opcionais):**
+- `VITE_GA_MEASUREMENT_ID` — ID de medição do Google Analytics 4. Sem ela, `src/lib/analytics.ts`
+  vira no-op (nenhum tracking é inicializado). Não há `.env.example` no repo hoje.
 
 ## Geração de sitemap e metadados
 
@@ -57,6 +64,52 @@ O feed inclui apenas conteudo de artigos tecnicos e exclui posts de eventos, pal
 
 - URL de assinatura: `https://www.orafaelferreira.com/rss.xml`
 
+## conteúdo do site
+
+Não há CMS nem banco de dados: cada artigo/post é um arquivo TypeScript.
+
+- `src/data/articles/artigos/` — artigos técnicos (hoje ~38 arquivos)
+- `src/data/articles/blog-posts/` — posts de eventos, palestras e comunidade (hoje ~50 arquivos)
+- Cada arquivo segue o padrão `YYYY-MM-DD-slug.ts` e exporta `{ article: Article }`, tipado em
+  `src/data/articles/types.ts`
+- `src/data/articles/index.ts` descobre os arquivos automaticamente via `import.meta.glob` — basta
+  criar o arquivo na subpasta certa, nada precisa ser registrado manualmente
+- O RSS (`generate-rss.mjs`) só inclui categorias técnicas (Artigos, Azure, Azure Policy, Cloud
+  Adoption Framework); os posts de `blog-posts/` ficam fora do feed
+
+## i18n
+
+- `i18next` + `react-i18next`, com `pt-BR` como idioma padrão (fallback) e `en` como segundo idioma
+- Detecção de idioma: `?lang=` na URL → `localStorage` → idioma do navegador
+- Dois pares de dicionário, mantidos manualmente e que podem divergir entre si:
+  - `src/i18n/locales/{en,pt-BR}.ts` — strings de UI
+  - `src/i18n/experiences/{en,pt-BR}.ts` — conteúdo de experiências/timeline
+- A skill `i18n-parity` (`.claude/skills/i18n-parity/`) verifica paridade de chaves entre os dois
+  idiomas antes de alterações em `src/i18n/`
+
+## agenda de palestras (automação)
+
+A seção de palestras (`Talks.tsx`) e o post de agenda anual são mantidos automaticamente:
+
+- `npm run sync:talks` (`scripts/sync-talks-and-events.mjs`) — move talks de `upcomingTalks` para
+  `onlineTalks`/`inPersonTalks` quando a data já passou (fuso `America/Sao_Paulo`) e regenera o bloco
+  "Agenda `<ano>`" dentro de `src/data/articles/blog-posts/2023-10-30-eventos.ts`. Roda automaticamente
+  no `npm run build`, antes de `rss:generate`/`sitemap:generate`.
+- `npm run schedule:generate` (`scripts/generate-event-schedule.mjs`) — gera uma entrada de `cron` por
+  data futura em `upcomingTalks` e reescreve `.github/workflows/sync-talks-on-event-day.yml` entre os
+  marcadores `AUTO-CRON:START/END`. Não roda no `build`; é chamado só pelo workflow
+  `regenerate-event-schedule.yml`.
+
+**Workflows envolvidos:**
+- `.github/workflows/sync-talks-on-event-day.yml` — dispara via `schedule` (crons auto-gerados),
+  roda `sync-talks-and-events.mjs`, opcionalmente notifica um webhook do Power Automate
+  (`POWER_AUTOMATE_WEBHOOK_URL`, secret opcional) e comita/push com o secret `WORKFLOW_PAT`.
+- `.github/workflows/regenerate-event-schedule.yml` — dispara em push que altera `Talks.tsx` ou
+  `generate-event-schedule.mjs`, após `sync-talks-on-event-day` rodar, ou manualmente; regenera o cron
+  e comita/push também com `WORKFLOW_PAT`.
+- `WORKFLOW_PAT` é obrigatório nesses dois workflows porque o `GITHUB_TOKEN` padrão não tem permissão
+  de escrita em arquivos de `workflows/` e commits feitos com ele não disparam outros workflows.
+
 ## deploy do app (SWA)
 
 O deploy é automático no push para `main` quando arquivos do app mudam (`src/`, `public/`, `index.html`, configs) e também após a conclusão bem-sucedida do workflow `infra-apply` (via `workflow_run`). Workflow: `.github/workflows/deploy-app.yml`.
@@ -75,15 +128,10 @@ Código em `infra/` provisiona:
 - Resource Group
 - Static Web App (SWA)
 
-State remoto em Azure Storage (backend `azurerm`). Configure no `terraform init` com:
-
-```bash
-terraform init \
-	-backend-config="resource_group_name=<rg-do-state>" \
-	-backend-config="storage_account_name=<statename>" \
-	-backend-config="container_name=tfstate" \
-	-backend-config="key=infra.terraform.tfstate"
-```
+State remoto em Azure Storage (backend `azurerm`), com todos os valores já fixos em
+`infra/backend.tf` (`resource_group_name = "rg-site"`, `storage_account_name = "stostateorafael"`,
+`container_name = "statetf"`, `key = "infra.terraform.tfstate"`, `use_azuread_auth = true`) — não é
+preciso passar `-backend-config` na mão, basta:
 
 Execução local (Service Principal):
 
@@ -94,6 +142,7 @@ export ARM_TENANT_ID=<tenantId>
 export ARM_SUBSCRIPTION_ID=<subscriptionId>
 export SWA_REPOSITORY_TOKEN=<github-PAT>
 cd infra
+terraform init
 terraform plan
 terraform apply -auto-approve \
   -var "repository_url=https://github.com/<owner>/<repo>" \
@@ -185,11 +234,13 @@ O domínio customizado `www.orafaelferreira.com` são configurados via Terraform
 
 ## notas
 
-- Testes: CI roda unit tests (`vitest`), component tests (React Testing Library) e E2E (Playwright) para i18n e smoke.
+- Testes: CI roda unit tests (`vitest`) e component tests (React Testing Library) antes do build/deploy. E2E (Playwright) existe (`e2e/smoke.spec.ts`, `e2e/i18n.spec.ts`) e roda localmente com `npm run test:e2e`, mas está **desabilitado no CI** — o passo correspondente em `deploy-app.yml` está comentado.
 - Lint no CI foi desabilitado para evitar ruído causado por conteúdo em markdown inline nos arquivos de artigos. O typecheck (TS) permanece ativo.
+- CI usa Node.js 22 (`actions/setup-node` em `deploy-app.yml`, `regenerate-event-schedule.yml` e `sync-talks-on-event-day.yml`). Não há `engines` no `package.json` nem `.nvmrc` fixando isso localmente.
 - A pasta `infra/` possui `.gitignore` próprio para evitar que `.terraform/`, `*.tfstate` e `*.tfplan` entrem em commits. O lockfile `.terraform.lock.hcl` é versionado.
 - A pipeline de deploy usa `npm install` ao invés de `npm ci` para maior flexibilidade quando há atualizações de dependências.
 - Workflows de infra e deploy são independentes mas coordenados: mudanças de infra triggam apply → deploy do app via `workflow_run`. Commits automáticos do `terraform-docs` (actor `github-actions[bot]`) não disparam o deploy do app (condição adicionada em `deploy-app.yml`).
+- A pasta `ai/` é uma camada própria de agentes/prompts/skills (formato Copilot-like) usada para autoria de artigos e automação de conteúdo. É independente de `.claude/skills/` e não deve ser confundida com ela.
 
 ## Diagrama Simples
 
@@ -234,7 +285,7 @@ graph LR
 
 ### CI/CD Pipeline — GitHub Actions
 
-3 workflows coordenados: `infra-plan` (PR), `infra-apply` (push main) e `deploy-app` (push main + workflow_run trigger). Concurrency groups evitam execuções paralelas. Commits do `github-actions[bot]` (terraform-docs) são ignorados para não gerar loop de deploy.
+5 workflows coordenados: `infra-plan` (PR), `infra-apply` (push main) e `deploy-app` (push main + workflow_run trigger) cuidam de infra/deploy; `sync-talks-on-event-day` e `regenerate-event-schedule` cuidam da agenda de palestras. Concurrency groups evitam execuções paralelas. Commits do `github-actions[bot]` (terraform-docs) são ignorados para não gerar loop de deploy.
 
 ```mermaid
 flowchart TB
@@ -278,6 +329,23 @@ flowchart TB
         e2e --> swa_deploy["☁️ Azure/static-web-apps-deploy@v1<br/><code>action: upload<br/>skip_app_build: true<br/>app_location: dist</code>"]
     end
 
+    subgraph talks_wf["📅 Talks Automation"]
+        direction TB
+        push_talks["📌 push main<br/><code>Talks.tsx / generate-event-schedule.mjs</code>"]
+        cron_trigger["⏰ schedule<br/><code>AUTO-CRON:START/END markers</code>"]
+        sync_talks_job["🔁 sync-talks-and-events.mjs<br/><code>move past talks · rewrite eventos.ts</code>"]
+        power_automate["📣 Power Automate webhook<br/><code>optional · per moved talk</code>"]
+        regen_job["♻️ generate-event-schedule.mjs<br/><code>rewrite cron entries</code>"]
+        talks_commit["🤖 git commit + push<br/><code>WORKFLOW_PAT</code>"]
+
+        cron_trigger --> sync_talks_job
+        sync_talks_job -.->|"optional"| power_automate
+        sync_talks_job --> talks_commit
+        push_talks --> regen_job
+        talks_commit -->|"workflow_run"| regen_job
+        regen_job --> talks_commit
+    end
+
     subgraph azure["☁️ Azure Cloud"]
         direction TB
         swa["⚡ Azure Static Web App<br/><code>swa-site-orafael</code><br/>Free tier · eastus2"]
@@ -314,11 +382,14 @@ flowchart TB
     style rg fill:#0078D4,color:#fff
     style dns fill:#10b981,color:#fff
     style e2e fill:#f59e0b,color:#000,stroke-dasharray: 5 5
+    style talks_wf fill:#0d1117,color:#c9d1d9,stroke:#30363d
+    style push_talks fill:#2563eb,color:#fff
+    style cron_trigger fill:#6b7280,color:#fff
 ```
 
 ### Application Architecture — SPA Stack
 
-React 18 SPA com code splitting via `React.lazy()` + `Suspense`. Todas as 10 rotas são lazy-loaded. SEO via `react-helmet-async` (OG tags por página). i18n com detecção automática de idioma (`?lang=` → localStorage → navigator). Markdown dos artigos é renderizado client-side com parser custom.
+React 19 SPA com code splitting via `React.lazy()` + `Suspense`. Todas as 10 rotas são lazy-loaded. SEO via `react-helmet-async` (OG tags por página). i18n com detecção automática de idioma (`?lang=` → localStorage → navigator). Markdown dos artigos é renderizado client-side com parser custom.
 
 ```mermaid
 flowchart TB
@@ -331,7 +402,7 @@ flowchart TB
         
         app --> routes
 
-        subgraph routes["🗺️ React Router v6 · 10 Lazy Routes"]
+        subgraph routes["🗺️ react-router v8 · 10 Lazy Routes"]
             direction LR
             r1["🏠 / → Home"]
             r2["🎓 /mentoria-cloud-devops"]
@@ -348,10 +419,10 @@ flowchart TB
 
     subgraph stack["🛠️ Tech Stack"]
         direction LR
-        vite["⚡ Vite 7<br/><code>@vitejs/plugin-react-swc<br/>port 8080 · base /</code>"]
-        react["⚛️ React 18<br/><code>lazy() + Suspense<br/>code splitting</code>"]
-        ts["🔷 TypeScript 5.8<br/><code>target ES2020<br/>moduleResolution bundler</code>"]
-        tw["🎨 Tailwind 3.4<br/><code>darkMode class<br/>tailwindcss-animate</code>"]
+        vite["⚡ Vite 8<br/><code>@vitejs/plugin-react-swc<br/>port 8080 · base /</code>"]
+        react["⚛️ React 19<br/><code>lazy() + Suspense<br/>code splitting</code>"]
+        ts["🔷 TypeScript ~6.0<br/><code>target ES2020<br/>moduleResolution bundler</code>"]
+        tw["🎨 Tailwind v4<br/><code>@tailwindcss/postcss<br/>tailwindcss-animate</code>"]
         shadcn["🧱 shadcn/ui<br/><code>Radix primitives<br/>CVA + clsx + tw-merge</code>"]
     end
 
@@ -364,7 +435,7 @@ flowchart TB
 
     subgraph data["💾 Static Data Layer"]
         direction LR
-        articles["📰 src/data/articles/*.ts<br/><code>~25+ posts · markdown strings<br/>→ custom HTML renderer</code>"]
+        articles["📰 src/data/articles/{artigos,blog-posts}/*.ts<br/><code>~38 artigos + ~50 posts · markdown strings<br/>→ custom HTML renderer</code>"]
         meta["🖼️ public/articles-meta.json<br/><code>OG image extraction</code>"]
         i18n_files["📂 src/i18n/locales/<br/><code>en.ts · pt-BR.ts<br/>experiences/en.ts · pt-BR.ts</code>"]
     end
@@ -404,7 +475,7 @@ flowchart TB
     subgraph pyramid["🔺 Testing Pyramid"]
         direction TB
         
-        subgraph e2e_layer["🎭 E2E · Playwright 1.56"]
+        subgraph e2e_layer["🎭 E2E · Playwright 1.61"]
             e2e_config["⚙️ playwright.config.ts<br/><code>testDir: e2e/<br/>baseURL: localhost:4173<br/>webServer: vite preview --port=4173<br/>retries: 2 (CI) · trace: on-first-retry</code>"]
             e2e_specs["📝 e2e/smoke.spec.ts<br/>e2e/i18n.spec.ts"]
             e2e_status["⚠️ Disabled in CI pipeline<br/><code>commented out in deploy-app.yml</code>"]
@@ -416,7 +487,7 @@ flowchart TB
             comp_cmd["▶️ <code>npm run test:components:ci<br/>→ vitest --run --config vitest.config.components.ts</code>"]
         end
 
-        subgraph unit_layer["🧪 Unit · Vitest 4.0"]
+        subgraph unit_layer["🧪 Unit · Vitest 4.1"]
             unit_config["⚙️ vite.config.ts → test block<br/><code>include: src/**/*.test.*<br/>environment: jsdom<br/>setupFiles: src/setupTests.ts</code>"]
             unit_specs["📝 src/lib/markdown.test.ts"]
             unit_cmd["▶️ <code>npm run test:ci<br/>→ vitest --run --reporter=dot</code>"]

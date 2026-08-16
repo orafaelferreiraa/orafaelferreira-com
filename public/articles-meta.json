@@ -1,4 +1,13 @@
 {
+  "mencoes-publicacoes-externas": {
+    "slug": "mencoes-publicacoes-externas",
+    "title": "Menções e Publicações Externas",
+    "excerpt": "Olá, pessoal! Reuni neste post publicações em que compartilhei insights em sites externos.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/participa%C3%A7%C3%B5es/2.png",
+    "date": "2026-08-16",
+    "category": "Colaborações Externas",
+    "url": "https://www.orafaelferreira.com/artigos/mencoes-publicacoes-externas"
+  },
   "loop-engineering-na-pratica": {
     "slug": "loop-engineering-na-pratica",
     "title": "Loop Engineering na prática: como eu opero agentes no dia a dia",
@@ -104,7 +113,7 @@
     "excerpt": "No dia 18 de abril de 2026, aconteceu o Global Azure User Group Floripa no Colégio Alpha, em São José/SC, com temas sobre Azure, carreira internacional, segurança, arquitetura cloud native e DevOps.",
     "image": null,
     "date": "2026-05-02",
-    "category": "Organização de Eventos",
+    "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/global-azure-user-group-floripa-2026"
   },
   "docker-python-distroless-kubernetes": {
@@ -518,7 +527,7 @@
     "excerpt": "Atuo desde 2023 no time de organização do DevOpsDays Florianópolis, apoiando a continuidade da comunidade local com coordenação de eventos, suporte a speakers e engajamento da audiência.",
     "image": null,
     "date": "2024-07-21",
-    "category": "Organização de Eventos",
+    "category": "Organizador Grupo de Comunidade",
     "url": "https://www.orafaelferreira.com/artigos/comu-dod-floripa"
   },
   "eventodod-floripa": {
@@ -741,9 +750,9 @@
     "slug": "participacoes",
     "title": "Participações em Lives",
     "excerpt": "Olá, pessoal!",
-    "image": null,
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/participa%C3%A7%C3%B5es/1.png",
     "date": "2023-10-28",
-    "category": "Posts",
+    "category": "Colaborações Externas",
     "url": "https://www.orafaelferreira.com/artigos/participacoes"
   },
   "ia-gen": {

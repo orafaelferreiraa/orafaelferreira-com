@@ -52,7 +52,8 @@ Espero que tenham gostado deste post e que ele tenha inspirado vocês de alguma 
 **#Participações #Lives #DesenvolvimentoProfissional #DevOps #Certificações #Tecnologia**
 `,
   date: "2023-10-28",
-  category: "Posts",
+  category: "Colaborações Externas",
   readTime: "2 min de leitura",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/participa%C3%A7%C3%B5es/1.png",
   tags: ["Carreira"]
 };

@@ -46,7 +46,7 @@ export default {
         stack: {
           title: "Stack de Ferramentas",
           description: "Ferramentas e práticas usadas no dia a dia para entregar plataformas confiáveis e com governança na nuvem.",
-          tools: ["Azure", "Terraform", "AKS", "GitHub Actions", "GitOps", "Argo CD", "Helm", "Prometheus", "Grafana", "Docker", "Python", "DevSecOps", "FinOps"]
+          tools: ["Azure", "Terraform", "AKS", "GitHub Actions", "GitOps", "Argo CD", "Helm", "Prometheus", "Grafana", "Docker", "Python", "DevSecOps", "FinOps", "Kyverno", "OPA Gatekeeper", "KEDA", "Envoy Gateway", "Thanos", "OpenTelemetry", "PerfectScale"]
   },
         community: {
           title: "Comunidade & Conteúdo",

@@ -84,8 +84,8 @@ Os slides da minha sessão estão disponíveis:
 
 `,
   date: "2026-05-02",
-  category: "Organização de Eventos",
+  category: "Palestras",
   readTime: "5-7 min de leitura",
-  tags: ["Organização de Eventos"],
+  tags: ["Palestras"],
   excludeTags: ["Carreira", "Segurança"],
 };

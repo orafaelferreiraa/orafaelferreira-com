@@ -55,6 +55,6 @@ Nos vemos na próxima edição do **DevOpsDays Floripa**! 🚀
 ![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-floripa25/9.jpg)
 `,
   date: "2025-12-28",
-  category: "Organização de Eventos",
+  category: "Organização de Eventos", 
   readTime: "3 min de leitura"
 };
