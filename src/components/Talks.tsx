@@ -57,7 +57,9 @@ const TalkSection = ({
 };
 
 const Talks = () => {
-  const upcomingTalks: Talk[] = [
+  const upcomingTalks: Talk[] = [];
+
+  const inPersonTalks: Talk[] = [
     {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU",
       event: "DevOpsDays Curitiba",
@@ -100,9 +102,6 @@ const Talks = () => {
       slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Platform_Engineering-MVP-CRTB.pdf",  
       //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
       },
-  ];
-
-  const inPersonTalks: Talk[] = [
     {
       title: "Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA",
       event: "TDC 2026 Florianópolis - Trilha Software Security",
