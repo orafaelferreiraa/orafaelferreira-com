@@ -12,6 +12,8 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 <!-- AUTO-EVENTS:START:2026 -->
 | Mês | Evento |
 |-----|--------|
+| Ago | [**DevOpsDays Curitiba**](https://devopsdays.org/events/2026-curitiba/welcome/) |
+| Ago | [**MVP Conf Regional Curitiba 2026**](https://www.mvpconf.com.br/regional/curitiba/agosto-2026) |
 | Jul | [**TDC 2026 Florianópolis - Trilha Software Security**](https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security) |
 | Jun | [**Microsoft Build //localhost:florianópolis**](https://developer.microsoft.com/pt-br/reactor/events/27206/) |
 | Mai | [**Ctrl-Z - Code Island**](https://ctrl-z.codeisland.com.br/) |

@@ -8,8 +8,7 @@ name: sync-talks-on-event-day
 
 on:
   # AUTO-CRON:START
-  schedule:
-    - cron: '5 11 22 8 *'  # 2026-08-22
+  # (nenhum evento futuro em upcomingTalks — schedule omitido)
   # AUTO-CRON:END
   workflow_dispatch:
 
@@ -72,7 +71,7 @@ jobs:
           count=$(jq 'length' "$MOVED_FILE")
           echo "📤 Disparando $count notificação(ões) para Power Automate..."
           for i in $(seq 0 $((count - 1))); do
-            payload=$(jq -c ".[$i] | {event, date, todo: (\"update CV + blog post \" + .event)}" "$MOVED_FILE")
+            payload=$(jq -c ".[$i] | {event, date, todo: (\"blog post \" + .event)}" "$MOVED_FILE")
             event_name=$(echo "$payload" | jq -r '.event')
             todo_title=$(echo "$payload" | jq -r '.todo')
             echo "  → POST: $todo_title"
