@@ -72,8 +72,8 @@ const Talks = () => {
         },
       ],
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devops-devopsdays-curitiba-share-7487831912506634243-X6wN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Site.IA-DOD-CRTB.pdf",  
-      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Site.IA-DOD-CRTB.pdf",
+      blogUrl: "https://www.orafaelferreira.com/artigos/dod-ctrb26",
       },
     {
       title: "Platform Engineering na Prática - Construindo Plataformas Serverless Self-Service",
@@ -97,8 +97,8 @@ const Talks = () => {
         },
       ],
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_platformengineering-devops-cloud-activity-7492542979845341184-i-iY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Platform_Engineering-MVP-CRTB.pdf",  
-      //blogUrl: "https://orafaelferreira.com/artigos/code-island-ctrlz-2026",  
+      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Platform_Engineering-MVP-CRTB.pdf",
+      blogUrl: "https://www.orafaelferreira.com/artigos/mvp-conf-regional-curitiba-2026",
       },
   ];
 

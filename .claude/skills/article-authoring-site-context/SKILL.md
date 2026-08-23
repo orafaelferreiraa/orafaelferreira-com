@@ -47,6 +47,7 @@ Generate content that matches the exact `Article` interface and uses markdown co
 
 ## Content Rules
 
+- Never use the em dash (—) in the middle of a sentence; use a comma instead
 - Use clear Portuguese
 - Keep the tone practical and specific
 - Explain context, decisions, trade-offs, and outcomes
@@ -57,7 +58,7 @@ Generate content that matches the exact `Article` interface and uses markdown co
 - If the post comes from a talk, keep the official talk title exactly as the post title
 - If the post includes community or event details, keep the links and references in the body as part of the story
 - For talk/event posts with a matching entry in `src/components/Talks.tsx`, always sync cover image (`image`/`badges`) and slides link from Talks
-- For new files in `src/data/articles/blog-posts/`, include an agenda section in the body (`## Agenda` or `## Agenda do evento`) with topic/session title, speaker, and short summary
+- Never add a `## Agenda` (or `## Agenda do evento`) section with `**Sessão:**` / `**Palestrante:**` bold-label fields; weave the session/topic title and speaker(s) into the opening prose instead
 
 ## Markdown Compatibility
 
@@ -79,7 +80,7 @@ Do not use:
 - Well-separated sections
 - Official references included for all cited technologies
 - Official references linked inline on first citation of tools/protocols/docs
-- Agenda section present for blog posts
+- No `## Agenda` block with `**Sessão:**` / `**Palestrante:**` fields; session/speaker woven into prose
 - No technical claims without evidence
 - File name follows `YYYY-MM-DD-slug.ts`
 - Talk/event posts reuse cover and slides from `src/components/Talks.tsx`

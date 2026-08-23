@@ -23,6 +23,8 @@ Create a talk-based post with the official talk title preserved and the old site
 
 ## Editorial Rules
 
+- Never use the em dash (—) in the middle of a sentence; use a comma instead
+- Never add a `## Agenda` section with `**Sessão:**` / `**Palestrante:**` bold-label fields; weave the session title and speaker(s) into the opening prose instead
 - The post title must exactly match the talk title
 - Keep the official event name and city when available
 - Use a first-person, practical tone
@@ -48,10 +50,9 @@ Before writing or updating a talk-based post:
 
 ## Required Structure
 
-- Short opening with the talk context
+- Short opening with the talk context (session title and speaker(s) woven into the prose, not a labeled `## Agenda` block)
 - Event or meetup link in markdown when available
 - LinkedIn link in markdown when available
-- `## Agenda` (or `## Agenda do evento`) with session title, speaker, and short summary
 - `## Slides` with a named link
 - `## Repositories` with named links when available
 - Main learnings, demo notes, or community impact
@@ -77,7 +78,7 @@ Before writing or updating a talk-based post:
 - Official title preserved
 - Links coherent and verified
 - Official references linked inline where technologies/tools are first cited
-- Agenda section present in the post body
+- No `## Agenda` block with `**Sessão:**` / `**Palestrante:**` fields; session/speaker woven into prose
 - Cover image and slides synchronized with `src/components/Talks.tsx`
 - Concise, technical, and human
 - No promotional fluff
