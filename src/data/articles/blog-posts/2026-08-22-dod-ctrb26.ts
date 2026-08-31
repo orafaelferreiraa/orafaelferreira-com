@@ -26,8 +26,6 @@ Um estudo de caso sobre como usei IA generativa para criar meu portfólio pessoa
 
 Meu portfólio pessoal (orafaelferreira.com) estava desatualizado. Eu precisava de um site moderno, minimalista e rápido, mas sem tempo para desenhar e codar tudo do zero.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/1.jpg)
-
 ### Tudo Começou com um Prompt
 
 Estruturei um prompt detalhado, seções para Home, Sobre, Blog, Palestras, Mentoria e Contato, guidelines de estilo (tema escuro, tipografia moderna, ícones lineares) e requisitos técnicos (SEO, performance, Markdown), e usei o [**Lovable**](https://lovable.dev/) para gerar **100% via IA generativa** a primeira versão.
