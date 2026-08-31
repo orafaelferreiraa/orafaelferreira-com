@@ -65,7 +65,7 @@ const Talks = () => {
       event: "DevOpsDays Curitiba",
       date: "2026-08-22",
       location: "Auditório Eny Caldeira do Campus Rebouças da UFPR",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
+      image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
       siteUrl: "https://devopsdays.org/events/2026-curitiba/welcome/", 
       repositories: [
         {
@@ -74,7 +74,7 @@ const Talks = () => {
         },
       ],
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_devops-devopsdays-curitiba-share-7487831912506634243-X6wN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Site.IA-DOD-CRTB.pdf",
+      slidesUrl: "https://stoblobcertificados2.blob.core.windows.net/palestras/Site.IA-DOD-CRTB.pdf",
       blogUrl: "https://www.orafaelferreira.com/artigos/dod-ctrb26",
       },
     {
@@ -82,7 +82,7 @@ const Talks = () => {
       event: "MVP Conf Regional Curitiba 2026",
       date: "2026-08-22",
       location: "PUC PR",
-      image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/0.png",
+      image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/0.png",
       siteUrl: "https://www.mvpconf.com.br/regional/curitiba/agosto-2026", 
       repositories: [
         {
@@ -99,7 +99,7 @@ const Talks = () => {
         },
       ],
       linkedinUrl: "https://www.linkedin.com/posts/orafaelferreiraa_platformengineering-devops-cloud-activity-7492542979845341184-i-iY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiBr9cBknrEzJyFEqCS03tes6G6R1yclRw",
-      slidesUrl: "https://stoblobcertificados011.blob.core.windows.net/palestras/Platform_Engineering-MVP-CRTB.pdf",
+      slidesUrl: "https://stoblobcertificados2.blob.core.windows.net/palestras/Platform_Engineering-MVP-CRTB.pdf",
       blogUrl: "https://www.orafaelferreira.com/artigos/mvp-conf-regional-curitiba-2026",
       },
     {
