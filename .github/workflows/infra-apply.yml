@@ -81,7 +81,7 @@ jobs:
 
       - name: Terraform Apply
         env:
-          SWA_REPOSITORY_TOKEN: ${{ secrets.GH_PAT_SWA }}
+          SWA_REPOSITORY_TOKEN: ${{ secrets.WORKFLOW_PAT }}
         run: |
           terraform apply -auto-approve -input=false \
             -var "repository_url=https://github.com/${{ github.repository }}" \
