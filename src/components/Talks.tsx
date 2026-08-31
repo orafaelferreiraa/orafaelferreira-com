@@ -65,8 +65,8 @@ const Talks = () => {
       event: "DevOpsDays Curitiba",
       date: "2026-08-22",
       location: "Auditório Eny Caldeira do Campus Rebouças da UFPR",
-      image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.png",
-      siteUrl: "https://devopsdays.org/events/2026-curitiba/welcome/", 
+      image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg",
+      siteUrl: "https://devopsdays.org/events/2026-curitiba/welcome/",
       repositories: [
         {
           label: "Repositório do Site",
@@ -82,7 +82,7 @@ const Talks = () => {
       event: "MVP Conf Regional Curitiba 2026",
       date: "2026-08-22",
       location: "PUC PR",
-      image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/mvp-ctba/0.png",
+      image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg",
       siteUrl: "https://www.mvpconf.com.br/regional/curitiba/agosto-2026", 
       repositories: [
         {
