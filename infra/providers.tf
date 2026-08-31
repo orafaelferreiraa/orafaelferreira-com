@@ -15,19 +15,23 @@ terraform {
 
 provider "azurerm" {
   features {}
+  resource_provider_registrations = "none"
 }
 
 provider "azurerm" {
-  alias = "site"
+  alias                            = "site"
   features {}
-  subscription_id = var.site_subscription_id != "" ? var.site_subscription_id : null
+  resource_provider_registrations = "none"
+  subscription_id                 = var.site_subscription_id != "" ? var.site_subscription_id : null
 }
 
 provider "azurerm" {
-  alias = "dns"
+  alias                            = "dns"
   features {}
-  subscription_id = var.dns_subscription_id != "" ? var.dns_subscription_id : null
+  resource_provider_registrations = "none"
+  subscription_id                 = var.dns_subscription_id != "" ? var.dns_subscription_id : null
 }
+
 
 provider "azapi" {
   alias           = "site"
