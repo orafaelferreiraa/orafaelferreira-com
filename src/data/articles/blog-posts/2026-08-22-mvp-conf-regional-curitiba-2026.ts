@@ -7,25 +7,25 @@ export const article: Article = {
   content: `
 # MVP Conf Regional Curitiba 2026
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/0.png)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg)
 
 No dia **22 de agosto de 2026**, palestrei no [**MVP Conf Regional Curitiba 2026**](https://www.mvpconf.com.br/regional/curitiba/agosto-2026), realizado na **PUC PR**, com a sessão **"Platform Engineering na Prática - Construindo Plataformas Serverless Self-Service"**.
 
 Uma imersão prática em Platform Engineering:qu o que é um Internal Developer Platform (IDP) de verdade, e como construí, com Terraform, GitHub Actions e uma arquitetura em três pilares, uma plataforma serverless self-service na Azure.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/1.jpg)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/1.jpg)
 
 ## O Anti-Padrão do Shadow Ops
 
 A promessa "you build it, you run it" quebrou sob o peso da complexidade cloud-native. Exigir que desenvolvedores dominem toda a stack de infraestrutura (Kubernetes, Helm, Terraform, RBAC, CI/CD, networking) atrasa entregas e gera configurações inconsistentes, o chamado **Shadow Ops**. **44% das organizações de baixo desempenho** sofrem com desenvolvedores assumindo tarefas de infraestrutura e desviando o foco do produto.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/2.jpg)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/2.jpg)
 
 ## O Que É Platform Engineering?
 
 Platform Engineering é construir uma plataforma interna que simplifica, padroniza e acelera o trabalho dos times de desenvolvimento. **Não é uma ferramenta. É um produto.**
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/5.jpg)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/5.jpg)
 
 - **O core da plataforma:** infraestrutura padronizada, pipelines automatizados e governança clara, processos que os devs realmente querem usar. O objetivo é tornar o caminho certo o caminho mais fácil.
 - **Reduz carga cognitiva:** devs conseguem provisionar, deployar e monitorar sem precisar ser especialistas em cloud, Kubernetes ou networking. A plataforma "esconde" complexidade sem esconder poder.
@@ -52,7 +52,7 @@ Um Internal Developer Platform (IDP) de verdade se organiza em cinco planos:
 4. **Security Plane**, governança contínua (gerenciamento de segredos, políticas de acesso).
 5. **Observability Plane**, visibilidade padronizada (logs, APM, métricas).
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/6.jpg)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/6.jpg)
 
 ## O Perfil do Engenheiro de Plataforma
 
@@ -69,7 +69,7 @@ Um bom engenheiro de plataforma vive na intersecção de três habilidades: **ha
 
 O objetivo final é resumir meses de configuração de infraestrutura a parâmetros essenciais. Da visão do desenvolvedor, o esforço é \`imagem = 'meu-app:v1'\`. Por trás, a engenharia oculta cuida de tudo: Container Apps Environment configurado, rede spoke \`/27\` delegada, Managed Identity vinculada nativamente, comunicação criptografada com o Azure Container Registry, e logs fluindo automaticamente pra Application Insights.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/7.jpg)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/7.jpg)
 
 ## Como Construí: Uma Arquitetura em Três Pilares
 
@@ -89,7 +89,7 @@ O fluxo sequencial de validação de infraestrutura roda em cinco etapas (com \`
 
 \`terraform fmt\` (sempre ativo) → **TFLint** (boas práticas) → **Trivy** (vulnerabilidades) → **Checkov** (compliance) → **terraform-docs** (detecção de drift).
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/8.jpg)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/8.jpg)
 
 ### Feature Flags e Matriz de Dependências
 
@@ -114,10 +114,10 @@ A arquitetura final segue quatro camadas, com dependência obrigatória de baixo
 
 Obrigado ao MVP Conf Regional Curitiba pela oportunidade e a todos que estiveram na sessão!
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/9.jpg)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/9.jpg)
 `,
   date: "2026-08-22",
   category: "Palestras",
   readTime: "7 min de leitura",
-  image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/0.png",
+  image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg",
 };

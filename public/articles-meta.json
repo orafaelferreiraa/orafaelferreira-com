@@ -3,7 +3,7 @@
     "slug": "dod-ctrb26",
     "title": "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
     "excerpt": "No DevOpsDays Curitiba 2026, ao lado de Jéssica Mello, contei como usei IA generativa para criar meu portfólio do zero, e como Terraform, GitHub Actions e boas práticas de DevOps garantiram que o deploy em produção, na Azure, fosse meu.",
-    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png",
+    "image": "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg",
     "date": "2026-08-22",
     "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/dod-ctrb26"
@@ -12,7 +12,7 @@
     "slug": "mvp-conf-regional-curitiba-2026",
     "title": "Platform Engineering na Prática - Construindo Plataformas Serverless Self-Service",
     "excerpt": "No MVP Conf Regional Curitiba 2026, mostrei como Platform Engineering resolve o anti-padrão do Shadow Ops, e como construí, com Terraform e GitHub Actions, uma plataforma serverless self-service em três pilares: Pipeline, Modules e Platform-as-a-Service.",
-    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/0.png",
+    "image": "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg",
     "date": "2026-08-22",
     "category": "Palestras",
     "url": "https://www.orafaelferreira.com/artigos/mvp-conf-regional-curitiba-2026"
