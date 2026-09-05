@@ -52,6 +52,7 @@
   </url>
 
   <!-- Articles -->
+  <url><loc>https://www.orafaelferreira.com/artigos/nginx-envoy-gateway</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/dod-ctrb26</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/mvp-conf-regional-curitiba-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.orafaelferreira.com/artigos/mencoes-publicacoes-externas</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>

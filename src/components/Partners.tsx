@@ -1,4 +1,4 @@
-import { ExternalLink, Copy, Check, Shirt, GraduationCap, Banknote, Calculator, Video, Cloud } from "lucide-react";
+import { ExternalLink, Copy, Check, Shirt, GraduationCap, Banknote, Calculator, Video, Cloud, Globe, Languages } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
@@ -59,6 +59,22 @@ const Partners = () => {
       description: t("partners.items.nuvme.description"),
       link: "https://nuvme.com.br/",
       gradient: "from-slate-400 to-slate-600",
+    },
+    {
+      id: "wise",
+      icon: Globe,
+      name: "Wise",
+      description: t("partners.items.wise.description"),
+      link: "https://wise.com/invite/arhn/rafaelmartina3?utm_source=android-referral-hub-nativeshare&utm_medium=invite&referralCode=rafaelmartina3",
+      gradient: "from-lime-400 to-green-600",
+    },
+    {
+      id: "letsgofar",
+      icon: Languages,
+      name: "LET'S GO FAR",
+      description: t("partners.items.letsgofar.description"),
+      link: "https://payfast.greenn.com.br/146418/?a_id=2431155",
+      gradient: "from-violet-500 to-purple-600",
     },
   ];
 
@@ -165,6 +181,7 @@ const Partners = () => {
           {/* Footer Note */}
           <div className="text-center mt-12">
             <p className="text-sm text-muted-foreground">
+              {t("partners.disclaimer")}
             </p>
           </div>
         </div>

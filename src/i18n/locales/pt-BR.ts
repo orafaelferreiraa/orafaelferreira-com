@@ -78,6 +78,7 @@ export default {
       subtitle: "Links exclusivos e cupons de desconto para você.",
       coupon: "Cupom",
       visitSite: "Acessar",
+      disclaimer: "Os links acima podem ser links de afiliado. Ao usá-los, você apoia meu trabalho sem custo adicional.",
       items: {
         useti: {
           description: "Loja de roupas pra quem vive tecnologia no dia a dia"
@@ -96,6 +97,12 @@ export default {
         },
         nuvme: {
           description: "Cloud, DevOps, FinOps, Segurança, IA e Observabilidade em um só lugar"
+        },
+        wise: {
+          description: "Transferências internacionais com câmbio real, primeiras 3.000 BRL sem taxa"
+        },
+        letsgofar: {
+          description: "Inglês estratégico para profissionais de tech conquistarem vagas internacionais"
         }
       }
     },

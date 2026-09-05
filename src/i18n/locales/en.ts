@@ -90,6 +90,12 @@ export default {
         },
         nuvme: {
           description: "Cloud, DevOps, FinOps, Security, AI and Observability in one place"
+        },
+        wise: {
+          description: "International transfers at the real exchange rate, first 3,000 BRL fee-free"
+        },
+        letsgofar: {
+          description: "Strategic English for tech professionals landing international roles"
         }
       }
     },

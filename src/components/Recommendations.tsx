@@ -45,7 +45,8 @@ const spotifyPodcasts: RecommendationItem[] = [
   { name: "English in Brazil", url: "https://open.spotify.com/show/0LZHZHWjUddEvNaY3NM98q?si=34dd2ab094774be2" },
   { name: "Tech Lead Journal", url: "https://open.spotify.com/show/5suS91H6OfqDt14ZsOD4RV?si=8f4e0ac6288349d32" },
   { name: "PrimoCast", url: "https://open.spotify.com/show/2gCj9YG9tjMexhS4pIlRHo?si=4532e82b82bc4744" },
-  { name: "Como Voce fez isso?", url: "https://open.spotify.com/show/1QJgd5aW274UcsHAShJwSE?si=00d204329ef74598" }
+  { name: "Como Voce fez isso?", url: "https://open.spotify.com/show/1QJgd5aW274UcsHAShJwSE?si=00d204329ef74598" },
+  { name: "Papinho Tech", url: "https://open.spotify.com/show/1aj1JxbfYePAHp1eliCKya?si=c6c4156b30e14823" }
 ];
 
 const instagramProfiles: RecommendationItem[] = [
@@ -53,7 +54,8 @@ const instagramProfiles: RecommendationItem[] = [
   { name: "Fabricio Veronez", url: "https://www.instagram.com/fabricioveronez/" },
   { name: "TrilhaInfo", url: "https://www.instagram.com/trilhainfo/" },
   { name: "Full Cycle", url: "https://www.instagram.com/devfullcycle/" },
-  { name: "Pedro Nauck", url: "https://www.instagram.com/pedronauck/" }
+  { name: "Pedro Nauck", url: "https://www.instagram.com/pedronauck/" },
+  { name: "Tech Leads Club", url: "https://www.instagram.com/techleads.club/" }
 ];
 
 interface CategorySection {
