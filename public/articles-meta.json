@@ -1,9 +1,9 @@
 {
   "nginx-envoy-gateway": {
     "slug": "nginx-envoy-gateway",
-    "title": "De NGINX Ingress para Envoy Gateway: a migração e o loop que executou ela",
-    "excerpt": "Como um controller próprio converte Ingress nginx em Gateway API sobre Envoy Gateway numa plataforma Kubernetes multi-tenant: o contrato de cobertura de anotações que veio antes do código, o degrau de teste que só um data plane de verdade resolve, e o header de OAuth que uma auditoria em fan-out achou antes da virada de tráfego.",
-    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/nginx-envoy-gateway/capa.png",
+    "title": "De NGINX Ingress para Envoy Gateway: a migração que a IA liderou",
+    "excerpt": "Como um controller próprio converte Ingress nginx em Gateway API sobre Envoy Gateway numa plataforma Kubernetes multi-tenant: o contrato de cobertura de annotations que veio antes do código, o degrau de teste que só um data plane de verdade resolve, e o header de OAuth que uma auditoria em fan-out achou antes da virada de tráfego.",
+    "image": "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png",
     "date": "2026-09-05",
     "category": "Artigos",
     "url": "https://www.orafaelferreira.com/artigos/nginx-envoy-gateway"

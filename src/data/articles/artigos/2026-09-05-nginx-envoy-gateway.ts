@@ -2,35 +2,24 @@ import { Article } from '../types';
 
 export const article: Article = {
   slug: "nginx-envoy-gateway",
-  title: "De NGINX Ingress para Envoy Gateway: a migração e o loop que executou ela",
+  title: "De NGINX Ingress para Envoy Gateway: a migração que a IA liderou",
   excerpt:
-    "Como um controller próprio converte Ingress nginx em Gateway API sobre Envoy Gateway numa plataforma Kubernetes multi-tenant: o contrato de cobertura de anotações que veio antes do código, o degrau de teste que só um data plane de verdade resolve, e o header de OAuth que uma auditoria em fan-out achou antes da virada de tráfego.",
+    "Como um controller próprio converte Ingress nginx em Gateway API sobre Envoy Gateway numa plataforma Kubernetes multi-tenant: o contrato de cobertura de annotations que veio antes do código, o degrau de teste que só um data plane de verdade resolve, e o header de OAuth que uma auditoria em fan-out achou antes da virada de tráfego.",
   image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png",
   content: `
+  
+![Capa](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png)
+
 Quase todo texto sobre trocar de ingress controller fala da arquitetura de destino: por que [Gateway API](https://gateway-api.sigs.k8s.io/), por que [Envoy](https://gateway.envoyproxy.io/), como fica o novo modelo de recursos. Esse aqui fala de outra coisa, menos explorada: **como a migração foi de fato executada**, com um agente de IA operando num loop estruturado em vez de uma pessoa dirigindo cada passo na mão.
 
 ## Resumo rápido
 
 - Plataforma Kubernetes multi-tenant sob NDA. Nada de nome de empresa, cluster, tenant ou repositório. O que generaliza é o formato do problema.
 - Existe um **controller próprio** que converte continuamente Ingress de classe \`nginx\` em \`HTTPRoute\`, \`GRPCRoute\` e \`TLSRoute\` ligados a um Envoy Gateway compartilhado.
-- A decisão mais importante veio **antes da primeira linha de código de conversão**: um contrato dizendo que toda anotação cai em exatamente um de cinco baldes, sem exceção silenciosa.
+- A decisão mais importante veio **antes do código**: para toda annotation nginx em uso, o time decidiu o que aconteceria com ela, convertida, redundante, sem efeito, ou marcada para trabalho manual, nunca deixada para trás em silêncio.
 - Snippet de nginx é traduzido em regime **tudo ou nada**. Tradução parcial é modo de falha pior que tradução nenhuma.
 - O achado que salvou o dia 1 não tem nada a ver com Envoy: dezenas de serviços montavam URL de redirect de OAuth a partir de um header não-padrão que **nunca existiu** naquele ambiente.
 - O mecanismo do loop em si, hooks, skills, subagentes verificadores, escada de verificação, eu já detalhei em [Loop Engineering na prática](/artigos/loop-engineering-na-pratica). Aqui ele aparece em recap curto, e só desce ao detalhe onde a aplicação é específica desta migração.
-
-## O que este artigo não repete
-
-Para não reescrever o artigo anterior, aqui vai o recap de uma linha por peça. Cada uma está explicada por inteiro em [Loop Engineering na prática](/artigos/loop-engineering-na-pratica).
-
-- **Hook com \`exit 2\`**: quando um hook sai com código 2, o que ele escreveu no stderr volta para o contexto do modelo como mensagem de erro, no momento exato do erro. É o caminho de feedback do loop, escrito em shell.
-- **A \`description\` da skill é o roteador**: o frontmatter não é documentação, é o que decide se a skill carrega. Descrição vaga é skill que nunca dispara.
-- **Verificador separado por restrição de ferramenta**: quem revisa não tem \`Edit\` nem \`Write\`, e também não tem como spawnar outro agente que teria. Mais um teto de três rodadas antes de me chamar.
-- **Escada de verificação**: compilar, unidade, integração com API real, cluster local, imagem. Ordem do mais barato ao mais caro, sem pular degrau.
-- **Teste de regressão tem que provar que falha sem a correção**: teste que passa igual com e sem o fix é decoração, e essa é a defesa mais barata contra reward hacking.
-- **Trava de operação destrutiva**: tudo que apaga para e pede autorização, sempre, inclusive nos modos que liberaram o resto.
-- **CI como verificador**: o agente lê o log direto, mas só a parte que falhou.
-
-O que vem abaixo é o que **não** está lá.
 
 ## O problema da migração
 
@@ -39,21 +28,29 @@ O ambiente é uma plataforma Kubernetes multi-tenant sob NDA. O que interessa e 
 Existe um controller que converte, de forma contínua, Ingress de classe \`nginx\` em recursos de Gateway API ligados a um Envoy Gateway compartilhado. Ele envolve o projeto open source [kubernetes-sigs/ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway) e acrescenta quatro camadas em cima:
 
 - **Rebind de \`parentRef\`**, para que a rota gerada aponte para o Gateway compartilhado certo em vez do que a conversão padrão inferiria.
-- **Parsing de snippet nginx**, o config livre embutido em anotação.
-- **Derivação de policy**, quando o comportamento não cabe na rota e precisa virar objeto de política no nível do Gateway. É a mesma ideia que eu defendi em [Platform Engineering e Policy-as-Code que aceleram times](/artigos/platform-engineering-policy-as-code), só que aqui a política não é escrita à mão, ela é derivada de uma anotação legada.
-- **Cobertura total de anotação**, que é o assunto da próxima seção e a decisão mais importante do projeto inteiro.
+- **Parsing de snippet nginx**, o config livre embutido em annotation.
+- **Derivação de policy**, quando o comportamento não cabe na rota e precisa virar objeto de política no nível do Gateway. É a mesma ideia que eu defendi em [Platform Engineering e Policy-as-Code que aceleram times](/artigos/platform-engineering-policy-as-code), só que aqui a política não é escrita à mão, ela é derivada de uma annotation legada.
+- **Cobertura total de annotation**, que é o assunto da próxima seção e a decisão mais importante do projeto inteiro.
 
 Vale dizer o óbvio que às vezes se perde: a conversão não é um script que roda uma vez. É um controller em reconciliação, porque os times donos das aplicações continuam criando e editando Ingress nginx enquanto a migração acontece. Migração de verdade não tem freeze.
 
-## O contrato de cobertura: cinco baldes e nada fora deles
+## O primeiro passo: um assessment da frota inteira
 
-Antes de escrever qualquer código de conversão, a pergunta que precisava de resposta era: **o que acontece com uma anotação que o conversor não conhece?**
+Antes de desenhar qualquer contrato, tinha uma pergunta mais básica: **o que a frota realmente usa?** Não a lista de annotations que a documentação do nginx descreve, a lista real, encontrada em produção, com toda variação que cada time introduziu ao longo do tempo.
+
+Foi o primeiro passo do projeto, e não teve nada de manual nele. Um agente varreu todos os Ingress de todos os workloads da frota, um a um, e extraiu cada annotation encontrada, onde ela aparecia, em qual workload, em qual namespace. O resultado saiu num \`.csv\`, não num documento, porque o próximo passo era justamente decidir, entrada por entrada, para onde cada annotation ia na tradução para Gateway API.
+
+Esse \`.csv\` é o que faz o contrato da próxima seção ser honesto. Sem ele, a lista de annotations a cobrir teria sido "as que a gente lembrou", montada de memória por quem já trabalhou com o ambiente. Com ele, é "as que existem de verdade", incluindo a annotation rara que um time usou uma vez, dois anos atrás, e que ninguém mais tinha em mente. É o mesmo problema, na escala do assessment inteiro, que o contrato resolve annotation por annotation: o que não é visto, desaparece calado.
+
+## O contrato de cobertura: cinco categorias e nada fora delas
+
+Antes de escrever qualquer código de conversão, a pergunta que precisava de resposta era: **o que acontece com uma annotation que o conversor não conhece?**
 
 A resposta preguiçosa é ignorar e seguir. É também a resposta que faz a migração parecer um sucesso até alguém descobrir, três semanas depois, que o rate limit sumiu.
 
-Então virou contrato: toda anotação \`nginx.ingress.kubernetes.io/*\` tem que cair em **exatamente um** de cinco baldes.
+A saída foi fechar essa lacuna antes de escrever código: para toda annotation \`nginx.ingress.kubernetes.io/*\`, o time definiu de antemão qual das cinco categorias abaixo ela ocupa, **sempre uma, nunca zero**.
 
-| Balde | O que significa | Quem resolve |
+| Categoria | O que significa | Quem resolve |
 |---|---|---|
 | Convertida | Virou campo de um recurso real de Gateway API | O conversor |
 | Coberta por policy | Não cabe na rota, virou objeto de política no Gateway | O conversor |
@@ -61,15 +58,15 @@ Então virou contrato: toda anotação \`nginx.ingress.kubernetes.io/*\` tem que
 | No-op comprovável | Não faz nada naquele contexto, e dá para provar | Ninguém, com evidência |
 | \`Unconvertible\` | Precisa mesmo de trabalho manual | Uma pessoa, avisada |
 
-O quinto balde é o que faz o contrato valer. **Sem uma categoria explícita para "isso não dá", tudo que não dá vira silêncio.** \`Unconvertible\` não é derrota, é o mecanismo que transforma um desconhecido em item de trabalho com nome.
+A quinta categoria é o que faz o contrato valer. **Sem uma categoria explícita para "isso não dá", tudo que não dá vira silêncio.** \`Unconvertible\` não é derrota, é o mecanismo que transforma um desconhecido em item de trabalho com nome.
 
-O ganho prático de escrever isso antes: o agente não tem espaço para inventar uma quarta via. A instrução não é "converta o que der", é "coloque cada entrada num balde e não sobre nada". Objetivo verificável em vez de objetivo simpático.
+O ganho prático de escrever isso antes: o agente não tem espaço para inventar uma quarta via. A instrução não é "converta o que der", é "coloque cada entrada numa categoria e não sobre nada". Objetivo verificável em vez de objetivo simpático.
 
-![Diagrama em linhas neon azuis mostrando uma anotação de Ingress sendo classificada em exatamente um de cinco destinos: rota convertida, política no Gateway, borda upstream, item sem efeito e item que exige trabalho manual](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/1.png)
+![Diagrama em linhas neon azuis mostrando uma annotation de Ingress sendo classificada em exatamente um de cinco destinos: rota convertida, política no Gateway, borda upstream, item sem efeito e item que exige trabalho manual](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/1.png)
 
 ## Snippet é tudo ou nada
 
-Snippet de nginx é o caso mais desagradável, porque não é uma anotação com valor conhecido, é um pedaço de configuração livre embutido numa string.
+Snippet de nginx é o caso mais desagradável, porque não é uma annotation com valor conhecido, é um pedaço de configuração livre embutido numa string.
 
 A regra que vale a pena copiar: **um snippet só é traduzido quando todos os diretivos dentro dele são reconhecidos.** Nunca nove décimos.
 
@@ -138,6 +135,10 @@ A correção é um degrau a mais, e o detalhe que faz ele valer é chato de prop
 
 Ao lado dele, um backend que só ecoa os headers que recebeu, e um \`curl\`. É assim que se confirma que um request HTTP simples atravessando o Envoy chega do outro lado com \`X-Forwarded-Proto: https\`. Não por leitura de código, não por asserção de unidade. Por observação.
 
+Esse mesmo cluster local também roda o **Gateway API** (os CRDs), não só o Envoy. Motivo: simular o Envoy sozinho prova o rewrite de header, mas não prova que o operator chega até lá do jeito que chegaria em produção. O cluster local simula o operator **rodando**, não só existindo.
+
+Isso é o ponto que vale enfatizar: quanto mais o ambiente local imita o real, Helm values, Gateway API incluído, menos surpresa sobra para o cluster de produção. Teste local que só sobe a aplicação não testa o caminho pelo qual a aplicação chega lá, e esse caminho tem tanta chance de esconder bug quanto o código em si.
+
 ![Diagrama em linhas neon azuis comparando um servidor de API do Kubernetes, que aceita os objetos mas não move tráfego, com um proxy Envoy por onde a requisição passa de fato e sai com um header a mais preenchido](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/2.png)
 
 Vale registrar também que a imagem do operator **não faz parte do ciclo de iteração**. Editar arquivo, reiniciar o pod com a árvore de código montada por hostPath, ver o efeito em segundos. A imagem é construída pelo serviço de build do registry, depois que o comportamento já está validado. A imagem é o resultado do loop, não uma etapa dentro dele.
@@ -166,7 +167,7 @@ Mover o tráfego para o Envoy sem tocar nisso teria produzido uma onda de callba
 
 O fix, uma vez achado, foi pequeno: o controller injeta os dois headers não-padrão, **add-if-absent**, na mesma camada onde já reescreve outros headers de request. Add-if-absent importa, porque quem já manda o header certo não pode ser sobrescrito por compatibilidade retroativa.
 
-![Diagrama em linhas neon azuis de uma requisição HTTP com três campos de header, um deles vazio, chegando a um provedor de identidade com a seta de retorno interrompida, e da mesma requisição com o campo preenchido e a seta completa](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/3.png)
+![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/3.png)
 
 ## O que o processo não pegou: ReferenceGrant no namespace errado
 
@@ -182,7 +183,7 @@ A correção é um teste de integração cobrindo conversor e controller **junto
 
 As recomendações genéricas de loop estão no [outro artigo](/artigos/loop-engineering-na-pratica). Estas são específicas desta migração:
 
-- **Escreva o contrato de cobertura de anotações antes do primeiro código de conversão.** Decida de antemão o que acontece com cada entrada possível, para que nada que você não previu desapareça em silêncio. E tenha um balde explícito para "não dá".
+- **Escreva o contrato de cobertura de annotations antes do primeiro código de conversão.** Decida de antemão o que acontece com cada entrada possível, para que nada que você não previu desapareça em silêncio. E tenha uma categoria explícita para "não dá".
 - **Trate feature baseada em diretivo como tradução tudo ou nada.** Snippet, rewrite, qualquer config livre. Meia tradução é pior que nenhuma, porque parece que funcionou.
 - **Verificação local precisa de data plane de verdade.** Uma API do Kubernetes falsa prova sua lógica de reconciliação; só um cluster rodando a mesma implementação de Gateway com os mesmos values de Helm da produção prova que seu rewrite de header acontece.
 - **Audite os headers que suas aplicações consomem antes de virar a borda.** Não os que a documentação delas diz que elas consomem, os que o código realmente lê. E rode uma passada adversarial em cima do resultado, porque a primeira volta sempre parece completa demais.
@@ -191,12 +192,12 @@ As recomendações genéricas de loop estão no [outro artigo](/artigos/loop-eng
 
 ## Conclusão
 
-O que me deixou confortável nessa migração não foi a velocidade da conversão. Foi que os pontos onde ela poderia ter falhado em silêncio, anotação ignorada, snippet meio traduzido, header ausente, autorização no namespace errado, viraram itens com nome, seja num balde, seja numa lista de limitações conhecidas, seja num teste que ainda falta escrever.
+O que me deixou confortável nessa migração não foi a velocidade da conversão. Foi que os pontos onde ela poderia ter falhado em silêncio, annotation ignorada, snippet meio traduzido, header ausente, autorização no namespace errado, viraram itens com nome, seja numa categoria, seja numa lista de limitações conhecidas, seja num teste que ainda falta escrever.
 
 O agente acelerou o trabalho. O que decidiu se ele foi confiável foi o contrato escrito antes dele começar, e a disciplina de tratar todo verde não observado como suspeito.
 `,
   date: "2026-09-05",
   category: "Artigos",
   readTime: "14 min de leitura",
-  tags: ["IA", "DevOps"]
+  tags: ["IA", "DevOps", "Docker"]
 };
