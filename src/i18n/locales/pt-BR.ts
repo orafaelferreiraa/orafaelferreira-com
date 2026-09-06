@@ -219,7 +219,9 @@ export default {
         ambassador: "DevOps Institute Ambassador - reconhecido internacionalmente",
         aluraStar: "Alura Star - embaixador oficial do programa",
         greenChampion: "Green Software Champion pela Green Software Foundation",
-        speaker: "Palestrante ativo e organizador dos grupos Azure Floripa, DevOpsDays Floripa e CNCF SC"
+        speaker: "Palestrante ativo e organizador dos grupos Azure Floripa, DevOpsDays Floripa e CNCF SC",
+        testimonials: "Depoimentos reais de mentorados sobre resultados e experiência com a mentoria",
+        youtube: "Conteúdo técnico gratuito no canal LowOps, para conhecer meu jeito de ensinar antes de contratar"
       },
       benefits: {
         personalized: {
@@ -459,7 +461,7 @@ export default {
     pages: {
       home: {
         title: "Rafael Martin - Cloud & DevOps Engineer",
-        description: "Engenheiro DevOps especializado em Cloud e Platform Engineering. Microsoft MVP & MCT, DevOps Institute Ambassador, Alura Star. Mais de 10 anos em tecnologia e 20 certificações técnicas em Azure, DevOps, FinOps e Engenharia de Plataforma.",
+        description: "Engenheiro DevOps especializado em Cloud e Platform Engineering. Microsoft MVP, MCT e DevOps Institute Ambassador, com 20 certificações em Azure, DevOps e FinOps.",
         ogDescription: "Especialista em Azure, DevOps, FinOps e Engenharia de Plataforma. Transformando ambientes em nuvem em plataformas resilientes e seguras."
       },
       awards: {
@@ -479,6 +481,13 @@ export default {
         description: "Certificados de cursos, treinamentos, eventos e palestras de Rafael Ferreira. Aprendizado contínuo em Cloud Computing, DevOps, Azure, Kubernetes, Terraform, Docker e tecnologias modernas.",
         keywords: "certificados de cursos, treinamentos tech, eventos tech, palestras, TDC, DevOpsDays, LINUXtips, Udemy, Microsoft Learn, Azure training, DevOps training, Kubernetes, Docker, Terraform",
         ogDescription: "Coleção completa de certificados de treinamentos, cursos e eventos que moldaram a jornada profissional de Rafael Ferreira em tecnologia."
+      },
+      certificacoes: {
+        title: "Certificações | Rafael Ferreira - Azure, AWS, DevOps, Cloud",
+        description: "Certificações profissionais de Rafael Ferreira em Cloud, DevOps e Microsoft Azure: Solutions Architect Expert, DevOps Engineer Expert, Terraform Associate e mais.",
+        ogTitle: "Certificações | Rafael Ferreira",
+        ogDescription: "Certificações profissionais em Cloud, DevOps e tecnologias Microsoft, AWS e Oracle conquistadas ao longo da jornada de Rafael Ferreira.",
+        twitterDescription: "Certificações profissionais em Cloud, DevOps e tecnologias Microsoft, AWS e Oracle."
       },
       certifications: {
         title: "Certificações - Rafael Martin",

@@ -1,4 +1,5 @@
-import { UserCheck, Target, Rocket, ArrowRight, Award, Globe, TrendingUp, CheckCircle2, FileCheck, Briefcase, ClipboardList, Video } from "lucide-react";
+import { UserCheck, Target, Rocket, ArrowRight, Award, Globe, TrendingUp, CheckCircle2, FileCheck, Briefcase, ClipboardList, Video, MessageSquareQuote } from "lucide-react";
+import { FaYoutube } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -38,6 +39,14 @@ const Mentorship = () => {
     icon: TrendingUp,
     text: t("mentorship.highlights.speaker"),
     link: "https://www.orafaelferreira.com/palestras/"
+  }, {
+    icon: MessageSquareQuote,
+    text: t("mentorship.highlights.testimonials"),
+    link: "https://www.orafaelferreira.com/recomendacoes/"
+  }, {
+    icon: FaYoutube,
+    text: t("mentorship.highlights.youtube"),
+    link: "https://www.youtube.com/@LowOps"
   }];
   const mentorshipBenefits = [{
     icon: Target,

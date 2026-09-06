@@ -88,7 +88,13 @@ async function main() {
     }
 
     // --- assemble -----------------------------------------------------------
-    let out = template.replace(HEAD_PLACEHOLDER, head).replace(HTML_PLACEHOLDER, html);
+    // Wrapped in markers so main.tsx can strip this block from <head> before the
+    // client renders: react-helmet-async always mounts fresh title/meta/link/script
+    // tags on the client (both hydrate and plain client-render), and it has no idea
+    // these static ones exist, so without this cleanup every page would end up with
+    // two <title>, two canonicals, duplicated JSON-LD, etc. after JS runs.
+    const wrappedHead = `<!--prerendered-head-->\n${head}\n<!--/prerendered-head-->`;
+    let out = template.replace(HEAD_PLACEHOLDER, wrappedHead).replace(HTML_PLACEHOLDER, html);
     if (isNotFound) {
       // The NotFound page sets its own <meta name="robots" content="noindex">;
       // drop the template's "index, follow" so the two don't conflict.

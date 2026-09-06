@@ -6,6 +6,11 @@ export default defineConfig({
   fullyParallel: true,
   use: {
     baseURL: 'http://localhost:4173',
+    // The site's own default/fallback language is pt-BR (i18next-browser-languagedetector
+    // falls back to it only when navigator doesn't say otherwise); without this the
+    // sandboxed Chromium's default locale (en-US) makes every "rendered pages" test
+    // exercise the client-render/English branch instead of the common case.
+    locale: 'pt-BR',
     headless: true,
     trace: 'on-first-retry',
   },
