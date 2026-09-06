@@ -1,0 +1,14 @@
+# Normalize line endings: LF in repo and working tree (WSL + Windows editors)
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.lockb binary
