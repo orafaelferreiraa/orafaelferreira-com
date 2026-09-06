@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "tftec2024",
@@ -21,7 +21,7 @@ Os alunos do [**TFTEC Prime**](https://www.tftec.com.br/) que participaram do ev
 
 ## Arquitetura da Solução Azure do TFTEC Cloud
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/01.png)
+![Diagrama da arquitetura da solução Azure apresentada no TFTEC Cloud](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/01.png)
 
 Um dos grandes destaques do evento foi a apresentação de uma **arquitetura robusta e moderna** para aplicações no Azure, projetada para alta escalabilidade e segurança. Esse exemplo prático foi essencial para que os participantes compreendessem como construir soluções complexas na plataforma. Irei explorar os principais componentes dessa arquitetura.
 
@@ -45,7 +45,7 @@ A arquitetura integra diversos serviços do Azure, organizados para oferecer uma
 
 ## Terraform e Kubernetes
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/02.png)
+![Diagrama de provisionamento com Terraform e Kubernetes no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/02.png)
 
 #### Provisionamento de Infraestrutura com Terraform:
 
@@ -73,7 +73,7 @@ A arquitetura integra diversos serviços do Azure, organizados para oferecer uma
 
 ## Descrição do Pipeline de CI/CD com Terraform
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/03.png)
+![Fluxo do pipeline de CI/CD com Terraform](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/03.png)
 
 1. **Desenvolvimento**
    - **Codificação**: O desenvolvedor escreve o código da infraestrutura usando Terraform.
@@ -106,7 +106,7 @@ Esse fluxo garante que as mudanças na infraestrutura sejam aplicadas de forma c
 
 ## Arquitetura de CI/CD com Azure DevOps para Deploy no Azure Kubernetes Service (AKS)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/04.png)
+![Arquitetura de CI/CD com Azure DevOps para deploy no AKS](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/04.png)
 
 O diagrama a seguir ilustra um pipeline de CI/CD configurado no Azure DevOps, integrando o Azure Kubernetes Service (AKS) para orquestração de contêineres. Esse pipeline automatiza o processo de build, packaging, armazenamento e deploy de uma aplicação em contêiner no AKS.
 
@@ -130,16 +130,16 @@ O diagrama a seguir ilustra um pipeline de CI/CD configurado no Azure DevOps, in
 
 Esse fluxo automatizado facilita a integração e o deploy contínuos, assegurando que cada alteração no código seja construída, validada e implantada de maneira consistente. A integração com Docker e Helm permite uma configuração flexível e reproduzível para a implantação de contêineres no AKS.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/05.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/06.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/07.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/14.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/08.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/09.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/10.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/11.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/12.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/13.jpg)
+![Rafael Ferreira participando do TFTEC Ao Vivo 2024 em São Paulo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/05.jpg)
+![Público do TFTEC Ao Vivo 2024 acompanhando as sessões sobre Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/06.jpg)
+![Palco do TFTEC Ao Vivo 2024 durante a imersão em Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/07.jpg)
+![Participantes do TFTEC Ao Vivo 2024 em momento de networking](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/14.jpg)
+![Instrutores do TFTEC Cloud apresentando a arquitetura no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/08.jpg)
+![Rafael Ferreira participando do TFTEC Ao Vivo 2024 em São Paulo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/09.jpg)
+![Público do TFTEC Ao Vivo 2024 acompanhando as sessões sobre Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/10.jpg)
+![Palco do TFTEC Ao Vivo 2024 durante a imersão em Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/11.jpg)
+![Participantes do TFTEC Ao Vivo 2024 em momento de networking](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/12.jpg)
+![Instrutores do TFTEC Cloud apresentando a arquitetura no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/13.jpg)
 
 ## Conclusão
 

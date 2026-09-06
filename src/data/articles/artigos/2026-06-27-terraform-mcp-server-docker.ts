@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "terraform-mcp-server-docker",
@@ -7,7 +7,7 @@ export const article: Article = {
     "Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting e produtividade",
   content: `
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/01.png) 
+![Capa do artigo sobre Terraform MCP Server com Docker](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/01.png) 
 ## Resumo rápido
 
 - MCP cria um padrão para clientes de IA se conectarem a ferramentas e dados externos.
@@ -23,7 +23,7 @@ E o [Terraform MCP Server](https://developer.hashicorp.com/terraform/mcp-server)
 
 ## MCP é tipo um "USB da internet"
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/02.png) 
+![Ilustração do MCP como um USB-C para apps de IA](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/02.png) 
 
 Uma analogia que ajuda muito: MCP funciona como um "USB-C" para apps de IA.
 
@@ -95,7 +95,7 @@ Exemplos de tools disponíveis:
 - **list_workspaces** e **get_workspace_details**
 - **get_plan_json_output** e **get_run_details**
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/04.png) 
+![Fluxo de uso do Terraform MCP Server no dia a dia](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/04.png) 
 
 ## Onde encontrar MCPs oficiais na internet
 
@@ -109,9 +109,9 @@ Se você quer fontes confiáveis para descobrir servidores MCP:
 Para ecossistemas grandes, vale acompanhar registries e catálogos de vendors:
 
 - [Docker MCP Registry](https://hub.docker.com/mcp) (oficial Docker)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/mcpdocker.png) 
+![Página do Docker MCP Registry no Docker Hub](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/mcpdocker.png) 
 - [Microsoft MCP Registry](https://github.com/mcp?utm_source=vscode-website&utm_campaign=mcp-registry-server-launch-2025) (oficial Microsoft)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/MCPRegistry.png) 
+![Página do MCP Registry do GitHub e Microsoft](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/MCPRegistry.png) 
 ## Skills oficiais de Terraform da HashiCorp
 
 Além do MCP Server, a HashiCorp publicou uma biblioteca aberta de skills: o [HashiCorp Agent Skills](https://www.hashicorp.com/en/blog/introducing-hashicorp-agent-skills), disponível no repositório [hashicorp/agent-skills](https://github.com/hashicorp/agent-skills).
@@ -246,7 +246,7 @@ No cliente MCP, configure esse servidor para rodar via stdio.
 - expor tools (ex.: consultar status, buscar docs, executar validações)
 - rodar por stdio para o cliente consumir
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/04.png)
+![Diagrama do cliente MCP consumindo o servidor via stdio](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/04.png)
 
 Para testar localmente, muita gente usa o [MCP Inspector](https://github.com/modelcontextprotocol/inspector).
 
@@ -284,7 +284,7 @@ Exemplo de configuracao MCP (Terraform MCP Server via Docker/stdio):
 }
 \`\`\`
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/03.png)
+![Terminal exibindo o troubleshooting do MCP Server no Docker](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/03.png)
 
 ## Fluxo prático
 

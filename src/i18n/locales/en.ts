@@ -290,6 +290,17 @@ export default {
         paragraph2: "You can try to advance alone with online courses, college or graduate studies. Sure, eventually, you'll get there, but what price are you willing to pay for your time? You can walk anywhere or you can choose to go by car, bus or plane to get there faster.",
         paragraph3: "Individual Cloud Azure and DevOps mentorship is exactly that \"airplane\": an accelerated, direct and personalized approach that will quickly take you to the result you so desire, with less effort, fewer mistakes and concrete results.",
         paragraph4: "Think with me: what is a thousand reais invested in your career if you can double or multiply your salary? What would that mean to you and your family? Remember: I've already walked this path, multiplied my salary by 20 times in less than 4 years. And you, how long are you willing to wait to achieve these results?",
+        mentorshipPhilosophy: {
+          title: "My mentorship philosophy",
+          paragraphs: [
+            "I don't believe in dependency. I believe in autonomy.",
+            "The mentorship wasn't created for you to need me constantly. It was created for you to gain clarity, direction and the ability to make strategic decisions on your own.",
+            "If at some point your reality changes and you want a new direction, we start a new process with a new plan. Each career stage demands different decisions.",
+            "My role isn't to accompany you forever. It's to teach you to see the game, understand the market and know which move to make.",
+            "When you learn to think strategically, you don't need someone by your side all the time. You start trusting your own decisions.",
+            "You won't be alone on this journey: I'll be here whenever you need my support."
+          ]
+        },
         warning: "But attention:",
         warningText: "I won't do what's up to you to do. Success is certain if you follow what is outlined, but it depends directly on your commitment and effort. There will be no refund, as I cannot guarantee that you will do your part. I've already done mine, and I'm here to help you transform your life and your family's, just as I transformed mine."
       },
@@ -399,9 +410,43 @@ export default {
       posts: "Posts",
       filterByTopic: "Filter by topic",
       allTopics: "All",
-      noResults: "No articles found for this topic."
+      noResults: "No articles found for this topic.",
+      searchResults: "Results for \"{{query}}\"",
+      clearSearch: "Clear search"
+    },
+    article: {
+      breadcrumbHome: "Home",
+      breadcrumbBlog: "Articles/Posts",
+      backToList: "Back to Articles/Posts",
+      allArticles: "See all articles/posts",
+      by: "By",
+      publishedOn: "Published on",
+      updatedOn: "Updated on",
+      summaryTitle: "Summary",
+      tocTitle: "In this article",
+      faqTitle: "Frequently asked questions",
+      relatedTitle: "Related articles",
+      notFoundTitle: "Article not found",
+      notFoundDescription: "The article you are looking for does not exist or has been moved."
+    },
+    home: {
+      latestArticlesTitle: "Latest articles",
+      latestArticlesSubtitle: "Recent technical content on Azure, DevOps, Kubernetes, FinOps and Platform Engineering.",
+      seeAllArticles: "See all articles",
+      talksCtaTitle: "Talks and events",
+      talksCtaDescription: "Conference and meetup talks, with slides, videos and repositories.",
+      mentorshipCtaTitle: "Cloud Azure and DevOps Mentorship",
+      mentorshipCtaDescription: "A 1:1 session with a personalized action plan to accelerate your cloud career."
+    },
+    notFound: {
+      title: "Page not found",
+      description: "The page you are looking for does not exist, has been moved, or the address is incorrect.",
+      backHome: "Back to home page",
+      suggestionsTitle: "Maybe you are looking for:"
     },
     footer: {
+      navigation: "Navigation",
+      rss: "RSS feed",
       rights: "All rights reserved.",
       social: "Social Media"
     },

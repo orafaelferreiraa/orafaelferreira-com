@@ -1,13 +1,13 @@
 // ...existing code...
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "artigo-terraform-infra-cicd",
   title: "A Stack por trás do meu Blog: IaC com Terraform, Static Web Apps e Github Actions",
-  excerpt: "Como migrei meu blog para uma arquitetura moderna com Terraform e GitHub Actions: state remoto em Azure Storage, Static Web Apps, domínio customizado e um pipeline confiável que leva cada mudança para produção.",
+  excerpt: "Como migrei meu blog para Terraform e GitHub Actions: state remoto em Azure Storage, Static Web Apps, domínio customizado e um pipeline confiável até produção.",
   content: `# Visão Geral
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-13-terraform-site.ts.png)
+![Diagrama da stack do blog: Terraform, Static Web Apps e GitHub Actions](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-13-terraform-site.ts.png)
 
 
 Algumas semanas atrás eu decidi migrar meu blog para uma versão mais moderna, simples de operar e fácil de evoluir. O plano: 

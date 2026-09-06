@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "app-gateway-baseline-private-endpoint",
   title: "Arquitetura Baseline do Zero: App Service com Application Gateway, Private Link e Azure DNS",
-  excerpt: "Guia completo e em ordem real para construir a baseline architecture no Azure: DNS público no Azure DNS, App Gateway WAF, Private Endpoints, Key Vault, SQL, Storage, TLS e testes finais sem retrabalho.",
+  excerpt: "Guia passo a passo da baseline architecture no Azure: Azure DNS, Application Gateway WAF, Private Endpoints, Key Vault, SQL, Storage, TLS e testes finais.",
   content: `# Arquitetura baseline do zero (sem retrabalho)
 
 Muita gente me pergunta: "como eu pratico?", "como eu estudo pra certificação?", "como eu monto um laboratório de verdade?". A resposta é simples: implementando. Não adianta só assistir vídeo ou ler documentação se você nunca subiu a arquitetura com as próprias mãos.
@@ -14,7 +14,7 @@ Arquitetura final:
 
 **Usuário -> Azure DNS (público) -> Application Gateway WAF -> Private Endpoint -> App Service**
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/labpe/01.png)
+![Diagrama da arquitetura baseline com Application Gateway e Private Endpoint](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/labpe/01.png)
 
 Com serviços de apoio privados:
 
@@ -348,7 +348,7 @@ Importe o certificado no Key Vault.
 
 ## Passo obrigatório - criar User Assigned Managed Identity
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/labpe/02.png)
+![Portal do Azure criando a User Assigned Managed Identity](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/labpe/02.png)
 
 [Referência oficial da Microsoft](https://learn.microsoft.com/azure/application-gateway/key-vault-certs)
 
@@ -498,7 +498,7 @@ O Azure oferece uma funcionalidade de visualização gráfica direto pelo Resour
 
 Este é o resultado final do nosso laboratório:
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/labpe/03.png)
+![Visualização da arquitetura final no portal do Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/labpe/03.png)
 
 
 # Conclusão

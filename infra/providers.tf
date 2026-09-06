@@ -32,12 +32,6 @@ provider "azurerm" {
   subscription_id                 = var.dns_subscription_id != "" ? var.dns_subscription_id : null
 }
 
-
-provider "azapi" {
-  alias           = "site"
-  subscription_id = var.site_subscription_id != "" ? var.site_subscription_id : null
-}
-
 provider "azapi" {
   alias           = "dns"
   subscription_id = var.dns_subscription_id != "" ? var.dns_subscription_id : null

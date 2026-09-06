@@ -1,14 +1,14 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "mvp-crtb",
   title: "DevOps Além da Hype: Pessoas, Cultura e Prática - Esquenta MVPConf 2025 Curitiba",
-  excerpt: "No dia 27 de setembro de 2025, participei como palestrante no Esquenta do MVPConf 2025, realizado no auditório da UTFPR, em Curitiba – PR. Um evento incrível que serviu como prévia do maior encontro de especialistas Microsoft do Brasil: o MVPConf.",
+  excerpt: "Relato da palestra DevOps Além da Hype no Esquenta MVPConf 2025, na UTFPR em Curitiba: cultura DevOps, programação completa do evento e fotos da experiência.",
   content: `
 No dia **27 de setembro de 2025**, participei como palestrante no [**Esquenta do MVPConf 2025**](https://www.hubingressos.com.br/evento/mvpconfcuritiba), realizado no **auditório da UTFPR**, em Curitiba – PR.  
 Um evento incrível que serviu como prévia do maior encontro de especialistas Microsoft do Brasil: o **MVPConf**.  
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/EsquentaMVPCuritiba.png)
+![Banner do Esquenta MVPConf 2025 em Curitiba](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/EsquentaMVPCuritiba.png)
 
 ## O evento
 
@@ -33,7 +33,7 @@ Toquei em pontos como:
 - O framework **CALMS** e como aplicá-lo na prática  
 - Como criar um ambiente onde a **cultura** habilita a **entrega contínua**
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/07.jpg)
+![Rafael Ferreira palestrando sobre DevOps Além da Hype no Esquenta MVPConf](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/07.jpg)
 
 
 ## Programação do evento
@@ -43,38 +43,38 @@ O dia foi repleto de palestras inspiradoras e muito conteúdo técnico:
 - **09:00 - 09:10** — Abertura do evento
 - **09:10 - 09:50** — Keynote - Task TI
 - **10:00 - 10:50** — Felipe Augusto — *Testes de unidade e integração em .NET com xUnit, Bogus, ReportGenerator e TestContainers*
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/11.jpg)
+![Felipe Augusto palestrando sobre testes em .NET com xUnit](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/11.jpg)
 
 - **11:00 - 11:50** — Rafael Ferreira — *DevOps além da hype: Pessoas, cultura e prática*  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/01.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/03.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/04.jpg)
+![Rafael Ferreira no palco do auditório da UTFPR](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/01.jpg)
+![Slides da palestra DevOps Além da Hype exibidos no auditório](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/03.jpg)
+![Público acompanhando a palestra sobre cultura DevOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/04.jpg)
 
 - **12:00 - 14:00** — Almoço e Networking  
 
 - **14:00 - 14:50** — Bruno Brito — *Do 1º usuário ao 1 milhão: Como escalar sua aplicação*  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/bruno.jpg)
+![Bruno Brito falando sobre como escalar aplicações](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/bruno.jpg)
 
 - **15:00 - 15:50** — Carlos dos Santos — *Criando e publicando uma aplicação com Containers e Azure*  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/carlos.jpg)
+![Carlos dos Santos apresentando containers e Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/carlos.jpg)
 
 - **16:00 - 16:50** — Walter Coan — *Monitoramento de equipamentos industriais com Azure IoT Operations e OPC UA*  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/walter.jpg)
+![Walter Coan palestrando sobre Azure IoT Operations e OPC UA](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/walter.jpg)
 
 - **17:00 - 17:50** — Johnson — *Proteção na era da IA com o Microsoft Security Copilot*  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/johnson.jpg)
+![Johnson apresentando o Microsoft Security Copilot](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/johnson.jpg)
 
 ## Estrutura e Experiência
 
 O evento contou com uma **estrutura impecável**, com estandes, recepção organizada e um público engajado.  
 Além das palestras, rolou aquele networking maroto nos intervalos, com troca de ideias e reencontros com amigos da comunidade.  
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/00.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/08.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/05.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/10.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/09.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/final.jpg)
+![Entrada do auditório da UTFPR no Esquenta MVPConf 2025](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/00.jpg)
+![Participantes durante o networking no intervalo do evento](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/08.jpg)
+![Palestrantes reunidos no Esquenta MVPConf Curitiba](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/05.jpg)
+![Público lotando o auditório da UTFPR](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/10.jpg)
+![Rafael Ferreira com amigos da comunidade Microsoft em Curitiba](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/09.jpg)
+![Foto oficial de encerramento do Esquenta MVPConf 2025 Curitiba](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/final.jpg)
 
 
 Poder compartilhar com a comunidade aprendizados sobre **Cultura DevOps** em um evento com tantos profissionais talentosos reforça o propósito de continuar disseminando conhecimento.  

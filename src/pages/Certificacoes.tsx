@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
-import Certifications from "@/components/Certifications";
+import Certifications, { certifications } from "@/components/Certifications";
 import Footer from "@/components/Footer";
-import JsonLd, { breadcrumbSchema, collectionPageSchema } from "@/components/SEO/JsonLd";
+import JsonLd, { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/components/SEO/JsonLd";
 
 const Certificacoes = () => {
   return (
@@ -37,6 +37,19 @@ const Certificacoes = () => {
           name: "Certificações - Rafael Ferreira",
           description: "Certificações profissionais em Cloud Computing, DevOps, Microsoft Azure, AWS, HashiCorp Terraform e GitHub.",
           url: "https://www.orafaelferreira.com/certificacoes",
+        }),
+        itemListSchema({
+          name: "Certificações técnicas de Rafael Ferreira",
+          url: "https://www.orafaelferreira.com/certificacoes",
+          items: certifications.map((cert) => ({
+            "@type": "EducationalOccupationalCredential",
+            name: cert.name,
+            ...(cert.code && { identifier: cert.code }),
+            credentialCategory: "certification",
+            image: cert.image,
+            url: cert.link,
+            recognizedBy: { "@type": "Organization", name: cert.provider },
+          })),
         }),
         breadcrumbSchema([
           { name: "Home", url: "https://www.orafaelferreira.com/" },

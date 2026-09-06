@@ -11,7 +11,7 @@ type AwardItem = {
   color: string;
 };
 
-const awards: AwardItem[] = [
+export const awards: AwardItem[] = [
   { id: 'mvp', emoji: '🔵', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/MVP.png', year: '2024', link: 'https://mvp.microsoft.com/pt-BR/mvp/profile/627d5ac9-f704-4768-81a7-5c580283881d', color: 'from-blue-500/20 to-blue-600/20 border-blue-500/30' },
   // impeccable-disable-next-line ai-color-palette: cor da propria badge de Platform Engineering, nao decoracao
   { id: 'platformengineering', emoji: '🟣', image: 'https://stoblobcertificados011.blob.core.windows.net/imagens-blog/awards/platformengineer.png', year: '2026', link: 'https://www.virtualbadge.io/certificate-validator?credential=c962cab7-2844-4faf-8b08-81590ec29a70', color: 'from-purple-500/20 to-purple-600/20 border-purple-500/30' },

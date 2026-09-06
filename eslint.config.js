@@ -31,6 +31,9 @@ export default tseslint.config(
       "src/components/ui/**/*.{ts,tsx}",
       "src/components/SEO/**/*.{ts,tsx}",
       "src/lib/**/*.{ts,tsx}",
+      // data arrays exported for schema.org ItemList/Event builders in src/pages
+      "src/components/{Talks,Awards,Certificates,Certifications,Recommendations}.tsx",
+      "src/routes.tsx",
     ],
     rules: {
       "react-refresh/only-export-components": "off",

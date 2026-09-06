@@ -15,7 +15,7 @@ const MENTORSHIP_URL = "https://www.orafaelferreira.com/mentoria-cloud-devops";
 const OG_IMAGE = "https://www.orafaelferreira.com/og-image.jpg";
 
 const Mentoria = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const title = t("pages.mentorship.title");
   const description = t("pages.mentorship.description");
 
@@ -60,7 +60,7 @@ const Mentoria = () => {
           personSchema(),
           mentorshipWebPageSchema(),
           mentorshipServiceSchema(),
-          mentorshipFaqSchema("pt-BR"),
+          mentorshipFaqSchema((i18n.language || "pt-BR").startsWith("en") ? "en" : "pt-BR"),
           breadcrumbSchema([
             { name: "Home", url: "https://www.orafaelferreira.com/" },
             { name: "Mentoria Cloud & DevOps", url: MENTORSHIP_URL },

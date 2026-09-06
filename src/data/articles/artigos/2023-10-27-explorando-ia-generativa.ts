@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "ia-gen",
   title: "Explorando a Inteligência Artificial Generativa",
-  excerpt: "A inteligência artificial (IA) tem transformado diversos setores e aspectos da vida cotidiana, e a chegada da IA generativa marca uma nova era de inovação e possibilidades.",
+  excerpt: "O que é IA generativa, suas aplicações e impacto econômico, efeitos na produtividade dos desenvolvedores, preocupações éticas e o caminho até a AGI.",
   content: `
 ## Introdução
 
@@ -12,7 +12,7 @@ A inteligência artificial (IA) tem transformado diversos setores e aspectos da 
 ## O Que é IA Generativa?
 
 IA generativa refere-se a sistemas de inteligência artificial capazes de criar conteúdo de alta qualidade, como texto, imagens e áudio. Esses sistemas utilizam modelos avançados, conhecidos como grandes modelos de linguagem (LLMs), para prever e gerar conteúdo com base em grandes volumes de dados. O ChatGPT, por exemplo, pode gerar respostas detalhadas e contextualizadas para perguntas, criar textos criativos e até mesmo produzir recomendações personalizadas.
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/1.png)
+![Ilustração do conceito de IA generativa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/1.png)
 
 ## Aplicações e Impacto Econômico
 
@@ -38,7 +38,7 @@ A construção de aplicações de software com IA generativa tem se tornado mais
 
 Hoje, com o desenvolvimento baseado em prompts, a criação de um classificador de sentimentos pode ser reduzida a apenas algumas linhas de código. Um exemplo clássico é o uso de prompts para classificar uma avaliação de restaurante como positiva ou negativa. Anteriormente, esse processo envolvia rotular centenas ou milhares de exemplos para treinar um modelo. Agora, com uma simples chamada a um grande modelo de linguagem (LLM), é possível obter uma classificação de sentimento com precisão e eficiência.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/4.png)
+![Exemplo de classificador de sentimentos com prompts](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/4.png)
 
 ## Impacto na Produtividade e Desenvolvimento
 
@@ -72,7 +72,7 @@ Uma abordagem eficaz para implementar a IA generativa é identificar tarefas esp
 ## Exemplos de Análise de Tarefas em Diferentes Funções
 
 Ao analisar diferentes funções de trabalho, pode-se descobrir que as melhores oportunidades para a IA generativa não são necessariamente as mais óbvias. Programadores, por exemplo, fazem mais do que apenas escrever código; eles também documentam e revisam códigos. Cada tarefa tem diferente grau de potencial para automação ou aprimoramento com IA, e uma análise sistemática pode ajudar a identificar onde a IA pode ser mais útil.
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/2.png)
+![Análise de tarefas com potencial para IA generativa em diferentes funções](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/2.png)
 
 ## Novos Fluxos de Trabalho e Oportunidades de Crescimento
 
@@ -81,7 +81,7 @@ A implementação da IA generativa não só pode economizar custos, mas também 
 ## Preocupações com a IA e Implicações Éticas
 
 Com o uso crescente da IA, surgem preocupações sobre seu impacto na sociedade. Isso inclui o potencial de amplificação dos piores impulsos humanos, como preconceitos e desinformação, bem como a ameaça de perda de empregos devido à automação. A questão ética é central, destacando a necessidade de desenvolver e usar IA de maneira justa, transparente, segura e ética. Técnicas como o aprendizado por reforço com feedback humano (RLHF) estão sendo usadas para tornar os LLMs menos tendenciosos e mais alinhados com valores humanos.
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/3.png)
+![Ilustração sobre preocupações éticas da inteligência artificial](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/3.png)
 
 ## Inteligência Artificial Geral (AGI) e o Futuro da IA
 

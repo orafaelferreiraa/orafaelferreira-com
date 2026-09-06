@@ -1,13 +1,13 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "antes-cloud-native-fundacao-solida",
   title: "Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentável",
-  excerpt: "Descubra como a Green Computing, Cloud Foundation, DevOps, FinOps e Observabilidade não apenas definem o futuro tecnológico, mas impactam diretamente na responsabilidade social e sustentabilidade ambiental.",
+  excerpt: "Como Green Computing, Cloud Foundation, DevOps, FinOps e Observabilidade constroem uma base sólida para a nuvem e impactam a sustentabilidade ambiental.",
   content: `## Introdução
 Em um mundo cada vez mais digital, inovações em tecnologias Cloud Native não são apenas uma questão de avanço tecnológico, mas também impactam mudança social e ambiental. Esta jornada começou com a compreensão de como uma Cloud Foundation, DevOps, FinOps, e a Observabilidade não apenas definem o futuro de uma empresa, mas impactam diretamente em uma responsabilidade social e sustentabilidade ambiental.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud01.png)
+![Ilustração sobre Green Computing e fundação sólida para a nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud01.png)
 
 ## O Papel da Computação Verde
 A Green Computing vai além da eficiência energética, englobando a escolha de materiais sustentáveis, redução de resíduos eletrônicos e promoção da reciclagem. Em data centers, práticas como uso de energia renovável e otimização de servidores são fundamentais para reduzir o impacto ambiental.
@@ -39,7 +39,7 @@ A Green Software Foundation estabeleceu um banco de dados de padrões de softwar
 ## Princípios, Padrões e Práticas
 Os princípios de software verde fornecem um conjunto fundamental de competências necessárias para definir, executar e construir software sustentável. Já os padrões oferecem exemplos práticos de como aplicar esses princípios em cenários do mundo real, de forma neutra em relação a fornecedores. As práticas são padrões aplicados a produtos específicos de fornecedores, orientando os profissionais sobre como usar esses produtos de maneira mais sustentável.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud06.png)
+![Princípios, padrões e práticas de software verde](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud06.png)
 
 ## Estratégias de Implementação
 Na implementação de infraestruturas Cloud Native bem desenhadas, a adoção de frameworks bem-estruturados, como o Cloud Adoption Framework e o Well-Architected Framework, são essenciais. Esses frameworks auxiliam na criação de sistemas que são eficientes e performáticos, mas também ambientalmente responsáveis.
@@ -68,12 +68,12 @@ Além da eficiência de desempenho e otimização de custos, outras áreas como 
 
 - **Benefícios do Carbono da Computação em Nuvem:** [Um estudo da Nuvem da Microsoft](https://info.microsoft.com/ww-landing-Carbon-Benefits-of-Cloud-Computing.html?lcid=pt-br) sobre eficiência energética e de carbono do Azure.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud03.png)
+![Principais áreas de design para sustentabilidade no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud03.png)
 
 #### Azure Carbon Optimization
 O Azure Carbon Optimization é uma ferramenta inovadora da Microsoft que capacita organizações a medir e reduzir o impacto de carbono de sua infraestrutura na nuvem. Oferecendo dados detalhados de emissões por recursos, assinaturas e localizações, esta ferramenta integra-se perfeitamente ao portal do Azure, permitindo um acesso simplificado e baseado em permissões RBAC do Azure. Com recomendações práticas para otimização de recursos, o Azure Carbon Optimization não apenas ajuda a alcançar metas de sustentabilidade, mas também promove uma gestão de recursos mais eficiente e econômica. Este serviço destaca o compromisso da Microsoft com a responsabilidade ambiental, fornecendo insights valiosos e ações concretas para reduzir a pegada de carbono na nuvem. Outras ofertas de sustentabilidade da Microsoft [Microsoft Sustainability Manager,](https://learn.microsoft.com/en-us/industry/sustainability/sustainability-manager-overview) [Painel de Impacto de Emissões](https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-to-emissions-impact-dashboard?toc=%2Findustry%2Fsustainability%2Ftoc.json&bc=%2Findustry%2Fbreadcrumb%2Ftoc.json) e [Os insights de emissões do Microsoft Azure (versão prévia)](https://learn.microsoft.com/en-us/industry/sustainability/sustainability-data-solutions-overview)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud09.png)
+![Painel do Azure Carbon Optimization com emissões de carbono](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud09.png)
 
 
 ## O que é Green Software?
@@ -104,7 +104,7 @@ Explorando novas fronteiras em sustentabilidade, a Microsoft testou um [Datacent
 
 Para entender melhor como a eficiência energética é implementada na prática, confira este [Tour virtual em um dos datacenters da Microsoft](https://news.microsoft.com/pt-br/microsoft-revela-tour-virtual-em-um-de-seus-datacenters/#:~:text=A%20Microsoft%20disponibilizou%20hoje%20um,hardware%20e%20software%20que%20mant%C3%AAm), onde são empregadas tecnologias inovadoras para otimizar o uso de energia.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud02.png)
+![Iniciativas da Microsoft para impacto ambiental positivo em datacenters](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud02.png)
 
 ## Importância da Medição e Avaliação
 
@@ -126,7 +126,7 @@ A cultura DevOps, com seu foco em eficiência e automação, está alinhada com 
 ## Observabilidade e Sustentabilidade
 A observabilidade detalhada é um componente crítico para a construção de sistemas Cloud Native sustentáveis. Ela envolve a coleta, monitoramento e análise de dados, permitindo uma compreensão profunda do comportamento do sistema e o uso dos recursos. Ao aplicar práticas de observabilidade, as equipes de TI podem identificar e mitigar ineficiências, reduzir o consumo de energia e melhorar a performance, alinhando-se assim aos princípios de sustentabilidade.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud05.png)
+![Observabilidade aplicada à sustentabilidade em sistemas Cloud Native](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud05.png)
 
 ## Computação Verde e Cloud Native
 A integração da computação verde no Cloud Native reflete uma mudança cultural significativa, onde cada dado processado, leva em conta seu impacto ambiental. Ao implementar padrões de software verde, como os propostos pela Green Software Foundation, estamos garantindo que o caminho para inovações, respeitem o nosso meio ambiente, demonstrando que é possível alcançar excelência tecnológica sem comprometer a saúde do nosso planeta.
@@ -142,7 +142,7 @@ Como profissionais de tecnologia, temos a possibilidade de liderar a transforma�
 
 Ao adotar práticas sustentáveis e responsáveis, não estamos apenas moldando o futuro da tecnologia, mas também o futuro do nosso planeta e da humanidade. Cada passo em direção à sustentabilidade é um passo em direção a um legado duradouro que beneficiará não apenas a nossa geração, mas muitas que virão.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud04.png)
+![Chamado à mudança rumo a uma tecnologia sustentável](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud04.png)
 
 ### Ferramenta de Revisão de Avaliação
 
@@ -156,7 +156,7 @@ Inicie sua avaliação com a [Microsoft Sustainability Manager - Avaliação Bem
 - **Design:** Avalie as considerações de design do seu Sustainability Manager.
 - **Go-Live:** Avalie a prontidão para implantação e entrada em funcionamento do seu Sustainability Manager.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud08.png)
+![Ferramenta de avaliação de sustentabilidade do Microsoft Learn](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud08.png)
 
 Existem um segunda opção de avaliação. Examine sua carga de trabalho por meio da lente de sustentabilidade.
 

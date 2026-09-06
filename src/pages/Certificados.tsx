@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
-import Certificates from "@/components/Certificates";
+import Certificates, { certificatesByYear } from "@/components/Certificates";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
-import JsonLd, { breadcrumbSchema, collectionPageSchema } from "@/components/SEO/JsonLd";
+import JsonLd, { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/components/SEO/JsonLd";
 
 const Certificados = () => {
   const { t } = useTranslation();
@@ -40,6 +40,18 @@ const Certificados = () => {
           name: "Certificados - Rafael Ferreira",
           description: "Certificados profissionais de cursos e treinamentos em Cloud, DevOps e tecnologias.",
           url: "https://www.orafaelferreira.com/certificados",
+        }),
+        itemListSchema({
+          name: "Certificados de cursos, eventos e programas de Rafael Ferreira",
+          url: "https://www.orafaelferreira.com/certificados",
+          items: certificatesByYear.flatMap((group) =>
+            group.certificates.map((cert) => ({
+              "@type": "EducationalOccupationalCredential",
+              name: cert.title.trim(),
+              dateCreated: group.year,
+              url: cert.link,
+            }))
+          ),
         }),
         breadcrumbSchema([
           { name: "Home", url: "https://www.orafaelferreira.com/" },

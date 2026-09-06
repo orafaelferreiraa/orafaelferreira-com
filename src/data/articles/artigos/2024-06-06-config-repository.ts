@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "config-repository",
@@ -55,13 +55,13 @@ OBS: Para fins didáticos, estou gerando uma chave sem senha para facilitar noss
 cat /home/raafel/.ssh/id_rsa.pub
 \`\`\`
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example11.png)
+![Terminal exibindo a chave SSH pública gerada com o comando cat](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example11.png)
 
 Copie toda a informação que e exibida após o comando cat e retorne para o GitHub.
 
 Na mesma tela que paramos, coloque o nome do seu computador, por exemplo: vm-example no titulo e copie o conteúdo da chave, conforme imagem abaixo:
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example12.png)
+![Tela do GitHub para adicionar a nova chave SSH](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example12.png)
 
 ## Passo 4: Configuração mínima para o Git
 
@@ -71,7 +71,7 @@ Realize a configurção mínima para o git, lembre-se de alterar suas informaç�
 git config --global user.name "orafaelferreira"
 git config --global user.email rafael.low1@gmail.com
 \`\`\`
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example20.png)
+![Terminal com a configuração de user.name e user.email do Git](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example20.png)
 
 
 ## Passo 5: Fazer o push dos arquivos para o repositório
@@ -89,7 +89,7 @@ git push -u origin main
 \`\`\`
 Dando um Check no GitHub:
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example21.png)
+![Repositório no GitHub com os arquivos enviados pelo push](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example21.png)
 
 ## Curiosidades e Dicas Extras
 

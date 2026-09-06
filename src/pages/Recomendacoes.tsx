@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
-import Recommendations from "@/components/Recommendations";
+import Recommendations, { categories } from "@/components/Recommendations";
 import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
-import JsonLd, { breadcrumbSchema, collectionPageSchema } from "@/components/SEO/JsonLd";
+import JsonLd, { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/components/SEO/JsonLd";
 
 const Recomendacoes = () => {
   const { t } = useTranslation();
@@ -31,6 +31,18 @@ const Recomendacoes = () => {
           name: "Recomendações - Rafael Ferreira",
           description: "Recomendações profissionais recebidas por Rafael Ferreira de colegas e parceiros da comunidade tech.",
           url: "https://www.orafaelferreira.com/recomendacoes",
+        }),
+        itemListSchema({
+          name: "Recomendações de Rafael Ferreira: plataformas, canais e podcasts",
+          url: "https://www.orafaelferreira.com/recomendacoes",
+          items: categories.flatMap((category) =>
+            category.items.map((item) => ({
+              "@type": "WebSite",
+              name: item.name,
+              url: item.url,
+              genre: t(category.titleKey),
+            }))
+          ),
         }),
         breadcrumbSchema([
           { name: "Home", url: "https://www.orafaelferreira.com/" },

@@ -1,11 +1,11 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "comu-dod-floripa",
   title: "Organizador – DevOpsDays Florianópolis",
-  excerpt: "Atuo desde 2023 no time de organização do DevOpsDays Florianópolis, apoiando a continuidade da comunidade local com coordenação de eventos, suporte a speakers e engajamento da audiência.",
+  excerpt: "Minha atuação desde 2023 na organização do DevOpsDays Florianópolis: coordenação de eventos, suporte a speakers e engajamento da comunidade DevOps local.",
   content: `
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/logo-dod.png)
+![Logo da comunidade DevOpsDays Florianópolis](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/logo-dod.png)
 
 ## Sobre a comunidade
 

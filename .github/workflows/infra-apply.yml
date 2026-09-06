@@ -98,6 +98,6 @@ jobs:
             echo "|------|-------|";
             echo "| Branch | \`${{ github.ref_name }}\` |";
             echo "| Actor | \`${{ github.actor }}\` |";
-            echo "| Backend | \`stostateorafael/statetf/infra.terraform.tfstate\` |";
+            echo "| Backend | \`stostateorafael2/statetf/infra.terraform.tfstate\` |";
             echo "| Status | ✅ Applied |";
           } >> "$GITHUB_STEP_SUMMARY"

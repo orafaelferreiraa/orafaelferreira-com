@@ -1,11 +1,11 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "azure-workbooks",
   title: "Utilizando Azure Workbooks para Otimização de Custos com FinOps",
   excerpt: "A gestão eficaz dos custos na nuvem é um algo real e impactante para muitas organizações que adotaram a computação em nuvem.",
   content: `
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/azure-workbooks/Arte-Logo.png)
+![Arte de capa do artigo sobre Azure Workbooks e FinOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/azure-workbooks/Arte-Logo.png)
 
 ## Introdução
 
@@ -15,7 +15,7 @@ A gestão eficaz dos custos na nuvem é um algo real e impactante para muitas or
 
 Azure Workbook são dashboards interativos e modulares que são usados para criar relatórios e visualizações no Azure Monitor. Eles permitem criar visões personalizadas que podem incluir métricas, logs e dados de outras fontes do Azure, proporcionando uma visão consolidada e interativa do ambiente de nuvem.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/azure-workbooks/15.webp)
+![Dashboard interativo do Azure Workbooks no Azure Monitor](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/azure-workbooks/15.webp)
 
 ## Principais Benefícios do Azure Workbooks
 
@@ -44,7 +44,7 @@ Azure Workbook são dashboards interativos e modulares que são usados para cria
 6. **Gerenciamento de Recursos Órfãos**
    - Recursos órfãos são aqueles que não estão mais sendo utilizados ativamente, mas continuam a gerar custos. Identificar e gerenciar recursos órfãos ajuda a economizar dinheiro, prevenir configurações incorretas e simplificar a gestão operacional do ambiente Azure.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/azure-workbooks/12.webp)
+![Azure Workbooks apoiando práticas de FinOps e gestão de custos](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/azure-workbooks/12.webp)
 
 
 ## Exemplo Prático 1: Cost Optimization Workbook

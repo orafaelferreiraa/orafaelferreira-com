@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "zsh",
   title: "Como Configurar um WSL de Respeito",
-  excerpt: "Neste artigo, você vai aprender a montar um WSL de respeito, ambiente que todo DevOps, SRE ou engenheiro de plataforma deveria ter na manga. Vamos configurar o WSL com Zsh, tema e plugins, instalar ferramentas essenciais como e , e configurar atalhos poderosos como o alias para .",
+  excerpt: "Aprenda a montar um WSL de respeito para DevOps e SRE: Zsh com tema e plugins, ferramentas essenciais de linha de comando e aliases poderosos para o dia a dia.",
   content: `## Introdução
 
 Neste artigo, você vai aprender a montar um WSL de respeito, ambiente que todo DevOps, SRE ou engenheiro de plataforma deveria ter na manga. Vamos configurar o WSL com Zsh, tema e plugins, instalar ferramentas essenciais como \`kubectx\` e \`kubens\`, e configurar atalhos poderosos como o alias \`k\` para \`kubectl\`.

@@ -3,7 +3,8 @@ import Navigation from "@/components/Navigation";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
-import JsonLd, { breadcrumbSchema, collectionPageSchema } from "@/components/SEO/JsonLd";
+import JsonLd, { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/components/SEO/JsonLd";
+import { experiencesPT } from "@/i18n/experiences/pt-BR";
 
 const Experiencias = () => {
   const { t } = useTranslation();
@@ -30,6 +31,18 @@ const Experiencias = () => {
           name: "Experiências - Rafael Ferreira",
           description: "Trajetória e experiências profissionais de Rafael Ferreira em Cloud, DevOps e Platform Engineering.",
           url: "https://www.orafaelferreira.com/experiencias",
+        }),
+        itemListSchema({
+          name: "Experiência profissional de Rafael Ferreira",
+          url: "https://www.orafaelferreira.com/experiencias",
+          items: experiencesPT.map((job) => ({
+            "@type": "OrganizationRole",
+            roleName: job.title,
+            name: `${job.title} — ${job.company}`,
+            description: job.period,
+            memberOf: { "@type": "Organization", name: job.company },
+            skills: job.stack.join(", "),
+          })),
         }),
         breadcrumbSchema([
           { name: "Home", url: "https://www.orafaelferreira.com/" },

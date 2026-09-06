@@ -1,11 +1,11 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "az-policy",
   title: "O que é Azure Policy? Uma Visão Completa",
   excerpt: "O Azure Policy é um recurso da Microsoft Azure que ajuda organizações a implementar governança e compliance de forma automatizada e em larga escala.",
   content: `
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/01.png)
+![Capa do artigo sobre Azure Policy](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/01.png)
 
 
 O [**Azure Policy**](https://learn.microsoft.com/pt-br/azure/governance/policy/) é um recurso da Microsoft Azure que ajuda organizações a implementar governança e compliance de forma automatizada e em larga escala. Ele garante que os recursos na nuvem estejam em conformidade com as diretrizes corporativas, padrões de segurança e requisitos regulatórios. 
@@ -20,7 +20,7 @@ O Azure Policy avalia continuamente os recursos e as ações no Azure com base e
 - **Segurança e Gerenciamento:** Reforça políticas de segurança, como restringir SKUs de VMs, impor criptografia e definir regiões específicas para implantação de recursos.
 - **Conformidade Regulatória:** Auxilia no cumprimento de normas como GDPR, ISO 27001 e SOC 2.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/02.png)
+![Principais benefícios e casos de uso do Azure Policy](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/02.png)
 
 ## Como o Azure Policy Funciona?
 
@@ -74,7 +74,7 @@ Imagine que você está tentando implantar uma nova máquina virtual no Azure pa
 
 O que aconteceu? Você foi impedido por uma **Azure Policy** aplicada em sua organização! Essa política foi configurada pelo time de governança de TI para garantir que todos os recursos sejam criados apenas em regiões específicas, como **East US** e **West Europe**, por razões de conformidade e segurança.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/04.png)
+![Mensagem de bloqueio de criação de recurso pelo Azure Policy](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/04.png)
 
 ### Frustração? Sim. Mas por uma Boa Razão.
 
@@ -103,7 +103,7 @@ Embora ambos estejam relacionados à governança e controle no Azure, eles têm 
 | **Escopo de Aplicação**     | Regras de conformidade e segurança | Controle de ações de usuários   |
 | **Exemplo de Uso**          | Negar criação de VMs não criptografadas | Restringir quem pode criar VMs |
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/03.png)
+![Comparativo entre Azure Policy e Azure RBAC](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/03.png)
 
 ## Melhores Práticas ao Utilizar Azure Policy
 

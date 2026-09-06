@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "artigo-prometheus",
   title: "Alertmanager no Prometheus: Simplificando o Gerenciamento de Alertas",
-  excerpt: "Em um mundo onde o monitoramento e a observabilidade tornaram-se cruciais para a operação eficiente de infraestruturas de TI, as ferramentas de alerta são mais importantes do que nunca. Uma dessas ferramentas que se destaca é o Alertmanager do Prometheus.",
+  excerpt: "Entenda o Alertmanager do Prometheus: o que é, funcionalidades como agrupamento, silenciamento e roteamento de alertas, e por que usá-lo na observabilidade.",
   content: `
 Em um mundo onde o monitoramento e a observabilidade tornaram-se cruciais para a operação eficiente de infraestruturas de TI, as ferramentas de alerta são mais importantes do que nunca. Uma dessas ferramentas que se destaca é o Alertmanager do Prometheus. Aqui está uma rápida visão geral de suas funcionalidades e benefícios.
 
@@ -11,7 +11,7 @@ Em um mundo onde o monitoramento e a observabilidade tornaram-se cruciais para a
 
 O Alertmanager é uma ferramenta especializada, integrada ao ecossistema do Prometheus, responsável por gerenciar os alertas. Quando o Prometheus detecta uma situação que atende a um critério de alerta predefinido, ele envia esses alertas para o Alertmanager. Em seguida, cabe ao Alertmanager decidir o que fazer com eles.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-08-14-artigo-prometheus1.png)
+![Arquitetura do Alertmanager integrado ao Prometheus](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-08-14-artigo-prometheus1.png)
 
 ## Funcionalidades Principais
 
@@ -20,7 +20,7 @@ O Alertmanager é uma ferramenta especializada, integrada ao ecossistema do Prom
 3. Silenciamento: Se você já está ciente de um problema e está trabalhando nele, o Alertmanager permite que você silencie alertas específicos.
 4. Roteamento: Dependendo da gravidade ou do tipo do alerta, ele pode ser roteado para diferentes equipes ou canais, como email, Slack ou PagerDuty.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-08-14-artigo-prometheus2.png)
+![Fluxo de roteamento de alertas no Alertmanager](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-08-14-artigo-prometheus2.png)
 
 ## Por Que Usar o Alertmanager?
 
@@ -28,7 +28,7 @@ Em resumo, o Alertmanager ajuda as equipes a focarem nos alertas que realmente i
 
 Para aqueles que buscam uma solução robusta de gerenciamento de alertas que integre perfeitamente ao Prometheus, o Alertmanager é, sem dúvida, uma escolha acertada.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-08-14-artigo-prometheus3.png)
+![Notificações de alertas do Alertmanager em canais como Slack](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-08-14-artigo-prometheus3.png)
 
 Aqui vai o link da documentação caso você queira ler um pouco mais: <i class="fa-solid fa-link"></i> [ALERTMANAGER](https://prometheus.io/docs/alerting/latest/alertmanager/)
 

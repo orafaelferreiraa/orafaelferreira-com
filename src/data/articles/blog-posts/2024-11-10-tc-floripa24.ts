@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "tc-floripa24",
@@ -7,7 +7,7 @@ export const article: Article = {
   content: `
 No dia **9 de novembro de 2024**, tive o prazer de palestrar na segunda edição do **[Tech Connection Florianópolis](https://talkfloripa.com.br/)**. Minha palestra, intitulada **“Estratégias de Cloud Foundation em Larga Escala: Garantindo que Você Não Retorne para On-Premise”**, foi uma oportunidade de compartilhar minha experiência e conhecimento com um público engajado e apaixonado por tecnologia.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/1.jpeg)
+![Rafael Ferreira palestrando no Tech Connection Florianópolis 2024](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/1.jpeg)
 
 
 ## O Contexto da Palestra
@@ -16,7 +16,7 @@ Migrar para a nuvem é um dos grandes movimentos tecnológicos da atualidade, ma
 
 O foco da minha palestra foi exatamente este: como construir uma **Cloud Foundation** robusta, que suporte o crescimento da organização e evite o temido retorno ao ambiente **on-premise** – um movimento custoso e frequentemente sinal de insucesso na jornada para a nuvem.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/2.jpeg)
+![Slide sobre Cloud Foundation na palestra do Tech Connection Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/2.jpeg)
 
 ## Os Pilares de uma Cloud Foundation de Sucesso
 
@@ -37,7 +37,7 @@ Durante a apresentação, abordei alguns pilares para construir uma **Cloud Foun
 5. **Resiliência e Escalabilidade**  
    Por fim, mostrei como arquitetar soluções que sejam resilientes a falhas e capazes de escalar conforme a demanda.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/3.jpeg)
+![Rafael Ferreira apresentando os pilares de uma Cloud Foundation](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/3.jpeg)
 
 ## O Engajamento do Público
 
@@ -47,9 +47,9 @@ Além da palestra, o evento foi uma oportunidade única para criar novas conexõ
 
 Que essa seja apenas mais uma etapa na nossa jornada de aprendizado e evolução tecnológica. Obrigado a todos que participaram. **Até a próxima!** 🚀
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/4.jpeg)
+![Público do Tech Connection Florianópolis 2024 durante a palestra](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/4.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/certificados/2024-11-2TECHCONNECTIONFLORIPA.png)
+![Certificado de palestrante do Tech Connection Floripa 2024](https://stoblobcertificados011.blob.core.windows.net/certificados/2024-11-2TECHCONNECTIONFLORIPA.png)
 
 ---
 

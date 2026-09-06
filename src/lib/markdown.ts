@@ -2,9 +2,72 @@
  * Converte markdown para HTML - Solução nativa sem dependências
  */
 
+export interface MarkdownHeading {
+  /** 2 | 3 (h4 não entra no sumário) */
+  level: number;
+  text: string;
+  id: string;
+}
+
+/**
+ * Gera um id estável e legível para âncoras de heading (sumário / links diretos).
+ */
+export function slugifyHeading(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/[`*_~]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .slice(0, 80) || 'secao';
+}
+
+function stripInlineMarkdown(text: string): string {
+  return text
+    .replace(/\*\*\*(.*?)\*\*\*/g, '$1')
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/\*(.*?)\*/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .trim();
+}
+
+/**
+ * Extrai os headings h2/h3 do markdown (fora de blocos de código) para montar o
+ * sumário. Um `# ` de nível 1 no corpo é tratado como h2 (o h1 da página é o título).
+ * Os ids batem com os gerados por `markdownToHtml`.
+ */
+export function extractHeadings(markdown: string): MarkdownHeading[] {
+  const withoutCode = markdown.replace(/```[\s\S]*?```/g, '');
+  const headings: MarkdownHeading[] = [];
+  const seen = new Map<string, number>();
+
+  for (const line of withoutCode.split('\n')) {
+    const match = line.match(/^(#{1,3}) (.+?)\s*$/);
+    if (!match) continue;
+    const level = Math.max(2, match[1].length);
+    const text = stripInlineMarkdown(match[2]);
+    headings.push({ level, text, id: uniqueId(slugifyHeading(text), seen) });
+  }
+
+  return headings;
+}
+
+function uniqueId(base: string, seen: Map<string, number>): string {
+  const count = seen.get(base) ?? 0;
+  seen.set(base, count + 1);
+  return count === 0 ? base : `${base}-${count + 1}`;
+}
+
 export function markdownToHtml(markdown: string): string {
   let html = markdown;
   const codeBlocks: string[] = [];
+  const headingIds = new Map<string, number>();
+  let imageCount = 0;
 
   // 1. Blocos de código (processar PRIMEIRO antes de código inline)
   html = html.replace(/```([\w-]*)\n([\s\S]*?)```/g, (_, lang, code) => {
@@ -21,15 +84,26 @@ export function markdownToHtml(markdown: string): string {
     return token;
   });
 
+  // Imagens: a primeira carrega eager (costuma ser a capa/LCP); as demais lazy.
+  const imgAttrs = () => {
+    imageCount += 1;
+    return imageCount === 1
+      ? 'loading="eager" decoding="async" fetchpriority="high"'
+      : 'loading="lazy" decoding="async"';
+  };
+
   // 2. Casos especiais: Imagem dentro de link [![alt](img)](href "title")
   // Converte em <a><img/></a> preservando título opcional do link
   html = html.replace(/\[!\[(.*?)\]\((\S+?)(?:\s+(".*?"|'.*?'|\(.*?\)))?\)\]\((https?:\/\/\S+?)(?:\s+(".*?"|'.*?'|\(.*?\)))?\)/g,
-    '<a href="$4" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium"><img src="$2" alt="$1" class="w-full rounded-lg my-6 shadow-md" loading="lazy" /></a>'
+    (_, alt, src, _imgTitle, href) =>
+      `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium"><img src="${src}" alt="${alt}" class="w-full rounded-lg my-6 shadow-md" ${imgAttrs()} /></a>`
   );
 
   // 3. Imagens (suporta título opcional em imagens)
   // Padrão: ![alt](url "title") ou ![alt](url 'title') ou ![alt](url (title))
-  html = html.replace(/!\[(.*?)\]\((\S+?)(?:\s+(".*?"|'.*?'|\(.*?\)))?\)/g, '<img src="$2" alt="$1" class="w-full rounded-lg my-6 shadow-md" loading="lazy" />');
+  html = html.replace(/!\[(.*?)\]\((\S+?)(?:\s+(".*?"|'.*?'|\(.*?\)))?\)/g,
+    (_, alt, src) => `<img src="${src}" alt="${alt}" class="w-full rounded-lg my-6 shadow-md" ${imgAttrs()} />`
+  );
 
   // 4. Links (externos e internos) com suporte a título opcional
   // Externos: [text](https://url "title") aceita título com aspas simples/duplas ou parênteses
@@ -40,10 +114,10 @@ export function markdownToHtml(markdown: string): string {
   // 5. Tabelas
   html = html.replace(/\n(\|.+\|)\n(\|[\s:|-]+\|)\n((?:\|.+\|\n?)+)/g, (_, header, sep, rows) => {
     const headers = header.split('|').filter((h: string) => h.trim()).map((h: string) => h.trim());
-    const rowsArray = rows.trim().split('\n').map((row: string) => 
+    const rowsArray = rows.trim().split('\n').map((row: string) =>
       row.split('|').filter((c: string) => c.trim()).map((c: string) => c.trim())
     );
-    
+
     let table = '<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse border border-slate-300 dark:border-slate-600">';
     table += '<thead class="bg-slate-800 dark:bg-slate-800"><tr>';
     headers.forEach((h: string) => {
@@ -61,11 +135,17 @@ export function markdownToHtml(markdown: string): string {
     return table;
   });
 
-  // 6. Títulos (ordem importante: #### antes de ### antes de ##)
+  // 6. Títulos (ordem importante: #### antes de ### antes de ##).
+  // O h1 da página é o título do artigo, então um `# ` no corpo vira h2 para
+  // manter um único h1 por página. h2/h3 recebem id para âncoras do sumário.
+  const heading = (level: 2 | 3, text: string, classes: string) => {
+    const id = uniqueId(slugifyHeading(stripInlineMarkdown(text)), headingIds);
+    return `<h${level} id="${id}" class="${classes} scroll-mt-24">${text}</h${level}>`;
+  };
   html = html.replace(/^#### (.*$)/gim, '<h4 class="text-lg font-bold mt-5 mb-2 text-primary">$1</h4>');
-  html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-6 mb-3">$1</h3>');
-  html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-8 mb-4">$1</h2>');
-  html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mt-10 mb-5">$1</h1>');
+  html = html.replace(/^### (.*)$/gim, (_, text) => heading(3, text, 'text-xl font-bold mt-6 mb-3'));
+  html = html.replace(/^## (.*)$/gim, (_, text) => heading(2, text, 'text-2xl font-bold mt-8 mb-4'));
+  html = html.replace(/^# (.*)$/gim, (_, text) => heading(2, text, 'text-2xl font-bold mt-8 mb-4'));
 
   // 7. Negrito e itálico
   html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
@@ -82,7 +162,7 @@ export function markdownToHtml(markdown: string): string {
 
   lines.forEach(line => {
     const trimmed = line.trim();
-    
+
     if (trimmed.match(/^[-*] /)) {
       if (!inList) {
         processed.push('<ul class="list-disc list-inside space-y-2 my-4 ml-4">');
@@ -97,7 +177,7 @@ export function markdownToHtml(markdown: string): string {
       processed.push(line);
     }
   });
-  
+
   if (inList) {
     processed.push('</ul>');
   }
@@ -125,4 +205,24 @@ export function markdownToHtml(markdown: string): string {
   });
 
   return html;
+}
+
+/**
+ * Texto puro do markdown (sem código, imagens, links ou marcação), usado para
+ * contagem de palavras (schema.org wordCount) e para o llms-full.txt.
+ */
+export function markdownToPlainText(markdown: string): string {
+  return markdown
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[#>*_`~|-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function countWords(markdown: string): number {
+  const text = markdownToPlainText(markdown);
+  return text ? text.split(' ').length : 0;
 }

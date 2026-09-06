@@ -1,14 +1,14 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "aks-spot-terraform-economia-custos-taints",
   title: "AKS Spot & Terraform: Economia de Custos e o Guia Crítico de Taints",
   image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/0.png",
-  excerpt: "Aprenda a economizar até 90% no AKS usando Spot Node Pools com Terraform. Um guia completo sobre Taints, Tolerations e as configurações críticas para evitar interrupções inesperadas.",
+  excerpt: "Como economizar até 90% no AKS com Spot Node Pools via Terraform: taints, tolerations e configurações críticas para evitar interrupções inesperadas.",
   content: `
 # AKS Spot & Terraform: Economia de Custos e o Guia Crítico de Taints
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/0.png)
+![Capa do artigo sobre AKS Spot Node Pools com Terraform](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/0.png)
 
 No ecossistema de nuvem, a eficiência financeira é tão importante quanto a eficiência técnica. [O uso de Azure Spot Node Pools no AKS permite economizar até 90% em comparação com instâncias regulares](https://azure.microsoft.com/pt-br/products/virtual-machines/spot/). Contudo, essa economia exige uma configuração rigorosa de Taints para evitar que sua aplicação sofra interrupções inesperadas.
 
@@ -83,7 +83,7 @@ Uma funcionalidade avançada mencionada na [documentação oficial do AKS](https
 - **Uso**: Temporário, durante o boot do nó.
 - **Terraform**: Pode ser configurado para garantir que o nó esteja "pronto" antes de receber qualquer carga.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/1.png)
+![Diagrama de taints de inicialização em nós Spot do AKS](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/1.png)
 
 ## 5. Agendando Pods no Pool Spot
 

@@ -1,13 +1,13 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "mentoriacloud23",
   title: "Voluntariado no Projeto de Mentoria 3.0 do Canal da Cloud",
-  excerpt: "Estou empolgado para compartilhar minha experiência como voluntário no Projeto de Mentoria de Carreira do Canal da Cloud durante o período de Agosto de 2023 a Dezembro de 2023.",
+  excerpt: "Minha experiência como mentor voluntário no Projeto de Mentoria de Carreira 3.0 do Canal da Cloud, entre agosto e dezembro de 2023, ajudando pessoas de TI.",
   content: `
 Estou empolgado para compartilhar minha experiência como voluntário no Projeto de Mentoria de Carreira do Canal da Cloud durante o período de Agosto de 2023 a Dezembro de 2023. Esta iniciativa, impulsionada pela paixão pela tecnologia, reúne a comunidade técnica de TI para apoiar indivíduos que desejam avançar em suas carreiras na indústria de tecnologia.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mentor.jpeg)
+![Divulgação do Projeto de Mentoria 3.0 do Canal da Cloud](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mentor.jpeg)
 
 O Projeto de Mentoria de Carreira do Canal da Cloud é uma iniciativa sem fins lucrativos que conta com a colaboração da comunidade técnica de TI para ajudar pessoas que desejam se desenvolver com tecnologia. Como voluntário neste projeto, eu me esforço para ajudar pessoas a traçar caminhos promissores na indústria de tecnologia. Através de orientação personalizada, compartilho conhecimentos, dicas e insights sobre tendências de mercado, ajudando os mentorados a desenvolver suas habilidades e alcançar seus objetivos profissionais.
 

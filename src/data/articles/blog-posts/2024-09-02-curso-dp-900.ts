@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "curso-dp-900",
   title: "Curso DP-900 Fundamentos de Dados do Azure 2024",
-  excerpt: "No último sábado, 31 de agosto de 2024, a comunidade técnica Azure Floripa se reuniu na Igreja Batista de Forquilhinhas para um dia de aprendizado e colaboração com o curso DP-900: Fundamentos de Dados do Azure.",
+  excerpt: "Relato do curso DP-900 Fundamentos de Dados do Azure ministrado para a comunidade Azure Floripa em agosto de 2024: conteúdo, dinâmica do dia e agradecimentos.",
   content: `
 No último sábado, 31 de agosto de 2024, a comunidade técnica Azure Floripa se reuniu na Igreja Batista de Forquilhinhas para um dia de aprendizado e colaboração com o curso **DP-900: Fundamentos de Dados do Azure**. Parabenizamos todos os participantes pelo incrível engajamento e dedicação ao longo do evento!
 
@@ -44,23 +44,23 @@ Nosso sincero agradecimento aos instrutores, participantes e a todos que contrib
 Até o próximo evento!
 
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/1.jpeg)
+![Turma do curso DP-900 reunida na Igreja Batista de Forquilhinhas](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/1.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/2.jpeg)
+![Rafael Ferreira ministrando o curso DP-900 para a comunidade Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/2.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/3.jpeg)
+![Participantes acompanhando a aula de Fundamentos de Dados do Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/3.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/4.jpeg)
+![Slides do curso DP-900 exibidos no telão](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/4.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/5.jpeg)
+![Alunos praticando conceitos de dados do Azure durante o curso](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/5.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/6.jpeg)
+![Momento de interação entre instrutor e participantes do DP-900](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/6.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/7.mp4)
+![Vídeo com os melhores momentos do curso DP-900](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/7.mp4)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/8.jpeg)
+![Foto oficial dos participantes do curso DP-900 Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/8.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/certificados/2024-09-Instrutor-dp-900.jpeg)
+![Certificado de instrutor do curso DP-900 em setembro de 2024](https://stoblobcertificados011.blob.core.windows.net/certificados/2024-09-Instrutor-dp-900.jpeg)
 
 `,
   date: "2024-09-02",

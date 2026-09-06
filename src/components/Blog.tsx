@@ -1,6 +1,7 @@
 import { Calendar, ArrowRight } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { useState } from "react";
+import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -12,7 +13,30 @@ import { useTranslation } from "react-i18next";
 
 const Blog = () => {
   const { t, i18n } = useTranslation();
-  const [activeTab, setActiveTab] = useState("artigos");
+  // `?q=` is the SearchAction target declared in the WebSite JSON-LD (JsonLd.tsx);
+  // `?tab=posts` deep-links to the posts tab.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = (searchParams.get("q") ?? "").trim();
+  const [activeTab, setActiveTab] = useState(searchParams.get("tab") === "posts" ? "posts" : "artigos");
+
+  const normalizeText = (value: string) =>
+    value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase();
+
+  const matchesQuery = (article: (typeof articles)[number]) => {
+    if (!query) return true;
+    const needle = normalizeText(query);
+    const haystack = normalizeText(
+      [article.title, article.excerpt, article.category, ...getArticleTags(article)].join(" ")
+    );
+    return haystack.includes(needle);
+  };
+
+  const updateQuery = (value: string) => {
+    const next = new URLSearchParams(searchParams);
+    if (value.trim()) next.set("q", value);
+    else next.delete("q");
+    setSearchParams(next, { replace: true });
+  };
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [activePostCategory, setActivePostCategory] = useState<string | null>(null);
 
@@ -162,6 +186,8 @@ const Blog = () => {
       visibleArticles = visibleArticles.filter((article) => article.category === activePostCategory);
     }
 
+    visibleArticles = visibleArticles.filter(matchesQuery);
+
     if (visibleArticles.length === 0) {
       return (
         <p className="text-center text-muted-foreground py-12">{t("blog.noResults")}</p>
@@ -262,18 +288,52 @@ const Blog = () => {
           </p>
         </div>
 
+        <form
+          role="search"
+          className="max-w-xl mx-auto mb-10"
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <label htmlFor="blog-search" className="sr-only">{t("blog.search")}</label>
+          <div className="relative">
+            <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+            <input
+              id="blog-search"
+              name="q"
+              type="search"
+              value={query}
+              onChange={(event) => updateQuery(event.target.value)}
+              placeholder={t("blog.search")}
+              autoComplete="off"
+              className="w-full rounded-full border border-primary/10 bg-card/40 py-3 pl-11 pr-11 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => updateQuery("")}
+                aria-label={t("blog.clearSearch")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:text-primary"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
+              </button>
+            )}
+          </div>
+          {query && (
+            <p className="mt-3 text-center text-sm text-muted-foreground">{t("blog.searchResults", { query })}</p>
+          )}
+        </form>
+
         <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
             <TabsTrigger value="artigos">{t("blog.articles")}</TabsTrigger>
             <TabsTrigger value="posts">{t("blog.posts")}</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="artigos" className="mt-0">
+          <TabsContent value="artigos" forceMount className="mt-0 data-[state=inactive]:hidden">
             {renderFilters(artigosFiltered)}
             {renderArticleGrid(artigosFiltered)}
           </TabsContent>
 
-          <TabsContent value="posts" className="mt-0">
+          <TabsContent value="posts" forceMount className="mt-0 data-[state=inactive]:hidden">
             {renderPostCategoryFilters()}
             {renderFilters(postsFiltered)}
             {renderArticleGrid(postsFiltered)}

@@ -66,7 +66,7 @@ interface CategorySection {
   items: RecommendationItem[];
 }
 
-const categories: CategorySection[] = [
+export const categories: CategorySection[] = [
   {
     id: "training",
     titleKey: "recommendations.trainingPlatforms",

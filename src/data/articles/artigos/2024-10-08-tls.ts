@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "tls",
   title: "Prepare-se para a Transição Obrigatória do TLS 1.2 no Azure",
-  excerpt: "Em outubro de 2024, a Microsoft encerrará o suporte para as versões mais antigas do TLS (Transport Layer Security), especificamente TLS 1.0 e 1.1, em todos os serviços Azure.",
+  excerpt: "Em outubro de 2024 a Microsoft encerra o suporte ao TLS 1.0 e 1.1 em todos os serviços Azure: entenda o impacto e como preparar suas aplicações para o TLS 1.2.",
   content: `
 Em outubro de 2024, a Microsoft encerrará o suporte para as versões mais antigas do TLS (Transport Layer Security), especificamente TLS 1.0 e 1.1, em todos os serviços Azure. A partir de 31 de outubro de 2024, todas as interações com serviços do Azure deverão ser feitas via TLS 1.2 ou superior. Essa mudança é parte de um esforço contínuo para garantir segurança e criptografia avançadas nos dados e interações envolvendo os serviços da plataforma.
 

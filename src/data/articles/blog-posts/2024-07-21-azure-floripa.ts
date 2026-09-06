@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "azure-floripa",
   title: "Organizador – Azure Floripa",
-  excerpt: "A comunidade Azure Floripa evoluiu para o Azure User Group Florianópolis, conectado ao movimento nacional do Azure User Groups Brasil, mantendo o foco em compartilhamento prático sobre Microsoft Azure.",
+  excerpt: "A comunidade Azure Floripa evoluiu para o Azure User Group Florianópolis, ligado ao Azure User Groups Brasil, com foco em conteúdo prático sobre Azure.",
   content: `
 ## Introdução
 
@@ -84,7 +84,7 @@ Juntou curiosidade + vontade de ajudar? Então o grupo é pra você! 🎉
 Fica o convite: participe, compartilhe e ajude a comunidade a crescer. 🚀  
 Nos vemos no próximo encontro!
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/azurefloripa.png)
+![Logo da comunidade Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/azurefloripa.png)
 `,
   date: "2024-07-21",
   category: "Organizador Grupo de Comunidade",

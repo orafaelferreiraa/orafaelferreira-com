@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "criacao-vm",
   title: "Guia de Criação de Maquinas Virtuais no Microsoft Azure",
-  excerpt: "Este artigo será uma base introdutória essencial para os próximos conteúdos que virão, onde exploraremos mais a fundo a criação e gerenciamento de máquinas virtuais no Microsoft Azure.",
+  excerpt: "Passo a passo para criar máquinas virtuais Linux e Windows no Microsoft Azure, com Resource Group, VNet, NSG e conexão via SSH e Remote Desktop.",
   content: `
 ## Introdução
 
@@ -99,7 +99,7 @@ No meu caso:
 \`\`\`bash
 ssh raafel@172.210.28.194
 \`\`\`
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example8.png)
+![Terminal exibindo a conexão SSH com a VM Linux no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example8.png)
 
 De preferência, atualize os pacotes do sistema:
 
@@ -118,39 +118,39 @@ Vamos criar uma VM com Windows 11 dentro do nosso \`rg-example\`, com o nome \`v
 4. Altere o tipo de segurança para Standard.
 5. Selecione "Windows 11 Pro" como a imagem.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example13.png)
+![Portal do Azure com a seleção da imagem Windows 11 Pro](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example13.png)
 
 6. Configure a VM com o tamanho \`Standard_B4ms\` para testes mais rápidos.
 7. Escolha a autenticação por senha e defina uma senha de sua preferência (não se esqueça de anotar a senha).
 8. Certifique-se de que a VM não tenha portas de entrada públicas configuradas. Confirme a licença.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example14.png)
+![Configuração de portas de entrada e licença da VM Windows](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example14.png)
 
 9. Na seção "Networking", certifique-se de que a VM esteja na VNet \`vnet-example\` e na Subnet \`default\`, e que não seja atribuído um NSG à NIC.
 10. Selecione "Review + Create" e, em seguida, "Create".
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example15.png)
+![Tela Review + Create da VM Windows 11 no Portal do Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example15.png)
 
 Após a criação, precisamos liberar a porta RDP no NSG \`nsg-example\` para acessar a VM.
 
 1. Acesse o NSG \`nsg-example\`.
 2. Adicione uma regra de entrada para permitir o tráfego na porta RDP.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example16.png)
+![Regra de entrada RDP adicionada ao NSG no Portal do Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example16.png)
 
 ### Conectando-se à VM Windows
 
 1. No seu computador com Windows, abra o aplicativo "Remote Desktop Connection" (procure por "Remote" no menu Iniciar).
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example22.png)
+![Aplicativo Remote Desktop Connection no Windows](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example22.png)
 
 2. Copie o IP público atribuído à VM \`vm-example-win\`, digite no Remote Desktop Connection, clique no botão conectar, escolha "Use another account", e digite o usuário e senha que foram criados anteriormente. Clique em "OK".
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example17.png)
+![Remote Desktop Connection com o IP público da VM Windows](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example17.png)
 
 3. Confirme o certificado de segurança quando solicitado:
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example18.png)
+![Confirmação do certificado de segurança na conexão RDP](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example18.png)
 
 ---
 

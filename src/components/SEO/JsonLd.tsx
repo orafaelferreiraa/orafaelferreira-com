@@ -22,6 +22,8 @@ const SITE_URL = "https://www.orafaelferreira.com";
 const PERSON_NAME = "Rafael Martin Alves Ferreira";
 const PERSON_SHORT = "Rafael Ferreira";
 const PERSON_ID = `${SITE_URL}/#person`;
+const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
 
 export const personSchema = () => ({
   "@context": "https://schema.org",
@@ -240,7 +242,9 @@ export const personSchema = () => ({
 export const websiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": WEBSITE_ID,
   name: `${PERSON_SHORT} | Cloud & DevOps Specialist`,
+  publisher: { "@id": ORGANIZATION_ID },
   url: SITE_URL,
   inLanguage: ["pt-BR", "en"],
   author: { "@type": "Person", name: PERSON_NAME },
@@ -264,45 +268,165 @@ export const breadcrumbSchema = (
   })),
 });
 
+/** Publisher entity shared by Article/BlogPosting (Google's Article rich result wants an Organization with a logo). */
+export const organizationSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": ORGANIZATION_ID,
+  name: PERSON_SHORT,
+  alternateName: "orafaelferreira.com",
+  url: SITE_URL,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/icon-512.png`,
+    width: 512,
+    height: 512,
+  },
+  founder: { "@type": "Person", "@id": PERSON_ID },
+  sameAs: [
+    "https://www.linkedin.com/in/orafaelferreiraa/",
+    "https://github.com/orafaelferreiraa",
+    "https://www.youtube.com/@LowOps",
+  ],
+});
+
+/** "YYYY-MM-DD" -> ISO 8601 datetime in São Paulo time, as og/schema consumers expect. */
+export const toIsoDateTime = (date: string) => (/^\d{4}-\d{2}-\d{2}$/.test(date) ? `${date}T09:00:00-03:00` : date);
+
 export const articleSchema = (article: {
   title: string;
   excerpt: string;
   slug: string;
   date: string;
+  updatedAt?: string;
   category: string;
   image?: string | null;
+  /** true when `image` is a real 1200x630 social card */
+  imageIsOgCard?: boolean;
+  tags?: string[];
+  keywords?: string[];
+  wordCount?: number;
+  summary?: string[];
+}) => {
+  const url = `${SITE_URL}/artigos/${article.slug}`;
+  const keywords = Array.from(new Set([...(article.tags ?? []), ...(article.keywords ?? [])]));
+  const isTechnical = article.category === "Artigos";
+  return {
+    "@context": "https://schema.org",
+    "@type": isTechnical ? "TechArticle" : "BlogPosting",
+    "@id": `${url}#article`,
+    headline: article.title,
+    description: article.excerpt,
+    ...(article.summary?.length && { abstract: article.summary.join(" ") }),
+    url,
+    datePublished: toIsoDateTime(article.date),
+    dateModified: toIsoDateTime(article.updatedAt ?? article.date),
+    author: {
+      "@type": "Person",
+      "@id": PERSON_ID,
+      name: PERSON_NAME,
+      url: SITE_URL,
+    },
+    publisher: { "@id": ORGANIZATION_ID },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    isPartOf: { "@type": "WebSite", "@id": WEBSITE_ID, url: SITE_URL },
+    articleSection: article.category,
+    inLanguage: "pt-BR",
+    isAccessibleForFree: true,
+    ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
+    ...(keywords.length > 0 && { about: keywords.map((name) => ({ "@type": "Thing", name })) }),
+    ...(article.wordCount && { wordCount: article.wordCount }),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "[data-speakable='summary']"],
+    },
+    ...(article.image && {
+      image: article.imageIsOgCard
+        ? { "@type": "ImageObject", url: article.image, width: 1200, height: 630 }
+        : article.image,
+    }),
+  };
+};
+
+/** FAQPage for a single article, fed by `article.faq`. */
+export const articleFaqSchema = (slug: string, faq: { q: string; a: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE_URL}/artigos/${slug}#faq`,
+  inLanguage: "pt-BR",
+  mainEntity: faq.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+});
+
+/** Generic ItemList so collection pages enumerate what they actually contain. */
+export const itemListSchema = (list: {
+  name: string;
+  url: string;
+  items: Record<string, unknown>[];
 }) => ({
   "@context": "https://schema.org",
-  "@type": "Article",
-  headline: article.title,
-  description: article.excerpt,
-  url: `${SITE_URL}/artigos/${article.slug}`,
-  datePublished: article.date,
-  author: {
-    "@type": "Person",
-    name: PERSON_NAME,
-    url: SITE_URL,
-  },
-  publisher: {
-    "@type": "Person",
-    name: PERSON_NAME,
-    url: SITE_URL,
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": `${SITE_URL}/artigos/${article.slug}`,
-  },
-  articleSection: article.category,
-  inLanguage: "pt-BR",
-  ...(article.image && {
-    image: {
-      "@type": "ImageObject",
-      url: article.image,
-      width: 1200,
-      height: 630,
-    },
-  }),
+  "@type": "ItemList",
+  "@id": `${list.url}#list`,
+  name: list.name,
+  url: list.url,
+  numberOfItems: list.items.length,
+  itemListElement: list.items.map((item, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item,
+  })),
 });
+
+export interface TalkForSchema {
+  title: string;
+  event: string;
+  date: string;
+  location: string;
+  image?: string;
+  siteUrl?: string;
+  videoUrl?: string;
+  slidesUrl?: string;
+  blogUrl?: string;
+}
+
+/** schema.org Event for one talk (past or upcoming). */
+export const talkEventSchema = (talk: TalkForSchema) => {
+  const isOnline = /^online$/i.test(talk.location.trim());
+  return {
+    "@type": "Event",
+    name: `${talk.title} — ${talk.event}`,
+    description: `Palestra "${talk.title}" apresentada por ${PERSON_NAME} no evento ${talk.event}.`,
+    startDate: talk.date,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: isOnline
+      ? "https://schema.org/OnlineEventAttendanceMode"
+      : "https://schema.org/OfflineEventAttendanceMode",
+    location: isOnline
+      ? { "@type": "VirtualLocation", url: talk.videoUrl ?? talk.siteUrl ?? SITE_URL }
+      : { "@type": "Place", name: talk.location, address: talk.location },
+    performer: { "@type": "Person", "@id": PERSON_ID, name: PERSON_NAME },
+    organizer: { "@type": "Organization", name: talk.event },
+    inLanguage: "pt-BR",
+    isAccessibleForFree: true,
+    ...(talk.image && { image: talk.image }),
+    ...(talk.siteUrl && { url: talk.siteUrl }),
+    ...((talk.videoUrl || talk.slidesUrl || talk.blogUrl) && {
+      workFeatured: {
+        "@type": "CreativeWork",
+        name: talk.title,
+        ...(talk.videoUrl && { video: talk.videoUrl }),
+        ...(talk.slidesUrl && { url: talk.slidesUrl }),
+        ...(talk.blogUrl && { mainEntityOfPage: talk.blogUrl }),
+      },
+    }),
+  };
+};
 
 export const collectionPageSchema = (page: {
   name: string;

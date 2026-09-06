@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "cncfsc",
   title: "Organizador – Cloud Native Santa Catarina",
-  excerpt: "Atuo como organizador do Cloud Native Santa Catarina, comunidade oficial da CNCF que promove tecnologias cloud native, open source e troca de experiências práticas em diferentes cidades da região.",
+  excerpt: "Minha atuação como organizador do Cloud Native Santa Catarina, comunidade oficial da CNCF que promove tecnologias cloud native e open source na região.",
   content: `
 ![Cloud Native Santa Catarina](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/cncfsc_cover.jpg)
 

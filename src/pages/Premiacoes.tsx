@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
-import Awards from "@/components/Awards";
+import Awards, { awards } from "@/components/Awards";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
-import JsonLd, { breadcrumbSchema, collectionPageSchema } from "@/components/SEO/JsonLd";
+import JsonLd, { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/components/SEO/JsonLd";
 
 const Premiacoes = () => {
   const { t } = useTranslation();
@@ -40,6 +40,20 @@ const Premiacoes = () => {
           name: "Premiações - Rafael Ferreira",
           description: "Reconhecimentos e premiações conquistados por Rafael Ferreira: Microsoft MVP, Alura Star, DevOps Institute Ambassador e mais.",
           url: "https://www.orafaelferreira.com/premiacoes",
+        }),
+        itemListSchema({
+          name: "Prêmios e reconhecimentos de Rafael Ferreira",
+          url: "https://www.orafaelferreira.com/premiacoes",
+          items: awards.map((award) => ({
+            "@type": "EducationalOccupationalCredential",
+            name: t(`awards.items.${award.id}.title`),
+            description: t(`awards.items.${award.id}.description`),
+            credentialCategory: "award",
+            dateCreated: award.year,
+            image: award.image,
+            ...(award.link && { url: award.link }),
+            recognizedBy: { "@type": "Organization", name: t(`awards.items.${award.id}.category`) },
+          })),
         }),
         breadcrumbSchema([
           { name: "Home", url: "https://www.orafaelferreira.com/" },

@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "azure-backup-virtual-machines",
   title: "Azure Backup should be enabled for Virtual Machines",
-  excerpt: "Exploramos por que a policy 'Azure Backup should be enabled for Virtual Machines' é essencial em ambientes corporativos, detalhando os riscos de não ter backup automático em VMs.",
+  excerpt: "Por que a policy Azure Backup should be enabled for Virtual Machines é essencial em ambientes corporativos e os riscos de não ter backup automático em VMs.",
   content: `![Azure Backup](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/AzureBackupshouldbeenabledforVirtualMachines/00.png)
 
 ## Visão Geral

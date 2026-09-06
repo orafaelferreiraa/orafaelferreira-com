@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "agil",
   title: "Automatizando Infraestrutura Moderna com Metodologias Ágeis",
-  excerpt: "No mundo altamente competitivo em todas as áreas (iremos focar na tecnologia), a agilidade tornou-se uma característica indispensável, especialmente para profissionais de DevOps (assim como eu).",
+  excerpt: "Como metodologias ágeis apoiam a automação de infraestrutura moderna em DevOps, com Scrum, ciclo de vida do projeto ágil e exemplos práticos.",
   content: `
 No mundo altamente competitivo em todas as áreas (iremos focar na tecnologia), a agilidade tornou-se uma característica indispensável, especialmente para profissionais de DevOps (assim como eu). A implementação de metodologias ágeis, como o Scrum, transformou a maneira como projetos de infraestrutura são gerenciados e executados. Com o uso de ferramentas modernas como Terraform, Ansible, Puppet, ferramentas de Infraestrutura como Código (IaC), Azure DevOps, GitHub Actions e players de nuvem Azure e AWS, as equipes podem provisionar e migrar aplicativos de maneira eficiente e adaptável.
 
@@ -11,7 +11,7 @@ No mundo altamente competitivo em todas as áreas (iremos focar na tecnologia), 
 
 As metodologias ágeis promovem uma abordagem iterativa e incremental, permitindo que as equipes respondam rapidamente às mudanças e entreguem valor continuamente. Em DevOps, isso se traduz em uma colaboração mais eficaz entre equipes de desenvolvimento e operações, facilitando a integração contínua e a entrega contínua (CI/CD).
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/agil/agil1.png)
+![Diagrama do framework Scrum aplicado a times DevOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/agil/agil1.png)
 
 **Componentes Chave do Scrum:**
 
@@ -38,7 +38,7 @@ O provisionamento ágil de infraestrutura é essencial para suportar a migraçã
 3. **Feedback Contínuo:** O Sprint Review permite que o PO e outros stakeholders forneçam feedback imediato, garantindo que a infraestrutura atenda às expectativas.
 4. **Adaptação e Melhoria Contínua:** A Sprint Retrospective ajuda a equipe a identificar áreas de melhoria, ajustando processos e práticas para futuros Sprints.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/agil/agil2.png)
+![Ciclo de vida de um projeto ágil com Sprints](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/agil/agil2.png)
 
 ## Casos de Uso e Exemplos Práticos
 

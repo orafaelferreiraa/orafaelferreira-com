@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "global-azure25pres",
@@ -12,7 +12,7 @@ No dia **10 de maio de 2025**, rolou a edição **presencial** do [**Global Azur
 Com palestras inspiradoras, demos na prática e muito networking com profissionais incríveis, essa edição mostrou a força da **comunidade Azure em Santa Catarina**.
 
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/0.png)
+![Banner do Global Azure 2025 Edição Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/0.png)
 
 ## 📍 Onde foi?
 
@@ -43,25 +43,25 @@ Com palestras inspiradoras, demos na prática e muito networking com profissiona
 
 Se liga nas fotos e reveja os melhores momentos:
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/1.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/2.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/3.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/4.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/5.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/6.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/7.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/8.jpg)
+![Abertura do Global Azure 2025 na Neoway em Florianópolis](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/1.jpg)
+![Palestrante apresentando demo no Global Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/2.jpg)
+![Público acompanhando as palestras do Global Azure 2025](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/3.jpg)
+![Participantes durante o coffee break do evento](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/4.jpg)
+![Palestra técnica sobre Azure no Global Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/5.jpg)
+![Comunidade Azure Floripa reunida no evento presencial](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/6.jpg)
+![Momento de networking entre participantes do Global Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/7.jpg)
+![Foto oficial dos participantes do Global Azure 2025 Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/8.jpg)
 
 ## 👏 Agradecimentos
 Um evento como esse não acontece sozinho. Nosso **muito obrigado aos palestrantes, patrocinadores, parceiros**.
 
 Em especial, agradecemos à **[Neoway](https://www.neoway.com.br/)**, que gentilmente cedeu o espaço para o evento, e à **[Softensity](https://www.softensity.com/)**, que apoiou com um coffee break.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/01.png)
+![Logos dos apoiadores Neoway e Softensity do Global Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/01.png)
 
 E claro, nosso reconhecimento à **comunidade**, que marcou presença em peso e mostrou, mais uma vez, que conhecimento se constrói **junto**.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/9.jpg)
+![Organizadores e comunidade do Azure Floripa no encerramento](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/9.jpg)
 
 
 

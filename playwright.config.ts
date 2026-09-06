@@ -10,7 +10,10 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'npm run preview -- --port=4173 --strictPort',
+    // Serves the built dist/ the way Azure Static Web Apps does (directory
+    // index, trailing-slash 301, real 404). `vite preview` would SPA-fallback
+    // every route to index.html and hide prerender regressions.
+    command: 'node scripts/serve-dist.mjs --port 4173',
     port: 4173,
     reuseExistingServer: !process.env.CI,
     timeout: 60_000,

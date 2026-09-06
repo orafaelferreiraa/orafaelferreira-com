@@ -4,63 +4,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="x-dns-prefetch-control" content="on" />
   <meta name="theme-color" content="#0d1117" />
   <meta name="color-scheme" content="dark" />
-  <title>Rafael Ferreira | Cloud & DevOps Specialist</title>
-  <meta name="description"
-    content="Rafael Martin Alves Ferreira — Microsoft MVP Azure, MCT, Platform Engineer especializado em Azure, DevOps, FinOps, Terraform, Kubernetes e Platform Engineering. Mentor, palestrante e criador de conteúdo técnico em Florianópolis, Brasil." />
+  <!--
+    Page-specific tags (title, description, canonical, og:*, twitter:*, JSON-LD)
+    are rendered by each page via react-helmet-async and injected at build time
+    by scripts/prerender.mjs at the "app-head" placeholder comment below.
+    Keep only site-wide tags here.
+  -->
   <meta name="author" content="Rafael Martin Alves Ferreira" />
   <meta name="keywords"
     content="Azure, DevOps, Cloud, FinOps, Terraform, Bicep, Platform Engineering, Observability, Mentoria, Kubernetes, Microsoft MVP, Cloud Architecture, AKS, GitOps, GitHub Actions, Azure DevOps, Prometheus, Grafana, IaC, Rafael Ferreira" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <!-- GEO: explicit hints for LLMs and AI search engines -->
-  <meta name="subject" content="Cloud Azure, DevOps, Platform Engineering, FinOps" />
-  <meta name="language" content="pt-BR" />
-  <meta name="revisit-after" content="7 days" />
-  <meta name="category" content="technology, cloud, devops, platform engineering" />
-  <link rel="canonical" href="https://www.orafaelferreira.com/" />
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <link rel="alternate" type="application/rss+xml" title="Rafael Ferreira Blog RSS" href="/rss.xml" />
-  <!-- llms.txt: structured content guide for AI/LLM crawlers -->
-  <link rel="llms" type="text/plain" href="/llms.txt" />
-  <link rel="alternate" hreflang="pt-BR" href="https://www.orafaelferreira.com/?lang=pt-BR" />
-  <link rel="alternate" hreflang="en" href="https://www.orafaelferreira.com/?lang=en" />
-  <link rel="alternate" hreflang="x-default" href="https://www.orafaelferreira.com/" />
-
-  <meta property="og:title" content="Rafael Ferreira | Cloud & DevOps Specialist" />
-  <meta property="og:description"
-    content="Transformando ambientes em nuvem em plataformas resilientes e seguras. Especialista em Azure, DevOps e Platform Engineering." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.orafaelferreira.com/" />
   <meta property="og:site_name" content="Rafael Ferreira" />
-  <meta property="og:locale" content="pt_BR" />
   <meta property="og:locale:alternate" content="en_US" />
-  <meta property="og:image" content="https://www.orafaelferreira.com/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Rafael Ferreira - Cloud & DevOps Specialist" />
-
-  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@orafaelferreira" />
   <meta name="twitter:creator" content="@orafaelferreira" />
-  <meta name="twitter:title" content="Rafael Ferreira | Microsoft MVP Azure · Cloud & DevOps Specialist" />
-  <meta name="twitter:description" content="Platform Engineer especializado em Azure, DevOps, FinOps e Platform Engineering. Microsoft MVP, MCT, Speaker e Mentor." />
-  <meta name="twitter:image" content="https://www.orafaelferreira.com/og-image.jpg" />
-  <meta name="twitter:image:alt" content="Rafael Ferreira - Cloud & DevOps Specialist" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Rafael Ferreira Blog RSS" href="/rss.xml" />
+  <!-- llms.txt / llms-full.txt: content index and full text for AI/LLM crawlers -->
+  <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+  <link rel="alternate" type="text/plain" title="llms-full.txt" href="/llms-full.txt" />
 
   <!-- DNS prefetch for external resources -->
   <link rel="dns-prefetch" href="https://stoblobcertificados011.blob.core.windows.net" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://stoblobcertificados011.blob.core.windows.net" crossorigin />
-  <!-- Preload critical font -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+
   <!-- Google tag (gtag.js) - Hard-coded per request -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RVS46EEQ5"></script>
   <script>
@@ -70,47 +44,11 @@
     // SPA will control and emit page_view events; disable auto page view to avoid duplicates
     gtag('config', 'G-0RVS46EEQ5', { send_page_view: false });
   </script>
-
-  <!-- Fallback structured data for crawlers that don't execute JS -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Rafael Martin Alves Ferreira",
-    "alternateName": "Rafael Ferreira",
-    "url": "https://www.orafaelferreira.com",
-    "image": "https://www.orafaelferreira.com/og-image.jpg",
-    "jobTitle": "Cloud & DevOps Specialist",
-    "worksFor": { "@type": "Organization", "name": "Microsoft MVP" },
-    "sameAs": [
-      "https://www.linkedin.com/in/orafaelferreiraa/",
-      "https://github.com/orafaelferreiraa",
-      "https://www.youtube.com/@LowOps",
-      "https://www.instagram.com/orafaelferreira1/",
-      "https://open.spotify.com/show/0U4kcZT2Cwn4CqQGg4Ywcj"
-    ],
-    "knowsAbout": ["Microsoft Azure", "DevOps", "Platform Engineering", "FinOps", "Terraform", "Kubernetes", "Cloud Architecture", "Observability"]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Rafael Ferreira | Cloud & DevOps Specialist",
-    "url": "https://www.orafaelferreira.com",
-    "inLanguage": ["pt-BR", "en"],
-    "author": { "@type": "Person", "name": "Rafael Martin Alves Ferreira" },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.orafaelferreira.com/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+  <!--app-head-->
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"><!--app-html--></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

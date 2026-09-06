@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "curso-az-900",
@@ -33,25 +33,25 @@ Especialista em Desenvolvimento de Software, com mais de 10 anos de experiência
 👨‍🏫 [Rafael Martin Alves Ferreira](https://www.linkedin.com/in/orafaelferreiraa/) (eu) - [Microsoft MCT]
 Senior DevOps Engineer com especialização arquiteturas em nuvem Azure com mais de uma década de experiência em TI, 17 certificações técnicas e formado em Ciência da Computação.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/0.jpeg)
+![Turma do curso AZ-900 Fundamentos do Azure na Igreja Batista Forquilhinhas](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/0.jpeg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/1.jpg)
+![Rafael Ferreira ministrando o curso AZ-900 Fundamentos do Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/1.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/2.jpg)
+![Participantes acompanhando a aula do curso AZ-900](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/2.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/3.jpg)
+![Slide da aula sobre fundamentos do Microsoft Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/3.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/4.jpg)
+![Alunos do curso AZ-900 durante a atividade prática](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/4.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/5.jpg)
+![Rafael Ferreira explicando conceitos de computação em nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/5.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/6.jpg)
+![Momento de perguntas dos participantes do curso AZ-900](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/6.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/7.jpg)
+![Turma reunida ao final do curso AZ-900 Fundamentos do Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/7.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/8.jpg)
+![Participantes do curso AZ-900 em momento de networking](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/8.jpg)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/9.jpg)
+![Entrega de certificados aos alunos do curso AZ-900](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/9.jpg)
 
 #AZ900 #AzureFundamentals #CloudComputing #MicrosoftAzure #Certificação #ConectaCloud #TI #Agradecimento #Evento #IgrejaBatistaForquilhinhas #MicrosoftMVP #MicrosoftMCT #mvp #mvpbuzz #mvpbr
 

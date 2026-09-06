@@ -11,7 +11,7 @@ interface Certification {
   provider: string;
 }
 
-const certifications: Certification[] = [
+export const certifications: Certification[] = [
     {
     name: "Certified Kubernetes Administrator (CKA)",
     provider: "The Linux Foundation",

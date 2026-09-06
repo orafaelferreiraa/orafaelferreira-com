@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "2meetcncf",
   title: "Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentáve - Cloud Native Floripa - 2º Edição",
-  excerpt: "No dia 21 de fevereiro de 2024, tive o prazer de palestrar no 2º Cloud Native Floripa Meetup, organizado pelo Community Group Cloud Native Santa Catarina. O evento realizado na \"A Fábrica Working Bar\".",
+  excerpt: "Palestrei no 2º Cloud Native Floripa Meetup sobre como construir uma fundação sólida para a nuvem com foco em sustentabilidade, na A Fábrica Working Bar.",
   content: ` 
 No dia 21 de fevereiro de 2024, tive o prazer de palestrar no 2º Cloud Native Floripa Meetup, organizado pelo Community Group Cloud Native Santa Catarina. O evento realizado na "[A Fábrica Working Bar](https://www.afabricaworkingbar.com/coworking)".
 
@@ -19,11 +19,11 @@ Falei sobre como construir uma base sólida para adoção da nuvem. A palestra a
 
 A interação com o público foi sensacional, explorar maneiras de incorporar práticas sustentáveis no dia a dia das organizações e as oportunidades que tecnologias emergentes, como Kubernetes, oferecem para amplificar esses esforços.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/1.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/2.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/3.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/4.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/5.jpg)
+![Rafael Ferreira palestrando no 2º Cloud Native Floripa Meetup](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/1.jpg)
+![Público do Cloud Native Floripa Meetup na A Fábrica Working Bar](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/2.jpg)
+![Slide da palestra Antes do Cloud Native no meetup Cloud Native Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/3.jpg)
+![Rafael Ferreira apresentando práticas sustentáveis para a nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/4.jpg)
+![Participantes acompanhando a palestra no Cloud Native Floripa Meetup](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/5.jpg)
 
 ## O Que Torna um Meetup Diferente?
 
@@ -33,7 +33,7 @@ O meetup não foi apenas uma oportunidade de aprender e compartilhar conheciment
 - **Palestras de alto nível:** Além da minha, tivemos a excelente apresentação de **Erivaldo Lopes**, que trouxe insights sobre escalabilidade no Kubernetes com Cluster API e Cluster Autoscaler.
 - **Ambiente descontraído:** O local, um coworking-bar, criou uma atmosfera que estimulou networking e troca de ideias de forma natural.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/6.jpg)
+![Networking entre participantes no coworking-bar após o meetup](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/6.jpg)
 
 ## Reflexões Finais
 

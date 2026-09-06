@@ -1,10 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "loop-engineering-na-pratica",
   title: "Loop Engineering na prática: como eu opero agentes no dia a dia",
-  excerpt:
-    "O que é Loop Engineering, e como eu monto meu loop de verdade com skills, rules, subagents, hooks e MCP no Docker, incluindo os quatro pontos onde eu discordo da definição canônica.",
+  excerpt: "O que é Loop Engineering e como monto meu loop com skills, rules, subagents, hooks e MCP no Docker, incluindo os pontos em que discordo da definição canônica.",
   image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/Loop.Engineering/capa.png",
   content: `
 Usando LLMs e agentes há mais ou menos dois anos, desde a época em que eu ainda estava [explorando o que a IA generativa mudava na prática](/artigos/ia-gen), o **GitHub Copilot** desde então, e o **Claude Code** há uns três meses. O que vem abaixo é um resumo de como isso entrou no meu dia a dia de verdade.

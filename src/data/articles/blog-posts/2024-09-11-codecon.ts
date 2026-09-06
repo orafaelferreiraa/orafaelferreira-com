@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "codecon",
@@ -15,13 +15,13 @@ A Codecon se destaca não apenas como um espaço de aprendizado, mas também com
 
 Começamos o dia explorando os diversos stands do evento. Você sentia no ar uma vibe contagiante, e cada stand trazia uma temática única, onde empresas e comunidades de tecnologia ofereceram atividades interativas e muita informação sobre suas soluções e ferramentas.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/entra.mp4)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/1.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/2.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/3.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/4.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/5.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/6.jpg)
+![Vídeo da entrada da Codecon Summit 2024](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/entra.mp4)
+![Stands das empresas e comunidades na Codecon Summit](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/1.jpg)
+![Participantes explorando os stands do evento](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/2.jpg)
+![Ativação de uma comunidade de tecnologia na Codecon Summit](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/3.jpg)
+![Rafael Ferreira visitando os stands da Codecon Summit](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/4.jpg)
+![Brindes e desafios oferecidos nos stands do evento](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/5.jpg)
+![Público circulando pelo espaço da Codecon Summit 2024](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/6.jpg)
 
 
 Além de conhecer novas tecnologias, houve várias oportunidades de diversão, brindes e desafios — incluindo a famosa "caça ao pato", uma das atividades mais comentadas do evento. 🦆 Os participantes que conseguissem coletar o pato, podiam levar ele embora, tornando o evento único. Foi uma excelente maneira de quebrar o gelo e iniciar conexões com outros participantes.
@@ -33,17 +33,17 @@ O networking aconteceu de forma natural, com os participantes entusiasmados e di
 Após uma manhã repleta de interações nos stands, a tarde foi dedicada a conteúdo técnico de altíssima qualidade. Abaixo, destaco as principais palestras e painéis que pude acompanhar:
  
 - **Painel: Skip Level – De Júnior para Pleno e de Pleno para Sênior** (14:30 - 15:30)  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/7.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/8.jpg)
+![Painel Skip Level sobre evolução de carreira dev](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/7.jpg)
+![Palestrantes do painel Skip Level no palco da Codecon](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/8.jpg)
 - **Painel: Tendências em IA e o Impacto no Desenvolvimento de Software** (15:30 - 16:30)  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/9.jpg)
+![Painel sobre tendências em IA e desenvolvimento de software](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/9.jpg)
 - **Construindo Soluções Flexíveis e Escaláveis com Arquitetura Orientada a Eventos** (16:30 - 17:30) 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/10.jpg) 
+![Palestra sobre arquitetura orientada a eventos na Codecon](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/10.jpg) 
 - **Como Vídeos Funcionam: Pipeline de Streaming com FFMpeg e Serverless** (17:30 - 18:30)
 
 Esses momentos foram essenciais para aprofundar conhecimentos em áreas cruciais para o desenvolvimento de software moderno, com ênfase em escalabilidade, inteligência artificial e arquitetura de sistemas.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/11.jpg) 
+![Palestra sobre pipeline de streaming com FFMpeg e serverless](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/11.jpg) 
 
 ### Reflexões Finais
 

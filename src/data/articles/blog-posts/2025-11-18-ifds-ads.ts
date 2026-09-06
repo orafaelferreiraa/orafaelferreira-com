@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "trabalhar-para-o-exterior-ifsc-2025",
   title: "Trabalhar para o Exterior – Realidade, Desafios e Oportunidades no IFSC",
-  excerpt: "Na 1ª Semana Acadêmica de ADS do IFSC, eu e Vinícius Deschamps compartilhamos a realidade de trabalhar para o exterior — desafios, oportunidades e histórias que não aparecem no LinkedIn.",
+  excerpt: "Na Semana Acadêmica de ADS do IFSC, eu e Vinícius Deschamps falamos sobre a realidade de trabalhar para o exterior: desafios, oportunidades e histórias reais.",
   content: `
 # Trabalhar para o Exterior: Realidade, Desafios e Oportunidades
 
@@ -12,7 +12,7 @@ Durante a ([**1ª Semana Acadêmica de ADS do IFSC**](https://saads.framer.websi
 Nada de glamour de LinkedIn, nada de “ficar rico em 3 passos”, nada de frase de efeito.  
 Foi papo reto, experiência de campo e aquelas histórias que normalmente ficam só no café da firma.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/1.jpg)
+![Rafael Ferreira e Vinícius Deschamps palestrando na Semana Acadêmica do IFSC](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/1.jpg)
 
 O evento aconteceu no **IFSC São José**, reunindo estudantes, profissionais e curiosos querendo entender como funciona a vida tech além das fronteiras brasileiras. E, sinceramente, foi incrível ver tanta gente interessada em construir uma carreira internacional com planejamento e consciência.
 
@@ -24,7 +24,7 @@ O evento aconteceu no **IFSC São José**, reunindo estudantes, profissionais e 
 **Evento:** 1ª Semana Acadêmica de ADS – IFSC  
 **Local:** São José – SC
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/00.jpg)
+![Cartaz da palestra Trabalhar para o Exterior no IFSC São José](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/00.jpg)
 
 ## O que a gente trouxe pra galera
 
@@ -39,9 +39,9 @@ Falamos sobre:
 - Estratégias que realmente funcionam pra conquistar oportunidades lá fora  
 - E claro… os perrengues. Porque sempre tem perrengue.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/3.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/4.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/5.jpg)
+![Público da Semana Acadêmica de ADS acompanhando a palestra](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/3.jpg)
+![Rafael Ferreira compartilhando experiências de trabalho para o exterior](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/4.jpg)
+![Vinícius Deschamps falando sobre oportunidades internacionais no IFSC](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/5.jpg)
 
 A ideia não foi mostrar um “mundo perfeito”.  
 A ideia foi preparar a galera para o que é **de fato**.
@@ -60,9 +60,9 @@ E se a nossa conversa ajudou pelo menos uma pessoa a tomar uma decisão mais con
 
 Aqui você pode inserir as fotos do evento:
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/6.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/7.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/2.jpg)
+![Estudantes do IFSC São José durante a palestra](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/6.jpg)
+![Palestrantes e estudantes reunidos após a palestra no IFSC](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/7.jpg)
+![Momento de perguntas do público na Semana Acadêmica de ADS](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/2.jpg)
 
 ## 🧾 Links de Indicação Úteis pra Quem Quer Trabalhar pra Fora
 

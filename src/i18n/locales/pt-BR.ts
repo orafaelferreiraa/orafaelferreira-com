@@ -416,9 +416,43 @@ export default {
       posts: "Posts",
       filterByTopic: "Filtrar por tema",
       allTopics: "Todos",
-      noResults: "Nenhum artigo encontrado para este tema."
+      noResults: "Nenhum artigo encontrado para este tema.",
+      searchResults: "Resultados para \"{{query}}\"",
+      clearSearch: "Limpar busca"
+    },
+    article: {
+      breadcrumbHome: "Início",
+      breadcrumbBlog: "Artigos/Posts",
+      backToList: "Voltar para Artigos/Posts",
+      allArticles: "Ver todos os artigos/posts",
+      by: "Por",
+      publishedOn: "Publicado em",
+      updatedOn: "Atualizado em",
+      summaryTitle: "Resumo",
+      tocTitle: "Neste artigo",
+      faqTitle: "Perguntas frequentes",
+      relatedTitle: "Artigos relacionados",
+      notFoundTitle: "Artigo não encontrado",
+      notFoundDescription: "O artigo que você procura não existe ou foi movido."
+    },
+    home: {
+      latestArticlesTitle: "Últimos artigos",
+      latestArticlesSubtitle: "Conteúdo técnico recente sobre Azure, DevOps, Kubernetes, FinOps e Platform Engineering.",
+      seeAllArticles: "Ver todos os artigos",
+      talksCtaTitle: "Palestras e eventos",
+      talksCtaDescription: "Histórico de talks em conferências e meetups, com slides, vídeos e repositórios.",
+      mentorshipCtaTitle: "Mentoria Cloud Azure e DevOps",
+      mentorshipCtaDescription: "Sessão 1:1 com plano de ação personalizado para acelerar sua carreira em cloud."
+    },
+    notFound: {
+      title: "Página não encontrada",
+      description: "A página que você procura não existe, foi movida ou o endereço está incorreto.",
+      backHome: "Voltar para a página inicial",
+      suggestionsTitle: "Talvez você esteja procurando por:"
     },
     footer: {
+      navigation: "Navegação",
+      rss: "Feed RSS",
       rights: "Todos os direitos reservados.",
       social: "Redes Sociais"
     },

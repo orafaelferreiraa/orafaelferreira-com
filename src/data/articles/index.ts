@@ -20,21 +20,4 @@ export function getArticleBySlug(slug: string): Article | undefined {
   return allArticles.find(article => article.slug === slug);
 }
 
-export function getArticlesByCategory(category: string): Article[] {
-  return allArticles.filter(article => article.category === category);
-}
-
-export function getArticlesByTag(tag: string): Article[] {
-  return allArticles;
-}
-
-export function getRecentArticles(limit: number = 5): Article[] {
-  return allArticles.slice(0, limit);
-}
-
-export function getAllCategories(): string[] {
-  const categories = allArticles.map(article => article.category);
-  return Array.from(new Set(categories)).sort();
-}
-
 export const articles = allArticles;

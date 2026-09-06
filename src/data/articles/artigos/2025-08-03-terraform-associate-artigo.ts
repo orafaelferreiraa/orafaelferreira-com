@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "terraform-associate-artigo",
   title: "Certificação HashiCorp Terraform Associate 003: Dicas, Experiências e Preparação",
-  excerpt: "Fala galera! Tudo bom? Recentemente passei no exame HashiCorp Certified: Terraform Associate (003) e quero compartilhar com vocês um pouco sobre como foi a experiência, desde a estrutura da prova até as minhas dicas de estudo.",
+  excerpt: "Como foi passar no exame HashiCorp Certified Terraform Associate 003: estrutura da prova, experiência pessoal e dicas de estudo para a preparação.",
   content: `# 
 
 ## Introdução
@@ -70,7 +70,7 @@ Fazer a certificação Terraform Associate foi uma experiência valiosa. Além d
 
 Recomendo a certificação para quem já utiliza Terraform. Ela formaliza o conhecimento e pode abrir portas — muitas vagas pedem familiaridade com Terraform, e ter a certificação ajuda a comprovar essa habilidade. Para quem pretende avançar, a HashiCorp oferece também o nível Professional, então a Associate pode ser só o começo.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2025-08-03-terraform-associate-artigo.png)
+![Badge da certificação HashiCorp Certified Terraform Associate 003](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2025-08-03-terraform-associate-artigo.png)
 
 **Referências**:
 - [HashiCorp Terraform Associate](https://developer.hashicorp.com/terraform/tutorials/certification-003/associate-review-003)`,

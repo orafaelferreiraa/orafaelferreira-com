@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "wsd-devops",
@@ -10,7 +10,7 @@ export const article: Article = {
 No dia **02 de outubro de 2025**, participei como palestrante na [**8ª edição da whiteStone_dev**](https://whitestonedev.com.br/#/eventos/8edicao), realizada no **INAITEC – Pedra Branca**, em **Palhoça (SC)**.  
 Uma noite dedicada à **Cultura DevOps**, onde a comunidade se reuniu para discutir o que realmente faz essa mentalidade transformar times e organizações.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/01.png)
+![Banner da 8ª edição da whiteStone_dev sobre Cultura DevOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/01.png)
 
 ## O evento
 
@@ -37,8 +37,8 @@ Toquei em pontos como:
 - Como a empatia e a colaboração se traduzem em entregas melhores  
 - Práticas para criar times autônomos e de alta performance  
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/02.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/03.jpg)
+![Rafael Ferreira palestrando sobre Cultura DevOps na whiteStone_dev](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/02.jpg)
+![Público acompanhando a palestra sobre Cultura DevOps na whiteStone_dev](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/03.jpg)
 
 ## Programação da Noite
 
@@ -47,27 +47,27 @@ A 8ª edição da whiteStone_dev foi marcada por talks inspiradoras e uma energi
 - **19:00** — Abertura e Check-in 
 
 - **19:10** — Rafael Ferreira — *Antes de Estudar Ferramentas, Entenda a Cultura DevOps*  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/04.jpg)
+![Rafael Ferreira abrindo a programação da noite na whiteStone_dev](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/04.jpg)
 
 - **20:00** — Julio Santos — *Da Entropia ao Equilíbrio: Lições de Arquitetura de Software Sustentável*  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/julio.jpeg)
+![Julio Santos palestrando sobre arquitetura de software sustentável](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/julio.jpeg)
 
 - **21:00** — Eduardo P. Gutkoski - AppSync Event API – *AWS User Group Floripa*  
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/aws.jpg)
+![Eduardo Gutkoski apresentando AppSync Event API pelo AWS User Group Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/aws.jpg)
 
 - **21:50** — Networking & Encerramento
 
 ## Galeria de Fotos
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/05.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/06.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/07.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/08.jpg)
+![Participantes reunidos no INAITEC durante a whiteStone_dev](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/05.jpg)
+![Networking entre participantes da whiteStone_dev 8ª edição](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/06.jpg)
+![Palestrantes da whiteStone_dev reunidos no palco](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/07.jpg)
+![Público da whiteStone_dev em Palhoça acompanhando as palestras](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/08.jpg)
 
 ## Encontro com a Comunidade
 
 Além das palestras, o evento foi uma grande oportunidade pra reencontrar amigos, conhecer novas pessoas e fortalecer os laços entre comunidades — especialmente com a presença do **AWS User Group Floripa** e parceiros locais.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/final.jpg)
+![Comunidade whiteStone_dev reunida no encerramento do evento](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/final.jpg)
 
 ## Conclusão
 

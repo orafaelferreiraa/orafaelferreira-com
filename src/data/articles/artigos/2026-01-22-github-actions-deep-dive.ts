@@ -1,12 +1,12 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "artigo-github-actions-deep-dive",
   title: "A Stack por trás do meu Blog: Pipelines CI/CD, Testes e Estratégias GitHub Actions",
-  excerpt: "Um mergulho profundo nas estratégias e padrões avançados de GitHub Actions: desde arquitetura de workflows até otimização de cache, testes piramidais, segurança e observabilidade. Tudo baseado em casos reais de produção.",
+  excerpt: "Deep dive nas estratégias de GitHub Actions do meu blog: arquitetura de workflows, cache, pirâmide de testes, segurança e observabilidade em casos reais.",
   content: `# Introdução
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/01.png)
+![Capa do artigo sobre pipelines CI/CD com GitHub Actions](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/01.png)
 
 No [artigo anterior](https://www.orafaelferreira.com/artigo-terraform-infra-cicd), mostrei como estruturei a infraestrutura do blog com Terraform e GitHub Actions. Agora vamos seguir em frente e fazer um deep dive no GitHub Actions (Pipelines CI/CD).
 
@@ -21,7 +21,7 @@ Vou compartilhar estratégias de deploy, pull requests, conceitos de engenharia 
 - **Segurança em Pipelines**: tflint, tfsec, Checkov e gestão de secrets Azure
 - **Job Summaries**: informações dos outputs após as execuções
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/02.png)
+![Visão geral dos tópicos do deep dive em GitHub Actions](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/02.png)
 
 ## 1. Arquitetura de Workflows
 
@@ -170,7 +170,7 @@ concurrency:
   cancel-in-progress: true  # Cancela runs anteriores
 \`\`\`
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/03.png)
+![Execução de workflows no GitHub Actions com concurrency control](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/03.png)
 
 ## 3. Pirâmide de Testes
 
@@ -404,7 +404,7 @@ e2e:
 
 ## 4. Otimização de Performance
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/04.png)
+![Otimização de performance com cache no GitHub Actions](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/04.png)
 
 ### 4.1 Estratégias de Cache Avançadas
 
@@ -528,7 +528,7 @@ on:
   run: npm test
 \`\`\`
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/05.png)
+![Jobs condicionais executando apenas quando há mudanças relevantes](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/05.png)
 
 ## 5. Segurança nas Pipelines
 
@@ -697,7 +697,7 @@ O deploy-app.yml faz um **deploy simples e direto** para o Azure Static Web Apps
 
 **Tempo total**: ~3-5 minutos dependendo do cache
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/07.png)
+![Fluxo completo do deploy do blog no GitHub Actions](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/07.png)
 
 ## 8. Custos
 
@@ -763,7 +763,7 @@ Caso queira dar uma olhada em detalhes: [Workflows](https://github.com/orafaelfe
 Não comecei com tudo isso, fui evoluindo conforme fui aprendendo coisas novas e implementando em um case real. 
 Faça o mesmo, crie algum projeto pequeno pessoal, quebre, teste, aprenda, evolua!
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/06.png)`,
+![Resumo da stack de CI/CD do blog com GitHub Actions](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/06.png)`,
   date: "2026-01-22",
   category: "Artigos",
   readTime: "15 min de leitura",

@@ -1,13 +1,13 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "azure-container-registry-artifact-cache",
   title: "Azure Container Registry Artifact Cache: arquitetura, segurança e promoção entre ambientes",
   excerpt:
-    "Guia prático para implementar Artifact Cache no Azure Container Registry com foco em performance, segurança, pull-through cache e promoção de imagens entre ambientes.",
+    "Guia prático de Artifact Cache no Azure Container Registry: arquitetura, segurança, pull-through cache e promoção de imagens entre ambientes.",
   content: `
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/00.png)
+![Capa do artigo sobre Azure Container Registry Artifact Cache](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/00.png)
 
 Este artigo faz parte da série sobre Docker e containers, agora com foco em **Azure Container Registry (ACR) Artifact Cache**.
 
@@ -31,7 +31,7 @@ Mesmo sendo um recurso do ACR, a operação do dia a dia passa por componentes d
 
 Na prática, boa parte do valor aparece quando você tira dependência direta de pull no Docker Hub em momentos de pico e passa a concentrar distribuição via ACR com cache local.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/1.png)
+![Diagrama do ACR como cache local entre Docker Hub e clusters](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/1.png)
 
 ## O que é Artifact Cache, na prática
 
@@ -119,7 +119,7 @@ Esses pontos costumam gerar dúvida em troubleshooting:
 | Upstream em rede restrita | Validar Trusted Services e ACLs no source |
 | Cross-tenant | Planejar autenticação explícita por credencial |
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/3.png)
+![Matriz de decisão para uso do Artifact Cache no ACR](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/3.png)
 
 ## Troubleshooting objetivo
 
@@ -170,7 +170,7 @@ docker pull prodregistry.azurecr.io/promoted/team-a/api:1.4.0
 Esse padrão simplifica governança e reduz scripts customizados de import, sem abrir mão de rastreabilidade.
 
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/2.png)
+![Fluxo de promoção de imagens entre ambientes com Artifact Cache](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/2.png)
 
 ## Boas práticas
 

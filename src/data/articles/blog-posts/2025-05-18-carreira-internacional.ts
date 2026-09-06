@@ -1,15 +1,15 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "carreira-internacional",
   title: "Trabalhando para o Exterior – Global Azure Floripa 2025",
-  excerpt: "Durante o Global Azure 2025 – Edição Azure Floripa, tive o prazer de abrir o evento ao lado do grande amigo e profissional Vinicius Deschamps com uma palestra que foge um pouco do tradicional técnico — mas que é um divisor de águas \"Trabalhando para o Exterior: Realidade,…",
+  excerpt: "Abertura do Global Azure Floripa 2025 com Vinicius Deschamps: realidade, desafios e oportunidades de trabalhar para o exterior na área de tecnologia.",
   content: `
 # Trabalhar para o Exterior: Realidade, Desafios e Oportunidades 🌍💼
 
 Durante o [**Global Azure 2025 – Edição Azure Floripa**](https://www.meetup.com/azure-user-groups/events/306207034/?eventOrigin=group_past_events), tive o prazer de abrir o evento ao lado do grande amigo e profissional **[Vinicius Deschamps](https://www.linkedin.com/in/viniciusdeschamps/)** com uma palestra que foge um pouco do tradicional técnico — mas que é um divisor de águas **"Trabalhando para o Exterior: Realidade, Desafios e Oportunidades"**.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/00.png)
+![Banner da palestra Trabalhando para o Exterior no Global Azure Floripa 2025](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/00.png)
 
 Falamos sobre como é atuar em uma empresa internacional, os bastidores que, os impactos na vida pessoal e profissional, e claro, compartilhamos nossas experiências reais no mercado global.
 
@@ -35,13 +35,13 @@ Falamos sobre como é atuar em uma empresa internacional, os bastidores que, os 
 
 Confira algumas fotos da nossa palestra:
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/0.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/1.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/2.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/3.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/4.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/5.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/6.jpg)
+![Rafael Ferreira e Vinicius Deschamps abrindo o Global Azure Floripa 2025](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/0.jpg)
+![Rafael Ferreira palestrando sobre trabalhar para o exterior](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/1.jpg)
+![Vinicius Deschamps compartilhando experiências de carreira internacional](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/2.jpg)
+![Público acompanhando a palestra sobre carreira internacional](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/3.jpg)
+![Slide da palestra Trabalhando para o Exterior](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/4.jpg)
+![Rafael Ferreira e Vinicius Deschamps no palco do Global Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/5.jpg)
+![Participantes do Global Azure Floripa 2025 durante a abertura](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/6.jpg)
 
 
 ## 🧾 Links de Indicação Úteis pra Quem Quer Trabalhar pra Fora

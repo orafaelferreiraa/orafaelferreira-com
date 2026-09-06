@@ -12,7 +12,7 @@ interface YearCertificates {
   year: string;
   certificates: Certificate[];
 }
-const certificatesByYear: YearCertificates[] = [{
+export const certificatesByYear: YearCertificates[] = [{
   year: "2026",
   certificates: [{
        title: "Palestrante da Trilha Software Security, do evento TDC 2026 FLORIANÓPOLIS",

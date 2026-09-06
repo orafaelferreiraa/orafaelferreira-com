@@ -1,10 +1,10 @@
 // ...existing code...
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "artigo-terraform-infra-evolutiva",
   title: "Atualização sobre a evolução do site: Temos mais Terraform, DNS-as-Code e multi-subscription",
-  excerpt: "Como a infraestrutura do meu blog saiu da migração inicial para um desenho mais maduro: subscriptions separadas, DNS como código, azapi, preservação de TXT e um fluxo mais previsível para operar o site.",
+  excerpt: "A infraestrutura do blog saiu da migração inicial para um desenho mais maduro: subscriptions separadas, DNS como código, azapi e preservação de registros TXT.",
   content: `![Imagem 01 - Capa cyberpunk](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/site-news/01.png)
 
 # Visão Geral

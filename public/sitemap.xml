@@ -1,147 +1,978 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Static pages -->
+  <!-- Static pages (derived from src/routes.tsx) -->
   <url>
     <loc>https://www.orafaelferreira.com/</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.orafaelferreira.com/?lang=pt-BR"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orafaelferreira.com/?lang=en"/>
   </url>
   <url>
     <loc>https://www.orafaelferreira.com/mentoria-cloud-devops</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.orafaelferreira.com/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://www.orafaelferreira.com/premiacoes</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.orafaelferreira.com/certificacoes</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.orafaelferreira.com/certificados</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.orafaelferreira.com/blog</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.orafaelferreira.com/palestras</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.orafaelferreira.com/experiencias</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.orafaelferreira.com/recomendacoes</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Articles -->
-  <url><loc>https://www.orafaelferreira.com/artigos/nginx-envoy-gateway</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/dod-ctrb26</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/mvp-conf-regional-curitiba-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/mencoes-publicacoes-externas</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/loop-engineering-na-pratica</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/tdc-floripa-2026-devsecops</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/alura-cloud-computing-fundamentos-iaas-paas-saas</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/github-copilot-vscode-agents-debug-profile-test</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/microsoft-build-localhost-florianopolis</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/artigo-terraform-infra-evolutiva</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/microsoft-build-2026-destaques-azure</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/code-island-ctrlz-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/global-azure-floripa-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/global-azure-user-group-floripa-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/docker-python-distroless-kubernetes</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/sql-saturday-joinville-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/sem-servidor-conf-florianopolis-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/platform-engineering-policy-as-code</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/app-gateway-baseline-private-endpoint</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/codecon-15-florianopolis</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/python-floripa-92-hostgator</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/artigo-github-actions-deep-dive</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/aks-spot-terraform-economia-custos-taints</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2025</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/jornada-certificacao-cka</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/devopsdays-poa-2025</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/artigo-terraform-infra-cicd</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/trabalhar-para-o-exterior-ifsc-2025</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/mvp-conf-sp</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/wsd-devops</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/mvp-crtb</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/az-700</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/tdc-greenops</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/dod-meetupaws</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/dod-crtb25</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/hack</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/terraform-associate-artigo</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/azure-user-groups-brasil</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/mvp-conf-blu</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/carreira-internacional</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/global-azure25</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/global-azure25pres</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/sqlsat25</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/translatek8s</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/az-policy</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/code-island24</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/tc-floripa24</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/tftec2024</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/mvp-day</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/sustentability-day</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/agil</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/tls</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/zsh</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/codecon</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/curso-dp-900</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/6rs</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/guia-criacao-vms-azure</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/azure-floripa</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/cncfsc</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/comu-dod-floripa</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/eventodod-floripa</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/kcd-floripa24</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/azure-workbooks</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/antes-cloud-native-fundacao-solida</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/finops-foundation-cloud</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/observabilidade-foundation-cloud</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/talk-tdc</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/podcast</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/kubertenes</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/curso-az-900</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/config-repository</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/criacao-vm</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/tc-bc24</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/azure-static-web-apps</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/global-azure24</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/kcdsp24</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/2meetcncf</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/azure-backup-virtual-machines</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/devops-foundation-cloud</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/foundation-lz</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/well-architect-foundation-cloud</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/foundation-cloud</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/mentoriacloud23</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/eventos</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/participacoes</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/ia-gen</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/artigo-prometheus</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/artigo-aks-acr</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/artigo-aks-volume</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.orafaelferreira.com/artigos/artigo-pipelines-ci-cd</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/nginx-envoy-gateway</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png</image:loc>
+      <image:title>De NGINX Ingress para Envoy Gateway: a migração que a IA liderou</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/dod-ctrb26</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg</image:loc>
+      <image:title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/mvp-conf-regional-curitiba-2026</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg</image:loc>
+      <image:title>Platform Engineering na Prática - Construindo Plataformas Serverless Self-Service</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/mencoes-publicacoes-externas</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/participa%C3%A7%C3%B5es/2.png</image:loc>
+      <image:title>Menções e Publicações Externas</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/loop-engineering-na-pratica</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/Loop.Engineering/capa.png</image:loc>
+      <image:title>Loop Engineering na prática: como eu opero agentes no dia a dia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/tdc-floripa-2026-devsecops</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/00.png</image:loc>
+      <image:title>Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA - TDC Florianópolis 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/01.png</image:loc>
+      <image:title>MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/alura-cloud-computing-fundamentos-iaas-paas-saas</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/alura/00.jpg</image:loc>
+      <image:title>Meu primeiro curso de Computação em Nuvem: práticas e governança com Azure</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/github-copilot-vscode-agents-debug-profile-test</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/01.png</image:loc>
+      <image:title>GitHub Copilot in VSCode: Agents That Debug, Profile, and Test</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/microsoft-build-localhost-florianopolis</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/00.png</image:loc>
+      <image:title>Microsoft Build //localhost: Florianópolis</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/artigo-terraform-infra-evolutiva</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/site-news/01.png</image:loc>
+      <image:title>Atualização sobre a evolução do site: Temos mais Terraform, DNS-as-Code e multi-subscription</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/microsoft-build-2026-destaques-azure</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/build.png</image:loc>
+      <image:title>Microsoft Build 2026: os destaques de Azure que mais me chamaram atenção</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/azure-container-registry-artifact-cache</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/acr-cache/00.png</image:loc>
+      <image:title>Azure Container Registry Artifact Cache: arquitetura, segurança e promoção entre ambientes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/code-island-ctrlz-2026</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/ctrl+z26/00.jpeg</image:loc>
+      <image:title>O Dia em que Derrubei Produção em Plena Sexta-Feira e o log tava com meu nome – Code Island Ctrl Z 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/global-azure-floripa-2026</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/00.png</image:loc>
+      <image:title>Global Azure Floripa 2026 (Evento Presencial)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/global-azure-user-group-floripa-2026</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/00.png</image:loc>
+      <image:title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - Global Azure User Group Floripa 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/docker-python-distroless-kubernetes</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/1.png</image:loc>
+      <image:title>Imagens de contêiners Python no Kubernetes: comparação técnica e estratégia com Distroless</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/sql-saturday-joinville-2026</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/00.jpeg</image:loc>
+      <image:title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - SQL Saturday Joinville 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/sem-servidor-conf-florianopolis-2026</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/serveless26/00.jpeg</image:loc>
+      <image:title>Sem Servidor Conf 2026 (Edição Floripa): Platform Engineering - Construindo uma Plataforma Serverless Self-Service</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/platform-engineering-policy-as-code</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/1.png</image:loc>
+      <image:title>Platform Engineering e Policy-as-Code que aceleram times</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/app-gateway-baseline-private-endpoint</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/labpe/01.png</image:loc>
+      <image:title>Arquitetura Baseline do Zero: App Service com Application Gateway, Private Link e Azure DNS</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/codecon-15-florianopolis</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/00.jpeg</image:loc>
+      <image:title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - Meetup Codecon #15</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/python-floripa-92-hostgator</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/92python-floripa/00.jpg</image:loc>
+      <image:title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - no 92º Python Floripa</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/artigo-github-actions-deep-dive</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/gh-deep-dipe/01.png</image:loc>
+      <image:title>A Stack por trás do meu Blog: Pipelines CI/CD, Testes e Estratégias GitHub Actions</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/aks-spot-terraform-economia-custos-taints</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-30-tf-aks/0.png</image:loc>
+      <image:title>AKS Spot &amp; Terraform: Economia de Custos e o Guia Crítico de Taints</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2025</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-floripa25/1.jpg</image:loc>
+      <image:title>DevOpsDays Florianópolis 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/jornada-certificacao-cka</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.credly.com/size/340x340/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png</image:loc>
+      <image:title>Como foi minha jornada para a certificação CKA</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/artigo-terraform-infra-cicd</loc>
+    <lastmod>2025-12-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2025-12-13-terraform-site.ts.png</image:loc>
+      <image:title>A Stack por trás do meu Blog: IaC com Terraform, Static Web Apps e Github Actions</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/devopsdays-poa-2025</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod-poa25/dod-poa25.png</image:loc>
+      <image:title>Segurança em Camadas e Open Source no DevOpsDays POA 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/trabalhar-para-o-exterior-ifsc-2025</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/IFSC-ADS/1.jpg</image:loc>
+      <image:title>Trabalhar para o Exterior – Realidade, Desafios e Oportunidades no IFSC</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/mvp-conf-sp</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp25/01.png</image:loc>
+      <image:title>GreenOps e Cloud Sustentável no MVP Conf 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/wsd-devops</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/01.png</image:loc>
+      <image:title>Antes de Estudar Ferramentas, Entenda a Cultura DevOps - whiteStone_dev 8ª Edição</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/mvp-crtb</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EsquentaMVPCuritiba/EsquentaMVPCuritiba.png</image:loc>
+      <image:title>DevOps Além da Hype: Pessoas, Cultura e Prática - Esquenta MVPConf 2025 Curitiba</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/az-700</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/01.png</image:loc>
+      <image:title>Projetar e Implementar Soluções de Rede no Azure - AZ-700</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/tdc-greenops</loc>
+    <lastmod>2025-10-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/TDCSP25/01.png</image:loc>
+      <image:title>GreenOps na Cloud: Arquitetando um Futuro Sustentável - TDC São Paulo 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/dod-meetupaws</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/EncontroDOD/01.jpeg</image:loc>
+      <image:title>Explorando a cultura DevOps: Por que tanto se fala de cultura por trás da entrega contínua? - Encontro das comunidades AWS User Group Floripa + DevOps Floripa 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/dod-crtb25</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/DOD-Curitiba/1.png</image:loc>
+      <image:title>DevOps Além da Hype: Pessoas, Cultura e Prática - DevOpsDays Curitiba 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/hack</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/1.jpeg</image:loc>
+      <image:title>Cloud Moderna ANTI Ataque: blindagem DevOps que você PRECISA conhecer - Hacking na Web Day Florianópolis 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/terraform-associate-artigo</loc>
+    <lastmod>2025-08-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2025-08-03-terraform-associate-artigo.png</image:loc>
+      <image:title>Certificação HashiCorp Terraform Associate 003: Dicas, Experiências e Preparação</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/azure-user-groups-brasil</loc>
+    <lastmod>2025-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://azureusergroupsbrasil.com.br/common/logo-semfundo.png</image:loc>
+      <image:title>Organizador – Azure User Groups Brasil</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/mvp-conf-blu</loc>
+    <lastmod>2025-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvpconfblu24/01.jpeg</image:loc>
+      <image:title>Os 6Rs que Você Precisa Conhecer para Migrar para a Cloud; O sétimo R é de Rivotril?! - Esquenta MVP Conf Blumenau 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/carreira-internacional</loc>
+    <lastmod>2025-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gba25ci/00.png</image:loc>
+      <image:title>Trabalhando para o Exterior – Global Azure Floripa 2025</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/global-azure25</loc>
+    <lastmod>2025-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/fWaowwBWUwU/0.jpg</image:loc>
+      <image:title>Global Azure feat Azure Floripa 2025 (Evento Remoto)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/global-azure25pres</loc>
+    <lastmod>2025-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/gbaz25/0.png</image:loc>
+      <image:title>Global Azure 2025 – Azure Floripa (Evento Presencial)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/sqlsat25</loc>
+    <lastmod>2025-04-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday/01.jpg</image:loc>
+      <image:title>Pipelines com Azure DevOps: Automatizando o Provisionamento Seguro da sua infraestrutura na nuvem - SQL Saturday 2025 by Comunidado</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/translatek8s</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-aks-acr1.png</image:loc>
+      <image:title>Minhas Contribuições para a Tradução do Kubernetes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/az-policy</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/az-policy/01.png</image:loc>
+      <image:title>O que é Azure Policy? Uma Visão Completa</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/code-island24</loc>
+    <lastmod>2024-11-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/code.island/0.jpg</image:loc>
+      <image:title>Pipelines com Azure DevOps: Automatizando o (im)possível - Code Island Cloud 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/tc-floripa24</loc>
+    <lastmod>2024-11-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.floripa.2024/1.jpeg</image:loc>
+      <image:title>Estratégias de Cloud Foundation em Larga Escala: Garantindo que Você Não Retorne para On-Premise - Tech Connection Floripa 2 Edição 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/tftec2024</loc>
+    <lastmod>2024-11-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/01.png</image:loc>
+      <image:title>TFTEC Ao Vivo 2024: Conexão, Conhecimento e Imersão em Cloud</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/mvp-day</loc>
+    <lastmod>2024-11-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp.talks/1.png</image:loc>
+      <image:title>Architecting a Secure Landing Zone for AI Workloads in the Cloud - MVP TALKS CI&amp;T 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/sustentability-day</loc>
+    <lastmod>2024-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sustentability.day/1.jpg</image:loc>
+      <image:title>Deploy de um Futuro com Sustentabilidade: GreenOps na Cloud - #27 Cloud Native São Paulo - Sustainability Day na AWS 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/agil</loc>
+    <lastmod>2024-10-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/agil/agil1.png</image:loc>
+      <image:title>Automatizando Infraestrutura Moderna com Metodologias Ágeis</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/tls</loc>
+    <lastmod>2024-10-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png</image:loc>
+      <image:title>Prepare-se para a Transição Obrigatória do TLS 1.2 no Azure</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/zsh</loc>
+    <lastmod>2024-09-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png</image:loc>
+      <image:title>Como Configurar um WSL de Respeito</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/codecon</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/1.jpg</image:loc>
+      <image:title>Minha Experiência na Codecon Summit: Um Evento Para Devs e Por Devs</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/curso-dp-900</loc>
+    <lastmod>2024-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/1.jpeg</image:loc>
+      <image:title>Curso DP-900 Fundamentos de Dados do Azure 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/6rs</loc>
+    <lastmod>2024-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/1.png</image:loc>
+      <image:title>Estratégias de Modernização de Aplicações: Aplicando os 6Rs com o Cloud Adoption Framework</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/guia-criacao-vms-azure</loc>
+    <lastmod>2024-07-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example1.png</image:loc>
+      <image:title>Guia de Criação de Máquinas Virtuais no Microsoft Azure</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/ia-gen</loc>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/IA-Gen/1.png</image:loc>
+      <image:title>Explorando a Inteligência Artificial Generativa</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/azure-floripa</loc>
+    <lastmod>2024-07-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/azurefloripa.png</image:loc>
+      <image:title>Organizador – Azure Floripa</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/cncfsc</loc>
+    <lastmod>2024-07-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/cncfsc_cover.jpg</image:loc>
+      <image:title>Organizador – Cloud Native Santa Catarina</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/comu-dod-floripa</loc>
+    <lastmod>2024-07-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/logo-dod.png</image:loc>
+      <image:title>Organizador – DevOpsDays Florianópolis</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/eventodod-floripa</loc>
+    <lastmod>2024-07-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dod/0.png</image:loc>
+      <image:title>DevOpsDays Florianópolis 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/kcd-floripa24</loc>
+    <lastmod>2024-07-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/KCD/0.png</image:loc>
+      <image:title>KCD Floripa Brazil 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/azure-workbooks</loc>
+    <lastmod>2024-07-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/azure-workbooks/Arte-Logo.png</image:loc>
+      <image:title>Utilizando Azure Workbooks para Otimização de Custos com FinOps</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/antes-cloud-native-fundacao-solida</loc>
+    <lastmod>2024-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-24-green-computing-foundation-cloud01.png</image:loc>
+      <image:title>Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentável</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/talk-tdc</loc>
+    <lastmod>2024-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tdc/00.jpg</image:loc>
+      <image:title>Plataformização de Arquitetura de Dados com Backstage.io e IAC - TDC Florianópolis - Trilha Arquitetura de Dados 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/podcast</loc>
+    <lastmod>2024-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Podcast-Ambev-Tech/00.JPG</image:loc>
+      <image:title>Episódio Especial do Podcast LowOpsCast no TDC</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/kubertenes</loc>
+    <lastmod>2024-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/01.JPG</image:loc>
+      <image:title>Plataformização da Cloud Foundation com Backstage: Desvendando os Segredos da Eficiência na Nuvem com Developer Experience - Esquenta TDC - KuberTENes Birthday Bash Santa Catarina + Azure Floripa + API Floripa</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/curso-az-900</loc>
+    <lastmod>2024-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/az-900/0.jpeg</image:loc>
+      <image:title>Curso AZ-900 - Fundamentos da Azure 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/config-repository</loc>
+    <lastmod>2024-06-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example9.png</image:loc>
+      <image:title>Configuração de um repositório no Github</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/criacao-vm</loc>
+    <lastmod>2024-06-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/example/example1.png</image:loc>
+      <image:title>Guia de Criação de Maquinas Virtuais no Microsoft Azure</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/tc-bc24</loc>
+    <lastmod>2024-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/00.jpg</image:loc>
+      <image:title>GreenOps na Cloud: Construindo o Futuro com Sustentabilidade - Tech Connection Balneário Camburiú 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/azure-static-web-apps</loc>
+    <lastmod>2024-05-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/swa/swa000.png</image:loc>
+      <image:title>Simplificando a Utilização do Static Web Apps no Azure</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/global-azure24</loc>
+    <lastmod>2024-05-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/ql5zFgKBLzo/0.jpg</image:loc>
+      <image:title>Global Azure feat Azure Floripa 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/kcdsp24</loc>
+    <lastmod>2024-02-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/kcdsp24/00.jpg</image:loc>
+      <image:title>Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentável - KCD São Paulo - Brasil 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/2meetcncf</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2cloudnative/1.jpg</image:loc>
+      <image:title>Antes do Cloud Native: Construindo uma Fundação Sólida para a Nuvem Impactando um Futuro Sustentáve - Cloud Native Floripa - 2º Edição</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/observabilidade-foundation-cloud</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-17-observabilidade-foundation-cloud01.png</image:loc>
+      <image:title>Construindo uma Fundação Sólida para a Nuvem: Monitoria e Observabilidade para Performance e Eficiência em Ambientes Cloud Native</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/azure-backup-virtual-machines</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/AzureBackupshouldbeenabledforVirtualMachines/00.png</image:loc>
+      <image:title>Azure Backup should be enabled for Virtual Machines</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/finops-foundation-cloud</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-15-finops-foundation-cloud05.png</image:loc>
+      <image:title>Construindo uma Fundação Sólida para a Nuvem com FinOps: Maximizando os Custos em Ambientes Cloud Native</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/devops-foundation-cloud</loc>
+    <lastmod>2024-01-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-08-devops-foundation-cloud01.png</image:loc>
+      <image:title>Construindo uma Fundação Sólida para a Nuvem: A importancia da Cultura DevOps e sua Sinergia com Cloud Native na Fundação Cloud</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/foundation-lz</loc>
+    <lastmod>2024-01-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz04.png</image:loc>
+      <image:title>Construindo uma Fundação Sólida para a Adoção da Nuvem: Integrando Landing Zones com Azure Cloud Foundation</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/well-architect-foundation-cloud</loc>
+    <lastmod>2023-12-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2023-12-12-well-architect-foundation-cloud4.jpeg</image:loc>
+      <image:title>Construindo uma Fundação Sólida para a Nuvem: Pilares do Well-Architected Framework e o Azure Cloud Adoption Framework</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/foundation-cloud</loc>
+    <lastmod>2023-12-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2023-12-04-foundation-cloud1.jpeg</image:loc>
+      <image:title>Construindo uma Fundação Sólida para a Adoção da Nuvem com o Azure Cloud Adoption Framework</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/mentoriacloud23</loc>
+    <lastmod>2023-11-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mentor.jpeg</image:loc>
+      <image:title>Voluntariado no Projeto de Mentoria 3.0 do Canal da Cloud</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/eventos</loc>
+    <lastmod>2023-10-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/participacoes</loc>
+    <lastmod>2023-10-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/participa%C3%A7%C3%B5es/1.png</image:loc>
+      <image:title>Participações em Lives</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/artigo-prometheus</loc>
+    <lastmod>2023-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-08-14-artigo-prometheus1.png</image:loc>
+      <image:title>Alertmanager no Prometheus: Simplificando o Gerenciamento de Alertas</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/artigo-aks-acr</loc>
+    <lastmod>2023-02-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-aks-acr1.png</image:loc>
+      <image:title>Kubernetes: Aproveitando o ACR como Repositório de Imagem Docker para Implementação de API</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/artigo-aks-volume</loc>
+    <lastmod>2023-02-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-aks-volume1.png</image:loc>
+      <image:title>A importância do Persistent Volume no Kubernetes AKS: garantindo dados seguros e acessíveis</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/artigo-pipelines-ci-cd</loc>
+    <lastmod>2023-02-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-pipelines.ci.cd1.png</image:loc>
+      <image:title>Pipelines CI/CD</image:title>
+    </image:image>
+  </url>
 </urlset>

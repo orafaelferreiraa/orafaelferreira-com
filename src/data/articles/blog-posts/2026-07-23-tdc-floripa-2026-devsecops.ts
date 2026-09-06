@@ -1,13 +1,13 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "tdc-floripa-2026-devsecops",
   title: "Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA - TDC Florianópolis 2026",
-  excerpt: "Na Trilha Software Security do TDC Florianópolis 2026, contei como a IA gerou meu portfólio, mas quem garantiu que estivesse seguro em produção fui eu — uma jornada de vibe coding, Lovable, GitHub Copilot, Terraform e responsabilidade.",
+  excerpt: "Na Trilha Software Security do TDC Florianópolis 2026, mostrei como a IA gerou meu site e como DevSecOps, Terraform e GitHub Actions garantiram o deploy seguro.",
   content: `
 # TDC Florianópolis 2026 — Trilha Software Security
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/00.png)
+![Banner da palestra Vibe Coding com DevSecOps no TDC Florianópolis 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/00.png)
 
 No dia **23 de julho de 2026**, junto com [**Jéssica Mello**](https://www.linkedin.com/in/jessica-tmello/) (LowOps Consultoria), palestrei na [**Trilha Software Security do TDC Florianópolis**](https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security), um dos maiores eventos de tecnologia do Brasil, realizado no **CentroSul, em Florianópolis - SC**.
 
@@ -17,13 +17,13 @@ A trilha abordou um tema central: **"Construindo software seguro do design à pr
 
 **Sessão:** Vibe Coding com DevSecOps: a IA gerou o site, mas a segurança do deploy foi MINHA
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/1.jpg)
+![Rafael Ferreira e Jéssica Mello no palco da Trilha Software Security](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/1.jpg)
 
 **Palestrantes:**
 - Rafael Ferreira (Senior Azure Platform Engineer, Stefanini North America, Microsoft MVP)
 - Jéssica Mello (LowOps Consultoria)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/2.jpg)
+![Rafael Ferreira e Jéssica Mello apresentando no TDC Florianópolis 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/2.jpg)
 Um estudo de caso sobre os limites e riscos do "vibe coding" quando confrontado com exigências reais de produção — e como DevSecOps resolve isso.
 
 ## Programação da Trilha Software Security
@@ -49,7 +49,7 @@ Meu portfólio pessoal (\`orafaelferreira.com\`) estava obsoleto. Precisava mode
 
 Estruturei um prompt detalhado — estilo visual, seções esperadas (blog, palestras, sobre), stack preferido (React), tom de voz — e usei o [**Lovable**](https://lovable.dev/) para gerar **100% via IA generativa** uma primeira versão.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/6.jpg)
+![Slide mostrando o prompt e o site gerado com Lovable](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/6.jpg)
 
 O resultado foi perfeito para um protótipo: um site one-page bonito, responsivo, rodando em produção em horas.
 
@@ -66,7 +66,7 @@ Quando saí do "protótipo legal" pra "arquitetura profissional", os clássicos 
 
 Ficou claro: **a IA é excelente em acelerar, mas não entende responsabilidade.**
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/4.jpg)
+![Slide sobre os riscos do vibe coding em produção](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/4.jpg)
 
 ### Retomando o Controle
 
@@ -87,7 +87,7 @@ Agora veio a camada que diferencia um hobby de um sistema em produção:
 - DNS automatizado (apex + www) com validação de domínio.
 - Tudo versionado, revisível, auditável.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/8.jpg)
+![Slide com o pipeline DevSecOps versionado e auditável](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/8.jpg)
 
 **Pipeline de segurança** via [**GitHub Actions**](https://github.com/features/actions):
 - **[tflint](https://github.com/terraform-linters/tflint)** — análise estática do Terraform.
@@ -121,7 +121,7 @@ A estrutura clássica de segurança em cloud funciona em camadas:
 3. **Container:** Trivy verifica imagens; Checkov valida policies.
 4. **Code:** GitHub Copilot ajuda, mas os testes garantem que o código faz o que deve.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/3.jpg)
+![Slide com os 4 C's do Cloud Native Security](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/3.jpg)
 
 Nenhuma camada é ignorada. Nenhuma depende só da IA.
 
@@ -162,8 +162,8 @@ Aqui está o que você **não pode ignorar** depois que a IA gera algo funcional
 
 E um thought final, polêmico: **se você não está gostando do seu trabalho, ou não está usando IA do jeito certo, ou está no emprego errado.**
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/5.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/7.jpg)
+![Rafael Ferreira compartilhando lições da jornada no TDC](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/5.jpg)
+![Público da Trilha Software Security do TDC Florianópolis 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/7.jpg)
 
 ## Slides da Apresentação
 
@@ -176,7 +176,7 @@ E um thought final, polêmico: **se você não está gostando do seu trabalho, o
 
 Se você está mergulhando em vibe coding, generative AI, ou IA no deploy — as lições dessa jornada valem ouro.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/certificado.png)
+![Certificado de palestrante do TDC Florianópolis 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/certificado.png)
 `,
   date: "2026-07-23",
   category: "Palestras",

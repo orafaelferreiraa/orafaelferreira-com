@@ -1,128 +1,109 @@
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+/**
+ * Generates public/rss.xml: every article and post, with the full article body
+ * in <content:encoded> (full-text feeds are the cheapest way to get complete
+ * content in front of readers, aggregators and LLM crawlers).
+ */
+import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import {
+  PROJECT_ROOT,
+  SITE_URL,
+  articleCover,
+  articleUrl,
+  escapeXml,
+  extractFirstImage,
+  lastModified,
+  loadArticles,
+  markdownToHtml,
+} from './lib/load-articles.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const SITE_URL = 'https://www.orafaelferreira.com';
 const FEED_PATH = '/rss.xml';
-const FEED_TITLE = 'Rafael Ferreira | Novidades do Blog';
-const FEED_DESCRIPTION = 'Novos artigos e publicacoes sobre Azure, DevOps, FinOps, Terraform, Kubernetes e Platform Engineering.';
+const FEED_TITLE = 'Rafael Ferreira | Artigos e Posts';
+const FEED_DESCRIPTION =
+  'Artigos técnicos e posts sobre Azure, DevOps, FinOps, Terraform, Kubernetes, Platform Engineering, palestras e comunidade.';
 const FEED_LANGUAGE = 'pt-BR';
-const ARTICLE_CATEGORIES = new Set([
-  'Artigos',
-  'Azure',
-  'Azure Policy',
-  'Cloud Adoption Framework',
-]);
-
-function escapeXml(value = '') {
-  return String(value)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
-}
+const AUTHOR = 'Rafael Martin Alves Ferreira';
 
 function toRfc822(dateValue) {
-  const date = new Date(dateValue);
-  if (Number.isNaN(date.getTime())) {
-    return new Date().toUTCString();
-  }
-  return date.toUTCString();
+  // Publish at 09:00 São Paulo (UTC-3) so the date does not roll back a day in UTC.
+  const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(dateValue) ? `${dateValue}T09:00:00-03:00` : dateValue);
+  return Number.isNaN(date.getTime()) ? new Date().toUTCString() : date.toUTCString();
 }
 
-function normalizeUrl(url, slug) {
-  if (url && /^https?:\/\//i.test(url)) {
-    return url;
-  }
-  return `${SITE_URL}/artigos/${slug}`;
+function imageMimeType(url) {
+  const lower = String(url || '').toLowerCase();
+  if (lower.endsWith('.png')) return 'image/png';
+  if (lower.endsWith('.webp')) return 'image/webp';
+  if (lower.endsWith('.gif')) return 'image/gif';
+  return 'image/jpeg';
+}
+
+/**
+ * Feed-friendly HTML: no Tailwind classes, no inline styles, no copy buttons,
+ * absolute internal links, no data attributes.
+ */
+function feedHtml(markdown) {
+  return markdownToHtml(markdown)
+    .replace(/<button[^>]*>[\s\S]*?<\/button>/g, '')
+    .replace(/<div class="relative my-6 group"><div class="[^"]*">([^<]*)<\/div>/g, '<div data-lang="$1">')
+    .replace(/\s(?:class|style|loading|decoding|fetchpriority)="[^"]*"/g, '')
+    .replace(/href="\/(?!\/)/g, `href="${SITE_URL}/`)
+    .replace(/src="\/(?!\/)/g, `src="${SITE_URL}/`);
 }
 
 async function generateRss() {
-  const projectRoot = path.resolve(__dirname, '..');
-  const articlesDir = path.join(projectRoot, 'src', 'data', 'articles');
-  const outputPath = path.join(projectRoot, 'public', 'rss.xml');
+  const outputPath = path.join(PROJECT_ROOT, 'public', 'rss.xml');
+  const articles = await loadArticles();
 
-  const articleFiles = (await readdir(articlesDir, { recursive: true }))
-    .filter((file) => file.endsWith('.ts') && !file.endsWith('index.ts') && !file.endsWith('types.ts'))
-    .map((file) => path.join(articlesDir, file));
-
-  const articles = [];
-
-  for (const filePath of articleFiles) {
-    const source = await readFile(filePath, 'utf-8');
-
-    const slug = extractField(source, 'slug');
-    const title = extractField(source, 'title');
-    const excerpt = extractField(source, 'excerpt');
-    const date = extractField(source, 'date');
-
-    if (!slug || !title || !date) {
-      continue;
-    }
-
-    articles.push({
-      slug,
-      title,
-      excerpt: excerpt || '',
-      date,
-      category: extractField(source, 'category') || '',
-      image: extractImageField(source),
-      url: `${SITE_URL}/artigos/${slug}`,
-    });
-  }
-
-  const items = articles
-    .filter((article) => !Number.isNaN(new Date(article.date).getTime()))
-    .filter((article) => isArticle(article))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  const lastBuildDate = items.length > 0 ? toRfc822(items[0].date) : new Date().toUTCString();
-  const pubDate = lastBuildDate;
+  const items = articles.filter((article) => !Number.isNaN(new Date(article.date).getTime()));
+  const newest = items.map(lastModified).sort().at(-1);
+  const lastBuildDate = newest ? toRfc822(newest) : new Date().toUTCString();
 
   const xmlItems = items
     .map((article) => {
-      const link = normalizeUrl(article.url, article.slug);
-      const guid = link;
-      const pubDate = toRfc822(article.date);
-      const title = escapeXml(article.title);
-      const description = escapeXml(article.excerpt || '');
-      const category = article.category ? `<category>${escapeXml(article.category)}</category>` : '';
-      const enclosure = isAbsoluteHttpUrl(article.image)
-        ? `<enclosure url="${escapeXml(article.image)}" type="${imageMimeType(article.image)}" />`
-        : '';
-
-      return [
+      const link = articleUrl(article);
+      const cover = articleCover(article, extractFirstImage);
+      const tags = Array.from(new Set([article.category, ...(article.tags ?? [])].filter(Boolean)));
+      const lines = [
         '    <item>',
-        `      <title>${title}</title>`,
+        `      <title>${escapeXml(article.title)}</title>`,
         `      <link>${escapeXml(link)}</link>`,
-        `      <guid isPermaLink="true">${escapeXml(guid)}</guid>`,
-        `      <pubDate>${pubDate}</pubDate>`,
-        `      <description>${description}</description>`,
-        category ? `      ${category}` : '',
-        enclosure ? `      ${enclosure}` : '',
-        '    </item>',
-      ]
-        .filter(Boolean)
-        .join('\n');
+        `      <guid isPermaLink="true">${escapeXml(link)}</guid>`,
+        `      <pubDate>${toRfc822(article.date)}</pubDate>`,
+        `      <dc:creator>${escapeXml(AUTHOR)}</dc:creator>`,
+        `      <description>${escapeXml(article.excerpt || '')}</description>`,
+        ...tags.map((tag) => `      <category>${escapeXml(tag)}</category>`),
+      ];
+      if (cover && /^https?:\/\//i.test(cover)) {
+        lines.push(`      <enclosure url="${escapeXml(cover)}" length="0" type="${imageMimeType(cover)}" />`);
+      }
+      lines.push(`      <content:encoded><![CDATA[${feedHtml(article.content).replace(/]]>/g, ']]&gt;')}]]></content:encoded>`);
+      lines.push('    </item>');
+      return lines.join('\n');
     })
     .join('\n');
 
   const rss = [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+    '<rss version="2.0"',
+    '     xmlns:atom="http://www.w3.org/2005/Atom"',
+    '     xmlns:content="http://purl.org/rss/1.0/modules/content/"',
+    '     xmlns:dc="http://purl.org/dc/elements/1.1/">',
     '  <channel>',
     `    <title>${escapeXml(FEED_TITLE)}</title>`,
     `    <link>${SITE_URL}</link>`,
     `    <description>${escapeXml(FEED_DESCRIPTION)}</description>`,
     `    <language>${FEED_LANGUAGE}</language>`,
-    `    <pubDate>${pubDate}</pubDate>`,
+    `    <copyright>© ${new Date().getFullYear()} ${escapeXml(AUTHOR)}</copyright>`,
+    `    <pubDate>${lastBuildDate}</pubDate>`,
     `    <lastBuildDate>${lastBuildDate}</lastBuildDate>`,
-    '    <generator>Custom RSS Generator (Node.js)</generator>',
+    '    <generator>orafaelferreira.com build (scripts/generate-rss.mjs)</generator>',
     '    <ttl>60</ttl>',
+    `    <image>`,
+    `      <url>${SITE_URL}/icon-512.png</url>`,
+    `      <title>${escapeXml(FEED_TITLE)}</title>`,
+    `      <link>${SITE_URL}</link>`,
+    `    </image>`,
     `    <atom:link href="${SITE_URL}${FEED_PATH}" rel="self" type="application/rss+xml" />`,
     xmlItems,
     '  </channel>',
@@ -131,61 +112,7 @@ async function generateRss() {
   ].join('\n');
 
   await writeFile(outputPath, rss, 'utf-8');
-  console.log(`RSS gerado com ${items.length} itens em ${outputPath}`);
-}
-
-function extractField(source, field) {
-  const doubleQuoted = new RegExp(`${field}\\s*:\\s*"([\\s\\S]*?)"`, 'm').exec(source);
-  if (doubleQuoted) {
-    return normalizeValue(doubleQuoted[1]);
-  }
-
-  const singleQuoted = new RegExp(`${field}\\s*:\\s*'([\\s\\S]*?)'`, 'm').exec(source);
-  if (singleQuoted) {
-    return normalizeValue(singleQuoted[1]);
-  }
-
-  return '';
-}
-
-function extractImageField(source) {
-  const nullImage = /image\s*:\s*null\s*,?/m.exec(source);
-  if (nullImage) {
-    return '';
-  }
-
-  return extractField(source, 'image');
-}
-
-function normalizeValue(value) {
-  return String(value)
-    .replace(/\\n/g, ' ')
-    .replace(/\\r/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function imageMimeType(url) {
-  const lower = String(url || '').toLowerCase();
-  if (lower.endsWith('.png')) {
-    return 'image/png';
-  }
-  if (lower.endsWith('.webp')) {
-    return 'image/webp';
-  }
-  if (lower.endsWith('.gif')) {
-    return 'image/gif';
-  }
-  return 'image/jpeg';
-}
-
-function isAbsoluteHttpUrl(url) {
-  return /^https?:\/\//i.test(String(url || '').trim());
-}
-
-function isArticle(article) {
-  const category = String(article?.category || '').trim();
-  return ARTICLE_CATEGORIES.has(category);
+  console.log(`RSS gerado com ${items.length} itens (full-text) em ${path.relative(PROJECT_ROOT, outputPath)}`);
 }
 
 generateRss().catch((error) => {

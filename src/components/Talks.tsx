@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
-interface Talk {
+export interface Talk {
   title: string;
   event: string;
   date: string;
@@ -56,10 +56,12 @@ const TalkSection = ({
   );
 };
 
-const Talks = () => {
-  const upcomingTalks: Talk[] = [];
+// Talk data lives at module scope so src/pages/Palestras.tsx can publish it as
+// schema.org Event/ItemList. scripts/sync-talks-and-events.mjs and
+// scripts/generate-event-schedule.mjs rewrite these arrays by name.
+export const upcomingTalks: Talk[] = [];
 
-  const inPersonTalks: Talk[] = [
+export const inPersonTalks: Talk[] = [
     {
       title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
       event: "DevOpsDays Curitiba 2026",
@@ -485,7 +487,7 @@ const Talks = () => {
     },
   ];
 
-  const onlineTalks: Talk[] = [
+export const onlineTalks: Talk[] = [
     {
       title: "DevOps Além do Hype",
       event: "Deploy Conference",
@@ -620,6 +622,7 @@ const Talks = () => {
     },
   ];
 
+const Talks = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 

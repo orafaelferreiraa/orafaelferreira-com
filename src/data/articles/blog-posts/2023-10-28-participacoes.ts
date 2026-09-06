@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "participacoes",
   title: "Participações em Lives",
-  excerpt: "Olá, pessoal!",
+  excerpt: "Minhas participações em lives e podcasts sobre Green IT, IaC com Terraform e OpenTofu, segurança em nuvem Microsoft, certificações e carreira em DevOps.",
   content: `
 Olá, pessoal!
 
@@ -14,7 +14,7 @@ Estou empolgado para compartilhar com vocês um novo post onde destaco minhas pa
 
 ### Green IT - O Futuro da Sustentabilidade na Nuvem
 [**Green IT - O Futuro da Sustentabilidade na Nuvem**](https://jovemnerd.com.br/podcasts/nerd-na-cloud/green-it-o-futuro-da-sustentabilidade-na-nuvem) 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/green.png)
+![Capa do podcast Nerd na Cloud sobre Green IT](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/green.png)
 
 
 ### IaC com Terraform & OpenTofu

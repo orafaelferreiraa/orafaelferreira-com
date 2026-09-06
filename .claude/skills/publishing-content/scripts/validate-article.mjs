@@ -111,9 +111,43 @@ function validateOne(filePath, source) {
     warnings.push(`No "tags" field — article will only get keyword-derived tags, not explicit ones.`);
   }
 
+  // The build-time generators (scripts/lib/load-articles.mjs) import article
+  // modules with Node's native type stripping; a value import of the type-only
+  // ../types module fails at link time, so the import must be `import type`.
+  if (/^import \{ Article \} from ['"]\.\.\/types['"];?/m.test(source)) {
+    errors.push('Use `import type { Article } from \'../types\';` — a value import breaks scripts/generate-*.mjs (Node type stripping).');
+  }
+
+  // excerpt doubles as the meta description: keep it within SERP limits.
+  const excerpt = extractField(source, 'excerpt');
+  if (excerpt) {
+    if (excerpt.length > 160) warnings.push(`excerpt has ${excerpt.length} chars — keep it <= 160 (it is the meta description and gets truncated in search results).`);
+    if (excerpt.length < 60) warnings.push(`excerpt has only ${excerpt.length} chars — aim for 120-160 to give search engines and LLMs a useful summary.`);
+  }
+
+  const updatedAt = extractField(source, 'updatedAt');
+  if (updatedAt && !/^\d{4}-\d{2}-\d{2}$/.test(updatedAt)) {
+    errors.push(`updatedAt "${updatedAt}" is not ISO format (YYYY-MM-DD).`);
+  }
+  if (updatedAt && date && updatedAt < date) {
+    warnings.push(`updatedAt (${updatedAt}) is earlier than date (${date}).`);
+  }
+
   const contentMatch = source.match(/content:\s*`([\s\S]*)`\s*,?\s*\};?\s*$/);
   const content = contentMatch ? contentMatch[1] : source;
   warnings.push(...checkUnsupportedMarkdown(content));
+
+  // Accessibility + image SEO: every image needs alt text.
+  const emptyAlts = (content.match(/!\[\]\(/g) || []).length;
+  if (emptyAlts > 0) {
+    warnings.push(`${emptyAlts} image(s) with empty alt text ("![](url)") — describe each image in pt-BR (4-12 words).`);
+  }
+
+  // A "# " heading in the body is demoted to <h2> by markdown.ts (the page title is the only <h1>).
+  const h1Count = (content.match(/^# /gm) || []).length;
+  if (h1Count > 0) {
+    warnings.push(`${h1Count} level-1 heading(s) ("# ") in the body — they render as <h2>; prefer "## " so the source matches the output.`);
+  }
 
   return { errors, warnings };
 }

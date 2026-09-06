@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "docker-python-distroless-kubernetes",
@@ -7,7 +7,7 @@ export const article: Article = {
     "Comparação prática entre imagens de contêiners Python (slim, alpine e distroless) e como aplicar técnicas com foco em segurança e workloads no Kubernetes.",
   content: `
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/1.png)
+![Imagens de contêiner Python distroless no Kubernetes](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/1.png)
 
 Vamos explorar estratégias multi-stage build com imagens de contêiner distroless para workloads Python no Kubernetes, criando soluções da vida real.
 
@@ -43,7 +43,7 @@ Durante a jornada, fiz um benchmark de imagens base para comparar seus tamanho, 
 | \`registry.example.com/containeres/python-build:3.12\` | ~100MB | Baixo | Sim | tdnf | Não (root) |
 | \`registry.example.com/containeres/python-runtime-distroless:3.12-nonroot\` | ~30MB | Mínimo | Não | Não | Sim |
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/2.png)
+![Comparação de tamanho e CVEs entre imagens Python slim, alpine e distroless](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/2.png)
 
 **OBS:** a quantidade/severidade de CVEs varia conforme data do scan, base de vulnerabilidades e versão exata da imagem.
 
@@ -125,7 +125,7 @@ def load_config() -> dict:
 
 ### 3. Debug sem shell
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/3.png)
+![Debug de contêiner distroless sem shell no Kubernetes](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/3.png)
 
 Com distroless, \`kubectl exec -it <pod> -- /bin/sh\` não funciona. Para troubleshooting, a estratégia é trocar temporariamente para a imagem de debug:
 
@@ -212,7 +212,7 @@ logging.basicConfig(
 )
 \`\`\`
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/4.jpg)
+![Logs em stdout de aplicação Python em contêiner distroless](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/distroless/4.jpg)
 
 A adoção de distroless non-root removeu shell, package manager e root do runtime. Os principais desafios encontrados foram logs em stdout, validação de variáveis e troubleshooting sem shell, que são contornáveis com práticas simples.
 

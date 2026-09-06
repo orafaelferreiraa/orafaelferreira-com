@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "microsoft-build-localhost-florianopolis",
@@ -44,13 +44,13 @@ Confira os conteúdos que tivemos no evento:
 ## From CLI to PR: Automating the Path to Merged Code  
 🔹 [Vinicius Deschamps](https://www.linkedin.com/in/viniciusdeschamps/)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/09.jpg)
+![Vinicius Deschamps apresentando From CLI to PR no Microsoft Build localhost](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/09.jpg)
 
 Nesta demonstracao pratica, mostramos como utilizar GitHub Copilot CLI e agentes para automatizar desde o planejamento ate a revisao de Pull Requests, explorando gerenciamento de contexto, automacao e fluxos modernos de desenvolvimento.
 
 ## GitHub Copilot no Visual Studio: Agents That Debug, Profile and Test  
 🔹 [Rafael Ferreira](https://www.linkedin.com/in/orafaelferreiraa/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/03.jpg)
+![Rafael Ferreira apresentando GitHub Copilot no Visual Studio](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/03.jpg)
 
 Nesta sessão, exploramos como os agentes do GitHub Copilot podem ajudar a investigar problemas, identificar gargalos de performance, analisar infraestrutura como codigo, entender comportamentos complexos de aplicacoes e acelerar troubleshooting em ambientes reais.
 
@@ -59,7 +59,7 @@ Mais tempo resolvendo o problema.
 
 ## From Zero to Deployed on Azure with AI Agents  
 🔹 [Claudio Raposo](https://www.linkedin.com/in/claudioraposo/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/07.jpg)
+![Claudio Raposo conduzindo o laboratório From Zero to Deployed on Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/07.jpg)
 
 Um laboratorio pratico para quem quer colocar a mao na massa. Partindo de um terminal vazio, os participantes construiram e publicaram uma aplicacao no Azure utilizando GitHub Copilot CLI e agentes de IA para provisionamento de recursos, desenvolvimento, debugging e deployment.
 

@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "platform-engineering-policy-as-code",
@@ -11,7 +11,7 @@ export const article: Article = {
 
 O [Platform Engineering](https://platformengineering.org/) surge como resposta à crescente complexidade das aplicações em nuvem. Criamos plataformas internas que automatizam infraestrutura e governança. A plataforma é tratada como um produto: o desenvolvedor é o cliente interno e deve encontrar o “caminho dourado” (golden path). Uma boa definição de Platform Engineering resume seu propósito: “melhorar a segurança, conformidade, custos e tempo de entrega de valor dos times de desenvolvimento por meio de experiências de desenvolvedor aprimoradas e self-service num ambiente seguro e governado”. Ao padronizar processos e oferecer automações prontas, as plataformas eliminam etapas repetitivas e reduzem drasticamente a carga cognitiva dos desenvolvedores.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/1.png)
+![Ilustração de plataforma interna com governança integrada](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/1.png)
 
 Sem essa governança integrada, temos riscos de custos excessivos, falhas de segurança e não-conformidades. Equipes podem criar recursos em regiões caras ou não vigiadas, esquecer tags obrigatórias, expor APIs inadvertidamente etc. O Platform Engineering garante o complience disso criando guardrails automatizados: cada “guardrail” adiciona automaticamente práticas recomendadas. Isso reforça a segurança e compliance de modo invisível e natural ao desenvolvedor, acelerando entregas em vez de bloqueá-las.
 
@@ -19,7 +19,7 @@ Sem essa governança integrada, temos riscos de custos excessivos, falhas de seg
 
 [Policy-as-Code](https://platformengineering.org/blog/policy-as-code) é o paradigma de codificar regras de negócio, segurança e compliance em código executável, versionado e testável em pipelines. Em vez de revisar manuais, é validado automaticamente a mudança. Na prática, regras como “só usar VMs criptografadas” ou “não criar recursos fora de regiões aprovadas” viram definições de política em JSON (ou Rego, YAML etc.), armazenadas em repositório Git. Isso garante feedback rápido e contínuo: violações são detectadas tão cedo quanto possível, evitando que recursos errados cheguem à produção.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/2.png)
+![Fluxo de Policy-as-Code validando antes do deploy](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/2.png)
 
 Quando implementamos PaC, mudamos do modelo "fazer e auditar depois" para "validar antes de implantar". Como destaca a comunidade de engenharia de plataforma, chamada "CAPOC" (Compliance At Point Of Change) – comprimir o ciclo de feedback de dias para segundos. Por exemplo, se um desenvolvedor tentar subir um container vulnerável, um engine de política ([OPA](#opa) ou [Kyverno](#kyverno)) a rejeita imediatamente, retornando erros legíveis. Assim, equipes de segurança se mantem centralizada, mas sem serem gargalo, cada time segue com autonomia porque políticas automatizadas garantem que só configurações aprovadas irão ver a luz do dia. Além disso, todo evento acaba criando trilhas de auditoria nativas que facilitam evidências de compliance.
 ## Ecossistema de ferramentas de políticas
@@ -38,7 +38,7 @@ O universo de PaC é amplo e, em geral, independente da nuvem. Várias ferrament
 
 [Conftest](https://www.conftest.dev/) é baseada em [OPA](#opa) e valida arquivos de infraestrutura como código antes do apply (Terraform, Kubernetes YAML, Helm, CloudFormation etc.). Escrevemos policies em Rego e executamos testes no CI/CD ou localmente (ex.: \`conftest test ./infra\`). Isso captura violações cedo (tipos de VMs não permitidos, ausência de tags obrigatórias), evitando deploys inválidos e reduzindo retrabalho.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/3.png)
+![Conftest validando arquivos de infraestrutura como código](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/3.png)
 
 ### Azure Policy
 
@@ -71,7 +71,7 @@ De acordo com a [FinOps Foundation](https://www.finops.org/), as boas práticas 
 
 Exemplo: uma [Azure Landing Zone](https://www.orafaelferreira.com/artigos/foundation-lz) já vem com tagging obrigatório e orçamentos como parte da fundação.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/4.png)
+![Boas práticas FinOps com tagging e orçamentos na nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/pac/4.png)
 
 ## Estratégia de implantação de políticas
 

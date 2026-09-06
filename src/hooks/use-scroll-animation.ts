@@ -7,6 +7,17 @@ interface UseScrollAnimationOptions {
 }
 
 /**
+ * True when the current document was prerendered at build time (SSG) and is
+ * being hydrated. In that case content starts visible: the server rendered it
+ * visible (no IntersectionObserver there) and hiding it again on hydration
+ * would cause a flash and a className mismatch.
+ */
+const isHydratingPrerenderedPage = (): boolean => {
+  if (typeof document === 'undefined') return false;
+  return document.getElementById('root')?.firstElementChild !== null;
+};
+
+/**
  * Hook para animar elementos quando eles entram na viewport ao fazer scroll
  */
 export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
@@ -17,10 +28,12 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   } = options;
 
   const ref = useRef<HTMLDivElement>(null);
-  // Start visible when the observer is unavailable or the user prefers reduced
-  // motion — computed at mount so we never call setState synchronously in the effect.
+  // Start visible when the observer is unavailable (server render), when the page
+  // was prerendered, or when the user prefers reduced motion — computed at mount
+  // so we never call setState synchronously in the effect.
   const [isVisible, setIsVisible] = useState<boolean>(() => {
     if (typeof IntersectionObserver === 'undefined') return true;
+    if (isHydratingPrerenderedPage()) return true;
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return true;
     }
@@ -31,8 +44,9 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     const element = ref.current;
     if (!element) return;
 
-    // Observer unavailable or reduced-motion: content is already visible from initial state.
+    // Already visible (no observer, prerendered, or reduced-motion): nothing to animate.
     if (typeof IntersectionObserver === 'undefined') return;
+    if (isVisible && triggerOnce) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     // Safety fallback for mobile/browser edge cases where observer may not fire.
@@ -66,6 +80,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
         observer.unobserve(element);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- isVisible is only read for the early-return guard
   }, [threshold, rootMargin, triggerOnce]);
 
   return { ref, isVisible };

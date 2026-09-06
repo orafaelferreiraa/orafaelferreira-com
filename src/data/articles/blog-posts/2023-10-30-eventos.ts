@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "eventos",
   title: "Lista dos eventos de Tecnologia Presenciais que eu já fui",
-  excerpt: "Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências que tive participando de eventos de tecnologia presenciais. Esses eventos foram oportunidades únicas para aprender, fazer networking e me manter atualizado sobre as últimas tendências tecnológicas.",
+  excerpt: "Lista dos eventos de tecnologia presenciais de que já participei: experiências de aprendizado, networking e atualização sobre as tendências do mercado.",
   content: `
 Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências que tive participando de eventos de tecnologia presenciais. Esses eventos foram oportunidades únicas para aprender, fazer networking e me manter atualizado sobre as últimas tendências tecnológicas. Vamos lá!
 

@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "global-azure-floripa-2026",
@@ -8,7 +8,7 @@ export const article: Article = {
   content: `
 
 # Global Azure Floripa 2026
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/00.png)
+![Banner do Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/00.png)
 
 No dia **18 de abril de 2026**, aconteceu o [**Global Azure User Group Floripa 2026**](https://www.meetup.com/azureusergroupsbrasil/events/313851322/) no **Colégio Alpha**, em São José/SC, com temas sobre Azure, carreira internacional, segurança, arquitetura cloud native e DevOps.
 
@@ -39,17 +39,17 @@ O [Global Azure](https://globalazure.net/) é uma iniciativa mundial em que comu
 - **09:00 - 10:00**
 Arquitetura Celular na Era Cloud Native: Estratégias Modernas com Microsoft Azure  
 Palestrante: [Claudio Raposo](https://www.linkedin.com/in/cfraposo/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/claudio.jpg)
+![Claudio Raposo palestrando no Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/claudio.jpg)
 
 - **10:00 - 11:00**
 Azure Virtual Desktop: como acelerar seu negócio em minutos  
 Palestrante: [Leonardo Souza](https://www.linkedin.com/in/leomozzer/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/leonardo.jpg)
+![Leonardo Souza palestrando no Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/leonardo.jpg)
 
 - **11:00 - 12:00**
 Carreira internacional: como ganhar XP e se dar bem nas fases do jogo  
 Palestrante: [Lore Locks Coelho](https://www.linkedin.com/in/lorenalocks/?locale=en)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/lorena.jpg)
+![Lore Locks Coelho palestrando no Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/lorena.jpg)
 
 ### Almoço
 
@@ -61,22 +61,22 @@ Almoço
 - **13:30 - 14:30**
 Reactive DDD na prática: Modelagem event-first e integração reativa em alta escala  
 Palestrante: [Antonio Falcao Jr](https://www.linkedin.com/in/antoniofalcaojr/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/antonio.jpeg)
+![Antonio Falcao Jr palestrando no Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/antonio.jpeg)
 
 - **14:30 - 15:30**
 Segurança sem gambiarra: usando HSM para proteger o que realmente importa  
 Palestrante: [Vinicius Deschamps](https://www.linkedin.com/in/viniciusdeschamps/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/vinicius.jpeg)
+![Vinicius Deschamps palestrando no Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/vinicius.jpeg)
 
 - **15:30 - 16:30**
 Vibe Coding com DevOps: usei IA pra criar meu site no Azure, mas quem fez o deploy fui EU  
 Palestrante: [Rafael Ferreira](https://www.linkedin.com/in/orafaelferreiraa/)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/rafael.jpg)
+![Rafael Ferreira palestrando no Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/rafael.jpg)
 
 
 ### Comunidade presente
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/galera.jpg)
+![Comunidade reunida no Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/AUGBGA26/galera.jpg)
 
 ## Links oficiais
 

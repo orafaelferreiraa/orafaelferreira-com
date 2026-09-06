@@ -82,6 +82,21 @@ Allow: /
 User-agent: DataForSeoBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
 # Default
 User-agent: *
 Allow: /
@@ -90,5 +105,6 @@ Disallow: /api/
 # Sitemap
 Sitemap: https://www.orafaelferreira.com/sitemap.xml
 
-# llms.txt — structured content index for LLM crawlers
+# llms.txt / llms-full.txt — content index and full text for LLM crawlers
 # https://www.orafaelferreira.com/llms.txt
+# https://www.orafaelferreira.com/llms-full.txt

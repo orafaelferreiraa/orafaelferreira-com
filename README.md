@@ -1,4 +1,4 @@
-# orafaelferreira-com (SPA)
+# orafaelferreira-com
 
 Site pessoal/Blog em Vite + React + TypeScript, hospedado na Azure Static Web Apps (SWA) com CI/CD via GitHub Actions e infraestrutura em Terraform.
 
@@ -18,7 +18,8 @@ Requisitos: Node.js 22+ (mesma versão usada pelo CI via `actions/setup-node`)
 
 ```bash
 sudo apt update
-sudo apt install npm
+# Node.js 22.18+ (mesma versão do CI). Ex.: com nvm
+nvm install 22 && nvm use 22
 ```
 
 ```bash
@@ -36,6 +37,8 @@ npm run preview
 **Variáveis de ambiente (opcionais):**
 - `VITE_GA_MEASUREMENT_ID` — ID de medição do Google Analytics 4. Sem ela, `src/lib/analytics.ts`
   vira no-op (nenhum tracking é inicializado). Não há `.env.example` no repo hoje.
+- `.mcp.json` é a configuração MCP padrão (Docker no PATH). `.mcp.pc.json` é a variante para a máquina Windows/WSL que chama o `docker.exe` pelo caminho absoluto; use a que corresponder ao seu ambiente.
+- `public/rss.xml` e `public/llms-full.txt` são gerados no build (não versionados); rode `npm run rss:generate` / `npm run llms:generate` para tê-los no `npm run dev`.
 
 ## Geração de sitemap e metadados
 
@@ -74,7 +77,7 @@ Não há CMS nem banco de dados: cada artigo/post é um arquivo TypeScript.
   `src/data/articles/types.ts`
 - `src/data/articles/index.ts` descobre os arquivos automaticamente via `import.meta.glob` — basta
   criar o arquivo na subpasta certa, nada precisa ser registrado manualmente
-- O RSS (`generate-rss.mjs`) só inclui categorias técnicas (Artigos, Azure, Azure Policy, Cloud
+- O RSS (`generate-rss.mjs`) inclui todos os artigos e posts com texto completo (`content:encoded`); antes só incluía categorias técnicas (Artigos, Azure, Azure Policy, Cloud
   Adoption Framework); os posts de `blog-posts/` ficam fora do feed
 
 ## i18n
@@ -115,7 +118,7 @@ A seção de palestras (`Talks.tsx`) e o post de agenda anual são mantidos auto
 O deploy é automático no push para `main` quando arquivos do app mudam (`src/`, `public/`, `index.html`, configs) e também após a conclusão bem-sucedida do workflow `infra-apply` (via `workflow_run`). Workflow: `.github/workflows/deploy-app.yml`.
 
 **Pipeline de deploy:**
-- Build: `npm install` + `npm run test:ci` + `npm run test:components:ci` + `npm run typecheck` + `npm run build`
+- Build: `npm ci` + `npm run lint` + `npm run i18n:check` + `npm run test:ci` + `npm run typecheck` + `npm run build` (inclui pré-render SSG) + `npm run test:e2e:ci`
 - Deploy: usa `Azure/static-web-apps-deploy@v1` com `action: upload`, `skip_app_build: true` e `app_location: dist`
 - Não roda em PRs (somente em push e após infra-apply)
 
@@ -238,7 +241,7 @@ O domínio customizado `www.orafaelferreira.com` são configurados via Terraform
 - Lint no CI foi desabilitado para evitar ruído causado por conteúdo em markdown inline nos arquivos de artigos. O typecheck (TS) permanece ativo.
 - CI usa Node.js 22 (`actions/setup-node` em `deploy-app.yml`, `regenerate-event-schedule.yml` e `sync-talks-on-event-day.yml`). Não há `engines` no `package.json` nem `.nvmrc` fixando isso localmente.
 - A pasta `infra/` possui `.gitignore` próprio para evitar que `.terraform/`, `*.tfstate` e `*.tfplan` entrem em commits. O lockfile `.terraform.lock.hcl` é versionado.
-- A pipeline de deploy usa `npm install` ao invés de `npm ci` para maior flexibilidade quando há atualizações de dependências.
+- A pipeline de deploy usa `npm ci` (instalação reproduzível a partir do `package-lock.json`); roda lint, paridade i18n, testes unitários, typecheck, build com pré-render (SSG) e Playwright antes do deploy.
 - Workflows de infra e deploy são independentes mas coordenados: mudanças de infra triggam apply → deploy do app via `workflow_run`. Commits automáticos do `terraform-docs` (actor `github-actions[bot]`) não disparam o deploy do app (condição adicionada em `deploy-app.yml`).
 - A pasta `ai/` é uma camada própria de agentes/prompts/skills (formato Copilot-like) usada para autoria de artigos e automação de conteúdo. É independente de `.claude/skills/` e não deve ser confundida com ela.
 
@@ -320,9 +323,9 @@ flowchart TB
 
     subgraph deploy_wf["🌐 deploy-app.yml"]
         direction TB
-        npm_install["📥 npm install"]
+        npm_install["📥 npm ci"]
         npm_install --> unit["🧪 vitest --run<br/><code>unit tests</code>"]
-        unit --> comp["🧩 vitest --run<br/><code>component tests<br/>vitest.config.components.ts</code>"]
+        unit --> comp["🧩 npm run build<br/><code>sync:talks → rss → sitemap → llms → vite build → prerender (SSG)</code>"]
         comp --> tsc["🔎 tsc --noEmit<br/><code>typecheck</code>"]
         tsc --> build["🏗️ vite build<br/><code>→ dist/</code>"]
         build --> e2e["🎭 Playwright E2E<br/><code>⚠️ disabled in CI</code>"]
@@ -387,13 +390,13 @@ flowchart TB
     style cron_trigger fill:#6b7280,color:#fff
 ```
 
-### Application Architecture — SPA Stack
+### Application Architecture — Static Site (SSG) + React
 
-React 19 SPA com code splitting via `React.lazy()` + `Suspense`. Todas as 10 rotas são lazy-loaded. SEO via `react-helmet-async` (OG tags por página). i18n com detecção automática de idioma (`?lang=` → localStorage → navigator). Markdown dos artigos é renderizado client-side com parser custom.
+React 19 pré-renderizado no build (SSG): `scripts/prerender.mjs` gera um HTML por rota (101 páginas + `404.html`) via `prerender()` de `react-dom/static`, e o cliente hidrata com `hydrateRoot`. Code splitting via `React.lazy()` + `Suspense`; todas as rotas são lazy-loaded a partir de `src/routes.tsx`. SEO via `react-helmet-async` (OG tags por página). i18n com detecção automática de idioma (`?lang=` → localStorage → navigator). Markdown dos artigos é renderizado client-side com parser custom.
 
 ```mermaid
 flowchart TB
-    subgraph client["🖥️ Browser · SPA · Client-Side"]
+    subgraph client["🖥️ Browser · HTML pré-renderizado + hidratação"]
         direction TB
         entry["🚪 main.tsx<br/><code>ReactDOM.createRoot(#root)</code>"]
         entry --> app["⚛️ App.tsx<br/><code>HelmetProvider → BrowserRouter<br/>→ Suspense → Routes</code>"]
@@ -443,7 +446,7 @@ flowchart TB
     subgraph seo["🔍 SEO & Headers"]
         direction LR
         helmet["🪖 react-helmet-async<br/><code>per-page title · description<br/>OG tags · canonical URL</code>"]
-        swa_config["⚙️ staticwebapp.config.json<br/><code>SPA fallback → /index.html<br/>X-Frame-Options: DENY<br/>X-Content-Type-Options: nosniff<br/>Cache-Control: 1h</code>"]
+        swa_config["⚙️ staticwebapp.config.json<br/><code>404 real → /404.html · trailingSlash never<br/>X-Frame-Options: DENY<br/>X-Content-Type-Options: nosniff<br/>Cache-Control: 1h</code>"]
     end
 
     client --> stack
@@ -482,9 +485,9 @@ flowchart TB
         end
 
         subgraph comp_layer["🧩 Component · Vitest RTL"]
-            comp_config["⚙️ vitest.config.components.ts<br/><code>include: src/components/**/*.test.*<br/>environment: jsdom<br/>setupFiles: src/setupTests.ts</code>"]
+            comp_config["⚙️ e2e/seo.spec.ts<br/><code>title/canonical/JSON-LD por rota<br/>HTML cru sem JS · sitemap · rss · llms.txt</code>"]
             comp_specs["📝 src/components/ui/button.test.tsx"]
-            comp_cmd["▶️ <code>npm run test:components:ci<br/>→ vitest --run --config vitest.config.components.ts</code>"]
+            comp_cmd["▶️ <code>npm run test:e2e:ci<br/>→ playwright test (vite preview em :4173)</code>"]
         end
 
         subgraph unit_layer["🧪 Unit · Vitest 4.1"]

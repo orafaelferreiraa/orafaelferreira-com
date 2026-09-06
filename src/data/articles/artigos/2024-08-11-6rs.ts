@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "6rs",
@@ -8,7 +8,7 @@ export const article: Article = {
 
 A modernização de aplicações na nuvem é extremamente importante para que as organizações maximizem suas capacidades oferecidas pela computação em nuvem. No contexto do Microsoft Azure, as estratégias de modernização podem ser categorizadas em quatro grandes abordagens: **Innovate**, **Migrate**, **Modernize** e **Retire**. Cada uma dessas abordagens oferece diferentes caminhos para otimizar, reestruturar ou descontinuar aplicações, de acordo com as necessidades específicas de negócios e tecnologia. Neste artigo, exploraremos essas estratégias detalhadamente, utilizando o framework dos 6Rs como base para a tomada de decisões.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/1.png)
+![Visão geral das estratégias de modernização do Cloud Adoption Framework](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/1.png)
 
 ### 1. Innovate
 
@@ -18,7 +18,7 @@ A modernização de aplicações na nuvem é extremamente importante para que as
 
 Rearquitetar consiste em uma reestruturação significativa da arquitetura da aplicação, visando otimizar seu desempenho e funcionalidade no ambiente de nuvem. Esse processo pode envolver a adoção de abordagens modernas, como microsserviços, computação serverless e arquiteturas orientadas a eventos. Essas abordagens melhoram a escalabilidade granular e aumentam a resiliência da aplicação, permitindo que ela responda de forma eficiente a variações de demandas e falhas.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Rearchitect.png)
+![Diagrama da estratégia Rearchitect de modernização de aplicações](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Rearchitect.png)
 
 **Quando usar Rearquitetar:**
 
@@ -29,7 +29,7 @@ Rearquitetar consiste em uma reestruturação significativa da arquitetura da ap
 
 Reconstruir é a abordagem ideal quando a aplicação atual não pode ser adaptada para atender às necessidades futuras ou novas demandas de negócios. Ao reconstruir uma aplicação do zero utilizando, por exemplo, tecnologias cloud native, é possível introduzir novas funcionalidades, melhorar a escalabilidade e flexibilidade, e alinhar a aplicação com as melhores práticas de desenvolvimento moderno. Essa abordagem facilita a criação de soluções compatíveis com as capacidades avançadas da nuvem, como inteligência artificial (IA), machine learning e análises em tempo real.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Rebuild.png)
+![Diagrama da estratégia Rebuild de reconstrução de aplicações](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Rebuild.png)
 
 **Quando usar Reconstruir:**
 
@@ -40,7 +40,7 @@ Reconstruir é a abordagem ideal quando a aplicação atual não pode ser adapta
 
 A abordagem **Replace** consiste em substituir uma aplicação existente por uma solução de **Software as a Service (SaaS)** ou outra solução comercial pronta. Essa estratégia permite à empresa evitar os custos e o tempo envolvidos na modificação ou manutenção de uma aplicação legada, optando por uma solução que já atende de forma mais eficiente às necessidades do negócio. Ao adotar uma solução SaaS, a organização também se beneficia de atualizações contínuas, suporte especializado e a possibilidade de escalabilidade sem a complexidade de gerenciar a infraestrutura subjacente.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Replace.png)
+![Diagrama da estratégia Replace com soluções SaaS](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Replace.png)
 
 **Quando usar Replace:**
 
@@ -65,7 +65,7 @@ A migração para a nuvem é a maneira mais rápida de levar aplicações ao Azu
 
 O Rehost envolve mover aplicações para a nuvem sem modificar o código ou a arquitetura existente, um exemplo prático é mover uma virtual machine do jeito que ela se encontra no onpremise para a cloud. Essa abordagem é ideal para empresas que desejam desativar rapidamente datacenters locais ou que precisam migrar urgentemente, mas cujas aplicações já atendem aos requisitos de negócios e não necessitam de mudanças significativas no curto prazo.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Rehost.png)
+![Diagrama da estratégia Rehost de migração para a nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Rehost.png)
 
 **Quando Usar Migrate:**
 
@@ -101,7 +101,7 @@ Modernizar aplicações é um algo fundamental para extrair o máximo valor dos 
 
 O Replatform envolve pequenas alterações na aplicação para que ela execute de maneira mais eficiente no ambiente de nuvem. Isso pode incluir a migração de um banco de dados para uma solução gerenciada ou a adaptação da infraestrutura para utilizar serviços de Plataforma como Serviço (PaaS). Essa abordagem melhora a eficiência operacional e reduz o custo total de propriedade (TCO), mantendo a integridade das funcionalidades principais.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Replatform.png)
+![Diagrama da estratégia Replatform com serviços gerenciados](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/Replatform.png)
 
 **Quando Usar Modernize:**
 
@@ -131,11 +131,11 @@ A modernização pode ser realizada através de várias soluções de PaaS, cada
 
 - **Low/No Code PaaS:** Ferramentas como Power Apps e Power Automate permitem a construção rápida de aplicações com pouca ou nenhuma codificação, maximizando a produtividade e o tempo de mercado.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/3.png)
+![Opções de PaaS no Azure para modernização de aplicações](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/3.png)
 
 Se ainda estiver em dúvida, confira a árvore de decisões abaixo para identificar qual serviço de computação na Azure melhor atende às suas necessidades
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/4.png)
+![Árvore de decisão para escolha do serviço de computação no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/4.png)
 
 #### Modernização de Bancos de Dados na Nuvem
 
@@ -160,13 +160,13 @@ Cada categoria de banco de dados oferece três soluções: duas de **PaaS** e um
 - **Azure Cosmos DB e Azure Managed Instance para Apache Cassandra (PaaS)**
 - **Bancos de dados MySQL, MariaDB e PostgreSQL totalmente gerenciados (PaaS)**
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/5.png)
+![Opções de modernização de bancos de dados no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/5.png)
 
 ### 4. Retire (Desativar)
 
 À medida que as organizações evoluem, nem todas as aplicações continuam a agregar valor. Em alguns casos, a estratégia mais eficiente é desativar ou aposentar uma aplicação. O processo de **Retire** envolve a desativação de aplicações que não são mais necessárias ou que foram substituídas por soluções mais modernas e eficientes. Essa abordagem simplifica a infraestrutura de TI e otimiza os recursos, redirecionando esforços e investimentos para áreas que realmente necessitam de suporte.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/retire.png)
+![Diagrama da estratégia Retire de desativação de aplicações](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/retire.png)
 
 **Quando usar Retire:**
 
@@ -191,7 +191,7 @@ Cada categoria de banco de dados oferece três soluções: duas de **PaaS** e um
 
 A modernização de aplicações na nuvem é um processo que exige uma análise cuidadosa de cada aplicação em relação às necessidades do negócio e às capacidades da nuvem. As estratégias agrupadas em **Innovate**, **Migrate**, **Modernize** e **Retire** fornecem um framework flexível para orientar as decisões de modernização. Ao aplicar essas estratégias, as organizações não apenas migram para a nuvem, mas também garantem que suas aplicações estejam otimizadas para o futuro, oferecendo o máximo valor ao negócio.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/2.png)
+![Resumo dos 6Rs de modernização de aplicações na nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/6rs/2.png)
 
 Este artigo oferece uma visão clara das opções disponíveis para a modernização de aplicações, auxiliando você a tomar decisões importantes e a planejar uma transição bem-sucedida para a nuvem.
 

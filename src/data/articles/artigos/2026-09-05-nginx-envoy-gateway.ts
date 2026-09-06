@@ -1,10 +1,10 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "nginx-envoy-gateway",
   title: "De NGINX Ingress para Envoy Gateway: a migração que a IA liderou",
   excerpt:
-    "Como um controller próprio converte Ingress nginx em Gateway API sobre Envoy Gateway numa plataforma Kubernetes multi-tenant: o contrato de cobertura de annotations que veio antes do código, o degrau de teste que só um data plane de verdade resolve, e o header de OAuth que uma auditoria em fan-out achou antes da virada de tráfego.",
+    "Como um controller próprio migrou Ingress NGINX para Gateway API sobre Envoy Gateway em Kubernetes multi-tenant, com a IA liderando testes e auditoria.",
   image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png",
   content: `
   
@@ -167,7 +167,7 @@ Mover o tráfego para o Envoy sem tocar nisso teria produzido uma onda de callba
 
 O fix, uma vez achado, foi pequeno: o controller injeta os dois headers não-padrão, **add-if-absent**, na mesma camada onde já reescreve outros headers de request. Add-if-absent importa, porque quem já manda o header certo não pode ser sobrescrito por compatibilidade retroativa.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/3.png)
+![Diagrama do controller injetando headers OAuth add-if-absent no Envoy Gateway](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/3.png)
 
 ## O que o processo não pegou: ReferenceGrant no namespace errado
 

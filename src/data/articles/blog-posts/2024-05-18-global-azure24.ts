@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "global-azure24",
   title: "Global Azure feat Azure Floripa 2024",
-  excerpt: "Estamos entusiasmados em compartilhar que o Global Azure 2024 foi um sucesso e o Azure Floripa marcou presença! Este evento global foi uma oportunidade incrível para aprender e compartilhar conhecimentos sobre a plataforma de Cloud Computing da Microsoft, o Azure.",
+  excerpt: "Como foi o Global Azure 2024 com o Azure Floripa: um evento global para aprender e compartilhar conhecimento sobre a plataforma de cloud computing da Microsoft.",
   content: `
 # Global Azure 2024 feat. Azure Floripa: Um Evento Incrível!
 

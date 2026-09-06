@@ -1,13 +1,12 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "global-azure-user-group-floripa-2026",
   title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - Global Azure User Group Floripa 2026",
-  excerpt:
-    "No dia 18 de abril de 2026, aconteceu o Global Azure User Group Floripa no Colégio Alpha, em São José/SC, com temas sobre Azure, carreira internacional, segurança, arquitetura cloud native e DevOps.",
+  excerpt: "Relato do Global Azure User Group Floripa 2026 no Colégio Alpha, em São José/SC: palestra Vibe Coding com DevOps, agenda completa e comunidade Azure em SC.",
   content: `
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/00.png)
+![Banner do Global Azure User Group Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/00.png)
 
 No dia **18 de abril de 2026**, aconteceu o [**Global Azure User Group Floripa 2026**](https://www.meetup.com/azureusergroupsbrasil/events/313851322/) no **Colégio Alpha**, em São José/SC, com temas sobre Azure, carreira internacional, segurança, arquitetura cloud native e DevOps.
 
@@ -17,7 +16,7 @@ Evento organizado por mim e **[Vinicius Deschamps](https://www.linkedin.com/in/v
 
 O [Global Azure](https://globalazure.net/) é uma iniciativa mundial em que comunidades locais realizam eventos para compartilhar conhecimento sobre Microsoft Azure e acelerar a evolução técnica de quem está na linha de frente.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/4.jpg)
+![Participantes reunidos no Colégio Alpha em São José](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/4.jpg)
 
 ## Agenda oficial
 
@@ -45,7 +44,7 @@ O [Global Azure](https://globalazure.net/) é uma iniciativa mundial em que comu
 
 ## Minha palestra
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/1.jpg)
+![Rafael Ferreira palestrando no Global Azure Floripa 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/1.jpg)
 
 
 Nessa edição, apresentei a sessão sozinho, trazendo um case prático sobre como usar IA para acelerar desenvolvimento sem abrir mão de engenharia.
@@ -61,8 +60,8 @@ Abordei principalmente:
 - papel de CI/CD, validações e ownership técnico no deploy
 - porque "entregar" não é só subir código, e garantir confiabilidade
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/3.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/2.jpg)
+![Slide da palestra Vibe Coding com DevOps no Global Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/3.jpg)
+![Público acompanhando a sessão sobre IA e DevOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/globaaz26/2.jpg)
 
 ## Comunidade Azure User Groups Brasil
 

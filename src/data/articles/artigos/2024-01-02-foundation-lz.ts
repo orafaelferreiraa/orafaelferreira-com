@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "foundation-lz",
   title: "Construindo uma Fundação Sólida para a Adoção da Nuvem: Integrando Landing Zones com Azure Cloud Foundation",
-  excerpt: "No mundo acelerado da tecnologia, a adoção da nuvem evoluiu de uma tendência para uma necessidade estratégica. Enquanto empresas buscam agilidade e inovação, emerge a complexidade de construir uma infraestrutura de nuvem robusta e escalável.",
+  excerpt: "Como Landing Zones e o Azure Cloud Foundation estruturam a adoção da nuvem: áreas de design, princípios-chave, aceleradores e implementações de referência.",
   content: `
 No mundo acelerado da tecnologia, a adoção da nuvem evoluiu de uma tendência para uma necessidade estratégica. Enquanto empresas buscam agilidade e inovação, emerge a complexidade de construir uma infraestrutura de nuvem robusta e escalável. Aqui, exploramos a integração das Landing Zones com a Foundation de Cloud, descobrindo como essas estratégias moldam o sucesso na nuvem.
 
@@ -11,7 +11,7 @@ No mundo acelerado da tecnologia, a adoção da nuvem evoluiu de uma tendência 
 
 Imagine entrar em um território desconhecido sem um mapa ou um guia, é assim que se sente entrar em um ambiente de nuvem sem as Landing Zones. Landing Zones no Azure são como bases estratégicas, configuradas para acolher e gerenciar seus recursos de nuvem com eficiência. Elas são o ponto inicial onde a segurança, a conformidade e a governança se encontram, garantindo que cada componente da sua infraestrutura esteja alinhado com os melhores padrões e práticas.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz04.png)
+![Arquitetura conceitual de Landing Zones no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz04.png)
 
 ## Landing Zones: O Início de Uma Jornada Estruturada
 
@@ -37,7 +37,7 @@ Quando Landing Zones e Azure Cloud Foundation trabalham em harmonia, elas criam 
 ## Áreas de Design de Ambiente
 Seja qual for a opção de implantação, você deve considerar cuidadosamente cada área de design. Suas decisões afetam a base da plataforma da qual cada zona de destino depende. As áreas de design são indicadas com as letras "A" até "I" para ilustrar a hierarquia da organização de recursos na arquitetura conceitual.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz02.png)
+![Áreas de design de ambiente da Azure Landing Zone](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz02.png)
 
 - **A - Cobrança do Azure e tenants do Active Directory:** Criação de tenants, registro e configuração de cobrança como etapas iniciais importantes.
 - **B - Gerenciamento de identidade e acesso:** Fundamento para qualquer arquitetura segura e totalmente em conformidade na nuvem pública.
@@ -51,7 +51,7 @@ Seja qual for a opção de implantação, você deve considerar cuidadosamente c
 ## Processo da Área de Design
 Avalie cada área de design para compreender as alterações que talvez você precise fazer nas opções de implementação da zona de destino do Azure. A avaliação em sequencia das áreas de design simplifica o design de ambientes complexos, ajudando na tomada de decisões críticas sobre o seu ambiente.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz03.png)
+![Processo de avaliação das áreas de design da Landing Zone](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz03.png)
 
 ## Cinco Princípios-Chave para Construir uma Landing Zone
 
@@ -95,7 +95,7 @@ Avalie cada área de design para compreender as alterações que talvez você pr
      - Automação 
      - Resiliência
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz06.png)     
+![Princípios de gerenciamento da Azure Landing Zone](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz06.png)     
 
 ## Acelerador de Landing Zones
 
@@ -117,14 +117,14 @@ A tabela abaixo apresenta exemplos de implementações de referência alinhadas 
 
 Cada implementação de referência provisiona recursos de plataforma no ambiente de destino escolhido. Detalhes adicionais sobre cada implementação e uma visão geral dos recursos implantados estão disponíveis através dos links do GitHub mencionados na tabela.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz05.png)
+![Implementações de referência da Azure Landing Zone](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz05.png)
 
 
 ### Ferramenta de revisão de avaliação
 
 Examine a preparação da plataforma do Azure para que a adoção possa começar, avalie seu plano para criar uma zona de destino para hospedar cargas de trabalho que você planeja criar ou migrar para a nuvem. Esta avaliação foi desenvolvida para clientes com dois ou mais anos de experiência. Se você for novo no Azure, esta avaliação ajudará a identificar áreas de investimento para sua estratégia de adoção.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz01.png)
+![Ferramenta de revisão de avaliação da Landing Zone no Microsoft Learn](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2024-01-02-foundation-lz01.png)
 
 Inicie sua avaliação com a [Revisão da Landing Zone](https://learn.microsoft.com/pt-br/assessments/56ec577c-acb6-4c7b-ad13-e224b0846153/)
 

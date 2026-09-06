@@ -1,12 +1,12 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "codecon-15-florianopolis",
   title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - Meetup Codecon #15",
-  excerpt: "No dia 25 de fevereiro de 2026 rolou o Codecon #15 em Florianópolis. Uma noite de comunidade forte, papo direto sobre IA no mundo real e um case completo de como um site nasceu de um prompt e foi parar em produção com DevOps de verdade.",
+  excerpt: "Relato da palestra Vibe Coding com DevOps no Meetup Codecon #15 em Florianópolis: um site que nasceu de um prompt com IA e chegou à produção com DevOps.",
   content: `
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/00.jpeg)
+![Banner do Meetup Codecon #15 em Florianópolis](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/00.jpeg)
 
 No dia **25 de fevereiro de 2026**, rolou o [**Codecon Meetup #15**](https://eventos.codecon.dev/eventos/floripa-meetup-codecon-15) em Florianópolis. O encontro aconteceu no **Impact Hub Bewiki**, no centro da cidade, um espaço de coworking focado em inovação e conexões entre profissionais de tecnologia.
 
@@ -15,17 +15,17 @@ Foram cerca de 3 horas de troca técnica, networking e conversas sobre como a IA
 Abri a noite junto com a [**Jéssica Mello**](https://www.linkedin.com/in/jessica-tmello/) com a talk:
 **Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU**
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/02.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/06.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/03.jpg)
+![Rafael Ferreira palestrando sobre Vibe Coding com DevOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/02.jpg)
+![Público do Codecon #15 no Impact Hub Bewiki](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/06.jpg)
+![Slide de abertura da palestra Vibe Coding com DevOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/03.jpg)
 
 
 A proposta foi mostrar um case real: a construção do meu site pessoal usando **IA generativa + engenharia de software + DevOps**.
 
 A história começou com um prompt simples, pedindo um site profissional, moderno e responsivo. A primeira versão saiu toda com IA e virou um one-page rápido de colocar no ar, mas aquilo era só o começo.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/01.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/05.jpg)
+![Slide mostrando a primeira versão do site gerada com IA](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/01.jpg)
+![Rafael Ferreira explicando a evolução do site pessoal](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/05.jpg)
 
 
 ## Do prompt ao código
@@ -36,7 +36,7 @@ Foi ali que o projeto deixou de ser só um experimento de IA e virou um produto 
 
 A IA ajudou muito a acelerar, mas engenharia ainda manda no resultado final.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/04.jpg)
+![Slide sobre a pipeline de deploy do site no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/04.jpg)
 
 ## Colocando em produção
 
@@ -52,17 +52,17 @@ E ainda bem.
 ## Tecnologia como ponte
 
 Na sequência, a **[Maiza Louise](https://www.linkedin.com/in/maizalouise/)** trouxe a talk: **Tecnologia como ponte para educação de qualidade**
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/09.jpg)
+![Maiza Louise palestrando sobre tecnologia e educação](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/09.jpg)
 
 Uma visão bem diferente e complementar, mostrando como tecnologia pode gerar impacto real fora do mundo corporativo. Esse tipo de assunto deixa o meetup muito mais rico.
 
 ## Fechamento
 
 Eu e a Maisa estavamos representando a Alura, que estava presente apoiando o evento. Tivemos um sorteio de um ano de licença da plataforma. 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/10.jpg)
+![Sorteio da licença Alura durante o Codecon #15](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/10.jpg)
 
 E essa é a foto com o ganhador:
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/11.jpg)
+![Rafael Ferreira e Maiza com o ganhador do sorteio da Alura](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/%2315codecon/11.jpg)
 
 ## Slides
 

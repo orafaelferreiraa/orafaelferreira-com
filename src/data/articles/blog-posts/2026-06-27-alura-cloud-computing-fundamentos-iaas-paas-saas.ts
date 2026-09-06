@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "alura-cloud-computing-fundamentos-iaas-paas-saas",
@@ -40,7 +40,7 @@ Ao longo de mais de 20 horas de conteúdo, passamos por temas como:
 - CI/CD, automação e boas práticas
 - Well-Architected Framework e estratégias de migração
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/alura/01.png)
+![Capa do curso de Computação em Nuvem com Azure na Alura](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/alura/01.png)
 
 ## Para quem o curso foi pensado
 

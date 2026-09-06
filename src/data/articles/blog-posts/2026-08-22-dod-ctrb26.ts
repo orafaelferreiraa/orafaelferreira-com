@@ -1,13 +1,13 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "dod-ctrb26",
   title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
-  excerpt: "No DevOpsDays Curitiba 2026, ao lado de Jéssica Mello, contei como usei IA generativa para criar meu portfólio do zero, e como Terraform, GitHub Actions e boas práticas de DevOps garantiram que o deploy em produção, na Azure, fosse meu.",
+  excerpt: "Relato da palestra Vibe Coding com DevOps no DevOpsDays Curitiba 2026, com Jéssica Mello: IA para criar o site, Terraform e GitHub Actions para o deploy.",
   content: `
 # DevOpsDays Curitiba 2026
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/1.jpg)
+![Rafael Ferreira e Jéssica Mello no DevOpsDays Curitiba 2026](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/1.jpg)
 
 
 No dia **22 de agosto de 2026**, ao lado de [**Jéssica Mello**](https://www.linkedin.com/in/jessica-tmello/) (LowOps Consultoria), palestrei no [**DevOpsDays Curitiba**](https://devopsdays.org/events/2026-curitiba/welcome/), um dos eventos mais tradicionais da comunidade DevOps no Brasil, realizado no **Auditório Eny Caldeira do Campus Rebouças da UFPR**.
@@ -16,7 +16,7 @@ No dia **22 de agosto de 2026**, ao lado de [**Jéssica Mello**](https://www.lin
 
 **Sessão:** Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg)
+![Palestra Vibe Coding com DevOps no palco do DevOpsDays Curitiba](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg)
 
 Um estudo de caso sobre como usei IA generativa para criar meu portfólio pessoal do zero, com Terraform, GitHub Actions e boas práticas de DevOps garantiram que o deploy em produção, fosse feito com controle humano.
 
@@ -32,7 +32,7 @@ Estruturei um prompt detalhado, seções para Home, Sobre, Blog, Palestras, Ment
 
 O resultado: um site one-page, com design moderno e performance ótima. Só que sair de uma one-page para um blog completo era o próximo desafio.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/2.jpg)
+![Slide mostrando a primeira versão one-page do site gerada por IA](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/2.jpg)
 
 ### Quando a "Vibe" Encontra a Produção
 
@@ -40,7 +40,7 @@ A modularização começou com refinamento contínuo, via prompts refinados e ed
 
 Mas dois problemas clássicos apareceram: **vendor lock-in** (dependência total da plataforma que gerou o código) e **custos de hospedagem**.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/3.jpg)
+![Slide sobre vendor lock-in e custos de hospedagem](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/3.jpg)
 
 ### Assumindo o Controle: Do Prompt ao Repositório
 
@@ -52,7 +52,7 @@ A solução: exportar o código do Lovable, versionar no [**GitHub**](https://gi
 
 Com o código sob controle, migrei a hospedagem para a **Microsoft Azure**: escrevo o código → GitHub guarda e testa (CI/CD) → publica no Azure → o domínio (www.orafaelferreira.com) responde. Isso envolveu migração de conteúdo (posts, palestras, projetos), adaptação estratégica de layout e configuração de DNS com downtime mínimo.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/4.jpg)
+![Slide com o fluxo de deploy do GitHub para o Azure](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/4.jpg)
 
 ### Infraestrutura como Código com Terraform
 
@@ -66,7 +66,7 @@ O pipeline de CI/CD roda em **push to main**: build → test → deploy to Azure
 
 ### A Base do Frontend Moderno
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/5.jpg)
+![Slide com a stack do frontend: TypeScript, React, Vite e Tailwind](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/5.jpg)
 
 No frontend: **TypeScript**, **React**, **Vite**, **TailwindCSS** e **shadcn/ui**, com arquitetura orientada a componentes, cobertura completa de testes (unit com Vitest, componentes com React Testing Library, E2E com Playwright), suporte a i18n (PT-BR/EN) e foco em acessibilidade e SEO.
 
@@ -85,7 +85,7 @@ Também trouxe um recorte sobre **Generative Engine Optimization (GEO)**, a evol
 
 E um recado final, direto: você não é pago pra escrever código, você é pago pra resolver problemas. Se você não está gostando do seu trabalho atual, ou você não está usando a IA do jeito certo, ou você está no emprego errado.
 
-![](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/6.jpg)
+![Público do DevOpsDays Curitiba 2026 durante as lições aprendidas](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/6.jpg)
 
 ## Slides da Apresentação
 

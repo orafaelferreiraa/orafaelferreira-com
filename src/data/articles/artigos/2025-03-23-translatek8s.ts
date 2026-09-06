@@ -1,13 +1,13 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "translatek8s",
   title: "Minhas Contribuições para a Tradução do Kubernetes",
-  excerpt: "Como parte do meu aprendizado e desejo de retribuir à comunidade, decidi participar do projeto de tradução da documentação do Kubernetes para o português brasileiro. Este esforço é importante para tornar a tecnologia mais acessível ao público da língua portuguesa.",
+  excerpt: "Como contribuí com a tradução da documentação do Kubernetes para o português brasileiro e por que isso torna a tecnologia mais acessível à comunidade.",
   content: `
 # Minhas Contribuições para a Tradução do Kubernetes
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-aks-acr1.png)
+![Documentação do Kubernetes traduzida para o português brasileiro](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2023-02-05-artigo-aks-acr1.png)
 
 Como parte do meu aprendizado e desejo de retribuir à comunidade, decidi participar do projeto de tradução da documentação do Kubernetes para o português brasileiro. Este esforço é importante para tornar a tecnologia mais acessível ao público da língua portuguesa.
 

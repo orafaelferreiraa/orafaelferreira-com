@@ -1,9 +1,9 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "az-700",
   title: "Projetar e Implementar Soluções de Rede no Azure - AZ-700",
-  excerpt: "Se você está querendo se aventurar no mundo das redes em nuvem, a certificação AZ-700 é o passaporte para provar que domina como projetar e implementar soluções de rede dentro do Microsoft Azure.",
+  excerpt: "Guia de estudos para a AZ-700: endereçamento IP, DNS, hub-and-spoke, NAT Gateway, VPN, ExpressRoute, balanceadores, Private Endpoint e segurança de rede.",
   content: `
 ## Introdução
 
@@ -17,7 +17,7 @@ Depois de concluir o curso [*AZ-700 - Projetar e Implementar Soluções de Rede 
 Tudo começa com as redes.  
 Planeje suas **VNets e subnets** com cuidado: o Azure reserva sempre cinco endereços por subnet (do primeiro ao quarto e o último).  
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/01.png)
+![Diagrama de planejamento de endereçamento IP em VNets e subnets](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/01.png)
 
 
 ## 2. Resolução de Nomes (DNS Público e Privado)
@@ -26,7 +26,7 @@ Planeje suas **VNets e subnets** com cuidado: o Azure reserva sempre cinco ender
 - **Azure Private DNS:** resolve nomes internamente entre VNets privadas, integrando automaticamente registros das VMs.  
 - **Private DNS Resolver:** resolve consultas entre ambientes *on-premises* e Azure sem precisar expor tráfego para a internet.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/02.png)
+![Diagrama de resolução de nomes com Azure DNS público e privado](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/02.png)
 
 
 ## 3. Conectividade e Roteamento de VNets
@@ -38,14 +38,14 @@ Planeje suas **VNets e subnets** com cuidado: o Azure reserva sempre cinco ender
 **Topologia Hub-and-Spoke**  
 Organize o ambiente para que o *hub* concentre segurança e conectividade. As *spokes* hospedam workloads isolados, conectados via peering ou WAN Virtual.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/03.png)
+![Topologia hub-and-spoke com peering entre VNets no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/03.png)
 
 ## 4. NAT Gateway
 
 Quando suas VMs precisam de saída de internet com IP fixo, use o **Azure NAT Gateway**.  
 Ele evita exaustão de portas SNAT e garante previsibilidade em cenários de egress controlado.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/04.png)
+![Diagrama do NAT Gateway controlando o tráfego de saída](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/04.png)
 
 ## 5. Monitoramento e Diagnóstico
 
@@ -57,7 +57,7 @@ Ele evita exaustão de portas SNAT e garante previsibilidade em cenários de egr
 
 Combine com **Azure Monitor** e **Log Analytics** para construir uma visão completa da rede, detectar gargalos e ativar alertas automáticos.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/05.png)
+![Ferramentas do Network Watcher para monitoramento e diagnóstico](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/05.png)
 
 ## 6. VPN Site-to-Site e Ponto-a-Site
 
@@ -72,7 +72,7 @@ Combine com **Azure Monitor** e **Log Analytics** para construir uma visão comp
 
 Essas opções permitem criar conectividade híbrida estável e segura entre diferentes ambientes.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/06.png)
+![Diagrama de VPN Site-to-Site e Ponto-a-Site no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/06.png)
 
 ## 7. ExpressRoute e WAN Virtual
 
@@ -80,7 +80,7 @@ Quando o assunto é conectividade privada e de alta performance:
 - **ExpressRoute** conecta seu ambiente local diretamente ao backbone do Azure.
 - **Azure Virtual WAN** centraliza e automatiza o roteamento global, integrando S2S, P2S, ER e VNets.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/07.png)
+![Arquitetura com ExpressRoute e Azure Virtual WAN](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/07.png)
 
 ## 8. Balanceadores de Carga e Entrega de Aplicações
 
@@ -94,7 +94,7 @@ Cada serviço tem seu lugar:
 - **Front Door**: CDN global + balanceamento inteligente entre regiões.  
 - **Traffic Manager**: DNS-based routing (latência, prioridade, geográfico).
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/08.png)
+![Comparativo dos balanceadores de carga do Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/08.png)
 
 ## 9. Acesso Privado a Serviços PaaS
 
@@ -104,7 +104,7 @@ Duas opções dominam:
 
 Hoje, o padrão corporativo é sempre **Private Endpoint**, mais seguro, mais fácil de auditar e compatível com políticas de compliance.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/09.png)
+![Diagrama de Private Endpoint para acesso a serviços PaaS](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/09.png)
 
 ## 10. Segurança de Rede no Azure
 
@@ -119,7 +119,7 @@ Os blocos de segurança que mais fazem diferença no dia a dia:
 | **WAF (Web Application Firewall)** | Proteção camada 7 contra ataques Web |
 | **DDoS Protection** | Mitigação automática de ataques volumétricos |
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/10.png)
+![Camadas de segurança de rede no Azure com NSG, Firewall e WAF](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/10.png)
 
 ## 11. Conclusão
 
@@ -137,7 +137,7 @@ Entender **endereçamento, conectividade, segurança e entrega de aplicações**
 
 - [2025-06 - AZ-700 - Projetar e Implementar Soluções de Rede do Azure](https://www.udemy.com/certificate/UC-49bfc006-aeb5-476d-8083-229aac73cd8f/)
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/certificado.png)`,
+![Certificado do curso preparatório AZ-700 na Udemy](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/certificado.png)`,
   date: "2025-10-06",
   category: "Artigos",
   readTime: "4 min de leitura"

@@ -1,4 +1,4 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "tc-bc24",
@@ -7,8 +7,8 @@ export const article: Article = {
   content: `
 No Tech Connection 2024, realizado em Balneário Camboriú, trouxe uma palestra com tema crucial para o futuro da tecnologia e do planeta: **GreenOps na Cloud**. Este conceito, ainda emergente, tem como foco a sustentabilidade no uso de recursos em ambientes de nuvem, conectando práticas de DevOps com objetivos ambientais.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/00.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/1.jpg)
+![Rafael Ferreira palestrando sobre GreenOps no Tech Connection 2024](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/00.jpg)
+![Público do Tech Connection Balneário Camboriú 2024](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/1.jpg)
 
 ## O Que é GreenOps?
 
@@ -25,8 +25,8 @@ Por outro lado, a nuvem também oferece uma oportunidade única para a sustentab
 
 A palestra destacou como esses fatores podem ser explorados por meio de práticas GreenOps para reduzir custos e impulsionar a sustentabilidade.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/2.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/3.jpg)
+![Slide sobre a conexão entre GreenOps e Cloud](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/2.jpg)
+![Rafael Ferreira explicando práticas GreenOps na Cloud](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/3.jpg)
 
 ## Práticas de GreenOps na Cloud
 
@@ -38,9 +38,9 @@ Durante a apresentação, foram discutidas várias práticas que podem ser imple
 - **Uso de Zonas de Energia Renovável**: Escolher regiões de data centers que utilizam fontes de energia limpa.
 - **Desligamento de Recursos Ociosos**: Automatizar o desligamento de VMs e recursos não utilizados.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/4.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/5.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/6.jpg)
+![Slide com práticas de GreenOps para reduzir custos e emissões](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/4.jpg)
+![Rafael Ferreira apresentando práticas de GreenOps no Tech Connection](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/5.jpg)
+![Encerramento da palestra GreenOps na Cloud em Balneário Camboriú](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tc.bc/6.jpg)
 
 ## Conclusão: A Importância da Ação
 

@@ -1,17 +1,17 @@
-import { Article } from '../types';
+import type { Article } from '../types';
 
 export const article: Article = {
   slug: "sql-saturday-joinville-2026",
   title: "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU - SQL Saturday Joinville 2026",
   excerpt:
-    "No dia 11 de abril de 2026, participei como palestrante do SQL Saturday Joinville na Univille. Foi um evento presencial com trilhas fortes em SQL Server, Azure, IA, Fabric e analytics.",
+    "Relato da palestra Vibe Coding com DevOps no SQL Saturday Joinville 2026: como usei IA para criar meu site sem abrir mão de pipeline, governança e ownership.",
   content: `
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/00.jpeg)
+![Banner do SQL Saturday Joinville 2026 na Univille](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/00.jpeg)
 
 No dia **11 de abril de 2026**, participei como palestrante no **[SQL Saturday Joinville 2026](https://sqlsaturday.com/2026-04-11-sqlsaturday1139/)**, realizado na **Univille**, em Joinville/SC, organizado pela comunidade **[Comunidado](https://comunidado.com.br/)**
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/03.jpg)
+![Entrada do SQL Saturday Joinville 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/03.jpg)
 
 O SQL Saturday é um dos eventos mais tradicionais da comunidade de dados, reunindo profissionais de SQL Server, Azure, analytics e Inteligência Artificial para compartilhar experiências reais de mercado.
 
@@ -68,8 +68,8 @@ Apresentei novamente com a [**Jéssica Mello**](https://www.linkedin.com/in/jess
 
 **Vibe Coding com DevOps: usei IA para criar meu site, mas quem fez o deploy fui eu**.
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/04.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/01.jpg)
+![Rafael Ferreira palestrando sobre Vibe Coding com DevOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/04.jpg)
+![Público acompanhando a palestra no SQL Saturday Joinville 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/01.jpg)
 
 A ideia foi mostrar como acelerar construção com IA sem abrir mão de fundamentos de engenharia, pipeline, governança e ownership técnico no deploy.
 
@@ -80,11 +80,11 @@ Falamos sobre:
 - importância de CI/CD e validações automáticas
 - responsabilidade técnica no momento de publicar em produção
 
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/07.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/05.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/02.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/08.jpg)
-![](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/final.jpg)
+![Slide sobre pipeline e governança no deploy com IA](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/07.jpg)
+![Rafael Ferreira explicando ownership técnico no deploy](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/05.jpg)
+![Rafael Ferreira interagindo com o público no SQL Saturday](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/02.jpg)
+![Palestrantes reunidos no SQL Saturday Joinville 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/08.jpg)
+![Encerramento do SQL Saturday Joinville 2026 na Univille](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/sqlsaturday26/final.jpg)
 
 Participar do SQL Saturday Joinville 2026 como palestrante foi uma experiência excelente. O evento apenas reforça a força da comunidade técnica em Santa Catarina e como dados + IA + cloud estão cada vez mais conectados na prática.
 
