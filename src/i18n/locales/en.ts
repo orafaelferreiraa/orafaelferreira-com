@@ -212,9 +212,7 @@ export default {
         ambassador: "DevOps Institute Ambassador - internationally recognized",
         aluraStar: "Alura Star - official program ambassador",
         greenChampion: "Green Software Champion by Green Software Foundation",
-        speaker: "Active speaker and organizer of Azure Floripa, DevOpsDays Floripa and CNCF SC groups",
-        testimonials: "Real feedback from mentees about results and their experience with the mentorship",
-        youtube: "Free technical content on the LowOps channel, to see my teaching style before you hire me"
+        speaker: "Active speaker and organizer of Azure Floripa, DevOpsDays Floripa and CNCF SC groups"
       },
       benefits: {
         personalized: {
