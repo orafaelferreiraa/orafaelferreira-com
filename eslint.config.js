@@ -32,7 +32,7 @@ export default tseslint.config(
       "src/components/SEO/**/*.{ts,tsx}",
       "src/lib/**/*.{ts,tsx}",
       // data arrays exported for schema.org ItemList/Event builders in src/pages
-      "src/components/{Talks,Awards,Certificates,Certifications,Recommendations}.tsx",
+      "src/components/{Talks,Awards,Certificates,Certifications,Recommendations,Mentorship}.tsx",
       "src/routes.tsx",
     ],
     rules: {

@@ -4,6 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "react-i18next";
+import MentorshipStickyCta from "./MentorshipStickyCta";
+
+// Mobile: full-width, permite quebra de linha e reduz padding/fonte para caber em ~360px
+// (o label do hero tem 35 caracteres e whitespace-nowrap + px-8 + text-lg estourava a viewport).
+// Desktop (sm+): volta ao tamanho original (auto-width, uma linha, text-lg).
+// h-auto evita o conflito entre o h-11 fixo do size="lg" e o py-3/py-6 de padding.
+export const CTA_BUTTON_CLASS =
+  "w-full sm:w-auto h-auto whitespace-normal sm:whitespace-nowrap text-center text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-6";
 
 const Mentorship = () => {
   const { t } = useTranslation();
@@ -150,7 +158,7 @@ const Mentorship = () => {
               </p>
             </Card>
             <div className="flex justify-center mt-8">
-              <Button size="lg" asChild className="text-lg px-8 py-6">
+              <Button size="lg" asChild className={CTA_BUTTON_CLASS}>
                 <a href="https://payment.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                   {t("mentorship.hero.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -287,7 +295,7 @@ const Mentorship = () => {
                 </p>
               </div>
               <div className="flex justify-center mt-6">
-                <Button size="lg" asChild className="text-lg px-8 py-6">
+                <Button size="lg" asChild className={CTA_BUTTON_CLASS}>
                   <a href="https://payment.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                     {t("mentorship.payment.ctaSignup")}
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -468,19 +476,18 @@ const Mentorship = () => {
             <p className="text-lg font-semibold mb-8">
               {t("mentorship.finalCTA.paragraph2")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild className="text-lg px-8 py-6">
+            <div className="flex justify-center">
+              <Button size="lg" asChild className={CTA_BUTTON_CLASS}>
                 <a href="https://payment.ticto.app/O13FE48B5" target="_blank" rel="noopener noreferrer">
                   {t("mentorship.finalCTA.cta")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-  
-   
             </div>
           </div>
         </div>
       </section>
+      <MentorshipStickyCta />
     </div>;
 };
 export default Mentorship;
