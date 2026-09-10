@@ -86,16 +86,19 @@ jobs:
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+          # The browser set is part of the key: adding an engine must miss the
+          # cache, otherwise a restored chromium-only cache skips its download.
+          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}-chromium-webkit
           restore-keys: |
+            playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}-
             playwright-${{ runner.os }}-
 
+      # Both steps run unconditionally: `install` is a no-op for engines already
+      # in the restored cache, and system libraries are never part of that cache.
       - name: Install Playwright browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps chromium webkit
+        run: npx playwright install chromium webkit
 
       - name: Install Playwright system dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
         run: npx playwright install-deps chromium webkit
 
       - name: E2E tests (smoke, i18n, SEO)
