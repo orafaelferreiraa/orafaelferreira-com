@@ -49,7 +49,7 @@ const Recomendacoes = () => {
           { name: "Recomendações", url: "https://www.orafaelferreira.com/recomendacoes" },
         ]),
       ]} />
-      <div className="min-h-screen">
+      <div className="min-h-[100svh]">
         <Navigation />
         <main>
           <Recommendations />

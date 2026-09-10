@@ -32,7 +32,7 @@ const NotFound = () => {
         <meta name="description" content={t("notFound.description")} />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-[100svh] flex flex-col">
         <Navigation />
         <main className="flex-1 flex items-center justify-center bg-background px-4 py-32">
           <div className="text-center max-w-xl">

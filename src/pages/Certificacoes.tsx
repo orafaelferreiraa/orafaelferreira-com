@@ -55,7 +55,7 @@ const Certificacoes = () => {
           { name: "Certificações", url: PAGE_URL },
         ]),
       ]} />
-      <div className="min-h-screen">
+      <div className="min-h-[100svh]">
         <Navigation />
         <main>
           <Certifications />

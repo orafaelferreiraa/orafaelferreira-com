@@ -68,7 +68,7 @@ const Mentoria = () => {
         ]}
       />
 
-      <div className="min-h-screen">
+      <div className="min-h-[100svh]">
         <Navigation />
         <main>
           <Mentorship />

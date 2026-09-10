@@ -60,7 +60,7 @@ const ArtigoDetalhes = () => {
           <title>{t("article.notFoundTitle")} | Rafael Ferreira</title>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
-        <div className="min-h-screen">
+        <div className="min-h-[100svh]">
           <Navigation />
           <main className="container mx-auto px-4 py-32 max-w-3xl">
             <h1 className="text-3xl font-heading font-bold mb-4">{t("article.notFoundTitle")}</h1>
@@ -143,7 +143,7 @@ const ArtigoDetalhes = () => {
         ]),
         ...(article.faq && article.faq.length > 0 ? [articleFaqSchema(article.slug, article.faq)] : []),
       ]} />
-      <div className="min-h-screen">
+      <div className="min-h-[100svh]">
         <Navigation />
         <main>
           <article className="py-20 lg:py-32">

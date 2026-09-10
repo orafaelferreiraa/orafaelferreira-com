@@ -51,7 +51,7 @@ const Hero = () => {
       behavior: 'smooth'
     });
   };
-  return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+  return <section id="hero" className="min-h-[100svh] flex items-center justify-center relative overflow-hidden pt-16">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card opacity-50" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

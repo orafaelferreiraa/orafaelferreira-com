@@ -60,7 +60,7 @@ const Premiacoes = () => {
           { name: "Premiações", url: "https://www.orafaelferreira.com/premiacoes" },
         ]),
       ]} />
-      <div className="min-h-screen bg-background">
+      <div className="min-h-[100svh] bg-background">
         <Navigation />
         <main>
           <Awards />

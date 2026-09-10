@@ -31,7 +31,7 @@ const Home = () => {
         <link rel="canonical" href="https://www.orafaelferreira.com/" />
       </Helmet>
       <JsonLd data={[personSchema(), organizationSchema(), websiteSchema(), profilePageSchema(), breadcrumbSchema([{ name: "Home", url: "https://www.orafaelferreira.com/" }]), faqSchema(faqLang)]} />
-      <div className="min-h-screen">
+      <div className="min-h-[100svh]">
         <Navigation />
         <main>
           <Hero />

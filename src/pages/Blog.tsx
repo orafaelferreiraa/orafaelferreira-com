@@ -36,7 +36,7 @@ const Blog = () => {
           { name: "Blog", url: "https://www.orafaelferreira.com/blog" },
         ]),
       ]} />
-      <div className="min-h-screen">
+      <div className="min-h-[100svh]">
         <Navigation />
         <main>
           <BlogComponent />

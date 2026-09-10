@@ -127,7 +127,8 @@ const Mentorship = () => {
     template: "R$ 49",
     total: "R$ 1.128,10"
   }];
-  return <div className="min-h-screen bg-background relative overflow-hidden">
+  return <>
+      <div className="min-h-[100svh] bg-background relative overflow-hidden">
       {/* Background effects */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
@@ -487,7 +488,8 @@ const Mentorship = () => {
           </div>
         </div>
       </section>
+      </div>
       <MentorshipStickyCta />
-    </div>;
+    </>;
 };
 export default Mentorship;

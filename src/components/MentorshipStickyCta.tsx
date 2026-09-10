@@ -25,7 +25,7 @@ const MentorshipStickyCta = () => {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-md transition-all duration-300 ${
+      className={`fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-md transition-[opacity,transform] duration-300 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"
       }`}
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}

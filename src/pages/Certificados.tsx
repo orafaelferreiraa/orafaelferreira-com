@@ -58,7 +58,7 @@ const Certificados = () => {
           { name: "Certificados", url: "https://www.orafaelferreira.com/certificados" },
         ]),
       ]} />
-      <div className="min-h-screen bg-background">
+      <div className="min-h-[100svh] bg-background">
         <Navigation />
         <main>
           <Certificates />
