@@ -73,7 +73,7 @@ const Partners = () => {
       icon: Languages,
       name: "LET'S GO FAR",
       description: t("partners.items.letsgofar.description"),
-      link: "https://payfast.greenn.com.br/146418/?a_id=2431155",
+      link: "https://kitingles.letsgofar.com.br/",
       gradient: "from-violet-500 to-purple-600",
     },
   ];
