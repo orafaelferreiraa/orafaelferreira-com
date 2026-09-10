@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: 'e2e',
@@ -14,6 +14,22 @@ export default defineConfig({
     headless: true,
     trace: 'on-first-retry',
   },
+  projects: [
+    // Everything except the scroll-extent guard keeps running on the default engine.
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'], locale: 'pt-BR' },
+      testIgnore: /scroll-extent\.spec\.ts/,
+    },
+    // The infinite-scroll report that motivated this guard was iOS-only, and iOS
+    // browsers are all WebKit. Desktop Chromium cannot see that class of bug.
+    {
+      name: 'webkit-mobile',
+      use: { ...devices['iPhone 13'], locale: 'pt-BR' },
+      testMatch: /scroll-extent\.spec\.ts/,
+    },
+  ],
+
   webServer: {
     // Serves the built dist/ the way Azure Static Web Apps does (directory
     // index, trailing-slash 301, real 404). `vite preview` would SPA-fallback
