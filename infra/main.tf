@@ -7,12 +7,12 @@ data "azurerm_resource_group" "rg" {
 # Existing DNS zone (created outside Terraform)
 data "azurerm_resource_group" "dns_rg" {
   provider = azurerm.dns
-  name     = "rg-orafaelferreira.com"
+  name     = var.dns_resource_group_name
 }
 
 data "azurerm_dns_zone" "this" {
   provider            = azurerm.dns
-  name                = "orafaelferreira.com"
+  name                = var.dns_zone_name
   resource_group_name = data.azurerm_resource_group.dns_rg.name
 }
 
@@ -72,10 +72,17 @@ resource "azurerm_static_web_app_custom_domain" "apex" {
   ]
 }
 
+# The SWA API returns an empty validation_token once the custom domain is Ready,
+# so every later apply would otherwise write "" into the apex TXT and drop the
+# token already issued. compact() keeps the empty value out and
+# var.apex_validation_token preserves the live one.
 locals {
   apex_txt_values = distinct(concat(
     var.apex_base_txt_records,
-    [azurerm_static_web_app_custom_domain.apex.validation_token]
+    compact([
+      azurerm_static_web_app_custom_domain.apex.validation_token,
+      var.apex_validation_token,
+    ])
   ))
 }
 

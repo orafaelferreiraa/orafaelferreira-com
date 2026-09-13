@@ -35,3 +35,20 @@ variable "apex_base_txt_records" {
   default     = ["v=spf1 include:spf.protection.outlook.com -all"]
 }
 
+variable "dns_resource_group_name" {
+  description = "Resource group que hospeda a zona DNS do site"
+  type        = string
+  default     = "rg-orafaelferreira.com"
+}
+
+variable "dns_zone_name" {
+  description = "Nome da zona DNS publica do site"
+  type        = string
+  default     = "orafaelferreira.com"
+}
+
+variable "apex_validation_token" {
+  description = "Token dns-txt-token ja emitido para o apex. A API do SWA zera validation_token depois que o dominio fica Ready, entao o valor corrente precisa ser preservado aqui."
+  type        = string
+  default     = "_4mdweg4s15bm5qayflvroflljnvvf5e"
+}
