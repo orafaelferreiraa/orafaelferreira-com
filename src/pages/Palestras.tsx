@@ -47,9 +47,9 @@ const Palestras = () => {
           { name: "Palestras", url: PAGE_URL },
         ]),
       ]} />
-      <div className="min-h-[100svh]">
+      <div className="min-h-[100svh] flex flex-col">
         <Navigation />
-        <main>
+        <main className="flex-1">
           <Talks />
         </main>
         <Footer />

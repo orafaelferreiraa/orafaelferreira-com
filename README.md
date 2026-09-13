@@ -37,7 +37,7 @@ npm run preview
 **Variáveis de ambiente (opcionais):**
 - `VITE_GA_MEASUREMENT_ID` — ID de medição do Google Analytics 4. Sem ela, `src/lib/analytics.ts`
   vira no-op (nenhum tracking é inicializado). Não há `.env.example` no repo hoje.
-- `.mcp.json` é a configuração MCP padrão (Docker no PATH). `.mcp.pc.json` é a variante para a máquina Windows/WSL que chama o `docker.exe` pelo caminho absoluto; use a que corresponder ao seu ambiente.
+- `.mcp.json` é a variante que chama o `docker.exe` do Windows pelo caminho absoluto (uso em WSL). `.mcp.pc.json` é a configuração MCP padrão (Docker no PATH); use a que corresponder ao seu ambiente.
 - `public/rss.xml` e `public/llms-full.txt` são gerados no build (não versionados); rode `npm run rss:generate` / `npm run llms:generate` para tê-los no `npm run dev`.
 
 ## Geração de sitemap e metadados
@@ -45,7 +45,7 @@ npm run preview
 O site gera automaticamente `public/sitemap.xml` e `public/articles-meta.json` baseado nos arquivos reais de artigos em `src/data/articles/*.ts`.
 
 **Sitemap:**
-- Inclui 9 páginas estáticas + todos os artigos dinâmicos
+- Inclui 10 páginas estáticas + todos os artigos dinâmicos
 - Atualizado automaticamente durante `npm run build`
 - URL: `https://www.orafaelferreira.com/sitemap.xml`
 
@@ -71,8 +71,8 @@ O feed inclui apenas conteudo de artigos tecnicos e exclui posts de eventos, pal
 
 Não há CMS nem banco de dados: cada artigo/post é um arquivo TypeScript.
 
-- `src/data/articles/artigos/` — artigos técnicos (hoje ~38 arquivos)
-- `src/data/articles/blog-posts/` — posts de eventos, palestras e comunidade (hoje ~50 arquivos)
+- `src/data/articles/artigos/` — artigos técnicos (hoje ~39 arquivos)
+- `src/data/articles/blog-posts/` — posts de eventos, palestras e comunidade (hoje ~53 arquivos)
 - Cada arquivo segue o padrão `YYYY-MM-DD-slug.ts` e exporta `{ article: Article }`, tipado em
   `src/data/articles/types.ts`
 - `src/data/articles/index.ts` descobre os arquivos automaticamente via `import.meta.glob` — basta
@@ -127,12 +127,12 @@ O deploy é automático no push para `main` quando arquivos do app mudam (`src/`
 
 ## infraestrutura (Terraform)
 
-Código em `infra/` provisiona:
-- Resource Group
+Código em `infra/` referencia um Resource Group já existente (`data source`, não provisionado por este Terraform) e provisiona:
 - Static Web App (SWA)
+- Registros DNS (apex A record + www CNAME) e domínios customizados (apex + www), com validação e TLS
 
 State remoto em Azure Storage (backend `azurerm`), com todos os valores já fixos em
-`infra/backend.tf` (`resource_group_name = "rg-site"`, `storage_account_name = "stostateorafael"`,
+`infra/backend.tf` (`resource_group_name = "rg-site"`, `storage_account_name = "stostateorafael2"`,
 `container_name = "statetf"`, `key = "infra.terraform.tfstate"`, `use_azuread_auth = true`) — não é
 preciso passar `-backend-config` na mão, basta:
 
@@ -165,14 +165,15 @@ cd -
 
 **Push workflow** (`.github/workflows/infra-apply.yml` - nome: `infra-apply`):
 - Disparo: push em `main` que altera `infra/**` ou o próprio workflow
-- Passos: `init` → `fmt` → `validate` → `tflint` → `trivy` → `checkov` → `apply`
+- Passos: Checkout → Setup Terraform → cache de providers → `terraform-docs` (injeta e comita a documentação no README, **antes** do apply) → `terraform init` → `terraform apply -auto-approve`
+- Não roda tflint/trivy/checkov/fmt/validate — essas validações só rodam no `infra-plan.yml` (PR), via workflow reutilizável
 - Apply usa valores reais via secrets (repository linkage)
-- Documentação com `terraform-docs` é injetada no README e commitada automaticamente
 - Resumo do job sem seção de outputs (removida para evitar ruído quando não definidos)
 
 **Secrets necessários:**
 - `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `AZURE_CLIENT_SECRET` (Service Principal)
 - `GH_PAT_SWA` (GitHub PAT para linkage do SWA com o repositório)
+- `SITE_SUBSCRIPTION_ID`, `DNS_SUBSCRIPTION_ID` (subscriptions da SWA e da zona DNS, usadas como `TF_VAR_site_subscription_id`/`TF_VAR_dns_subscription_id`)
 
 ### Referência do módulo (auto)
 
@@ -237,9 +238,9 @@ O domínio customizado `www.orafaelferreira.com` são configurados via Terraform
 
 ## notas
 
-- Testes: CI roda unit tests (`vitest`) e component tests (React Testing Library) antes do build/deploy. E2E (Playwright) existe (`e2e/smoke.spec.ts`, `e2e/i18n.spec.ts`) e roda localmente com `npm run test:e2e`, mas está **desabilitado no CI** — o passo correspondente em `deploy-app.yml` está comentado.
-- Lint no CI foi desabilitado para evitar ruído causado por conteúdo em markdown inline nos arquivos de artigos. O typecheck (TS) permanece ativo.
-- CI usa Node.js 22 (`actions/setup-node` em `deploy-app.yml`, `regenerate-event-schedule.yml` e `sync-talks-on-event-day.yml`). Não há `engines` no `package.json` nem `.nvmrc` fixando isso localmente.
+- Testes: CI roda unit tests e component tests (`vitest --run`, React Testing Library) e, após o build, E2E via Playwright (`e2e/smoke.spec.ts`, `e2e/i18n.spec.ts`, `e2e/seo.spec.ts`, `e2e/mentoria-mobile.spec.ts`, `e2e/scroll-extent.spec.ts`) com `npm run test:e2e:ci` — todos ativos no CI. Localmente, o E2E roda com `npm run test:e2e`.
+- Lint (`npm run lint`) também está ativo no CI.
+- CI usa Node.js 22 (`actions/setup-node` em `deploy-app.yml`, `regenerate-event-schedule.yml` e `sync-talks-on-event-day.yml`). `package.json` declara `"engines": { "node": ">=22.18" }`; não há `.nvmrc` fixando isso localmente.
 - A pasta `infra/` possui `.gitignore` próprio para evitar que `.terraform/`, `*.tfstate` e `*.tfplan` entrem em commits. O lockfile `.terraform.lock.hcl` é versionado.
 - A pipeline de deploy usa `npm ci` (instalação reproduzível a partir do `package-lock.json`); roda lint, paridade i18n, testes unitários, typecheck, build com pré-render (SSG) e Playwright antes do deploy.
 - Workflows de infra e deploy são independentes mas coordenados: mudanças de infra triggam apply → deploy do app via `workflow_run`. Commits automáticos do `terraform-docs` (actor `github-actions[bot]`) não disparam o deploy do app (condição adicionada em `deploy-app.yml`).
@@ -312,23 +313,20 @@ flowchart TB
 
     subgraph apply_wf["🚀 infra-apply.yml"]
         direction TB
-        apply_core["🔧 Pipeline Core Validation<br/><i>pipeline-as-a-service-stack</i>"]
-        apply_core --> tflint_a["🔍 tflint"]
-        tflint_a --> trivy_a["🛡️ trivy"]
-        trivy_a --> checkov_a["✅ checkov"]
-        checkov_a --> tf_apply["⚡ terraform apply<br/><code>-auto-approve</code>"]
-        tf_apply --> tfdocs["📄 terraform-docs<br/><code>inject → README.md</code>"]
+        tfdocs["📄 terraform-docs<br/><code>inject → README.md</code>"]
         tfdocs --> docs_commit["🤖 git commit + push<br/><code>github-actions[bot]</code>"]
+        docs_commit --> tf_apply["⚡ terraform apply<br/><code>-auto-approve · sem tflint/trivy/checkov</code>"]
     end
 
     subgraph deploy_wf["🌐 deploy-app.yml"]
         direction TB
         npm_install["📥 npm ci"]
-        npm_install --> unit["🧪 vitest --run<br/><code>unit tests</code>"]
-        unit --> comp["🧩 npm run build<br/><code>sync:talks → rss → sitemap → llms → vite build → prerender (SSG)</code>"]
-        comp --> tsc["🔎 tsc --noEmit<br/><code>typecheck</code>"]
-        tsc --> build["🏗️ vite build<br/><code>→ dist/</code>"]
-        build --> e2e["🎭 Playwright E2E<br/><code>⚠️ disabled in CI</code>"]
+        npm_install --> lint_step["🔍 npm run lint"]
+        lint_step --> i18n_step["🌐 npm run i18n:check"]
+        i18n_step --> unit["🧪 npm run test:ci<br/><code>vitest --run · unit + component</code>"]
+        unit --> tsc["🔎 npm run typecheck<br/><code>tsc --noEmit</code>"]
+        tsc --> build["🏗️ npm run build<br/><code>sync:talks → rss → sitemap → llms → vite build → prerender (SSG)</code>"]
+        build --> e2e["🎭 npm run test:e2e:ci<br/><code>Playwright · smoke, i18n, seo,<br/>mentoria-mobile, scroll-extent</code>"]
         e2e --> swa_deploy["☁️ Azure/static-web-apps-deploy@v1<br/><code>action: upload<br/>skip_app_build: true<br/>app_location: dist</code>"]
     end
 
@@ -353,7 +351,7 @@ flowchart TB
         direction TB
         swa["⚡ Azure Static Web App<br/><code>swa-site-orafael</code><br/>Free tier · eastus2"]
         rg["📁 Resource Group<br/><code>rg-site</code>"]
-        blob["💾 Azure Blob Storage<br/><code>stostateorafael/statetf<br/>infra.terraform.tfstate</code><br/>Azure AD Auth"]
+        blob["💾 Azure Blob Storage<br/><code>stostateorafael2/statetf<br/>infra.terraform.tfstate</code><br/>Azure AD Auth"]
         dns["🌍 Custom Domain<br/><code>www.orafaelferreira.com</code><br/>TLS auto · DNS TXT validation"]
         swa --> dns
         rg --> swa
@@ -370,8 +368,6 @@ flowchart TB
     tf_apply -.->|"state read/write"| blob
     swa_deploy -->|"SWA deploy token"| swa
 
-    e2e -.->|"currently disabled"| swa
-
     style push_src fill:#2563eb,color:#fff
     style push_infra fill:#7c3aed,color:#fff
     style pr_infra fill:#059669,color:#fff
@@ -384,7 +380,6 @@ flowchart TB
     style blob fill:#0078D4,color:#fff
     style rg fill:#0078D4,color:#fff
     style dns fill:#10b981,color:#fff
-    style e2e fill:#f59e0b,color:#000,stroke-dasharray: 5 5
     style talks_wf fill:#0d1117,color:#c9d1d9,stroke:#30363d
     style push_talks fill:#2563eb,color:#fff
     style cron_trigger fill:#6b7280,color:#fff
@@ -438,7 +433,7 @@ flowchart TB
 
     subgraph data["💾 Static Data Layer"]
         direction LR
-        articles["📰 src/data/articles/{artigos,blog-posts}/*.ts<br/><code>~38 artigos + ~50 posts · markdown strings<br/>→ custom HTML renderer</code>"]
+        articles["📰 src/data/articles/{artigos,blog-posts}/*.ts<br/><code>~39 artigos + ~53 posts · markdown strings<br/>→ custom HTML renderer</code>"]
         meta["🖼️ public/articles-meta.json<br/><code>OG image extraction</code>"]
         i18n_files["📂 src/i18n/locales/<br/><code>en.ts · pt-BR.ts<br/>experiences/en.ts · pt-BR.ts</code>"]
     end
@@ -446,7 +441,7 @@ flowchart TB
     subgraph seo["🔍 SEO & Headers"]
         direction LR
         helmet["🪖 react-helmet-async<br/><code>per-page title · description<br/>OG tags · canonical URL</code>"]
-        swa_config["⚙️ staticwebapp.config.json<br/><code>404 real → /404.html · trailingSlash never<br/>X-Frame-Options: DENY<br/>X-Content-Type-Options: nosniff<br/>Cache-Control: 1h</code>"]
+        swa_config["⚙️ staticwebapp.config.json<br/><code>404 real → /404.html · trailingSlash never<br/>X-Frame-Options: DENY<br/>X-Content-Type-Options: nosniff<br/>Cache-Control: no-cache global · 1h em rotas de dados · immutable em /assets</code>"]
     end
 
     client --> stack
@@ -471,7 +466,7 @@ flowchart TB
 
 ### Testing Pyramid
 
-3 camadas: unit (Vitest), component (Vitest + React Testing Library, config separada) e E2E (Playwright com `vite preview` como webServer). E2E está desabilitado no CI mas funcional localmente.
+3 camadas: unit (Vitest), component (Vitest + React Testing Library, mesmo comando `test:ci`) e E2E (Playwright, 5 specs). Todas ativas no CI, na ordem lint → i18n:check → test:ci → typecheck → build → test:e2e:ci.
 
 ```mermaid
 flowchart TB
@@ -480,14 +475,14 @@ flowchart TB
         
         subgraph e2e_layer["🎭 E2E · Playwright 1.61"]
             e2e_config["⚙️ playwright.config.ts<br/><code>testDir: e2e/<br/>baseURL: localhost:4173<br/>webServer: vite preview --port=4173<br/>retries: 2 (CI) · trace: on-first-retry</code>"]
-            e2e_specs["📝 e2e/smoke.spec.ts<br/>e2e/i18n.spec.ts"]
-            e2e_status["⚠️ Disabled in CI pipeline<br/><code>commented out in deploy-app.yml</code>"]
+            e2e_specs["📝 e2e/smoke.spec.ts<br/>e2e/i18n.spec.ts<br/>e2e/seo.spec.ts<br/>e2e/mentoria-mobile.spec.ts<br/>e2e/scroll-extent.spec.ts"]
+            e2e_status["✅ Ativo no CI<br/><code>npm run test:e2e:ci em deploy-app.yml</code>"]
         end
 
         subgraph comp_layer["🧩 Component · Vitest RTL"]
-            comp_config["⚙️ e2e/seo.spec.ts<br/><code>title/canonical/JSON-LD por rota<br/>HTML cru sem JS · sitemap · rss · llms.txt</code>"]
+            comp_config["⚙️ vite.config.ts → test block<br/><code>environment: jsdom · React Testing Library</code>"]
             comp_specs["📝 src/components/ui/button.test.tsx"]
-            comp_cmd["▶️ <code>npm run test:e2e:ci<br/>→ playwright test (vite preview em :4173)</code>"]
+            comp_cmd["▶️ <code>npm run test:ci<br/>→ vitest --run (mesmo comando do unit)</code>"]
         end
 
         subgraph unit_layer["🧪 Unit · Vitest 4.1"]
@@ -499,21 +494,21 @@ flowchart TB
 
     subgraph ci_order["⏩ CI Execution Order"]
         direction LR
-        step1["1️⃣ Unit Tests"] --> step2["2️⃣ Component Tests"] --> step3["3️⃣ Typecheck<br/><code>tsc --noEmit</code>"] --> step4["4️⃣ Build<br/><code>vite build</code>"] --> step5["5️⃣ Deploy"]
+        step0a["1️⃣ Lint"] --> step0b["2️⃣ i18n:check"] --> step1["3️⃣ Unit + Component<br/><code>vitest --run</code>"] --> step3["4️⃣ Typecheck<br/><code>tsc --noEmit</code>"] --> step4["5️⃣ Build (SSG)<br/><code>vite build + prerender</code>"] --> step4b["6️⃣ E2E<br/><code>Playwright</code>"] --> step5["7️⃣ Deploy"]
     end
 
     pyramid --> ci_order
 
-    style e2e_layer fill:#f59e0b,color:#000,stroke:#d97706,stroke-dasharray: 5 5
+    style e2e_layer fill:#f59e0b,color:#000,stroke:#d97706
     style comp_layer fill:#3b82f6,color:#fff,stroke:#2563eb
     style unit_layer fill:#10b981,color:#fff,stroke:#059669
-    style e2e_status fill:#ef4444,color:#fff
+    style e2e_status fill:#10b981,color:#fff
     style ci_order fill:#0d1117,color:#c9d1d9,stroke:#30363d
 ```
 
 ### Terraform Infrastructure — IaC
 
-State remoto em Azure Blob Storage com Azure AD auth. Provider azurerm `4.50.0` pinado. Validação via reusable workflow externo (`pipeline-as-a-service-stack`) com tflint + trivy + checkov + terraform-docs. Custom domain com validação DNS TXT e TLS automático.
+State remoto em Azure Blob Storage com Azure AD auth. Provider azurerm `4.50.0` pinado. Validação (tflint + trivy + checkov) via reusable workflow externo (`pipeline-as-a-service-stack`) roda só no PR (`infra-plan.yml`); o apply (`infra-apply.yml`) não repete essas validações, só `terraform-docs` (antes do apply) + `terraform apply`. Custom domain com validação DNS TXT (apex) ou CNAME delegation (www) e TLS automático.
 
 ```mermaid
 flowchart TB
@@ -521,7 +516,7 @@ flowchart TB
         direction TB
         
         subgraph backend["💾 Backend · azurerm"]
-            state["🗄️ Azure Blob Storage<br/><code>stostateorafael/statetf<br/>key: infra.terraform.tfstate<br/>use_azuread_auth: true</code>"]
+            state["🗄️ Azure Blob Storage<br/><code>stostateorafael2/statetf<br/>key: infra.terraform.tfstate<br/>use_azuread_auth: true</code>"]
         end
 
         subgraph vars["📋 Variables"]
@@ -533,11 +528,13 @@ flowchart TB
         subgraph resources["☁️ Resources"]
             data_rg["📁 data.azurerm_resource_group.rg<br/><code>name: rg-site</code>"]
             swa_res["⚡ azurerm_static_web_app"]
-            domain["🌍 azurerm_static_web_app_custom_domain<br/><code>domain: www.orafaelferreira.com<br/>validation: dns-txt-token<br/>TLS: auto-provisioned</code>"]
+            domain_apex["🌍 azurerm_static_web_app_custom_domain.apex<br/><code>domain: orafaelferreira.com<br/>validation: dns-txt-token<br/>+ azapi_resource TXT record<br/>TLS: auto-provisioned</code>"]
+            domain_www["🌍 azurerm_static_web_app_custom_domain.www<br/><code>domain: www.orafaelferreira.com<br/>validation: cname-delegation<br/>TLS: auto-provisioned</code>"]
         end
 
         data_rg --> swa_res
-        swa_res --> domain
+        swa_res --> domain_apex
+        swa_res --> domain_www
     end
 
     subgraph auth["🔐 Service Principal Auth"]
@@ -571,7 +568,8 @@ flowchart TB
     style state fill:#0078D4,color:#fff
     style data_rg fill:#0078D4,color:#fff
     style swa_res fill:#0078D4,color:#fff
-    style domain fill:#10b981,color:#fff
+    style domain_apex fill:#10b981,color:#fff
+    style domain_www fill:#10b981,color:#fff
     style v1 fill:#7B42BC,color:#fff
     style v2 fill:#7B42BC,color:#fff
     style v3 fill:#7B42BC,color:#fff

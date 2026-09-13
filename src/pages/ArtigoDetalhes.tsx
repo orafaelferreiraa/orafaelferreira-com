@@ -60,9 +60,9 @@ const ArtigoDetalhes = () => {
           <title>{t("article.notFoundTitle")} | Rafael Ferreira</title>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
-        <div className="min-h-[100svh]">
+        <div className="min-h-[100svh] flex flex-col">
           <Navigation />
-          <main className="container mx-auto px-4 py-32 max-w-3xl">
+          <main className="flex-1 container mx-auto px-4 py-32 max-w-3xl">
             <h1 className="text-3xl font-heading font-bold mb-4">{t("article.notFoundTitle")}</h1>
             <p className="text-muted-foreground mb-8">{t("article.notFoundDescription")}</p>
             <Link to="/blog">
@@ -143,9 +143,9 @@ const ArtigoDetalhes = () => {
         ]),
         ...(article.faq && article.faq.length > 0 ? [articleFaqSchema(article.slug, article.faq)] : []),
       ]} />
-      <div className="min-h-[100svh]">
+      <div className="min-h-[100svh] flex flex-col">
         <Navigation />
-        <main>
+        <main className="flex-1">
           <article className="py-20 lg:py-32">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
               <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">

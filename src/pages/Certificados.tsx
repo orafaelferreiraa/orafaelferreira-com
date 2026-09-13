@@ -58,9 +58,9 @@ const Certificados = () => {
           { name: "Certificados", url: "https://www.orafaelferreira.com/certificados" },
         ]),
       ]} />
-      <div className="min-h-[100svh] bg-background">
+      <div className="min-h-[100svh] bg-background flex flex-col">
         <Navigation />
-        <main>
+        <main className="flex-1">
           <Certificates />
         </main>
         <Footer />

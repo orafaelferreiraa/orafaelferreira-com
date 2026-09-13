@@ -36,9 +36,9 @@ const Blog = () => {
           { name: "Blog", url: "https://www.orafaelferreira.com/blog" },
         ]),
       ]} />
-      <div className="min-h-[100svh]">
+      <div className="min-h-[100svh] flex flex-col">
         <Navigation />
-        <main>
+        <main className="flex-1">
           <BlogComponent />
         </main>
         <Footer />

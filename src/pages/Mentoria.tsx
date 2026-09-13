@@ -68,9 +68,9 @@ const Mentoria = () => {
         ]}
       />
 
-      <div className="min-h-[100svh]">
+      <div className="min-h-[100svh] flex flex-col">
         <Navigation />
-        <main>
+        <main className="flex-1">
           <Mentorship />
         </main>
         <Footer />
