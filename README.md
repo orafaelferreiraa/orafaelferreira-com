@@ -192,7 +192,7 @@ O bloco abaixo é gerado automaticamente pelo `terraform-docs` a partir do conte
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azapi.dns"></a> [azapi.dns](#provider\_azapi.dns) | ~> 2.0 |
+| <a name="provider_azapi.dns"></a> [azapi.dns](#provider\_azapi.dns) | 2.12.0 |
 | <a name="provider_azurerm.dns"></a> [azurerm.dns](#provider\_azurerm.dns) | 4.50.0 |
 | <a name="provider_azurerm.site"></a> [azurerm.site](#provider\_azurerm.site) | 4.50.0 |
 
@@ -219,7 +219,10 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_apex_base_txt_records"></a> [apex\_base\_txt\_records](#input\_apex\_base\_txt\_records) | Lista base de TXT no apex que devem ser preservados (ex.: SPF). | `list(string)` | <pre>[<br/>  "v=spf1 include:spf.protection.outlook.com -all"<br/>]</pre> | no |
+| <a name="input_apex_validation_token"></a> [apex\_validation\_token](#input\_apex\_validation\_token) | Token dns-txt-token ja emitido para o apex. A API do SWA zera validation\_token depois que o dominio fica Ready, entao o valor corrente precisa ser preservado aqui. | `string` | `"_4mdweg4s15bm5qayflvroflljnvvf5e"` | no |
+| <a name="input_dns_resource_group_name"></a> [dns\_resource\_group\_name](#input\_dns\_resource\_group\_name) | Resource group que hospeda a zona DNS do site | `string` | `"rg-orafaelferreira.com"` | no |
 | <a name="input_dns_subscription_id"></a> [dns\_subscription\_id](#input\_dns\_subscription\_id) | Subscription ID onde esta a zona DNS orafaelferreira.com | `string` | `""` | no |
+| <a name="input_dns_zone_name"></a> [dns\_zone\_name](#input\_dns\_zone\_name) | Nome da zona DNS publica do site | `string` | `"orafaelferreira.com"` | no |
 | <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Branch do repositório para linkage opcional do SWA | `string` | `""` | no |
 | <a name="input_repository_token"></a> [repository\_token](#input\_repository\_token) | GitHub PAT para linkage opcional do SWA | `string` | `""` | no |
 | <a name="input_repository_url"></a> [repository\_url](#input\_repository\_url) | GitHub repository URL para linkage opcional do SWA | `string` | `""` | no |
