@@ -1,17 +1,14 @@
 # Existing Resource Group (created outside Terraform)
 data "azurerm_resource_group" "rg" {
-  provider = azurerm.site
-  name     = "rg-site"
+  name = "rg-site"
 }
 
 # Existing DNS zone (created outside Terraform)
 data "azurerm_resource_group" "dns_rg" {
-  provider = azurerm.dns
-  name     = var.dns_resource_group_name
+  name = var.dns_resource_group_name
 }
 
 data "azurerm_dns_zone" "this" {
-  provider            = azurerm.dns
   name                = var.dns_zone_name
   resource_group_name = data.azurerm_resource_group.dns_rg.name
 }
@@ -19,7 +16,6 @@ data "azurerm_dns_zone" "this" {
 
 # Azure Static Web App (SWA)
 resource "azurerm_static_web_app" "this" {
-  provider            = azurerm.site
   name                = "swa-site-orafael"
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = "eastus2"
@@ -33,7 +29,6 @@ resource "azurerm_static_web_app" "this" {
 }
 
 resource "azurerm_dns_cname_record" "www" {
-  provider            = azurerm.dns
   name                = "www"
   zone_name           = data.azurerm_dns_zone.this.name
   resource_group_name = data.azurerm_dns_zone.this.resource_group_name
@@ -42,7 +37,6 @@ resource "azurerm_dns_cname_record" "www" {
 }
 
 resource "azurerm_static_web_app_custom_domain" "www" {
-  provider          = azurerm.site
   static_web_app_id = azurerm_static_web_app.this.id
   domain_name       = "www.orafaelferreira.com"
   validation_type   = "cname-delegation"
@@ -53,7 +47,6 @@ resource "azurerm_static_web_app_custom_domain" "www" {
 }
 
 resource "azurerm_dns_a_record" "apex" {
-  provider            = azurerm.dns
   name                = "@"
   zone_name           = data.azurerm_dns_zone.this.name
   resource_group_name = data.azurerm_dns_zone.this.resource_group_name
@@ -62,7 +55,6 @@ resource "azurerm_dns_a_record" "apex" {
 }
 
 resource "azurerm_static_web_app_custom_domain" "apex" {
-  provider          = azurerm.site
   static_web_app_id = azurerm_static_web_app.this.id
   domain_name       = "orafaelferreira.com"
   validation_type   = "dns-txt-token"
@@ -87,7 +79,6 @@ locals {
 }
 
 resource "azapi_resource" "apex_validation_txt" {
-  provider  = azapi.dns
   type      = "Microsoft.Network/dnsZones/TXT@2018-05-01"
   name      = "@"
   parent_id = data.azurerm_dns_zone.this.id

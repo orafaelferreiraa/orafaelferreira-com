@@ -17,18 +17,6 @@ variable "repository_token" {
   default     = ""
 }
 
-variable "site_subscription_id" {
-  description = "Subscription ID onde estao rg-site e a Static Web App"
-  type        = string
-  default     = ""
-}
-
-variable "dns_subscription_id" {
-  description = "Subscription ID onde esta a zona DNS orafaelferreira.com"
-  type        = string
-  default     = ""
-}
-
 variable "apex_base_txt_records" {
   description = "Lista base de TXT no apex que devem ser preservados (ex.: SPF)."
   type        = list(string)
