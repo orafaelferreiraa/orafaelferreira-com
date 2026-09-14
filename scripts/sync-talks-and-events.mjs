@@ -8,8 +8,16 @@
  *       - `onlineTalks`   se location === "Online"
  *       - `inPersonTalks` caso contrario
  *  2. Le todas as talks de inPersonTalks + onlineTalks pertencentes ao ano
- *     corrente e regenera o bloco AUTO da "Agenda <ano>" no artigo
- *     src/data/articles/blog-posts/2023-10-30-eventos.ts, preservando o bloco MANUAL.
+ *     corrente, mescla com os eventos manuais (so participacao, sem talk)
+ *     lidos do bloco MANUAL-EVENTS, e regenera o bloco AUTO-EVENTS da
+ *     "Agenda <ano>" no artigo src/data/articles/blog-posts/2023-10-30-eventos.ts
+ *     como UMA UNICA tabela ordenada por data real (mais recente primeiro).
+ *     O bloco MANUAL-EVENTS e so entrada de dados (um comentario HTML com
+ *     linhas `YYYY-MM-DD|Evento|URL`) e nunca e reescrito por este script —
+ *     ele nao vira linhas de tabela por conta propria (o parser de markdown
+ *     do site abriria uma segunda <table> ao ver outro cabecalho `| Mes |
+ *     Evento |`), entao adicionar um evento so-participado e sempre editar
+ *     esse bloco a mao, nunca as linhas dentro de AUTO-EVENTS.
  *
  * Caracteristicas:
  *  - Idempotente: se nao houver mudanca de estado, nao escreve diff.
@@ -334,6 +342,37 @@ function collectAutoEventsForYear(talksSource, year, today) {
   return result;
 }
 
+/**
+ * Bloco MANUAL-EVENTS: eventos que Rafael apenas participou (nao palestrou),
+ * entao nao existem em Talks.tsx. Vive dentro de UM UNICO comentario HTML
+ * (nao vira linhas de tabela soltas, que o parser de markdown transformaria
+ * numa segunda <table>) com uma linha por evento no formato
+ * `YYYY-MM-DD|Nome do Evento|URL`. E so entrada de dados: o script le,
+ * mescla com os eventos automaticos e escreve o resultado combinado dentro
+ * do bloco AUTO-EVENTS; o conteudo do MANUAL-EVENTS nunca e reescrito.
+ */
+function collectManualEventsForYear(articleSource, year, today) {
+  const re = new RegExp(
+    `<!--\\s*MANUAL-EVENTS:START:${year}([\\s\\S]*?)MANUAL-EVENTS:END:${year}\\s*-->`,
+  );
+  const m = re.exec(articleSource);
+  if (!m) return [];
+  const yearStr = String(year);
+  const result = [];
+  for (const line of m[1].split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    const [date, event, url] = trimmed.split('|').map((s) => s.trim());
+    if (!date || !event) continue;
+    if (!date.startsWith(yearStr + '-')) continue;
+    if (date > today) continue;
+    const monthIdx = parseInt(date.slice(5, 7), 10) - 1;
+    const monthLabel = MONTHS_PT[monthIdx] || '???';
+    result.push({ date, monthLabel, event, url: url || '#' });
+  }
+  return result;
+}
+
 function buildAutoBlockMarkdown(events, year) {
   const start = `<!-- AUTO-EVENTS:START:${year} -->`;
   const end = `<!-- AUTO-EVENTS:END:${year} -->`;
@@ -355,13 +394,19 @@ async function syncEventsArticle(talksSource, year, today) {
     );
     return;
   }
-  const events = collectAutoEventsForYear(talksSource, year, today);
+  const talkEvents = collectAutoEventsForYear(talksSource, year, today);
+  const manualEvents = collectManualEventsForYear(original, year, today);
+  // Mescla palestras (Talks.tsx) e eventos so-participados (MANUAL-EVENTS)
+  // numa unica tabela ordenada por data real, mais recente primeiro.
+  const events = [...talkEvents, ...manualEvents].sort((a, b) => b.date.localeCompare(a.date));
   const newBlock = buildAutoBlockMarkdown(events, year);
   const updated =
     original.slice(0, startIdx) + newBlock + original.slice(endIdx + endTag.length);
   if (updated !== original) {
     await writeFile(EVENTS_FILE, updated, 'utf-8');
-    console.log(`[sync-events] Bloco AUTO-EVENTS:${year} atualizado (${events.length} linha(s)).`);
+    console.log(
+      `[sync-events] Bloco AUTO-EVENTS:${year} atualizado (${events.length} linha(s): ${talkEvents.length} palestra(s) + ${manualEvents.length} manual(is)).`,
+    );
   } else {
     console.log(`[sync-events] Bloco AUTO-EVENTS:${year} ja estava atualizado.`);
   }

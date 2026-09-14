@@ -12,6 +12,7 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 <!-- AUTO-EVENTS:START:2026 -->
 | Mês | Evento |
 |-----|--------|
+| Set | [**Code Island Cloud 2026**](https://cloud.codeisland.com.br/) |
 | Ago | [**DevOpsDays Curitiba 2026**](https://devopsdays.org/events/2026-curitiba/welcome/) |
 | Ago | [**MVP Conf Regional Curitiba 2026**](https://www.mvpconf.com.br/regional/curitiba/agosto-2026) |
 | Jul | [**TDC 2026 Florianópolis - Trilha Software Security**](https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security) |
@@ -24,10 +25,9 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 | Jan | [**92 Python Florianópolis, SC**](https://www.meetup.com/pt-br/floripa-python-meetup/events/312978297/?eventOrigin=group_past_events) |
 <!-- AUTO-EVENTS:END:2026 -->
 
-<!-- MANUAL-EVENTS:START:2026 -->
-| Mês | Evento |
-|-----|--------|
-<!-- MANUAL-EVENTS:END:2026 -->
+<!-- MANUAL-EVENTS:START:2026
+2026-09-13|Code Island Cloud 2026|https://cloud.codeisland.com.br/
+MANUAL-EVENTS:END:2026 -->
 
 ## 2025
 
