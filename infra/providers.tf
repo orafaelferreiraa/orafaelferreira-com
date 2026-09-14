@@ -18,21 +18,4 @@ provider "azurerm" {
   resource_provider_registrations = "none"
 }
 
-provider "azurerm" {
-  alias                            = "site"
-  features {}
-  resource_provider_registrations = "none"
-  subscription_id                 = var.site_subscription_id != "" ? var.site_subscription_id : null
-}
-
-provider "azurerm" {
-  alias                            = "dns"
-  features {}
-  resource_provider_registrations = "none"
-  subscription_id                 = var.dns_subscription_id != "" ? var.dns_subscription_id : null
-}
-
-provider "azapi" {
-  alias           = "dns"
-  subscription_id = var.dns_subscription_id != "" ? var.dns_subscription_id : null
-}
+provider "azapi" {}
