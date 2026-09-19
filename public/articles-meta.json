@@ -1,9 +1,43 @@
 {
+  "cka-o-que-mudou-no-kubernetes": {
+    "slug": "cka-o-que-mudou-no-kubernetes",
+    "title": "CKA: 9 meses de Kubernetes que a minha prova não cobriu",
+    "excerpt": "Certifiquei na CKA sob o currículo v1.34. Nove meses e três releases depois, o que mudou no Kubernetes — e o que o currículo do exame não registrou.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/capa.png",
+    "date": "2026-09-18",
+    "updatedAt": null,
+    "category": "Artigos",
+    "tags": [
+      "Kubernetes",
+      "Certificações",
+      "DevOps"
+    ],
+    "readTime": "13 min de leitura",
+    "url": "https://www.orafaelferreira.com/artigos/cka-o-que-mudou-no-kubernetes"
+  },
+  "terraform-o-que-mudou-desde-a-associate": {
+    "slug": "terraform-o-que-mudou-desde-a-associate",
+    "title": "Terraform Associate: 14 meses de mudanças que a prova 003 não cobriu",
+    "excerpt": "Certifiquei na Terraform Associate 003 em julho de 2025. De lá para cá: quatro releases do Core, azurerm 5.0, Stacks em GA, tfpolicy e o exame 004.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/capa.png",
+    "date": "2026-09-18",
+    "updatedAt": null,
+    "category": "Artigos",
+    "tags": [
+      "Terraform",
+      "Azure",
+      "Certificações",
+      "DevOps",
+      "Platform Engineering"
+    ],
+    "readTime": "18 min de leitura",
+    "url": "https://www.orafaelferreira.com/artigos/terraform-o-que-mudou-desde-a-associate"
+  },
   "nginx-envoy-gateway": {
     "slug": "nginx-envoy-gateway",
     "title": "De NGINX Ingress para Envoy Gateway: a migração que a IA liderou",
     "excerpt": "Como um controller próprio migrou Ingress NGINX para Gateway API sobre Envoy Gateway em Kubernetes multi-tenant, com a IA liderando testes e auditoria.",
-    "image": "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/nginx-envoy-gateway/capa.png",
     "date": "2026-09-05",
     "updatedAt": null,
     "category": "Artigos",
@@ -19,7 +53,7 @@
     "slug": "dod-ctrb26",
     "title": "Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU",
     "excerpt": "Relato da palestra Vibe Coding com DevOps no DevOpsDays Curitiba 2026, com Jéssica Mello: IA para criar o site, Terraform e GitHub Actions para o deploy.",
-    "image": "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg",
     "date": "2026-08-22",
     "updatedAt": null,
     "category": "Palestras",
@@ -31,7 +65,7 @@
     "slug": "mvp-conf-regional-curitiba-2026",
     "title": "Platform Engineering na Prática - Construindo Plataformas Serverless Self-Service",
     "excerpt": "MVP Conf Regional Curitiba 2026: como Platform Engineering combate o Shadow Ops com uma plataforma serverless self-service em Terraform e GitHub Actions.",
-    "image": "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg",
     "date": "2026-08-22",
     "updatedAt": null,
     "category": "Palestras",

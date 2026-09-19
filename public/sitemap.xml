@@ -5,7 +5,7 @@
   <!-- Static pages (derived from src/routes.tsx) -->
   <url>
     <loc>https://www.orafaelferreira.com/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://www.orafaelferreira.com/blog</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -60,12 +60,32 @@
 
   <!-- Articles -->
   <url>
+    <loc>https://www.orafaelferreira.com/artigos/cka-o-que-mudou-no-kubernetes</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/capa.png</image:loc>
+      <image:title>CKA: 9 meses de Kubernetes que a minha prova não cobriu</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/terraform-o-que-mudou-desde-a-associate</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/capa.png</image:loc>
+      <image:title>Terraform Associate: 14 meses de mudanças que a prova 003 não cobriu</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.orafaelferreira.com/artigos/nginx-envoy-gateway</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png</image:loc>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/nginx-envoy-gateway/capa.png</image:loc>
       <image:title>De NGINX Ingress para Envoy Gateway: a migração que a IA liderou</image:title>
     </image:image>
   </url>
@@ -75,7 +95,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg</image:loc>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg</image:loc>
       <image:title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU</image:title>
     </image:image>
   </url>
@@ -85,7 +105,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg</image:loc>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg</image:loc>
       <image:title>Platform Engineering na Prática - Construindo Plataformas Serverless Self-Service</image:title>
     </image:image>
   </url>
@@ -142,8 +162,8 @@
   <url>
     <loc>https://www.orafaelferreira.com/artigos/github-copilot-vscode-agents-debug-profile-test</loc>
     <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/01.png</image:loc>
       <image:title>GitHub Copilot in VSCode: Agents That Debug, Profile, and Test</image:title>
@@ -152,8 +172,8 @@
   <url>
     <loc>https://www.orafaelferreira.com/artigos/microsoft-build-localhost-florianopolis</loc>
     <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/00.png</image:loc>
       <image:title>Microsoft Build //localhost: Florianópolis</image:title>

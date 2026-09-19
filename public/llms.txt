@@ -34,10 +34,12 @@ Para quem é: profissionais de tecnologia (iniciantes ou experientes) que estuda
 
 ## Artigos e Blog
 
-- [Blog, todos os artigos e posts](https://www.orafaelferreira.com/blog): 92 publicações; última atualização em 2026-09-05
+- [Blog, todos os artigos e posts](https://www.orafaelferreira.com/blog): 94 publicações; última atualização em 2026-09-18
 
-## Artigos técnicos (39)
+## Artigos técnicos (41)
 
+- [CKA: 9 meses de Kubernetes que a minha prova não cobriu](https://www.orafaelferreira.com/artigos/cka-o-que-mudou-no-kubernetes): Certifiquei na CKA sob o currículo v1.34. Nove meses e três releases depois, o que mudou no Kubernetes — e o que o currículo do exame não registrou. (2026-09-18)
+- [Terraform Associate: 14 meses de mudanças que a prova 003 não cobriu](https://www.orafaelferreira.com/artigos/terraform-o-que-mudou-desde-a-associate): Certifiquei na Terraform Associate 003 em julho de 2025. De lá para cá: quatro releases do Core, azurerm 5.0, Stacks em GA, tfpolicy e o exame 004. (2026-09-18)
 - [De NGINX Ingress para Envoy Gateway: a migração que a IA liderou](https://www.orafaelferreira.com/artigos/nginx-envoy-gateway): Como um controller próprio migrou Ingress NGINX para Gateway API sobre Envoy Gateway em Kubernetes multi-tenant, com a IA liderando testes e auditoria. (2026-09-05)
 - [Loop Engineering na prática: como eu opero agentes no dia a dia](https://www.orafaelferreira.com/artigos/loop-engineering-na-pratica): O que é Loop Engineering e como monto meu loop com skills, rules, subagents, hooks e MCP no Docker, incluindo os pontos em que discordo da definição canônica. (2026-07-26)
 - [MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade](https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker): Um guia direto ao ponto para usar Terraform MCP Server com Docker no dia a dia: discovery, troubleshooting e produtividade (2026-06-27)

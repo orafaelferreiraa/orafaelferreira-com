@@ -143,8 +143,10 @@ test.describe('rendered pages', () => {
     await page.goto('/blog?q=terraform');
     await expect(page.locator('input[type="search"]')).toHaveValue('terraform');
     const links = page.locator('a[href^="/artigos/"]:visible');
-    expect(await links.count()).toBeGreaterThan(0);
-    expect(await links.count()).toBeLessThan(40);
+    // the list only filters once the page hydrates, so poll instead of reading
+    // a single snapshot -- a plain count() can catch the unfiltered list
+    await expect.poll(() => links.count()).toBeGreaterThan(0);
+    await expect.poll(() => links.count()).toBeLessThan(40);
   });
 
   test('hydration: no console errors on a prerendered article page', async ({ page, request }) => {

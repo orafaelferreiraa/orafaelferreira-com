@@ -5,10 +5,10 @@ export const article: Article = {
   title: "De NGINX Ingress para Envoy Gateway: a migração que a IA liderou",
   excerpt:
     "Como um controller próprio migrou Ingress NGINX para Gateway API sobre Envoy Gateway em Kubernetes multi-tenant, com a IA liderando testes e auditoria.",
-  image: "https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/nginx-envoy-gateway/capa.png",
   content: `
   
-![Capa](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/capa.png)
+![Capa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/nginx-envoy-gateway/capa.png)
 
 Quase todo texto sobre trocar de ingress controller fala da arquitetura de destino: por que [Gateway API](https://gateway-api.sigs.k8s.io/), por que [Envoy](https://gateway.envoyproxy.io/), como fica o novo modelo de recursos. Esse aqui fala de outra coisa, menos explorada: **como a migração foi de fato executada**, com um agente de IA operando num loop estruturado em vez de uma pessoa dirigindo cada passo na mão.
 
@@ -62,7 +62,7 @@ A quinta categoria é o que faz o contrato valer. **Sem uma categoria explícita
 
 O ganho prático de escrever isso antes: o agente não tem espaço para inventar uma quarta via. A instrução não é "converta o que der", é "coloque cada entrada numa categoria e não sobre nada". Objetivo verificável em vez de objetivo simpático.
 
-![Diagrama em linhas neon azuis mostrando uma annotation de Ingress sendo classificada em exatamente um de cinco destinos: rota convertida, política no Gateway, borda upstream, item sem efeito e item que exige trabalho manual](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/1.png)
+![Diagrama em linhas neon azuis mostrando uma annotation de Ingress sendo classificada em exatamente um de cinco destinos: rota convertida, política no Gateway, borda upstream, item sem efeito e item que exige trabalho manual](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/nginx-envoy-gateway/1.png)
 
 ## Snippet é tudo ou nada
 
@@ -139,7 +139,7 @@ Esse mesmo cluster local também roda o **Gateway API** (os CRDs), não só o En
 
 Isso é o ponto que vale enfatizar: quanto mais o ambiente local imita o real, Helm values, Gateway API incluído, menos surpresa sobra para o cluster de produção. Teste local que só sobe a aplicação não testa o caminho pelo qual a aplicação chega lá, e esse caminho tem tanta chance de esconder bug quanto o código em si.
 
-![Diagrama em linhas neon azuis comparando um servidor de API do Kubernetes, que aceita os objetos mas não move tráfego, com um proxy Envoy por onde a requisição passa de fato e sai com um header a mais preenchido](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/2.png)
+![Diagrama em linhas neon azuis comparando um servidor de API do Kubernetes, que aceita os objetos mas não move tráfego, com um proxy Envoy por onde a requisição passa de fato e sai com um header a mais preenchido](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/nginx-envoy-gateway/2.png)
 
 Vale registrar também que a imagem do operator **não faz parte do ciclo de iteração**. Editar arquivo, reiniciar o pod com a árvore de código montada por hostPath, ver o efeito em segundos. A imagem é construída pelo serviço de build do registry, depois que o comportamento já está validado. A imagem é o resultado do loop, não uma etapa dentro dele.
 
@@ -167,7 +167,7 @@ Mover o tráfego para o Envoy sem tocar nisso teria produzido uma onda de callba
 
 O fix, uma vez achado, foi pequeno: o controller injeta os dois headers não-padrão, **add-if-absent**, na mesma camada onde já reescreve outros headers de request. Add-if-absent importa, porque quem já manda o header certo não pode ser sobrescrito por compatibilidade retroativa.
 
-![Diagrama do controller injetando headers OAuth add-if-absent no Envoy Gateway](https://stoblobcertificados2.blob.core.windows.net/imagens-blog/2026/2026/nginx-envoy-gateway/3.png)
+![Diagrama do controller injetando headers OAuth add-if-absent no Envoy Gateway](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/nginx-envoy-gateway/3.png)
 
 ## O que o processo não pegou: ReferenceGrant no namespace errado
 

@@ -15,6 +15,12 @@ interface YearCertificates {
 export const certificatesByYear: YearCertificates[] = [{
   year: "2026",
   certificates: [{
+       title: "Code Island Cloud",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-08-PalestranteTDC2026.pdf"
+  },{
+       title: "Palestrante DevopsDay Curitiba 2026",
+    link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-08-PalestranteDevopsDayCuritiba.pdf"
+  },{
        title: "Palestrante da Trilha Software Security, do evento TDC 2026 FLORIANÓPOLIS",
     link: "https://stoblobcertificados011.blob.core.windows.net/certificados/2026-08-PalestranteTDC2026.pdf"
   },{
