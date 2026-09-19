@@ -34,8 +34,6 @@ Toquei em temas como:
 ![Slide com práticas sustentáveis na nuvem apresentado no TDC](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/TDCSP25/07.jpg)
 ![Rafael Ferreira explicando casos reais de GreenOps](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/TDCSP25/06.jpg)
 
-![Rafael Ferreira apresentando GreenOps na Cloud no TDC São Paulo 2025](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/TDC-SP/rafael-palestra.jpg)
-
 ## Programação da Trilha Arquitetura Cloud
 
 O dia foi intenso e repleto de conteúdo técnico de altíssimo nível, participi de algumas palestras:
@@ -70,7 +68,6 @@ Com um fotógrafo no local, os participantes puderam **atualizar a foto do perfi
 
 ![Palestrantes da Trilha Arquitetura Cloud reunidos no TDC](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/TDCSP25/08.jpg)
 ![Networking entre participantes do TDC São Paulo 2025](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/TDCSP25/09.jpg)
-![Rafael Ferreira com participantes do TDC São Paulo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/TDCSP25/11.jpg)
 
 ## Certificado de Participação
 

@@ -32,20 +32,20 @@ A abertura do evento trouxe uma retrospectiva dos 10 anos de Kubernetes, onde [A
 
 ### Plataformização da Cloud Foundation com Backstage: Desvendando os Segredos da Eficiência na Nuvem com Developer Experience
 
-![Banner da palestra Plataformização da Cloud Foundation com Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/kuberTENes-Birthday-Bash-Santa-Catarina.png)
+![Banner da palestra Plataformização da Cloud Foundation com Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/00.png)
 
 Uma palestra do **Azure Floripa** ([eu](https://www.linkedin.com/in/orafaelferreiraa/) e o [Cláudio Raposo](https://www.linkedin.com/in/cfraposo/)), que abordou como a plataformização da Cloud Foundation com Backstage pode otimizar a eficiência na nuvem, melhorando a experiência dos desenvolvedores.
 
 ![Rafael Ferreira e Cláudio Raposo palestrando sobre Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/13.JPG)
-![Rafael Ferreira apresentando a Cloud Foundation com Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/14.JPG)
-![Cláudio Raposo apresentando no KuberTENes Birthday Bash](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/15.JPG)
-![Slide sobre Developer Experience na palestra do Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/16.JPG)
-![Público assistindo à palestra do Azure Floripa sobre Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/17.JPG)
-![Rafael Ferreira explicando a plataformização da Cloud Foundation](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/18.JPG)
-![Demonstração do Backstage durante a palestra do Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/19.JPG)
-![Cláudio Raposo explicando Developer Experience na nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/20.JPG)
+![Rafael Ferreira apresentando a Cloud Foundation com Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/14.jpg)
+![Cláudio Raposo apresentando no KuberTENes Birthday Bash](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/15.jpg)
+![Slide sobre Developer Experience na palestra do Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/16.jpg)
+![Público assistindo à palestra do Azure Floripa sobre Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/17.jpg)
+![Rafael Ferreira explicando a plataformização da Cloud Foundation](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/18.jpg)
+![Demonstração do Backstage durante a palestra do Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/19.jpg)
+![Cláudio Raposo explicando Developer Experience na nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/20.jpg)
 ![Rafael Ferreira interagindo com o público durante a palestra](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/21.JPG)
-![Slide da palestra sobre eficiência na nuvem com Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/22.JPG)
+![Slide da palestra sobre eficiência na nuvem com Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/22.jpg)
 ![Rafael Ferreira e Cláudio Raposo no palco do KuberTENes](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/23.JPG)
 ![Plateia durante a sessão do Azure Floripa sobre Backstage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/24.JPG)
 ![Rafael Ferreira palestrando no KuberTENes Birthday Bash Santa Catarina](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/25.JPG)
@@ -85,8 +85,8 @@ Teve a comemoração do aniversário do Kubernetes, onde cantamos parabéns e co
 [Erivaldo Lopes](https://www.linkedin.com/in/erivaldolopes/) nos levou a uma exploração profunda de como o Grafana Loki pode ser utilizado em conjunto com Kubernetes para gerenciamento eficiente de logs, uma ferramenta crucial para monitoramento e observabilidade.
 
 ![Erivaldo Lopes apresentando Grafana Loki com Kubernetes](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/44.JPG)
-![Slide da palestra sobre eficiência em logs com Grafana Loki](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/45.JPG)
-![Erivaldo Lopes explicando a arquitetura do Grafana Loki](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/46.JPG)
+![Slide da palestra sobre eficiência em logs com Grafana Loki](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/045.JPG)
+![Erivaldo Lopes explicando a arquitetura do Grafana Loki](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/46.jpg)
 ![Público acompanhando a palestra sobre Grafana Loki](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/CloudNativeSC-KuberTENes/47.JPG)
 
 E para quem se perguntou da qualidade das fotos, sim, é isso, tivemos um fotógrafo profissional!

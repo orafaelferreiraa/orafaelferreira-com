@@ -56,8 +56,6 @@ Até o próximo evento!
 
 ![Momento de interação entre instrutor e participantes do DP-900](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/6.jpeg)
 
-![Vídeo com os melhores momentos do curso DP-900](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/7.mp4)
-
 ![Foto oficial dos participantes do curso DP-900 Azure Floripa](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/dp-900/8.jpeg)
 
 ![Certificado de instrutor do curso DP-900 em setembro de 2024](https://stoblobcertificados011.blob.core.windows.net/certificados/2024-09-Instrutor-dp-900.jpeg)

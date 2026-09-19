@@ -95,7 +95,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/2026/2026/dod-ctrb/00.jpg</image:loc>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-ctrb/00.png</image:loc>
       <image:title>Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU</image:title>
     </image:image>
   </url>
@@ -105,7 +105,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/2026/2026/mvp-ctba/00.jpg</image:loc>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mvp-ctba/0.png</image:loc>
       <image:title>Platform Engineering na Prática - Construindo Plataformas Serverless Self-Service</image:title>
     </image:image>
   </url>

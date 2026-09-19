@@ -53,7 +53,7 @@ Conectando com o modelo da CNCF, mostrei como aplicar defesa de forma **Cloud Na
 - **Código** → Shift Left, SAST/DAST, SCA, secret scanning, IaC seguro.  
 
 ![Slide sobre os 4Cs da Cloud Native Security](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/7.JPG)
-![Rafael Ferreira apresentando segurança em código e containers](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/8.jpg)
+![Rafael Ferreira apresentando segurança em código e containers](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/8.png)
 ![Público interagindo durante a palestra no HNWD](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/HNWD/9.JPG)
 
 O evento foi cheio de aprendizado. Tivemos palestras sobre **IA adversarial, XSS avançado, Kubernetes hacking, deepfakes, AWS hardening** e muito mais. Além disso, o espaço de comunidades e patrocinadores trouxe aquela vibe que só a cena de segurança brasileira tem: **colaboração acima da competição**.  

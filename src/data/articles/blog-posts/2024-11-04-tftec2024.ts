@@ -139,7 +139,7 @@ Esse fluxo automatizado facilita a integração e o deploy contínuos, asseguran
 ![Público do TFTEC Ao Vivo 2024 acompanhando as sessões sobre Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/10.jpg)
 ![Palco do TFTEC Ao Vivo 2024 durante a imersão em Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/11.jpg)
 ![Participantes do TFTEC Ao Vivo 2024 em momento de networking](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/12.jpg)
-![Instrutores do TFTEC Cloud apresentando a arquitetura no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/13.jpg)
+![Instrutores do TFTEC Cloud apresentando a arquitetura no Azure](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/tftec/13.png)
 
 ## Conclusão
 
