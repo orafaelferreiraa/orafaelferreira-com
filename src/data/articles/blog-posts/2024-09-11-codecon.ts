@@ -24,9 +24,9 @@ Começamos o dia explorando os diversos stands do evento. Você sentia no ar uma
 ![Público circulando pelo espaço da Codecon Summit 2024](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/codecon/6.jpg)
 
 
-Além de conhecer novas tecnologias, houve várias oportunidades de diversão, brindes e desafios — incluindo a famosa "caça ao pato", uma das atividades mais comentadas do evento. 🦆 Os participantes que conseguissem coletar o pato, podiam levar ele embora, tornando o evento único. Foi uma excelente maneira de quebrar o gelo e iniciar conexões com outros participantes.
+Além de conhecer novas tecnologias, houve várias oportunidades de diversão, brindes e desafios, incluindo a famosa "caça ao pato", uma das atividades mais comentadas do evento. 🦆 Os participantes que conseguissem coletar o pato, podiam levar ele embora, tornando o evento único. Foi uma excelente maneira de quebrar o gelo e iniciar conexões com outros participantes.
 
-O networking aconteceu de forma natural, com os participantes entusiasmados e dispostos a compartilhar suas experiências. Para mim, essa foi uma das partes mais gratificantes do evento — conhecer pessoas que compartilham a mesma paixão pela tecnologia e descobrir soluções inovadoras através das conversas informais.
+O networking aconteceu de forma natural, com os participantes entusiasmados e dispostos a compartilhar suas experiências. Para mim, essa foi uma das partes mais gratificantes do evento, conhecer pessoas que compartilham a mesma paixão pela tecnologia e descobrir soluções inovadoras através das conversas informais.
 
 #### Tarde: Palestras e Painéis Inspiradores
 
@@ -47,7 +47,7 @@ Esses momentos foram essenciais para aprofundar conhecimentos em áreas cruciais
 
 ### Reflexões Finais
 
-A Codecon Summit vai além do aprendizado técnico — é também sobre construir conexões e fazer parte da comunidade de tecnologia comprometidos com a inovação. As interações matinais nos stands e o conteúdo técnico das palestras me reforçaram a importância de estar conectado à comunidade e de manter o aprendizado contínuo.
+A Codecon Summit vai além do aprendizado técnico, é também sobre construir conexões e fazer parte da comunidade de tecnologia comprometidos com a inovação. As interações matinais nos stands e o conteúdo técnico das palestras me reforçaram a importância de estar conectado à comunidade e de manter o aprendizado contínuo.
 
 Se você está em busca de uma oportunidade para se atualizar sobre as últimas tendências no desenvolvimento de software e conhecer pessoas incríveis da área, não pode perder a próxima edição da Codecon. E se você também esteve presente nesta edição, que tal continuarmos essa conversa? O que achou do evento?
 

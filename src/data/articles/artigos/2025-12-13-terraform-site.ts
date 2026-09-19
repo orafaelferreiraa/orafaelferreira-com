@@ -209,7 +209,7 @@ Pipeline do app:
 
 Proteção contra loops:
 - Condição no job: \`(github.event_name == 'push' && github.actor != 'github-actions[bot]')\`…
-- Isso evita que commits automatizados (ex.: terraform-docs) disparem deploys do app desnecessariamente — um ajuste que nasceu de um incidente: o bot fazia commit e o app queria redeploy sem mudanças reais.
+- Isso evita que commits automatizados (ex.: terraform-docs) disparem deploys do app desnecessariamente, um ajuste que nasceu de um incidente: o bot fazia commit e o app queria redeploy sem mudanças reais.
 
 ## Segurança e Qualidade
 
@@ -224,7 +224,7 @@ Proteção contra loops:
 
 ## Documentação Automatizada
 
-Durante a migração, quis que a documentação acompanhasse o código sem esforço humano. O \`infra-apply.yml\` roda **terraform-docs** e injeta a referência do módulo no \`README.md\`. Se não houver mudanças, nenhum commit é feito — é documentação viva, sem burocracia.
+Durante a migração, quis que a documentação acompanhasse o código sem esforço humano. O \`infra-apply.yml\` roda **terraform-docs** e injeta a referência do módulo no \`README.md\`. Se não houver mudanças, nenhum commit é feito, é documentação viva, sem burocracia.
 
 
 ## Fluxo de Trabalho: do PR ao Deploy

@@ -50,16 +50,16 @@ O ciclo se repete mais ou menos assim:
 
 Quando você fica trocando prompt atrás de prompt no chat, corrigindo na tentativa e erro, o agente decide sozinho cada passo, sem trilho. É o famoso "vibe coding": até funciona, mas rende pouco e erra bastante.
 
-A alternativa é aplicar engenharia a esse ciclo — guiar o loop em vez de só reagir a ele. Para isso existem dois controles complementares: **skills** (direção) e **MCPs** (ferramentas).
+A alternativa é aplicar engenharia a esse ciclo, guiar o loop em vez de só reagir a ele. Para isso existem dois controles complementares: **skills** (direção) e **MCPs** (ferramentas).
 
 ## Skills vs MCPs: dois controles que se completam
 
 É fácil confundir os dois, mas cada um resolve um problema diferente:
 
-- **MCP é o encanamento.** Dá ao agente *acesso* a ferramentas e dados externos — aqui, a documentação viva de providers e módulos do Terraform. Responde a "o que o agente consegue alcançar?".
+- **MCP é o encanamento.** Dá ao agente *acesso* a ferramentas e dados externos, aqui, a documentação viva de providers e módulos do Terraform. Responde a "o que o agente consegue alcançar?".
 - **Skill é o livro-texto.** Empacota *conhecimento e boas práticas* que o agente carrega sob demanda: workflows, convenções e guardrails. Responde a "como o agente deve trabalhar?".
 
-A própria [HashiCorp resume bem](https://www.hashicorp.com/en/blog/introducing-hashicorp-agent-skills): o MCP é o "cano" que conecta dados à IA, enquanto as [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) são os "livros-texto" de conhecimento — e o melhor resultado vem de usar os dois juntos.
+A própria [HashiCorp resume bem](https://www.hashicorp.com/en/blog/introducing-hashicorp-agent-skills): o MCP é o "cano" que conecta dados à IA, enquanto as [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) são os "livros-texto" de conhecimento, e o melhor resultado vem de usar os dois juntos.
 
 Na prática, com Terraform:
 

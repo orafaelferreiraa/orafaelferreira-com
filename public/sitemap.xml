@@ -5,7 +5,7 @@
   <!-- Static pages (derived from src/routes.tsx) -->
   <url>
     <loc>https://www.orafaelferreira.com/</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://www.orafaelferreira.com/blog</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -60,13 +60,23 @@
 
   <!-- Articles -->
   <url>
+    <loc>https://www.orafaelferreira.com/artigos/dois-anos-de-docker</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/capa.png</image:loc>
+      <image:title>Dois anos de Docker: o que mudou de 2024 para cá</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.orafaelferreira.com/artigos/cka-o-que-mudou-no-kubernetes</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/capa.png</image:loc>
-      <image:title>CKA: 9 meses de Kubernetes que a minha prova não cobriu</image:title>
+      <image:title>9 meses de Kubernetes: o que mudou depois da minha CKA</image:title>
     </image:image>
   </url>
   <url>
@@ -76,7 +86,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/capa.png</image:loc>
-      <image:title>Terraform Associate: 14 meses de mudanças que a prova 003 não cobriu</image:title>
+      <image:title>14 meses de Terraform: o que mudou depois da minha Associate 003</image:title>
     </image:image>
   </url>
   <url>

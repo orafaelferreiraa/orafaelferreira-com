@@ -27,7 +27,7 @@ O evento contou com **apoio do INAITEC** (que sediou o encontro) e **patrocínio
 
 ### Antes de Estudar Ferramentas, Entenda a Cultura DevOps  
 
-Na minha sessão, falei sobre o que vem **antes das ferramentas** — a **mentalidade e os valores que sustentam o verdadeiro DevOps**.  
+Na minha sessão, falei sobre o que vem **antes das ferramentas**, a **mentalidade e os valores que sustentam o verdadeiro DevOps**.  
 Abordei temas como colaboração, aprendizado contínuo e o impacto cultural que transforma a forma como entregamos software no dia a dia.  
 
 Toquei em pontos como:  
@@ -65,7 +65,7 @@ A 8ª edição da whiteStone_dev foi marcada por talks inspiradoras e uma energi
 
 ## Encontro com a Comunidade
 
-Além das palestras, o evento foi uma grande oportunidade pra reencontrar amigos, conhecer novas pessoas e fortalecer os laços entre comunidades — especialmente com a presença do **AWS User Group Floripa** e parceiros locais.
+Além das palestras, o evento foi uma grande oportunidade pra reencontrar amigos, conhecer novas pessoas e fortalecer os laços entre comunidades, especialmente com a presença do **AWS User Group Floripa** e parceiros locais.
 
 ![Comunidade whiteStone_dev reunida no encerramento do evento](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/wsd-devops/final.jpg)
 
@@ -76,7 +76,7 @@ Ver a comunidade reunida para discutir cultura, arquitetura e colaboração é o
 
 Agradecimento especial à **organização do whiteStone_dev**, aos **palestrante Julio Santos e equipe do AWS User Group Floripa**, e a todos que participaram dessa noite memorável.  
 
-> **DevOps não é sobre ferramentas — é sobre pessoas, cultura e propósito.**
+> **DevOps não é sobre ferramentas, é sobre pessoas, cultura e propósito.**
 
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [Antes de Estudar Ferramentas, Entenda a Cultura DevOps](https://stoblobcertificados011.blob.core.windows.net/palestras/dod-wsd.pdf)`,
   date: "2025-10-19",

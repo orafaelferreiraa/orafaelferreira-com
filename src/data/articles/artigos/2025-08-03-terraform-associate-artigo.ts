@@ -68,7 +68,7 @@ O Terraform Associate (versão 003) é uma certificação de nível "fundamental
 
 Fazer a certificação Terraform Associate foi uma experiência valiosa. Além de receber o badge, consolidei conceitos essenciais de IaC e do Terraform que aplico diariamente. A prova reflete demandas do mundo real: ao estudar para ela, você aprimora seu domínio da ferramenta e se prepara melhor para projetos de nuvem e automação.
 
-Recomendo a certificação para quem já utiliza Terraform. Ela formaliza o conhecimento e pode abrir portas — muitas vagas pedem familiaridade com Terraform, e ter a certificação ajuda a comprovar essa habilidade. Para quem pretende avançar, a HashiCorp oferece também o nível Professional, então a Associate pode ser só o começo.
+Recomendo a certificação para quem já utiliza Terraform. Ela formaliza o conhecimento e pode abrir portas, muitas vagas pedem familiaridade com Terraform, e ter a certificação ajuda a comprovar essa habilidade. Para quem pretende avançar, a HashiCorp oferece também o nível Professional, então a Associate pode ser só o começo.
 
 ![Badge da certificação HashiCorp Certified Terraform Associate 003](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2025-08-03-terraform-associate-artigo.png)
 

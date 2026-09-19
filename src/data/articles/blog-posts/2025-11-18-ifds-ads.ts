@@ -35,7 +35,7 @@ Falamos sobre:
 - O que realmente muda quando você trabalha com times internacionais  
 - Como lidar com cultura, comunicação e expectativas totalmente diferentes  
 - Realidades do fuso, das reuniões e do inglês de verdade (não aquele decorado em curso)  
-- O impacto na vida pessoal — rotina, saúde, relacionamentos e até grana  
+- O impacto na vida pessoal: rotina, saúde, relacionamentos e até grana
 - Estratégias que realmente funcionam pra conquistar oportunidades lá fora  
 - E claro… os perrengues. Porque sempre tem perrengue.
 

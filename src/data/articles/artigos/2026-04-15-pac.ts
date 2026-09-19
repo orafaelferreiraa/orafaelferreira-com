@@ -63,7 +63,7 @@ Para não atrapalhar a experiência do desenvolvedor (DevEx), as verificações 
 
 De acordo com a [FinOps Foundation](https://www.finops.org/), as boas práticas incluem (confira também meu artigo sobre [fundação sólida em FinOps](https://www.orafaelferreira.com/artigos/finops-foundation-cloud)):
 
-- **Tags obrigatórias**: owner, costCenter, environment — base para alocação de custos e responsabilização.
+- **Tags obrigatórias**: owner, costCenter e environment, que são a base para alocação de custos e responsabilização.
 - **Controle de SKUs/limites por ambiente**: restrinja tipos de VMs e SKUs (evita surpresas em dev/staging).
 - **Desligamento automático**: pare recursos de dev/sandbox fora do horário (Azure Automation/Runbooks/Stop schedules).
 - **Orçamentos e alertas**: defina budgets (ex.: 80% do previsto) e acople alertas ao pipeline; falhe deploys quando limites forem excedidos.

@@ -48,7 +48,7 @@ Palestrar em eventos como o KCD Brasil é sempre uma experiência transformadora
 
 ![Palestrantes e comunidade reunidos no KCD São Paulo 2024](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/kcdsp24/7.jpg)
 
-Se você não participou deste ano, recomendo acompanhar as próximas edições. E, claro, considere submeter sua palestra—o KCD é uma plataforma incrível para amplificar sua voz e ideias no cenário Cloud Native.
+Se você não participou deste ano, recomendo acompanhar as próximas edições. E, claro, considere submeter sua palestra, o KCD é uma plataforma incrível para amplificar sua voz e ideias no cenário Cloud Native.
 
 **Nos vemos nos próximos eventos!** 🚀
 

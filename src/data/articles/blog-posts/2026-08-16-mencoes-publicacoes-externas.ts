@@ -16,7 +16,7 @@ Quero deixar o registro com vocês um novo post onde destaco minhas participaç�
 
 
 ### How I Use AI — Loop Engineering: Building Safer AI Agent Workflows for High-Stakes Infrastructure
-[**How I Use AI — Loop Engineering: Building Safer AI Agent Workflows for High-Stakes Infrastructure**](https://techcommunity.microsoft.com/blog/mvp-blog/how-mvps-use-ai---loop-engineering-building-safer-ai-agent-workflows-for-high-st/4545646)
+[**How I Use AI, Loop Engineering: Building Safer AI Agent Workflows for High-Stakes Infrastructure**](https://techcommunity.microsoft.com/blog/mvp-blog/how-mvps-use-ai---loop-engineering-building-safer-ai-agent-workflows-for-high-st/4545646)
 
 **#PlatformEngineering #PolicyAsCode #IA #DevOps #Comunidade**
 `,

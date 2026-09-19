@@ -83,10 +83,10 @@ O **Azure Container Linux (ACL)** é um sistema operacional imutável e containe
 
 ## Novidades do AKS
 
-O AKS recebeu um conjunto de anúncios no Build 2026 que ampliam o controle em toda a stack — da operação do cluster até treino e inferência de IA rodando em cima dele.
+O AKS recebeu um conjunto de anúncios no Build 2026 que ampliam o controle em toda a stack, da operação do cluster até treino e inferência de IA rodando em cima dele.
 
-- **Managed system node pools no AKS Automatic (GA)**: o Azure passa a cuidar do ciclo de vida dos nós de sistema (capacidade, patching, escala), evitando que os componentes do cluster disputem recursos com suas cargas — importante sobretudo em nós com GPU
-- **AKS on bare metal (preview)**: roda o AKS em máquinas dedicadas **sem hypervisor**, com acesso direto a NVLink, RDMA e rede de alta performance — ideal para treino grande, inferência sensível a latência e pipelines de alto throughput
+- **Managed system node pools no AKS Automatic (GA)**: o Azure passa a cuidar do ciclo de vida dos nós de sistema (capacidade, patching, escala), evitando que os componentes do cluster disputem recursos com suas cargas, importante sobretudo em nós com GPU
+- **AKS on bare metal (preview)**: roda o AKS em máquinas dedicadas **sem hypervisor**, com acesso direto a NVLink, RDMA e rede de alta performance, ideal para treino grande, inferência sensível a latência e pipelines de alto throughput
 - **Fleet Manager para clusters Arc-enabled (GA)**: aplica updates, políticas e posicionamento de cargas em clusters dentro e fora do Azure a partir de um único control plane, com rollout progressivo e RBAC consistente
 - **Anyscale on Azure (preview)**: traz o **Ray gerenciado** ao AKS para coordenar execução distribuída (GPUs e CPUs juntas, alocação fracionada de GPU), rodando dentro da sua subscription com Entra ID
 - **AI Runway + KAITO** para servir modelos de forma Kubernetes-native: você escolhe o modelo, valida o ajuste à memória de GPU disponível e faz o deploy; o KAITO provisiona nós e sobe runtimes otimizados como **vLLM**
@@ -111,7 +111,7 @@ O Azure Files ganhou um novo modelo de gerenciamento para **file shares premium 
 
 - **Plataforma chip-to-cloud** (codinome) criada do zero para experiências **agent-first** e para uma nova geração de dispositivos moldados ao redor de agentes, não de apps
 - Aposta em **just-in-time UI**: a interface do agente se adapta a diferentes telas e modalidades (voz, visão, toque) sem o desenvolvedor redesenhar para cada formato
-- Nasce **enterprise-ready**, com identidade (Entra ID), gestão (Intune), segurança e privacidade como fundação — além de ser **extensível** para você trazer seus próprios agentes
+- Nasce **enterprise-ready**, com identidade (Entra ID), gestão (Intune), segurança e privacidade como fundação, além de ser **extensível** para você trazer seus próprios agentes
 - Primeiros conceitos de hardware incluem um **dispositivo de crachá** (portátil) e um **dispositivo de mesa**, com silício de MediaTek e Qualcomm
 
 [Fonte oficial](https://commandline.microsoft.com/project-solara-build-2026/)
@@ -127,7 +127,7 @@ O Azure Files ganhou um novo modelo de gerenciamento para **file shares premium 
 
 - **GitHub Copilot modernization agent** chega à **disponibilidade geral**: operado pela CLI, atua como orquestrador que avalia prontidão de várias aplicações ao mesmo tempo, planeja jornadas específicas e automatiza upgrades de **Java e .NET**
 - Integra-se ao fluxo nativo do GitHub criando **issues, pull requests e relatórios de avaliação** por aplicação, com coordenação assíncrona via coding agent e trilha de auditoria no **Agent HQ**
-- Faz par com o **Azure Copilot migration agent (preview)**, que cobre o planejamento em escala de estate — descoberta, mapeamento de dependências, análise de ROI e wave planning — reduzindo meses de análise a minutos
+- Faz par com o **Azure Copilot migration agent (preview)**, que cobre o planejamento em escala de estate, descoberta, mapeamento de dependências, análise de ROI e wave planning, reduzindo meses de análise a minutos
 - **Custom skills (GA)**: o time codifica padrões, bibliotecas e boas práticas em arquivos \`skill.md\` (formato aberto) e reaproveita em todo o portfólio
 - Resultado relatado pela Microsoft: modernização até **4x mais rápida** em centenas de milhares de apps legados .NET e Java
 

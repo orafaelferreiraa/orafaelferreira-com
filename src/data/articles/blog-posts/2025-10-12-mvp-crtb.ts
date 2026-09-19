@@ -13,7 +13,7 @@ Um evento incrível que serviu como prévia do maior encontro de especialistas M
 ## O evento
 
 Curitiba foi o palco da **última edição do Esquenta MVPConf**, reunindo profissionais, estudantes e entusiastas de tecnologia para um dia inteiro de **palestras técnicas de altíssimo nível**.  
-A cidade — reconhecida como uma das mais inteligentes e inovadoras do Brasil — recebeu especialistas premiados com o título de **Microsoft MVP (Most Valuable Professional)**, compartilhando conhecimento e experiências reais do dia a dia.  
+A cidade, reconhecida como uma das mais inteligentes e inovadoras do Brasil, recebeu especialistas premiados com o título de **Microsoft MVP (Most Valuable Professional)**, compartilhando conhecimento e experiências reais do dia a dia.  
 
 📍 **Local:** Auditório Principal da UTFPR  
 📅 **Data:** 27 de setembro de 2025  
@@ -23,7 +23,7 @@ A cidade — reconhecida como uma das mais inteligentes e inovadoras do Brasil �
 
 ### DevOps Além da Hype: Pessoas, Cultura e Prática  
 
-Durante a minha sessão, falei sobre o que realmente sustenta o DevOps além das ferramentas — as **pessoas, a cultura e as práticas reais**.  
+Durante a minha sessão, falei sobre o que realmente sustenta o DevOps além das ferramentas, as **pessoas, a cultura e as práticas reais**.  
 Abordei como o movimento nasceu, como evoluiu, e por que as empresas que prosperam em DevOps entendem que **colaboração e empatia** vêm antes do código.  
 
 Toquei em pontos como:
@@ -81,7 +81,7 @@ Poder compartilhar com a comunidade aprendizados sobre **Cultura DevOps** em um 
 
 Agradeço à **organização**, aos **palestrantes**, aos **patrocinadores** e a todos que fizeram parte desse dia memorável.  
 
-**DevOps é sobre pessoas — tecnologia é apenas a ponte.**
+**DevOps é sobre pessoas, tecnologia é apenas a ponte.**
 
 - <i class="fa-regular fa-folder-open"></i> **Slides da Apresentação:** [DevOps Além da Hype: Pessoas, Cultura e Prática](https://stoblobcertificados011.blob.core.windows.net/palestras/mvpcrtb25.pdf)`,
   date: "2025-10-12",

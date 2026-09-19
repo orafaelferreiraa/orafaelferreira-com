@@ -8,7 +8,7 @@ export const article: Article = {
 # MVP Conf Brasil 2025
 
 Nos dias **24 e 25 de outubro de 2025**, estive presente no [**MVP Conf Brasil**](https://mvpconf.com.br/), realizado na **UNIP Campus Paraíso/Vergueiro, em São Paulo - SP**.  
-O evento reuniu **mais de 500 especialistas Microsoft** de todo o país — dois dias intensos de **aprendizado, networking e compartilhamento de conhecimento técnico de alto nível**.
+O evento reuniu **mais de 500 especialistas Microsoft** de todo o país, dois dias intensos de **aprendizado, networking e compartilhamento de conhecimento técnico de alto nível**.
 
 ![Abertura do MVP Conf Brasil 2025 em São Paulo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp25/01.png)
 
@@ -28,7 +28,7 @@ Durante a sessão, mergulhamos em tópicos como:
 - Arquiteturas **verdes, resilientes e escaláveis**  
 - Casos reais de **sustentabilidade digital aplicada ao dia a dia corporativo**
 
-A ideia foi mostrar que dá pra fazer **mais com menos impacto**, sem comprometer a performance — e ainda **gerando economia real**.  
+A ideia foi mostrar que dá pra fazer **mais com menos impacto**, sem comprometer a performance, e ainda **gerando economia real**.  
 Porque, convenhamos, eficiência e sustentabilidade podem (e devem) andar juntas.
 
 ![Slide sobre eficiência e sustentabilidade na nuvem](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp25/04.jpg)

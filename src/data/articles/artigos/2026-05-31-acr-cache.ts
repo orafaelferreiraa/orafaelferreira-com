@@ -62,14 +62,14 @@ Com Private Link bem configurado, você evita expor pipeline e runtime diretamen
 
 ### O que é um upstream?
 
-No contexto do Artifact Cache, **upstream** é o registry de origem de onde o ACR vai buscar a imagem quando ela não estiver em cache. É o registry "de fora" — pode ser Docker Hub, GHCR, Quay ou até outro ACR.
+No contexto do Artifact Cache, **upstream** é o registry de origem de onde o ACR vai buscar a imagem quando ela não estiver em cache. É o registry "de fora", pode ser Docker Hub, GHCR, Quay ou até outro ACR.
 
 Quando você configura uma cache rule, você define:
 
 - **source-repo**: o caminho no upstream (ex.: \`docker.io/library/nginx\`)
 - **target-repo**: o caminho dentro do seu ACR onde o conteúdo ficará espelhado (ex.: \`mirror/library/nginx\`)
 
-Na prática, o upstream só é acessado no primeiro pull de uma tag. Depois, o ACR serve o conteúdo localmente. Se o upstream ficar indisponível, imagens já em cache continuam acessíveis — esse é o ganho de resiliência do padrão.
+Na prática, o upstream só é acessado no primeiro pull de uma tag. Depois, o ACR serve o conteúdo localmente. Se o upstream ficar indisponível, imagens já em cache continuam acessíveis, esse é o ganho de resiliência do padrão.
 
 De acordo com a documentação oficial, o Artifact Cache suporta vários registries upstream, com diferenças de autenticação por fonte. Alguns exemplos:
 

@@ -252,7 +252,7 @@ Ele também é o único que **ignora o kill-switch global**. Todos os meus outro
 { "hookSpecificOutput": {
     "hookEventName": "PreToolUse",
     "permissionDecision": "ask",
-    "permissionDecisionReason": "Operação destrutiva — confirme antes de seguir." } }
+    "permissionDecisionReason": "Operação destrutiva, confirme antes de seguir." } }
 \`\`\`
 
 Só que existe um modo de permissão em que os prompts estão desligados. Nele, pedir confirmação é **pedir para o vazio**, a decisão é simplesmente ignorada e o comando passa. Descobri isso do pior jeito possível: o guardrail existia, parecia certo, e não protegia nada exatamente no modo em que eu mais precisava dele.

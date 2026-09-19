@@ -1,8 +1,22 @@
 {
+  "dois-anos-de-docker": {
+    "slug": "dois-anos-de-docker",
+    "title": "Dois anos de Docker: o que mudou de 2024 para cá",
+    "excerpt": "De setembro de 2024 a setembro de 2026: do Engine 27 ao 29, a quebra de rede do 28.0, o recuo do Docker Hub nos limites de pull, Hardened Images, segurança e a chegada dos agentes.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/capa.png",
+    "date": "2026-09-19",
+    "updatedAt": null,
+    "category": "Artigos",
+    "tags": [
+      "DevOps"
+    ],
+    "readTime": "18 min de leitura",
+    "url": "https://www.orafaelferreira.com/artigos/dois-anos-de-docker"
+  },
   "cka-o-que-mudou-no-kubernetes": {
     "slug": "cka-o-que-mudou-no-kubernetes",
-    "title": "CKA: 9 meses de Kubernetes que a minha prova não cobriu",
-    "excerpt": "Certifiquei na CKA sob o currículo v1.34. Nove meses e três releases depois, o que mudou no Kubernetes — e o que o currículo do exame não registrou.",
+    "title": "9 meses de Kubernetes: o que mudou depois da minha CKA",
+    "excerpt": "Certifiquei na CKA em dezembro de 2025. Nove meses e três releases depois, um raio-x do que mudou no Kubernetes: Mutating Admission Policies, a família DRA e o fim do Ingress NGINX.",
     "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/capa.png",
     "date": "2026-09-18",
     "updatedAt": null,
@@ -12,13 +26,13 @@
       "Certificações",
       "DevOps"
     ],
-    "readTime": "13 min de leitura",
+    "readTime": "12 min de leitura",
     "url": "https://www.orafaelferreira.com/artigos/cka-o-que-mudou-no-kubernetes"
   },
   "terraform-o-que-mudou-desde-a-associate": {
     "slug": "terraform-o-que-mudou-desde-a-associate",
-    "title": "Terraform Associate: 14 meses de mudanças que a prova 003 não cobriu",
-    "excerpt": "Certifiquei na Terraform Associate 003 em julho de 2025. De lá para cá: quatro releases do Core, azurerm 5.0, Stacks em GA, tfpolicy e o exame 004.",
+    "title": "14 meses de Terraform: o que mudou depois da minha Associate 003",
+    "excerpt": "Certifiquei na Terraform Associate 003 em julho de 2025. De lá para cá: quatro releases do Core, azurerm 5.0, Stacks em GA e tfpolicy.",
     "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/capa.png",
     "date": "2026-09-18",
     "updatedAt": null,
@@ -30,7 +44,7 @@
       "DevOps",
       "Platform Engineering"
     ],
-    "readTime": "18 min de leitura",
+    "readTime": "17 min de leitura",
     "url": "https://www.orafaelferreira.com/artigos/terraform-o-que-mudou-desde-a-associate"
   },
   "nginx-envoy-gateway": {

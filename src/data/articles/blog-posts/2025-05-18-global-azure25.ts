@@ -9,7 +9,7 @@ export const article: Article = {
 
 Mais um ano, mais uma edição do [**Global Azure 2025 – Edição Azure Floripa**](https://www.meetup.com/azure-user-groups/events/306207034/?eventOrigin=group_past_events)! E sim, o **Azure Floripa** colou junto mais uma vez pra fazer história com a comunidade técnica brasileira. Foram 2 dias intensos, com conteúdo de qualidade, e muito aprendizado!
 
-Se você perdeu, relaxa — a gente fez esse post cheio de links pra você maratonar as talks.
+Se você perdeu, relaxa, a gente fez esse post cheio de links pra você maratonar as talks.
 
 ## Organizadores
 

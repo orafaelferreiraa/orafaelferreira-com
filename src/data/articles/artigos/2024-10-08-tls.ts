@@ -24,7 +24,7 @@ A importância de usar o TLS 1.2 ou superior se resume a três pontos principais
 
 ## Impacto da Mudança em Ambientes Azure
 
-Em termos práticos, isso significa que qualquer recurso que interaja com os serviços do Azure—como appliances de rede, gateways de aplicação ou scripts automatizados que utilizam APIs do Azure—precisará estar preparado para utilizar TLS 1.2 ou superior até a data limite.
+Em termos práticos, isso significa que qualquer recurso que interaja com os serviços do Azure, como appliances de rede, gateways de aplicação ou scripts automatizados que utilizam APIs do Azure, precisará estar preparado para utilizar TLS 1.2 ou superior até a data limite.
 
 Uma área que pode não ser diretamente afetada por essa mudança são os recursos internos de clusters, como em clusters Kubernetes que usam comunicações internas que não envolvem APIs externas do Azure. Nesses casos, as mudanças no protocolo TLS podem não ser aplicáveis, pois o foco da atualização está nos serviços que fazem interface diretamente com as APIs do Azure.
 

@@ -11,7 +11,7 @@ export const article: Article = {
 
 No dia **23 de julho de 2026**, junto com [**Jéssica Mello**](https://www.linkedin.com/in/jessica-tmello/) (LowOps Consultoria), palestrei na [**Trilha Software Security do TDC Florianópolis**](https://thedevconf.com/tdc/2026/florianopolis/trilha-software-security), um dos maiores eventos de tecnologia do Brasil, realizado no **CentroSul, em Florianópolis - SC**.
 
-A trilha abordou um tema central: **"Construindo software seguro do design à produção em tempos de IA"** — explorando como a IA generativa acelera o desenvolvimento, mas também expande riscos e responsabilidades.
+A trilha abordou um tema central: **"Construindo software seguro do design à produção em tempos de IA"**, explorando como a IA generativa acelera o desenvolvimento, mas também expande riscos e responsabilidades.
 
 ## Agenda
 
@@ -24,7 +24,7 @@ A trilha abordou um tema central: **"Construindo software seguro do design à pr
 - Jéssica Mello (LowOps Consultoria)
 
 ![Rafael Ferreira e Jéssica Mello apresentando no TDC Florianópolis 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/2.jpg)
-Um estudo de caso sobre os limites e riscos do "vibe coding" quando confrontado com exigências reais de produção — e como DevSecOps resolve isso.
+Um estudo de caso sobre os limites e riscos do "vibe coding" quando confrontado com exigências reais de produção, e como DevSecOps resolve isso.
 
 ## Programação da Trilha Software Security
 
@@ -47,7 +47,7 @@ Meu portfólio pessoal (\`orafaelferreira.com\`) estava obsoleto. Precisava mode
 
 ### O Prompt & o Lovable
 
-Estruturei um prompt detalhado — estilo visual, seções esperadas (blog, palestras, sobre), stack preferido (React), tom de voz — e usei o [**Lovable**](https://lovable.dev/) para gerar **100% via IA generativa** uma primeira versão.
+Estruturei um prompt detalhado (estilo visual, seções esperadas como blog, palestras e sobre, stack preferido em React e tom de voz) e usei o [**Lovable**](https://lovable.dev/) para gerar **100% via IA generativa** uma primeira versão.
 
 ![Slide mostrando o prompt e o site gerado com Lovable](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/6.jpg)
 
@@ -93,22 +93,22 @@ Agora veio a camada que diferencia um hobby de um sistema em produção:
 - **[tflint](https://github.com/terraform-linters/tflint)** — análise estática do Terraform.
 - **[trivy](https://github.com/aquasecurity/trivy)** — scanning de vulnerabilidades em imagens e artefatos.
 - **[checkov](https://www.checkov.io/)** — compliance & policy as code.
-- Rodam tanto no \`terraform plan\` quanto no \`apply\` — sem passar, não deploya.
+- Rodam tanto no \`terraform plan\` quanto no \`apply\`, sem passar, não deploya.
 
 **Segredos sem hardcoding:**
 - [**Service Principal**](https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals) do Azure com mínimos privilégios.
 - Secrets armazenados no GitHub (criptografados, nunca em logs de build).
 - Rotação automática de credenciais.
 
-**Resultado:** posso quebrar meu site à vontade — qualquer merge pra main passa por um gauntlet de checks, testes e validações. Se algo errado subir, ele bate em policy e não sai do passe.
+**Resultado:** posso quebrar meu site à vontade, qualquer merge pra main passa por um gauntlet de checks, testes e validações. Se algo errado subir, ele bate em policy e não sai do passe.
 
 ### Stack Final & Qualidade
 
 A evolução não parou em infraestrutura:
 
 - **Frontend:** [**React 19**](https://react.dev/) + [**TypeScript**](https://www.typescriptlang.org/) + [**Vite**](https://vitejs.dev/) + [**TailwindCSS**](https://tailwindcss.com/) + [**shadcn/ui**](https://ui.shadcn.com/) (design system moderno, acessível).
-- **Testes:** pirâmide completa — unit/integration com [**Vitest**](https://vitest.dev/) & [**React Testing Library**](https://testing-library.com/), E2E com [**Playwright**](https://playwright.dev/).
-- **SEO tradicional + GEO:** structured data, meta tags, sitemaps, RSS — mas também otimizado pra "Generative Engine Optimization" (como LLMs descobrem conteúdo).
+- **Testes:** pirâmide completa, unit/integration com [**Vitest**](https://vitest.dev/) & [**React Testing Library**](https://testing-library.com/), E2E com [**Playwright**](https://playwright.dev/).
+- **SEO tradicional + GEO:** structured data, meta tags, sitemaps, RSS, mas também otimizado pra "Generative Engine Optimization" (como LLMs descobrem conteúdo).
 
 Tudo isso não seria possível se eu tivesse confiado 100% no "vibe coding" inicial.
 
@@ -129,14 +129,14 @@ Nenhuma camada é ignorada. Nenhuma depende só da IA.
 
 Quando você usa IA pra gerar código, a evolução natural é:
 
-- **Fase 1:** Prompt Engineer — "escrever bons prompts" é o skill.
-- **Fase 2:** Harness Engineer — "estruturar o loop IA + automação + feedback" é o skill.
+- **Fase 1:** Prompt Engineer, "escrever bons prompts" é o skill.
+- **Fase 2:** Harness Engineer, "estruturar o loop IA + automação + feedback" é o skill.
 
 Um harness engineer não só escreve prompts bons; ele:
 - Define pipeline, testes, validações que a IA passa por.
 - Entende quando a IA pode ir sozinha e quando não.
 - Desenha feedback loops (errar, aprender, melhorar).
-- Não confia na IA sozinha — a IA é aceleradora, não substituta.
+- Não confia na IA sozinha, a IA é aceleradora, não substituta.
 
 Essa jornada do site foi aprender a ser um harness engineer, não só um prompt engineer.
 
@@ -145,8 +145,8 @@ Essa jornada do site foi aprender a ser um harness engineer, não só um prompt 
 Aqui está o que você **não pode ignorar** depois que a IA gera algo funcional:
 
 - **Segredos:** nunca hardcode. Use vaults, env vars, managed secrets.
-- **Infraestrutura:** IaC (Terraform, CloudFormation, ARM) — nada de cliques em portal.
-- **Testes:** unit, integration, E2E — a IA gera código, mas testes garantem que funciona *seu* caso de uso.
+- **Infraestrutura:** IaC (Terraform, CloudFormation, ARM), nada de cliques em portal.
+- **Testes:** unit, integration, E2E, a IA gera código, mas testes garantem que funciona *seu* caso de uso.
 - **Scanning:** SAST (código), DAST (rodando), dependency checks, container scanning.
 - **Logs & Monitoramento:** quem vai investigar incidente às 3 da manhã? Você. Logo, precisa de visibilidade.
 - **Documentação:** a IA gera código rápido, mas documentação arquitetural é coisa de humano.
@@ -155,10 +155,10 @@ Aqui está o que você **não pode ignorar** depois que a IA gera algo funcional
 
 ## Lições da Jornada
 
-1. **Um prompt bem estruturado bate tentativa e erro** — qualidade da entrada determina qualidade da saída.
-2. **Unir IA + automação + cloud não é o futuro; é o presente** — mas exige T-shaped skills (rápido em amplitude, profundo em especialização).
-3. **UX importa tanto quanto o produto** — design é decisão, não accident.
-4. **A IA é o acelerador; você é o piloto** — profissional generalista (velocidade, vibe coding) precisa ser também especialista em T (DevOps, Terraform, Cloud, Security) pra sustentar o que a IA acelera.
+1. **Um prompt bem estruturado bate tentativa e erro**, qualidade da entrada determina qualidade da saída.
+2. **Unir IA + automação + cloud não é o futuro; é o presente**, mas exige T-shaped skills (rápido em amplitude, profundo em especialização).
+3. **UX importa tanto quanto o produto**, design é decisão, não accident.
+4. **A IA é o acelerador; você é o piloto**, profissional generalista (velocidade, vibe coding) precisa ser também especialista em T (DevOps, Terraform, Cloud, Security) pra sustentar o que a IA acelera.
 
 E um thought final, polêmico: **se você não está gostando do seu trabalho, ou não está usando IA do jeito certo, ou está no emprego errado.**
 
@@ -174,7 +174,7 @@ E um thought final, polêmico: **se você não está gostando do seu trabalho, o
 - [Repositório do Site](https://github.com/orafaelferreiraa/orafaelferreira-com) — código-fonte, Terraform, pipeline completa.
 
 
-Se você está mergulhando em vibe coding, generative AI, ou IA no deploy — as lições dessa jornada valem ouro.
+Se você está mergulhando em vibe coding, generative AI, ou IA no deploy, as lições dessa jornada valem ouro.
 
 ![Certificado de palestrante do TDC Florianópolis 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tdc26/certificado.png)
 `,

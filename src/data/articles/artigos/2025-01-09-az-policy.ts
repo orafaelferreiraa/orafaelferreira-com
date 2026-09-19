@@ -9,7 +9,7 @@ export const article: Article = {
 
 
 O [**Azure Policy**](https://learn.microsoft.com/pt-br/azure/governance/policy/) é um recurso da Microsoft Azure que ajuda organizações a implementar governança e compliance de forma automatizada e em larga escala. Ele garante que os recursos na nuvem estejam em conformidade com as diretrizes corporativas, padrões de segurança e requisitos regulatórios. 
-Imagine que, toda vez que você vê uma placa — seja no shopping ou no trânsito — ela funciona como uma policy (política). A placa tem a função de te alertar sobre regras e comportamentos esperados. Caso você não siga essas orientações e um segurança perceba a irregularidade, ele pode te abordar, corrigir sua ação ou até mesmo te impedir de continuar no local.
+Imagine que, toda vez que você vê uma placa, seja no shopping ou no trânsito, ela funciona como uma policy (política). A placa tem a função de te alertar sobre regras e comportamentos esperados. Caso você não siga essas orientações e um segurança perceba a irregularidade, ele pode te abordar, corrigir sua ação ou até mesmo te impedir de continuar no local.
 
 ## O que o Azure Policy Faz?
 O Azure Policy avalia continuamente os recursos e as ações no Azure com base em **definições de política**. Essas definições, escritas em formato JSON, descrevem regras que determinam se os recursos estão ou não em conformidade com os padrões estabelecidos.

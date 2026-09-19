@@ -6,12 +6,12 @@ export const article: Article = {
   excerpt: "Relato do primeiro CI&T MVP Day em Campinas: palestra sobre landing zone segura para workloads de IA, sessões de outros MVPs e painel sobre ser Microsoft MVP.",
   content: `
 
-No último dia 24 de outubro, organizamos o primeiro CI&T MVP Day — um evento interno, exclusivo para funcionários da CI&T, realizado na nossa sede global tech em Campinas. Este evento marcante reuniu palestras sobre segurança, nuvem e inteligência artificial, além de proporcionar momentos de troca e inspiração entre profissionais apaixonados por tecnologia. Com nomes de peso como **[Rafael Martin Alves Ferreira](https://www.linkedin.com/in/orafaelferreiraa/)**, **[Márcio Rogério Nizzola](https://www.linkedin.com/in/nizzola/)** e **[Cláudio Raposo](https://www.linkedin.com/in/cfraposo/)**, exploramos temas que estão moldando o presente e o futuro da tecnologia.
+No último dia 24 de outubro, organizamos o primeiro CI&T MVP Day, um evento interno, exclusivo para funcionários da CI&T, realizado na nossa sede global tech em Campinas. Este evento marcante reuniu palestras sobre segurança, nuvem e inteligência artificial, além de proporcionar momentos de troca e inspiração entre profissionais apaixonados por tecnologia. Com nomes de peso como **[Rafael Martin Alves Ferreira](https://www.linkedin.com/in/orafaelferreiraa/)**, **[Márcio Rogério Nizzola](https://www.linkedin.com/in/nizzola/)** e **[Cláudio Raposo](https://www.linkedin.com/in/cfraposo/)**, exploramos temas que estão moldando o presente e o futuro da tecnologia.
 
 ![Abertura do CI&T MVP Day na sede em Campinas](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp.talks/1.png)
 
 
-> 💬 "Posso dizer! CI&T MVP Day foi o pipoco do trovão azul celestial!" — *Cláudio Raposo, Software Architect e MVP Microsoft*
+> 💬 "Posso dizer! CI&T MVP Day foi o pipoco do trovão azul celestial!", *Cláudio Raposo, Software Architect e MVP Microsoft*
 
 
 ## O que Rolou no CI&T MVP Day:
@@ -46,7 +46,7 @@ Márcio compartilhou suas experiências com o **Azure OpenAI**, **Document Intel
 
 ## Inspirando a Próxima Geração de MVPs
 
-O evento foi encerrado com um painel inspirador: **"O que preciso para ser um Microsoft MVP?"**. Cada palestrante compartilhou suas trajetórias e experiências, ressaltando que o título de MVP vai além de um reconhecimento técnico — representa um compromisso com a tecnologia e com a comunidade.
+O evento foi encerrado com um painel inspirador: **"O que preciso para ser um Microsoft MVP?"**. Cada palestrante compartilhou suas trajetórias e experiências, ressaltando que o título de MVP vai além de um reconhecimento técnico, representa um compromisso com a tecnologia e com a comunidade.
 
 ![Painel sobre o que é preciso para ser um Microsoft MVP](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/mvp.talks/8.jpg)
 

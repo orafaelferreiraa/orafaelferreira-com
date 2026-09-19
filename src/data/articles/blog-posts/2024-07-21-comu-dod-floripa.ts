@@ -19,8 +19,8 @@ Além do evento em si, também contribuo para manter a comunidade engajada, ince
 
 ## Edições organizadas
 
-* 📅 [**DevOpsDays Florianópolis 2024**](https://www.orafaelferreira.com/artigos/eventodod-floripa) — 16 de novembro de 2024
-* 📅 [**DevOpsDays Florianópolis 2025**](https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2025) — 6 de dezembro de 2025
+* 📅 [**DevOpsDays Florianópolis 2024**](https://www.orafaelferreira.com/artigos/eventodod-floripa), 16 de novembro de 2024
+* 📅 [**DevOpsDays Florianópolis 2025**](https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2025), 6 de dezembro de 2025
 
 ## Por que isso importa
 
