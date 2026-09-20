@@ -4,7 +4,7 @@ export const article: Article = {
   slug: "dois-anos-de-docker",
   title: "Dois anos de Docker: o que mudou de 2024 para cá",
   excerpt:
-    "De setembro de 2024 a setembro de 2026: do Engine 27 ao 29, a quebra de rede do 28.0, o recuo do Docker Hub nos limites de pull, Hardened Images, segurança e a chegada dos agentes.",
+    "De setembro de 2024 a 2026: do Engine 27 ao 29, a quebra de rede do 28.0, o recuo do Docker Hub nos limites de pull, Hardened Images, segurança e a chegada dos agentes.",
   image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/capa.png",
   content: `
 

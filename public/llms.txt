@@ -38,7 +38,7 @@ Para quem é: profissionais de tecnologia (iniciantes ou experientes) que estuda
 
 ## Artigos técnicos (42)
 
-- [Dois anos de Docker: o que mudou de 2024 para cá](https://www.orafaelferreira.com/artigos/dois-anos-de-docker): De setembro de 2024 a setembro de 2026: do Engine 27 ao 29, a quebra de rede do 28.0, o recuo do Docker Hub nos limites de pull, Hardened Images, segurança e a chegada dos agentes. (2026-09-19)
+- [Dois anos de Docker: o que mudou de 2024 para cá](https://www.orafaelferreira.com/artigos/dois-anos-de-docker): De setembro de 2024 a 2026: do Engine 27 ao 29, a quebra de rede do 28.0, o recuo do Docker Hub nos limites de pull, Hardened Images, segurança e a chegada dos agentes. (2026-09-19)
 - [9 meses de Kubernetes: o que mudou depois da minha CKA](https://www.orafaelferreira.com/artigos/cka-o-que-mudou-no-kubernetes): Certifiquei na CKA em dezembro de 2025. Nove meses e três releases depois, um raio-x do que mudou no Kubernetes: Mutating Admission Policies, a família DRA e o fim do Ingress NGINX. (2026-09-18)
 - [14 meses de Terraform: o que mudou depois da minha Associate 003](https://www.orafaelferreira.com/artigos/terraform-o-que-mudou-desde-a-associate): Certifiquei na Terraform Associate 003 em julho de 2025. De lá para cá: quatro releases do Core, azurerm 5.0, Stacks em GA e tfpolicy. (2026-09-18)
 - [De NGINX Ingress para Envoy Gateway: a migração que a IA liderou](https://www.orafaelferreira.com/artigos/nginx-envoy-gateway): Como um controller próprio migrou Ingress NGINX para Gateway API sobre Envoy Gateway em Kubernetes multi-tenant, com a IA liderando testes e auditoria. (2026-09-05)
