@@ -5,10 +5,10 @@ export const article: Article = {
   title: "14 meses de Terraform: o que mudou depois da minha Associate 003",
   excerpt:
     "Certifiquei na Terraform Associate 003 em julho de 2025. De lá para cá: quatro releases do Core, azurerm 5.0, Stacks em GA e tfpolicy.",
-  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/capa.png",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tf-news/capa.png",
   content: `
 
-![Linha do tempo do Terraform entre as versões 1.12 e 1.16, marcando o ponto da certificação Associate 003](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/capa.png)
+![Infográfico de capa: linha do tempo do Terraform de v1.12 a v1.16 (hoje v1.16.3), com o marcador da Associate 003 em 26/07/2025, HashiCorp vira IBM em 27/02/2025, Stacks GA em set/2025 e azurerm 5.0 em 27/07/2026; coluna à esquerda com ephemeral values, write-only arguments, Stacks em GA, azurerm 5.0 e tfpolicy](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tf-news/capa.png)
 
 Passei na **HashiCorp Certified: Terraform Associate (003)** em **26/07/2025**. Escrevi na época sobre a estrutura da prova e a preparação em [Certificação HashiCorp Terraform Associate 003](/artigos/terraform-associate-artigo). Este artigo é a continuação: o que mudou no Terraform **depois** disso.
 
@@ -120,7 +120,7 @@ Quando comecei este levantamento a 1.16 ainda estava em beta. Ela saiu em **26/0
 
 **Sobre deferred actions:** a flag experimental \`-allow-deferral\`, que permitiria \`count\` e \`for_each\` resolverem com valores unknown, apareceu nas betas da 1.16 mas **não consta nas notas do release GA**. Continua sendo algo para acompanhar, não para depender em produção.
 
-![Comparação entre um atributo comum gravado no state e um write-only argument com _wo_version](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/1.png)
+![Comparativo em dois painéis: à esquerda, administrator_login_password gravado em texto plano como Senha123! dentro do terraform.tfstate; à direita, administrator_login_password_wo aplicado no Azure e o state guardando só _wo_version igual a 1, com a tabela dos três applies mostrando que a senha só é reenviada quando o version muda](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tf-news/1.png)
 
 ## Traduzindo: ephemeral values e write-only arguments
 
@@ -191,7 +191,7 @@ O 5.0 também trouxe **write-only nativo para o azurerm**: \`azurerm_subnet\` ga
 
 Andamento bem mais tranquilo. Os destaques: o novo resource \`azuread_flexible_federated_identity_credential\` (3.7), suporte a filtro em \`azuread_conditional_access_policy\` (3.9) e uma sequência de correções para **eventual consistency**, a Microsoft Graph API demora para propagar depois de um \`create\`, o que fazia o Terraform reportar \`not found\` num recurso recém-criado. Corrigido progressivamente entre a 3.6 e a 3.9.
 
-![Diagrama de um Stack do Terraform com um component reutilizável e três deployments dependentes](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/2.png)
+![Diagrama de Terraform Stacks: um component network definido uma vez em network.tfstack.hcl, fanning para três deployments em deployments.tfdeploy.hcl, dev, qa e prod, cada um com cidr e state próprio, encadeados por depende de, com um cadeado indicando que prod só aplica depois que qa passar limpo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tf-news/2.png)
 
 ## Mudanças que não são só do CLI
 
@@ -263,7 +263,7 @@ module_policy "git::github.com/acme/terraform-aws-vpc" "versao_minima" {
 
 Existe o mesmo padrão para \`resource_policy\`, aplicado a um tipo de recurso específico, e para \`provider_policy\`, ambos com o mesmo bloco \`enforce\`, e os atributos do recurso acessados pelo prefixo \`attrs.\` (por exemplo \`attrs.tags.environment\`). Se você já trabalha com policy as code, vale comparar com a abordagem que descrevi em [Platform Engineering e Policy as Code](/artigos/platform-engineering-policy-as-code).
 
-![Diagrama comparando custom conditions e a organização de workspaces e projects no HCP Terraform](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/3.png)
+![Dois painéis: à esquerda, custom conditions com terraform plan passando por validation, precondition e postcondition e parando com um erro escrito por você antes de chegar na API do provider; à direita, um project rede no HCP Terraform agrupando os workspaces rede-tenant-a-prod, rede-tenant-a-qa e rede-tenant-b-prod, com permissão dada por project](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tf-news/3.png)
 
 ## Duas coisas novas que vale entender
 

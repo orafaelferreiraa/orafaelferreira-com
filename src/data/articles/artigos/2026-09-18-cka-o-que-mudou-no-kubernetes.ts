@@ -5,10 +5,10 @@ export const article: Article = {
   title: "9 meses de Kubernetes: o que mudou depois da minha CKA",
   excerpt:
     "Certifiquei na CKA em dezembro de 2025. Nove meses e três releases depois, um raio-x do que mudou no Kubernetes: Mutating Admission Policies, a família DRA e o fim do Ingress NGINX.",
-  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/capa.png",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/cka-news/capa.png",
   content: `
 
-![Linha do tempo do Kubernetes entre as versões 1.34 e 1.37, marcando o ponto da certificação CKA](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/capa.png)
+![Infográfico de capa: linha do tempo do Kubernetes de v1.34 a v1.37, com o marcador da CKA em 23/12/2025, os releases Timbernetes, Haru e Garhwal com suas datas e contagem de enhancements, e o arquivamento do Ingress NGINX em 24/03/2026; coluna à esquerda com in-place resize, Mutating Admission Policies, família DRA, KYAML e fim do Ingress NGINX](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/cka-news/capa.png)
 
 Passei na **CKA (Certified Kubernetes Administrator)** em **23/12/2025**. Contei como foi a preparação em [Como foi minha jornada para a certificação CKA](/artigos/jornada-certificacao-cka), este artigo é o capítulo seguinte: o que aconteceu com o Kubernetes **depois** disso.
 
@@ -51,7 +51,7 @@ Fui atrás, release por release, do que mudou desde então. Foram três releases
 
 **Vale a atenção:** começou formalmente a fase de saída do modo **IPVS** do kube-proxy. Ainda não é urgente, o plano público é desabilitar por padrão na 1.40 e remover de vez na 1.43, mas o relógio começou a contar.
 
-![Comparativo entre um webhook mutador externo e uma MutatingAdmissionPolicy avaliada em CEL dentro do API server](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/1.png)
+![Dois painéis: à esquerda, o webhook mutador com o API server chamando por TLS um serviço HTTP seu fora do cluster, com os custos de manter o serviço no ar, TLS e failurePolicy; à direita, a MutatingAdmissionPolicy (v1.36 GA) com a expressão CEL avaliada dentro do API server e o Pod recebendo o label time: plataforma sem processo externo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/cka-news/1.png)
 
 ## Traduzindo: Mutating Admission Policies
 
@@ -160,7 +160,7 @@ spec:
 
 Essa migração eu já fiz na prática, com conversão automatizada e auditoria do que não dava para converter, está contada em [De NGINX Ingress para Envoy Gateway](/artigos/nginx-envoy-gateway). Aqui fica só o contexto de por que ela virou obrigatória.
 
-![Diagrama comparando um objeto Ingress único com a separação em Gateway e HTTPRoute da Gateway API](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/2.png)
+![Antes e depois: à esquerda, um único Ingress com host api.exemplo.com.br, path /v1 e ingressClassName nginx, marcado como infraestrutura e aplicação misturadas e controller de referência retirado em 24/03/2026; à direita, um Gateway do time de infra chamado gateway-publico apontando para a classe envoy e um HTTPRoute do time de aplicação ligado por parentRefs com o mesmo hostname, PathPrefix /v1 e backendRefs api-v1:80](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/cka-news/2.png)
 
 ## Para onde o Kubernetes está indo
 
@@ -173,7 +173,7 @@ Quatro movimentos do período que ainda não viraram feature estável, mas dizem
 | Formação do Checkpoint/Restore WG | 21/01/2026 | Formaliza o trabalho de tirar snapshot de um container em execução e restaurá-lo depois. Casos citados: acelerar workloads de boot pesado (Java, inferência de LLM) e checkpoint periódico para fault-tolerance em jobs longos |
 | Fim da replicação de assinatura de imagem | 05/06/2026 | O \`registry.k8s.io\` parou de copiar a assinatura cosign de cada imagem para as 22 regiões. O roteador \`archeio\` agora manda todo pedido de assinatura para um único upstream canônico. Supply chain, detalhe do tipo que some do radar até quebrar algo |
 
-![Mapa dos dois pontos que valem prática após a certificação: família DRA e migração para Gateway API](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/3.png)
+![Mapa em dois cards a partir do levantamento v1.35 a v1.37: família DRA, com Partitionable Devices, Consumable Capacity e Device Taints e Tolerations, uma GPU marcada NoSchedule por DeviceTaintRule e um Pod tolerando via ResourceClaim; e Gateway API, com GatewayClass, Gateway e HTTPRoute e o Ingress NGINX arquivado. Faixa inferior: continua igual troubleshooting, kubeadm, RBAC, NetworkPolicy e storage](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/cka-news/3.png)
 
 ## O que eu vou praticar
 

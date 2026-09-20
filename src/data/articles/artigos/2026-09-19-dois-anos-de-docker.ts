@@ -5,10 +5,10 @@ export const article: Article = {
   title: "Dois anos de Docker: o que mudou de 2024 para cá",
   excerpt:
     "De setembro de 2024 a 2026: do Engine 27 ao 29, a quebra de rede do 28.0, o recuo do Docker Hub nos limites de pull, Hardened Images, segurança e a chegada dos agentes.",
-  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/capa.png",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/docker/capa.png",
   content: `
 
-![Linha do tempo do Docker Engine entre as versões 27 e 29, de setembro de 2024 a setembro de 2026](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/capa.png)
+![Infográfico de capa: linha do tempo do Docker Engine de 27.2.1 (set/2024) a 29.8.1 (15/09/2026), com o 28.0.0 marcado como rede endurecida e o 29.0.0 como troca de defaults; coluna à esquerda com Engine 28.0, Engine 29.0, Docker Hub, Hardened Images e Agentes](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/docker/capa.png)
 
 Entre setembro de 2024 e setembro de 2026 o [Docker Engine](https://docs.docker.com/engine/) saiu da série 27 e chegou na 29.8.1. No caminho teve um release que derrubou acesso a container em produção, uma troca do armazenamento de imagem por padrão, a remoção de um subsistema inteiro de assinatura e a depreciação do cgroup v1.
 
@@ -47,7 +47,7 @@ Três detalhes que pegam gente de surpresa:
 - Passa a exigir os módulos de kernel de \`ipset\` (\`ip_set\`, \`ip_set_hash_net\` e \`netfilter_xt_set\`). Em host enxuto ou kernel customizado, o daemon reclama na subida.
 - O binário \`docker-proxy\` mudou e não é compatível com \`dockerd\` antigo, então atualizar os pacotes pela metade não funciona. O \`rootlesskit-docker-proxy\` foi removido.
 
-![Comparativo do acesso a uma porta não publicada antes e depois do endurecimento de rede do Docker Engine 28.0](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/1.png)
+![Duas faixas comparando o acesso a um container postgres em 172.17.0.5:5432 subido sem -p: antes (27.x) o host da rede local passa pela chain DOCKER aberta; depois (28.0) o tráfego é descartado e só passa com -p 5432:5432. Ao lado, três detalhes: só Linux com iptables, exige módulos ipset e docker-proxy novo não fala com dockerd antigo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/docker/1.png)
 
 ### As saídas de emergência
 
@@ -121,7 +121,7 @@ Historicamente o Docker guardava imagem num store próprio, baseado em graph dri
 
 A migração não é automática em host que já existia. Instalação nova nasce com o store novo, host antigo continua no store anterior até a troca ser feita de forma explícita, o que é bom, porque a troca não preserva as imagens já baixadas.
 
-![Diagrama do containerd image store virando o padrão do Docker Engine 29](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/2.png)
+![Comparativo entre o graph driver overlay2, com uma só variante amd64 e docker image ls listando imagem sem tag, e o containerd image store, padrão em instalação nova no 29.0, com uma tag nginx:1.27 apontando para amd64, arm64 e arm/v7, endpoint GET /images/{name}/attestations e aviso de que host antigo não migra sozinho](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/docker/2.png)
 
 ## Traduzindo: cgroup v1 depreciado e o rootless novo
 
@@ -175,7 +175,7 @@ Os limites que valem de fato, segundo a [documentação oficial de uso do Docker
 
 O detalhe do IPv4 compartilhado é o que costuma doer. Um cluster inteiro atrás de um NAT, ou um runner de CI numa faixa compartilhada, consome a cota como se fosse um único usuário. É exatamente o cenário que motiva colocar um cache de registry na frente do Hub, assunto que já tratei em [ACR Artifact Cache](/artigos/azure-container-registry-artifact-cache).
 
-![Linha do tempo do anúncio de cobrança por pull no Docker Hub e do recuo em fevereiro de 2025](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/3.png)
+![Linha do tempo do Docker Hub: anúncio de cobrança por consumo em nov/2024, planos novos à venda em 10/12/2024 (Pro de 5 para 9, Team de 9 para 15 dólares), recuo público em 21/02/2025 e os limites por hora de 01/03/2025 carimbados como nunca entrou em vigor; ao lado, tabela do que vale hoje: 100 pulls a cada 6 horas para anônimo, 200 para Personal, sem limite para Pro, Team e Business](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/docker/3.png)
 
 ## Planos: o reajuste do fim de 2024
 

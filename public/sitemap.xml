@@ -65,7 +65,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/dois-anos-de-docker/capa.png</image:loc>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/docker/capa.png</image:loc>
       <image:title>Dois anos de Docker: o que mudou de 2024 para cá</image:title>
     </image:image>
   </url>
@@ -75,7 +75,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/cka-o-que-mudou-no-kubernetes/capa.png</image:loc>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/cka-news/capa.png</image:loc>
       <image:title>9 meses de Kubernetes: o que mudou depois da minha CKA</image:title>
     </image:image>
   </url>
@@ -85,7 +85,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/terraform-o-que-mudou-desde-a-associate/capa.png</image:loc>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/tf-news/capa.png</image:loc>
       <image:title>14 meses de Terraform: o que mudou depois da minha Associate 003</image:title>
     </image:image>
   </url>

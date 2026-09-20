@@ -40,6 +40,8 @@ Keeps the four images reading as one set:
 
 Name the actual projects (Kubernetes, Docker, Terraform, Azure, NGINX, Envoy, CNCF, GitHub Actions…). Real logos are wanted; the model approximates them, and that is accepted here.
 
+If the user generates in a ChatGPT Project or Gemini Gem, the style block plus the text/anti-pattern rules live in `chatgpt-project-instructions.md` next to this file; then each prompt handed over is only the per-image layout section. Keep the full prompt set (style block included) as a `/* IMAGE GENERATION PROMPTS */` comment at the end of the article file so the set can be regenerated later.
+
 ## 3. Layout recipes
 
 Pick the recipe that matches what the section argues. All four end with a **full-width footer bar carrying one sentence lifted from the article** — that bar is what makes the image quotable on LinkedIn.
