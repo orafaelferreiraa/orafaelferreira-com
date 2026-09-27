@@ -223,5 +223,6 @@ Se precisar de suporte técnico, a Microsoft oferece recursos como a comunidade 
 `,
   date: "2024-10-08",
   category: "Artigos",
-  readTime: "9 min de leitura"
+  readTime: "9 min de leitura",
+  tags: ["Segurança"]
 };

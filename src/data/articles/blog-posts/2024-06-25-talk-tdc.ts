@@ -74,5 +74,5 @@ Que venham os próximos desafios e oportunidades!
   date: "2024-06-25",
   category: "Palestras",
   readTime: "3 min de leitura",
-  tags: ["Platform Engineering"]
+  tags: ["Platform Engineering", "Terraform"]
 };

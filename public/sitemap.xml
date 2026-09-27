@@ -5,7 +5,7 @@
   <!-- Static pages (derived from src/routes.tsx) -->
   <url>
     <loc>https://www.orafaelferreira.com/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://www.orafaelferreira.com/blog</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -59,6 +59,16 @@
   </url>
 
   <!-- Articles -->
+  <url>
+    <loc>https://www.orafaelferreira.com/artigos/claude-code-notificacoes-wsl</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/claude-notif/capa.png</image:loc>
+      <image:title>Notificações no Claude Code: hooks Notification e Stop no WSL com VS Code</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.orafaelferreira.com/artigos/dois-anos-de-docker</loc>
     <lastmod>2026-09-19</lastmod>
@@ -152,8 +162,8 @@
   <url>
     <loc>https://www.orafaelferreira.com/artigos/terraform-mcp-server-docker</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/mcp.tf/01.png</image:loc>
       <image:title>MCP Server com Docker e Terraform: discovery, troubleshooting e produtividade</image:title>
@@ -162,8 +172,8 @@
   <url>
     <loc>https://www.orafaelferreira.com/artigos/alura-cloud-computing-fundamentos-iaas-paas-saas</loc>
     <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/alura/00.jpg</image:loc>
       <image:title>Meu primeiro curso de Computação em Nuvem: práticas e governança com Azure</image:title>

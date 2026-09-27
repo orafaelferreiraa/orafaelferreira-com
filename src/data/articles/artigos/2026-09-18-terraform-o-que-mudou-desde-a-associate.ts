@@ -316,5 +316,5 @@ O resto (backend, módulo, state, import, workspace) é o mesmo Terraform que eu
   date: "2026-09-18",
   category: "Artigos",
   readTime: "17 min de leitura",
-  tags: ["Terraform", "Azure", "Certificações", "DevOps", "Platform Engineering"]
+  tags: ["Terraform", "Azure", "Certificações", "DevOps", "Platform Engineering", "Governança"]
 };

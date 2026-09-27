@@ -137,5 +137,6 @@ Para mais informações sobre [O que é uma Landing Zone do Azure?](https://lear
 `,
   date: "2024-01-02",
   category: "Artigos",
-  readTime: "7 min de leitura"
+  readTime: "7 min de leitura",
+  tags: ["Governança"]
 };

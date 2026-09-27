@@ -245,5 +245,6 @@ Com state remoto seguro, validações de segurança e documentação contínua, 
 `,
   date: "2025-12-13",
   category: "Artigos",
-  readTime: "13 min de leitura"
+  readTime: "13 min de leitura",
+  tags: ["Segurança"]
 };

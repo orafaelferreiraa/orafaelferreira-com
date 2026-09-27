@@ -199,5 +199,5 @@ O agente acelerou o trabalho. O que decidiu se ele foi confiável foi o contrato
   date: "2026-09-05",
   category: "Artigos",
   readTime: "14 min de leitura",
-  tags: ["IA", "DevOps", "Docker"]
+  tags: ["IA", "DevOps", "Docker", "Kubernetes", "Redes", "Open Source"]
 };

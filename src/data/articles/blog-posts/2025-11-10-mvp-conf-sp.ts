@@ -73,5 +73,6 @@ Um evento **feito por especialistas para a comunidade**, com **propósito social
 `,
   date: "2025-11-10",
   category: "Palestras",
-  readTime: "3 min de leitura"
+  readTime: "3 min de leitura",
+  tags: ["Comunidade"]
 };

@@ -71,5 +71,6 @@ Nos vemos na próxima!
 `,
   date: "2025-08-20",
   category: "Palestras",
-  readTime: "2 min de leitura"
+  readTime: "2 min de leitura",
+  tags: ["Kubernetes", "Governança", "Comunidade"]
 };

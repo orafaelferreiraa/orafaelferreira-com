@@ -412,7 +412,7 @@ export default {
       allTopics: "All",
       noResults: "No articles found for this topic.",
       searchResults: "Results for \"{{query}}\"",
-      clearSearch: "Clear search"
+      clearSearch: "Clear search",
     },
     article: {
       breadcrumbHome: "Home",

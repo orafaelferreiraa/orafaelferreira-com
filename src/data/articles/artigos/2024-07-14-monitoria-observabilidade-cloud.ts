@@ -162,5 +162,6 @@ Este artigo destina-se a servir como uma referência abrangente e ponto de parti
 `,
   date: "2024-01-17",
   category: "Artigos",
-  readTime: "9 min de leitura"
+  readTime: "9 min de leitura",
+  tags: ["Kubernetes"]
 };

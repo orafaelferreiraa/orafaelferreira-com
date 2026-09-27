@@ -165,5 +165,6 @@ Se tiver dúvidas ou precisar de mais detalhes, não hesite em entrar em contato
 `,
   date: "2024-06-05",
   category: "Artigos",
-  readTime: "5 min de leitura"
+  readTime: "5 min de leitura",
+  tags: ["Segurança"]
 };

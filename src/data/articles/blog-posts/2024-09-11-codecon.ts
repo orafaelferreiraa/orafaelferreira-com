@@ -58,5 +58,6 @@ Se você está em busca de uma oportunidade para se atualizar sobre as últimas 
 `,
   date: "2024-09-11",
   category: "Registro Eventos Presenciais",
-  readTime: "3 min de leitura"
+  readTime: "3 min de leitura",
+  tags: ["Comunidade"]
 };

@@ -43,5 +43,5 @@ Esse esforço contínuo fortalece o ecossistema local, amplia o alcance da comun
   date: "2024-07-21",
   category: "Organizador Grupo de Comunidade",
   readTime: "1 min de leitura",
-  tags: ["Kubernetes"]
+  tags: ["Kubernetes", "Cloud Native", "Comunidade"]
 };

@@ -57,5 +57,6 @@ Até o próximo evento!
 `,
   date: "2025-04-06",
   category: "Palestras",
-  readTime: "2 min de leitura"
+  readTime: "2 min de leitura",
+  tags: ["Comunidade"]
 };

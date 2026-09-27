@@ -85,5 +85,6 @@ Para mais informações sobre [O que é DevOps?](https://learn.microsoft.com/pt-
 `,
   date: "2024-01-08",
   category: "Artigos",
-  readTime: "6 min de leitura"
+  readTime: "6 min de leitura",
+  tags: ["CI/CD"]
 };

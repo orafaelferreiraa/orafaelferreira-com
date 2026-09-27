@@ -173,5 +173,6 @@ Tirar o orafaelferreira.com da GoDaddy e trazer o domínio para o Azure foi o qu
 `,
   date: "2026-06-14",
   category: "Artigos",
-  readTime: "6 min de leitura"
+  readTime: "6 min de leitura",
+  tags: ["Azure", "Redes", "CI/CD"]
 };

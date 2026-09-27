@@ -204,4 +204,5 @@ Para quem já está nessa pegada de Docker + Kubernetes + Azure, o Artifact Cach
   date: "2026-05-31",
   category: "Artigos",
   readTime: "6 min de leitura",
+  tags: ["Kubernetes", "CI/CD"],
 };

@@ -85,6 +85,6 @@ Os slides da minha sessão estão disponíveis:
   date: "2026-05-02",
   category: "Palestras",
   readTime: "5-7 min de leitura",
-  tags: ["Palestras"],
+  tags: [],
   excludeTags: ["Carreira", "Segurança"],
 };

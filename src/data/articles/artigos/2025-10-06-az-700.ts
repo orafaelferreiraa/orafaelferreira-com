@@ -140,5 +140,6 @@ Entender **endereçamento, conectividade, segurança e entrega de aplicações**
 ![Certificado do curso preparatório AZ-700 na Udemy](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/700/certificado.png)`,
   date: "2025-10-06",
   category: "Artigos",
-  readTime: "4 min de leitura"
+  readTime: "4 min de leitura",
+  tags: ["Redes"]
 };

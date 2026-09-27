@@ -105,5 +105,5 @@ Se você quiser acompanhar os próximos encontros e participar da comunidade:
   category: "Palestras",
   readTime: "4 min de leitura",
   image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/01.png",
-  tags: ["IA", "DevOps", "GitHub Copilot", "VSCode"]
+  tags: ["IA", "DevOps", "GitHub Copilot", "Open Source"]
 };

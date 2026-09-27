@@ -107,5 +107,6 @@ Integrar Policy-as-Code à engenharia de plataforma transforma a governança num
 `,
   date: "2026-04-15",
   category: "Artigos",
-  readTime: "18–22 min de leitura"
+  readTime: "18–22 min de leitura",
+  tags: ["Azure", "Kubernetes", "Terraform", "CI/CD"]
 };

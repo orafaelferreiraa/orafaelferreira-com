@@ -545,5 +545,5 @@ E o mais importante: **o outer loop continua sendo seu.** Delegar o ciclo intern
   date: "2026-07-26",
   category: "Artigos",
   readTime: "47 min de leitura",
-  tags: ["IA", "Platform Engineering", "DevOps", "Docker"]
+  tags: ["IA", "Platform Engineering", "DevOps", "Docker", "CI/CD"]
 };

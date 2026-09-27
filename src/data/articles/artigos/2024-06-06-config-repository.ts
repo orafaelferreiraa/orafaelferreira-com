@@ -134,5 +134,6 @@ Configurar um repositório no GitHub é uma tarefa essencial para desenvolvedore
 `,
   date: "2024-06-06",
   category: "Artigos",
-  readTime: "5 min de leitura"
+  readTime: "5 min de leitura",
+  tags: ["Open Source", "CI/CD", "DevOps"]
 };

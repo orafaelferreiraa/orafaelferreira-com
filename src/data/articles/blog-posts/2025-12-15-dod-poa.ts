@@ -83,5 +83,6 @@ A programação técnica foi excelente, especialmente a parte da tarde! Após mi
 `,
   date: "2025-12-02",
   category: "Palestras",
-  readTime: "3 min de leitura"
+  readTime: "3 min de leitura",
+  tags: ["Kubernetes", "Open Source"]
 };

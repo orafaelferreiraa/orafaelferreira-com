@@ -50,5 +50,6 @@ As talks estão disponíveis no [YouTube](https://www.youtube.com/watch?v=XQPHdu
 `,
   date: "2026-02-01",
   category: "Palestras",
-  readTime: "3 min de leitura"
+  readTime: "3 min de leitura",
+  tags: ["Comunidade"]
 };

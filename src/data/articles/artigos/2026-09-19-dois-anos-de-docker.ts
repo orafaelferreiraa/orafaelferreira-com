@@ -285,5 +285,5 @@ O resto, imagem, build, Compose e registry, continua sendo o mesmo Docker de sem
   date: "2026-09-19",
   category: "Artigos",
   readTime: "18 min de leitura",
-  tags: ["DevOps"]
+  tags: ["DevOps", "Kubernetes", "Open Source"]
 };

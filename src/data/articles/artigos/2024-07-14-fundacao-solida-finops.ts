@@ -203,5 +203,5 @@ Para mais informações sobre [O que é FinOps?](https://www.finops.org/) segue 
   date: "2024-01-15",
   category: "Artigos",
   readTime: "10 min de leitura",
-  tags: ["GreenOps"]
+  tags: ["GreenOps", "Azure"]
 };

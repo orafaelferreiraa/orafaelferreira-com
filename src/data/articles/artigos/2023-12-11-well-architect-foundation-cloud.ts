@@ -55,5 +55,6 @@ Espero que este artigo ajude você a entender melhor a importância de seguir os
 `,
   date: "2023-12-11",
   category: "Artigos",
-  readTime: "4 min de leitura"
+  readTime: "4 min de leitura",
+  tags: ["Segurança"]
 };

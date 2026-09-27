@@ -418,7 +418,7 @@ export default {
       allTopics: "Todos",
       noResults: "Nenhum artigo encontrado para este tema.",
       searchResults: "Resultados para \"{{query}}\"",
-      clearSearch: "Limpar busca"
+      clearSearch: "Limpar busca",
     },
     article: {
       breadcrumbHome: "Início",

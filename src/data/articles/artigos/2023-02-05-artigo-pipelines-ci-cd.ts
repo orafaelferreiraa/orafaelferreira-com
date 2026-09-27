@@ -31,5 +31,6 @@ Independentemente da ferramenta escolhida, é importante lembrar que a criação
 Se você ainda não adotou práticas de CI/CD na sua empresa, vale a pena explorar as diversas ferramentas disponíveis e ver qual se encaixa melhor nas suas necessidades. O importante é não deixar de lado a automação de pipelines e buscar sempre melhorias contínuas no processo de desenvolvimento e entrega de software.`,
   date: "2023-02-05",
   category: "Artigos",
-  readTime: "3 min de leitura"
+  readTime: "3 min de leitura",
+  tags: ["Azure"]
 };

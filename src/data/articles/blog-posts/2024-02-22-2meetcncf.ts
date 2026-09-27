@@ -48,5 +48,5 @@ Se você também é apaixonado por tecnologia, recomendo participar desses event
   date: "2024-02-22",
   category: "Palestras",
   readTime: "2 min de leitura",
-  tags: ["GreenOps"]
+  tags: ["GreenOps", "Kubernetes", "Cloud Native", "Comunidade"]
 };

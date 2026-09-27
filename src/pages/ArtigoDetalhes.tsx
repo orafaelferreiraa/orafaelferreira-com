@@ -11,11 +11,11 @@ import { articles, getArticleBySlug } from "@/data/articles";
 import type { Article } from "@/data/articles/types";
 import { countWords, extractHeadings, markdownToHtml } from "@/lib/markdown";
 import { extractFirstImage } from "@/lib/extractImage";
-import { getArticleTags } from "@/lib/article-tags";
+import { getArticleTags, tagToSlug } from "@/lib/article-tags";
 import { formatLongDate } from "@/lib/format-date";
+import { SITE_URL } from "@/lib/site";
 import JsonLd, { articleFaqSchema, articleSchema, breadcrumbSchema, organizationSchema, toIsoDateTime } from "@/components/SEO/JsonLd";
 
-const SITE_URL = "https://www.orafaelferreira.com";
 const AUTHOR_NAME = "Rafael Martin Alves Ferreira";
 const ARTICLE_FOOTER_LOGO_URL = "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/Logo2.png";
 
@@ -198,7 +198,7 @@ const ArtigoDetalhes = () => {
                     {tags.map((tag) => (
                       <li key={tag}>
                         <Link
-                          to={`/blog?q=${encodeURIComponent(tag)}`}
+                          to={`/blog?tema=${tagToSlug(tag)}`}
                           className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary transition-colors"
                         >
                           {tag}

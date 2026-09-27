@@ -73,6 +73,6 @@ Se você quer aprender cloud indo além do básico, tenho certeza que esse curso
   category: "Posts",
   readTime: "4 min de leitura",
   image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/alura/00.jpg",
-  tags: ["Azure", "Cloud", "DevOps", "Terraform", "FinOps", "IA"],
+  tags: ["Azure", "DevOps", "Terraform", "FinOps", "IA"],
   excludeTags: ["Segurança"]
 };

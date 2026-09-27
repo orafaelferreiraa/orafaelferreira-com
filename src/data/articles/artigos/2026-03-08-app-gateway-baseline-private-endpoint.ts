@@ -509,4 +509,5 @@ Seguindo essa ordem, você implementa a arquitetura baseline completa de forma p
   date: "2026-03-08",
   category: "Artigos",
   readTime: "22 min de leitura",
+  tags: ["Terraform", "Segurança"],
 };

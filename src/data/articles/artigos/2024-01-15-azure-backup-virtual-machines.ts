@@ -499,6 +499,5 @@ Lembre-se: **backup não substitui outras camadas de segurança** (replicação,
   date: "2024-01-15",
   category: "Artigos",
   readTime: "25 min de leitura",
-  tags: ["Terraform"],
-  excludeTags: ["IA"]
+  tags: ["Terraform", "Governança"],
 };

@@ -767,4 +767,5 @@ Faça o mesmo, crie algum projeto pequeno pessoal, quebre, teste, aprenda, evolu
   date: "2026-01-22",
   category: "Artigos",
   readTime: "15 min de leitura",
+  tags: ["Azure", "Terraform"],
 };

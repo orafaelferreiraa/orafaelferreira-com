@@ -59,6 +59,6 @@ Se você não participou deste ano, recomendo acompanhar as próximas edições.
   date: "2024-02-25",
   category: "Palestras",
   readTime: "2 min de leitura",
-  tags: ["GreenOps"],
+  tags: ["GreenOps", "Cloud Native", "Comunidade", "Observabilidade"],
   excludeTags: ["Kubernetes"]
 };

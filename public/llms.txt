@@ -34,10 +34,11 @@ Para quem é: profissionais de tecnologia (iniciantes ou experientes) que estuda
 
 ## Artigos e Blog
 
-- [Blog, todos os artigos e posts](https://www.orafaelferreira.com/blog): 95 publicações; última atualização em 2026-09-19
+- [Blog, todos os artigos e posts](https://www.orafaelferreira.com/blog): 96 publicações; última atualização em 2026-09-27
 
-## Artigos técnicos (42)
+## Artigos técnicos (43)
 
+- [Notificações no Claude Code: hooks Notification e Stop no WSL com VS Code](https://www.orafaelferreira.com/artigos/claude-code-notificacoes-wsl): Como fazer o Claude Code avisar quando precisa de aprovação ou termina, no WSL dentro do VS Code, com hooks e um alerta que sobrevive ao Não Perturbe. (2026-09-27)
 - [Dois anos de Docker: o que mudou de 2024 para cá](https://www.orafaelferreira.com/artigos/dois-anos-de-docker): De setembro de 2024 a 2026: do Engine 27 ao 29, a quebra de rede do 28.0, o recuo do Docker Hub nos limites de pull, Hardened Images, segurança e a chegada dos agentes. (2026-09-19)
 - [9 meses de Kubernetes: o que mudou depois da minha CKA](https://www.orafaelferreira.com/artigos/cka-o-que-mudou-no-kubernetes): Certifiquei na CKA em dezembro de 2025. Nove meses e três releases depois, um raio-x do que mudou no Kubernetes: Mutating Admission Policies, a família DRA e o fim do Ingress NGINX. (2026-09-18)
 - [14 meses de Terraform: o que mudou depois da minha Associate 003](https://www.orafaelferreira.com/artigos/terraform-o-que-mudou-desde-a-associate): Certifiquei na Terraform Associate 003 em julho de 2025. De lá para cá: quatro releases do Core, azurerm 5.0, Stacks em GA e tfpolicy. (2026-09-18)

@@ -44,5 +44,6 @@ Destaque também para o networking proporcionado pelo evento. Foi uma grande opo
 `,
   date: "2024-11-24",
   category: "Palestras",
-  readTime: "2 min de leitura"
+  readTime: "2 min de leitura",
+  tags: ["Comunidade"]
 };

@@ -37,5 +37,6 @@ Se você estiver interessado em saber mais sobre este projeto ou gostaria de se 
 `,
   date: "2023-11-06",
   category: "Posts",
-  readTime: "2 min de leitura"
+  readTime: "2 min de leitura",
+  tags: ["DevOps", "Comunidade"]
 };

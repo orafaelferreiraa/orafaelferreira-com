@@ -201,5 +201,5 @@ Este artigo oferece uma visão clara das opções disponíveis para a moderniza�
   date: "2024-08-11",
   category: "Artigos",
   readTime: "11 min de leitura",
-  tags: ["Azure"]
+  tags: ["Azure", "Cloud Foundation"]
 };

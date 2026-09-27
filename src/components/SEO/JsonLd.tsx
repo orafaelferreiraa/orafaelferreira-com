@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { SITE_URL } from "@/lib/site";
 
 interface JsonLdProps {
   data: Record<string, unknown> | Record<string, unknown>[];
@@ -18,7 +19,6 @@ export default JsonLd;
 
 // --- Reusable schema builders ---
 
-const SITE_URL = "https://www.orafaelferreira.com";
 const PERSON_NAME = "Rafael Martin Alves Ferreira";
 const PERSON_SHORT = "Rafael Ferreira";
 const PERSON_ID = `${SITE_URL}/#person`;

@@ -97,5 +97,6 @@ Se você não teve a oportunidade de comparecer a este evento, não se preocupe,
 `,
   date: "2024-10-31",
   category: "Palestras",
-  readTime: "5 min de leitura"
+  readTime: "5 min de leitura",
+  tags: ["Comunidade"]
 };

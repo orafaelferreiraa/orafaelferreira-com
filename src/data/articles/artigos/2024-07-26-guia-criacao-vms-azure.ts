@@ -162,5 +162,6 @@ A flexibilidade e o poder do Azure permitem que você adapte a infraestrutura de
 Se tiver dúvidas ou precisar de mais detalhes, não hesite em entrar em contato. Espero que este guia tenha sido útil para você!`,
   date: "2024-07-26",
   category: "Artigos",
-  readTime: "22 min de leitura"
+  readTime: "22 min de leitura",
+  tags: ["Redes", "Segurança"]
 };

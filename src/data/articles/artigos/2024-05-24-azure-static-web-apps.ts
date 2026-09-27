@@ -505,5 +505,6 @@ Neste artigo, aprendemos como configurar uma Virtual Machine no Azure (Resource 
 `,
   date: "2024-05-24",
   category: "Artigos",
-  readTime: "12 min de leitura"
+  readTime: "12 min de leitura",
+  tags: ["GitHub Actions"]
 };

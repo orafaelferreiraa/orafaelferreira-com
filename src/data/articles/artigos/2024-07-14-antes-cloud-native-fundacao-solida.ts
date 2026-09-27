@@ -168,6 +168,6 @@ Inicie sua avaliação com a [Sustentabilidade - Revisão Bem Arquitetada](https
   date: "2024-07-14",
   category: "Artigos",
   readTime: "38 min de leitura",
-  tags: ["GreenOps", "Terraform"],
+  tags: ["GreenOps", "Terraform", "Azure"],
   excludeTags: ["Observabilidade"]
 };

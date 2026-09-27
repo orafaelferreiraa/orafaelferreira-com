@@ -84,5 +84,5 @@ Se você quiser acompanhar os próximos encontros e participar da comunidade:
   category: "Organização de Eventos",
   readTime: "3 min de leitura",
   image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/Ms.Build.localhost.flp/00.png",
-  tags: ["Organização de Eventos", "IA", "GitHub Copilot", "Microsoft Foundry"]
+  tags: ["IA", "GitHub Copilot"]
 };
