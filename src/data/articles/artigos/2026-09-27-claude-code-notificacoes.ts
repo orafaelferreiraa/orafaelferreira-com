@@ -4,10 +4,10 @@ export const article: Article = {
   slug: "claude-code-notificacoes-wsl",
   title: "Notificações no Claude Code: hooks Notification e Stop no WSL com VS Code",
   excerpt: "Como fazer o Claude Code avisar quando precisa de aprovação ou termina, no WSL dentro do VS Code, com hooks e um alerta que sobrevive ao Não Perturbe.",
-  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/claude-notif/capa.png",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/claude-notif/capa.png",
   content: `
 
-![Infográfico de capa: linha do tempo de um turno do agente, com o agente parando às 14h02 para pedir aprovação e o humano só percebendo às 14h21, marcando dezenove minutos perdidos; coluna à esquerda com preferredNotifChannel, escopo de usuário, hooks Notification e Stop, FlashWindowEx e kill-switch; ao centro o fluxo do hook indo do JSON no stdin para o roteador em bash e daí para o piscar da barra de tarefas do Windows](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/claude-notif/capa.png)
+![Infográfico de capa: linha do tempo de um turno do agente, com o agente parando às 14h02 para pedir aprovação e o humano só percebendo às 14h21, marcando dezenove minutos perdidos; coluna à esquerda com preferredNotifChannel, escopo de usuário, hooks Notification e Stop, FlashWindowEx e kill-switch; ao centro o fluxo do hook indo do JSON no stdin para o roteador em bash e daí para o piscar da barra de tarefas do Windows](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/claude-notif/capa.png)
 
 ## O problema
 
@@ -68,7 +68,7 @@ serve de nada.
 
 Para isso a gente precisa de hooks.
 
-![Infográfico com os cinco valores de preferredNotifChannel em cartões: auto marcado como padrão, terminal_bell, iterm2 e iterm2_with_bell, kitty e ghostty, e notifications_disabled. O cartão auto está destacado em violeta com a anotação de que a detecção procura iTerm2, Kitty e Ghostty e, não achando nenhum, não manda nada. Abaixo, duas caixas de configuração lado a lado, preferredNotifChannel terminal_bell no settings.json do Claude Code e terminal.integrated.enableBell true no settings.json do VS Code, ligadas a um ícone de sino na aba do terminal](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/claude-notif/1.png)
+![Infográfico com os cinco valores de preferredNotifChannel em cartões: auto marcado como padrão, terminal_bell, iterm2 e iterm2_with_bell, kitty e ghostty, e notifications_disabled. O cartão auto está destacado em violeta com a anotação de que a detecção procura iTerm2, Kitty e Ghostty e, não achando nenhum, não manda nada. Abaixo, duas caixas de configuração lado a lado, preferredNotifChannel terminal_bell no settings.json do Claude Code e terminal.integrated.enableBell true no settings.json do VS Code, ligadas a um ícone de sino na aba do terminal](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/claude-notif/1.png)
 
 ## A pegadinha do escopo: usuário ou projeto?
 
@@ -223,7 +223,7 @@ Se você quiser o toast furando o "Não perturbe", dá: Configurações → Sist
 → *Definir notificações prioritárias*, e adicione o Visual Studio Code. É opcional: o canal principal aqui
 não depende disso.
 
-![Infográfico dividido em dois painéis. À esquerda, TOAST: o balão do Windows saindo do canto inferior direito, com duas linhas vermelhas marcando que ele entra mudo na Central de Notificações quando o Não Perturbe está ligado e que o som morre com o volume em zero. À direita, FLASHWINDOWEX: o botão do VS Code piscando em laranja na barra de tarefas, com três linhas em ciano marcando que não passa pelo subsistema de notificações, que não emite som e que pisca até a janela receber foco graças às flags FLASHW_ALL e FLASHW_TIMERNOFG. Barra de rodapé com a frase de que o canal que deveria te chamar é o primeiro a ser silenciado](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/claude-notif/2.png)
+![Infográfico dividido em dois painéis. À esquerda, TOAST: o balão do Windows saindo do canto inferior direito, com duas linhas vermelhas marcando que ele entra mudo na Central de Notificações quando o Não Perturbe está ligado e que o som morre com o volume em zero. À direita, FLASHWINDOWEX: o botão do VS Code piscando em laranja na barra de tarefas, com três linhas em ciano marcando que não passa pelo subsistema de notificações, que não emite som e que pisca até a janela receber foco graças às flags FLASHW_ALL e FLASHW_TIMERNOFG. Barra de rodapé com a frase de que o canal que deveria te chamar é o primeiro a ser silenciado](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/claude-notif/2.png)
 
 ## O roteador: o que o hook recebe e como decidir
 
@@ -323,7 +323,7 @@ notificação nunca deve quebrar a sessão por causa de si mesmo. O preço desse
 falta de dependência e funcionamento normal têm exatamente a mesma cara, então instale o \`jq\` antes de
 concluir que a receita não funciona.
 
-![Infográfico do roteamento: no topo, um cartão com o JSON que chega no stdin do hook. Abaixo, um nó divisor que separa por hook_event_name em dois caminhos, Notification e Stop. O caminho Notification abre em cinco cartões de notification_type, com permission_prompt, agent_needs_input e idle_prompt em ciano levando a corpos de notificação, e agent_completed e auth_success em cinza levando a um cartão exit 0 marcado como ruído. O caminho Stop mostra last_assistant_message sendo cortada na primeira linha e nos 120 caracteres. Barra de rodapé com a frase de que tratar esses tipos de forma diferente é o que separa uma notificação útil de um incômodo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/claude-notif/3.png)
+![Infográfico do roteamento: no topo, um cartão com o JSON que chega no stdin do hook. Abaixo, um nó divisor que separa por hook_event_name em dois caminhos, Notification e Stop. O caminho Notification abre em cinco cartões de notification_type, com permission_prompt, agent_needs_input e idle_prompt em ciano levando a corpos de notificação, e agent_completed e auth_success em cinza levando a um cartão exit 0 marcado como ruído. O caminho Stop mostra last_assistant_message sendo cortada na primeira linha e nos 120 caracteres. Barra de rodapé com a frase de que tratar esses tipos de forma diferente é o que separa uma notificação útil de um incômodo](https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/claude-notif/3.png)
 
 ## Testando — e por que meus dois primeiros testes não valeram nada
 
