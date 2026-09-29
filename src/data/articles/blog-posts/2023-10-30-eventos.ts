@@ -12,6 +12,7 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 <!-- AUTO-EVENTS:START:2026 -->
 | Mês | Evento |
 |-----|--------|
+| Set | [**KCD São Paulo 2026**](https://community2.cncf.io/events/details/cncf-kcd-brasil-presents-kcd-sao-paulo-2026/) |
 | Set | [**Code Island Cloud 2026**](https://cloud.codeisland.com.br/) |
 | Ago | [**DevOpsDays Curitiba 2026**](https://devopsdays.org/events/2026-curitiba/welcome/) |
 | Ago | [**MVP Conf Regional Curitiba 2026**](https://www.mvpconf.com.br/regional/curitiba/agosto-2026) |
@@ -26,6 +27,7 @@ Olá pessoal! Quero compartilhar com vocês algumas das incríveis experiências
 <!-- AUTO-EVENTS:END:2026 -->
 
 <!-- MANUAL-EVENTS:START:2026
+2026-09-26|KCD São Paulo 2026|https://community2.cncf.io/events/details/cncf-kcd-brasil-presents-kcd-sao-paulo-2026/
 2026-09-13|Code Island Cloud 2026|https://cloud.codeisland.com.br/
 MANUAL-EVENTS:END:2026 -->
 
