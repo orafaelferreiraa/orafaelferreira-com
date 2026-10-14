@@ -44,6 +44,10 @@
     // SPA will control and emit page_view events; disable auto page view to avoid duplicates
     gtag('config', 'G-0RVS46EEQ5', { send_page_view: false });
   </script>
+  <!-- Metricool web tracker (brand "Rafael Ferreira"). The first page view fires on load; SPA route changes are tracked in src/lib/analytics.ts -->
+  <script>
+    (function () { var s = document.createElement("script"); s.src = "https://tracker.metricool.com/resources/be.js"; s.async = true; s.onload = function () { if (window.beTracker) window.beTracker.t({ hash: "7bd84bc3516118f421442e4543eeb37e" }); }; document.head.appendChild(s); })();
+  </script>
   <!--app-head-->
 </head>
 
