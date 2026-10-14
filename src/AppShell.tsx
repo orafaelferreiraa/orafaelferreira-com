@@ -1,13 +1,29 @@
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { Route, Routes, useLocation } from "react-router";
-import { initGA, trackPageView } from "./lib/analytics";
+import { initGA, trackMetricoolPageView, trackPageView } from "./lib/analytics";
 import BackToTop from "./components/BackToTop";
 import { routes } from "./routes";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
+function MetricoolPageViews() {
+  const { pathname, search } = useLocation();
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    // The initial page view is sent by the Metricool snippet in index.html.
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    trackMetricoolPageView();
+  }, [pathname, search]);
+
   return null;
 }
 
@@ -38,6 +54,7 @@ const AppShell = () => (
   <HelmetProvider>
     <ScrollToTop />
     <Analytics />
+    <MetricoolPageViews />
     <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Carregando…</div>}>
       <Routes>
         {routes.map(({ path, Component }) => (

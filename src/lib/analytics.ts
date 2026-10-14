@@ -3,6 +3,7 @@ declare global {
         dataLayer?: unknown[];
         gtag?: (...args: unknown[]) => void;
         _gaInitialized?: boolean;
+        beTracker?: { t: (data?: Record<string, string>) => void };
     }
 }
 
@@ -32,6 +33,15 @@ export function initGA(measurementId?: string) {
     window.gtag("js", new Date());
     // Prevent automatic page_view — SPA will call trackPageView on navigation
     window.gtag("config", measurementId, { send_page_view: false });
+}
+
+const METRICOOL_HASH = "7bd84bc3516118f421442e4543eeb37e";
+
+// Metricool's be.js (loaded in index.html) only counts the initial page load.
+// Call this on SPA route changes so client-side navigations are counted too.
+export function trackMetricoolPageView() {
+    if (typeof window === "undefined" || !window.beTracker) return;
+    window.beTracker.t({ hash: METRICOOL_HASH });
 }
 
 export function trackPageView(measurementId: string | undefined, path: string) {
