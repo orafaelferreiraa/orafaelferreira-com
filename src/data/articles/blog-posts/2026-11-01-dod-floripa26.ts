@@ -51,7 +51,7 @@ Valeu demais a todo mundo que palestrou, patrocinou, apoiou e passou o sábado c
   date: "2026-11-01",
   category: "Organização de Eventos",
   readTime: "3 min de leitura",
-  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-floripa26/1.jpg",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-floripa26/10.jpg",
   tags: ["DevOps", "Comunidade"],
   summary: [
     "O DevOpsDays Florianópolis 2026 aconteceu no sábado, 24 de outubro, das 8h às 18h10, no auditório da UNICESUSC.",
