@@ -10,7 +10,7 @@ export const article: Article = {
 
 No sábado, **24 de outubro de 2026**, das 8h às 18h10, o auditório do **Centro Universitário Cesusc (UNICESUSC)** recebeu mais um dia inteiro de DevOpsDays em Floripa. Dessa vez eu fiz parte da organização, então acompanhei tudo de perto, do credenciamento à foto final com todo mundo no palco.
 
-![Eu no púlpito durante a abertura do DevOpsDays Florianópolis 2026, com a camiseta do evento](${IMG}/1.jpg)
+![Eu na abertura do DevOpsDays Florianópolis 2026, com a camiseta do evento e o microfone na mão](${IMG}/1.jpg)
 **Local**: SC-401, 9301, Santo Antônio de Lisboa, Florianópolis/SC
 **Site oficial**: [DevOpsDays Florianópolis 2026](https://devopsdays.org/events/2026-florianopolis/welcome/)
 **Linktree**: [Redes e novidades](https://linktr.ee/devopsdaysfln)
