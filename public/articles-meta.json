@@ -1,9 +1,24 @@
 {
+  "devopsdays-florianopolis-2026": {
+    "slug": "devopsdays-florianopolis-2026",
+    "title": "DevOpsDays Florianópolis 2026",
+    "excerpt": "Como foi o DevOpsDays Florianópolis 2026 na UNICESUSC: a programação em ordem cronológica, os patrocinadores e a organização local, contados por quem organizou.",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-floripa26/1.jpg",
+    "date": "2026-11-01",
+    "updatedAt": null,
+    "category": "Organização de Eventos",
+    "tags": [
+      "DevOps",
+      "Comunidade"
+    ],
+    "readTime": "3 min de leitura",
+    "url": "https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2026"
+  },
   "claude-code-notificacoes-wsl": {
     "slug": "claude-code-notificacoes-wsl",
     "title": "Notificações no Claude Code: hooks Notification e Stop no WSL com VS Code",
     "excerpt": "Como fazer o Claude Code avisar quando precisa de aprovação ou termina, no WSL dentro do VS Code, com hooks e um alerta que sobrevive ao Não Perturbe.",
-    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/claude-notif/capa.png",
+    "image": "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/artigos/2026/claude-notif/capa.png",
     "date": "2026-09-27",
     "updatedAt": null,
     "category": "Artigos",

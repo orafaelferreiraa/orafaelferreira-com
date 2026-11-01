@@ -1,0 +1,68 @@
+import type { Article } from '../types';
+
+const IMG = "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-floripa26";
+
+export const article: Article = {
+  slug: "devopsdays-florianopolis-2026",
+  title: "DevOpsDays Florianópolis 2026",
+  excerpt: "Como foi o DevOpsDays Florianópolis 2026 na UNICESUSC: a programação em ordem cronológica, os patrocinadores e a organização local, contados por quem organizou.",
+  content: `
+
+![Eu na abertura do DevOpsDays Florianópolis 2026, no auditório da UNICESUSC, com a camiseta do evento e o microfone na mão](${IMG}/1.jpg)
+
+No sábado, **24 de outubro de 2026**, das 8h às 18h10, o auditório do **Centro Universitário Cesusc (UNICESUSC)** recebeu mais um dia inteiro de DevOpsDays em Floripa. Dessa vez eu fiz parte da organização, então acompanhei tudo de perto, do credenciamento à foto final com todo mundo no palco.
+![Eu no púlpito durante a abertura do DevOpsDays Florianópolis 2026, com a camiseta do evento](${IMG}/2.jpg)
+**Local**: SC-401, 9301, Santo Antônio de Lisboa, Florianópolis/SC
+**Site oficial**: [DevOpsDays Florianópolis 2026](https://devopsdays.org/events/2026-florianopolis/welcome/)
+**Linktree**: [Redes e novidades](https://linktr.ee/devopsdaysfln)
+**Instagram**: [@devopsdaysfln](https://www.instagram.com/devopsdaysfln/)
+**Fotos**: [álbum oficial no Flickr](https://www.flickr.com/photos/201858065@N06/albums/72177720336352147/)
+## O dia em ordem cronológica
+
+- 08:00: Recepção e credenciamento.
+- 09:00: Abertura.
+- 09:30: Tiago Reichert e Jaime Nagase, "IDPs Morreram: Platform Engineering na Era dos Agentes de IA". ![Tiago Reichert, de camiseta branca, falando na talk de abertura sobre Platform Engineering](${IMG}/3.jpg)
+- 10:10: Coffee break. ![Mesa do coffee break da manhã, com frutas, salgados e bolos](${IMG}/4.jpg)
+- 10:40: Thiago Xikota, "Handoff é débito de contexto: como reduzir retrabalho entre produto, design e engenharia".
+- 11:20: Andre Brandao, "CNV - Não adianta fugir: você precisa se comunicar".
+- 12:00: Eduardo Pereira, "Tudo que eu quebrei em produção me trouxe até aqui: erros, incidentes e aprendizados." Teve até a "Pirâmide do Pantufa" no slide. ![Homem no púlpito do auditório mexendo no notebook](${IMG}/5.jpg)
+- 12:40: Almoço.
+- 13:40: Retorno.
+- 14:00: Marcelo Silveira Anjos, "Do Aço ao Código: A Tecnologia que move a ArcelorMittal".
+- 14:30: Paloma Lataliza, "From Code to Cloud: Deploying Applications with Containers on AWS and Infrastructure as Code". ![Duas pessoas no palco do DevOpsDays Florianópolis 2026, uma no notebook e outra com o microfone](${IMG}/6.jpg)
+- 15:10: Coffee break.
+- 15:50: Felipe Schossler, "Excelência operacional na era da IA: lições de quem segura a produção num time enxuto".
+- 16:30: Enderson Menezes, "Modelando seu IDP: A fundação da Engenharia de Plataforma". ![Enderson Menezes no púlpito apresentando a talk sobre IDP, com o slide ao fundo](${IMG}/7.jpg)
+- 17:10: Lightning talks, com Bruno Zub e a talk "Das Gambiarras à Multinacional: Como transformar um Homelab em portfólio." ![Bruno Zub com o microfone durante a lightning talk](${IMG}/8.jpg)
+- 17:40: Encerramento, com sorteios e a foto oficial com todo mundo no palco.
+
+## Patrocinadores
+
+- **Platinum**: ArcelorMittal
+- **Community/Apoio**: UNICESUSC
+
+## Organização local
+
+Rafael Ferreira • Leandro Venâncio • Bruno dos Santos • Julio Fontes
+![Equipe de organização local do DevOpsDays Florianópolis 2026 com a camiseta do evento, na frente do painel da UNICESUSC](${IMG}/9.jpg)
+
+## Código de conduta
+
+O evento segue o [Código de Conduta do DevOpsDays](https://devopsdays.org/events/2026-florianopolis/conduct-pt-br). Ajude a manter um ambiente seguro e acolhedor para todo mundo.
+
+Valeu demais a todo mundo que palestrou, patrocinou, apoiou e passou o sábado com a gente na UNICESUSC.
+
+![Foto oficial do encerramento do DevOpsDays Florianópolis 2026, com participantes, palestrantes e organização no palco](${IMG}/10.jpg)
+`,
+  date: "2026-11-01",
+  category: "Organização de Eventos",
+  readTime: "3 min de leitura",
+  image: "https://stoblobcertificados011.blob.core.windows.net/imagens-blog/posts/2026/dod-floripa26/1.jpg",
+  tags: ["DevOps", "Comunidade"],
+  summary: [
+    "O DevOpsDays Florianópolis 2026 aconteceu no sábado, 24 de outubro, das 8h às 18h10, no auditório da UNICESUSC.",
+    "Foram oito talks e um bloco de lightning talks, com temas como Platform Engineering, IDPs, comunicação, incidentes em produção e containers na AWS.",
+    "O evento teve patrocínio Platinum da ArcelorMittal e apoio da UNICESUSC.",
+    "Eu fiz parte da organização local, ao lado de Leandro Venâncio, Bruno dos Santos e Julio Fontes.",
+  ],
+};
