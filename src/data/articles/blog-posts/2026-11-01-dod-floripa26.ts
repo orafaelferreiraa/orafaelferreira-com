@@ -21,17 +21,17 @@ No sábado, **24 de outubro de 2026**, das 8h às 18h10, o auditório do **Centr
 
 - 08:00: Recepção e credenciamento.
 - 09:00: Abertura.
-- 09:30: Tiago Reichert e Jaime Nagase, "IDPs Morreram: Platform Engineering na Era dos Agentes de IA". ![Tiago Reichert, de camiseta branca, falando na talk de abertura sobre Platform Engineering](${IMG}/3.jpg)
+- 09:30: Tiago Reichert e Jaime Nagase, "IDPs Morreram: Platform Engineering na Era dos Agentes de IA". ![Tiago Reichert, de camiseta branca, falando na talk de abertura sobre Platform Engineering](${IMG}/3.jpg) ![Jaime Nagase com o celular na mão durante a talk de abertura sobre Platform Engineering](${IMG}/11.jpg)
 - 10:10: Coffee break. ![Mesa do coffee break da manhã, com frutas, salgados e bolos](${IMG}/4.jpg)
-- 10:40: Thiago Xikota, "Handoff é débito de contexto: como reduzir retrabalho entre produto, design e engenharia".
-- 11:20: Andre Brandao, "CNV - Não adianta fugir: você precisa se comunicar".
-- 12:00: Eduardo Pereira, "Tudo que eu quebrei em produção me trouxe até aqui: erros, incidentes e aprendizados." Teve até a "Pirâmide do Pantufa" no slide. ![Homem no púlpito do auditório mexendo no notebook](${IMG}/5.jpg)
+- 10:40: Thiago Xikota, "Handoff é débito de contexto: como reduzir retrabalho entre produto, design e engenharia". ![Thiago Xikota apontando para o telão durante a talk sobre handoff entre produto, design e engenharia](${IMG}/12.jpg)
+- 11:20: Andre Brandao, "CNV - Não adianta fugir: você precisa se comunicar". ![Andre Brandao com o microfone e a camiseta do evento durante a talk sobre comunicação não violenta](${IMG}/13.jpg)
+- 12:00: Eduardo Pereira, "Tudo que eu quebrei em produção me trouxe até aqui: erros, incidentes e aprendizados." Teve até a "Pirâmide do Pantufa" no slide. ![Eduardo Pereira com o microfone durante a talk sobre o que quebrou em produção](${IMG}/5.jpg)
 - 12:40: Almoço.
 - 13:40: Retorno.
-- 14:00: Marcelo Silveira Anjos, "Do Aço ao Código: A Tecnologia que move a ArcelorMittal".
-- 14:30: Paloma Lataliza, "From Code to Cloud: Deploying Applications with Containers on AWS and Infrastructure as Code". ![Duas pessoas no palco do DevOpsDays Florianópolis 2026, uma no notebook e outra com o microfone](${IMG}/6.jpg)
+- 14:00: Marcelo Silveira Anjos, "Do Aço ao Código: A Tecnologia que move a ArcelorMittal". ![Marcelo Silveira Anjos, de camisa xadrez, apresentando a tecnologia da ArcelorMittal](${IMG}/14.jpg)
+- 14:30: Paloma Lataliza, "From Code to Cloud: Deploying Applications with Containers on AWS and Infrastructure as Code". ![Paloma Lataliza com o microfone durante a talk sobre containers na AWS e infraestrutura como código](${IMG}/6.jpg)
 - 15:10: Coffee break.
-- 15:50: Felipe Schossler, "Excelência operacional na era da IA: lições de quem segura a produção num time enxuto".
+- 15:50: Felipe Schossler, "Excelência operacional na era da IA: lições de quem segura a produção num time enxuto". ![Felipe Schossler com o microfone durante a talk sobre excelência operacional na era da IA](${IMG}/15.jpg)
 - 16:30: Enderson Menezes, "Modelando seu IDP: A fundação da Engenharia de Plataforma". ![Enderson Menezes no púlpito apresentando a talk sobre IDP, com o slide ao fundo](${IMG}/7.jpg)
 - 17:10: Lightning talks, com Bruno Zub e a talk "Das Gambiarras à Multinacional: Como transformar um Homelab em portfólio." ![Bruno Zub com o microfone durante a lightning talk](${IMG}/8.jpg)
 - 17:40: Encerramento, com sorteios e a foto oficial com todo mundo no palco.
