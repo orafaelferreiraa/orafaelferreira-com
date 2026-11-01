@@ -34,7 +34,7 @@ Para quem é: profissionais de tecnologia (iniciantes ou experientes) que estuda
 
 ## Artigos e Blog
 
-- [Blog, todos os artigos e posts](https://www.orafaelferreira.com/blog): 96 publicações; última atualização em 2026-09-27
+- [Blog, todos os artigos e posts](https://www.orafaelferreira.com/blog): 97 publicações; última atualização em 2026-11-01
 
 ## Artigos técnicos (43)
 
@@ -82,8 +82,9 @@ Para quem é: profissionais de tecnologia (iniciantes ou experientes) que estuda
 - [A importância do Persistent Volume no Kubernetes AKS: garantindo dados seguros e acessíveis](https://www.orafaelferreira.com/artigos/artigo-aks-volume): Por que Persistent Volume e Persistent Volume Claim são essenciais no Kubernetes AKS: persistência de dados, manifestos YAML e Azure Disk e Azure File. (2023-02-05)
 - [Pipelines CI/CD](https://www.orafaelferreira.com/artigos/artigo-pipelines-ci-cd): As metodologias ágeis têm mudado a forma como as empresas desenvolvem software, e o desenvolvimento contínuo é uma parte importante dessa mudança. (2023-02-05)
 
-## Posts, eventos e comunidade (53)
+## Posts, eventos e comunidade (54)
 
+- [DevOpsDays Florianópolis 2026](https://www.orafaelferreira.com/artigos/devopsdays-florianopolis-2026): Como foi o DevOpsDays Florianópolis 2026 na UNICESUSC: a programação em ordem cronológica, os patrocinadores e a organização local, contados por quem organizou. (2026-11-01)
 - [Vibe Coding com DevOps: usei IA pra criar meu site, mas quem fez o deploy fui EU](https://www.orafaelferreira.com/artigos/dod-ctrb26): Relato da palestra Vibe Coding com DevOps no DevOpsDays Curitiba 2026, com Jéssica Mello: IA para criar o site, Terraform e GitHub Actions para o deploy. (2026-08-22)
 - [Platform Engineering na Prática - Construindo Plataformas Serverless Self-Service](https://www.orafaelferreira.com/artigos/mvp-conf-regional-curitiba-2026): MVP Conf Regional Curitiba 2026: como Platform Engineering combate o Shadow Ops com uma plataforma serverless self-service em Terraform e GitHub Actions. (2026-08-22)
 - [Menções e Publicações Externas](https://www.orafaelferreira.com/artigos/mencoes-publicacoes-externas): Olá, pessoal! Reuni neste post publicações em que compartilhei insights em sites externos. (2026-08-16)
